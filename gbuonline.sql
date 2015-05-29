@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 26, 2015 at 08:38 PM
+-- Generation Time: May 29, 2015 at 07:18 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -270,16 +270,19 @@ CREATE TABLE IF NOT EXISTS `users` (
   `type` varchar(40) NOT NULL,
   `email` varchar(50) NOT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`user_id`, `username`, `password`, `type`, `email`) VALUES
-(1, 'varun', '$2a$08$lwdF/6/szSbn0BAbh2kpXOZ7SI2k8pq4XZZLL7Oht6koPzcPtNlFi', 'admin', 'varun.10@live.com'),
+(1, 'varun', '$2a$08$YZwO10UBgw6bUSkaUCFbIuA.5.xtRF28X/P/RvCBqbHiID0rA7ixq', 'admin', 'varun.10@live.com'),
 (2, 'user1', '$2a$08$s6oK1VBeGbaNGCdsGKg.sOVq9Lu4BgX1boTZOdXhA1dw8o.RVSG.C', 'user', 'anime.life@hotmail.com'),
-(3, 'sarthak', '$2a$08$.O4wntba2ZGSG/v04FNLQeDgAHK0uZXTjnPrw8BE8lo6fbgX/Pppa', 'admin', 'choti@taar.com');
+(3, 'sarthak', '$2a$08$.O4wntba2ZGSG/v04FNLQeDgAHK0uZXTjnPrw8BE8lo6fbgX/Pppa', 'admin', 'choti@taar.com'),
+(4, 'bhawesh', 'bhawesh', 'admin', 'bhawesh'),
+(5, 'rajat', 'rajat', 'admin', 'rajat'),
+(6, 'shobhit', 'shobhit', 'admin', 'shobhit');
 
 -- --------------------------------------------------------
 
