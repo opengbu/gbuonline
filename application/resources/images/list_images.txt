@@ -1,7 +1,0 @@
-1.     image1.jpg   to   image14.jpg
-2.     ac.png
-3.     favicon.ico
-4.     footer1.jpg
-5.     home.jpg
-6.     ic.jpg
-7.     poster.png

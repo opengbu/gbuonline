@@ -1,17 +1,21 @@
-<IfModule mod_rewrite.c>
-        RewriteEngine On
-        RewriteBase /GOP2a/
-
-        # Removes index.php from ExpressionEngine URLs
-        
-        RewriteCond %{REQUEST_URI} ^system.*
-        RewriteRule ^(.*)$ /index.php?/$1 [L]
-		
-		RewriteCond %{REQUEST_URI} ^application.*
-        RewriteRule ^(.*)$ /index.php?/$1 [L]
-
-        # Directs all EE web requests through the site index file
-        RewriteCond %{REQUEST_FILENAME} !-f
-        RewriteCond %{REQUEST_FILENAME} !-d
-        RewriteRule ^(.*)$ index.php?/$1 [L]
+<IfModule authz_core_module>
+    Require all denied
 </IfModule>
+<IfModule !authz_core_module>
+    Deny from all
+</IfModule>
+# compress text, html, javascript, css, xml:
+AddOutputFilterByType DEFLATE text/plain
+AddOutputFilterByType DEFLATE text/html
+AddOutputFilterByType DEFLATE text/xml
+AddOutputFilterByType DEFLATE text/css
+AddOutputFilterByType DEFLATE application/xml
+AddOutputFilterByType DEFLATE application/xhtml+xml
+AddOutputFilterByType DEFLATE application/rss+xml
+AddOutputFilterByType DEFLATE application/javascript
+AddOutputFilterByType DEFLATE application/x-javascript
+
+# Or, compress certain file types by extension:
+<files *.html>
+SetOutputFilter DEFLATE
+</files>
