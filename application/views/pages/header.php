@@ -117,7 +117,7 @@
           </ul>
         </li>
         <li>
-            <a href="#"><font size="2"><span class="glyphicon glyphicon-user " aria-hidden="true"></span>&nbsp;Login</font></a>
+            <a href="<?php echo base_url('users')?>"><font size="2"><span class="glyphicon glyphicon-user " aria-hidden="true"></span>&nbsp;Login</font></a>
           
         </li> 
           </ul>
