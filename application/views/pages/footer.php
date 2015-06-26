@@ -135,7 +135,7 @@ footer {
 <br>
 <br>
 
-<button type="button" class="btn btn-block" onclick="location.href='<?php echo base_url('users')?>'">Admin Login</button>
+<button type="button" class="btn btn-block" onclick="">Opportunities</button>
 
 
 
