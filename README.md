@@ -1,5 +1,6 @@
-<h3><a href="www.gbuonline.com">GBU Online</a></h3>
-This is an internal website of Gautam Buddha University.<br>
+<h3><a href="www.gbuonline.com">GBU Online </a></h3>
+This is an internal website of Gautam Buddha University.<br><br>
+<img src="https://github.com/opengbu/gbuonline/blob/master/resources/images/image1.jpg" height="300" width="600">
 <h3>Main Features</h3>
 <ol>
 <li> Schools Info</li>
