@@ -135,7 +135,7 @@ footer {
 <br>
 <br>
 
-<button type="button" class="btn btn-block" onclick="">Opportunities</button>
+<button type="button" class="btn btn-block" onclick="location.href='<?php echo site_url('feat/opportunities')?>'">Opportunities</button>
 
 
 
