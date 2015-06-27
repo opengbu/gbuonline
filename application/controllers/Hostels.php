@@ -10,11 +10,11 @@ class Hostels extends CI_Controller {
 		$this->load->view('pages/hostels/home');
 		$this->load->view('pages/footer');
 	}
-	public function content()
+	public function info()
 	{
 		$this->load->view('pages/link');
 		$this->load->view('pages/header');
-		$this->load->view('pages/hostels/content');
+		$this->load->view('pages/hostels/info');
 		$this->load->view('pages/footer');
 	}
 	
@@ -34,11 +34,11 @@ class Hostels extends CI_Controller {
 		$this->load->view('pages/footer');
 	}
 	
-	public function specific()
+	/*public function specific()
 	{
 		$this->load->view('pages/link');
 		$this->load->view('pages/header');
 		$this->load->view('pages/hostels/specific');
 		$this->load->view('pages/footer');
-	}
+	}-->*/
 }
