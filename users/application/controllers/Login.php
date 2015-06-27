@@ -10,7 +10,8 @@ class Login extends CI_Controller
         public $status;
         public $user_id;
         public $type=0;
-                
+        public $url;
+      
         function index()
 	{
 		$this->load->helper('url');
@@ -33,10 +34,21 @@ class Login extends CI_Controller
 		else
 		{
 
-                    //echo $this->session->userdata('username');
-                    redirect('/all_posts');
+                    if($this->session->userdata("redirect_back") == 1)            
+                    {
+                        $this->url = $this->session->userdata("redirect_back_url");
+                        $this->session->unset_userdata("redirect_back_url");
+                        $this->session->unset_userdata("redirect_back");
+                        $str = "Location: ".$this->url;
+                        header($str);
+                    }
+                    else 
+                    {
+                        redirect('/all_posts'); //otherwise
+                    }
                 }
 	}
+        
         function check_details($key)
         {
             $username =   $this->input->post('username');
