@@ -51,7 +51,7 @@
           </ul>
         </li>
         <li>
-            <a href="<?php echo base_url('resources/images/ac.png')?>"><font size="2"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>&nbsp;Academic Calendar</font></a>
+            <a href="<?php echo base_url('resources/images/ac-15-16.jpg')?>"><font size="2"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>&nbsp;Academic Calendar</font></a>
           
         </li>
 
