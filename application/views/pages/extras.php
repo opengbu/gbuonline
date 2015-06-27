@@ -125,7 +125,7 @@
     <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
       <div class="panel-body">
            
-          <a href="#">View</a>
+          <a href="<?php echo base_url('resources/holidays-2015.pdf')?>">holidays-2015.pdf</a>
           
         
       </div>
