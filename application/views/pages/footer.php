@@ -35,7 +35,7 @@ footer {
                     <i>
                         <div class="row">
                             <div class="col-sm-4">
-                                <img src="<?php echo base_url('resources/images/varun.jpg')?>" height ="120" width="120"><br>VARUN GARG (Admin Panel)
+                                <img src="<?php echo base_url('resources/images/varun.jpg')?>" height ="120" width="120"><br>VARUN GARG (Login/Admin Panel)
                             </div>
                             <div class="col-sm-4">
                                 <img src="<?php echo base_url('resources/images/shobhit.jpg')?>" height ="120" width="120"><br>SHOBHIT SHARMA (Hostel Management System)
@@ -135,7 +135,7 @@ footer {
 <br>
 <br>
 
-<button type="button" class="btn btn-block" onclick="location.href='<?php echo base_url('users')?>'">Contact Us</button>
+<button type="button" class="btn btn-block" onclick="location.href='<?php echo base_url('users')?>'">Admin Login</button>
 
 
 
