@@ -10,7 +10,8 @@ class Main extends CI_Controller {
       
         public function homepage()
 	{
-		$this->load->view('pages/homepage');
+		$data['title'] = 'Welcome to Gbu Online ';
+		$this->load->view('pages/homepage',$data);
 		
     }
 	
