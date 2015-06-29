@@ -5,7 +5,8 @@ class Feat extends CI_Controller {
 		
 	public function vnb()
 	{
-       		$this->load->view('pages/link');
+       		$data['title'] = 'Notice Board &nbsp;|&nbsp;  GBU Online';
+		$this->load->view('pages/link',$data);
 		$this->load->view('pages/header');
 		$this->load->view('pages/virtual_notice_board');
 		$this->load->view('pages/extras');
@@ -15,7 +16,8 @@ class Feat extends CI_Controller {
 	
         public function events()
 	{
-        	$this->load->view('pages/link');
+        	$data['title'] = 'Events &nbsp;|&nbsp;  GBU Online';
+		$this->load->view('pages/link',$data);
 		$this->load->view('pages/header');
 		$this->load->view('pages/events');
 		$this->load->view('pages/extras');
@@ -25,7 +27,8 @@ class Feat extends CI_Controller {
 	
 	public function exams()
 	{
-        	$this->load->view('pages/link');
+        	$data['title'] = 'Exams &nbsp;|&nbsp;  GBU Online';
+		$this->load->view('pages/link',$data);
 		$this->load->view('pages/header');
 		$this->load->view('pages/exams/py_papers');
 		$this->load->view('pages/extras');
@@ -34,7 +37,8 @@ class Feat extends CI_Controller {
 	
 	public function opportunities()
 	{
-        	$this->load->view('pages/link');
+        	$data['title'] = 'Opportunities &nbsp;|&nbsp;  GBU Online';
+		$this->load->view('pages/link',$data);
 		$this->load->view('pages/header');
 		$this->load->view('pages/opportunities');
 		$this->load->view('pages/extras');
