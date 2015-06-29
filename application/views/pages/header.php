@@ -60,7 +60,7 @@
               <span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp;Hostel Management</font><span class="caret"></span></a>
    		  <ul class="dropdown-menu" role="menu">
              <li><a href="<?php echo site_url('hostels/home')?>">home</a></li>
-             <li><a href="<?php echo site_url('hostels/content')?>">content</a></li>
+             <li><a href="<?php echo site_url('hostels/info')?>">content</a></li>
              <li><a href="<?php echo site_url('hostels/notice')?>">notice</a></li>
              <li><a href="<?php echo site_url('hostels/wardens')?>">wardens</a></li>
 			 <li><a href="<?php echo site_url('hostels/specific')?>">specific</a></li>
