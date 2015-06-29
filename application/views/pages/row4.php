@@ -3,7 +3,7 @@
         <div class = "container">
     <div class="col-md-4"> 
         
-        <h2 align="center">Recent News</h2>
+        <h2 align="center"><font face="Ravie">Recent News</font></h2>
         <hr>
     <div class="list-group">
   <a href="#" class="list-group-item active">
@@ -33,7 +33,7 @@
   
     
     <div class="col-md-5">
-   <h2 align="center">Events</h2>
+   <h2 align="center"><font face="Ravie">Events</font></h2>
    <hr>
     <ul class="list-group">
   <li class="list-group-item list-group-item-success">Dapibus ac facilisis in</li>
@@ -48,7 +48,7 @@
    </div>
         
     <div class="col-md-3">
-        <h2 align="center">Extras</h2>
+        <h2 align="center"><font face="Ravie">Extras</font></h2>
         <hr>
    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
