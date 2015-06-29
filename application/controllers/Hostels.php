@@ -5,14 +5,16 @@ class Hostels extends CI_Controller {
 
 	public function home()
 	{
-		$this->load->view('pages/link');
+		$data['title'] = 'Hostels &nbsp;|&nbsp;  GBU Online';
+		$this->load->view('pages/link',$data);
 		$this->load->view('pages/header');
 		$this->load->view('pages/hostels/home');
 		$this->load->view('pages/footer');
 	}
 	public function info()
 	{
-		$this->load->view('pages/link');
+		$data['title'] = 'Hostels &nbsp;|&nbsp;  GBU Online';
+		$this->load->view('pages/link',$data);
 		$this->load->view('pages/header');
 		$this->load->view('pages/hostels/info');
 		$this->load->view('pages/footer');
@@ -20,7 +22,8 @@ class Hostels extends CI_Controller {
 	
 	public function notice()
 	{
-		$this->load->view('pages/link');
+		$data['title'] = 'Hostels &nbsp;|&nbsp;  GBU Online';
+		$this->load->view('pages/link',$data);
 		$this->load->view('pages/header');
 		$this->load->view('pages/hostels/notice');
 		$this->load->view('pages/footer');
@@ -28,7 +31,8 @@ class Hostels extends CI_Controller {
 	
 	public function wardens()
 	{
-		$this->load->view('pages/link');
+		$data['title'] = 'Hostels &nbsp;|&nbsp;  GBU Online';
+		$this->load->view('pages/link',$data);
 		$this->load->view('pages/header');
 		$this->load->view('pages/hostels/wardens');
 		$this->load->view('pages/footer');
@@ -36,7 +40,8 @@ class Hostels extends CI_Controller {
 	
 	/*public function specific()
 	{
-		$this->load->view('pages/link');
+		$data['title'] = 'Hostels &nbsp;|&nbsp;  GBU Online';
+		$this->load->view('pages/link',$data);
 		$this->load->view('pages/header');
 		$this->load->view('pages/hostels/specific');
 		$this->load->view('pages/footer');
