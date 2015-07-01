@@ -1,6 +1,3 @@
-<?php //echo validation_errors(); 
-//echo $this->session->userdata('type');
-?>  
 <div class="col-sm-5">
 <?php echo form_open('new_user'); ?>
 

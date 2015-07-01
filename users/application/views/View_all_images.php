@@ -1,7 +1,7 @@
 <script>
-   function del_ask(id)
+    function del_ask(id)
     {
-        var x = confirm("Do you want to delete "+id+" ?");
+        var x = confirm("Do you want to delete " + id + " ?");
         if (x == true)
             location.href = "<?= base_url() ?>" + "index.php/manage_uploads/delete?image=" + id;
     }
@@ -33,20 +33,19 @@
                         </div>
                         <div class="col-sm-4">
                             <?php
-                            if ($this->session->userdata('type') == "admin")
-                            {
+                            if ($this->session->userdata('type') == "admin") {
                                 ?>
-                            <button onclick="del_ask('<?= $name?>')" class="pull-right btn btn-xs btn-danger"><i class="fa fa-trash-o fa-lg"></i> Delete</button>  
-                            <?php
-                        } else
-                        echo "<font color='gray'>You cant delete this</font>";
-                        ?>
+                                <button onclick="del_ask('<?= $name ?>')" class="pull-right btn btn-xs btn-danger"><i class="fa fa-trash-o fa-lg"></i> Delete</button>  
+                                <?php
+                            } else
+                                echo "<font color='gray'>You cant delete this</font>";
+                            ?>
+                        </div>
                     </div>
-                </div>
-            </li>
-            <?php
+                </li>
+                <?php
+            }
         }
-    }
-    ?>
+        ?>
     </ul>
 </div>  

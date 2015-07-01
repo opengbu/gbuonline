@@ -39,9 +39,9 @@ date_default_timezone_set("Asia/Kolkata");
         $files = get_filenames("../resources/user_uploads");
         foreach ($files as $name) {
             echo '<option value = "resources/user_uploads/' . $name . '">';
-            echo 'resources/user_uploads/' . $name ;
+            echo 'resources/user_uploads/' . $name;
             echo '</option>';
-            }
+        }
         ?>
     </select>
     <br /><br />

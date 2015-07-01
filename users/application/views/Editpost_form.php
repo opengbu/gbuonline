@@ -16,9 +16,6 @@ foreach ($query->result() as $row) {
 <script type="text/javascript" src="<?= base_url() . 'application/views/common/' . 'input/jquery-te-1.4.0.min.js' ?>" charset="utf-8"></script>
 <div class="col-sm-10">
 
-    <?php echo form_open("edit_post/index?id=$id"); 
-    echo $school. '</br >'. $image_path;
-    ?>
     <label>Title</label>
     <input type="text" name="article_name" value="<?= $aname ?>" class="form-control">
     <br />
@@ -52,7 +49,8 @@ foreach ($query->result() as $row) {
         $files = get_filenames("../resources/user_uploads");
         foreach ($files as $name) {
             echo '<option value = "resources/user_uploads/' . $name . '" ';
-            if('resources/user_uploads/'.$name == $image_path) echo 'selected="selected" ';
+            if ('resources/user_uploads/' . $name == $image_path)
+                echo 'selected="selected" ';
             echo ' > resources/user_uploads/' . $name;
             echo '</option>';
         }
