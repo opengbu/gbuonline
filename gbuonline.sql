@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.14
+-- version 4.4.10
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: May 29, 2015 at 07:18 PM
--- Server version: 5.6.17
--- PHP Version: 5.5.12
+-- Host: localhost
+-- Generation Time: Jul 01, 2015 at 02:48 PM
+-- Server version: 10.0.20-MariaDB-log
+-- PHP Version: 5.6.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,7 +14,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `gbuonline`
@@ -27,22 +27,47 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `blog` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `roll_number` varchar(50) NOT NULL,
   `title` varchar(50) NOT NULL,
   `description` varchar(50) NOT NULL,
-  `status` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+  `status` int(11) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `blog`
 --
 
 INSERT INTO `blog` (`id`, `roll_number`, `title`, `description`, `status`) VALUES
-(1, '13ics020', 'asdasd', 'asdasd', 1),
-(2, '232323', 'This One is Approved', '', 2),
+(1, '13ics020', 'asdasd', 'asdasd', 0),
+(2, '232323', 'This One is Approved', '', 1),
 (3, '12121', 'This one is rejected', '', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `events`
+--
+
+CREATE TABLE IF NOT EXISTS `events` (
+  `id` int(11) NOT NULL,
+  `article_name` varchar(50) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `article` text NOT NULL,
+  `publishing_date` date NOT NULL,
+  `short_desc` text NOT NULL,
+  `image_path` text NOT NULL,
+  `school` varchar(35) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `events`
+--
+
+INSERT INTO `events` (`id`, `article_name`, `user_id`, `article`, `publishing_date`, `short_desc`, `image_path`, `school`) VALUES
+(5, 'New Event', 1, 'hello world<br>', '2015-06-30', 'Short Description<br><br>', 'resources/user_uploads/ichiruki-bleach-pairings-33886487-1920-1200.png', 'sovas'),
+(6, 'Abhivyanjana 2016', 6, 'Enter detailed event description', '2015-07-01', ' Example<br /><b>Date:</b> 28 - 01 - 2015 <br><b>Time:</b> 18:30 - 20:00<br/><b>Venue:</b> SOICT', 'resources/user_uploads/1280_800.jpg', 'soict'),
+(7, 'Ecocart 2015', 6, 'Enter detailed event description', '2015-07-01', ' Example<br /><b>Date:</b> 28 - 01 - 2015 <br><b>Time:</b> 18:30 - 20:00<br/><b>Venue:</b> SOICT', 'resources/user_uploads/1280_800.jpg', 'soict');
 
 -- --------------------------------------------------------
 
@@ -83,179 +108,50 @@ INSERT INTO `h_notice` (`id`, `date`, `title`, `issuing_authority`, `concerned_h
 --
 
 CREATE TABLE IF NOT EXISTS `schools` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `sc_name` varchar(10) NOT NULL,
   `sc_full_name` varchar(70) NOT NULL,
   `about_us` text NOT NULL,
   `course_structure` text NOT NULL,
   `faculty` text NOT NULL,
-  `events` text NOT NULL,
-  `placements` text NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
+  `placements` text NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `schools`
 --
 
-INSERT INTO `schools` (`id`, `sc_name`, `sc_full_name`, `about_us`, `course_structure`, `faculty`, `events`, `placements`) VALUES
-(1, 'soict', 'School Of ICT', 'czxcxc<br>', 'available on official website', 'xyz', 'abhivyanajana', 'none'),
-(2, 'som', 'School Of Management', 'aa', 'sasa', 'ssas', 'ssss', 'ssa'),
-(5, 'sovas', 'School Of ICT', 'aa', 'sasa', 'ssas', 'ssss', 'ssa'),
-(7, 'sob', ' School of Biotechnology ', 'biotech', 'asdasda', 'asdasda', 'asdasda', 'ssaasdasda'),
-(8, 'sobsc', 'school of bsc', 'oo<br>', 'oo', 'oo', 'oo', 'oo'),
-(9, 'soe', 'School Of Engineering', '', '', '', '', ''),
-(10, 'sohsc', 'School Of hsc', '', '', '', '', ''),
-(11, 'soljg', 'School Of ljg', '', '', '', '', '');
+INSERT INTO `schools` (`id`, `sc_name`, `sc_full_name`, `about_us`, `course_structure`, `faculty`, `placements`) VALUES
+(12, 'soict', 'School Of Information and Communication  Technology', 'hmmmm', 'mmmm', 'mmm', 'mmm'),
+(13, 'sovas', 'School Of Vocational And Applied Sciences', 'oo', 'oo', 'ooooo', 'oo'),
+(15, 'sobt', 'School of Biotechnology', '', '', '', ''),
+(16, 'soe', ' School of Engineering', '', '', '', ''),
+(17, 'som', ' School of Management', '', '', '', ''),
+(18, 'solj', ' School of Law, Justice and Governance', '', '', '', ''),
+(19, 'sobsc', ' School of Buddhist Studies And Civilization ', '', '', '', ''),
+(20, 'sohss', ' School of Humanities and Social Sciences', '', '', '', '');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sob`
+-- Table structure for table `upcoming_events`
 --
 
-CREATE TABLE IF NOT EXISTS `sob` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `article_name` varchar(50) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `article` text NOT NULL,
-  `publishing_date` date NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
+CREATE TABLE IF NOT EXISTS `upcoming_events` (
+  `id` int(11) NOT NULL,
+  `event_id` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 --
--- Table structure for table `sobsc`
+-- Dumping data for table `upcoming_events`
 --
 
-CREATE TABLE IF NOT EXISTS `sobsc` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `article_name` varchar(50) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `article` text NOT NULL,
-  `publishing_date` date NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `soe`
---
-
-CREATE TABLE IF NOT EXISTS `soe` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `article_name` varchar(50) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `article` text NOT NULL,
-  `publishing_date` date NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `sohsc`
---
-
-CREATE TABLE IF NOT EXISTS `sohsc` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `article_name` varchar(50) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `article` text NOT NULL,
-  `publishing_date` date NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `soict`
---
-
-CREATE TABLE IF NOT EXISTS `soict` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `article_name` varchar(50) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `article` text NOT NULL,
-  `publishing_date` date NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
-
---
--- Dumping data for table `soict`
---
-
-INSERT INTO `soict` (`id`, `article_name`, `user_id`, `article`, `publishing_date`) VALUES
-(1, 'introduction to gbuonline', 1, 'this is the first article', '2015-03-15'),
-(2, 'pollution', 2, 'OMG pollution?<br>', '2015-03-18'),
-(3, 'Hello World', 1, 'ok', '2015-03-21'),
-(4, 'Hello World', 1, 'Enter the post', '2015-03-21'),
-(6, 'ss', 1, 'Enter the post', '2015-03-21'),
-(7, 'hello sovas', 1, 'Enter the post', '2015-03-22');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `soljg`
---
-
-CREATE TABLE IF NOT EXISTS `soljg` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `article_name` varchar(50) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `article` text NOT NULL,
-  `publishing_date` date NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `som`
---
-
-CREATE TABLE IF NOT EXISTS `som` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `article_name` varchar(50) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `article` text NOT NULL,
-  `publishing_date` date NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
-
---
--- Dumping data for table `som`
---
-
-INSERT INTO `som` (`id`, `article_name`, `user_id`, `article`, `publishing_date`) VALUES
-(1, 'course', 1, 'asdasdasd', '2015-03-15'),
-(2, 'studies', 2, 'asasfasf', '2015-03-24'),
-(3, 'Hello SOM', 1, 'Enter the post', '2015-03-21'),
-(4, 'Hello SOM', 1, 'Enter the post', '2015-03-21');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `sovas`
---
-
-CREATE TABLE IF NOT EXISTS `sovas` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `article_name` varchar(50) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `article` text NOT NULL,
-  `publishing_date` date NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
-
---
--- Dumping data for table `sovas`
---
-
-INSERT INTO `sovas` (`id`, `article_name`, `user_id`, `article`, `publishing_date`) VALUES
-(1, 'hello sovas', 1, 'Enter the post', '2015-03-22');
+INSERT INTO `upcoming_events` (`id`, `event_id`) VALUES
+(1, 6),
+(2, 6),
+(3, 7),
+(4, -1),
+(5, -1);
 
 -- --------------------------------------------------------
 
@@ -264,25 +160,27 @@ INSERT INTO `sovas` (`id`, `article_name`, `user_id`, `article`, `publishing_dat
 --
 
 CREATE TABLE IF NOT EXISTS `users` (
-  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
   `username` varchar(25) NOT NULL,
-  `password` varchar(100) NOT NULL,
+  `password` varchar(200) NOT NULL,
   `type` varchar(40) NOT NULL,
   `email` varchar(50) NOT NULL,
-  PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+  `profile_picture` varchar(50) NOT NULL,
+  `full_name` varchar(40) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`user_id`, `username`, `password`, `type`, `email`) VALUES
-(1, 'varun', '$2a$08$YZwO10UBgw6bUSkaUCFbIuA.5.xtRF28X/P/RvCBqbHiID0rA7ixq', 'admin', 'varun.10@live.com'),
-(2, 'user1', '$2a$08$s6oK1VBeGbaNGCdsGKg.sOVq9Lu4BgX1boTZOdXhA1dw8o.RVSG.C', 'user', 'anime.life@hotmail.com'),
-(3, 'sarthak', '$2a$08$.O4wntba2ZGSG/v04FNLQeDgAHK0uZXTjnPrw8BE8lo6fbgX/Pppa', 'admin', 'choti@taar.com'),
-(4, 'bhawesh', 'bhawesh', 'admin', 'bhawesh'),
-(5, 'rajat', 'rajat', 'admin', 'rajat'),
-(6, 'shobhit', 'shobhit', 'admin', 'shobhit');
+INSERT INTO `users` (`user_id`, `username`, `password`, `type`, `email`, `profile_picture`, `full_name`) VALUES
+(1, 'varun', '$2a$08$aHFY8jNP/liqnhKM7a70tOT/UhznZEjxiYhrZO3BCqfC8Qzrn435.', 'admin', 'varun.10@live.com', '', 'Varun Garg'),
+(2, 'user1', '$2a$08$s6oK1VBeGbaNGCdsGKg.sOVq9Lu4BgX1boTZOdXhA1dw8o.RVSG.C', 'user', 'anime.life@hotmail.com', '', ''),
+(3, 'sarthak', '$2a$08$IvYcXuhBaZHTeHY4VG0iiuJmyCd1xO4N4v/6e24wbOUIeNmpvBevq', 'admin', 'gargsarthak30@gmail.com', '', 'Sarthak Garg'),
+(5, 'rajat', '$2a$08$89gL0PX4Ewl0/9RbfqBuOO6Jbp.ETHXsk.rDNtzKUkDcFe3SwBKaC', 'admin', 'sunny0rajat@gmail.com', '', 'Rajat Saxena'),
+(6, 'shobhit', '$2a$08$c4/t9EJ0rkX7jur.sbhtJ.JA0hEBVC4Md5qk0AH7MBaYZb3WYKQhS', 'admin', 'shobhit95sharma@gmail.com', '', 'Shobhit Sharma'),
+(7, 'bhawesh', '$2a$08$QghHh95c4h3GLrBFYN/9xuUrjeY/7xGc88hNv0rldS9wNOQxIJX.C', 'admin', '13ics015@gbu.ac.in', '', 'Bhawesh Chandola'),
+(8, 'student1', '$2a$08$YjytProg8gi0nweS2f7cI.b8Dh2ZR4keLzSFXuFNCVAFWlQ3V1nca', 'student', 'sasa', '', '');
 
 -- --------------------------------------------------------
 
@@ -291,12 +189,11 @@ INSERT INTO `users` (`user_id`, `username`, `password`, `type`, `email`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `vnb` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `title` text NOT NULL,
   `info` text NOT NULL,
-  `submitted_by` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+  `submitted_by` varchar(50) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `vnb`
@@ -313,13 +210,12 @@ INSERT INTO `vnb` (`id`, `title`, `info`, `submitted_by`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `warden` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `hostel_name` varchar(60) NOT NULL,
   `warden_name` varchar(60) NOT NULL,
   `warden_office` varchar(60) NOT NULL,
-  `hostel_contact` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+  `hostel_contact` int(11) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `warden`
@@ -336,6 +232,91 @@ INSERT INTO `warden` (`id`, `hostel_name`, `warden_name`, `warden_office`, `host
 (9, 'RAHEEM BOYS HOSTEL', 'DR. RAJESH GUPTA', '4364', NULL),
 (10, 'MALIK MOHD. JAYSI BOYS HOSTEL', 'DR. GURMET DORJAY', '7058', NULL);
 
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `blog`
+--
+ALTER TABLE `blog`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `events`
+--
+ALTER TABLE `events`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `schools`
+--
+ALTER TABLE `schools`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `upcoming_events`
+--
+ALTER TABLE `upcoming_events`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`user_id`);
+
+--
+-- Indexes for table `vnb`
+--
+ALTER TABLE `vnb`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `warden`
+--
+ALTER TABLE `warden`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `blog`
+--
+ALTER TABLE `blog`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `events`
+--
+ALTER TABLE `events`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT for table `schools`
+--
+ALTER TABLE `schools`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=21;
+--
+-- AUTO_INCREMENT for table `upcoming_events`
+--
+ALTER TABLE `upcoming_events`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+--
+-- AUTO_INCREMENT for table `vnb`
+--
+ALTER TABLE `vnb`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `warden`
+--
+ALTER TABLE `warden`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
