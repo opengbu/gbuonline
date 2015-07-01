@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 01, 2015 at 02:48 PM
+-- Generation Time: Jul 01, 2015 at 11:03 PM
 -- Server version: 10.0.20-MariaDB-log
 -- PHP Version: 5.6.10
 
@@ -42,6 +42,30 @@ INSERT INTO `blog` (`id`, `roll_number`, `title`, `description`, `status`) VALUE
 (1, '13ics020', 'asdasd', 'asdasd', 0),
 (2, '232323', 'This One is Approved', '', 1),
 (3, '12121', 'This one is rejected', '', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `blog_comments`
+--
+
+CREATE TABLE IF NOT EXISTS `blog_comments` (
+  `id` int(11) NOT NULL,
+  `blog_id` int(11) NOT NULL,
+  `comment` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `blog_likes`
+--
+
+CREATE TABLE IF NOT EXISTS `blog_likes` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `blog_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='which user liked which blog';
 
 -- --------------------------------------------------------
 
@@ -167,7 +191,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `email` varchar(50) NOT NULL,
   `profile_picture` varchar(50) NOT NULL,
   `full_name` varchar(40) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
@@ -243,6 +267,18 @@ ALTER TABLE `blog`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `blog_comments`
+--
+ALTER TABLE `blog_comments`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `blog_likes`
+--
+ALTER TABLE `blog_likes`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `events`
 --
 ALTER TABLE `events`
@@ -288,6 +324,16 @@ ALTER TABLE `warden`
 ALTER TABLE `blog`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
+-- AUTO_INCREMENT for table `blog_comments`
+--
+ALTER TABLE `blog_comments`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `blog_likes`
+--
+ALTER TABLE `blog_likes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
@@ -306,7 +352,7 @@ ALTER TABLE `upcoming_events`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `vnb`
 --
