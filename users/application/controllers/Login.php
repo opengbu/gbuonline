@@ -2,7 +2,6 @@
 /*
  * By calling this php file users can be made to log in on this site
  * After making the users login, it stores their details in session
- * By Varun Garg varun.10@live.com
  */
 class Login extends CI_Controller 
 {
@@ -22,10 +21,9 @@ class Login extends CI_Controller
                 
 		$this->load->library('form_validation');
                 
-		if($this->session->userdata('loggedin')==1)
+		if($this->session->userdata('loggedin')==1)//already done
                 {
-                    //echo "already logged in";
-                    redirect('/all_posts');
+                    redirect('/all_events');
                 }
                 else if ($this->form_validation->run() == FALSE)
 		{
@@ -34,7 +32,7 @@ class Login extends CI_Controller
 		else
 		{
 
-                    if($this->session->userdata("redirect_back") == 1)            
+                    if($this->session->userdata("redirect_back") == 1)//anyone wants to get back            
                     {
                         $this->url = $this->session->userdata("redirect_back_url");
                         $this->session->unset_userdata("redirect_back_url");
@@ -44,12 +42,12 @@ class Login extends CI_Controller
                     }
                     else 
                     {
-                        redirect('/all_posts'); //otherwise
+                        redirect('/all_events'); //otherwise
                     }
                 }
 	}
         
-        function check_details($key)
+        function check_details()
         {
             $username =   $this->input->post('username');
             $this->username = $username;
@@ -69,6 +67,7 @@ class Login extends CI_Controller
                         $this->session->set_userdata('username',$this->username);
                         $this->session->set_userdata('user_id',$this->user_id);
                         $this->session->set_userdata('type',$this->type);
+                        $this->session->set_userdata('full_name',$row->full_name);
                          return TRUE;
                     }
 

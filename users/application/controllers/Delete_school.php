@@ -19,7 +19,7 @@ class Delete_school extends CI_Controller {
             if($table=='none') redirect('/All_schools');
             echo $table;
             $this->db->query("delete from schools where sc_name='$table'");
-            $this->db->query("drop table $table");
+            $this->db->query("delete from events where school = '$table'");
             redirect('/All_schools');
     }
 }

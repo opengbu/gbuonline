@@ -1,17 +1,11 @@
 <?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 $id = $this->session->userdata('bid');
 echo form_open('Blog_geass/index/'.$id); 
 $q = $this->db->query("select * from blog where id = '$id'");
 
-
-
 ?>
+<div class="col-sm-10">
 
 <ul class="nav nav-list col-sm-12">
     <div class="row ">
@@ -65,13 +59,13 @@ $q = $this->db->query("select * from blog where id = '$id'");
 }
 ?>
         <label>Actions</label>
-    <select name="status" value="<?=$row->status?>" class="form-control">
+    <select name="status" value="<?=$row->status?>" class="selectpicker" data-width="100%">
         <option value="<?=$row->status?>">Pick:</option>
         <option value="0">mark as pending</option>
         <option value="1">Approve</option>
         <option value="2">Reject</option>
     </select>
-        <br>
+        <br /><br />
         <div><input type="submit" value="Apply" class="btn btn-default"/></div>
 </form>
-        
+    </div>
