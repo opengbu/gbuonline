@@ -204,17 +204,8 @@
                     </div>
                     <br>
                     <br>
-                    <button type="button" class="btn btn-block" data-toggle="modal" data-target=".bs-example-modal-sm-6">Admin Login</button>
-
-                    <div class="modal fade bs-example-modal-sm-6" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-sm">
-                            <div class="modal-content">
-                                <a href="#"><center>Administrator Login</center></a>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>   
+                    <button type="button" class="btn btn-block" onclick="location.href='<?php echo site_url('feat/opportunities')?>'">Opportunities</button>
+                </div>
             </div>
         </div>
         <br>
