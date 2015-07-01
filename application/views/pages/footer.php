@@ -1,4 +1,4 @@
-<div class="row">
+</div>
 
     <style>
 
@@ -11,12 +11,13 @@
     </style>
 
 
-    <footer class="footer" role="contentinfo">
+    <footer class="footer container-fluid" role="contentinfo">
         <br>
 
         <div class="wrapper">
+
             <div class="row" >
-                <div class="col-md-3">
+                <div class="col-md-2 col-md-offset-3">
 
 
 
@@ -90,7 +91,7 @@
                 </div>
 
 
-                <div class="col-md-3">
+                <div class="col-md-2">
 
                     <button type="button" class="btn btn-block" data-toggle="modal" data-target=".bs-example-modal-lg-3">Google Groups</button>
 
@@ -118,7 +119,7 @@
                     <button type="button" class="btn btn-block" onclick = "location.href = 'http://www.math.gbuonline.in';">Maths Site</button>
                 </div>
 
-                <div class="col-md-3">
+                <div class="col-md-2">
 
                     <button type="button" class="btn btn-block" data-toggle="modal" data-target=".bs-example-modal-lg-5">Connect With Us</button>
 
@@ -211,8 +212,8 @@
         <br>
         <br>
 
-        <div  style="margin-left:325px" class="row">
-            <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-12 text-center">
                 <p>
                     <b>&copy; kNight_Coders</b>
                 </p>
@@ -222,7 +223,7 @@
         </div>
 
     </footer>
-</div>
-</div>
+
+
 </body>
 </html>
