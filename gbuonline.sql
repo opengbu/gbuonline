@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 01, 2015 at 11:03 PM
+-- Generation Time: Jul 02, 2015 at 10:42 AM
 -- Server version: 10.0.20-MariaDB-log
 -- PHP Version: 5.6.10
 
@@ -52,7 +52,8 @@ INSERT INTO `blog` (`id`, `roll_number`, `title`, `description`, `status`) VALUE
 CREATE TABLE IF NOT EXISTS `blog_comments` (
   `id` int(11) NOT NULL,
   `blog_id` int(11) NOT NULL,
-  `comment` text NOT NULL
+  `comment` text NOT NULL,
+  `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
