@@ -36,7 +36,7 @@
                                         <i>
                                             <div class="row">
                                                 <div class="col-sm-4">
-                                                    <img src="<?php echo base_url('resources/images/varun.jpg') ?>" height ="120" width="120"><br><b>VARUN GARG </b>(Admin Panel)
+                                                    <img src="<?php echo base_url('resources/images/varun.jpg') ?>" height ="120" width="120"><br><b>VARUN GARG </b>(User Panel)
                                                 </div>
                                                 <div class="col-sm-4">
                                                     <img src="<?php echo base_url('resources/images/shobhit.jpg') ?>" height ="120" width="120"><br><b>SHOBHIT SHARMA</b> (Hostel Management System)
