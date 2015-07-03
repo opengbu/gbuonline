@@ -3,8 +3,8 @@
 <div class = "row">
    <div class="page-header">
    <center>
-      <h1><font size="7" face="AR DESTINE">Gautam Buddha University<br />Hostel Management<br /></font>
-      <small><font color="black" face="Estrangelo Edessa" size="6" >
+      <h1><font size="7" style="font-family: Book Antiqua,Palatino,Palatino Linotype,Palatino LT STD,Georgia,serif;">Gautam Buddha University<br />Hostel Management<br />
+      <small>
       A place to grow and evolve one's personality!
       </font></small>
       </h1>
@@ -13,45 +13,51 @@
    </div>
    <?php require 'hslider.php'; ?><br/>
    
+   <font style="font-family:Comic Sans MS, cursive, sans-serif">
    <div style="padding-top:5px;padding-left:10px;">
 		<b>Here's a list of operational and soon to be operational hostels:</b>
 		<button type="button" class="btn btn-block" data-toggle="modal" data-target=".bs-example-modal-lg-51"><b>Hostels: Home Away From Home</b></button>
 		<br/>
-    <div class="modal fade bs-example-modal-lg-51" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="text-align:left;">
+		
+		
+		<div class="modal fade bs-example-modal-lg-51" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 			<div class="modal-dialog modal-lg">
-				<div class="modal-content" style="text-align:left;">
+				<div class="modal-content" >
                
 					<ul>
 						<i>
-							<div class="row" style="text-align:left;">
-								<div class="col-sm-4">
+						<center>
+						<font style="font-family:Verdana, Geneva, sans-serif">
+
+						<div class="row" >
+								<div class="col-sm-6">
 									<b>BOYS HSOTEL
 								</div>
-								<div class="col-sm-4"style="text-align:center;">
+								<div class="col-sm-6">
 									<b>GIRLS HOSTEL
 								</div>
                   
 							</div>
-							<hr>
-							<div class="row" style="text-align:left;">
+							<hr><hr/>
+							<div class="row">
 								<div class="col-sm-6">
-									acadasd
+									Sant Rahim Das Hostel
 								</div>
 								<div class="col-sm-6">
-									asc
-								</div>
-							<hr>
-							</div>
-							<div class="row" style="text-align:left;">
-								<div class="col-sm-6">
-									acadasd
-								</div>
-								<div class="col-sm-6">
-									asc
+									Rani Laxmi Bai Girls Hostel
 								</div>
 							<hr>
 							</div>
-							<div class="row" style="text-align:left;">
+							<div class="row">
+								<div class="col-sm-6">
+									Guru Ghasi Das Hostel	
+								</div>
+								<div class="col-sm-6">
+									Mahamaya Girls Hostel
+								</div>
+							<hr>
+							</div>
+							<div class="row">
 								<div class="col-sm-6">
 									acadasd
 								</div>
@@ -61,12 +67,16 @@
 							
 							</div>
 							<hr>
+							
+							</font>
+							</center>
 						</i>      
 					</ul>
 				</div>
 			</div>
 		</div>
    </div>
+   
 	<div id="basicInfo" style="padding-left:10px;">
 	<div class="jumbotron" style="background-color:#2D2D2D">
 		<h2 style="padding-left:10px;">
@@ -118,79 +128,107 @@
 			</div>
 			
 			<div class="row">
-			<div class="col-sm-3 col-md-2">
-				<button type="button" class="btn btn-block" data-toggle="modal" data-target=".bs-example-modal-lg-52">more..</button>
-				<div class="modal fade bs-example-modal-lg-52" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+				<div class="col-sm-3 col-md-2">
 				
-				<br/>
-				<small>GALLERY</small>
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content"><font color="black"/>
-               <center> 
-                   <hr>
-                   Within Life On Campus</b> <hr>
-                </center>
-                <center>     
-                <ul>
-                    <i>
-                        <div class="row">
-                            <div class="col-sm-4">
-                                Hostel Facility for over 5000 students
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-sm-4">
-                                Indoor And Outdoor Stadiums
-                            </div>
-                        </div>
-                        <hr>
-						<div class="row">
-                            <div class="col-sm-4">
-                                Workshops
-                            </div>
-                        </div>
-                        <hr>
-						<div class="row">
-                            <div class="col-sm-4">
-                                Shopping Complex
-                            </div>
-                        </div>
-                        <hr>
-						<div class="row">
-                            <div class="col-sm-4">
-                                Meditation Centre
-                            </div>
-                        </div>
-                        <hr>
-						<div class="row">
-                            <div class="col-sm-4">
-                                Water bodies
-                            </div>
-                        </div>
-                        <hr>
-						<div class="row">
-                            <div class="col-sm-4">
-                                Central library with a capacity of 2000 students!
-                            </div>
-                        </div>
-						<hr>
-						<div class="row">
-                            <div class="col-sm-4">
-                                Gymnasium and a swimming pool
-                            </div>
-                        </div>
-                        <hr>
-                        <hr>
-                    </i>      
+					<button type="button" class="btn btn-block" data-toggle="modal" data-target=".bs-example-modal-lg-52">more..</button>
+					
+					
+					<div class="modal fade bs-example-modal-lg-52" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+
+						<div class="modal-dialog modal-lg">
+							<div class="modal-content">
+             
+								<center> 
+								<font style="font-family:Verdana, Geneva, sans-serif">
+								
+								<hr>
+									Within Life On Campus</b> <hr><hr/>
+								   
                 
-                </ul>
-                    <hr>
-            </center>
-            </div>
-        </div>
-    </div>
-			</div>
+								<ul>
+								<i>
+													
+                
+								<div class="row">
+									<div class="col-sm-4">
+									&nbsp;	Hostel Facility for over 5000 students
+									</div>
+								</div>
+								<hr>
+                       
+								<div class="row">
+									<div class="col-sm-4">
+									&nbsp;	Indoor And Outdoor Stadiums
+									</div>
+								</div>
+								<hr>
+								<hr>
+								<div class="row">
+									<div class="col-sm-4">
+										Workshops
+									</div>
+								</div>
+								<hr>
+								<hr>
+								<div class="row">
+									<div class="col-sm-4">
+										Shopping Complex
+									</div>
+								</div>
+								<hr>
+								<hr>
+								<div class="row">
+									<div class="col-sm-4">
+										Meditation Centre
+									</div>
+								</div>
+								<hr>
+								<hr>
+								<div class="row">
+									<div class="col-sm-4">
+										Water bodies
+									</div>
+								</div>
+								<hr>
+								<hr>
+								<div class="row">
+									<div class="col-sm-4">
+									&nbsp;	Central library with a capacity of 2000 students!
+									</div>
+								</div>
+								<hr>
+								<hr>
+								<div class="row">
+									<div class="col-sm-4">
+										Gymnasium and a swimming pool
+									</div>
+								</div>
+								<hr>
+								<hr>
+								
+								</font>
+								</center>
+								
+								</i>      
+								</ul>
+							</div>
+						</div>
+					</div>
+					
+					&npsp;<button type="button" class="btn btn-block" data-toggle="modal" data-target=".bs-example-modal-lg-53">Gallery</button>
+					
+					<div class="modal fade bs-example-modal-lg-53" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+
+						<div class="modal-dialog modal-lg">
+							<div class="modal-content">		
+							
+								<?php require 'facslider.php'; ?><br/>
+         
+							</div>
+						</div>
+					</div>
+					
+				</div>
 			</div>
         </div>
     </div>
@@ -220,5 +258,6 @@
 	
 	
 	-->
+	</font>
 	</div>
    
