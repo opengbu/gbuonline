@@ -63,7 +63,7 @@
              <li><a href="<?php echo site_url('hostels/info')?>">content</a></li>
              <li><a href="<?php echo site_url('hostels/notice')?>">notice</a></li>
              <li><a href="<?php echo site_url('hostels/wardens')?>">wardens</a></li>
-			 <li><a href="<?php echo site_url('hostels/specific')?>">specific</a></li>
+			<!-- <li><a href="<?php echo site_url('hostels/specific')?>">specific</a></li>-->
           </ul>
         </li>
 		
