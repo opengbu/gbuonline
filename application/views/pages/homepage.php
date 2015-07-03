@@ -3,8 +3,7 @@ require 'link.php';
 require 'header.php';
 ?>
 
-
-    <div class = "row">
+<div class="container-fluid">
    <div class="page-header">
    <center>
       <h1><font size="7" face="AR DESTINE">Gautam Buddha University<br></font>
@@ -14,9 +13,11 @@ require 'header.php';
       </h1>
    </center>
    </div>
-   </div>
 <?php
 require 'slider.php';
 require 'row4.php';
+?>
+</div>
+<?php
 require 'footer.php';
 ?>            
