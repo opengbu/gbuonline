@@ -39,7 +39,7 @@
 
         </style>
     </head>
-    <body>
+        <body background="<?php echo base_url('application/views/common/background.jpg')?>" style="background-attachment: fixed; background-repeat: repeat;">
         <div  id="wrapper"  class="toggled">     
 
             <nav class="navbar navbar-fixed-top navbar-inverse navbar-default navbar-custom" role="navigation">
