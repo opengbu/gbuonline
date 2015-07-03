@@ -11,13 +11,13 @@
             jQuery(function($) {
             $('.slider').sss();
             });
-			
-			
-            
+
+
+
         </script>
         <style>
             body { padding-top: 25px; }
-			
+
 			 .divr {
     -webkit-animation: myfirst 7s; /* Chrome, Safari, Opera */
     animation: myfirst 7s;
@@ -33,10 +33,10 @@
         </style>
 
     </head>
-    <body background="<?php echo base_url('resources/images/home.jpg')?>"style="background-attachment: fixed; background-repeat: repeat;">
-    <div class="container-fuid">
-    
-     
-        
-            
+    <body background="<?php echo base_url('resources/images/home.jpg')?>" style="background-attachment: fixed; background-repeat: repeat;">
+    <div class="container-fluid">
+
+
+
+
             
