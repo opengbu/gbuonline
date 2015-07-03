@@ -116,7 +116,7 @@
                     </div>
                     <br>
                     <br>
-                    <button type="button" class="btn btn-block" onclick = "location.href = 'http://www.math.gbuonline.in';">Maths Site</button>
+                    <button type="button" class="btn btn-block" onclick = "location.href = 'http://math.gbuonline.in';">Maths Site</button>
                 </div>
 
                 <div class="col-md-2">
