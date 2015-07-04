@@ -66,7 +66,7 @@
                                 <li><a href="<?= base_url() . 'new_event' ?>">Event</a></li>
                                 <?php if ($this->session->userdata('type') == 'admin') { ?>
                                     <li><a href="<?= base_url() . 'new_user' ?>">User</a></li>
-                                    <li><a href="<?= base_url() . 'new_school' ?>">Department</a></li>
+                                    <li><a href="<?= base_url() . 'new_school' ?>">School</a></li>
                                 <?php } ?>
                             </ul>
                         </li>
@@ -96,9 +96,9 @@
                     <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
                         <ul class="nav navbar-nav">
 
-                            <li ><a href="<?php echo base_url() . 'all_schools' ?>">Departments <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-th-list fa-2x"></i></a></li>
+                            <li ><a href="<?php echo base_url() . 'all_schools' ?>">Schools <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-th-list fa-2x"></i></a></li>
                             <?php if ($this->session->userdata('type') == 'admin') { ?>
-                                <li ><a href="<?php echo base_url() . 'new_school' ?>" >New Department<i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-plus-square fa-2x"></i></a></li><?php } ?>
+                                <li ><a href="<?php echo base_url() . 'new_school' ?>" >New School<i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-plus-square fa-2x"></i></a></li><?php } ?>
 
 
                             <li ><a href="<?= base_url() . 'all_events' ?>">All Events <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-tasks fa-2x"></i></a></li>
