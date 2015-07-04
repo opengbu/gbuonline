@@ -33,7 +33,7 @@
         </style>
 
     </head>
-    <body background="<?php echo base_url('resources/images/home.jpg')?>" style="background-attachment: fixed; background-repeat: repeat;">
+    <body background="<?php echo base_url('resources/images/home_original.jpg')?>" style="background-attachment: fixed; background-repeat: repeat;">
     <div class="container-fluid">
 
 
