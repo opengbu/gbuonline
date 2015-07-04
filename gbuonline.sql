@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 02, 2015 at 10:42 AM
+-- Generation Time: Jul 04, 2015 at 06:13 PM
 -- Server version: 10.0.20-MariaDB-log
 -- PHP Version: 5.6.10
 
@@ -71,6 +71,20 @@ CREATE TABLE IF NOT EXISTS `blog_likes` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `ebooks`
+--
+
+CREATE TABLE IF NOT EXISTS `ebooks` (
+  `id` int(11) NOT NULL,
+  `sc_name` varchar(10) NOT NULL,
+  `dept_name` varchar(30) NOT NULL,
+  `book_name` varchar(30) NOT NULL,
+  `book_info` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='sc_name is short name, pick real name from schools';
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `events`
 --
 
@@ -101,9 +115,21 @@ INSERT INTO `events` (`id`, `article_name`, `user_id`, `article`, `publishing_da
 --
 
 CREATE TABLE IF NOT EXISTS `h_complaint` (
-  `roll_number` varchar(60) NOT NULL,
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `complaint` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `h_list`
+--
+
+CREATE TABLE IF NOT EXISTS `h_list` (
+  `hostel_id` int(11) NOT NULL,
+  `hostel_name` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -117,7 +143,7 @@ CREATE TABLE IF NOT EXISTS `h_notice` (
   `title` varchar(60) NOT NULL,
   `issuing_authority` varchar(60) NOT NULL,
   `concerned_hostel` varchar(60) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `h_notice`
@@ -191,21 +217,24 @@ CREATE TABLE IF NOT EXISTS `users` (
   `type` varchar(40) NOT NULL,
   `email` varchar(50) NOT NULL,
   `profile_picture` varchar(50) NOT NULL,
-  `full_name` varchar(40) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+  `full_name` varchar(40) NOT NULL,
+  `roll_number` varchar(10) NOT NULL,
+  `phone_number` varchar(15) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`user_id`, `username`, `password`, `type`, `email`, `profile_picture`, `full_name`) VALUES
-(1, 'varun', '$2a$08$aHFY8jNP/liqnhKM7a70tOT/UhznZEjxiYhrZO3BCqfC8Qzrn435.', 'admin', 'varun.10@live.com', '', 'Varun Garg'),
-(2, 'user1', '$2a$08$s6oK1VBeGbaNGCdsGKg.sOVq9Lu4BgX1boTZOdXhA1dw8o.RVSG.C', 'user', 'anime.life@hotmail.com', '', ''),
-(3, 'sarthak', '$2a$08$IvYcXuhBaZHTeHY4VG0iiuJmyCd1xO4N4v/6e24wbOUIeNmpvBevq', 'admin', 'gargsarthak30@gmail.com', '', 'Sarthak Garg'),
-(5, 'rajat', '$2a$08$89gL0PX4Ewl0/9RbfqBuOO6Jbp.ETHXsk.rDNtzKUkDcFe3SwBKaC', 'admin', 'sunny0rajat@gmail.com', '', 'Rajat Saxena'),
-(6, 'shobhit', '$2a$08$c4/t9EJ0rkX7jur.sbhtJ.JA0hEBVC4Md5qk0AH7MBaYZb3WYKQhS', 'admin', 'shobhit95sharma@gmail.com', '', 'Shobhit Sharma'),
-(7, 'bhawesh', '$2a$08$QghHh95c4h3GLrBFYN/9xuUrjeY/7xGc88hNv0rldS9wNOQxIJX.C', 'admin', '13ics015@gbu.ac.in', '', 'Bhawesh Chandola'),
-(8, 'student1', '$2a$08$YjytProg8gi0nweS2f7cI.b8Dh2ZR4keLzSFXuFNCVAFWlQ3V1nca', 'student', 'sasa', '', '');
+INSERT INTO `users` (`user_id`, `username`, `password`, `type`, `email`, `profile_picture`, `full_name`, `roll_number`, `phone_number`) VALUES
+(1, 'varun', '$2a$08$aHFY8jNP/liqnhKM7a70tOT/UhznZEjxiYhrZO3BCqfC8Qzrn435.', 'admin', 'varun.10@live.com', '', 'Varun Garg', '', ''),
+(2, 'user1', '$2a$08$s6oK1VBeGbaNGCdsGKg.sOVq9Lu4BgX1boTZOdXhA1dw8o.RVSG.C', 'user', 'anime.life@hotmail.com', '', 'User 1', '', ''),
+(3, 'sarthak', '$2a$08$IvYcXuhBaZHTeHY4VG0iiuJmyCd1xO4N4v/6e24wbOUIeNmpvBevq', 'admin', 'gargsarthak30@gmail.com', '', 'Sarthak Garg', '', ''),
+(5, 'rajat', '$2a$08$89gL0PX4Ewl0/9RbfqBuOO6Jbp.ETHXsk.rDNtzKUkDcFe3SwBKaC', 'admin', 'sunny0rajat@gmail.com', '', 'Rajat Saxena', '', ''),
+(6, 'shobhit', '$2a$08$c4/t9EJ0rkX7jur.sbhtJ.JA0hEBVC4Md5qk0AH7MBaYZb3WYKQhS', 'admin', 'shobhit95sharma@gmail.com', '', 'Shobhit Sharma', '', ''),
+(7, 'bhawesh', '$2a$08$QghHh95c4h3GLrBFYN/9xuUrjeY/7xGc88hNv0rldS9wNOQxIJX.C', 'admin', '13ics015@gbu.ac.in', '', 'Bhawesh Chandola', '', ''),
+(8, 'student1', '$2a$08$YjytProg8gi0nweS2f7cI.b8Dh2ZR4keLzSFXuFNCVAFWlQ3V1nca', 'student', 'sasa', '', 'Student 1', '', ''),
+(9, 'amit', '$2a$08$UcvspCTXRKOIiZj2FAdGn.z0Grzpd9cWsjH.m0JjQc0cRYmbjtJCu', 'admin', 'amit@gbuonline.in', '', 'Dr. Amit K awasthi', '', '');
 
 -- --------------------------------------------------------
 
@@ -280,9 +309,33 @@ ALTER TABLE `blog_likes`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `ebooks`
+--
+ALTER TABLE `ebooks`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `events`
 --
 ALTER TABLE `events`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `h_complaint`
+--
+ALTER TABLE `h_complaint`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `h_list`
+--
+ALTER TABLE `h_list`
+  ADD PRIMARY KEY (`hostel_id`);
+
+--
+-- Indexes for table `h_notice`
+--
+ALTER TABLE `h_notice`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -335,10 +388,30 @@ ALTER TABLE `blog_comments`
 ALTER TABLE `blog_likes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT for table `ebooks`
+--
+ALTER TABLE `ebooks`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT for table `h_complaint`
+--
+ALTER TABLE `h_complaint`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `h_list`
+--
+ALTER TABLE `h_list`
+  MODIFY `hostel_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `h_notice`
+--
+ALTER TABLE `h_notice`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `schools`
 --
@@ -353,7 +426,7 @@ ALTER TABLE `upcoming_events`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `vnb`
 --

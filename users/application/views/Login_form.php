@@ -17,7 +17,7 @@
                 text-align: center;
                 margin: auto;
             }
-            "body {
+            body {
             padding-top: 120px;
             padding-bottom: 40px;
             background-color: #eee;
@@ -99,13 +99,7 @@
 
 
             .navbar-custom {
-            <?php
-            if ($this->session->userdata('type') != 'admin')
-                echo "background-color:#00BFFF;";
-            else
-                echo "background-color:#229922;"
-                ?>
-
+            background-color:#229922;
             color:#ffffff;
             border-radius:0;
             }
