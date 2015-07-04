@@ -2,7 +2,7 @@
 <div class="page-header" style = "background-color: darkred; padding-top: 10px; padding-left: 50px; margin-top: 15px;">
     <font color="white"  face="Monotype Corsiva">
 
-          &nbsp; <h1>?  Hostel Page </br><!--<small>Keep Calm and Write.....</small></h1>-->
+          &nbsp; <h1>Hostel Page </br><!--<small>Keep Calm and Write.....</small></h1>-->
 	</font>      
  </div> 
 
@@ -15,14 +15,19 @@
             </div></a>
 			
         <a name="go3" style="text-decoration:none;">
-        <div class="jumbotron">
-            <h2>NOTICES</h2>
-                <ul class="nav nav-pills" role="tablist">
-                    <li accesskey="" role=" presentation" class="active">
-					Hostel Notices<span class="badge">24</a></span>
-						<br/>
-					</li>                    
-                </ul>
+			<div class="jumbotron">
+				<h2>NOTICES</h2>
+					<!--<ul class="nav nav-pills" role="tablist"><br/>
+						<li accesskey="" role=" presentation" class="active">
+							<a href="<?php echo site_url('hostels/notice')?>">
+								Hostel Notices<span class="badge">24</span>
+							</a>
+							<br/>
+						</li>                    
+					</ul>-->
+					<a href="<?php echo site_url('hostels/notice')?>">
+						<input type="submit" class="btn btn-default" value="Hostel Notice" style="background-color:0033CC;color:white;border-radius:5px;width:180px;"/><span class="badge">24</span>
+					</a>
             </div>
         </a>
         

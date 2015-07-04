@@ -59,10 +59,10 @@
           <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><font size="2">
               <span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp;Hostel Management</font><span class="caret"></span></a>
    		  <ul class="dropdown-menu" role="menu">
-             <li><a href="<?php echo site_url('hostels/home')?>">home</a></li>
-             <li><a href="<?php echo site_url('hostels/info')?>">content</a></li>
-             <li><a href="<?php echo site_url('hostels/notice')?>">notice</a></li>
-             <li><a href="<?php echo site_url('hostels/wardens')?>">wardens</a></li>
+             <li><a href="<?php echo site_url('hostels/home')?>">Home</a></li>
+             <li><a href="<?php echo site_url('hostels/info')?>">Hostel Details</a></li>
+             <li><a href="<?php echo site_url('hostels/notice')?>">Hostel Notices</a></li>
+             <li><a href="<?php echo site_url('hostels/wardens')?>">Wardens List</a></li>
 			<!-- <li><a href="<?php echo site_url('hostels/specific')?>">specific</a></li>-->
           </ul>
         </li>

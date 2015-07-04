@@ -1,7 +1,7 @@
  <div class="page-header" style = "background-color: darkred; padding-top: 10px; padding-left: 50px; margin-top: 15px;">
     <font color="white"  face="Monotype Corsiva">
 
-            <h1>Hostel Info</br><!--<small>Keep Calm and Write.....</small></h1>-->
+            <h1>Hostel Detail</br><!--<small>Keep Calm and Write.....</small></h1>-->
 	</font>      
  </div> 
   <div id="img" style="overflow:hidden;">
@@ -92,7 +92,14 @@
 					</tr>
 					<tr>
 						<td><br/>
-							<input type="submit" value="Login" style="width:130px; margin-left: 100px;font-size: 15px;margin-top:5px;" />
+						<!--	<input type="submit" value="Login" style="width:130px; margin-left: 100px;font-size: 15px;margin-top:5px;" />-->
+						<div class="btn-group" role="group" aria-label="...">
+							<a href="<?php echo site_url('hostels/specific')?>">
+								<button type="button" class="btn btn-default" style="width:130px; margin-left: 100px;font-size: 15px;margin-top:5px;" >
+									Login
+								</button>
+							</a>
+						</div>
 						</td>
 					</tr>
 					

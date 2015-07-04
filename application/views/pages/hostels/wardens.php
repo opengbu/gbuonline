@@ -4,6 +4,21 @@
 
             <h1>List Of Wardens</br><!--<small>Keep Calm and Write.....</small></h1>-->
 	</font>      
+									
+				<div class="dropdown" style="margin-left:970px;size:25px">
+					
+					<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="size:25px;">
+						Sort By :
+						<span class="caret"></span>
+					</button>
+					
+					<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+						<li><a href="#">Hostel Name</a></li>
+						<li><a href="#">Warden Name</a></li>
+						<li><a href="#">Warden Office</a></li>
+					</ul>
+				
+				</div>   
  </div> 
   
 <div class="jumbotron" style="padding-left:30px;">
