@@ -12,18 +12,9 @@
 
 
     <footer class="footer container-fluid" role="contentinfo">
-        <br>
-
         <div class="wrapper">
-
             <div class="row" >
                 <div class="col-md-2 col-md-offset-3">
-
-
-
-
-                    <button type="button" class="btn btn-block" data-toggle="modal" data-target=".bs-example-modal-lg-1">Team</button>
-
                     <div class="modal fade bs-example-modal-lg-1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-lg">
                             <div class="modal-content">
@@ -66,62 +57,11 @@
                             </div>
                         </div>
                     </div>
-
-                    <br>
-                    <br>
-                    <button type="button" class="btn btn-block" data-toggle="modal" data-target=".bs-example-modal-lg-2">Vision</button>
-
-                    <div class="modal fade bs-example-modal-lg-2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-lg">
-                            <div class="modal-content">
-                                <center> 
-                                    <hr/>
-                                    &nbsp;GBU Online is built with the vision
-                                    of helping students and teachers to get all information about the university on a 
-                                    single platform. Now there's no need to rush over the whole  511 acre campus for any information. All you need is an internet connection
-                                    and everything is at your device's screen. Be it exam papers, information regarding any event or your hostel/mess related activities, GBU Online is Packed with everything.
-                                    <hr/>
-                                </center>
-
-                            </div>
-                        </div>
-                    </div>
-
-
                 </div>
 
+                          <div class="col-md-2">
 
-                <div class="col-md-2">
-
-                    <button type="button" class="btn btn-block" data-toggle="modal" data-target=".bs-example-modal-lg-3">Google Groups</button>
-
-                    <div class="modal fade bs-example-modal-lg-3" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-lg">
-                            <div class="modal-content ">
-                                <center>
-                                    <br>
-                                    <div class="list-group">
-                                        &nbsp;  <a href="https://groups.google.com/forum/#!forum/ict_softb" class="list-group-item">Computer Science 2011-16</a>
-                                        &nbsp;  <a href="https://groups.google.com/forum/#!forum/gbucs2012" class="list-group-item">Computer Science 2012-17</a>
-                                        &nbsp;  <a href="https://groups.google.com/forum/#!forum/gbu-cs-102-2013" class="list-group-item">Computer Science 2013-18</a>
-                                        &nbsp;  <a href="https://groups.google.com/forum/#!forum/gbuec2013" class="list-group-item">Electronics 2013-18</a>
-                                        &nbsp;  <a href="https://groups.google.com/forum/#!forum/gbu-cs-2014" class="list-group-item">Computer Science 2014-19</a>
-                                        &nbsp;  <a href="https://groups.google.com/forum/#!forum/gbu-ec-2014-19" class="list-group-item">Electronics 2014-19</a>
-                                        &nbsp;  <a href="https://groups.google.com/forum/#!forum/civil-2014-gbu" class="list-group-item">Civil 2014-19</a>
-                                        &nbsp;  <a href="https://groups.google.com/forum/#!forum/gbu-mba-2014" class="list-group-item">MBA 2014</a>       
-                                    </div>
-                                </center>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <br>
-                    <button type="button" class="btn btn-block" onclick = "location.href = 'http://math.gbuonline.in';">Maths Site</button>
-                </div>
-
-                <div class="col-md-2">
-
-                    <button type="button" class="btn btn-block" data-toggle="modal" data-target=".bs-example-modal-lg-5">Connect With Us</button>
+                  
 
                     <div class="modal fade bs-example-modal-lg-5" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-lg">
@@ -205,20 +145,53 @@
                     </div>
                     <br>
                     <br>
-                    <button type="button" class="btn btn-block" onclick="location.href='<?php echo site_url('feat/opportunities')?>'">Opportunities</button>
+                    
                 </div>
             </div>
         </div>
-        <br>
-        <br>
-
         <div class="row">
-            <div class="col-md-12 text-center">
-                <p>
-                    <b>&copy; kNight_Coders</b>
-                </p>
+            <div class="col-lg-4 panel-footer">
+                <p class=" panel-heading">Web Links</p>
+             
+                        <a href="http://math.gbuonline.in"  class="list-group-item">Applied Mathematics Website</a>
+                        <a href="https://groups.google.com/forum/#!forum/ict_softb" class="list-group-item">Computer Science 2011-16</a>
+                                        <a href="https://groups.google.com/forum/#!forum/gbucs2012" class="list-group-item">Computer Science 2012-17</a>
+                                        <a href="https://groups.google.com/forum/#!forum/gbu-cs-102-2013" class="list-group-item">Computer Science 2013-18</a>
+                                        <a href="https://groups.google.com/forum/#!forum/gbuec2013" class="list-group-item">Electronics 2013-18</a>
+                                        
+            </div>
+            <div class="col-lg-4 panel-footer">
+                <p class=" panel-heading">Groups</p>
+             
+                        <a href="http://math.gbuonline.in"  class="list-group-item">Applied Mathematics Website</a>
+                                        <a href="https://groups.google.com/forum/#!forum/gbu-cs-2014" class="list-group-item">Computer Science 2014-19</a>
+                                        <a href="https://groups.google.com/forum/#!forum/gbu-ec-2014-19" class="list-group-item">Electronics 2014-19</a>
+                                        <a href="https://groups.google.com/forum/#!forum/civil-2014-gbu" class="list-group-item">Civil 2014-19</a>
+                                        <a href="https://groups.google.com/forum/#!forum/gbu-mba-2014" class="list-group-item">MBA 2014</a>       
+            </div>
+            
+              <div class="col-lg-4 panel-footer">
+                <p class=" panel-heading">TEAM</p>
+             
+                        <button type="button" class="btn btn-block" data-toggle="modal" data-target=".bs-example-modal-lg-1">Team</button>
+                          <button type="button" class="btn btn-block" data-toggle="modal" data-target=".bs-example-modal-lg-5">Connect With Us</button>
+                          <button type="button" class="btn btn-block" onclick="location.href='<?php echo site_url('feat/opportunities')?>'">Work with US</button> 
+             
+                          <div class="clearfix ">
+                              <div class="push">~</div>
+                    <p class="footer">
+                          <span>
+                  <img style="height:1.7em " src="resources/images/knlogo.jpg" alt=""/>
+                  </span>
+                
+                        <b>&copy; 2015 Knight.Coders</b><br/>
+                        <br/>
+                        Powered By <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
+                
 
             </div>
+              </div>
+        </div>
 
         </div>
 

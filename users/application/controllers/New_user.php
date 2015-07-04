@@ -2,7 +2,13 @@
 
 class New_user extends CI_Controller {
 
-
+   #Later this code may be removed
+#function temp()
+#{
+#
+#    $hash = $this->bcrypt->hash_password("admin");
+#    echo $hash;
+#}
     function index() 
     {
         if ($this->session->userdata('loggedin') != 1) 
