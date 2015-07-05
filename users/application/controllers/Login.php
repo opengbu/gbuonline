@@ -9,7 +9,6 @@ class Login extends CI_Controller
         public $status;
         public $user_id;
         public $type=0;
-        public $url;
       
         function index()
 	{
@@ -32,13 +31,9 @@ class Login extends CI_Controller
 		else
 		{
 
-                    if($this->session->userdata("redirect_back") == 1)//anyone wants to get back            
+                    if(isset($_REQUEST['redirect']) && $_REQUEST['redirect']!="")//anyone wants to get back            
                     {
-                        $this->url = $this->session->userdata("redirect_back_url");
-                        $this->session->unset_userdata("redirect_back_url");
-                        $this->session->unset_userdata("redirect_back");
-                        $str = "Location: ".$this->url;
-                        header($str);
+                            redirect($_REQUEST['redirect']);
                     }
                     else 
                     {

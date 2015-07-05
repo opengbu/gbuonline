@@ -118,7 +118,6 @@
     </head>
     <body>
         <div id="fullscreen_bg" class="fullscreen_bg"/>
-<?php // echo  validation_errors();  ?>
         <div class="container">
             <br />
 
@@ -130,11 +129,16 @@
 
                 <br /><br />
                 <?php
-                $ctype = $this->session->userdata('ctype');
-                echo form_open("login/index/$ctype");
+                if(isset($_REQUEST['redirect']) && $_REQUEST['redirect']!="")
+                {
+                    echo form_open("login?redirect=" . $_REQUEST['redirect'] );
+                }
+                else
+                {
+                    echo form_open("login/index/");
+                }
                 ?>
                 <input type="text" name="username" class="form-control" placeholder="username" required autofocus>        
-                <input type="hidden" value="<?php echo $ctype ?>" />        
                 <input type="password" name="password" value="" class="form-control" placeholder="password" required />
 
                 <?php
