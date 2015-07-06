@@ -49,11 +49,14 @@
                                             </div>
                                             <hr>
                                             <div class="row">
-                                                <div class="col-sm-6">
+                                                <div class="col-sm-4">
                                                     <img src="<?php echo base_url('resources/images/sarthak.jpg') ?>" height ="120" width="120"><br><b>SARTHAK GARG</b> (Front End Designer)<br>
                                                 </div>
-                                                <div class="col-sm-6">
+                                                <div class="col-sm-4">
                                                     <img src="<?php echo base_url('resources/images/rajat.jpg') ?>" height ="120" width="120"><br><b>RAJAT SAXENA</b> (Front End Designer)<br>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <img src="<?php echo base_url('resources/images/shrey.jpg') ?>" height ="120" width="120"><br><b>SHREY KAPOOR</b> (Site Ambassador/Marketting Head)<br>
                                                 </div>
                                             </div>
 
