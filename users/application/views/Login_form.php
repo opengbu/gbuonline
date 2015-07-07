@@ -128,9 +128,12 @@
                 <div class="form-signin">
 
                     <center>
-                        <img width="50%" src ="<?php echo dirname( base_url() ) . '/resources/images/' . 'favicon.ico' ?>" >
+                        <img width="70%" src ="<?php echo dirname(base_url()) . '/resources/images/' . '200x200.bmp' ?>" >
                     </center>
                     <br>
+                    <?php
+                    echo '<label>' . validation_errors() . '</label>';
+                    ?>
                     <?php
                     if (isset($_REQUEST['redirect']) && $_REQUEST['redirect'] != "") {
                         echo form_open("login?redirect=" . $_REQUEST['redirect']);
@@ -141,9 +144,7 @@
                     <input type="text" name="username" class="form-control" placeholder="username" required autofocus>        
                     <input type="password" name="password" value="" class="form-control" placeholder="password" required />
 
-<?php
-echo '<label>' . validation_errors() . '</label>';
-?>
+
                     <div><input type="submit" value="Login" class="btn btn-lg btn-primary btn-block"/></div>
 
                     </form>
