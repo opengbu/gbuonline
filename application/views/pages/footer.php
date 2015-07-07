@@ -29,7 +29,7 @@
                             <div class="modal-content">
                                 <center> 
                                     <hr>
-                                    We are a group of 5 students working under guidance of <br><b>Dr. Amit K. Awasthi.</b> <hr>
+                                    We are a group of 6 students working under guidance of <br><b>Dr. Amit K. Awasthi.</b> <hr>
                                 </center>
                                 <center>     
                                     <ul>
