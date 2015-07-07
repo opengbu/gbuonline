@@ -57,7 +57,7 @@
 
 		<li class="dropdown">
           <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><font size="2">
-              <span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp;Hostel Management</font><span class="caret"></span></a>
+              <span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp;Hostel</font><span class="caret"></span></a>
    		  <ul class="dropdown-menu" role="menu">
              <li><a href="<?php echo site_url('hostels/home')?>">Home</a></li>
              <li><a href="<?php echo site_url('hostels/info')?>">Hostel Details</a></li>
@@ -67,7 +67,10 @@
           </ul>
         </li>
 		
-		
+		<li>
+            <a href="<?php echo site_url('Blogs/recent_blogs')?>"><font size="2"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp;Blogs</font></a>
+          
+        </li>
 		
 		
 		
@@ -75,14 +78,15 @@
             <a href="<?php echo site_url('feat/vnb')?>"><font size="2"><span class="glyphicon glyphicon-bookmark " aria-hidden="true"></span>&nbsp;Notice Board</font></a>
           
         </li> 
+        <!--
         <li>
             <a href="<?php echo site_url('feat/exams')?>"><font size="2"><span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span>&nbsp;Exams</font></a>
-        </li>
+        </li>-->
         <li>
             <a href="<?php echo site_url('feat/events')?>"><font size="2"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span>&nbsp;Events</font></a>
           
         </li>
-        
+        <!--
             
           <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><font size="2">
@@ -95,7 +99,8 @@
             <li><a href="<?php echo base_url('resources/placements/p2011.pdf')?>">Placement 2011</a></li>
             <li><a href="<?php echo base_url('resources/placements/p2010.pdf')?>">Placement 2010</a></li>
           </ul>
-        </li>
+        </li>-->
+        <!--
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><font size="2">
               <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>&nbsp;Downloads</font><span class="caret"></span></a>
@@ -115,7 +120,7 @@
             <li><a href="#">Ultra-surf</a></li>
           
           </ul>
-        </li>
+        </li>-->
         <li>
             <a href="<?php echo base_url('users')?>"><font size="2"><span class="glyphicon glyphicon-user " aria-hidden="true"></span>&nbsp;Login</font></a>
           
