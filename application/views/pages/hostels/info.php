@@ -1,9 +1,4 @@
- <div class="page-header" style = "background-color: darkred; padding-top: 10px; padding-left: 50px; margin-top: 15px;">
-    <font color="white"  face="Monotype Corsiva">
-
-            <h1>Hostel Detail</br><!--<small>Keep Calm and Write.....</small></h1>-->
-	</font>      
- </div> 
+  
   <div id="img" style="overflow:hidden;">
 	<img id="bg" src="<?php echo base_url('resources/h_images/back3.jpg')?>" style="height:100%;width:100%;" alt="blurred_vission" />
 		

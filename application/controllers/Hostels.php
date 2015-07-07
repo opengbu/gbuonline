@@ -14,7 +14,7 @@ class Hostels extends CI_Controller {
 	public function info()
 	{
 		$data['title'] = 'Hostels &nbsp;|&nbsp;  GBU Online';
-		$data['heading'] = ' Hostel Info ';
+		$data['heading'] = ' Hostel Detail ';
 		$data['message'] = '';
 		$this->load->view('pages/link',$data);
 		$this->load->view('pages/header');
@@ -26,11 +26,11 @@ class Hostels extends CI_Controller {
 	public function notice()
 	{
 		$data['title'] = 'Hostels &nbsp;|&nbsp;  GBU Online';
-		$data['heading'] = ' Hostel Notice Board ';
-		$data['message'] = '';
+		//$data['heading'] = ' Hostel Notice Board ';
+		//$data['message'] = '';
 		$this->load->view('pages/link',$data);
 		$this->load->view('pages/header');
-		$this->load->view('pages/page-heading',$data);
+		//$this->load->view('pages/page-heading',$data);
 		$this->load->view('pages/hostels/notice');
 		$this->load->view('pages/footer');
 	}
@@ -38,11 +38,11 @@ class Hostels extends CI_Controller {
 	public function wardens()
 	{
 		$data['title'] = 'Hostels &nbsp;|&nbsp;  GBU Online';
-		$data['heading'] = ' List of Wardens ';
-		$data['message'] = '';
+		//$data['heading'] = ' List of Wardens ';
+		//$data['message'] = '';
 		$this->load->view('pages/link',$data);
 		$this->load->view('pages/header');
-		$this->load->view('pages/page-heading',$data);
+		//$this->load->view('pages/page-heading',$data);
 		$this->load->view('pages/hostels/wardens');
 		$this->load->view('pages/footer');
 	}

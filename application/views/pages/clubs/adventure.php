@@ -1,12 +1,7 @@
    
-   <div class="page-header" style = "background-color: darkred; padding-top: 10px; padding-left: 50px; margin-top: 15px;">
-            <font color="white"  face="Monotype Corsiva">
-
-            <h1> Adventure Club </br><small></small></h1>
-</font>      
-  </div>             
+                
  
-<div class="container-fluid" style=" margin-right: 25px; margin-left: 25px;" >
+<div class="container-fluid" style=" margin-right: 10px; margin-left: 10px;" >
      <div class="row">
     
 	<div class="col-md-9" style="padding-right:30px; border-right: 2px solid #ccc;">        

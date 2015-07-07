@@ -1,4 +1,4 @@
-
+<div class="row">
 <div class="page-header" style = "background-color: darkred; padding-top: 10px; padding-left: 50px; margin-top: 15px;">
     <font color="white"  face="Monotype Corsiva">
 
@@ -20,7 +20,7 @@
 				
 				</div>   
  </div> 
-  
+</div>
 <div class="jumbotron" style="padding-left:30px;">
            <!-- <h2><font face="Impact">List Of Respective Wardens</font></h2><br/>-->
             <div class="row"><font face="Georgia Bold">

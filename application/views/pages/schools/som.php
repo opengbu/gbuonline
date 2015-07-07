@@ -1,13 +1,8 @@
 
   
-     <div class="page-header" style = "background-color: darkred; padding-top: 10px; padding-left: 50px; margin-top: 15px;">
-            <font color="white"  face="Monotype Corsiva">
-
-            <h1> School of Management</br><small>Where ideas are moulded into businesses!!!</small></h1>
-</font>
-     </div>
+     
                
- <div class="container-fluid" style=" margin-right: 25px; margin-left: 25px;" >          
+ <div class="container-fluid" style=" margin-right: 10px; margin-left: 10px;" >          
     
    <div class="row">
     
