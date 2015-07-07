@@ -5,9 +5,12 @@ class Blogs extends CI_Controller {
 
 	public function recent_blogs()
 	{
-        	$data['title'] = 'Blog Space &nbsp;|&nbsp;  GBU Online';
-        	$this->load->view('pages/link',$data);
+        $data['title'] = 'Blog Space &nbsp;|&nbsp;  GBU Online';
+		$data['heading'] = ' Blog Space ';
+		$data['message'] = 'Keep Calm and Write.....';
+        $this->load->view('pages/link',$data);
 		$this->load->view('pages/header');
+		$this->load->view('pages/page-heading',$data);
 		$this->load->view('pages/blogs/recent_blogs');
 		$this->load->view('pages/extras');
 		$this->load->view('pages/footer');
@@ -15,17 +18,23 @@ class Blogs extends CI_Controller {
 	public function write_blogs()
 	{
 		$data['title'] = 'Blog Space &nbsp;|&nbsp;  GBU Online';
+		$data['heading'] = ' Blog Space ';
+		$data['message'] = 'Keep Calm and Write.....';
 		$this->load->view('pages/link',$data);
 		$this->load->view('pages/header');
-	    	$this->load->view('pages/blogs/write_blogs');
+		$this->load->view('pages/page-heading',$data);
+	    $this->load->view('pages/blogs/write_blogs');
 		$this->load->view('pages/extras');
 		$this->load->view('pages/footer');
 	}
 	public function best_blogs()
 	{
-        	$data['title'] = 'Blog Space &nbsp;|&nbsp;  GBU Online';
-        	$this->load->view('pages/link',$data);
+        $data['title'] = 'Blog Space &nbsp;|&nbsp;  GBU Online';
+		$data['heading'] = ' Blog Space ';
+		$data['message'] = 'Keep Calm and Write.....';
+        $this->load->view('pages/link',$data);
 		$this->load->view('pages/header');
+		$this->load->view('pages/page-heading',$data);
 		$this->load->view('pages/blogs/best_blogs');
 		$this->load->view('pages/extras');
 		$this->load->view('pages/footer');
