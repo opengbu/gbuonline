@@ -50,10 +50,11 @@
        
           </ul>
         </li>
+        <!--
         <li>
             <a href="<?php echo base_url('resources/images/ac-15-16.jpg')?>"><font size="2"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>&nbsp;Academic Calendar</font></a>
           
-        </li>
+        </li>-->
 
 		<li class="dropdown">
           <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><font size="2">
