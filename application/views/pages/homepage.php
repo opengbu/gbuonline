@@ -4,7 +4,7 @@ require 'header.php';
 ?>
 
 <div class="row"><!--row2 for title-->
-   <div class="page-header">
+   <br>
    <center>
       <h1><font size="7" face="AR DESTINE">Gautam Buddha University<br></font>
       <small><font color="black" face="Estrangelo Edessa" size="6" >
@@ -12,7 +12,7 @@ require 'header.php';
       </font></small>
       </h1>
    </center>
-   </div>
+   <br>
    </div><!--row2 for title-->
 <?php
 require 'slider.php';
