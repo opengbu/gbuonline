@@ -1,5 +1,5 @@
-<div class="row">
-     <div class="container">
+<div class="row"><!--row3 for slider-->
+     
 <div class="slider">
      <img src="<?php echo base_url('resources/images/image1.jpg')?>" height="500"/>
      <img src="<?php echo base_url('resources/images/image2.jpg')?>" height="500"/>
@@ -15,7 +15,7 @@
      <!--<img src="<?php echo base_url('resources/images/image12.jpg')?>" height="500"/>-->
      <!--<img src="<?php echo base_url('resources/images/image13.jpg')?>" height="500"/>
      <img src="<?php echo base_url('resources/images/image14.jpg')?>" height="500"/>-->                                  
- </div> 
+ 
  </div>
-</div>
+</div><!--row3 for slider-->
  

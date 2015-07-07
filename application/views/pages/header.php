@@ -1,4 +1,4 @@
-<div class = "row">
+<div class = "row"><!--row1 for header-->
     
    
 <nav class="navbar navbar-inverse navbar navbar-fixed-top" >
@@ -129,6 +129,6 @@
           </ul>
      </div>
     </nav>
-    </div>
+    </div><!--row1 for header-->
 
 
