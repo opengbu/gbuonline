@@ -16,18 +16,43 @@
 			
         <a name="go3" style="text-decoration:none;">
 			<div class="jumbotron">
-				<h2>NOTICES</h2>
-					<!--<ul class="nav nav-pills" role="tablist"><br/>
-						<li accesskey="" role=" presentation" class="active">
-							<a href="<?php echo site_url('hostels/notice')?>">
-								Hostel Notices<span class="badge">24</span>
+				<h2>Hostel Updates</h2><br>
+
+				<ul class="list-group">
+					<p>
+						<li  class="list-group-item"class="dropdown" style="list-style-type:none;text-decoration:none;">
+							<a href="<?php echo site_url('hostels/notice')?>"style="text-decoration:none;"><font size="4">&nbsp;Hostel Notice</font></a>	
+						</li>
+						
+					</p>
+				</ul>
+				<ul class="list-group">
+					<p>				
+						<li class="list-group-item" class="dropdown" style="list-style-type:none;">
+					
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="text-decoration:none;"><font size="4">
+								&nbsp; Hostel Allocation List</font><span class="caret"></span>
 							</a>
-							<br/>
-						</li>                    
-					</ul>-->
-					<a href="<?php echo site_url('hostels/notice')?>">
-						<input type="submit" class="btn btn-default" value="Hostel Notice" style="background-color:0033CC;color:white;border-radius:5px;width:180px;"/><span class="badge">24</span>
-					</a>
+						
+							<ul class="dropdown-menu" role="menu">
+							
+								<li><a href="<?php echo base_url('resources/hostel_allocation/p2014.pdf')?>">List-1 (Boys)</a></li>
+								<li><a href="<?php echo base_url('resources/hostel_allocation/p2013.pdf')?>">List-2 (Girls)</a></li>
+							
+							</ul>
+						</li>
+					</p>
+				</ul>	
+
+				<ul class="list-group">
+					<p>
+						<li  class="list-group-item"class="dropdown" style="list-style-type:none;text-decoration:none;">
+							<a href="<?php echo base_url('resources/hostel_allocation/mess.jpg')?>"style="text-decoration:none;">
+                                <font size="4">&nbsp;Mess Menu</font></a>	
+						</li>
+						
+					</p>
+				</ul>
             </div>
         </a>
         

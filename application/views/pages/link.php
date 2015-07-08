@@ -24,6 +24,35 @@
                             $('b', this).toggleClass("caret caret-up");
                         });
             });
+            
+            
+            
+             $(document).ready(function() {     //When checkboxes/radios checked/unchecked, toggle background color     
+                $('.form-group').on('click','input[type=radio]',function() {    
+                    $(this).closest('.form-group').find('.radio-inline, .radio').removeClass('checked'); 
+                    $(this).closest('.radio-inline, .radio').addClass('checked');  
+                });   
+                 $('.form-group').on('click','input[type=checkbox]',function() {    
+                     $(this).closest('.checkbox-inline, .checkbox').toggleClass('checked');   
+                 }); 
+                 //Show additional info text box when relevant checkbox checked     
+                 
+                $('.additional-info-wrap input[type=checkbox]').click(function() {     
+                    if($(this).is(':checked')) {       
+                        $(this).closest('.additional-info-wrap').find('.additional-info').removeClass('hide').find('input,select').removeAttr('disabled');      
+                    }     
+                    else {  
+                        $(this).closest('.additional-info-wrap').find('.additional-info').addClass('hide').find('input,select').val('').attr('disabled','disabled');      
+                    }     });    
+                //Show additional info text box when relevant radio checked    
+                $('input[type=radio]').click(function() { 
+                    $(this).closest('.form-group').find('.additional-info-wrap .additional-info').addClass('hide').find('input,select').val('').attr('disabled','disabled');      
+                    if($(this).closest('.additional-info-wrap').length > 0) {    
+                        $(this).closest('.additional-info-wrap').find('.additional-info').removeClass('hide').find('input,select').removeAttr('disabled');    
+                    }            
+                }); });
+
+            
         </script>
         <style>
             .caret-up {
@@ -51,10 +80,12 @@
             }
 
 
+            
+            label.radio-inline, label.checkbox-inline {   background-color: #dcdfd4;   cursor: pointer;   font-weight: 400;   margin-bottom: 10px !important;   margin-right: 2%;   margin-left:0;   padding: 10px 10px 10px 30px; } label.radio-inline.checked, label.checkbox-inline.checked {   background-color: #266c8e;   color: #fff !important;   text-shadow: 1px 1px 2px #000 !important; } .checkbox-inline + .checkbox-inline, .radio-inline + .radio-inline {   margin-left: 0; } .columns label.radio-inline, .columns label.checkbox-inline {   min-width: 190px;   vertical-align: top;   width: 30%; } .additional-info-wrap {   display: inline-block;   margin: 0 2% 0 0;   min-width: 190px;   position: relative;   vertical-align: top;   width: 30%; } .additional-info-wrap label.checkbox-inline, .additional-info-wrap label.radio-inline {   width: 100% !important; } .additional-info-wrap .additional-info {   background-color: #266c8e;   clear: both;   color: #fff !important;   margin-top: -10px;   padding: 0 10px 10px;   text-shadow: 1px 1px 2px #000 !important;   width: 100%; } - See more at: http://www.avtex.com/blog/2015/02/10/bootstrap-radio-buttons-and-checkboxes-in-columns-with-contextual-text-fields/#sthash.EKbNQgqB.dpuf
         </style>
 
     </head>
-    <body background="<?php echo base_url('resources/images/home_original.jpg') ?>" style="background-attachment: fixed; background-repeat: repeat;">
+    <body background="<?php echo base_url('resources/images/home1.jpg') ?>" style="background-attachment: fixed; background-repeat: repeat;">
         <div class="container-fluid">
 
 
