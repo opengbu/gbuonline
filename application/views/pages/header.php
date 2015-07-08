@@ -64,7 +64,20 @@
              <li><a href="<?php echo site_url('hostels/info')?>">Hostel Details</a></li>
              <li><a href="<?php echo site_url('hostels/notice')?>">Hostel Notices</a></li>
              <li><a href="<?php echo site_url('hostels/wardens')?>">Wardens List</a></li>
-			<!-- <li><a href="<?php echo site_url('hostels/specific')?>">specific</a></li>-->
+			 
+              <li role="separator" class="divider"></li>
+			 
+			  <li><a href="<?php echo site_url('hostels/specific#go3')?>">Hostel Allotment List</a></li>
+			  
+              <li role="separator" class="divider"></li>
+			 <li>
+			 <a href="<?php echo site_url('hostels/rc')?>"style="text-decoration:none;">Room Change Request</a>	
+			 </li>
+			 
+			 <li role="separator" class="divider"></li>
+			 <li>
+			 <a href="<?php echo base_url('resources/hostel_allocation/mess.jpg')?>"style="text-decoration:none;">Mess Menu</a>	
+			 </li>
           </ul>
         </li>
 		

@@ -76,4 +76,12 @@ class Hostels extends CI_Controller {
 		$this->load->view('pages/hostels/specific');
 		$this->load->view('pages/footer');
 	}   
+    	public function rc()
+	{
+		$data['title'] = 'Hostels &nbsp;|&nbsp;  GBU Online';
+		$this->load->view('pages/link',$data);
+		$this->load->view('pages/header');
+		$this->load->view('pages/hostels/rc');
+		$this->load->view('pages/footer');
+	}
 }
