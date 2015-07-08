@@ -15,11 +15,12 @@
 				<h3 class="panel-title">About</h3>
 			</div>
 			<div class="panel-body">
-				jannas ajfnanja a jfnjanfja a f d agd hjansjdnkam agssdvhandm
-				<br>
-				jannas ajfnanja a jfnjanfja a f d agd hjansjdnkam agssdvhandm
-				<br>
-				jannas ajfnanja a jfnjanfja a f d agd hjansjdnkam agssdvhandm
+				The University has started its ambitious multidisciplinary academic
+programmes with the establishment of its School of Law, Justice &
+Governance. The School has been established for the advancement of
+learning, teaching, research and diffusion of knowledge in the fields of
+law, justice and governance.
+
 			</div>
 		</div>
  
@@ -29,11 +30,11 @@
 				<h3 class="panel-title">Courses</h3>
 			</div>
 			<div class="panel-body">
-				jannas ajfnanja a jfnjanfja a f d agd hjansjdnkam agssdvhandm
-				<br>
-				jannas ajfnanja a jfnjanfja a f d agd hjansjdnkam agssdvhandm
-				<br>
-				jannas ajfnanja a jfnjanfja a f d agd hjansjdnkam agssdvhandm
+				<ul>
+					<li>Integrated Dual Degree</li>
+					<li>Post Graduate</li>
+					<li>Doctrate</li>
+				</ul>
 				</div>
 		</div>
  
@@ -43,11 +44,17 @@
 				<h3 class="panel-title">Faculty</h3>
 			</div>
 			<div class="panel-body">
-				jannas ajfnanja a jfnjanfja a f d agd hjansjdnkam agssdvhandm
-				<br>
-				jannas ajfnanja a jfnjanfja a f d agd hjansjdnkam agssdvhandm
-				<br>
-				jannas ajfnanja a jfnjanfja a f d agd hjansjdnkam agssdvhandm
+				<dl>
+            <dt>Dr. Ela Kumar
+                <dd>Dean(I/C), School of ICT, Gautam Buddha University </dd>
+            </dt><br>
+            <dt>Dr. Om Prakash Sangwan
+                <dd>School of ICT, Gautam Buddha University </dd>
+            </dt><br>
+            <dt>Dr. Anurag Singh Bhagel
+                <dd>School of ICT, Gautam Buddha University </dd>
+            </dt>
+        </dl>
 			</div>
 		</div>
  
@@ -57,11 +64,48 @@
 				<h3 class="panel-title">Events</h3>
 			</div>
 			<div class="panel-body">
-				jannas ajfnanja a jfnjanfja a f d agd hjansjdnkam agssdvhandm
-				<br>
-				jannas ajfnanja a jfnjanfja a f d agd hjansjdnkam agssdvhandm
-				<br>
-				jannas ajfnanja a jfnjanfja a f d agd hjansjdnkam agssdvhandm
+				<div class="col-md-4" >
+    <div class="thumbnail">
+      <img src="<?php echo base_url('resources/images/poster.png')?>" alt="code-in-gbu" style="height:200px">
+      <div class="caption">
+        <h3><center><b>Code-In-GBU</b></center></h3>
+        <h5><b>Date:</b> 28 - 01 - 2015</h5>
+        <h5><b>Time:</b> 18:30 - 20:00</h5>
+        <h5><b>Venue:</b> SOICT</h5>
+        <p></p>
+        <!--<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>-->
+    </div>
+  </div>
+ </div>
+ 
+ <div class="col-md-4" >
+    <div class="thumbnail">
+      <img src="<?php echo base_url('resources/images/ic.jpg')?>" alt="code-in-gbu" style="height:200px">
+      <div class="caption">
+        <h3><center><b>Imagine Cup</b></center></h3>
+        <h5><b>Date:</b> 28 - 01 - 2015</h5>
+        <h5><b>Time:</b> 18:30 - 20:00</h5>
+        <h5><b>Venue:</b> SOICT</h5>
+        <p></p>
+        <!--<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>-->
+    </div>
+  </div>
+ </div>
+ 
+ <div class="col-md-4" >
+    <div class="thumbnail">
+      <img src="<?php echo base_url('resources/images/b1.png')?>" alt="code-in-gbu" style="height:200px">
+      <div class="caption">
+        <h3><center><b>IT Summit 2014</b></center></h3>
+        <h5><b>Date:</b> 28 - 01 - 2015</h5>
+        <h5><b>Time:</b> 18:30 - 20:00</h5>
+        <h5><b>Venue:</b> SOICT</h5>
+        <p></p>
+        <!--<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>-->
+    </div>
+  </div>
+ </div>
+ 
 			</div>
 		</div>
  
@@ -71,11 +115,7 @@
 				<h3 class="panel-title">Placements</h3>
 			</div>
 			<div class="panel-body">
-				jannas ajfnanja a jfnjanfja a f d agd hjansjdnkam agssdvhandm
-				<br>
-				jannas ajfnanja a jfnjanfja a f d agd hjansjdnkam agssdvhandm
-				<br>
-				jannas ajfnanja a jfnjanfja a f d agd hjansjdnkam agssdvhandm
+				► &nbsp; Placement Session will begin from 3rd December and will continue till 28th June.
 			</div>
 		</div>
  

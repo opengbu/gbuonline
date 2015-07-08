@@ -11,7 +11,7 @@
 			<div class="panel-body">
 <div class="col-md-4" >
     <div class="thumbnail">
-      <img src="/GOP2/images/poster.png" alt="code-in-gbu">
+      <img src="<?php echo base_url('resources/images/poster.png')?>" alt="code-in-gbu">
       <div class="caption">
         <h3><center><b>Code-In-GBU</b></center></h3>
         <h5><b>Date:</b> 28 - 01 - 2015</h5>
@@ -25,7 +25,7 @@
 
 <div class="col-md-4" >
     <div class="thumbnail">
-      <img src="/GOP2/images/poster.png" alt="code-in-gbu">
+      <img src="<?php echo base_url('resources/images/poster.png')?>" alt="code-in-gbu">
       <div class="caption">
         <h3><center><b>Code-In-GBU</b></center></h3>
         <h5><b>Date:</b> 28 - 01 - 2015</h5>
@@ -40,7 +40,7 @@
 
  <div class="col-md-4" >
     <div class="thumbnail">
-      <img src="/GOP2/images/poster.png" alt="code-in-gbu">
+      <img src="<?php echo base_url('resources/images/poster.png')?>" alt="code-in-gbu">
       <div class="caption">
         <h3><center><b>Code-In-GBU</b></center></h3>
         <h5><b>Date:</b> 28 - 01 - 2015</h5>
@@ -62,7 +62,7 @@
 			<div class="panel-body">
 <div class="col-md-4" >
     <div class="thumbnail">
-      <img src="/GOP2/images/ic.jpg" alt="code-in-gbu">
+      <img src="<?php echo base_url('resources/images/ic.jpg')?>" alt="code-in-gbu">
       <div class="caption">
         <h3><center><b>Imagine Cup</b></center></h3>
         <h5><b>Date:</b> 28 - 01 - 2015</h5>
@@ -76,7 +76,7 @@
 
                             <div class="col-md-4" >
     <div class="thumbnail">
-      <img src="/GOP2/images/ic.jpg" alt="code-in-gbu">
+      <img src="<?php echo base_url('resources/images/ic.jpg')?>" alt="code-in-gbu">
       <div class="caption">
         <h3><center><b>Imagine Cup</b></center></h3>
         <h5><b>Date:</b> 28 - 01 - 2015</h5>
@@ -90,7 +90,7 @@
 
                             <div class="col-md-4" >
     <div class="thumbnail">
-      <img src="/GOP2/images/ic.jpg" alt="code-in-gbu">
+      <img src="<?php echo base_url('resources/images/ic.jpg')?>" alt="code-in-gbu">
       <div class="caption">
         <h3><center><b>Imagine Cup</b></center></h3>
         <h5><b>Date:</b> 28 - 01 - 2015</h5>
