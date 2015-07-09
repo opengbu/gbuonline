@@ -18,7 +18,7 @@ class Hostels extends CI_Controller {
              * Looks like this code is used to go to a login page and then to specific
              * I will redirect it directly to specific where it will send to /user/login if not logged in
              * this is not to get user logged in (which is now added in specific)
-             * but also to user direcly going to specific by knowing controller name
+             * but also to prevent user direcly going to specific by knowing controller name
              */
             redirect ('hostels/specific');
              /* 
