@@ -1,7 +1,9 @@
 <?php
 /*
- * By calling this php file users can be made to log in on this site
- * After making the users login, it stores their details in session
+ *  Created on :Jul 10, 2015, 12:18:54 PM
+ *  Author     :Varun Garg <varun.10@live.com>
+ *  By calling this php file users can be made to log in on this site
+ *  After making the users login, it stores their details in session
  */
 class Login extends CI_Controller 
 {

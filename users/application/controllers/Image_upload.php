@@ -1,7 +1,7 @@
 <?php
 /*
- * This was not orignally written by me. All credit goes to http://www.formget.com/codeigniter-upload-image/
- * It looked it would work as it is, so I copied it, and modified it a bit.
+ *  Created on :Jul 10, 2015, 12:18:54 PM
+ *  Author     :Varun Garg <varun.10@live.com>
  */
 class Image_upload extends CI_Controller {
 

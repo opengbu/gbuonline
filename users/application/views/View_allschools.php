@@ -1,3 +1,9 @@
+<?php
+/*
+ *  Created on :Jul 10, 2015, 12:18:54 PM
+ *  Author     :Varun Garg <varun.10@live.com>
+ */
+?>
 <script>
     function del_ask(str)
     {
@@ -17,24 +23,24 @@
         <li class="list-group-item">
             <div class="row">
                 <div class="col-sm-5">
-    <?php
-    echo $row->sc_full_name;
-    ?>
+                    <?php
+                    echo $row->sc_full_name;
+                    ?>
                 </div>
                 <div class="col-sm-2">
-    <?php
-    echo $row->sc_name;
-    ?>
+                    <?php
+                    echo $row->sc_name;
+                    ?>
 
                 </div>
                 <div class="col-sm-2">
 
-    <?php
-    if ($current_user_type == "admin")
-        echo '<a class="btn btn-xs btn-default " href="' . base_url() . "index.php/Edit_table/index/$row->sc_name" . '"><i class="fa fa-pencil fa-fw"></i>Edit</a>';
-    else
-        echo "<font color='gray'>You cant edit this</font>";
-    ?>
+                    <?php
+                    if ($current_user_type == "admin")
+                        echo '<a class="btn btn-xs btn-default " href="' . base_url() . "index.php/Edit_table/index/$row->sc_name" . '"><i class="fa fa-pencil fa-fw"></i>Edit</a>';
+                    else
+                        echo "<font color='gray'>You cant edit this</font>";
+                    ?>
 
                 </div>
                 <div class="col-sm-3">

@@ -1,4 +1,8 @@
 <?php
+/*
+ *  Created on :Jul 10, 2015, 12:18:54 PM
+ *  Author     :Varun Garg <varun.10@live.com>
+ */
 date_default_timezone_set("Asia/Kolkata");
 ?>
 <link type="text/css" rel="stylesheet" href="<?= base_url() . 'application/views/common/' . 'input/jquery-te-1.4.0.css' ?>">

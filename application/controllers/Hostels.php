@@ -66,7 +66,6 @@ class Hostels extends CI_Controller {
                  * I am redirecting it to login page if not logged in
                  * It will come back to this page on authentication
                  */
-                $this->load->library('session');
                 if($this->session->userdata('loggedin') != 1) //student/user/admin logged in
                     redirect ('users?redirect='.current_url());
             

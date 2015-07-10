@@ -135,9 +135,41 @@
           
           </ul>
         </li>-->
+      </ul>
+        <ul class="nav navbar-nav  pull-right">
         <li>
-            <a href="<?php echo base_url('users')?>"><font size="2"><span class="glyphicon glyphicon-user " aria-hidden="true"></span>&nbsp;Login</font></a>
-          
+            <?php 
+             if($this->session->userdata('loggedin') != 1)
+             {
+            ?>
+                 <a href="<?php echo base_url('users')?>"><font size="2"><span class="glyphicon glyphicon-user " aria-hidden="true"></span>&nbsp;Login</font></a>
+            <?php
+             }
+             else
+             {
+                 ?>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="icon-th-large"></i> Welcome <?= $this->session->userdata('full_name') ?>!
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li> 
+                                    <a href="<?= base_url() . 'users/edit_user/index/' . $this->session->userdata('user_id') ?>">Manage Profile</a>
+                                </li>
+                                <li><a href="<?= base_url() . 'users/new_event' ?>">New Event</a></li>
+                                <?php if ($this->session->userdata('type') == 'admin') { ?>
+                                    <li><a href="<?= base_url() . 'users/new_user' ?>">New User</a></li>
+                                    <li><a href="<?= base_url() . 'users/new_school' ?>">New School</a></li>
+                                <?php } ?>
+                                <li>
+                                    <a href="<?= base_url() . 'users/logout?redirect=' ?>">Log out</a>
+                                </li>
+                            </ul>
+                        </li>
+                 <?php
+             }
+             ?>
         </li> 
           </ul>
      </div>

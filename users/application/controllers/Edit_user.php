@@ -1,5 +1,8 @@
 <?php
-
+/*
+ *  Created on :Jul 10, 2015, 12:18:54 PM
+ *  Author     :Varun Garg <varun.10@live.com>
+ */
 class Edit_user extends CI_Controller {
 
     function index($userid = '-1') {
