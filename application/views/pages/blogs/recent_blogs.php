@@ -55,32 +55,4 @@
 		</div>
 
 
- <!--Modal-->
- <div class="modal fade blogs" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-sm">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Login to GBU Online</h4>
-      </div>
-      <div class="modal-body">
-        <div class="input-group">
-			<span class="input-group-addon" id="basic-addon1">Enter</span>
-				<input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
-		</div>
-		<br>
-		<div class="input-group">		
-		<span class="input-group-addon" id="basic-addon1">Enter</span>
-			<input type="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
-		</div>
-		
-      </div>
-      <div class="modal-footer">
-	  <center>
-        <button type="button" class="btn btn-success">Proceed</button>
-        </center>
-      </div>
-    </div>
-  </div>
-</div>
-              
+ 
