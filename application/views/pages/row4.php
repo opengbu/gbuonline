@@ -201,7 +201,7 @@
     <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
       <div class="panel-body">
           A collection of books available online for free.<br>
-          <a href="#">Enter here</a>
+          <a href="<?php echo site_url('feat/ebooks')?>">Enter here</a>
           
         
       </div>

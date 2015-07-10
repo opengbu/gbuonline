@@ -57,5 +57,18 @@ class Feat extends CI_Controller {
 		$this->load->view('pages/footer');
 	}
 	
+	public function ebooks()
+	{
+        $data['title'] = 'E-Books &nbsp;|&nbsp;  GBU Online';
+		$data['heading'] = ' E-Books ';
+		$data['message'] = '';
+		$this->load->view('pages/link',$data);
+		$this->load->view('pages/header');
+		$this->load->view('pages/page-heading',$data);
+		$this->load->view('pages/ebooks/ebooks.php');
+		$this->load->view('pages/extras');
+		$this->load->view('pages/footer');
+	}
+	
 	
 }	
