@@ -1,8 +1,6 @@
 
             
-
 <div class="container-fluid" style=" margin-right: 10px; margin-left: 10px;" >    
-   
    
  <div class="row">
     

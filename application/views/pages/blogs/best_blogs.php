@@ -1,15 +1,19 @@
 
 <!--This page is sorted according to the "Stars(Likes)" of a blog-->
    
-<div class="container-fluid" style=" margin-right: 10px; margin-left: 10px;" >
-   <div class="row">
-		<div class="col-md-9" style="padding-right:30px; border-right: 2px solid #ccc;">        
+    
 			<div class="well well-sm"> 
-				<ul class="nav nav-pills nav-justified">
-					<li role="presentation" ><a href="<?php echo site_url('blogs/write_blogs')?>">Write Blogs</a></li>
-					<li role="presentation" ><a href="<?php echo site_url('blogs/recent_blogs')?>">Recent Blogs</a></li>
-					<li role="presentation" class="active"><a href="<?php echo site_url('blogs/best_blogs')?>">Best Blogs</a></li>
-				</ul>
+				<div class="btn-group btn-group-justified" role="group" aria-label="...">
+					<div class="btn-group" role="group">
+						<button type="button" class="btn btn-default" onclick="recentBlogs()">Recent Blogs</button>
+					</div>
+					<div class="btn-group" role="group">
+						<button type="button" class="btn btn-default" onclick="writeBlogs()">Write Blogs</button>
+					</div>
+					<div class="btn-group" role="group">
+						<button type="button" class="btn btn-primary" onclick="bestBlogs()">Best Blogs</button>
+					</div>
+				</div>
 			</div>        
 			<br>
     
@@ -52,7 +56,6 @@
 			<!--Loop Ends-->
    
 
-		</div>
 
 
  
