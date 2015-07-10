@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.10
+-- version 4.4.11
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 04, 2015 at 06:13 PM
+-- Generation Time: Jul 10, 2015 at 10:36 PM
 -- Server version: 10.0.20-MariaDB-log
 -- PHP Version: 5.6.10
 
@@ -104,7 +104,7 @@ CREATE TABLE IF NOT EXISTS `events` (
 --
 
 INSERT INTO `events` (`id`, `article_name`, `user_id`, `article`, `publishing_date`, `short_desc`, `image_path`, `school`) VALUES
-(5, 'New Event', 1, 'hello world<br>', '2015-06-30', 'Short Description<br><br>', 'resources/user_uploads/ichiruki-bleach-pairings-33886487-1920-1200.png', 'sovas'),
+(5, 'New Event', 1, 'hello world<br>', '2015-06-30', 'Short Description<br><br>', 'resources/user_uploads/ichiruki-bleach-pairings-33886487-1920-1200.png', 'sovsas'),
 (6, 'Abhivyanjana 2016', 6, 'Enter detailed event description', '2015-07-01', ' Example<br /><b>Date:</b> 28 - 01 - 2015 <br><b>Time:</b> 18:30 - 20:00<br/><b>Venue:</b> SOICT', 'resources/user_uploads/1280_800.jpg', 'soict'),
 (7, 'Ecocart 2015', 6, 'Enter detailed event description', '2015-07-01', ' Example<br /><b>Date:</b> 28 - 01 - 2015 <br><b>Time:</b> 18:30 - 20:00<br/><b>Venue:</b> SOICT', 'resources/user_uploads/1280_800.jpg', 'soict');
 
@@ -174,11 +174,11 @@ CREATE TABLE IF NOT EXISTS `schools` (
 
 INSERT INTO `schools` (`id`, `sc_name`, `sc_full_name`, `about_us`, `course_structure`, `faculty`, `placements`) VALUES
 (12, 'soict', 'School Of Information and Communication  Technology', 'hmmmm', 'mmmm', 'mmm', 'mmm'),
-(13, 'sovas', 'School Of Vocational And Applied Sciences', 'oo', 'oo', 'ooooo', 'oo'),
+(13, 'sovsas', 'School Of Vocational And Applied Sciences', 'oo', 'oo', 'ooooo', 'oo'),
 (15, 'sobt', 'School of Biotechnology', '', '', '', ''),
 (16, 'soe', ' School of Engineering', '', '', '', ''),
 (17, 'som', ' School of Management', '', '', '', ''),
-(18, 'solj', ' School of Law, Justice and Governance', '', '', '', ''),
+(18, 'soljg', ' School of Law, Justice and Governance', '', '', '', ''),
 (19, 'sobsc', ' School of Buddhist Studies And Civilization ', '', '', '', ''),
 (20, 'sohss', ' School of Humanities and Social Sciences', '', '', '', '');
 
@@ -216,6 +216,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` varchar(200) NOT NULL,
   `type` varchar(40) NOT NULL,
   `email` varchar(50) NOT NULL,
+  `active` int(11) NOT NULL DEFAULT '0',
   `profile_picture` varchar(50) NOT NULL,
   `full_name` varchar(40) NOT NULL,
   `roll_number` varchar(10) NOT NULL,
@@ -226,15 +227,15 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`user_id`, `username`, `password`, `type`, `email`, `profile_picture`, `full_name`, `roll_number`, `phone_number`) VALUES
-(1, 'varun', '$2a$08$aHFY8jNP/liqnhKM7a70tOT/UhznZEjxiYhrZO3BCqfC8Qzrn435.', 'admin', 'varun.10@live.com', '', 'Varun Garg', '', ''),
-(2, 'user1', '$2a$08$s6oK1VBeGbaNGCdsGKg.sOVq9Lu4BgX1boTZOdXhA1dw8o.RVSG.C', 'user', 'anime.life@hotmail.com', '', 'User 1', '', ''),
-(3, 'sarthak', '$2a$08$IvYcXuhBaZHTeHY4VG0iiuJmyCd1xO4N4v/6e24wbOUIeNmpvBevq', 'admin', 'gargsarthak30@gmail.com', '', 'Sarthak Garg', '', ''),
-(5, 'rajat', '$2a$08$89gL0PX4Ewl0/9RbfqBuOO6Jbp.ETHXsk.rDNtzKUkDcFe3SwBKaC', 'admin', 'sunny0rajat@gmail.com', '', 'Rajat Saxena', '', ''),
-(6, 'shobhit', '$2a$08$c4/t9EJ0rkX7jur.sbhtJ.JA0hEBVC4Md5qk0AH7MBaYZb3WYKQhS', 'admin', 'shobhit95sharma@gmail.com', '', 'Shobhit Sharma', '', ''),
-(7, 'bhawesh', '$2a$08$QghHh95c4h3GLrBFYN/9xuUrjeY/7xGc88hNv0rldS9wNOQxIJX.C', 'admin', '13ics015@gbu.ac.in', '', 'Bhawesh Chandola', '', ''),
-(8, 'student1', '$2a$08$YjytProg8gi0nweS2f7cI.b8Dh2ZR4keLzSFXuFNCVAFWlQ3V1nca', 'student', 'sasa', '', 'Student 1', '', ''),
-(9, 'amit', '$2a$08$UcvspCTXRKOIiZj2FAdGn.z0Grzpd9cWsjH.m0JjQc0cRYmbjtJCu', 'admin', 'amit@gbuonline.in', '', 'Dr. Amit K awasthi', '', '');
+INSERT INTO `users` (`user_id`, `username`, `password`, `type`, `email`, `active`, `profile_picture`, `full_name`, `roll_number`, `phone_number`) VALUES
+(1, 'varun', '$2a$08$aHFY8jNP/liqnhKM7a70tOT/UhznZEjxiYhrZO3BCqfC8Qzrn435.', 'admin', 'varun.10@live.com', 1, '', 'Varun Garg', '', ''),
+(2, 'user1', '$2a$08$s6oK1VBeGbaNGCdsGKg.sOVq9Lu4BgX1boTZOdXhA1dw8o.RVSG.C', 'user', 'anime.life@hotmail.com', 1, '', 'User 1', '', ''),
+(3, 'sarthak', '$2a$08$IvYcXuhBaZHTeHY4VG0iiuJmyCd1xO4N4v/6e24wbOUIeNmpvBevq', 'admin', 'gargsarthak30@gmail.com', 1, '', 'Sarthak Garg', '', ''),
+(5, 'rajat', '$2a$08$89gL0PX4Ewl0/9RbfqBuOO6Jbp.ETHXsk.rDNtzKUkDcFe3SwBKaC', 'admin', 'sunny0rajat@gmail.com', 1, '', 'Rajat Saxena', '', ''),
+(6, 'shobhit', '$2a$08$c4/t9EJ0rkX7jur.sbhtJ.JA0hEBVC4Md5qk0AH7MBaYZb3WYKQhS', 'admin', 'shobhit95sharma@gmail.com', 1, '', 'Shobhit Sharma', '', ''),
+(7, 'bhawesh', '$2a$08$QghHh95c4h3GLrBFYN/9xuUrjeY/7xGc88hNv0rldS9wNOQxIJX.C', 'admin', '13ics015@gbu.ac.in', 1, '', 'Bhawesh Chandola', '', ''),
+(8, 'student1', '$2a$08$YjytProg8gi0nweS2f7cI.b8Dh2ZR4keLzSFXuFNCVAFWlQ3V1nca', 'student', 'sasa', 1, '', 'Student 1', '', ''),
+(9, 'amit', '$2a$08$UcvspCTXRKOIiZj2FAdGn.z0Grzpd9cWsjH.m0JjQc0cRYmbjtJCu', 'admin', 'amit@gbuonline.in', 1, '', 'Dr. Amit K awasthi', '', '');
 
 -- --------------------------------------------------------
 

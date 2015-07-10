@@ -40,8 +40,33 @@
             .navbar-custom .navbar-brand {
                 color:#eeeeee;
             }
+            .caret-up {
+                width: 0; 
+                height: 0; 
+                border-left: 4px solid rgba(0, 0, 0, 0);
+                border-right: 4px solid rgba(0, 0, 0, 0);
+                border-bottom: 4px solid;
 
+                display: inline-block;
+                margin-left: 2px;
+                vertical-align: middle;
+            }
         </style>
+        <script>
+            $(function () {
+                $(".dropdown").hover(
+                        function () {
+                            $('.dropdown-menu', this).stop(true, true).fadeIn("fast");
+                            $(this).toggleClass('open');
+                            $('b', this).toggleClass("caret caret-up");
+                        },
+                        function () {
+                            $('.dropdown-menu', this).stop(true, true).fadeOut("fast");
+                            $(this).toggleClass('open');
+                            $('b', this).toggleClass("caret caret-up");
+                        });
+            });
+        </script>
     </head>
     <body background="<?php echo base_url('application/views/common/background.jpg') ?>" style="background-attachment: fixed; background-repeat: repeat;">
         <div  id="wrapper"  class="toggled">     
