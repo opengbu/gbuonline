@@ -80,15 +80,30 @@
     <div class="panel-heading" role="tab" id="headingTwo">
       <h4 class="panel-title">
         <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          Blog Space
+         Downloads
         </a>
       </h4>
     </div>
     <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
       <div class="panel-body">
-        Blogging has been proved as one of the best ways to express your thoughts. So here we provide you a platform where you can write about this college, your life @ GBU and other moments at college.
-        <br>
-        <a href="<?php echo site_url('blogs/recent_blogs')?>">Start Blogging</a>
+        <ul>
+		
+              <b><center>Mobile Apps</center></b><br>
+             
+            <li><a href="#">Time Table (Android)</a></li>
+            <li><a href="#">Time Table (Windows)</a></li>
+            <li><a href="#">Abhivyanjana</a></li>
+            <li><a href="#">Attendance</a></li>
+			<br>
+            
+            <b><center>Utility Softwares</center></b><br>
+             
+            <li><a href="#">Proxifier</a></li>
+            <li><a href="#">IDM</a></li>
+            <li><a href="#">C-Cleaner</a></li>
+            <li><a href="#">Ultra-surf</a></li>
+          
+          </ul>
       </div>
     </div>
   </div>
@@ -137,15 +152,21 @@
     <div class="panel-heading" role="tab" id="headingFive">
       <h4 class="panel-title">
         <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-          Virtual Tour
+          Placements
         </a>
       </h4>
     </div>
     <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
       <div class="panel-body">
-          Under Construction<br>
-          <a href="#"></a>
-          
+         
+         <ul>
+            <li><a href="<?php echo base_url('resources/placements/p2015.pdf')?>">Placement 2015</a></li><hr>
+            <li><a href="<?php echo base_url('resources/placements/p2014.pdf')?>">Placement 2014</a></li><hr>
+            <li><a href="<?php echo base_url('resources/placements/p2013.pdf')?>">Placement 2013</a></li><hr>
+            <li><a href="<?php echo base_url('resources/placements/p2012.pdf')?>">Placement 2012</a></li><hr>
+            <li><a href="<?php echo base_url('resources/placements/p2011.pdf')?>">Placement 2011</a></li><hr>
+            <li><a href="<?php echo base_url('resources/placements/p2010.pdf')?>">Placement 2010</a></li>
+          </ul>          
         
       </div>
     </div>
