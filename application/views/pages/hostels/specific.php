@@ -1,12 +1,11 @@
-
-<div class="page-header" style = "background-color: darkred; padding-top: 10px; padding-left: 50px; margin-top: 15px;">
-    <font color="white"  face="Monotype Corsiva">
-
+<div class="row">
+	<div class="page-header" style = "background-color: darkred; padding-top: 10px; padding-left: 50px; margin-top: 15px;">
+		<font color="white"  face="Monotype Corsiva">
           &nbsp; <h1>Hostel Page </br><!--<small>Keep Calm and Write.....</small></h1>-->
-	</font>      
- </div> 
-
- <div style="padding-left:10px">
+		</font>      
+	</div> 
+</div>
+<div style="padding-left:10px">
 <a name="go1" style="text-decoration:none;"><div class="jumbotron">
             <h2>BASIC INFORMATION</h2>
             <p>Warden Name : </p>

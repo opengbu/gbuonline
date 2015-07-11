@@ -1,9 +1,10 @@
-<div class="page-header" style = "background-color: darkred; padding-top: 10px; padding-left: 50px; margin-top: 15px;">
-    <font color="white"  face="Monotype Corsiva">
-
+<div class="row">
+	<div class="page-header" style = "background-color: darkred; padding-top: 10px; padding-left: 50px; margin-top: 15px;">
+		<font color="white"  face="Monotype Corsiva">
           &nbsp; <h1>Room Change Form</br><!--<small>Keep Calm and Write.....</small></h1>-->
           <h4 style="color:#999999">(Requests will be sent to respective wardens.)</h4>
-	</font>
+		</font>
+	</div>
 </div>
 
 <ul class="list-group" >
