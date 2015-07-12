@@ -1,6 +1,5 @@
 
 				<script>
-					
 					var xmlhttp;
 					function loadXMLDoc(url,cfunc)
 					{
@@ -17,9 +16,10 @@
 						xmlhttp.send();
 					}
 					
-					function writeBlogs()
+					
+					function recentBlogs()
 					{
-						loadXMLDoc("<?php echo site_url('blogs/write_blogs') ?>",function()
+						loadXMLDoc("<?php echo site_url('blogs/recent_blogs') ?>",function()
 						{
 							if (xmlhttp.readyState==4 && xmlhttp.status==200)
 							{
@@ -28,9 +28,9 @@
 						});
 					}
 					
-					function recentBlogs()
+					function writeBlogs()
 					{
-						loadXMLDoc("<?php echo site_url('blogs/recent_blogs') ?>",function()
+						loadXMLDoc("<?php echo site_url('blogs/write_blogs') ?>",function()
 						{
 							if (xmlhttp.readyState==4 && xmlhttp.status==200)
 							{
@@ -50,8 +50,20 @@
 						});
 					}
 					
+					function readBlogs()
+					{
+						loadXMLDoc("<?php echo site_url('blogs/read_blogs') ?>",function()
+						{
+							if (xmlhttp.readyState==4 && xmlhttp.status==200)
+							{
+								document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+							}	
+						});
+					}
+					
 					window.onload=recentBlogs;
 					
+
 				</script>
 				
 				

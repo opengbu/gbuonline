@@ -23,18 +23,19 @@
 				for ($x = 0; $x <4; $x++)
 				{
 			?>
-						<div class="panel panel-default">
+						<div class="panel panel-danger">
 							<div class="panel-heading">
-								<h3 class="panel-title"><b>Artificial Intelligence - The next step towards human destruction</b></h3>
+								<h3 class="panel-title"><b><a href="<?php echo site_url('blogs/read_blogs')?>">
+									<font color="black">Artificial Intelligence - The next step towards human destruction</font>
+								</a></b></h3>
 							</div>
-							<div class="panel-body">
-								<p align="justify">
-									Artificial Intelligence is one of the hot topics of the current decade. All 
-									the major research nowadays is on AI. The computer scientists all over the world are
-									inventing new algorithms that would help robots take its own decisions and learn from its past.
-									But a little is paid towards the destruction it would cause once its actually implemented.
-									What if the Robots defeat iti only first three lines of a blog to come here... <a href="#">Read More</a><br>
-								</p>    
+							<div class="panel-body" style="text-align: justify;">
+								
+									 How many things do we think in a day? How many feelings do we go through? Feelings that belong to so many categories
+									 - happiness, sadness, regret, guilt, jealousy, inferiority, pride, love. I have always lingered around the question. 
+									 What are feelings? How can some things make us 'happy' and others 'sad' ? I have also noticed, that we love sticking
+									 to the feeln only first three lines a blog to come here... <a href="<?php echo site_url('blogs/read_blogs')?>">Read More</a><br>
+								    
 							</div>
 							<div class="panel-footer">
 								<div class="row">
@@ -43,8 +44,8 @@
 										<button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target=".blogs"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> &nbsp;<span class="badge">4</span></button>&nbsp;
 										<button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target=".blogs"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> &nbsp;<span class="badge">9</span></button>
 									</div>
-									<div class="col-md-8" style="text-align: right;  padding-top: 5px;">
-										<b>Aman Verma - 14/ICS/005</b>
+									<div class="col-md-8" style="text-align: right;  ">
+										<button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target=".blogs"><span>Aman Verma</span> &nbsp;<span class="badge">15 . IEC . 027</span></button>
 									</div>
 								</div>
 							</div>

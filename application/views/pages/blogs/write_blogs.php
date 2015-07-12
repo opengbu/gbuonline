@@ -29,16 +29,15 @@
 <div class="row">
 <div class="col-md-12">
     <div class="form-group">
-        
         <label for="Blog">Start Your Blog :&nbsp;&nbsp;</label><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-            <div class="input-group">
-  <span class="input-group-addon" id="basic-addon1">Title</span>
-  <input type="text" class="form-control" placeholder="Title of your Blog" aria-describedby="basic-addon3">
-    </div>
+        <div class="input-group">
+			<span class="input-group-addon" id="basic-addon1">Title</span>
+			<input type="text" class="form-control" placeholder="Title of your Blog" aria-describedby="basic-addon3">
+		</div>
         <br>
 		<label>Blog Content :</label>
         <textarea class="form-control" rows="15" id="comment"></textarea>
-                <br>
+        <br>
                 
    <center>
          <button type="submit" class="btn btn-success" onclick="window.alert('Your Blog has been submitted succesfully. It will be displayed on website once it is reviewed by the admin.')">Submit</button>
