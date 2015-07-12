@@ -13,7 +13,7 @@
                 <div class="panel-body">
                     <?php foreach ($news as $news_item): ?> 
                         <?php echo "<li>" . $news_item['title'] . "</li>" ?>
-                        <p><a href="<?php echo $news_item['slug'] ?>">View article</a></p>
+                        <p><a href="news/<?php echo $news_item['slug'] ?>">View article</a></p>
 
                     <?php endforeach ?>
                 </div>
