@@ -35,9 +35,19 @@
           </ul>
         </li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><font size="2">
-              <span class="glyphicon glyphicon-file" aria-hidden="true"></span>&nbsp;Time Tables</font><span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
+         <a href="http://portal.gbuonline.in/timetables">
+             <font size="2"> <span class="glyphicon glyphicon-file" aria-hidden="true"></span> Time Tables</font>
+         </a>
+         <!--
+         Note by Amit K Awasthi
+         I am removing the following links as these are not required. 
+         The user is going to timetable home page directly. There he has already links to all direction.
+         This is important because we can put announcements/messages regarding  timetable there.
+         Also links of application are not fixed. Linking page to page is not safe.
+         Link application to application.
+         -->
+         <!--
+            <ul class="dropdown-menu" role="menu">
              <li><a href="http://172.25.5.15/timetables/view/?s=SOE&y=2015&t=o">SOE</a></li>
             <li><a href="0http://172.25.5.15/timetables/view/?s=SOLJ&y=2015&t=o">SOM</a></li>
             <li><a href="http://172.25.5.15/timetables/view/?s=SOBT&y=2015&t=o">SOBT</a></li>
@@ -46,9 +56,7 @@
             <li><a href="http://172.25.5.15/timetables/view/?s=SOBSC&y=2015&t=o">SOBSC</a></li>
             <li><a href="http://172.25.5.15/timetables/view/?s=SOHSS&y=2015&t=o">SOHSS</a></li>
             <li><a href="http://172.25.5.15/timetables/view/?s=SOVSAS&y=2015&t=o">SOVSAS</a></li>
-           
-       
-          </ul>
+         </ul>-->
         </li>
         <!--
         <li>
