@@ -3,6 +3,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Ebooks extends CI_Controller {
 
+	public function ebooks_home()
+	{
+        $data['title'] = 'E-Books &nbsp;|&nbsp;  GBU Online';
+		$data['heading'] = ' E-Books ';
+		$data['message'] = '';
+		$this->load->view('pages/link',$data);
+		$this->load->view('pages/header');
+		$this->load->view('pages/page-heading',$data);
+		$this->load->view('pages/ebooks/ebooks');
+		$this->load->view('pages/extras');
+		$this->load->view('pages/footer');
+	}
+	
 	public function soict_books()
 	{
 		$data['title'] = 'E-Books &nbsp;|&nbsp;  GBU Online';

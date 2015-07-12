@@ -3,6 +3,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Exams extends CI_Controller {
 
+	public function exams_home()
+	{
+        $data['title'] = 'Exams &nbsp;|&nbsp;  GBU Online';
+		$data['heading'] = ' Exam-Section ';
+		$data['message'] = 'Previous Year Papers';
+		$this->load->view('pages/link',$data);
+		$this->load->view('pages/header');
+		$this->load->view('pages/page-heading',$data);
+		$this->load->view('pages/exams/py_papers');
+		$this->load->view('pages/extras');
+		$this->load->view('pages/footer');
+	}
+	
 	public function soict()
 	{
 		$data['title'] = 'Exams &nbsp;|&nbsp;  GBU Online';
