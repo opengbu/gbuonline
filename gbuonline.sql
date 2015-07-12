@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.11
+-- version 4.0.9
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Jul 10, 2015 at 10:36 PM
--- Server version: 10.0.20-MariaDB-log
--- PHP Version: 5.6.10
+-- Host: 127.0.0.1
+-- Generation Time: Jul 12, 2015 at 09:56 PM
+-- Server version: 5.6.14
+-- PHP Version: 5.5.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -27,12 +27,13 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `blog` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `roll_number` varchar(50) NOT NULL,
   `title` varchar(50) NOT NULL,
   `description` varchar(50) NOT NULL,
-  `status` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+  `status` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `blog`
@@ -50,11 +51,12 @@ INSERT INTO `blog` (`id`, `roll_number`, `title`, `description`, `status`) VALUE
 --
 
 CREATE TABLE IF NOT EXISTS `blog_comments` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `blog_id` int(11) NOT NULL,
   `comment` text NOT NULL,
-  `user_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `user_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -63,10 +65,11 @@ CREATE TABLE IF NOT EXISTS `blog_comments` (
 --
 
 CREATE TABLE IF NOT EXISTS `blog_likes` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
-  `blog_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='which user liked which blog';
+  `blog_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='which user liked which blog' AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -75,12 +78,13 @@ CREATE TABLE IF NOT EXISTS `blog_likes` (
 --
 
 CREATE TABLE IF NOT EXISTS `ebooks` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `sc_name` varchar(10) NOT NULL,
   `dept_name` varchar(30) NOT NULL,
   `book_name` varchar(30) NOT NULL,
-  `book_info` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='sc_name is short name, pick real name from schools';
+  `book_info` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='sc_name is short name, pick real name from schools' AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -89,15 +93,16 @@ CREATE TABLE IF NOT EXISTS `ebooks` (
 --
 
 CREATE TABLE IF NOT EXISTS `events` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `article_name` varchar(50) NOT NULL,
   `user_id` int(11) NOT NULL,
   `article` text NOT NULL,
   `publishing_date` date NOT NULL,
   `short_desc` text NOT NULL,
   `image_path` text NOT NULL,
-  `school` varchar(35) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+  `school` varchar(35) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `events`
@@ -115,10 +120,11 @@ INSERT INTO `events` (`id`, `article_name`, `user_id`, `article`, `publishing_da
 --
 
 CREATE TABLE IF NOT EXISTS `h_complaint` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
-  `complaint` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `complaint` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -127,9 +133,10 @@ CREATE TABLE IF NOT EXISTS `h_complaint` (
 --
 
 CREATE TABLE IF NOT EXISTS `h_list` (
-  `hostel_id` int(11) NOT NULL,
-  `hostel_name` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `hostel_id` int(11) NOT NULL AUTO_INCREMENT,
+  `hostel_name` text NOT NULL,
+  PRIMARY KEY (`hostel_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -138,12 +145,13 @@ CREATE TABLE IF NOT EXISTS `h_list` (
 --
 
 CREATE TABLE IF NOT EXISTS `h_notice` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `date` date NOT NULL,
   `title` varchar(60) NOT NULL,
   `issuing_authority` varchar(60) NOT NULL,
-  `concerned_hostel` varchar(60) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+  `concerned_hostel` varchar(60) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `h_notice`
@@ -155,18 +163,42 @@ INSERT INTO `h_notice` (`id`, `date`, `title`, `issuing_authority`, `concerned_h
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `news`
+--
+
+CREATE TABLE IF NOT EXISTS `news` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(128) NOT NULL,
+  `slug` varchar(128) NOT NULL,
+  `text` text NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `slug` (`slug`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `news`
+--
+
+INSERT INTO `news` (`id`, `title`, `slug`, `text`) VALUES
+(1, 'This is title.', 'This_First_News', 'This is body text.'),
+(2, 'Second Title', 'second_slug', 'Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello .');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `schools`
 --
 
 CREATE TABLE IF NOT EXISTS `schools` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `sc_name` varchar(10) NOT NULL,
   `sc_full_name` varchar(70) NOT NULL,
   `about_us` text NOT NULL,
   `course_structure` text NOT NULL,
   `faculty` text NOT NULL,
-  `placements` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
+  `placements` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=21 ;
 
 --
 -- Dumping data for table `schools`
@@ -189,9 +221,10 @@ INSERT INTO `schools` (`id`, `sc_name`, `sc_full_name`, `about_us`, `course_stru
 --
 
 CREATE TABLE IF NOT EXISTS `upcoming_events` (
-  `id` int(11) NOT NULL,
-  `event_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `event_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `upcoming_events`
@@ -211,7 +244,7 @@ INSERT INTO `upcoming_events` (`id`, `event_id`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `users` (
-  `user_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(25) NOT NULL,
   `password` varchar(200) NOT NULL,
   `type` varchar(40) NOT NULL,
@@ -220,8 +253,9 @@ CREATE TABLE IF NOT EXISTS `users` (
   `profile_picture` varchar(50) NOT NULL,
   `full_name` varchar(40) NOT NULL,
   `roll_number` varchar(10) NOT NULL,
-  `phone_number` varchar(15) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+  `phone_number` varchar(15) NOT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 --
 -- Dumping data for table `users`
@@ -244,11 +278,12 @@ INSERT INTO `users` (`user_id`, `username`, `password`, `type`, `email`, `active
 --
 
 CREATE TABLE IF NOT EXISTS `vnb` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` text NOT NULL,
   `info` text NOT NULL,
-  `submitted_by` varchar(50) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+  `submitted_by` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `vnb`
@@ -265,12 +300,13 @@ INSERT INTO `vnb` (`id`, `title`, `info`, `submitted_by`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `warden` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `hostel_name` varchar(60) NOT NULL,
   `warden_name` varchar(60) NOT NULL,
   `warden_office` varchar(60) NOT NULL,
-  `hostel_contact` int(11) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+  `hostel_contact` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `warden`
@@ -287,157 +323,6 @@ INSERT INTO `warden` (`id`, `hostel_name`, `warden_name`, `warden_office`, `host
 (9, 'RAHEEM BOYS HOSTEL', 'DR. RAJESH GUPTA', '4364', NULL),
 (10, 'MALIK MOHD. JAYSI BOYS HOSTEL', 'DR. GURMET DORJAY', '7058', NULL);
 
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `blog`
---
-ALTER TABLE `blog`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `blog_comments`
---
-ALTER TABLE `blog_comments`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `blog_likes`
---
-ALTER TABLE `blog_likes`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `ebooks`
---
-ALTER TABLE `ebooks`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `events`
---
-ALTER TABLE `events`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `h_complaint`
---
-ALTER TABLE `h_complaint`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `h_list`
---
-ALTER TABLE `h_list`
-  ADD PRIMARY KEY (`hostel_id`);
-
---
--- Indexes for table `h_notice`
---
-ALTER TABLE `h_notice`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `schools`
---
-ALTER TABLE `schools`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `upcoming_events`
---
-ALTER TABLE `upcoming_events`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`user_id`);
-
---
--- Indexes for table `vnb`
---
-ALTER TABLE `vnb`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `warden`
---
-ALTER TABLE `warden`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `blog`
---
-ALTER TABLE `blog`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
---
--- AUTO_INCREMENT for table `blog_comments`
---
-ALTER TABLE `blog_comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `blog_likes`
---
-ALTER TABLE `blog_likes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `ebooks`
---
-ALTER TABLE `ebooks`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `events`
---
-ALTER TABLE `events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
---
--- AUTO_INCREMENT for table `h_complaint`
---
-ALTER TABLE `h_complaint`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `h_list`
---
-ALTER TABLE `h_list`
-  MODIFY `hostel_id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `h_notice`
---
-ALTER TABLE `h_notice`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `schools`
---
-ALTER TABLE `schools`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=21;
---
--- AUTO_INCREMENT for table `upcoming_events`
---
-ALTER TABLE `upcoming_events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
---
--- AUTO_INCREMENT for table `vnb`
---
-ALTER TABLE `vnb`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT for table `warden`
---
-ALTER TABLE `warden`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
