@@ -133,7 +133,20 @@
                                 <center>
                                     <h2>Team : kNight_Coders</h2>
                                 </center>
+								<div class="media">
+                                    <div class="media-left">
 
+                                        <img class="media-object" src="<?php echo base_url('resources/images/amitsir.jpg') ?>" height="90" width="90">
+
+                                    </div>
+											<div class="media-body">
+                                        <h4 class="media-heading">Amit K. Awasthi</h4>
+                                        <h6>LinkedIn Profile: <a href = "https://in.linkedin.com/in/amitkawasthi">https://in.linkedin.com/in/amitkawasthi</a></h6>
+                                        <h6>Email: amitkawasthi@gbu.ac.in</h6>
+                                        <h6>Phone No: +919650366665</h6>
+
+                                    </div>
+                                </div>
                                 <div class="media">
                                     <div class="media-left">
 
