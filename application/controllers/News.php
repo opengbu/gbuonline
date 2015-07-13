@@ -15,9 +15,9 @@ class News extends CI_Controller {
         $data['message'] = 'Happenings at GBU ...';
 
 
-        $this->load->view('pages/link', $data);
-        $this->load->view('pages/header');
-        $this->load->view('pages/page-heading', $data);
+        $this->load->view('pages/common/link', $data);
+        $this->load->view('pages/common/header');
+        $this->load->view('pages/common/page-heading', $data);
         $this->load->view('pages/news/index', $data);
         //$this->load->view('templates/footer');
     }
@@ -38,9 +38,9 @@ class News extends CI_Controller {
         $data['message'] = 'Happenings at GBU ...';
 
 
-        $this->load->view('pages/link', $data);
-        $this->load->view('pages/header');
-        $this->load->view('pages/page-heading', $data);
+        $this->load->view('pages/common/link', $data);
+        $this->load->view('pages/common/header');
+        $this->load->view('pages/common/page-heading', $data);
         $this->load->view('pages/news/view', $data);
         // $this->load->view('templates/footer');
     }

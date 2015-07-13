@@ -6,10 +6,10 @@ class Hostels extends CI_Controller {
 	public function home()
 	{
 		$data['title'] = 'Hostels &nbsp;|&nbsp;  GBU Online';
-		$this->load->view('pages/link',$data);
-		$this->load->view('pages/header');
+		$this->load->view('pages/common/link',$data);
+		$this->load->view('pages/common/header');
 		$this->load->view('pages/hostels/home');
-		$this->load->view('pages/footer');
+		$this->load->view('pages/common/footer');
 	}
 	public function info()
 	{
@@ -39,11 +39,11 @@ class Hostels extends CI_Controller {
 		$data['title'] = 'Hostels &nbsp;|&nbsp;  GBU Online';
 		//$data['heading'] = ' Hostel Notice Board ';
 		//$data['message'] = '';
-		$this->load->view('pages/link',$data);
-		$this->load->view('pages/header');
+		$this->load->view('pages/common/link',$data);
+		$this->load->view('pages/common/header');
 		//$this->load->view('pages/page-heading',$data);
 		$this->load->view('pages/hostels/notice');
-		$this->load->view('pages/footer');
+		$this->load->view('pages/common/footer');
 	}
 	
 	public function wardens()
@@ -51,11 +51,11 @@ class Hostels extends CI_Controller {
 		$data['title'] = 'Hostels &nbsp;|&nbsp;  GBU Online';
 		//$data['heading'] = ' List of Wardens ';
 		//$data['message'] = '';
-		$this->load->view('pages/link',$data);
-		$this->load->view('pages/header');
+		$this->load->view('pages/common/link',$data);
+		$this->load->view('pages/common/header');
 		//$this->load->view('pages/page-heading',$data);
 		$this->load->view('pages/hostels/wardens');
-		$this->load->view('pages/footer');
+		$this->load->view('pages/common/footer');
 	}
 	
 	public function specific()
@@ -70,17 +70,17 @@ class Hostels extends CI_Controller {
                     redirect ('users?redirect='.current_url());
             
 		$data['title'] = 'Hostels &nbsp;|&nbsp;  GBU Online';
-		$this->load->view('pages/link',$data);
-		$this->load->view('pages/header');
+		$this->load->view('pages/common/link',$data);
+		$this->load->view('pages/common/header');
 		$this->load->view('pages/hostels/specific');
-		$this->load->view('pages/footer');
+		$this->load->view('pages/common/footer');
 	}   
     	public function rc()
 	{
 		$data['title'] = 'Hostels &nbsp;|&nbsp;  GBU Online';
-		$this->load->view('pages/link',$data);
-		$this->load->view('pages/header');
+		$this->load->view('pages/common/link',$data);
+		$this->load->view('pages/common/header');
 		$this->load->view('pages/hostels/rc');
-		$this->load->view('pages/footer');
+		$this->load->view('pages/common/footer');
 	}
 }

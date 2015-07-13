@@ -9,12 +9,12 @@ class Blogs extends CI_Controller {
         $data['title'] = 'Blog Space &nbsp;|&nbsp;  GBU Online';
 		$data['heading'] = ' Blog Space ';
 		$data['message'] = 'Keep Calm and Write.....';
-        $this->load->view('pages/link',$data);
-		$this->load->view('pages/header');
-		$this->load->view('pages/page-heading',$data);
+        $this->load->view('pages/common/link',$data);
+		$this->load->view('pages/common/header');
+		$this->load->view('pages/common/page-heading',$data);
 		$this->load->view('pages/blogs/master_blogs');
-		$this->load->view('pages/extras');
-		$this->load->view('pages/footer');
+		$this->load->view('pages/common/extras');
+		$this->load->view('pages/common/footer');
 	}
 	
 	public function recent_blogs()
@@ -41,14 +41,13 @@ class Blogs extends CI_Controller {
 		$data['title'] = 'Blog Space &nbsp;|&nbsp;  GBU Online';
 		$data['heading'] = ' Blog Space ';
 		$data['message'] = 'Keep Calm and Write.....';
-        $this->load->view('pages/link',$data);
-		$this->load->view('pages/header');
-		$this->load->view('pages/page-heading',$data);
+        $this->load->view('pages/common/link',$data);
+		$this->load->view('pages/common/header');
+		$this->load->view('pages/common/page-heading',$data);
 		$this->load->view('pages/blogs/read_blogs');
-		$this->load->view('pages/extras');
-		$this->load->view('pages/footer');
+		$this->load->view('pages/common/extras');
+		$this->load->view('pages/common/footer');
 		
 	}
-	
-	
+		
 }
