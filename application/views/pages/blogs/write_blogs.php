@@ -1,7 +1,7 @@
 
    
              
- 
+<form action="<?php echo base_url();?>Blogs/save" method="post">
             <div class="well well-sm">
 				<div class="btn-group btn-group-justified" role="group" aria-label="...">
 					<div class="btn-group" role="group">
@@ -32,11 +32,11 @@
         <label for="Blog">Start Your Blog :&nbsp;&nbsp;</label><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
         <div class="input-group">
 			<span class="input-group-addon" id="basic-addon1">Title</span>
-			<input type="text" class="form-control" placeholder="Title of your Blog" aria-describedby="basic-addon3">
+                        <input name="title" type="text" class="form-control" placeholder="Title of your Blog" aria-describedby="basic-addon3">
 		</div>
         <br>
 		<label>Blog Content :</label>
-        <textarea class="form-control" rows="15" id="comment"></textarea>
+        <textarea name="description" class="form-control" rows="15" id="comment"></textarea>
         <br>
                 
    <center>
@@ -45,7 +45,8 @@
                 <br>
     </div>  
 </div>
-</div>    
+</div>
+</form>
     
 
 

@@ -29,7 +29,21 @@ class Blogs extends CI_Controller {
 	    $this->load->view('pages/blogs/write_blogs');
 		
 	}
-	public function best_blogs()
+        /*
+         * Note by varun.
+         * Bhawesh was using write blogs to save the blogs 
+         * But Rajat has removed header and footer files from code due to his ajax
+         * implementation...
+         * and since it is not a good idea to save data in db when the function is called,
+         * I am making another f'n
+         */
+        public function save()
+        {
+            $this->load->model('blog_model');
+            $this->blog_model->insert_into_db();
+            redirect('blogs/master_blogs');
+        }
+        public function best_blogs()
 	{
        
 		$this->load->view('pages/blogs/best_blogs');
