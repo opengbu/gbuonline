@@ -1,5 +1,26 @@
+<script>
+$(window).scroll(function(){
+  var sticky = $('.stic'),
+      scroll = $(window).scrollTop();
 
-<div class="col-md-3" style="padding-left:30px; ">
+  if (scroll >= 100) sticky.addClass('fixd');
+
+  else sticky.removeClass('fixd');
+});
+</script>
+
+<style>
+.fixd {
+    position: fixed;
+    top:70; left:999;
+	width: 325;
+     }
+</style>
+
+
+
+
+<div class="col-md-3 stic" style="padding-left:30px; ">
 
 
     
