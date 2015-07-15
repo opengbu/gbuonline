@@ -39,7 +39,7 @@ class Schools extends CI_Controller {
 		$data['heading'] = ' School of Vocational Studies and Applied Sciences';
 		$data['message'] = 'Where research meets nature!!!';
                 $this->load->model('schools_db');
-                $data1['result']=$this->schools_db->sovas();
+                $data1['result']=$this->schools_db->sovsas();
 		$this->load->view('pages/common/link',$data);
 		$this->load->view('pages/common/header');
 		$this->load->view('pages/common/page-heading',$data);
@@ -99,7 +99,7 @@ class Schools extends CI_Controller {
 		$data['heading'] = ' School of Law, Justice and Governance';
 		$data['message'] = 'Where Constitution is redefined !!!';
                 $this->load->model('schools_db');
-                $data1['result']=$this->schools_db->solj();
+                $data1['result']=$this->schools_db->soljg();
 		$this->load->view('pages/common/link',$data);
 		$this->load->view('pages/common/header');
 		$this->load->view('pages/common/page-heading',$data);
