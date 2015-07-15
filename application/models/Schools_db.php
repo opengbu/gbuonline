@@ -37,7 +37,7 @@ class Schools_db extends CI_Model{
         
     }
     public function sovsas(){
-        $query=$this->db->query("select * from schools where sc_name='sovas'");
+        $query=$this->db->query("select * from schools where sc_name='sovsas'");
         return $query->result();
         
     }
