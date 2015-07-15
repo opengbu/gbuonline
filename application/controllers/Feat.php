@@ -14,7 +14,7 @@ class Feat extends CI_Controller {
 		$this->load->view('pages/common/link',$data);
 		$this->load->view('pages/common/header');
 		$this->load->view('pages/common/page-heading',$data);
-		$this->load->view('pages/virtual_notice_board');
+		$this->load->view('pages/notices/virtual_notice_board');
 		$this->load->view('pages/common/extras');
 		$this->load->view('pages/common/footer');
 		 
@@ -28,11 +28,25 @@ class Feat extends CI_Controller {
 		$this->load->view('pages/common/link',$data);
 		$this->load->view('pages/common/header');
 		$this->load->view('pages/common/page-heading',$data);
-		$this->load->view('pages/events');
+		$this->load->view('pages/events/events');
 		$this->load->view('pages/common/extras');
 		$this->load->view('pages/common/footer');
 		
-	}	
+	}
+
+	public function read_events()
+	{
+        $data['title'] = 'Events &nbsp;|&nbsp;  GBU Online';
+		$data['heading'] = ' University Events ';
+		$data['message'] = 'Involve, Innovate and Learn ...';
+		$this->load->view('pages/common/link',$data);
+		$this->load->view('pages/common/header');
+		$this->load->view('pages/common/page-heading',$data);
+		$this->load->view('pages/events/read_events');
+		$this->load->view('pages/common/extras');
+		$this->load->view('pages/common/footer');
+		
+	}
 	
 	public function opportunities()
 	{
