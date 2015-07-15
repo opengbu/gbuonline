@@ -43,7 +43,6 @@ class Feat extends CI_Controller {
 		$this->load->view('pages/common/header');
 		$this->load->view('pages/common/page-heading',$data);
 		$this->load->view('pages/events/read_events');
-		$this->load->view('pages/common/extras');
 		$this->load->view('pages/common/footer');
 		
 	}

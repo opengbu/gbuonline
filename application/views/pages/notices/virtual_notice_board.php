@@ -104,7 +104,7 @@ $(function(){
 					for($x=0;$x<8;$x++)
 					{
 				?>
-							<a href="#" class="list-group-item">
+							<a href="<?php echo base_url('resources/images/odd-sem.jpg') ?>" class="list-group-item">
 								<div class="row">
 									<div class="col-md-8">
 										<h4 class="list-group-item-heading">Change in the Grading scheme</h4>
