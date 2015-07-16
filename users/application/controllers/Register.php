@@ -4,7 +4,7 @@
  *  Created on :Jul 15, 2015, 4:38:16 PM
  *  Author     :Varun Garg <varun.10@live.com>
  */
-
+error_reporting(E_ERROR);
 class Register extends CI_Controller {
 
     function index() {
