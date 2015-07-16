@@ -96,7 +96,7 @@
 </div>
 
   <ul class="pager">
-      <li><a href="<?php echo site_url('feat/exams')?>">Back</a></li>
+      <li><a href="<?php echo site_url('exams/exams_home')?>">Back</a></li>
     
   </ul>
 </div>

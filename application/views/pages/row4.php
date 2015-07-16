@@ -192,7 +192,23 @@
                         </div>
                     </div>
                 </div>
+<div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingNine">
+                        <h4 class="panel-title">
+                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                                Exam Section
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseNine" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingNine">
+                        <div class="panel-body">
 
+                            <a href="<?php echo site_url('exams/exams_home') ?>">Show me some papers</a>
+
+
+                        </div>
+                    </div>
+                </div>
                 <div class="panel panel-default">
                     <div class="panel-heading" role="tab" id="headingEight">
                         <h4 class="panel-title">
@@ -210,6 +226,7 @@
                         </div>
                     </div>
                 </div>
+				
 
 
             </div>
