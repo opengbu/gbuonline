@@ -86,7 +86,7 @@ div.WordSection1
 normal"><span lang=EN-IN style="mso-ansi-language:EN-IN">Dear ' . $full_name . ',
 <br /><br />
 Thank you for registering to gbuonline.in .<br /><br />
-Please acivate your email address by going to the following link <br />' .
+Please acivate your account by going to the following link <br />' .
                     base_url() . 'register/confirm?username=' . $username . '&conf=' . $confirmation_link .
                     '<br /> <br />
 Thank you!
