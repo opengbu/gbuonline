@@ -36,14 +36,14 @@
                                         <i>
                                             <div class="row">
                                                 <div class="col-sm-4">
-                                                    <img src="<?php echo base_url('resources/images/varun.jpg') ?>" height ="120" width="120"><br><b>VARUN GARG </b>(User Panel)
+                                                    <img src="<?php echo base_url('resources/images/varun.jpg') ?>" height ="120" width="120"><br><b>VARUN GARG </b>(Admin/User Panel)
                                                 </div>
                                                 <div class="col-sm-4">
                                                     <img src="<?php echo base_url('resources/images/shobhit.jpg') ?>" height ="120" width="120"><br><b>SHOBHIT SHARMA</b> (Hostel Management System)
                                                 </div>
 
                                                 <div class="col-sm-4">
-                                                    <img src="<?php echo base_url('resources/images/bhawesh.jpg') ?>" height ="120" width="120"><br><b>BHAWESH CHANDOLA</b> (Back End Database Management)
+                                                    <img src="<?php echo base_url('resources/images/bhawesh.jpg') ?>" height ="120" width="120"><br><b>BHAWESH CHANDOLA</b> (Front End Database Connectivity)
 
                                                 </div>
                                             </div>
