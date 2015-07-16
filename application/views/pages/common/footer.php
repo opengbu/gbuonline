@@ -11,7 +11,7 @@
     </style>
 
 
-    <footer class="footer container-fluid" role="contentinfo">
+    <footer class="footer container-fluid" role="contentinfo" style="position: absolute; z-index: 100;">
         <br>
 
         <div class="wrapper">
