@@ -28,7 +28,13 @@
     <p class="list-group-item-text">ede rf wf wf wfd   qdwqdqdasd rfr fw  cwefq dd qdwrrfwfcdax wdqdqddasef wefwef ewfew.</p>
   </a>
 </div>
+
+<ul class="pager">
+      <li><a href="<?php echo site_url('News/index')?>"><font color="black">More</font></a></li>
+    
+  </ul>
      </div>
+	 
 
         
         <div class="col-md-3">
