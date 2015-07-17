@@ -32,27 +32,43 @@
                     <div class="col-md-3"><b>Title</b></div>
                     <div class="col-md-3"><b>Issuing Authority</b></div>
                     <div class="col-md-2"><b>Concerned Hostels</b></div></font>
-            </div><hr/>
-                <div class="row">
-                    <div class="col-md-1">1</div>
-                    <div class="col-md-2">28-03-2015</div>
-                    <div class="col-md-3">List of Holidays</div>
-                    <div class="col-md-3">Admin</div>
-                    <div class="col-md-2">All</div>
-                </div><hr/>
-                <div class="row">
-                    <div class="col-md-1">2</div>
-                    <div class="col-md-2">30-03-2015</div>
-                    <div class="col-md-3">Academic Calendar</div>
-                    <div class="col-md-3">Admin</div>
-                    <div class="col-md-2">Tulsidas</div>
-                </div><hr/>
-                <div class="row">
-                    <div class="col-md-1">3</div>
-                    <div class="col-md-2">1-04-2015</div>
-                    <div class="col-md-3">Shauryotsav Participation</div>
-                    <div class="col-md-3">Chief Warden Office</div>
-                    <div class="col-md-2">All</div>
-                </div><hr/>
+            </div><hr/><hr/>
+                    <?php
+                        /*$this->db->where('id','1');*/
+                        $q=$this->db->get('h_notice');
+                        $results=$q->result();
+                        foreach ($results as $row)
+                        {
+                        ?>
+                        <div class="row">
+                        <div class="col-md-1">
+                        <?php
+                            echo $row->id;
+                        ?>
+                        </div>
+                        <div class="col-md-2">
+                        <?php
+                            echo $row->date;    
+                        ?>
+                        </div>
+                        <div class="col-md-3">
+                        <?php
+                            echo $row->title;    
+                        ?>
+                        </div>
+                         <div class="col-md-3">
+                        <?php
+                            echo $row->issuing_authority;    
+                        ?>
+                        </div>
+                        <div class="col-md-2">
+                        <?php
+                            echo $row->concerned_hostel;    
+                        ?>
+                        </div>
+                        </div><hr/>
+                       <?php
+                        }
+                        ?>
         </div>
  

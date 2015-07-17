@@ -27,22 +27,37 @@
                     <div class="col-md-4"><b>Hostel Name</b></div>
                     <div class="col-md-4"><b>Warden Name</b></div>
                     <div class="col-md-4"><b>Warden's Office</b></div></font>
-            </div><hr />
-                <div class="row">
-                    <div class="col-md-4">Xhaubxs</div>
-                    <div class="col-md-4">Mr. Rakesh Shrivastav</div>
-                    <div class="col-md-4">IL-204</div>
-                </div><hr />
-                <div class="row">
-                    <div class="col-md-4">Tulsidas Hostel</div>
-                    <div class="col-md-4">ABC</div>
-                    <div class="col-md-4">IL-204</div>
-                </div><hr />
-                <div class="row">
-                    <div class="col-md-4">Tulsidas Hostel</div>
-                    <div class="col-md-4">ABC</div>
-                    <div class="col-md-4">IL-204</div>
-                </div><hr />
+            </div><hr /><hr />
+               
+                       <?php
+                        /*$this->db->where('id','1');*/
+                        $q=$this->db->get('warden');
+                        $results=$q->result();
+                        foreach ($results as $row)
+                        {
+                        ?>
+                        <div class="row">
+                        <div class="col-md-4">
+                        <?php
+                            echo $row->hostel_name;
+                        ?>
+                        </div>
+                        <div class="col-md-4">
+                        <?php
+                            echo $row->warden_name;    
+                        ?>
+                        </div>
+                        <div class="col-md-4">
+                        <?php
+                            echo $row->warden_office;    
+                        ?>
+                        </div>
+                        </div><hr/>
+                       <?php
+                        }
+                        ?>
+                   
+              
         </div>
         <br><br/>
         
