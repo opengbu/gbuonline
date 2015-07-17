@@ -69,8 +69,8 @@
             body { padding-top: 25px; }
 
             .divr {
-                -webkit-animation: myfirst 7s; /* Chrome, Safari, Opera */
-                animation: myfirst 7s;
+                -webkit-animation: myfirst 5s; /* Chrome, Safari, Opera */
+                animation: myfirst 5s;
             }
 
 

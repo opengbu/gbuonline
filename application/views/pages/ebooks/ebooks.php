@@ -1,7 +1,14 @@
 
-<div class="container-fluid" style=" margin-right: 25px; margin-left: 25px;" >
+<div class="container-fluid" style=" margin-right: 10px; margin-left: 10px;" >
     <div class="row">
-        <div class="col-md-9" style="padding-right:30px; border-right: 2px solid #ccc;"> 
+        <div class="col-md-9" style="padding-right:30px; border-right: 2px solid #ccc;">
+
+<div class="alert alert-info" role="alert">
+  We are trying our best to provide you the maximum books that are available with us.
+    
+   If you have books other than these, please mail them to us at (gbu.code@gmail.com).
+</div>
+		
         <ul class="list-group">
                 <li class="list-group-item">
                         <span class="badge">16</span>
@@ -36,4 +43,8 @@
                         <a href="<?php echo site_url('ebooks/soljg_books')?>">SOLJG </a>  
                 </li>
 </ul>
+
+<br>
+<br>
+<br>
         </div>

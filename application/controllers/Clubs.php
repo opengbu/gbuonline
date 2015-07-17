@@ -7,7 +7,7 @@ class Clubs extends CI_Controller {
 	{
 		$data['title'] = 'Robotics Club &nbsp;|&nbsp;  GBU Online';
 		$data['heading'] = ' Robotics Club ';
-		$data['message'] = '';
+		$data['message'] = 'Discover Yourself...';
 		$this->load->view('pages/common/link',$data);
 		$this->load->view('pages/common/header');
 		$this->load->view('pages/common/page-heading',$data);
@@ -20,7 +20,7 @@ class Clubs extends CI_Controller {
 	{
 		$data['title'] = 'Programming Club &nbsp;|&nbsp;  GBU Online';
 		$data['heading'] = ' Programming Club ';
-		$data['message'] = '';
+		$data['message'] = 'Discover Yourself...';
 		$this->load->view('pages/common/link',$data);
 		$this->load->view('pages/common/header');
 		$this->load->view('pages/common/page-heading',$data);
@@ -33,7 +33,7 @@ class Clubs extends CI_Controller {
 	{
 		$data['title'] = 'Debating Club &nbsp;|&nbsp;  GBU Online';
 		$data['heading'] = ' Debating Club ';
-		$data['message'] = '';
+		$data['message'] = 'Discover Yourself...';
 		$this->load->view('pages/common/link',$data);
 		$this->load->view('pages/common/header');
 		$this->load->view('pages/common/page-heading',$data);
@@ -46,7 +46,7 @@ class Clubs extends CI_Controller {
 	{
 		$data['title'] = 'Art Club &nbsp;|&nbsp;  GBU Online';
 		$data['heading'] = ' Art Club ';
-		$data['message'] = '';
+		$data['message'] = 'Discover Yourself...';
 		$this->load->view('pages/common/link',$data);
 		$this->load->view('pages/common/header');
 		$this->load->view('pages/common/page-heading',$data);
@@ -59,7 +59,7 @@ class Clubs extends CI_Controller {
 	{
 		$data['title'] = 'Social Service Club &nbsp;|&nbsp;  GBU Online';
 		$data['heading'] = ' Social Service Club ';
-		$data['message'] = '';
+		$data['message'] = 'Discover Yourself...';
 		$this->load->view('pages/common/link',$data);
 		$this->load->view('pages/common/header');
 		$this->load->view('pages/common/page-heading',$data);
@@ -72,7 +72,7 @@ class Clubs extends CI_Controller {
 	{
 		$data['title'] = 'Dramatics Club &nbsp;|&nbsp;  GBU Online';
 		$data['heading'] = ' Dramatics Club ';
-		$data['message'] = '';
+		$data['message'] = 'Discover Yourself...';
 		$this->load->view('pages/common/link',$data);
 		$this->load->view('pages/common/header');
 		$this->load->view('pages/common/page-heading',$data);
@@ -85,7 +85,7 @@ class Clubs extends CI_Controller {
 	{
 		$data['title'] = 'Adventure Club &nbsp;|&nbsp;  GBU Online';
 		$data['heading'] = ' Adventure Club ';
-		$data['message'] = '';
+		$data['message'] = 'Discover Yourself...';
 		$this->load->view('pages/common/link',$data);
 		$this->load->view('pages/common/header');
 		$this->load->view('pages/common/page-heading',$data);
@@ -98,7 +98,7 @@ class Clubs extends CI_Controller {
 	{
 		$data['title'] = 'Literary Club &nbsp;|&nbsp;  GBU Online';
 		$data['heading'] = ' Literary Club ';
-		$data['message'] = '';
+		$data['message'] = 'Discover Yourself...';
 		$this->load->view('pages/common/link',$data);
 		$this->load->view('pages/common/header');
 		$this->load->view('pages/common/page-heading',$data);
@@ -111,7 +111,7 @@ class Clubs extends CI_Controller {
 	{
 		$data['title'] = 'Photography Club &nbsp;|&nbsp;  GBU Online';
 		$data['heading'] = ' Photography Club ';
-		$data['message'] = '';
+		$data['message'] = 'Discover Yourself...';
 		$this->load->view('pages/common/link',$data);
 		$this->load->view('pages/common/header');
 		$this->load->view('pages/common/page-heading',$data);

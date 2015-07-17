@@ -7,7 +7,7 @@ class Ebooks extends CI_Controller {
 	{
         $data['title'] = 'E-Books &nbsp;|&nbsp;  GBU Online';
 		$data['heading'] = ' E-Books ';
-		$data['message'] = '';
+		$data['message'] = 'A good book has no ending.';
 		$this->load->view('pages/common/link',$data);
 		$this->load->view('pages/common/header');
 		$this->load->view('pages/common/page-heading',$data);
