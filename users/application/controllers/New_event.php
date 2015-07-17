@@ -35,8 +35,10 @@ class New_event extends CI_Controller {
              $school_name =   $this->input->post('school_name');
              $short_desc =   $this->input->post('short_desc');
              $image_path =   $this->input->post('image_path');
+             $club = $this->input->post('club');
+             $type = $this->input->post('type');
              
-             $this->db->query("insert into events (image_path,short_desc,user_id,article_name,article,publishing_date,school) values ('$image_path','$short_desc','$user_id','$article_name','$article','$publishing_date','$school_name')");
+             $this->db->query("insert into events (image_path,short_desc,user_id,article_name,article,publishing_date,school,club,type) values ('$image_path','$short_desc','$user_id','$article_name','$article','$publishing_date','$school_name','$club','$type')");
              redirect('/All_events');
         }
         

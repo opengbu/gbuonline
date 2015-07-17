@@ -17,7 +17,15 @@ $(function(){
 <div class="container-fluid" style=" margin-right: 10px; margin-left: 10px;" >
      <div class="row">
 		<div class="col-md-9" style="padding-right:30px; border-right: 2px solid #ccc;">   
-			
+			<?php
+                        /*
+                         * Note By Varun
+                         * I am currently commenting out filter menu
+                         * It is a very good idea but most notices are addressed for
+                         * all schools, and are generally not any specific club.
+                         * plus our site's target audiece are going to be students (88%)
+                         * If we need it in future, we can surely bring it back
+                         * 
 			<!--code for FILTER menu begins-->
 			
 			<div class="well well-sm"><!--bootstrap well begins-->
@@ -90,7 +98,8 @@ $(function(){
 			</div><!--bootstrap well ends-->
 			
 			<!--code for FILTER menu ends-->
-			
+			*/
+                        ?>
 			<!--page content starts-->
 
 

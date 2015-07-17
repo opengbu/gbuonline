@@ -1,8 +1,10 @@
 <?php
+
 /*
  *  Created on :Jul 10, 2015, 12:18:54 PM
  *  Author     :Varun Garg <varun.10@live.com>
  */
+
 class Edit_user extends CI_Controller {
 
     function index($userid = '-1') {
@@ -19,18 +21,18 @@ class Edit_user extends CI_Controller {
         if ($userid == -1)
             redirect('/all_users'); //wrong url?
 
-        $this->session->set_userdata('edit_userid', $userid);
         $this->load->helper(array('form', 'url'));
         $this->form_validation->set_rules('username', 'Username', 'required');
         $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
         $this->form_validation->set_rules('full_name', 'Full Name', 'required');
         $this->form_validation->set_rules('username', 'Username', 'required|callback_check_details');
         $this->form_validation->set_rules('password', 'Password', 'callback_check_pass');
-        
+
         $this->load->view('common/header');
         $this->load->library('form_validation');
         if ($this->form_validation->run() == FALSE) {
-            $this->load->view('Edituser_form');
+            $params['userid'] = $userid;
+            $this->load->view('Edituser_form', $params);
         } else {
             $username = $this->input->post('username');
             $email = $this->input->post('email');
@@ -42,9 +44,7 @@ class Edit_user extends CI_Controller {
             if ($password !== '') { //user is chaning his password
                 $hash = $this->bcrypt->hash_password($password);
                 $this->db->query("update users set full_name='$full_name',  username='$username',email='$email',password='$hash',type='$type' where user_id='$userid'");
-            }
-            else //in case user does not wish to chage password
-            {
+            } else { //in case user does not wish to chage password
                 $this->db->query("update users set full_name='$full_name',  username='$username',email='$email',type='$type' where user_id='$userid'");
             }
 
@@ -57,8 +57,7 @@ class Edit_user extends CI_Controller {
         $this->load->view('common/footer');
     }
 
-    function check_details()  // Check "another" user with new name already exists
-    {
+    function check_details() {  // Check "another" user with new name already exists
         //If code reaches here passwords are successfully matched, now for condition 2
         $userid = $this->input->post('user_id');
         $username = $this->input->post('username');
@@ -69,15 +68,14 @@ class Edit_user extends CI_Controller {
         }
         return TRUE;
     }
-    
-    function check_pass() //If password is not empty it should match with repeated password in form.
-    {
+
+    function check_pass() { //If password is not empty it should match with repeated password in form.
         $password = $this->input->post('password');
         $passconf = $this->input->post('passconf');
-        if ($password == $passconf) return TRUE;
-            $this->form_validation->set_message('check_pass', 'Passwords do not match ');
+        if ($password == $passconf)
+            return TRUE;
+        $this->form_validation->set_message('check_pass', 'Passwords do not match ');
         return FALSE;
-        
     }
 
 }

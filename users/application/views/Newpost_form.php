@@ -50,6 +50,27 @@ date_default_timezone_set("Asia/Kolkata");
     </select>
     <br /><br />
 
+    <label>Club</label>
+    <select name="club" class="selectpicker" data-width="100%">
+        <option value="%" >ALL</option>
+        <?php
+        $query = $this->db->query("select *  from clubs");
+        foreach ($query->result() as $row) {
+            echo '<option value="' . $row->c_name . '">' . $row->c_full_name . '</option>';
+        }
+        ?>
+    </select>
+    <br /><br />
+
+    <label>Type</label>
+    <select name="type" class="selectpicker" data-width="100%">
+        <option value="competition" >Competition</option>
+        <option value="workshop" >Workshop</option>
+        <option value="Conference" >Conference</option>
+        <option value="Lecture" >Lecture</option>
+    </select>
+    <br /><br />
+
     <label>Publishing date  </label>
     <input type="text" value="<?= date('Y-m-d'); ?>" name="publishing_date" class="form-control" />
 

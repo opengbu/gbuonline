@@ -1,5 +1,5 @@
 <?php
-/* 
+/*
  *  Created on :Jul 10, 2015, 12:18:54 PM
  *  Author     :Varun Garg <varun.10@live.com>
  */
@@ -7,7 +7,7 @@
 <script>
     function del_ask(id)
     {
-        var x = confirm("Do you want to delete this post?");
+        var x = confirm("Do you want to delete this event?");
         if (x == true)
             location.href = "<?= base_url() ?>" + "index.php/delete_post/index?id=" + id;
     }

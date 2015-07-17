@@ -7,7 +7,6 @@
 
 <div class="col-sm-5">
     <?php
-    $userid = $this->session->userdata('edit_userid');
     $query = $this->db->query("select * from users where user_id = '$userid'");
     foreach ($query->result() as $row) {
         $uname = $row->username;

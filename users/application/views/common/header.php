@@ -68,7 +68,7 @@
             });
         </script>
     </head>
-    <body background="<?php echo base_url('application/views/common/background.jpg') ?>" style="background-attachment: fixed; background-repeat: repeat;">
+    <body >
         <div  id="wrapper"  class="toggled">     
 
             <nav class="navbar navbar-fixed-top navbar-inverse navbar-default navbar-custom" role="navigation">
@@ -112,7 +112,7 @@
                 </div>
             </nav>
 
-            <nav class="navbar navbar-default sidebar" id="sidebar-wrapper" role="navigation">
+            <nav class="navbar navbar-default sidebar pre-scrollable" style="height: 100%;max-height: 100% "  id="sidebar-wrapper" role="navigation">
                 <div class="container-fluid">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
@@ -128,6 +128,9 @@
                             <li ><a href="<?php echo base_url() . 'all_schools' ?>">Schools <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-th-list fa-2x"></i></a></li>
                             <?php if ($this->session->userdata('type') == 'admin') { ?>
                                 <li ><a href="<?php echo base_url() . 'new_school' ?>" >New School<i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-plus-square fa-2x"></i></a></li><?php } ?>
+                            <li ><a href="<?php echo base_url() . 'all_clubs' ?>">Clubs <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-th-list fa-2x"></i></a></li>
+                            <?php if ($this->session->userdata('type') == 'admin') { ?>
+                                <li ><a href="<?php echo base_url() . 'new_club' ?>" >New Club<i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-plus-square fa-2x"></i></a></li><?php } ?>
 
 
                             <li ><a href="<?= base_url() . 'all_events' ?>">All Events <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-tasks fa-2x"></i></a></li>
@@ -148,5 +151,5 @@
 
                 </div>
             </nav>
-            <div id="page-content-wrapper" >
-                <div class="container-fluid">
+            <div id="page-content-wrapper" class="container-fluid" style="background-image: url(<?php echo base_url('application/views/common/background.jpg') ?>); background-attachment: fixed; background-repeat: repeat;">
+                <div >

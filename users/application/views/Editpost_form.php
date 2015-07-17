@@ -3,9 +3,7 @@
  *  Created on :Jul 10, 2015, 12:18:54 PM
  *  Author     :Varun Garg <varun.10@live.com>
  */
-$scl = $this->session->userdata('edit_scl');
-$id = $this->session->userdata('edit_id');
-
+$id = $this->input->get('id');
 $query = $this->db->query("select * from events where id = '$id'");
 foreach ($query->result() as $row) {
     $aname = $row->article_name;
@@ -14,11 +12,13 @@ foreach ($query->result() as $row) {
     $short_desc = $row->short_desc;
     $school = $row->school;
     $image_path = $row->image_path;
+    $club = $row->club;
 }
 ?>
 <link type="text/css" rel="stylesheet" href="<?= base_url() . 'application/views/common/' . 'input/jquery-te-1.4.0.css' ?>">
 <script type="text/javascript" src="<?= base_url() . 'application/views/common/' . 'input/jquery-te-1.4.0.min.js' ?>" charset="utf-8"></script>
 <div class="col-sm-10">
+    <?php echo form_open('edit_post/index?id=' . $id); ?>
 
     <label>Title</label>
     <input type="text" name="article_name" value="<?= $aname ?>" class="form-control">
@@ -43,8 +43,6 @@ foreach ($query->result() as $row) {
         }
         ?>
     </select>
-    <input type="hidden" name="scl" value="<?= $scl ?>" />
-    <input type="hidden" name="id" value="<?= $id ?>" />
     <br /><br />
     <label>Featured Image</label>
     <select name="image_path" class="selectpicker" data-width="100%">
@@ -61,6 +59,32 @@ foreach ($query->result() as $row) {
         ?>
     </select>
     <br /><br />
+
+    <label>Club</label>
+    <select name="club" class="selectpicker" data-width="100%">
+        <option value="%" >ALL</option>
+        <?php
+        $query = $this->db->query("select *  from clubs");
+        foreach ($query->result() as $row) {
+            echo '<option value="' . $row->c_name . '" ';
+            if ($row->c_name === $club)
+                echo 'selected="selected"';
+            
+            echo  ' >' . $row->c_full_name . '</option>';
+        }
+        ?>
+    </select>
+    <br /><br />
+
+    <label>Type</label> 
+    <select name="type" class="selectpicker" data-width="100%">
+        <option value="competition" >Competition</option>
+        <option value="workshop" >Workshop</option>
+        <option value="Conference" >Conference</option>
+        <option value="Lecture" >Lecture</option>
+    </select>
+    <br /><br />
+
     <label>Publishing date</label>
     <input type="text" value="<?= $adate ?>" name="publishing_date"class="form-control">
 

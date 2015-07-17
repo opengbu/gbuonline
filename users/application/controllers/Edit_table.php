@@ -1,8 +1,10 @@
 <?php
+
 /*
  *  Created on :Jul 10, 2015, 12:18:54 PM
  *  Author     :Varun Garg <varun.10@live.com>
  */
+
 class Edit_table extends CI_Controller {
 
     function index($tbname = '-1') {
@@ -18,7 +20,7 @@ class Edit_table extends CI_Controller {
 
         if ($tbname == -1)
             redirect('/all_schools'); //wrong url?
-        $this->session->set_userdata('edit_table', $tbname);
+        $param['tname'] = $tbname;
         $this->load->helper(array('form', 'url'));
         $this->form_validation->set_rules('sc_name', 'Schools name', 'required');
         $this->form_validation->set_rules('sc_full_name', 'Schools full name', 'required');
@@ -27,7 +29,7 @@ class Edit_table extends CI_Controller {
         $this->load->view('common/header');
         $this->load->library('form_validation');
         if ($this->form_validation->run() == FALSE) {
-            $this->load->view('Edittable_form');
+            $this->load->view('Edittable_form', $param);
         } else {
             $sc_name = $this->input->post('sc_name');
             $sc_full_name = $this->input->post('sc_full_name');
@@ -38,7 +40,6 @@ class Edit_table extends CI_Controller {
 
             $query2 = $this->db->query("update schools set sc_full_name = '$sc_full_name',about_us = '$about_us',course_structure='$course_structure',faculty='$faculty',placements='$placements' where sc_name='$tbname'");
 
-            $this->session->unset_userdata('edit_table'); //clear session values
             redirect('/All_schools');
         }
 

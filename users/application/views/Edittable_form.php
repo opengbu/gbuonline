@@ -9,7 +9,6 @@
 <script type="text/javascript" src="<?= base_url() . 'application/views/common/' . 'input/jquery-te-1.4.0.min.js' ?>" charset="utf-8"></script>
 <div class="col-sm-8" >
     <?php
-    $tname = $this->session->userdata('edit_table');
     $q = $this->db->query("select * from schools where sc_name = '$tname'");
     foreach ($q->result() as $row) {
 
