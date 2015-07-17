@@ -73,16 +73,17 @@
                             Name
                         </label>
           
+                            
                             <h4 style="color:#191919">
                             <?php 
-                                print_r($_SESSION['full_name']);
+                                echo $this->session->userdata('full_name');
                             ?>
                             </h4>
                             <br/>
                         <label>
                             Complaint
                         </label>
-                        <input type="textarea" class="form-control"  value="" name="description"><br>
+                        <textarea class="form-control"  value="" name="description" rows="10"></textarea><br>
                         <input type="submit" class="btn btn-default" value="Save" />
                     </div>
                     </form></font>
