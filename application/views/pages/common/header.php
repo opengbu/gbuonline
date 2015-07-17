@@ -158,7 +158,7 @@
                  ?>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="icon-th-large"></i> Welcome <?= $this->session->userdata('full_name') ?>!
+                                <i class="icon-th-large"></i> Welcome <?php print_r($_SESSION['full_name']); ?>!
                                 <b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">
