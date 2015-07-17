@@ -69,17 +69,16 @@
                 <font color="#141466">
                     <form action="saveproduct.php" method="get">
                     <div class="form-group">
-                        <!--<label>
-                            Registration Number
-                        </label>
                         <label>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            Name
+                        </label>
+          
+                            <h4 style="color:#191919">
                             <?php 
-                                print_r($_SESSION["user"]);
+                                print_r($_SESSION['full_name']);
                             ?>
-                        </label>-->
-            
+                            </h4>
+                            <br/>
                         <label>
                             Complaint
                         </label>
