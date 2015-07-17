@@ -35,9 +35,16 @@
 						
 							<ul class="dropdown-menu" role="menu">
 							
-								<li><a href="<?php echo base_url('resources/hostel_allocation/p2014.pdf')?>">List-1 (Boys)</a></li>
-								<li><a href="<?php echo base_url('resources/hostel_allocation/p2013.pdf')?>">List-2 (Girls)</a></li>
-							
+								<li><a href="<?php echo base_url('resources/Birsa Munda Hostel_15July15.pdf')?>">Birsa Munda Hostel</a></li>
+								<li><a href="<?php echo base_url('resources/hostel_allocation/Guru Ghasi Das Hostel_15July15.pdf')?>">Guru Ghasi Das Hostel</a></li>
+							    <li><a href="<?php echo base_url('resources/Maha Maya Girls Hostel_15July15.pdf')?>">Maha Maya Girls Hostel</a></li>
+                                <li><a href="<?php echo base_url('resources/Ram Saran Das Hostel_15July15.pdf')?>">Ram Saran Das Hostel</a></li>
+                                <li><a href="<?php echo base_url('resources/Rani Laxmi Bai Girls Hostel_15July15.pdf')?>">Rani Laxmi Bai Girls Hostel</a></li>
+                                <li><a href="<?php echo base_url('resources/Sant Kabir Das Hostel_15July2015.pdf')?>">Sant Kabir Das Hostel</a></li>
+                                <li><a href="<?php echo base_url('resources/Sant Ravidas Hostel_15July2015.pdf')?>">Sant Ravidas Hostel</a></li>
+                                <li><a href="<?php echo base_url('resources/Shri Chatarpati Sahu ji Maharaj Hostel_15July15.pdf')?>">Shri Chatarpati Sahu ji Maharaj Hostel</a></li>
+                                <li><a href="<?php echo base_url('resources/Shri Narayan Guru Hostel-15July15.pdf')?>">Shri Narayan Guru Hostel</a></li>
+                                <li><a href="<?php echo base_url('resources/Tulsidas Hostel_15July15.pdf')?>">Tulsidas Hostel</a></li>
 							</ul>
 						</li>
 					</p>
@@ -62,10 +69,16 @@
                 <font color="#141466">
                     <form action="saveproduct.php" method="get">
                     <div class="form-group">
-                        <label>
+                        <!--<label>
                             Registration Number
                         </label>
-                        <input type="text" class="form-control"  value="" name="title"><br>
+                        <label>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <?php 
+                                print_r($_SESSION["user"]);
+                            ?>
+                        </label>-->
             
                         <label>
                             Complaint
