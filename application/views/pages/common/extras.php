@@ -40,8 +40,8 @@ $(window).scroll(function(){
 
 		<!--code for extras begins-->
 		
-		<?php require '/../master_extras.php';?>
-		
+		<?php// require '/../master_extras.php';?>
+		<?php $this->load->view('pages/master_extras'); ?>
 		<!--code for extras ends-->
 
        
