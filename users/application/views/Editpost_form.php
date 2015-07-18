@@ -85,7 +85,7 @@ foreach ($query->result() as $row) {
     </select>
     <br /><br />
 
-    <label>Publishing date</label>
+    <label>Event date</label>
     <input type="text" value="<?= $adate ?>" name="publishing_date"class="form-control">
 
     <br>

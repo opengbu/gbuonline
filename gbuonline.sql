@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 15, 2015 at 10:14 PM
+-- Generation Time: Jul 17, 2015 at 11:16 PM
 -- Server version: 10.0.20-MariaDB-log
 -- PHP Version: 5.6.11
 
@@ -76,6 +76,28 @@ CREATE TABLE IF NOT EXISTS `blog_likes` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `clubs`
+--
+
+CREATE TABLE IF NOT EXISTS `clubs` (
+  `id` int(11) NOT NULL,
+  `about_us` text NOT NULL,
+  `faculty` text NOT NULL,
+  `students` text NOT NULL,
+  `c_name` varchar(25) NOT NULL,
+  `c_full_name` varchar(70) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `clubs`
+--
+
+INSERT INTO `clubs` (`id`, `about_us`, `faculty`, `students`, `c_name`, `c_full_name`) VALUES
+(1, 'pp', 'pp', 'pp', 'programming', 'Programming Club');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `ebooks`
 --
 
@@ -104,7 +126,7 @@ CREATE TABLE IF NOT EXISTS `events` (
   `school` varchar(35) NOT NULL,
   `club` varchar(50) NOT NULL,
   `type` varchar(10) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `events`
@@ -113,7 +135,8 @@ CREATE TABLE IF NOT EXISTS `events` (
 INSERT INTO `events` (`id`, `article_name`, `user_id`, `article`, `publishing_date`, `short_desc`, `image_path`, `school`, `club`, `type`) VALUES
 (5, 'New Event', 1, 'hello world<br>', '2015-06-30', 'Short Description<br><br>', 'resources/user_uploads/ichiruki-bleach-pairings-33886487-1920-1200.png', 'sovsas', '', ''),
 (6, 'Abhivyanjana 2016', 6, 'Enter detailed event description', '2015-07-01', ' Example<br /><b>Date:</b> 28 - 01 - 2015 <br><b>Time:</b> 18:30 - 20:00<br/><b>Venue:</b> SOICT', 'resources/user_uploads/1280_800.jpg', 'soict', '', ''),
-(7, 'Ecocart 2015', 6, 'Enter detailed event description', '2015-07-01', ' Example<br /><b>Date:</b> 28 - 01 - 2015 <br><b>Time:</b> 18:30 - 20:00<br/><b>Venue:</b> SOICT', 'resources/user_uploads/1280_800.jpg', 'soict', '', '');
+(7, 'Ecocart 2015', 6, 'Ecocart is awesome<br>', '2015-07-01', ' Example<br><b>Date:</b> 28 - 01 - 2015 <br><b>Time:</b> 18:30 - 20:00<br><b>Venue:</b> SOICT', 'resources/user_uploads/1280_800.jpg', 'soict', '', ''),
+(8, 'ppppp', 1, 'Enter detailed event description', '2015-07-17', ' Example<br /><b>Date:</b> 28 - 01 - 2015 <br><b>Time:</b> 18:30 - 20:00<br/><b>Venue:</b> SOICT', 'resources/user_uploads/1280_800.jpg', 'soict', 'programming', 'competitio');
 
 -- --------------------------------------------------------
 
@@ -202,7 +225,7 @@ CREATE TABLE IF NOT EXISTS `schools` (
 
 INSERT INTO `schools` (`id`, `sc_name`, `sc_full_name`, `about_us`, `course_structure`, `faculty`, `placements`) VALUES
 (12, 'soict', 'School Of Information and Communication  Technology', 'School of Information &amp; Communication Technology produce skilledpostgraduate professionals in the emerging areas of technologies. Itoffers post graduate programme (Master of Technology) for Engineeringgraduates with modern and state of the art laboratories, teachingfacilities like learning management system, Web 2.0 and researchenvironment.Our faculty members are highly qualified and we arepioneering in learning outcome based teaching in India.', '<p class="panel-body"><ul><li>Integrated Dual Degree</li><li>Post Graduate</li><li>Doctrate</li></ul></p>', '<b>&nbsp; &nbsp; Dr. Ela Kumar</b><br>&nbsp;&nbsp;&nbsp; Dean(I/C), School of ICT, Gautam Buddha University<br><p class="panel-body"><dl><dt>Dr. Om Prakash Sangwan                </dt><dd>School of ICT, Gautam Buddha University </dd><br><dt>Dr. Anurag Singh Bhagel                </dt><dd>School of ICT, Gautam Buddha University </dd></dl></p>', 'Placement Session will begin from 3rd December and will continue till 28th June.'),
-(13, 'sovsas', 'School Of Vocational And Applied Sciences', 'The School of Vocational Studies and Applied Sciences has beenestablished to inculcate and promote an inquisitive thinking towardsscience and its applicability in various interdisciplinary subjectsamongst young minds of today and tomorrow. The school is committed toprovide cutting edge technology and research in partnership with theindustries, laboratories and institute of national and international repute.', '<ul><li>&nbsp;Integrated Dual Degree</li><li>&nbsp;Post Graduate</li><li>&nbsp;Doctrate</li></ul>', '<dl><dt>Dr. Ela Kumar                </dt><dd>Dean(I/C), School of ICT, Gautam Buddha University </dd><br><dt>Dr. Om Prakash Sangwan                </dt><dd>School of ICT, Gautam Buddha University </dd><br><dt>Dr. Anurag Singh Bhagel                </dt><dd>School of ICT, Gautam Buddha University </dd></dl>', 'Placement Session will begin from 3rd December and will continue till 28th June.'),
+(13, 'sovsas', 'School Of Vocational And Applied Sciences', 'The School of Vocational Studies and Applied Sciences has beenestablished to inculcate and promote an inquisitive thinking towardsscience and its applicability in various interdisciplinary subjectsamongst young minds of today and tomorrow. The school is committed toprovide cutting edge technology and research in partnership with theindustries, laboratories and institute of national and international repute...', '<ul><li> Integrated Dual Degree</li><li> Post Graduate</li><li> Doctrate</li></ul>', '<dl><dt>Dr. Ela Kumar                </dt><dd>Dean(I/C), School of ICT, Gautam Buddha University </dd><br><dt>Dr. Om Prakash Sangwan                </dt><dd>School of ICT, Gautam Buddha University </dd><br><dt>Dr. Anurag Singh Bhagel                </dt><dd>School of ICT, Gautam Buddha University </dd></dl>', 'Placement Session will begin from 3rd December and will continue till 28th June.'),
 (15, 'sobt', 'School of Biotechnology', 'The School of Biotechnology is located in a state of the art buildingwhich incorporates both teaching and research facilities. Biotechnologycombines disciplines like genetics,molecular biology, biochemistry,microbiology, immunology and cell biology, which are in turn linked topractical disciplines like chemical engineering, informationtechnology,and biorobotics.', '<ul><li>&nbsp;Integrated Dual Degree</li><li>&nbsp;Post Graduate</li><li>&nbsp;Doctrate</li></ul>', '<dl><dt>Dr. Ela Kumar                </dt><dd>Dean(I/C), School of ICT, Gautam Buddha University </dd><br><dt>Dr. Om Prakash Sangwan                </dt><dd>School of ICT, Gautam Buddha University </dd><br><dt>Dr. Anurag Singh Bhagel                </dt><dd>School of ICT, Gautam Buddha University </dd></dl>', 'Placement Session will begin from 3rd December and will continue till 28th June.'),
 (16, 'soe', ' School of Engineering', 'In accordance with the Vision of the University, School of Engineeringhas been conceptualized and established with an objective to work outand develop a dependable model for growth, consistency and significantbreakthrough in cutting edge technology and innovation. The rapiddiffusion of core engineering fields like Civil Engineering, ElectricalEngineering and Mechanical Engineering has the potential of bringingimprovement in productivity and efficiency in almost every aspects ofour life and consequently turning out to be a key driver of our economicgrowth.', '<ul><li>&nbsp;Integrated Dual Degree</li><li>&nbsp;Post Graduate</li><li>&nbsp;Doctrate</li></ul>', '<dl><dt>Dr. Ela Kumar                </dt><dd>Dean(I/C), School of ICT, Gautam Buddha University </dd><br><dt>Dr. Om Prakash Sangwan                </dt><dd>School of ICT, Gautam Buddha University </dd><br><dt>Dr. Anurag Singh Bhagel                </dt><dd>School of ICT, Gautam Buddha University </dd></dl>', 'Placement Session will begin from 3rd December and will continue till 28th June.'),
 (17, 'som', ' School of Management', 'The School of Management commenced its first batch of MBA in August 2008with 120 students. Since then, it has been marching on with anintegrated focus on exploring and creating new avenues for youngaspirants through strategic collaborations with institutions andenterprises of national and international repute. GBUSM has state of theart classroom and computing facilities, supported by an extensivelibrary of books, journals, films and databases, and a meditationcentre. All academic programmes of GBU are fully residential. The sereneand pollution-free campus, with extensive sports and co-curricularfacilities, is well equipped to meet all the essential requirements ofthe residents. The curriculum of all its academic activities hasinternational and cross cultural focus. At present, the school offersthree programmes in management, which are Masters in BusinessAdministration (MBA) two year programme , Integrated MBA five yearprogramme and Doctoral Programme (PhD).', '<ul><li>&nbsp;Integrated Dual Degree</li><li>&nbsp;Post Graduate</li><li>&nbsp;Doctrate</li></ul>', '<dl><dt>Dr. Ela Kumar                </dt><dd>Dean(I/C), School of ICT, Gautam Buddha University </dd><br><dt>Dr. Om Prakash Sangwan                </dt><dd>School of ICT, Gautam Buddha University </dd><br><dt>Dr. Anurag Singh Bhagel                </dt><dd>School of ICT, Gautam Buddha University </dd></dl>', 'Placement Session will begin from 3rd December and will continue till 28th June.'),
@@ -226,7 +249,7 @@ CREATE TABLE IF NOT EXISTS `upcoming_events` (
 --
 
 INSERT INTO `upcoming_events` (`id`, `event_id`) VALUES
-(1, 6),
+(1, 5),
 (2, 6),
 (3, 7),
 (4, -1),
@@ -263,7 +286,7 @@ INSERT INTO `users` (`user_id`, `username`, `password`, `type`, `email`, `active
 (5, 'rajat', '$2a$08$89gL0PX4Ewl0/9RbfqBuOO6Jbp.ETHXsk.rDNtzKUkDcFe3SwBKaC', 'admin', 'sunny0rajat@gmail.com', 1, '', 'Rajat Saxena', '', '', ''),
 (6, 'shobhit', '$2a$08$c4/t9EJ0rkX7jur.sbhtJ.JA0hEBVC4Md5qk0AH7MBaYZb3WYKQhS', 'admin', 'shobhit95sharma@gmail.com', 1, '', 'Shobhit Sharma', '', '', ''),
 (7, 'bhawesh', '$2a$08$QghHh95c4h3GLrBFYN/9xuUrjeY/7xGc88hNv0rldS9wNOQxIJX.C', 'admin', '13ics015@gbu.ac.in', 1, '', 'Bhawesh Chandola', '', '', ''),
-(8, 'student1', '$2a$08$YjytProg8gi0nweS2f7cI.b8Dh2ZR4keLzSFXuFNCVAFWlQ3V1nca', 'student', 'sasa', 1, '', 'Student 1', '', '', ''),
+(8, 'student1', '$2a$08$YjytProg8gi0nweS2f7cI.b8Dh2ZR4keLzSFXuFNCVAFWlQ3V1nca', 'student', 'sasa@xyz.com', 1, '', 'Student 1', '', '', ''),
 (9, 'amit', '$2a$08$UcvspCTXRKOIiZj2FAdGn.z0Grzpd9cWsjH.m0JjQc0cRYmbjtJCu', 'admin', 'amit@gbuonline.in', 1, '', 'Dr. Amit K awasthi', '', '', ''),
 (10, 'pp', '$2a$08$y/xDX/wvz9SPwzZDHH.g/.wRLjXoLwJcLR9gLw03x6ytbANsGME5K', 'student', 'pp@xyz.com', 0, '', 'pp', 'pp', 'pp', ''),
 (11, 'xx', '$2a$08$WRBWtrUhWqr01S8nyZfXHe/6/YQLNAqWay5NDL5SG32gMEr72YDCy', 'student', 'xxx@gmail.com', 0, '', 'xx', '', '', ''),
@@ -339,6 +362,12 @@ ALTER TABLE `blog_comments`
 -- Indexes for table `blog_likes`
 --
 ALTER TABLE `blog_likes`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `clubs`
+--
+ALTER TABLE `clubs`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -428,6 +457,11 @@ ALTER TABLE `blog_comments`
 ALTER TABLE `blog_likes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT for table `clubs`
+--
+ALTER TABLE `clubs`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT for table `ebooks`
 --
 ALTER TABLE `ebooks`
@@ -436,7 +470,7 @@ ALTER TABLE `ebooks`
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `h_complaint`
 --

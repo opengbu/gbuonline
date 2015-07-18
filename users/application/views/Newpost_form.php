@@ -71,7 +71,7 @@ date_default_timezone_set("Asia/Kolkata");
     </select>
     <br /><br />
 
-    <label>Publishing date  </label>
+    <label>Event date  </label>
     <input type="text" value="<?= date('Y-m-d'); ?>" name="publishing_date" class="form-control" />
 
     <br />
