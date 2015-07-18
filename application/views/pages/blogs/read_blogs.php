@@ -29,7 +29,7 @@
 					<div class="col-md-4">
 						<button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target=".blogs"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> &nbsp;<span class="badge">15</span></button>&nbsp;
 						<button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target=".blogs"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> &nbsp;<span class="badge">4</span></button>&nbsp;
-						<button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target=".blogs"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> &nbsp;<span class="badge">9</span></button>
+						<button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target=".blogs"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> &nbsp;<span class="badge"><a href="<?php echo site_url('blogs/read_blogs')?>#disqus_thread"></a></span></button>
 					</div>
 					<div class="col-md-8" style="text-align: right;  ">
 						<button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target=".blogs"><span>Aman Verma</span> &nbsp;<span class="badge">15 . IEC . 027</span></button>
@@ -37,6 +37,26 @@
 				</div>
 			
 			</div><!--for well-->
+			
+			<!--disqus code begins-->
+			
+			<div id="disqus_thread"></div>
+			<script type="text/javascript">
+				/* * * CONFIGURATION VARIABLES * * */
+				var disqus_shortname = 'gbuonline';
+				    
+				/* * * DON'T EDIT BELOW THIS LINE * * */
+				(function() {
+					var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+					dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+					(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+				})();
+				
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+			
+			<!--disqus code ends-->
+			<br>
 					
 
 		</div ><!--for colmd9-->

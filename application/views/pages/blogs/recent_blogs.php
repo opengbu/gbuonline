@@ -42,7 +42,7 @@
 									<div class="col-md-4">
 										<button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target=".blogs"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> &nbsp;<span class="badge">15</span></button>&nbsp;
 										<button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target=".blogs"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> &nbsp;<span class="badge">4</span></button>&nbsp;
-										<button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target=".blogs"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> &nbsp;<span class="badge">9</span></button>
+										<button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target=".blogs"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> &nbsp;<span class="badge"><a href="<?php echo site_url('blogs/read_blogs')?>#disqus_thread"></a></span></button>
 									</div>
 									<div class="col-md-8" style="text-align: right;  ">
 										<button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target=".blogs"><span>Aman Verma</span> &nbsp;<span class="badge">15 . IEC . 027</span></button>
@@ -56,8 +56,3 @@
 			
 			<!--Loop Ends-->
    
-
-		
-
-
- 
