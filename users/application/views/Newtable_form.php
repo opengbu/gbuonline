@@ -1,5 +1,5 @@
 <?php
-/* 
+/*
  *  Created on :Jul 10, 2015, 12:18:54 PM
  *  Author     :Varun Garg <varun.10@live.com>
  */
@@ -16,6 +16,9 @@
     <br />
     <label>School's Full Name(example: School Of Vocational And Applied Sciences)</label>
     <input type="text" class="form-control" name="sc_full_name"/>
+    <br>
+    <label>Tagline(example: Discover Yourself...)</label>
+    <input type="text" class="form-control" name="tagline"/>
     <br>
     <label>About School</label>
     <textarea value="" name="about_us" class=""  ></textarea>

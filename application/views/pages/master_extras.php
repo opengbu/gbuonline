@@ -11,16 +11,20 @@
                     </div>
                     <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                         <div class="panel-body">
-
-                            <a href="<?php echo site_url('clubs/robotics') ?>">1. ROBOTICS CLUB</a><br><br>
-                            <a href="<?php echo site_url('clubs/programming') ?>">2. PROGRAMMING CLUB</a><br><br>
-                            <a href="<?php echo site_url('clubs/debating') ?>">3. DEBATING CLUB</a><br><br>
-                            <a href="<?php echo site_url('clubs/art') ?>">4. ART CLUB</a><br><br>
-                            <a href="<?php echo site_url('clubs/ss') ?>">5. SOCIAL SERVICE CLUB</a><br><br>
-                            <a href="<?php echo site_url('clubs/dramatics') ?>">6. DRAMATICS CLUB</a><br><br>
-                            <a href="<?php echo site_url('clubs/adventure') ?>">7. ADVENTURE CLUB</a><br><br>
-                            <a href="<?php echo site_url('clubs/literary') ?>">8. LITERARY CLUB</a><br><br>
-                            <a href="<?php echo site_url('clubs/photography') ?>">9. PHOTOGRAPHY CLUB</a>
+                             <?php
+                              /*
+                               * Fully Dynamic clubs
+                               * This can be implemented in schools, and ebooks section
+                               */
+                              $clubs = $this->db->query("select c_name, c_full_name from clubs order by c_full_name");
+                              $club_count = 0;
+                              foreach ($clubs->result() as $row)
+                              {
+                                  $club_count++;
+                                  echo '<a href="' . site_url() . 'clubs/view/' . $row->c_name. '">' . $club_count . '. ';
+                                  echo strtoupper($row->c_full_name) . '</a></br></br>';
+                              }
+                              ?>   
                         </div>
                     </div>
                 </div>

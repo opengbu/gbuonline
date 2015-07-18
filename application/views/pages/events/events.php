@@ -151,7 +151,7 @@
                     foreach ($past_events->result() as $row) {
                         $count++;
                         if ($count > 3)
-                            break;;
+                            break;
                         ?>
 
                         <div class = "col-md-4" >

@@ -31,14 +31,14 @@ class Edit_table extends CI_Controller {
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('Edittable_form', $param);
         } else {
-            $sc_name = $this->input->post('sc_name');
             $sc_full_name = $this->input->post('sc_full_name');
             $about_us = $this->input->post('about_us');
             $course_structure = $this->input->post('course_structure');
             $faculty = $this->input->post('faculty');
             $placements = $this->input->post('placements');
+            $tagline = $this->input->post('tagline');
 
-            $query2 = $this->db->query("update schools set sc_full_name = '$sc_full_name',about_us = '$about_us',course_structure='$course_structure',faculty='$faculty',placements='$placements' where sc_name='$tbname'");
+            $this->db->query("update schools set tagline = '$tagline', sc_full_name = '$sc_full_name',about_us = '$about_us',course_structure='$course_structure',faculty='$faculty',placements='$placements' where sc_name='$tbname'");
 
             redirect('/All_schools');
         }

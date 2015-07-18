@@ -36,8 +36,9 @@ class Edit_club extends CI_Controller {
             $about_us = $this->input->post('about_us');
             $faculty = $this->input->post('faculty');
             $students = $this->input->post('students');
+            $tagline = $this->input->post('tagline');
 
-            $this->db->query("update clubs set c_full_name = '$c_full_name',about_us = '$about_us',faculty='$faculty',students='$students' where c_name='$cname'");
+            $this->db->query("update clubs set tagline = '$tagline', c_full_name = '$c_full_name',about_us = '$about_us',faculty='$faculty',students='$students' where c_name='$cname'");
 
             redirect('/All_clubs');
         }

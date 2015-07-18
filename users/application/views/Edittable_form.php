@@ -16,12 +16,14 @@
         echo form_open('edit_table/index/' . $tname);
         ?>
 
-
         <label>School Name</label>
         <input type="text" class="form-control" name="sc_name" value="<?= $row->sc_name ?>" readonly/>
         <br />
         <label>Shool's Full Name(example: School Of Vocational And Applied Sciences)</label>
         <input type="text" class="form-control" name="sc_full_name" value="<?= $row->sc_full_name ?>"/>
+        <br>
+        <label>Tagline(example: Discover Yourself...)</label>
+        <input type="text" class="form-control" name="tagline" value="<?= $row->tagline ?>"/>
         <br>
         <label>About School</label>
         <textarea name="about_us" class="jqte-test" value=""><?= $row->about_us ?></textarea>

@@ -32,8 +32,9 @@ class New_club extends CI_Controller {
             $about_us = $this->input->post('about_us');
             $students = $this->input->post('students');
             $faculty = $this->input->post('faculty');
+            $tagline = $this->input->post('tagline');
 
-            $this->db->query("insert into clubs (c_name,c_full_name,about_us,faculty,students) values ('$c_name','$c_full_name','$about_us','$faculty','$students')");
+            $this->db->query("insert into clubs (c_name,c_full_name,about_us,faculty,students,tagline) values ('$c_name','$c_full_name','$about_us','$faculty','$students','$tagline')");
 
             redirect('/All_clubs');
         }

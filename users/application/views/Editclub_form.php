@@ -22,6 +22,9 @@
         <label>Clubs's Full Name(example: Programming club)</label>
         <input type="text" class="form-control" name="c_full_name" value="<?= $row->c_full_name ?>"/>
         <br>
+        <label>Tagline(example: Discover Yourself...)</label>
+        <input type="text" class="form-control" name="tagline" value="<?= $row->tagline ?>"/>
+        <br>
         <label>About Club</label>
         <textarea name="about_us" class="jqte-test" value=""><?= $row->about_us ?></textarea>
         <br>    
