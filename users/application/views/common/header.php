@@ -51,6 +51,9 @@
                 margin-left: 2px;
                 vertical-align: middle;
             }
+            #getFixed {
+                width: 231px;
+            }
         </style>
         <script>
             $(function () {
@@ -65,6 +68,24 @@
                             $(this).toggleClass('open');
                             $('b', this).toggleClass("caret caret-up");
                         });
+            });
+            jQuery(function ($) {
+                function fixDiv() {
+                    var $cache = $('#getFixed');
+                    var $height = $(window).scrollTop();
+
+                    if ($(this).scrollTop() >= 10)
+                        $cache.css({
+                            'top': $height
+                        });
+                    else
+                       $cache.css({
+                            'top': 'auto'
+                        }); 
+
+                }
+                $(window).scroll(fixDiv);
+                fixDiv();
             });
         </script>
     </head>
@@ -112,7 +133,7 @@
                 </div>
             </nav>
 
-            <nav class="navbar navbar-default sidebar pre-scrollable" style="height: 100%;max-height: 100% "  id="sidebar-wrapper" role="navigation">
+            <nav class="navbar navbar-default sidebar pre-scrollable" style="overflow-y:auto; max-height:100%;" id="getFixed"  id="sidebar-wrapper" role="navigation">
                 <div class="container-fluid">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
