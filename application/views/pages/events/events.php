@@ -37,13 +37,15 @@
 
                         <div class = "col-md-3" >
 
-                            <select class="selectpicker" data-style="btn-success" name="school" data-width=100% role="menu" aria-labelledby="dropdownMenu1">
+                            <select class="selectpicker" onchange="this.form.submit()" data-style="btn-success" name="school" data-width=100% role="menu" aria-labelledby="dropdownMenu1">
                                 <option value="%" >ALL</a></option>
                                 <?php
                                 $schools_query = $this->db->query("select sc_name from schools");
                                 foreach ($schools_query->result() as $row) {
-                                    echo '<option value="' . $row->sc_name;
-                                    echo '">' . strtoupper($row->sc_name) . '</option>';
+                                    echo '<option value="' . $row->sc_name . '" ';
+                                    if (isset($_REQUEST['school']) && $_REQUEST['school'] == $row->sc_name)
+                                        echo 'selected="selected" ';
+                                    echo '>' . strtoupper($row->sc_name) . '</option>';
                                 }
                                 ?>
                             </select>
@@ -51,29 +53,36 @@
 
                         <div class = "col-md-3" >
 
-                            <select class="selectpicker" data-style="btn-success" name="club" data-width=100% role="menu" aria-labelledby="dropdownMenu1">
+                            <select class="selectpicker" onchange="this.form.submit()" data-style="btn-success" name="club" data-width=100% role="menu" aria-labelledby="dropdownMenu1">
                                 <option value="%" >ALL</a></option>
                                 <?php
                                 $schools_query = $this->db->query("select c_name,c_full_name from clubs");
                                 foreach ($schools_query->result() as $row) {
-                                    echo '<option value="' . $row->c_name;
-                                    echo '">' . strtoupper($row->c_full_name) . '</option>';
+                                    echo '<option value="' . $row->c_name . '" ';
+                                    if (isset($_REQUEST['club']) && $_REQUEST['club'] == $row->c_name)
+                                        echo 'selected="selected" ';
+                                    echo '>' . strtoupper($row->c_full_name) . '</option>';
                                 }
                                 ?>
                             </select>   
                         </div>
 
                         <div class = "col-md-3" style=" ">
-                            <select class="selectpicker" data-style="btn-success" name="type" data-width=100% role="menu" aria-labelledby="dropdownMenu1">
+                            <select class="selectpicker" onchange="this.form.submit()" data-style="btn-success" name="type" data-width=100% role="menu" aria-labelledby="dropdownMenu1">
                                 <option value="%" >ALL</a></option>
-                                <option value="competition" >Competition</option>
-                                <option value="workshop" >Workshop</option>
-                                <option value="Conference" >Conference</option>
-                                <option value="lecture" >Lecture</option>
+                                <?php
+                                $options = array("competition", "workshop", "conference", "lecture");
+                                foreach ($options as $option) {
+                                    echo '<option value="' . $option . '" ';
+                                    if (isset($_REQUEST['type']) && $_REQUEST['type'] == $option)
+                                        echo 'selected="selected" ';
+                                    echo '>' . ucfirst($option) . '</option>';
+                                }
+                                ?>
+                                }
+
+                                ?>
                             </select>
-                        </div>
-                        <div class="col-md-1">
-                            <input type="submit" value="GO" class="form-control btn btn-primary btn-sm">
                         </div>
                     </form>
                 </div><!--a row inside another row-->
@@ -94,16 +103,16 @@
 
                     <?php
                     $condition_q = "";
-                    $original_q  = "select events.id, article_name, short_desc, image_path from events, upcoming_events where events.id = event_id ";
-                    if(isset($_REQUEST['school']) && $_REQUEST['school']!="")
-                        $condition_q .= " and school like '" .$_REQUEST['school'] . "' ";
-                    if(isset($_REQUEST['club']) && $_REQUEST['club']!="")
-                        $condition_q .= " and club like '" .$_REQUEST['club'] . "' ";
-                    if(isset($_REQUEST['type']) && $_REQUEST['type']!="")
-                        $condition_q .= " and type like '" .$_REQUEST['type'] . "' ";
-                    
-                    
-                    $upcoming_events = $this->db->query($original_q . $condition_q.  "order by upcoming_events.id ");
+                    $original_q = "select events.id, article_name, short_desc, image_path from events, upcoming_events where events.id = event_id ";
+                    if (isset($_REQUEST['school']) && $_REQUEST['school'] != "")
+                        $condition_q .= " and school like '" . $_REQUEST['school'] . "' ";
+                    if (isset($_REQUEST['club']) && $_REQUEST['club'] != "")
+                        $condition_q .= " and club like '" . $_REQUEST['club'] . "' ";
+                    if (isset($_REQUEST['type']) && $_REQUEST['type'] != "")
+                        $condition_q .= " and type like '" . $_REQUEST['type'] . "' ";
+
+
+                    $upcoming_events = $this->db->query($original_q . $condition_q . "order by upcoming_events.id ");
                     $count = 0; // since front page displays top 3 upcoming events only
                     foreach ($upcoming_events->result() as $row) {
                         $count++;
@@ -144,7 +153,7 @@
                     <?php
                     date_default_timezone_set("Asia/Kolkata");
                     $original_q = "select id, article_name, short_desc, image_path, publishing_date from events where publishing_date < '" . date('Y-m-d') . "' ";
-                    
+
                     $past_events = $this->db->query($original_q . $condition_q . " order by publishing_date desc");
                     $count = 0; // since front page displays top 3 upcoming events only
                     foreach ($past_events->result() as $row) {
