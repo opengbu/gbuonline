@@ -12,10 +12,10 @@
     </style>
 
 
-    <footer class="footer container-fluid" role="contentinfo" style="position: absolute; z-index: 100; background-color: slategray;">
+    <footer class="footer container-fluid"  role="contentinfo" style="position: absolute; z-index: 100; background-color: slategray;">
         <br>
 
-        <div class="wrapper">
+        <div class="wrapper" id="getFooterLen">
 
             <div class="row" >
                 <div class="col-md-2 col-md-offset-3">
