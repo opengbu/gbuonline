@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="<?php echo base_url() . 'users/application/views/common/' . 'dist/css/bootstrap-select.css' ?>">
+<script type="text/javascript" src="<?php echo base_url() . 'users/application/views/common/' . 'dist/js/bootstrap-select.js' ?>"></script>
+
 <!--script to display the selected option-->
 <script>
 
@@ -27,68 +30,52 @@
             <div class="well well-sm"><!--bootstrap well begins-->
 
                 <div class = "row"><!--a row inside another row-->
-
-                    <div class = "col-md-2" style="margin-top: 3px; font-size: 120%;">
-                        <code><b>FILTER BY : </b></code>
-                    </div>
-
-                    <div class = "col-md-3" style="">
-                        <div class="dropdown" >
-                            <button style="width: 78%;" class="btn btn-success btn-sm dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-                                School
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">ALL</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">SOE</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">SOM</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">SOBT</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">SOICT</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">SOLJG</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">SOBSC</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">SOHSS</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">SOVSAS</a></li>
-                            </ul>
+                    <form action="" method="get">
+                        <div class = "col-md-2" style="margin-top: 3px; font-size: 120%;">
+                            <code><b>FILTER BY : </b></code>
                         </div>
-                    </div>
 
-                    <div class = "col-md-3" style="">	
-                        <div class="dropdown">
-                            <button style="width: 78%;" class="btn btn-success btn-sm dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true" >
-                                Club
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">ALL</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Art</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Debating</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Literary</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Robotics</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Adventure</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Dramatics</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Photography</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Programming</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Social Service</a></li>
-                            </ul>
+                        <div class = "col-md-3" >
+
+                            <select class="selectpicker" data-style="btn-success" name="school" data-width=100% role="menu" aria-labelledby="dropdownMenu1">
+                                <option value="%" >ALL</a></option>
+                                <?php
+                                $schools_query = $this->db->query("select sc_name from schools");
+                                foreach ($schools_query->result() as $row) {
+                                    echo '<option value="' . $row->sc_name;
+                                    echo '">' . strtoupper($row->sc_name) . '</option>';
+                                }
+                                ?>
+                            </select>
                         </div>
-                    </div>
 
-                    <div class = "col-md-3" style=" ">
-                        <div class="dropdown">
-                            <button style="width: 78%;" class="btn btn-success btn-sm dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-                                Type
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">ALL</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Competition</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Workshop</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Conference</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Lecture</a></li>
-                            </ul>
-                        </div>	
-                    </div>
+                        <div class = "col-md-3" >
 
+                            <select class="selectpicker" data-style="btn-success" name="club" data-width=100% role="menu" aria-labelledby="dropdownMenu1">
+                                <option value="%" >ALL</a></option>
+                                <?php
+                                $schools_query = $this->db->query("select c_name,c_full_name from clubs");
+                                foreach ($schools_query->result() as $row) {
+                                    echo '<option value="' . $row->c_name;
+                                    echo '">' . strtoupper($row->c_full_name) . '</option>';
+                                }
+                                ?>
+                            </select>   
+                        </div>
+
+                        <div class = "col-md-3" style=" ">
+                            <select class="selectpicker" data-style="btn-success" name="type" data-width=100% role="menu" aria-labelledby="dropdownMenu1">
+                                <option value="%" >ALL</a></option>
+                                <option value="competition" >Competition</option>
+                                <option value="workshop" >Workshop</option>
+                                <option value="Conference" >Conference</option>
+                                <option value="lecture" >Lecture</option>
+                            </select>
+                        </div>
+                        <div class="col-md-1">
+                            <input type="submit" value="GO" class="form-control btn btn-primary btn-sm">
+                        </div>
+                    </form>
                 </div><!--a row inside another row-->
 
             </div><!--bootstrap well ends-->
@@ -106,7 +93,17 @@
 
 
                     <?php
-                    $upcoming_events = $this->db->query("select events.id, article_name, short_desc, image_path from events, upcoming_events where events.id = event_id order by upcoming_events.id ");
+                    $condition_q = "";
+                    $original_q  = "select events.id, article_name, short_desc, image_path from events, upcoming_events where events.id = event_id ";
+                    if(isset($_REQUEST['school']) && $_REQUEST['school']!="")
+                        $condition_q .= " and school like '" .$_REQUEST['school'] . "' ";
+                    if(isset($_REQUEST['club']) && $_REQUEST['club']!="")
+                        $condition_q .= " and club like '" .$_REQUEST['club'] . "' ";
+                    if(isset($_REQUEST['type']) && $_REQUEST['type']!="")
+                        $condition_q .= " and type like '" .$_REQUEST['type'] . "' ";
+                    
+                    
+                    $upcoming_events = $this->db->query($original_q . $condition_q.  "order by upcoming_events.id ");
                     $count = 0; // since front page displays top 3 upcoming events only
                     foreach ($upcoming_events->result() as $row) {
                         $count++;
@@ -115,7 +112,7 @@
                         ?>
 
                         <div class = "col-md-4" >
-                            <div class = "thumbnail" style="height: 50%">
+                            <div class = "thumbnail" style="min-height: 50%">
                                 <a href = "<?php echo site_url('feat/read_events?id=' . $row->id) ?>">
                                     <img src = "<?php echo base_url($row->image_path) ?>" alt = "code-in-gbu">
                                 </a>
@@ -146,7 +143,9 @@
 
                     <?php
                     date_default_timezone_set("Asia/Kolkata");
-                    $past_events = $this->db->query("select id, article_name, short_desc, image_path, publishing_date from events where publishing_date < '" . date('Y-m-d') . "' order by publishing_date desc");
+                    $original_q = "select id, article_name, short_desc, image_path, publishing_date from events where publishing_date < '" . date('Y-m-d') . "' ";
+                    
+                    $past_events = $this->db->query($original_q . $condition_q . " order by publishing_date desc");
                     $count = 0; // since front page displays top 3 upcoming events only
                     foreach ($past_events->result() as $row) {
                         $count++;
@@ -155,7 +154,7 @@
                         ?>
 
                         <div class = "col-md-4" >
-                            <div class = "thumbnail" style="height: 50%">
+                            <div class = "thumbnail" style="min-height: 50%">
                                 <a href = "<?php echo site_url('feat/read_events?id=' . $row->id) ?>">
                                     <img src = "<?php echo base_url($row->image_path) ?>" alt = "code-in-gbu">
                                 </a>

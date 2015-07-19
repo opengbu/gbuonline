@@ -67,7 +67,7 @@ date_default_timezone_set("Asia/Kolkata");
         <option value="competition" >Competition</option>
         <option value="workshop" >Workshop</option>
         <option value="Conference" >Conference</option>
-        <option value="Lecture" >Lecture</option>
+        <option value="lecture" >Lecture</option>
     </select>
     <br /><br />
 

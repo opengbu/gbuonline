@@ -61,7 +61,7 @@ $club_details = $query->row();
                         ?>
 
                         <div class = "col-md-4" >
-                            <div class = "thumbnail" style="height: 50%">
+                            <div class = "thumbnail" style="min-height: 50%">
                                 <a href = "<?php echo site_url('feat/read_events?id=' . $row->id) ?>">
                                     <img src = "<?php echo base_url($row->image_path) ?>" alt = "code-in-gbu">
                                 </a>
