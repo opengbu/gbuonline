@@ -57,7 +57,7 @@
 			
 			<!--disqus code ends-->
 			<br>
-					
+			
 
 		</div ><!--for colmd9-->
 	<!--row ends in extras.php-->

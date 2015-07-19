@@ -3,7 +3,8 @@
     <style>
 
         footer {
-            background:url("<?php echo base_url('resources/images/footer1.jpg') ?>");
+            <!--background:url("<?php echo base_url('resources/images/footer1.jpg') ?>");-->
+			background-color: #0000FF;
             margin: 0px;
             padding-left: 270px; 
             width : 100%;
@@ -11,7 +12,7 @@
     </style>
 
 
-    <footer class="footer container-fluid" role="contentinfo" style="position: absolute; z-index: 100;">
+    <footer class="footer container-fluid" role="contentinfo" style="position: absolute; z-index: 100; background-color: slategray;">
         <br>
 
         <div class="wrapper">
@@ -246,7 +247,7 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = 'gbuonline';
-    
+	
     /* * * DON'T EDIT BELOW THIS LINE * * */
     (function () {
         var s = document.createElement('script'); s.async = true;
