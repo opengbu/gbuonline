@@ -108,7 +108,8 @@
             <a href="<?php echo site_url('feat/events')?>"><font size="2"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span>&nbsp;Events</font></a>
           
         </li>
-        <!--
+        <?php
+        /*
             
           <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><font size="2">
@@ -142,7 +143,11 @@
             <li><a href="#">Ultra-surf</a></li>
           
           </ul>
-        </li>-->
+        </li> 
+        */
+        ?>
+        <li>
+            <a href="https://gbuonline.wordpress.com"><font size="2"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Reviews</font></a>
       </ul>
         <ul class="nav navbar-nav  pull-right">
         <li>
