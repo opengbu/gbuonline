@@ -247,6 +247,7 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = 'gbuonline';
+	var disqus_identifier = 'first';
 	
     /* * * DON'T EDIT BELOW THIS LINE * * */
     (function () {
