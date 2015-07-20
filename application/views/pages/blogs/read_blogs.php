@@ -2,9 +2,10 @@
 	<div class="row">
 		<div class="col-md-9" style="padding-right:30px; border-right: 2px solid #ccc;" id="myDiv">
 		
-			<div class="well" style="background-color: #222; color: white; font-size: 20px;">
+			<div  style=" color: white; background-color: #222; padding-top:19px; padding-bottom:19px; padding-left:19px; border-radius: 3px; font-size: 20px;">
 				Artificial Intelligence - The next step towards human destruction
 			</div>
+			<br>
 				
 			<div class="well" style="font-size: 16px;  text-align: justify; ">
 	 How many things do we think in a day? How many feelings do we go through? Feelings that belong to so many categories as happiness, sadness, regret, guilt, 
@@ -54,7 +55,7 @@
 				/* * * CONFIGURATION VARIABLES * * */
 				var disqus_shortname = 'gbuonline';
 				var disqus_identifier = 'first';
-				    
+								    
 				/* * * DON'T EDIT BELOW THIS LINE * * */
 				(function() {
 					var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

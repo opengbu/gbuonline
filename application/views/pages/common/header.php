@@ -90,7 +90,7 @@
         </li>
 		
 		<li>
-            <a href="<?php echo site_url('blogs/master_blogs')?>"><font size="2"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp;Blogs</font></a>
+            <a href="<?php echo site_url('blogs/recent_blogs')?>"><font size="2"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp;Blogs</font></a>
           
         </li>
 		
