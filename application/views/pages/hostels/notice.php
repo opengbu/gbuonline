@@ -32,7 +32,7 @@
                     <div class="col-md-3"><b>Title</b></div>
                     <div class="col-md-3"><b>Issuing Authority</b></div>
                     <div class="col-md-2"><b>Concerned Hostels</b></div></font>
-            </div><hr/><hr/>
+            </div><hr/><hr/><hr/>
                     <?php
                         /*$this->db->where('id','1');*/
                         $q=$this->db->get('h_notice');

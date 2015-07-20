@@ -13,11 +13,11 @@
 					</button>
 					
 					<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-						<li><a href="#">Hostel Name</a></li>
-						<li><a href="#">Warden Name</a></li>
-						<li><a href="#">Warden Office</a></li>
+						<li><a href="<?php echo site_url('hostels/hname')?>">Hostel Name</a></li>
+						<li><a href="<?php echo site_url('hostels/wname')?>">Warden Name</a></li>
+						<li><a href="<?php echo site_url('hostels/woffice')?>">Warden Office</a></li>
 					</ul>
-				
+				    
 				</div>   
  </div> 
 </div>

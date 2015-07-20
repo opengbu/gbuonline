@@ -1,11 +1,38 @@
+<link rel="stylesheet" href="<?php echo base_url() . 'users/application/views/common/' . 'dist/css/bootstrap-select.css' ?>">
+<script type="text/javascript" src="<?php echo base_url() . 'users/application/views/common/' . 'dist/js/bootstrap-select.js' ?>"></script>
+
 <div class="row">
 	<div class="page-header" style = "background-color: darkred; padding-top: 10px; padding-left: 50px; margin-top: 15px;">
 		<font color="white"  face="Monotype Corsiva">
-          &nbsp; <h1>Hostel Page </br><!--<small>Keep Calm and Write.....</small></h1>-->
+          &nbsp; <h1>Hostel Page </h1>
+            <h2><small>Select your desired hostel</small></h2>
+			<font face="Geneva,Tahoma,Verdana,sans-serif;"size="15px">
+             <div class="form-group">
+					  <select class="selectpicker" multiple data-max-options="1" data-width="30%">
+						<option>Birsa Munda Hostel</option>
+                    <option>Guru Ghasi Das Hostel</option>
+                    <option>Maha Maya Girls Hostel</option>
+                    <option>Ram Saran Das Hostel</option>
+                    <option>Rani Laxmi Bai Girls Hostel</option>
+                    <option>Sant Kabir Das Hostel</option>
+                    <option>Sant Ravidas Hostel</option>
+                    <option>Shri Chatarpati Sahu ji Maharaj Hostel</option>
+                    <option>Shri Narayan Guru Hostel</option>
+                    <option>Tulsidas Hostel</option>
+
+                    
+  </select>	
+</div></font>
+    </div><!-- /.row -->
 		</font>      
 	</div> 
 </div>
-<div style="padding-left:10px">
+
+<!--
+
+ 
+
+--><div style="padding-left:10px">
 <a name="go1" style="text-decoration:none;"><div class="jumbotron">
             <h2>BASIC INFORMATION</h2>
             <p>Warden Name : </p>

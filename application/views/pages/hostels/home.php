@@ -41,33 +41,70 @@
 							<hr><hr/>
 							<div class="row">
 								<div class="col-sm-6">
-									Sant Rahim Das Hostel
+									Birsa Munda Hostel
+								</div>
+								<div class="col-sm-6">
+									Maha Maya Girls Hostel
+								</div>
+							<hr>
+							</div>
+							<div class="row">
+								<div class="col-sm-6">
+									Guru Ghasi Das Hostel
 								</div>
 								<div class="col-sm-6">
 									Rani Laxmi Bai Girls Hostel
 								</div>
 							<hr>
 							</div>
-							<div class="row">
+                                     <div class="row">
 								<div class="col-sm-6">
-									Guru Ghasi Das Hostel	
+									Ram Saran Das Hostel
 								</div>
-								<div class="col-sm-6">
-									Mahamaya Girls Hostel
-								</div>
-							<hr>
+				            
+							
 							</div>
+                              <hr/>   
 							<div class="row">
 								<div class="col-sm-6">
-									acadasd
+									Sant Kabir Das Hostel
 								</div>
-								<div class="col-sm-6" >
+								<!--<div class="col-sm-6" >
 									ascsdd
-								</div>
+								</div>-->
 							
 							</div>
 							<hr>
+							<div class="row">
+								<div class="col-sm-6">
+									Sant Ravidas Hostel
+								</div>
+				            
 							
+							</div><hr/>
+                                    <div class="row">
+								<div class="col-sm-6">
+									Shri Chatarpati Sahu ji Maharaj Hostel
+								</div>
+								
+							
+							</div><hr/>
+                                    <div class="row">
+								<div class="col-sm-6">
+									Shri Narayan Guru Hostel
+								</div>
+				            
+							
+							</div>
+                              <hr/>   
+                                       <div class="row">
+								<div class="col-sm-6">
+									Tulsidas Hostel
+								</div>
+				            
+							
+							</div>
+                              <hr/>   
 							</font>
 							</center>
 						</i>      
