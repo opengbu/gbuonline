@@ -4,30 +4,23 @@
         <div class="col-md-4" >
             <h2 align="center"><font face="Times New Roman"><b>News and Updates</b></font></h2>
             <hr>
-            <div class="list-group ">
-                <a href="<?php echo site_url('feat/events') ?>" class="list-group-item">
-                    <h4 class="list-group-item-heading"><b>Code-In-GBU</b></h4>
-                    <p class="list-group-item-text">An online coding competition being organised by the ICT department next Wednesday.So get ready to show your coding skills.Exciting prizes to be won.</p>
-                </a>
-            </div>
-            <div class="list-group">
-                <a href="<?php echo site_url('feat/vnb') ?>" class="list-group-item ">
-                    <h4 class="list-group-item-heading"><b>Change in Grading System</b></h4>
-                    <p class="list-group-item-text">Grading System for students of session 2014-2015 and onwards has been changed.</p>
-                </a>
-            </div>
-            <div class="list-group">
-                <a href="#" class="list-group-item">
-                    <h4 class="list-group-item-heading"><b>Imagine Cup</b></h4>
-                    <p class="list-group-item-text">Microsoft's Imagine Cup is the world's most prestigious student technology competition, bringing together student innovators from all over the world. If you have a ...</p>
-                </a>
-            </div>
-            <div class="list-group">
-                <a href="#" class="list-group-item">
-                    <h4 class="list-group-item-heading"><b>Notification for Odd semester 2015-2016 session</b></h4>
-                    <p class="list-group-item-text">ede rf wf wf wfd   qdwqdqdasd rfr fw  cwefq dd qdwrrfwfcdax wdqdqddasef wefwef ewfew.</p>
-                </a>
-            </div>
+            <?php
+            $news_q = $this->db->query("select id,title,slug from news order by id desc");
+            $count = 0;
+            foreach ($news_q->result() as $row) {
+                $count ++;
+                if ($count > 4)
+                    break;
+                ?>
+                <div class="list-group ">
+                    <a href="<?php echo site_url('News/view?id=' . $row->id) ?>" class="list-group-item">
+                        <h4 class="list-group-item-heading"><b><?= $row->title ?></b></h4>
+                        <p class="list-group-item-text"><?= $row->slug ?></p>
+                    </a>
+                </div>
+                <?php
+            }
+            ?>
 
             <ul class="pager">
                 <li><a href="<?php echo site_url('News/index') ?>"><font color="black">More</font></a></li>
@@ -73,7 +66,7 @@
                     <a href="<?php echo base_url() ?>" class="list-group-item ">
                         <h4 class="list-group-item-heading"><b>Section Unavailable</b></h4>
                         <p class="list-group-item-text">Due to connection issues for some users, 
-                        this section will only be available when domain = gbuonline.in</p>
+                            this section will only be available when domain = gbuonline.in</p>
                     </a>
                 </div>
 

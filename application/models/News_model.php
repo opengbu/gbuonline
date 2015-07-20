@@ -6,15 +6,15 @@ class News_model extends CI_Model {
         $this->load->database();
     }
 
-    public function get_news($slug = FALSE)
+    public function get_news($id = FALSE)
     {
-        if ($slug === FALSE)
+        if ($id === FALSE)
         {
             $query = $this->db->get('news');
             return $query->result_array();
         }
 
-        $query = $this->db->get_where('news', array('slug' => $slug));
+        $query = $this->db->get_where('news', array('id' => $id));
         return $query->row_array();
     }
 

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 20, 2015 at 03:51 PM
+-- Generation Time: Jul 20, 2015 at 11:42 PM
 -- Server version: 10.0.20-MariaDB-log
 -- PHP Version: 5.6.11
 
@@ -47,6 +47,18 @@ INSERT INTO `blog` (`id`, `roll_number`, `title`, `description`, `status`) VALUE
 (6, '', '', '', 0),
 (7, '', 'pp', 'pp\r\n', 0),
 (8, '', 'pp', 'ppp\r\npp\r\npp\r\npp', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `blog_likes`
+--
+
+CREATE TABLE IF NOT EXISTS `blog_likes` (
+  `id` int(11) NOT NULL,
+  `blog_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -120,8 +132,7 @@ CREATE TABLE IF NOT EXISTS `events` (
 INSERT INTO `events` (`id`, `article_name`, `user_id`, `article`, `publishing_date`, `short_desc`, `image_path`, `school`, `club`, `type`) VALUES
 (5, 'Code In GBU', 1, 'hello world<br>', '2015-06-30', 'Short Description<br><br>', 'resources/user_uploads/ichiruki-bleach-pairings-33886487-1920-1200.png', 'sovsas', '', ''),
 (6, 'Abhivyanjana 2016', 6, 'Enter detailed event description', '2015-07-01', ' Example<br /><b>Date:</b> 28 - 01 - 2015 <br><b>Time:</b> 18:30 - 20:00<br/><b>Venue:</b> SOICT', 'resources/user_uploads/1280_800.jpg', 'soict', '%', 'competitio'),
-(7, 'Ecocart 2015', 6, 'Ecocart is awesome<br>', '2015-07-01', ' Example<br><b>Date:</b> 28 - 01 - 2015 <br><b>Time:</b> 18:30 - 20:00<br><b>Venue:</b> SOICT', 'resources/user_uploads/1280_800.jpg', 'soict', '', ''),
-(8, 'ppppp', 1, 'Enter detailed event description', '2015-07-17', ' Example<br /><b>Date:</b> 28 - 01 - 2015 <br><b>Time:</b> 18:30 - 20:00<br/><b>Venue:</b> SOICT', 'resources/user_uploads/1280_800.jpg', 'soict', 'programming', 'competitio');
+(7, 'Ecocart 2015', 6, 'Ecocart is awesome<br>', '2015-07-01', ' Example<br><b>Date:</b> 28 - 01 - 2015 <br><b>Time:</b> 18:30 - 20:00<br><b>Venue:</b> SOICT', 'resources/user_uploads/1280_800.jpg', 'soict', '', '');
 
 -- --------------------------------------------------------
 
@@ -179,15 +190,17 @@ CREATE TABLE IF NOT EXISTS `news` (
   `slug` varchar(128) NOT NULL,
   `text` text NOT NULL,
   `user_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `news`
 --
 
 INSERT INTO `news` (`id`, `title`, `slug`, `text`, `user_id`) VALUES
-(1, 'This is title.', 'This_First_News', 'This is body text.', 0),
-(2, 'Second Title', 'second_slug', 'Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello .', 0);
+(5, 'Notification for Odd semester', '<p id="line1"><span>Notification for Odd semester 2015-2016 session</span></p>', 'Hello Team<br><br>Hello Team<br><br>Hello Team<br><br>Hello Team<br><br>Hello Team<br>Hello Team<br>Hello Team<br>Hello Team<br>Hello Team<br>Hello Team<br>Hello Team<br>Hello Team<br>Hello Team<br>Hello Team<br>Hello Team<br>Hello Team<br>Hello Team<br>Hello Team<br>Hello Team<br><br>', 1),
+(6, 'Imagine Cup', '<span>Microsofts Imagine Cup is the world s most prestigious student technology competition, bringing together student innovator', '<span>Microsofts Imagine Cup is the world s most prestigious student technology competition, bringing together student innovators from all over the world. If you have a </span>', 1),
+(7, 'Change in Grading System', '<p id="line1"><span>Grading System for students of session 2014-2015 and onwards has been changed.</span></p>', '<p id="line1"><span>Grading System for students of session 2014-2015 and onwards has been changed.</span></p>', 1),
+(8, 'Code-In-GBU', '<p id="line1"><span>An online coding competition being organised by the ICT department next Wednesday.So get ready to show your ', '<p id="line1"><span>An online coding competition being organised by the ICT department next Wednesday.So get ready to show your coding skills.Exciting prizes to be won.</span></p>', 1);
 
 -- --------------------------------------------------------
 
@@ -274,10 +287,7 @@ INSERT INTO `users` (`user_id`, `username`, `password`, `type`, `email`, `active
 (6, 'shobhit', '$2a$08$c4/t9EJ0rkX7jur.sbhtJ.JA0hEBVC4Md5qk0AH7MBaYZb3WYKQhS', 'admin', 'shobhit95sharma@gmail.com', 1, '', 'Shobhit Sharma', '', '', ''),
 (7, 'bhawesh', '$2a$08$QghHh95c4h3GLrBFYN/9xuUrjeY/7xGc88hNv0rldS9wNOQxIJX.C', 'admin', '13ics015@gbu.ac.in', 1, '', 'Bhawesh Chandola', '', '', ''),
 (8, 'student1', '$2a$08$YjytProg8gi0nweS2f7cI.b8Dh2ZR4keLzSFXuFNCVAFWlQ3V1nca', 'student', 'sasa@xyz.com', 1, '', 'Student 1', '', '', ''),
-(9, 'amit', '$2a$08$UcvspCTXRKOIiZj2FAdGn.z0Grzpd9cWsjH.m0JjQc0cRYmbjtJCu', 'admin', 'amit@gbuonline.in', 1, '', 'Dr. Amit K awasthi', '', '', ''),
-(10, 'pp', '$2a$08$y/xDX/wvz9SPwzZDHH.g/.wRLjXoLwJcLR9gLw03x6ytbANsGME5K', 'student', 'pp@xyz.com', 0, '', 'pp', 'pp', 'pp', ''),
-(11, 'xx', '$2a$08$WRBWtrUhWqr01S8nyZfXHe/6/YQLNAqWay5NDL5SG32gMEr72YDCy', 'student', 'xxx@gmail.com', 0, '', 'xx', '', '', ''),
-(12, 'sasasa', '$2a$08$kscnIOxgSg9TUAhdCbFZ2OZfKnhOd/ylYW78k5fbHxWbGpfkSxjr6', 'student', 'varun.10@live.com', 0, '', 'pp@xyz.com', 'p', 'p', '');
+(9, 'amit', '$2a$08$UcvspCTXRKOIiZj2FAdGn.z0Grzpd9cWsjH.m0JjQc0cRYmbjtJCu', 'admin', 'amit@gbuonline.in', 1, '', 'Dr. Amit K awasthi', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -337,6 +347,12 @@ INSERT INTO `warden` (`id`, `hostel_name`, `warden_name`, `warden_office`, `host
 -- Indexes for table `blog`
 --
 ALTER TABLE `blog`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `blog_likes`
+--
+ALTER TABLE `blog_likes`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -422,6 +438,11 @@ ALTER TABLE `warden`
 ALTER TABLE `blog`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
+-- AUTO_INCREMENT for table `blog_likes`
+--
+ALTER TABLE `blog_likes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `clubs`
 --
 ALTER TABLE `clubs`
@@ -455,7 +476,7 @@ ALTER TABLE `h_notice`
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `schools`
 --

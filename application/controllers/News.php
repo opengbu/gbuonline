@@ -10,7 +10,7 @@ class News extends CI_Controller {
     public function index() {
         $data['news'] = $this->news_model->get_news();
 
-   $data['newstitle'] = 'News Section &nbsp;|&nbsp;  GBU Online';
+        $data['title'] = 'News Section &nbsp;|&nbsp;  GBU Online';
         $data['heading'] = ' News Section ';
         $data['message'] = 'Happenings at GBU ...';
 
@@ -19,32 +19,30 @@ class News extends CI_Controller {
         $this->load->view('pages/common/header');
         $this->load->view('pages/common/page-heading', $data);
         $this->load->view('pages/news/index', $data);
-        //$this->load->view('templates/footer');
+        $this->load->view('pages/common/extras');
+        $this->load->view('pages/common/footer');
     }
 
-    public function view($slug = NULL) {
-        
+    public function view() {
+
+        $id = $this->input->get('id');
         $data['news'] = $this->news_model->get_news();
-        $data['news_item'] = $this->news_model->get_news($slug);
+        $data['news_item'] = $this->news_model->get_news($id);
 
         if (empty($data['news_item'])) {
             show_404();
         }
 
-        $data['title'] = $data['news_item']['title'];
-
-        $data['newstitle'] = 'News Section &nbsp;|&nbsp;  GBU Online';
-        $data['heading'] = ' News Section ';
-        $data['message'] = 'Happenings at GBU ...';
+        $data['title'] = 'News Section &nbsp;|&nbsp;  GBU Online';
+        $data['heading'] = $data['news_item']['title'];
+        $data['message'] = $data['news_item']['slug'];
 
 
         $this->load->view('pages/common/link', $data);
         $this->load->view('pages/common/header');
         $this->load->view('pages/common/page-heading', $data);
         $this->load->view('pages/news/view', $data);
-        // $this->load->view('templates/footer');
+        $this->load->view('pages/common/footer');
     }
-    
-    
 
 }
