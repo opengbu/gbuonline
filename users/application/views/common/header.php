@@ -79,9 +79,9 @@
                             'top': $height
                         });
                     else
-                       $cache.css({
+                        $cache.css({
                             'top': 'auto'
-                        }); 
+                        });
 
                 }
                 $(window).scroll(fixDiv);
@@ -114,6 +114,8 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a href="<?= base_url() . 'new_event' ?>">Event</a></li>
+                                <li><a href="<?= base_url() . 'new_club' ?>">Club</a></li>
+                                <li><a href="<?= base_url() . 'new_news' ?>">News</a></li>
                                 <?php if ($this->session->userdata('type') == 'admin') { ?>
                                     <li><a href="<?= base_url() . 'new_user' ?>">User</a></li>
                                     <li><a href="<?= base_url() . 'new_school' ?>">School</a></li>
@@ -149,6 +151,7 @@
                             <li ><a href="<?php echo base_url() . 'all_schools' ?>">Schools <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-th-list fa-2x"></i></a></li>
                             <?php if ($this->session->userdata('type') == 'admin') { ?>
                                 <li ><a href="<?php echo base_url() . 'new_school' ?>" >New School<i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-plus-square fa-2x"></i></a></li><?php } ?>
+
                             <li ><a href="<?php echo base_url() . 'all_clubs' ?>">Clubs <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-th-list fa-2x"></i></a></li>
                             <?php if ($this->session->userdata('type') == 'admin') { ?>
                                 <li ><a href="<?php echo base_url() . 'new_club' ?>" >New Club<i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-plus-square fa-2x"></i></a></li><?php } ?>
@@ -156,7 +159,11 @@
 
                             <li ><a href="<?= base_url() . 'all_events' ?>">All Events <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-tasks fa-2x"></i></a></li>
                             <li ><a href="<?= base_url() . 'new_event' ?>">New Event <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-plus-square fa-2x"></i></a></li>
+
+                            <li ><a href="<?= base_url() . 'all_news' ?>">All News <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-tasks fa-2x"></i></a></li>
+                            <li ><a href="<?= base_url() . 'new_news' ?>">Add News <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-plus-square fa-2x"></i></a></li>
                             <li ><a href="<?php echo base_url() . 'manage_upcoming' ?>">Manage Upcoming Events <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-road fa-2x"></i></a></li>
+
                             <li ><a href="<?php echo base_url() . 'image_upload' ?>">Upload Image <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-upload fa-2x"></i></a></li>
                             <li ><a href="<?php echo base_url() . 'manage_uploads' ?>">Manage Gallary <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-picture-o fa-2x"></i></a></li>
 

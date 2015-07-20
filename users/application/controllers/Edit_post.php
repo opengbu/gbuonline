@@ -25,7 +25,7 @@ class Edit_post extends CI_Controller {
 
         if ($this->session->userdata('type') != 'admin' and $a_user_id != $current_user_id) {//more security!
             $this->load->view('common/header');
-            echo "<br><br><br>You must be admin or publishing user to edit this article";
+            echo "<br><br><br>You must be admin or publishing user to edit this event";
             $this->load->view('common/footer');
             return 0;
         }
