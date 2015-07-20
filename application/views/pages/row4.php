@@ -38,7 +38,10 @@
             <h2 align="center"><font face="Times New Roman"><b>Technological Updates</b></font></h2>
             <hr>
 
-                <?php
+            <?php
+            $info = parse_url(base_url());
+            $host = $info['host']; //example extract gbuonline.in from http://www.gbuonline.in/sdsds
+            if ($host == "gbuonline.in") {
                 $xml = ("https://gbuonline.wordpress.com/feed");
                 $xmlDoc = new DOMDocument();
                 $xmlDoc->load($xml);
@@ -64,7 +67,19 @@
                     </div>
                     <?php
                 }
+            } else {
                 ?>
+                <div class="list-group">
+                    <a href="<?php echo base_url() ?>" class="list-group-item ">
+                        <h4 class="list-group-item-heading"><b>Section Unavailable</b></h4>
+                        <p class="list-group-item-text">Due to connection issues for some users, 
+                        this section will only be available when domain = gbuonline.in</p>
+                    </a>
+                </div>
+
+                <?php
+            }
+            ?>
         </div>
 
         <!--code for extras begins-->
