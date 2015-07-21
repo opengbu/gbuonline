@@ -11,7 +11,7 @@
 			position: absolute; 
 			z-index: 100; 
 			background-color: slategray;
-			height: 200px; <!--to solve footer issue-->
+			height: 450px; <!--to solve footer issue-->
         }
     </style>
 
@@ -22,13 +22,12 @@
         <div class="wrapper" id="getFooterLen">
 
             <div class="row" >
-                <div class="col-md-2 col-md-offset-3">
+			
+                <div class="col-md-2 col-md-offset-1">
+						<h4><b><font color = "white">CONTACT</font></b></h4>
 
-
-
-
-                    <button type="button" class="btn btn-block" data-toggle="modal" data-target=".bs-example-modal-lg-1">Team</button>
-
+						<button type="button" class="btn btn-block" data-toggle="modal" data-target=".bs-example-modal-lg-1">Team</button>
+						
                     <div class="modal fade bs-example-modal-lg-1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-lg">
                             <div class="modal-content">
@@ -75,7 +74,7 @@
                         </div>
                     </div>
 
-                    <br>
+                    
                     <br>
                     <button type="button" class="btn btn-block" data-toggle="modal" data-target=".bs-example-modal-lg-2">Vision</button>
 
@@ -94,42 +93,12 @@
                             </div>
                         </div>
                     </div>
-
-
-                </div>
-
-
-                <div class="col-md-2">
-
-                    <button type="button" class="btn btn-block" data-toggle="modal" data-target=".bs-example-modal-lg-3">Google Groups</button>
-
-                    <div class="modal fade bs-example-modal-lg-3" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-lg">
-                            <div class="modal-content ">
-                                <center>
-                                    <br>
-                                    <div class="list-group">
-                                        &nbsp;  <a href="https://groups.google.com/forum/#!forum/ict_softb" class="list-group-item">Computer Science 2011-16</a>
-                                        &nbsp;  <a href="https://groups.google.com/forum/#!forum/gbucs2012" class="list-group-item">Computer Science 2012-17</a>
-                                        &nbsp;  <a href="https://groups.google.com/forum/#!forum/gbu-cs-102-2013" class="list-group-item">Computer Science 2013-18</a>
-                                        &nbsp;  <a href="https://groups.google.com/forum/#!forum/gbuec2013" class="list-group-item">Electronics 2013-18</a>
-                                        &nbsp;  <a href="https://groups.google.com/forum/#!forum/gbu-cs-2014" class="list-group-item">Computer Science 2014-19</a>
-                                        &nbsp;  <a href="https://groups.google.com/forum/#!forum/gbu-ec-2014-19" class="list-group-item">Electronics 2014-19</a>
-                                        &nbsp;  <a href="https://groups.google.com/forum/#!forum/civil-2014-gbu" class="list-group-item">Civil 2014-19</a>
-                                        &nbsp;  <a href="https://groups.google.com/forum/#!forum/gbu-mba-2014" class="list-group-item">MBA 2014</a>       
-                                    </div>
-                                </center>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <br>
-                    <button type="button" class="btn btn-block" onclick = "location.href = 'http://math.gbuonline.in';">Maths Site</button>
-                </div>
-
-                <div class="col-md-2">
-
-                    <button type="button" class="btn btn-block" data-toggle="modal" data-target=".bs-example-modal-lg-5">Connect With Us</button>
+					<br>
+                    
+                    
+                
+				
+				<button type="button" class="btn btn-block" data-toggle="modal" data-target=".bs-example-modal-lg-5">Connect With Us</button>
 
                     <div class="modal fade bs-example-modal-lg-5" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-lg">
@@ -225,12 +194,37 @@
                         </div>
                     </div>
                     <br>
-                    <br>
+                    
                     <button type="button" class="btn btn-block" onclick="location.href='<?php echo site_url('feat/opportunities')?>'">Opportunities</button>
-                </div>
+                
             </div>
+			<div class = "col-md-1">
+			</div>
+			<div class="col-md-3">
+			<h4><b><font color = "white">GOOGLE GROUPS</font></b></h4>
+			
+											<li><a href="https://groups.google.com/forum/#!forum/ict_softb" ><font color="black"><b>Computer Science 2011-16</b></font></a></li>
+                                        &nbsp;  <li><a href="https://groups.google.com/forum/#!forum/gbucs2012" ><font color="black"><b>Computer Science 2012-17</b></font></a></li>
+                                        &nbsp;  <li><a href="https://groups.google.com/forum/#!forum/gbu-cs-102-2013" ><font color="black"><b>Computer Science 2013-18</b></font></a></li>
+                                        &nbsp;  <li><a href="https://groups.google.com/forum/#!forum/gbuec2013" ><font color="black"><b>Electronics 2013-18</b></font></a></li>
+                                        &nbsp;  <li><a href="https://groups.google.com/forum/#!forum/gbu-cs-2014" ><font color="black"><b>Computer Science 2014-19</b></font></a></li>
+                                        &nbsp;  <li><a href="https://groups.google.com/forum/#!forum/gbu-ec-2014-19" ><font color="black"><b>Electronics 2014-19</b></font></a></li>
+                                        &nbsp;  <li><a href="https://groups.google.com/forum/#!forum/civil-2014-gbu" ><font color="black"><b>Civil 2014-19</b></font></a></li>
+                                        &nbsp;  <li><a href="https://groups.google.com/forum/#!forum/gbu-mba-2014" ><font color="black"><b>MBA 2014</b></font></a></li>
+</div>
+
+<div class = "col-md-3">
+<h4><b><font color = "white">QUICK LINKS</font></b></h4>
+
+<a href = "http://math.gbuonline.in"><font color = "black"><b><i>Maths Site</i></b></font></a><br><br>
+<a href = "http://gbu.ac.in"><font color = "black"><b><i>Official Website</i></b></font></a>
+
+
+
+
+</div>
         </div>
-        <br>
+        
         <br>
 
         <div class="row">
