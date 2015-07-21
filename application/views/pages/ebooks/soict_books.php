@@ -10,32 +10,25 @@
                     <h3 class="panel-title">Computer Science</h3>
                 </div>
                 <div class="panel-body">
+                    <?php
+                    $results=$this->db->query("select * from ebooks where sc_name='soict' and dept_name='computer_science'");
+                    $r=$results->result();
+                    foreach ($r as $rows)
+                    {?>
                     <div class="col-md-3" >
                         <div class="thumbnail">
                             <a href="#"> <img src="#" alt="paper1"></a>
                             <div class="caption">
-                                <h3><center><b>Paper 1</b></center></h3>
+                                <h3><center><b><?php echo $rows->book_name; ?></b></center></h3>
                             </div>
                         </div>
-                    </div>
+                    </div><?php
+                    }
+                    ?>
                   
-                    <div class="col-md-3" >
-                        <div class="thumbnail">
-                            <a href="#"> <img src="#" alt="paper2"></a>
-                            <div class="caption">
-                                <h3><center><b>Paper 2</b></center></h3>
-                            </div>
-                        </div>
-                    </div>
+                    
                    
-                    <div class="col-md-3" >
-                        <div class="thumbnail">
-                            <a href="#"> <img src="#" alt="paper3"></a>
-                            <div class="caption">
-                                <h3><center><b>Paper 3</b></center></h3>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
 			</div>
            
@@ -45,32 +38,24 @@
                     <h3 class="panel-title">Electronics</h3>
                 </div>
                 <div class="panel-body">
+                     <?php
+                    $results=$this->db->query("select * from ebooks where sc_name='soict' and dept_name='electronics'");
+                    $r=$results->result();
+                    foreach ($r as $rows)
+                    {?>
                     <div class="col-md-3" >
                         <div class="thumbnail">
                             <a href="#"> <img src="#" alt="paper1"></a>
                             <div class="caption">
-                                <h3><center><b>Paper 1</b></center></h3>
+                                <h3><center><b><?php echo $rows->book_name; ?></b></center></h3>
                             </div>
                         </div>
-                    </div>
+                    </div><?php
+                    }
+                    ?>
                     
-                    <div class="col-md-3" >
-                        <div class="thumbnail">
-                            <a href="#"> <img src="#" alt="paper2"></a>
-                            <div class="caption">
-                                <h3><center><b>Paper 2</b></center></h3>
-                            </div>
-                        </div>
-                    </div>
                     
-                    <div class="col-md-3" >
-                        <div class="thumbnail">
-                            <a href="#"> <img src="#" alt="paper3"></a>
-                            <div class="caption">
-                                <h3><center><b>Paper 3</b></center></h3>
-                            </div>
-                        </div>
-                    </div>
+                    
                     </div>
 			</div>
 	</div>

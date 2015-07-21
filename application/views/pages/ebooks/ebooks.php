@@ -11,7 +11,8 @@
 		
         <ul class="list-group">
                 <li class="list-group-item">
-                        <span class="badge">16</span>
+                    <span class="badge">16
+                    </span>
                         <a href="<?php echo site_url('ebooks/soict_books')?>">SOICT </a>  
                 </li>
                 <li class="list-group-item">

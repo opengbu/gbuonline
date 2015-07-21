@@ -9,32 +9,21 @@
                     <h3 class="panel-title">Buddhist Languages and Literature</h3>
                 </div>
                 <div class="panel-body">
+                    <?php
+                    $results=$this->db->query("select * from ebooks where sc_name='sobsc' and dept_name='buddhist_languages_and_literature'");
+                    $r=$results->result();
+                    foreach ($r as $rows)
+                    {?>
                     <div class="col-md-3" >
                         <div class="thumbnail">
                             <a href="#"> <img src="#" alt="paper1"></a>
                             <div class="caption">
-                                <h3><center><b>Paper 1</b></center></h3>
+                                <h3><center><b><?php echo $rows->book_name; ?></b></center></h3>
                             </div>
                         </div>
-                    </div>
-                    
-                    <div class="col-md-3" >
-                        <div class="thumbnail">
-                            <a href="#"> <img src="#" alt="paper2"></a>
-                            <div class="caption">
-                                <h3><center><b>Paper 2</b></center></h3>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-3" >
-                        <div class="thumbnail">
-                            <a href="#"> <img src="#" alt="paper3"></a>
-                            <div class="caption">
-                                <h3><center><b>Paper 3</b></center></h3>
-                            </div>
-                        </div>
-                    </div>
+                    </div><?php
+                    }
+                    ?>
                     </div>
 </div>
             
@@ -45,32 +34,21 @@
                     <h3 class="panel-title">Buddhist Civilization and Culture</h3>
                 </div>
                 <div class="panel-body">
+                    <?php
+                    $results=$this->db->query("select * from ebooks where sc_name='sobsc' and dept_name='buddhist_civiliztion_and_culture'");
+                    $r=$results->result();
+                    foreach ($r as $rows)
+                    {?>
                     <div class="col-md-3" >
                         <div class="thumbnail">
                             <a href="#"> <img src="#" alt="paper1"></a>
                             <div class="caption">
-                                <h3><center><b>Paper 1</b></center></h3>
+                                <h3><center><b><?php echo $rows->book_name; ?></b></center></h3>
                             </div>
                         </div>
-                    </div>
-                    
-                    <div class="col-md-3" >
-                        <div class="thumbnail">
-                            <a href="#"> <img src="#" alt="paper2"></a>
-                            <div class="caption">
-                                <h3><center><b>Paper 2</b></center></h3>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-3" >
-                        <div class="thumbnail">
-                            <a href="#"> <img src="#" alt="paper3"></a>
-                            <div class="caption">
-                                <h3><center><b>Paper 3</b></center></h3>
-                            </div>
-                        </div>
-                    </div>
+                    </div><?php
+                    }
+                    ?>
                     </div>
 </div>
 </div>

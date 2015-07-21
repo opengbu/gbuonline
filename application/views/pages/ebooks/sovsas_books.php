@@ -9,32 +9,22 @@
                     <h3 class="panel-title">Applied Mathematics</h3>
                 </div>
                 <div class="panel-body">
+                    <?php
+                    $results=$this->db->query("select * from ebooks where sc_name='sovsas' and dept_name='applied_mathematics'");
+                    $r=$results->result();
+                    foreach ($r as $rows)
+                    {?>
                     <div class="col-md-3" >
                         <div class="thumbnail">
                             <a href="#"> <img src="#" alt="paper1"></a>
                             <div class="caption">
-                                <h3><center><b>Paper 1</b></center></h3>
+                                <h3><center><b><?php echo $rows->book_name; ?></b></center></h3>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="col-md-3" >
-                        <div class="thumbnail">
-                            <a href="#"> <img src="#" alt="paper2"></a>
-                            <div class="caption">
-                                <h3><center><b>Paper 2</b></center></h3>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3" >
-                        <div class="thumbnail">
-                            <a href="#"> <img src="#" alt="paper3"></a>
-                            <div class="caption">
-                                <h3><center><b>Paper 3</b></center></h3>
-                            </div>
-                        </div>
-                    </div>
+                    </div><?php
+                    }
+                    ?>
+                   
                     </div>
                 </div>
             
@@ -43,32 +33,21 @@
                     <h3 class="panel-title">Applied Chemistry</h3>
                 </div>
                 <div class="panel-body">
+                   <?php
+                    $results=$this->db->query("select * from ebooks where sc_name='sovsas' and dept_name='applied_chemistry'");
+                    $r=$results->result();
+                    foreach ($r as $rows)
+                    {?>
                     <div class="col-md-3" >
                         <div class="thumbnail">
                             <a href="#"> <img src="#" alt="paper1"></a>
                             <div class="caption">
-                                <h3><center><b>Paper 1</b></center></h3>
+                                <h3><center><b><?php echo $rows->book_name; ?></b></center></h3>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="col-md-3" >
-                        <div class="thumbnail">
-                            <a href="#"> <img src="#" alt="paper2"></a>
-                            <div class="caption">
-                                <h3><center><b>Paper 2</b></center></h3>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3" >
-                        <div class="thumbnail">
-                            <a href="#"> <img src="#" alt="paper3"></a>
-                            <div class="caption">
-                                <h3><center><b>Paper 3</b></center></h3>
-                            </div>
-                        </div>
-                    </div>
+                    </div><?php
+                    }
+                    ?>
                     </div>
                 </div>
 
@@ -78,32 +57,21 @@
                     <h3 class="panel-title">Applied Physics</h3>
                 </div>
                 <div class="panel-body">
+                    <?php
+                    $results=$this->db->query("select * from ebooks where sc_name='sovsas' and dept_name='applied_physics'");
+                    $r=$results->result();
+                    foreach ($r as $rows)
+                    {?>
                     <div class="col-md-3" >
                         <div class="thumbnail">
                             <a href="#"> <img src="#" alt="paper1"></a>
                             <div class="caption">
-                                <h3><center><b>Paper 1</b></center></h3>
+                                <h3><center><b><?php echo $rows->book_name; ?></b></center></h3>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="col-md-3" >
-                        <div class="thumbnail">
-                            <a href="#"> <img src="#" alt="paper2"></a>
-                            <div class="caption">
-                                <h3><center><b>Paper 2</b></center></h3>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3" >
-                        <div class="thumbnail">
-                            <a href="#"> <img src="#" alt="paper3"></a>
-                            <div class="caption">
-                                <h3><center><b>Paper 3</b></center></h3>
-                            </div>
-                        </div>
-                    </div>
+                    </div><?php
+                    }
+                    ?>
                     </div>
                 </div>
 
@@ -113,32 +81,21 @@
                     <h3 class="panel-title">Environmental Sciences</h3>
                 </div>
                 <div class="panel-body">
+                    <?php
+                    $results=$this->db->query("select * from ebooks where sc_name='sovsas' and dept_name='envionmental_sciences'");
+                    $r=$results->result();
+                    foreach ($r as $rows)
+                    {?>
                     <div class="col-md-3" >
                         <div class="thumbnail">
                             <a href="#"> <img src="#" alt="paper1"></a>
                             <div class="caption">
-                                <h3><center><b>Paper 1</b></center></h3>
+                                <h3><center><b><?php echo $rows->book_name; ?></b></center></h3>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="col-md-3" >
-                        <div class="thumbnail">
-                            <a href="#"> <img src="#" alt="paper2"></a>
-                            <div class="caption">
-                                <h3><center><b>Paper 2</b></center></h3>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3" >
-                        <div class="thumbnail">
-                            <a href="#"> <img src="#" alt="paper3"></a>
-                            <div class="caption">
-                                <h3><center><b>Paper 3</b></center></h3>
-                            </div>
-                        </div>
-                    </div>
+                    </div><?php
+                    }
+                    ?>
                     </div>
                 </div>
 
@@ -148,32 +105,21 @@
                     <h3 class="panel-title">Vocational Studies</h3>
                 </div>
                 <div class="panel-body">
+                    <?php
+                    $results=$this->db->query("select * from ebooks where sc_name='sovsas' and dept_name='vocational_studies'");
+                    $r=$results->result();
+                    foreach ($r as $rows)
+                    {?>
                     <div class="col-md-3" >
                         <div class="thumbnail">
                             <a href="#"> <img src="#" alt="paper1"></a>
                             <div class="caption">
-                                <h3><center><b>Paper 1</b></center></h3>
+                                <h3><center><b><?php echo $rows->book_name; ?></b></center></h3>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="col-md-3" >
-                        <div class="thumbnail">
-                            <a href="#"> <img src="#" alt="paper2"></a>
-                            <div class="caption">
-                                <h3><center><b>Paper 2</b></center></h3>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3" >
-                        <div class="thumbnail">
-                            <a href="#"> <img src="#" alt="paper3"></a>
-                            <div class="caption">
-                                <h3><center><b>Paper 3</b></center></h3>
-                            </div>
-                        </div>
-                    </div>
+                    </div><?php
+                    }
+                    ?>
                     </div>
                 </div>
 
@@ -183,32 +129,21 @@
                     <h3 class="panel-title">Food Processing & Technology</h3>
                 </div>
                 <div class="panel-body">
+                    <?php
+                    $results=$this->db->query("select * from ebooks where sc_name='sovsas' and dept_name='food_processing'");
+                    $r=$results->result();
+                    foreach ($r as $rows)
+                    {?>
                     <div class="col-md-3" >
                         <div class="thumbnail">
                             <a href="#"> <img src="#" alt="paper1"></a>
                             <div class="caption">
-                                <h3><center><b>Paper 1</b></center></h3>
+                                <h3><center><b><?php echo $rows->book_name; ?></b></center></h3>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="col-md-3" >
-                        <div class="thumbnail">
-                            <a href="#"> <img src="#" alt="paper2"></a>
-                            <div class="caption">
-                                <h3><center><b>Paper 2</b></center></h3>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3" >
-                        <div class="thumbnail">
-                            <a href="#"> <img src="#" alt="paper3"></a>
-                            <div class="caption">
-                                <h3><center><b>Paper 3</b></center></h3>
-                            </div>
-                        </div>
-                    </div>
+                    </div><?php
+                    }
+                    ?>
                     </div>
             </div>
 		</div>
