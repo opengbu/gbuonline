@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.4
+-- version 4.1.14
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Jul 21, 2015 at 04:03 PM
--- Server version: 5.6.12-log
--- PHP Version: 5.4.12
+-- Host: 127.0.0.1
+-- Generation Time: Jul 21, 2015 at 07:10 PM
+-- Server version: 5.6.17
+-- PHP Version: 5.5.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `gbuonline`
 --
-CREATE DATABASE IF NOT EXISTS `gbuonline` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `gbuonline`;
 
 -- --------------------------------------------------------
 
@@ -97,7 +95,16 @@ CREATE TABLE IF NOT EXISTS `ebooks` (
   `book_info` text NOT NULL,
   `user_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='sc_name is short name, pick real name from schools' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='sc_name is short name, pick real name from schools' AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `ebooks`
+--
+
+INSERT INTO `ebooks` (`id`, `sc_name`, `dept_name`, `book_name`, `book_info`, `user_id`) VALUES
+(1, 'soict', 'computer_science', 'operating systems', 'operating system basic concepts', 2314),
+(2, 'soict', 'computer_science', 'internet technology', 'how internet works', 3423423),
+(3, 'soict', 'electronics', 'basic electronics', '', 4323423);
 
 -- --------------------------------------------------------
 
@@ -128,6 +135,28 @@ INSERT INTO `events` (`id`, `article_name`, `user_id`, `article`, `publishing_da
 (6, 'Abhivyanjana 2016', 6, 'Enter detailed event description', '2015-07-01', ' Example<br /><b>Date:</b> 28 - 01 - 2015 <br><b>Time:</b> 18:30 - 20:00<br/><b>Venue:</b> SOICT', 'resources/user_uploads/1280_800.jpg', 'soict', '%', 'competitio'),
 (7, 'Ecocart 2015', 6, 'Ecocart is awesome<br>', '2015-07-01', ' Example<br><b>Date:</b> 28 - 01 - 2015 <br><b>Time:</b> 18:30 - 20:00<br><b>Venue:</b> SOICT', 'resources/user_uploads/1280_800.jpg', 'soict', '', ''),
 (8, 'ppppp', 1, 'Enter detailed event description', '2015-07-17', ' Example<br /><b>Date:</b> 28 - 01 - 2015 <br><b>Time:</b> 18:30 - 20:00<br/><b>Venue:</b> SOICT', 'resources/user_uploads/1280_800.jpg', 'soict', 'programming', 'competitio');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `exams`
+--
+
+CREATE TABLE IF NOT EXISTS `exams` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sc_name` varchar(10) NOT NULL,
+  `year` int(11) NOT NULL,
+  `paper_name` varchar(30) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `exams`
+--
+
+INSERT INTO `exams` (`id`, `sc_name`, `year`, `paper_name`) VALUES
+(1, 'soict', 1, 'java'),
+(2, 'soict', 2, 'maths-2');
 
 -- --------------------------------------------------------
 
