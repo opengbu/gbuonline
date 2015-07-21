@@ -2,7 +2,7 @@
 require 'common/link.php';
 require 'common/header.php';
 ?>
-<br>
+<br><br>
 <!--row2 for heading-->
    
 <?php
