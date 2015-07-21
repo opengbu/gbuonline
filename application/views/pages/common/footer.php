@@ -11,7 +11,7 @@
 			position: absolute; 
 			z-index: 100; 
 			background-color: slategray;
-			height: 450px; <!--to solve footer issue-->
+			height: 420px; <!--to solve footer issue-->
         }
     </style>
 
