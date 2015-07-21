@@ -1,4 +1,4 @@
-</div>
+
 
     <style>
 
@@ -8,11 +8,15 @@
             margin: 0px;
             padding-left: 270px; 
             width : 100%;
+			position: absolute; 
+			z-index: 100; 
+			background-color: slategray;
+			height: 200px; <!--to solve footer issue-->
         }
     </style>
 
 
-    <footer class="footer container-fluid"  role="contentinfo" style="position: absolute; z-index: 100; background-color: slategray;">
+    <footer class="footer container-fluid"  role="contentinfo">
         <br>
 
         <div class="wrapper" id="getFooterLen">
@@ -240,6 +244,7 @@
         </div>
 
     </footer>
+</div> <!--for container fluid opened in link.php-->
 
 <!--disqus code for counting comments begins-->
 

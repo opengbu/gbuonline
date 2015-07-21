@@ -78,15 +78,19 @@
                 from {background: pink;}
                 to {background: purple;}
             }
-
+			
+			.footer-problem {
+				min-height:100%; 
+				position:relative;
+            }
 
             
             label.radio-inline, label.checkbox-inline {   background-color: #dcdfd4;   cursor: pointer;   font-weight: 400;   margin-bottom: 10px !important;   margin-right: 2%;   margin-left:0;   padding: 10px 10px 10px 30px; } label.radio-inline.checked, label.checkbox-inline.checked {   background-color: #266c8e;   color: #fff !important;   text-shadow: 1px 1px 2px #000 !important; } .checkbox-inline + .checkbox-inline, .radio-inline + .radio-inline {   margin-left: 0; } .columns label.radio-inline, .columns label.checkbox-inline {   min-width: 190px;   vertical-align: top;   width: 30%; } .additional-info-wrap {   display: inline-block;   margin: 0 2% 0 0;   min-width: 190px;   position: relative;   vertical-align: top;   width: 30%; } .additional-info-wrap label.checkbox-inline, .additional-info-wrap label.radio-inline {   width: 100% !important; } .additional-info-wrap .additional-info {   background-color: #266c8e;   clear: both;   color: #fff !important;   margin-top: -10px;   padding: 0 10px 10px;   text-shadow: 1px 1px 2px #000 !important;   width: 100%; }
         </style>
 
     </head>
-    <body background="<?php echo base_url('resources/images/home1.jpg') ?>" style="background-attachment: fixed; background-repeat: repeat;">
-        <div class="container-fluid">
+    <body background="<?php echo base_url('resources/images/home1.jpg') ?>" style="background-attachment: fixed; background-repeat: repeat; height:100%; padding-bottom: 200px;">
+        <div class="container-fluid footer-problem"><!--this div ends in footer.php-->
 
 
 

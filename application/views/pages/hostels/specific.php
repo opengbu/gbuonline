@@ -33,11 +33,11 @@
  
 
 --><div style="padding-left:10px">
-<a name="go1" style="text-decoration:none;"><div class="jumbotron">
-            <h2>BASIC INFORMATION</h2>
+<a name="go1" style="text-decoration:none;"><div class="jumbotron">			
+			<h2>BASIC INFORMATION</h2>
             <p>Warden Name : </p>
             <p>Warden Office:</p>
-            <p>Hostel Contact Number: </p>
+            <p>Hostel Contact Number: </p>			
             </div></a>
 			
         <a name="go3" style="text-decoration:none;">
