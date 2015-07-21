@@ -1,4 +1,4 @@
-
+</div> <!--for container fluid opened in link.php-->
 
     <style>
 
@@ -244,7 +244,7 @@
         </div>
 
     </footer>
-</div> <!--for container fluid opened in link.php-->
+
 
 <!--disqus code for counting comments begins-->
 
