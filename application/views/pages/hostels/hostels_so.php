@@ -34,9 +34,8 @@
                     <div class="col-md-2"><b>Concerned Hostels</b></div></font>
             </div><hr/><hr/><hr/>
                     <?php
-                        /*$this->db->where('id','1');*/
-                        $q=$this->db->get('h_notice');
-                        $results=$q->result();
+                       $q=$this->db->query("select * from h_notice order by concerned_hostel");
+                       $results=$q->result();
                         foreach ($results as $row)
                         {
                         ?>
