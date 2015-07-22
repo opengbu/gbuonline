@@ -56,6 +56,17 @@ class Hostels extends CI_Controller {
 		$this->load->view('pages/hostels/date_so');
 		$this->load->view('pages/common/footer');
 	}
+	public function department_so()
+	{
+		$data['title'] = 'Hostels &nbsp;|&nbsp;  GBU Online';
+		//$data['heading'] = ' Hostel Notice Board ';
+		//$data['message'] = '';
+		$this->load->view('pages/common/link',$data);
+		$this->load->view('pages/common/header');
+		//$this->load->view('pages/page-heading',$data);
+		$this->load->view('pages/hostels/department_so');
+		$this->load->view('pages/common/footer');
+	}
         public function hostels_so()
 	{
 		$data['title'] = 'Hostels &nbsp;|&nbsp;  GBU Online';
