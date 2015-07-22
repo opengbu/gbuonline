@@ -15,10 +15,10 @@
 					</button>
 					
 					<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-						<li><a href="#">Date</a></li>
-						<li><a href="#">Department</a></li>
-						<li><a href="#">Hostels</a></li>
-						<li><a href="#">Popularity</a></li>
+						<li><a href="<?php echo site_url('hostels/date_so')?>">Date</a></li>
+						<li><a href="<?php echo site_url('hostels/department_so')?>">Department</a></li>
+						<li><a href="<?php echo site_url('hostels/hostels_so')?>">Hostels</a></li>
+						
 					</ul>
 				
 				</div>      
