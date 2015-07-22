@@ -3,8 +3,6 @@
     <style>
 
         footer {
-            <!--background:url("<?php echo base_url('resources/images/footer1.jpg') ?>");-->
-			background-color: #0000FF;
             margin: 0px;
             padding-left: 270px; 
             width : 100%;
