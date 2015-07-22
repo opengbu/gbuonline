@@ -1,12 +1,6 @@
-<style>
-
-#shm {
-margin-top:455px;
-margin-left:145px;
-outline: none;
-}
-
-</style>
+<script>
+var count_comments = true;
+</script>
 
 <!--This page is sorted according to the "Time" of a blog-->
 
@@ -83,17 +77,3 @@ outline: none;
 	<!--row ends in extras-->
 	<!--container ends in extras-->
 	
-   <!--modal to Share-->
-		
-<div class="modal share" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" >
-  <div class="modal-dialog modal-sm" id="shm">
-    <div class="modal-content">
-			<center>
-			Share on Social Media:
-			<hr>
-		
-			
-    </div>
-  </div>
-</div>
-

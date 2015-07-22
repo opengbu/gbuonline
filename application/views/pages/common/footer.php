@@ -241,23 +241,22 @@
 
 
 <!--disqus code for counting comments begins-->
-
-	
 <script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = 'gbuonline';
-	var disqus_identifier = 'first';
+	if(count_comments==true)
+	{
+		/* * * CONFIGURATION VARIABLES * * */
+		var disqus_shortname = 'gbuonline';
+		var disqus_identifier = 'first';
 	
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function () {
-        var s = document.createElement('script'); s.async = true;
-        s.type = 'text/javascript';
-        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    }());
+		/* * * DON'T EDIT BELOW THIS LINE * * */
+		(function () {
+			var s = document.createElement('script'); s.async = true;
+			s.type = 'text/javascript';
+			s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+			(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+		}());
+	}
 </script>
-
-
 <!--disqus code for counting comments ends-->
 	
 	

@@ -52,7 +52,10 @@
                     }            
                 }); });
 
-            
+				//footer issue 2 begins
+				var count_comments = false;
+				//footer issue 2 ends
+				
         </script>
         <style>
             .caret-up {
