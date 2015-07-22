@@ -57,6 +57,39 @@ class Hostels extends CI_Controller {
 		$this->load->view('pages/hostels/wardens');
 		$this->load->view('pages/common/footer');
 	}
+        public function hname()
+	{
+		$data['title'] = 'Hostels &nbsp;|&nbsp;  GBU Online';
+		//$data['heading'] = ' List of Wardens ';
+		//$data['message'] = '';
+		$this->load->view('pages/common/link',$data);
+		$this->load->view('pages/common/header');
+		//$this->load->view('pages/page-heading',$data);
+		$this->load->view('pages/hostels/hname');
+		$this->load->view('pages/common/footer');
+	}
+        public function wname()
+	{
+		$data['title'] = 'Hostels &nbsp;|&nbsp;  GBU Online';
+		//$data['heading'] = ' List of Wardens ';
+		//$data['message'] = '';
+		$this->load->view('pages/common/link',$data);
+		$this->load->view('pages/common/header');
+		//$this->load->view('pages/page-heading',$data);
+		$this->load->view('pages/hostels/wname');
+		$this->load->view('pages/common/footer');
+	}
+        public function woffice()
+	{
+		$data['title'] = 'Hostels &nbsp;|&nbsp;  GBU Online';
+		//$data['heading'] = ' List of Wardens ';
+		//$data['message'] = '';
+		$this->load->view('pages/common/link',$data);
+		$this->load->view('pages/common/header');
+		//$this->load->view('pages/page-heading',$data);
+		$this->load->view('pages/hostels/woffice');
+		$this->load->view('pages/common/footer');
+	}
 	
 	public function specific()
 	{
