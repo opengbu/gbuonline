@@ -92,7 +92,7 @@
         </style>
 
     </head>
-    <body background="<?php echo base_url('resources/images/home1.jpg') ?>" style="background-attachment: fixed; background-repeat: repeat; height:100%; padding-bottom: 200px;">
+    <body background="<?php echo base_url('resources/images/home1.jpg') ?>" style="padding-bottom: 420px; height:100%; background-attachment: fixed; background-repeat: repeat;">
         <div class="container-fluid footer-problem"><!--this div ends in footer.php-->
 
 
