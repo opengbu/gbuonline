@@ -57,6 +57,13 @@
 				//footer issue 2 ends
 				
         </script>
+		
+		<!--script for sharing blogs begins-->
+			<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+			<script type="text/javascript">stLight.options({publisher: "c5b778e7-60f1-481d-8204-0b1208bc3210", doNotHash: true, doNotCopy: true, hashAddressBar: true});</script>
+		<!--script for sharing blogs ends-->
+		
+		
         <style>
             .caret-up {
                 width: 0; 
@@ -87,7 +94,12 @@
 				position:relative;
             }
 
-            
+			#shm {
+				margin-top:225px;
+				margin-left:375px;
+				outline: none;
+			}
+			
             label.radio-inline, label.checkbox-inline {   background-color: #dcdfd4;   cursor: pointer;   font-weight: 400;   margin-bottom: 10px !important;   margin-right: 2%;   margin-left:0;   padding: 10px 10px 10px 30px; } label.radio-inline.checked, label.checkbox-inline.checked {   background-color: #266c8e;   color: #fff !important;   text-shadow: 1px 1px 2px #000 !important; } .checkbox-inline + .checkbox-inline, .radio-inline + .radio-inline {   margin-left: 0; } .columns label.radio-inline, .columns label.checkbox-inline {   min-width: 190px;   vertical-align: top;   width: 30%; } .additional-info-wrap {   display: inline-block;   margin: 0 2% 0 0;   min-width: 190px;   position: relative;   vertical-align: top;   width: 30%; } .additional-info-wrap label.checkbox-inline, .additional-info-wrap label.radio-inline {   width: 100% !important; } .additional-info-wrap .additional-info {   background-color: #266c8e;   clear: both;   color: #fff !important;   margin-top: -10px;   padding: 0 10px 10px;   text-shadow: 1px 1px 2px #000 !important;   width: 100%; }
         </style>
 

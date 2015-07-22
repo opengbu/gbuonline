@@ -36,9 +36,9 @@ var count_comments = true;
 							<span class="glyphicon glyphicon-star" aria-hidden="true"></span> &nbsp;
 							<span class="badge">15</span>
 						</button>&nbsp;
-						<button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target=".blogs">
+						<button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target=".share">
 							<span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> &nbsp;
-							<span class="badge">4</span>
+							<span class="badge">Share</span>
 						</button>&nbsp;
 						<button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target=".blogs">
 							<span class="glyphicon glyphicon-comment" aria-hidden="true"></span> &nbsp;
@@ -78,4 +78,21 @@ var count_comments = true;
 	<!--row ends in extras.php-->
 <!--container ends in extras.php-->
 
-
+<!--Blog Share MODAL begins-->
+<div class="modal fade share" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-sm" id="shm">
+    <div class="modal-content">
+      <center>
+	  <br>
+	  <b>Share on Social Media</b>
+	  <br><br>
+		<span class='st_facebook_large' st_url="http://www.gbuonline.in/blogs/read_blogs" displayText='Facebook'></span>&nbsp;
+		<span class='st_googleplus_large' st_url="http://www.gbuonline.in/blogs/read_blogs" displayText='Google +'></span>&nbsp;
+		<span class='st_twitter_large' st_url="http://www.gbuonline.in/blogs/read_blogs" displayText='Tweet'></span>
+		<br>
+		<br>
+    </center>
+	</div>
+  </div>
+</div>
+<!--Blog Share MODAL ends-->
