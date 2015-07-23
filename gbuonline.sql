@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.12
+-- version 4.0.4
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 23, 2015 at 12:36 AM
--- Server version: 10.0.20-MariaDB-log
--- PHP Version: 5.6.11
+-- Generation Time: Jul 23, 2015 at 06:57 AM
+-- Server version: 5.6.12-log
+-- PHP Version: 5.4.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `gbuonline`
 --
+CREATE DATABASE IF NOT EXISTS `gbuonline` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `gbuonline`;
 
 -- --------------------------------------------------------
 
@@ -27,12 +29,13 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `blog` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(50) NOT NULL,
   `description` text NOT NULL,
   `status` int(11) NOT NULL DEFAULT '0',
-  `user_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+  `user_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
 
 --
 -- Dumping data for table `blog`
@@ -49,10 +52,11 @@ INSERT INTO `blog` (`id`, `title`, `description`, `status`, `user_id`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `blog_likes` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `blog_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+  `user_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `blog_likes`
@@ -70,14 +74,15 @@ INSERT INTO `blog_likes` (`id`, `blog_id`, `user_id`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `clubs` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `about_us` text NOT NULL,
   `faculty` text NOT NULL,
   `students` text NOT NULL,
   `c_name` varchar(25) NOT NULL,
   `c_full_name` varchar(70) NOT NULL,
-  `tagline` varchar(200) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+  `tagline` varchar(200) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
 
 --
 -- Dumping data for table `clubs`
@@ -101,13 +106,14 @@ INSERT INTO `clubs` (`id`, `about_us`, `faculty`, `students`, `c_name`, `c_full_
 --
 
 CREATE TABLE IF NOT EXISTS `ebooks` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `sc_name` varchar(10) NOT NULL,
   `dept_name` varchar(30) NOT NULL,
   `book_name` varchar(30) NOT NULL,
   `book_info` text NOT NULL,
-  `user_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='sc_name is short name, pick real name from schools';
+  `user_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='sc_name is short name, pick real name from schools' AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `ebooks`
@@ -125,7 +131,7 @@ INSERT INTO `ebooks` (`id`, `sc_name`, `dept_name`, `book_name`, `book_info`, `u
 --
 
 CREATE TABLE IF NOT EXISTS `events` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `article_name` varchar(50) NOT NULL,
   `user_id` int(11) NOT NULL,
   `article` text NOT NULL,
@@ -134,8 +140,9 @@ CREATE TABLE IF NOT EXISTS `events` (
   `image_path` text NOT NULL,
   `school` varchar(35) NOT NULL,
   `club` varchar(50) NOT NULL,
-  `type` varchar(10) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+  `type` varchar(10) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
 --
 -- Dumping data for table `events`
@@ -154,11 +161,12 @@ INSERT INTO `events` (`id`, `article_name`, `user_id`, `article`, `publishing_da
 --
 
 CREATE TABLE IF NOT EXISTS `exams` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `sc_name` varchar(10) NOT NULL,
   `year` int(11) NOT NULL,
-  `paper_name` varchar(30) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+  `paper_name` varchar(30) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `exams`
@@ -175,10 +183,11 @@ INSERT INTO `exams` (`id`, `sc_name`, `year`, `paper_name`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `h_complaint` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
-  `complaint` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `complaint` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -187,9 +196,10 @@ CREATE TABLE IF NOT EXISTS `h_complaint` (
 --
 
 CREATE TABLE IF NOT EXISTS `h_list` (
-  `hostel_id` int(11) NOT NULL,
-  `hostel_name` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `hostel_id` int(11) NOT NULL AUTO_INCREMENT,
+  `hostel_name` text NOT NULL,
+  PRIMARY KEY (`hostel_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -198,12 +208,13 @@ CREATE TABLE IF NOT EXISTS `h_list` (
 --
 
 CREATE TABLE IF NOT EXISTS `h_notice` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `date` date NOT NULL,
   `title` varchar(60) NOT NULL,
   `issuing_authority` varchar(60) NOT NULL,
-  `concerned_hostel` varchar(60) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+  `concerned_hostel` varchar(60) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `h_notice`
@@ -219,12 +230,14 @@ INSERT INTO `h_notice` (`id`, `date`, `title`, `issuing_authority`, `concerned_h
 --
 
 CREATE TABLE IF NOT EXISTS `news` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(128) NOT NULL,
   `slug` varchar(128) NOT NULL,
   `text` text NOT NULL,
-  `user_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+  `user_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `slug` (`slug`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `news`
@@ -243,25 +256,26 @@ INSERT INTO `news` (`id`, `title`, `slug`, `text`, `user_id`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `schools` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `sc_name` varchar(10) NOT NULL,
   `sc_full_name` varchar(70) NOT NULL,
   `about_us` text NOT NULL,
   `course_structure` text NOT NULL,
   `faculty` text NOT NULL,
   `placements` text NOT NULL,
-  `tagline` varchar(200) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
+  `tagline` varchar(200) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=21 ;
 
 --
 -- Dumping data for table `schools`
 --
 
 INSERT INTO `schools` (`id`, `sc_name`, `sc_full_name`, `about_us`, `course_structure`, `faculty`, `placements`, `tagline`) VALUES
-(12, 'soict', 'School Of Information and Communication  Technology', '<ul>\r\n<li>Department of Computer Science & Engineering</li>\r\n<li>Department of Electronics & Communication Engineering</li>\r\n</ul>\r\n\r\n', '<ul>\r\n<li>Integrated Dual Degree</li>\r\n<li>Post Graduate</li>\r\n<li>Doctrate</li>\r\n</ul>', '<b>    Dr. Ela Kumar</b><br>    Dean(I/C), School of ICT, Gautam Buddha University<br><p class="panel-body"><dl><dt>Dr. Om Prakash Sangwan                </dt><dd>School of ICT, Gautam Buddha University </dd><br><dt>Dr. Anurag Singh Bhagel                </dt><dd>School of ICT, Gautam Buddha University </dd></dl></p>', 'Placement Session will begin from 3rd December and will continue till 28th June.', 'abcedf'),
-(13, 'sovsas', 'School Of Vocational Studies And Applied Sciences', '<ul>\r\n<li>Department of Applied Mathematics</li>\r\n<li>Department of Applied Physics</li>\r\n<li>Department of Applied Chemistry</li>\r\n<li>Department of Environmental Sciences</li>\r\n<li>Department of Vocational Studies</li>\r\n<li>Department of Food Processing & Technology</li>\r\n</ul>\r\n\r\n', '<ul><li> Integrated Dual Degree</li><li> Post Graduate</li><li> Doctrate</li></ul>', '<dl><dt>Dr. Ela Kumar                </dt><dd>Dean(I/C), School of ICT, Gautam Buddha University </dd><br><dt>Dr. Om Prakash Sangwan                </dt><dd>School of ICT, Gautam Buddha University </dd><br><dt>Dr. Anurag Singh Bhagel                </dt><dd>School of ICT, Gautam Buddha University </dd></dl>', 'Placement Session will begin from 3rd December and will continue till 28th June.', ''),
-(15, 'sobt', 'School of Biotechnology', '<ul>\r\n<li>Department of Biotechnology</li>\r\n</ul>\r\n\r\n', '<ul><li>&nbsp;Integrated Dual Degree</li><li>&nbsp;Post Graduate</li><li>Doctrate</li></ul>', '<dl><dt>Dr. Ela Kumar                </dt><dd>Dean(I/C), School of ICT, Gautam Buddha University </dd><br><dt>Dr. Om Prakash Sangwan                </dt><dd>School of ICT, Gautam Buddha University </dd><br><dt>Dr. Anurag Singh Bhagel                </dt><dd>School of ICT, Gautam Buddha University </dd></dl>', 'Placement Session will begin from 3rd December and will continue till 28th June.', ''),
-(16, 'soe', ' School of Engineering', '<ul>\r\n<li>Department of Civil Engineering</li>\r\n<li>Department of Electrical Engineering</li>\r\n<li>Department of Mechanical Engineering</li>\r\n<li>Department of Architecture & Regional Planning</li>\r\n</ul>\r\n\r\n', '<ul><li>&nbsp;Integrated Dual Degree</li><li>&nbsp;Post Graduate</li><li>&nbsp;Doctrate</li></ul>', '<dl><dt>Dr. Ela Kumar                </dt><dd>Dean(I/C), School of ICT, Gautam Buddha University </dd><br><dt>Dr. Om Prakash Sangwan                </dt><dd>School of ICT, Gautam Buddha University </dd><br><dt>Dr. Anurag Singh Bhagel                </dt><dd>School of ICT, Gautam Buddha University </dd></dl>', 'Placement Session will begin from 3rd December and will continue till 28th June.', ''),
+(12, 'soict', 'School Of Information and Communication  Technology', '<ul>\r\n<li>Department of Computer Science & Engineering</li>\r\n<li>Department of Electronics & Communication Engineering</li>\r\n</ul>\r\n\r\n', '<ol><li>Integrated Dual Degree <br></li><ul type="disc"><li>(B.Tech + M.Tech/MBA) - Computer Science and Engineering</li><li>(B.Tech + M.Tech/MBA) - Electronics and Communication Engineering</li></ul><br><li>Post Graduate</li><ul type="disc"><li>M.Tech (ICT) - Intelligent Systems and Robotics</li><li>M.Tech (ICT) - Software Engineering</li><li>M.Tech (ICT) - VLSI Design</li><li>M.Tech (ICT) - Wireless Communication and Networks</li><li>M.Tech - Computer Science</li></ul><br><li>Doctrate Programs</li></ol>', '', 'Placement Session will begin from 3rd December and will continue till 28th June.', 'abcedf'),
+(13, 'sovsas', 'School Of Vocational Studies And Applied Sciences', '<ul><li>Department of Applied Mathematics</li><li>Department of Applied Chemistry</li><li>Department of Applied Physics</li><li>Department of Environmental Sciences</li><li>Department of Vocational Studies</li><li>Department of Food Processing & Technology</li></ul>', '<ol><li>Integrated Dual Degree <br></li><ul type="disc"><li>(B.Tech + M.Tech/MBA) - Food Processing and Technology<br></li></ul><br><li>Post Graduate</li><ul type="disc"><li>M.Tech  - Food Processing and Technology<br></li><li>M.Sc - Applied Mathematics<br></li><li>M.Sc - Applied Chemistry</li><li>M.Sc - Applied Physics</li><li>M.Sc - Environmental Science</li><li>M.Sc - Food Science<br></li></ul><br><li>Doctoral Programs<br></li><ul type="disc"><li>Ph.D - Applied Mathematics</li><li>Ph.D - Applied Chemistry<br></li><li>Ph.D - Applied Physics <br></li></ul></ol>', '', 'Placement Session will begin from 3rd December and will continue till 28th June.', ''),
+(15, 'sobt', 'School of Biotechnology', '<ul>\r\n<li>Department of Biotechnology</li>\r\n</ul>\r\n\r\n', '<ol><li>Integrated Dual Degree <br></li><ul type="disc"><li>(B.Tech + M.Tech/MBA) - Biotechnology<br></li></ul><br><li>Post Graduate</li><ul type="disc"><li>M.Tech  - Biotechnology</li></ul><br><li>Doctoral Programs<br></li><ul type="disc"><li>Ph.D - Various areas of Biotechnology</li></ul></ol>', '', 'Placement Session will begin from 3rd December and will continue till 28th June.', ''),
+(16, 'soe', ' School of Engineering', '<ul>\r\n<li>Department of Civil Engineering</li>\r\n<li>Department of Electrical Engineering</li>\r\n<li>Department of Mechanical Engineering</li>\r\n<li>Department of Architecture & Regional Planning</li>\r\n</ul>\r\n\r\n', '<ol><li>Integrated Dual Degree <br></li><ul type="disc"><li>(B.Tech + M.Tech/MBA) - Mechanical Engineering</li><li>(B.Tech + M.Tech/MBA) - Electrical Engineering</li><li>(B.Tech + M.Tech/MBA) - Civil Engineering</li></ul><br><li>Post Graduate</li><ul type="disc"><li>M.Plan - Urban and Regional Planning<br></li></ul><br><li>Doctoral Programs<br></li><ul type="disc"><li>Ph.D - Applied Mathematics</li><li>Ph.D - Applied Chemistry<br></li><li>Ph.D - Applied Physics <br></li></ul></ol>', '', 'Placement Session will begin from 3rd December and will continue till 28th June.', ''),
 (17, 'som', ' School of Management', '<ul>\r\n<li>Department of Bussiness Management</li>\r\n</ul>\r\n\r\n', '<ul><li>&nbsp;Integrated Dual Degree</li><li>&nbsp;Post Graduate</li><li>&nbsp;Doctrate</li></ul>', '<dl><dt>Dr. Ela Kumar                </dt><dd>Dean(I/C), School of ICT, Gautam Buddha University </dd><br><dt>Dr. Om Prakash Sangwan                </dt><dd>School of ICT, Gautam Buddha University </dd><br><dt>Dr. Anurag Singh Bhagel                </dt><dd>School of ICT, Gautam Buddha University </dd></dl>', 'Placement Session will begin from 3rd December and will continue till 28th June.', ''),
 (18, 'soljg', ' School of Law, Justice and Governance', '', '<ul><li>&nbsp;Integrated Dual Degree</li><li>&nbsp;Post Graduate</li><li>&nbsp;Doctrate</li></ul>', '<dl><dt>Dr. Ela Kumar                </dt><dd>Dean(I/C), School of ICT, Gautam Buddha University </dd><br><dt>Dr. Om Prakash Sangwan                </dt><dd>School of ICT, Gautam Buddha University </dd><br><dt>Dr. Anurag Singh Bhagel                </dt><dd>School of ICT, Gautam Buddha University </dd></dl>', 'Placement Session will begin from 3rd December and will continue till 28th June.', ''),
 (19, 'sobsc', ' School of Buddhist Studies And Civilization ', '', '<ul><li>&nbsp;Integrated Dual Degree</li><li>&nbsp;Post Graduate</li><li>&nbsp;Doctrate</li></ul>', '<dl><dt>Dr. Ela Kumar                </dt><dd>Dean(I/C), School of ICT, Gautam Buddha University </dd><br><dt>Dr. Om Prakash Sangwan                </dt><dd>School of ICT, Gautam Buddha University </dd><br><dt>Dr. Anurag Singh Bhagel                </dt><dd>School of ICT, Gautam Buddha University </dd></dl>', 'Placement Session will begin from 3rd December and will continue till 28th June.', ''),
@@ -274,9 +288,10 @@ INSERT INTO `schools` (`id`, `sc_name`, `sc_full_name`, `about_us`, `course_stru
 --
 
 CREATE TABLE IF NOT EXISTS `upcoming_events` (
-  `id` int(11) NOT NULL,
-  `event_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `event_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `upcoming_events`
@@ -296,7 +311,7 @@ INSERT INTO `upcoming_events` (`id`, `event_id`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `users` (
-  `user_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(25) NOT NULL,
   `password` varchar(200) NOT NULL,
   `type` varchar(40) NOT NULL,
@@ -306,8 +321,9 @@ CREATE TABLE IF NOT EXISTS `users` (
   `full_name` varchar(40) NOT NULL,
   `roll_number` varchar(10) NOT NULL,
   `phone_number` varchar(15) NOT NULL,
-  `confirmation_link` varchar(36) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+  `confirmation_link` varchar(36) NOT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 --
 -- Dumping data for table `users`
@@ -330,11 +346,12 @@ INSERT INTO `users` (`user_id`, `username`, `password`, `type`, `email`, `active
 --
 
 CREATE TABLE IF NOT EXISTS `vnb` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` text NOT NULL,
   `info` text NOT NULL,
-  `user_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+  `user_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `vnb`
@@ -351,12 +368,13 @@ INSERT INTO `vnb` (`id`, `title`, `info`, `user_id`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `warden` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `hostel_name` varchar(60) NOT NULL,
   `warden_name` varchar(60) NOT NULL,
   `warden_office` varchar(60) NOT NULL,
-  `hostel_contact` int(11) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+  `hostel_contact` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `warden`
@@ -373,180 +391,6 @@ INSERT INTO `warden` (`id`, `hostel_name`, `warden_name`, `warden_office`, `host
 (9, 'RAHEEM BOYS HOSTEL', 'DR. RAJESH GUPTA', '4364', NULL),
 (10, 'MALIK MOHD. JAYSI BOYS HOSTEL', 'DR. GURMET DORJAY', '7058', NULL);
 
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `blog`
---
-ALTER TABLE `blog`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `blog_likes`
---
-ALTER TABLE `blog_likes`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `clubs`
---
-ALTER TABLE `clubs`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `ebooks`
---
-ALTER TABLE `ebooks`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `events`
---
-ALTER TABLE `events`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `exams`
---
-ALTER TABLE `exams`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `h_complaint`
---
-ALTER TABLE `h_complaint`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `h_list`
---
-ALTER TABLE `h_list`
-  ADD PRIMARY KEY (`hostel_id`);
-
---
--- Indexes for table `h_notice`
---
-ALTER TABLE `h_notice`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `news`
---
-ALTER TABLE `news`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `slug` (`slug`);
-
---
--- Indexes for table `schools`
---
-ALTER TABLE `schools`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `upcoming_events`
---
-ALTER TABLE `upcoming_events`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`user_id`);
-
---
--- Indexes for table `vnb`
---
-ALTER TABLE `vnb`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `warden`
---
-ALTER TABLE `warden`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `blog`
---
-ALTER TABLE `blog`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=19;
---
--- AUTO_INCREMENT for table `blog_likes`
---
-ALTER TABLE `blog_likes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
---
--- AUTO_INCREMENT for table `clubs`
---
-ALTER TABLE `clubs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
---
--- AUTO_INCREMENT for table `ebooks`
---
-ALTER TABLE `ebooks`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
---
--- AUTO_INCREMENT for table `events`
---
-ALTER TABLE `events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
---
--- AUTO_INCREMENT for table `exams`
---
-ALTER TABLE `exams`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT for table `h_complaint`
---
-ALTER TABLE `h_complaint`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `h_list`
---
-ALTER TABLE `h_list`
-  MODIFY `hostel_id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `h_notice`
---
-ALTER TABLE `h_notice`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `news`
---
-ALTER TABLE `news`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
---
--- AUTO_INCREMENT for table `schools`
---
-ALTER TABLE `schools`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=21;
---
--- AUTO_INCREMENT for table `upcoming_events`
---
-ALTER TABLE `upcoming_events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
---
--- AUTO_INCREMENT for table `vnb`
---
-ALTER TABLE `vnb`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT for table `warden`
---
-ALTER TABLE `warden`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
