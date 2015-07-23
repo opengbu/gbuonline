@@ -7,7 +7,7 @@
 
 $id = $this->session->userdata('bid');
 echo form_open('Blog_geass/index/'.$id); 
-$q = $this->db->query("select * from blog where id = '$id'");
+$q = $this->db->query("select blog.*,full_name from blog,users where id = '$id' and blog.user_id = users.user_id");
 
 ?>
 <div class="col-sm-10">
@@ -25,8 +25,8 @@ $q = $this->db->query("select * from blog where id = '$id'");
 
     <div class="row ">
         <div class="col-sm-4">
-            <label>Roll Number</label>
-            <?=$row->roll_number?>
+            <label>Name</label>
+            <?=$row->full_name?>
         </div>
     </div>
 </li>

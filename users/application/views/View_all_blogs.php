@@ -6,7 +6,7 @@
 ?>
 <div class="col-sm-10">
     <?php
-    $q = $this->db->query("select id,roll_number,title,status from blog");
+    $q = $this->db->query("select id,roll_number,title,status,full_name from blog,users where blog.user_id = users.user_id");
 
     echo '<ul class="nav nav-list col-sm-12">';
     foreach ($q->result() as $row) {
@@ -20,7 +20,7 @@
                 </div>
                 <div class ="col-sm-4">
                     <?php
-                    echo $row->roll_number;
+                    echo $row->full_name;
                     ?>
                 </div>
 

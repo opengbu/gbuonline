@@ -29,7 +29,7 @@
 						<label for="Blog">Start Your Blog :&nbsp;&nbsp;</label><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
 						<div class="input-group">
 							<span class="input-group-addon" id="basic-addon1">Title</span>
-							<input name="title" type="text" class="form-control" placeholder="Title of your Blog" aria-describedby="basic-addon3">
+                                                        <input name="title" type="text" class="form-control" placeholder="Title of your Blog" aria-describedby="basic-addon3" required="required">
 						</div>
 						<br>
 						<label>Blog Content :</label>
@@ -37,7 +37,7 @@
 						<br>
                 
 						<center>
-						<button type="submit" class="btn btn-success" onclick="window.alert('Your Blog has been submitted succesfully. It will be displayed on website once it is reviewed by the admin.')">Submit</button>
+                                                    <button type="submit" class="btn btn-success" required="required" <!--onclick="window.alert('Your Blog has been submitted succesfully. It will be displayed on website once it is reviewed by the admin.' -->)">Submit</button>
 						</center>
 						<br>
 					</div>  

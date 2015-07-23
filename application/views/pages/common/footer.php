@@ -240,11 +240,13 @@
 
 <!--disqus code for counting comments begins-->
 <script type="text/javascript">
+        
+        
 	if(count_comments==true)
 	{
 		/* * * CONFIGURATION VARIABLES * * */
 		var disqus_shortname = 'gbuonline';
-		var disqus_identifier = 'first';
+	//	var disqus_identifier = 'blog_7';
 	
 		/* * * DON'T EDIT BELOW THIS LINE * * */
 		(function () {

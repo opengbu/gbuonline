@@ -1,10 +1,12 @@
-<?php 
-class Blog_model extends CI_Model
-{
-function insert_into_db()
-{
-$title = $_POST['title'];
-$description = $_POST['description'];
-$this->db->query("INSERT INTO blog (title,description) VALUES('$title','$description')");
-}
+<?php
+
+class Blog_model extends CI_Model {
+
+    function insert_into_db() {
+        $user_id = $this->session->userdata('user_id');
+        $title = $_POST['title'];
+        $description = $_POST['description'];
+        $this->db->query("INSERT INTO blog (title,description,user_id) VALUES('$title','$description',$user_id)");
+    }
+
 }
