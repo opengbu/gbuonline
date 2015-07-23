@@ -110,18 +110,22 @@ $(function(){
 				<!--Loop Starts-->
 				
 				<?php
-					for($x=0;$x<8;$x++)
+                                        $q=$this->db->query("select * from vnb");
+                                        $results=$q->result();
+					foreach($results as $rows)
 					{
-				?>
-							<a href="<?php echo base_url('resources/images/odd-sem.jpg') ?>" class="list-group-item">
+                                            
+                                            
+                                            ?>                      
+							<a href="<?php echo base_url($rows->link) ?>" class="list-group-item">
 								<div class="row">
 									<div class="col-md-8">
-										<h4 class="list-group-item-heading">Change in the Grading scheme</h4>
-										<p class="list-group-item-text"><b>Posted By:</b> Dr. Vishal Sharma</p>
+										<h4 class="list-group-item-heading"><?php echo $rows->title;?></h4>
+										<p class="list-group-item-text"><b>Posted By:</b> <?php echo $rows->posted_by; ?></p>
 									</div>
 									<div class="col-md-4" style="padding-top: 10px;">
 										<center>
-											<span class="badge" > 25 - 05 - 2015 </span>    
+											<span class="badge" > <?php echo $rows->date;?> </span>    
 										</center>
 									</div>
 								</div>

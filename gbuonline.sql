@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.4
+-- version 4.1.14
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Jul 23, 2015 at 06:57 AM
--- Server version: 5.6.12-log
--- PHP Version: 5.4.12
+-- Host: 127.0.0.1
+-- Generation Time: Jul 23, 2015 at 10:36 AM
+-- Server version: 5.6.17
+-- PHP Version: 5.5.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `gbuonline`
 --
-CREATE DATABASE IF NOT EXISTS `gbuonline` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `gbuonline`;
 
 -- --------------------------------------------------------
 
@@ -348,18 +346,21 @@ INSERT INTO `users` (`user_id`, `username`, `password`, `type`, `email`, `active
 CREATE TABLE IF NOT EXISTS `vnb` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` text NOT NULL,
-  `info` text NOT NULL,
+  `link` text NOT NULL,
   `user_id` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `posted_by` varchar(30) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `vnb`
 --
 
-INSERT INTO `vnb` (`id`, `title`, `info`, `user_id`) VALUES
-(1, 'Bar Council of India Approval Letter', 'asdasdasdasdasdasdasdasda', 0),
-(2, 'Fellowship for Gate qualified students', 'wqeqweqweqweqw', 0);
+INSERT INTO `vnb` (`id`, `title`, `link`, `user_id`, `date`, `posted_by`) VALUES
+(1, 'Bar Council of India Approval Letter', 'asdasdasdasdasdasdasdasda', 0, '0000-00-00', ''),
+(2, 'Fellowship for Gate qualified students', 'wqeqweqweqweqw', 0, '0000-00-00', ''),
+(3, 'Change in grading system', 'resources/images/odd-sem.jpg', 0, '2015-05-25', 'Dr. vishal sharma');
 
 -- --------------------------------------------------------
 
