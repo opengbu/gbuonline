@@ -1,5 +1,6 @@
 <html>
     <head>
+	
         <title><?php echo $title; ?></title>
         <link rel="shortcut icon" href="<?php echo base_url('resources/images/favicon.ico') ?>">
         <script src="<?php echo base_url('resources/jquery-2.1.4.min.js') ?>"></script>
@@ -9,6 +10,12 @@
 		<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
         <link rel="stylesheet" href="<?php echo base_url('resources/sss/sss.css') ?>" type="text/css" media="all">
         <script>
+		$(window).load(function() {
+		// Animate loader off screen
+		$(".se-pre-con").fadeOut("slow");;
+	});
+		</script>
+		<script>
             jQuery(function ($) {
                 $('.slider').sss();
             });
@@ -63,10 +70,25 @@
 			<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
 			<script type="text/javascript">stLight.options({publisher: "c5b778e7-60f1-481d-8204-0b1208bc3210", doNotHash: true, doNotCopy: true, hashAddressBar: true});</script>
 		<!--script for sharing blogs ends-->
-		
-		
+		<!-- script for loading-->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+		<!--loading end -->
         <style>
-            .caret-up {
+		<!-- loading--> .no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url(images/loader-64x/Preloader_2.gif) center no-repeat #fff;
+}
+ 
+
+ .caret-up {
                 width: 0; 
                 height: 0; 
                 border-left: 4px solid rgba(0, 0, 0, 0);
@@ -106,6 +128,7 @@
 
     </head>
     <body background="<?php echo base_url('resources/images/home1.jpg') ?>" style="padding-bottom: 420px; height:100%; background-attachment: fixed; background-repeat: repeat;">
+	<div class="se-pre-con"></div>
         <div class="container-fluid footer-problem"><!--this div ends in footer.php-->
 
 
