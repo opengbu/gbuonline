@@ -178,23 +178,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading" id="h" role="tab" id="headingEight">
-                        <h4 class="panel-title" id="t">
-                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
-                                Official GBU Website
-                            </a>
-                        </h4>
-                    </div>
-                    <div id="collapseEight" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEight">
-                        <div class="panel-body">
-
-                            <a href="http://www.gbu.ac.in">Enter here</a>
-
-
-                        </div>
-                    </div>
-                </div>
+                
 				
 
 
