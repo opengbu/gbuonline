@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="<?php echo base_url('resources/css/bootstrap.min.css') ?>">
         <script src="<?php echo base_url('resources/js/bootstrap.js') ?>"></script>
         <script src="<?php echo base_url('resources/sss/sss.min.js') ?>"></script>
+		<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
         <link rel="stylesheet" href="<?php echo base_url('resources/sss/sss.css') ?>" type="text/css" media="all">
         <script>
             jQuery(function ($) {
