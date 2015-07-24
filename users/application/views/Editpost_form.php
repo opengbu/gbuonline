@@ -3,17 +3,20 @@
  *  Created on :Jul 10, 2015, 12:18:54 PM
  *  Author     :Varun Garg <varun.10@live.com>
  */
+?>
+<?php
+
 $id = $this->input->get('id');
 $query = $this->db->query("select * from events where id = '$id'");
-foreach ($query->result() as $row) {
-    $aname = $row->article_name;
-    $article = $row->article;
-    $adate = $row->publishing_date;
-    $short_desc = $row->short_desc;
-    $school = $row->school;
-    $image_path = $row->image_path;
-    $club = $row->club;
-}
+$row = $query->row();
+$aname = $row->article_name;
+$article = $row->article;
+$adate = $row->publishing_date;
+$short_desc = $row->short_desc;
+$school = $row->school;
+$image_path = $row->image_path;
+$club = $row->club;
+$type = $row->type;
 ?>
 <link type="text/css" rel="stylesheet" href="<?= base_url() . 'application/views/common/' . 'input/jquery-te-1.4.0.css' ?>">
 <script type="text/javascript" src="<?= base_url() . 'application/views/common/' . 'input/jquery-te-1.4.0.min.js' ?>" charset="utf-8"></script>
@@ -69,19 +72,25 @@ foreach ($query->result() as $row) {
             echo '<option value="' . $row->c_name . '" ';
             if ($row->c_name === $club)
                 echo 'selected="selected"';
-            
-            echo  ' >' . $row->c_full_name . '</option>';
+
+            echo ' >' . $row->c_full_name . '</option>';
         }
         ?>
     </select>
     <br /><br />
 
-    <label>Type</label> 
+    <label>Type</label>
     <select name="type" class="selectpicker" data-width="100%">
-        <option value="competition" >Competition</option>
-        <option value="workshop" >Workshop</option>
-        <option value="Conference" >Conference</option>
-        <option value="Lecture" >Lecture</option>
+        <option value="%" >ALL</option>
+        <?php
+        $options = array("competition", "workshop", "conference", "lecture");
+        foreach ($options as $option) {
+            echo '<option value="' . $option . '" ';
+            if (isset($type) && $type == $option)
+                echo 'selected="selected" ';
+            echo '>' . ucfirst($option) . '</option>';
+        }
+        ?>
     </select>
     <br /><br />
 

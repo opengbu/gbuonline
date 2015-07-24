@@ -10,7 +10,7 @@ echo form_open('Blog_geass/index/'.$id);
 $q = $this->db->query("select blog.*,full_name from blog,users where id = '$id' and blog.user_id = users.user_id");
 
 ?>
-<div class="col-sm-10">
+<div class="col-lg-8">
 
 <ul class="nav nav-list col-sm-12">
     <div class="row ">

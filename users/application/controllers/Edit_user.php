@@ -25,12 +25,15 @@ class Edit_user extends CI_Controller {
         $this->form_validation->set_rules('username', 'Username', 'required');
         $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
         $this->form_validation->set_rules('full_name', 'Full Name', 'required');
-        $this->form_validation->set_rules('username', 'Username', 'required|callback_check_details');
+        $this->form_validation->set_rules('username', 'Username', 'required|callback_check_username');
+        $this->form_validation->set_rules('email', 'Email', 'required|callback_check_email');
         $this->form_validation->set_rules('password', 'Password', 'callback_check_pass');
 
         $this->load->view('common/header');
         $this->load->library('form_validation');
         if ($this->form_validation->run() == FALSE) {
+            $params['post'] = $_POST;
+            $params['failed_validation'] = 'true';
             $params['userid'] = $userid;
             $this->load->view('Edituser_form', $params);
         } else {
@@ -40,12 +43,14 @@ class Edit_user extends CI_Controller {
             $type = $this->input->post('type');
             $password = $this->input->post('password');
             $full_name = $this->input->post('full_name');
+            $roll_number = $this->input->post('roll_number');
+            $phone_number = $this->input->post('phone_number');
 
             if ($password !== '') { //user is chaning his password
                 $hash = $this->bcrypt->hash_password($password);
-                $this->db->query("update users set full_name='$full_name',  username='$username',email='$email',password='$hash',type='$type' where user_id='$userid'");
+                $this->db->query("update users set roll_number='$roll_number',phone_number='$phone_number', full_name='$full_name',  username='$username',email='$email',password='$hash',type='$type' where user_id='$userid'");
             } else { //in case user does not wish to chage password
-                $this->db->query("update users set full_name='$full_name',  username='$username',email='$email',type='$type' where user_id='$userid'");
+                $this->db->query("update users set roll_number='$roll_number',phone_number='$phone_number', full_name='$full_name',  username='$username',email='$email',type='$type' where user_id='$userid'");
             }
 
             if ($username == $this->session->userdata('username'))
@@ -57,18 +62,6 @@ class Edit_user extends CI_Controller {
         $this->load->view('common/footer');
     }
 
-    function check_details() {  // Check "another" user with new name already exists
-        //If code reaches here passwords are successfully matched, now for condition 2
-        $userid = $this->input->post('user_id');
-        $username = $this->input->post('username');
-        $q = $this->db->query("select * from users where username = '$username' and user_id != '$userid' ");
-        foreach ($q->result() as $row) {
-            $this->form_validation->set_message('check_details', 'The user ' . $username . ' already exists.');
-            return FALSE;
-        }
-        return TRUE;
-    }
-
     function check_pass() { //If password is not empty it should match with repeated password in form.
         $password = $this->input->post('password');
         $passconf = $this->input->post('passconf');
@@ -76,6 +69,30 @@ class Edit_user extends CI_Controller {
             return TRUE;
         $this->form_validation->set_message('check_pass', 'Passwords do not match ');
         return FALSE;
+    }
+
+    function check_username() { // Check if user already exists
+        $username = $this->input->post('username');
+        $userid = $this->input->post('user_id');
+
+        $q = $this->db->query("select * from users where username = '$username' and user_id != '$userid' ");
+        if ($q->num_rows() > 0) {
+            $this->form_validation->set_message('check_username', 'The user ' . $username . ' already exists.');
+            return FALSE;
+        }
+        return TRUE;
+    }
+
+    function check_email() { // Check if user already exists
+        $email = $this->input->post('email');
+        $userid = $this->input->post('user_id');
+
+        $q = $this->db->query("select * from users where email = '$email' and user_id != '$userid'");
+        if ($q->num_rows() > 0) {
+            $this->form_validation->set_message('check_email', 'The email account ' . $email . ' already exists.');
+            return FALSE;
+        }
+        return TRUE;
     }
 
 }

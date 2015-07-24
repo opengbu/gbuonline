@@ -41,28 +41,27 @@ class Login extends CI_Controller {
         $username = $this->input->post('username');
         $this->username = $username;
         $password = $this->input->post('password');
-        $query = $this->db->query("select *  from users where username='$username'");
+        $query = $this->db->query("select *  from users where username='$username' or email='$username'");
 //            echo $hash;
         if ($query->num_rows() > 0) {
-            foreach ($query->result() as $row) {
-                if ($row->active == 0) {
-                    $this->form_validation->set_message('check_details', 'Your account has not activated yet. Please Check your email');
-                    return FALSE;
-                }
-                if ($this->bcrypt->check_password($password, $row->password)) {
+            $row = $query->row();
+            if ($row->active == 0) {
+                $this->form_validation->set_message('check_details', 'Your account has not activated yet. Please Check your email');
+                return FALSE;
+            }
+            if ($this->bcrypt->check_password($password, $row->password)) {
 
-                    $this->user_id = $row->user_id;
-                    $this->type = $row->type;
-                    $this->status = 1;
-                    $this->session->set_userdata('loggedin', 1);
-                    $this->session->set_userdata('username', $this->username);
-                    $this->session->set_userdata('user_id', $this->user_id);
-                    $this->session->set_userdata('type', $this->type);
-                    $this->session->set_userdata('full_name', $row->full_name);
-                    $this->session->set_userdata('roll_number', $row->roll_number);
-                    $this->session->set_userdata('phone_number', $row->phone_number);
-                    return TRUE;
-                }
+                $this->user_id = $row->user_id;
+                $this->type = $row->type;
+                $this->status = 1;
+                $this->session->set_userdata('loggedin', 1);
+                $this->session->set_userdata('username', $this->username);
+                $this->session->set_userdata('user_id', $this->user_id);
+                $this->session->set_userdata('type', $this->type);
+                $this->session->set_userdata('full_name', $row->full_name);
+                $this->session->set_userdata('roll_number', $row->roll_number);
+                $this->session->set_userdata('phone_number', $row->phone_number);
+                return TRUE;
             }
         }
         $this->form_validation->set_message('check_details', 'The username or password is incorrect ');

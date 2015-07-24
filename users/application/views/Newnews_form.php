@@ -12,13 +12,13 @@
     <?php echo form_open('new_news'); ?>
 
     <label>Title</label>
-    <input type="text" name="title" value="" size="50" class="form-control">
+    <input type="text" name="title" value="" size="50" class="form-control" value="<?php echo set_value('title'); ?>">
     <br />
     <label>Slug</label>
-    <textarea value="" name="slug" class="jqte-test"  >Enter short description</textarea>
+    <textarea value="" name="slug" class="slug"><?php echo set_value('slug'); ?></textarea>
     <br />
     <label>Description</label>
-    <textarea  name="text" class="jqte-test">Enter Detailed information</textarea>
+    <textarea  name="text" class="text"><?php echo set_value('text'); ?></textarea>
     <br />
 
     <br />
@@ -28,15 +28,13 @@
     <div><input type="submit" value="Publish" class="btn btn-default"/></div>
 </form>
 <script>
-    $('.jqte-test').jqte();
+    //$('.jqte-test').jqte();
 
-    // settings of status
-    var jqteStatus = true;
-    $(".status").click(function ()
-    {
-        jqteStatus = jqteStatus ? false : true;
-        $('.jqte-test').jqte({"status": jqteStatus})
-    });
+    
+     $(".slug").jqte({placeholder: "Enter Short Description"});
+        
+     $(".text").jqte({placeholder: "Enter Detailed Description"});
+    
 </script>
 </div>
 

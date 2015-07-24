@@ -12,22 +12,22 @@
     <?php echo form_open('new_club'); ?>
 
     <label>Club Name (example: programming)</label>
-    <input type="text" class="form-control" name="c_name"/>
+    <input type="text" class="form-control" name="c_name" value="<?php echo set_value('c_name'); ?>"/>
     <br />
     <label>Clubs's Full Name(example: Programming club)</label>
-    <input type="text" class="form-control" name="c_full_name"/>
+    <input type="text" class="form-control" name="c_full_name" value="<?php echo set_value('c_full_name'); ?>"/>
     <br>
     <label>Tagline(example: Discover Yourself...)</label>
-    <input type="text" class="form-control" name="tagline"/>
+    <input type="text" class="form-control" name="tagline" value="<?php echo set_value('tagline'); ?>"/>
     <br>
     <label>About Club</label>
-    <textarea value="" name="about_us" class=""  ></textarea>
+    <textarea value="" name="about_us" class=""  ><?php echo set_value('about_us'); ?></textarea>
     <br>
     <label>Faculty In charge</label>
-    <textarea value="" name="faculty" class=""  ></textarea>
+    <textarea value="" name="faculty" class=""  ><?php echo set_value('faculty'); ?></textarea>
     <br>
     <label>Student in Charge</label>
-    <textarea value="" name="students" class=""  ></textarea>
+    <textarea value="" name="students" class=""  ><?php echo set_value('students'); ?></textarea>
     <br><br>
     <?php
     echo '<label><font color="red">' . validation_errors() . '</font></label>';

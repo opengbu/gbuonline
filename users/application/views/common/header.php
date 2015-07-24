@@ -4,9 +4,11 @@
  *  Author     :Varun Garg <varun.10@live.com>
  */
 ?>
-<html>
+<html lang="en">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <title>
             GBU Online
         </title>
@@ -21,14 +23,6 @@
         <style>
             .navbar-nav.navbar-right:last-child {
                 margin-right: 0;
-            }
-            .navbar-brand
-            {
-                position: absolute;
-                width: 100%;
-                left: 0;
-                text-align: center;
-                margin: auto;
             }
             .navbar-custom .navbar-nav > li > a {
                 color:#fff;
@@ -51,6 +45,7 @@
                 margin-left: 2px;
                 vertical-align: middle;
             }
+
             #getFixed {
                 width: 231px;
             }
@@ -73,8 +68,9 @@
                 function fixDiv() {
                     var $cache = $('#getFixed');
                     var $height = $(window).scrollTop();
-
-                    if ($(this).scrollTop() >= 10)
+                    var $p_width = $(window).width();
+                    
+                    if ($(this).scrollTop() >= 0 && $p_width >978)
                         $cache.css({
                             'top': $height
                         });
@@ -89,7 +85,7 @@
             });
         </script>
     </head>
-    <body >
+    <body style="background-image: url(<?php echo base_url('application/views/common/background.jpg') ?>); background-attachment: fixed; background-repeat: repeat;">
         <div  id="wrapper"  class="toggled">     
 
             <nav class="navbar navbar-fixed-top navbar-inverse navbar-default navbar-custom" role="navigation">
@@ -100,13 +96,20 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="<?= dirname(base_url()) ?>"><font size="6"><b>Gautam Buddha University</b></font></a> 
+
+                    <button type="button" class="navbar-toggle collapsed pull-left" style="margin-left: 0; " data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <a class="navbar-brand" href="<?= dirname(base_url()) ?>">GBU Online</a>
 
                 </div> 
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
 
-                        <li><a href="<?= base_url() . 'all_events' ?>">All Events</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="icon-th-large"></i> New
@@ -147,7 +150,6 @@
                     </div>
                     <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
                         <ul class="nav navbar-nav">
-
                             <li ><a href="<?php echo base_url() . 'all_schools' ?>">Schools <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-th-list fa-2x"></i></a></li>
                             <?php if ($this->session->userdata('type') == 'admin') { ?>
                                 <li ><a href="<?php echo base_url() . 'new_school' ?>" >New School<i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-plus-square fa-2x"></i></a></li><?php } ?>
@@ -179,5 +181,5 @@
 
                 </div>
             </nav>
-            <div id="page-content-wrapper" class="container-fluid" style="background-image: url(<?php echo base_url('application/views/common/background.jpg') ?>); background-attachment: fixed; background-repeat: repeat;">
+            <div id="page-content-wrapper" class="container-fluid" >
                 <div >

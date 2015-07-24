@@ -12,25 +12,25 @@
     <?php echo form_open('new_school'); ?>
 
     <label>School Name (example: sovas)</label>
-    <input type="text" class="form-control" name="sc_name"/>
+    <input type="text" class="form-control" name="sc_name" value="<?php echo set_value('sc_name'); ?>"/>
     <br />
     <label>School's Full Name(example: School Of Vocational And Applied Sciences)</label>
-    <input type="text" class="form-control" name="sc_full_name"/>
+    <input type="text" class="form-control" name="sc_full_name" value="<?php echo set_value('sc_full_name'); ?>"/>
     <br>
     <label>Tagline(example: Discover Yourself...)</label>
-    <input type="text" class="form-control" name="tagline"/>
+    <input type="text" class="form-control" name="tagline" value="<?php echo set_value('tagline'); ?>"/>
     <br>
     <label>About School</label>
-    <textarea value="" name="about_us" class=""  ></textarea>
+    <textarea value="" name="about_us" class=""  ><?php echo set_value('about_us'); ?></textarea>
     <br>
     <label>Course Structure</label>
-    <textarea value="" name="course_structure" class=""  ></textarea>
+    <textarea value="" name="course_structure" class=""  ><?php echo set_value('tagline'); ?></textarea>
     <br>
     <label>Faculty</label>
-    <textarea value="" name="faculty" class=""  ></textarea>
+    <textarea value="" name="faculty" class=""  ><?php echo set_value('faculty'); ?></textarea>
     <br>
     <label>placements</label>
-    <textarea value="" name="placements" class=""  ></textarea>
+    <textarea value="" name="placements" class=""  ><?php echo set_value('placements'); ?></textarea>
     <br><br>
     <?php
     echo '<label><font color="red">' . validation_errors() . '</font></label>';

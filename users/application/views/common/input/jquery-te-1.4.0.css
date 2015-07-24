@@ -445,12 +445,12 @@
 /* placeholder */
 .jqte_placeholder {
 	position:relative;
-	display:none;
+        
 }
 .jqte_placeholder_text {
 	position:absolute;
 	top:43px;
 	left:10px;
 	font-size:14px;
-	color:#CCC;
+	color: 2F4F4F;
 }

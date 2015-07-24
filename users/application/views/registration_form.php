@@ -15,27 +15,6 @@
         <script type="text/javascript" src="<?php echo base_url() . 'application/views/common/' . 'js/jquery-2.1.3.min.js' ?>"></script>
         <script type="text/javascript" src="<?php echo base_url() . 'application/views/common/' . 'js/bootstrap.min.js' ?>"></script>
         <style>
-             .navbar-nav.navbar-right:last-child {
-                margin-right: 0;
-            }
-            .navbar-brand
-            {
-                position: absolute;
-                width: 100%;
-                left: 0;
-                text-align: center;
-                margin: auto;
-            }
-            .navbar-custom .navbar-nav > li > a {
-                color:#fff;
-            }
-            .navbar-custom .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
-                color: #ffffff;
-                background-color:transparent;
-            }
-            .navbar-custom .navbar-brand {
-                color:#eeeeee;
-            }
             body{
                 background-image: url('<?php echo base_url() . 'application/views/common/' . 'color-splash.jpg' ?>');
 
@@ -53,10 +32,6 @@
     </head>
     <body>
         <div class="container">
-             <nav class="navbar navbar-fixed-top navbar-inverse navbar-default navbar-custom" role="navigation">
-                   <a class="navbar-brand" href="<?php echo dirname(base_url()) ?>"><font size="6" color="white">Sign up for GBU Online</font></a> 
-               </nav> 
-            <br />
             <div class="row centered-form">
                 <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
                     <div class="panel panel-default">
@@ -105,8 +80,8 @@
                             </div>
                             <input type="submit" value="Register" class="btn btn-info btn-block" />
 
-                        </form>
-                        <a href="<?=base_url()?>" class="btn btn-info btn-block" />Already Registered?    Sign in </a>
+                            </form>
+                            <a href="<?= base_url() ?>" class="btn btn-info btn-block" />Already Registered?    Sign in </a>
                         </div>
                     </div>
                 </div>

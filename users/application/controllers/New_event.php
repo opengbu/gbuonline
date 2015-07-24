@@ -27,8 +27,7 @@ class New_event extends CI_Controller {
         }
         else 
         {
-             $username =   $this->input->post('username');
-             $user_id =   $this->input->post('user_id');
+             $user_id =   $this->session->userdata('user_id');
              $article_name =   $this->input->post('article_name');
              $article =   $this->input->post('article');
              $publishing_date =   $this->input->post('publishing_date');

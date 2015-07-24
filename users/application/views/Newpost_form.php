@@ -11,18 +11,14 @@ date_default_timezone_set("Asia/Kolkata");
 <div class="col-sm-10">
     <?php echo form_open('new_event'); ?>
 
-    <input type="hidden" class="form-control" name="username" value="<?= $this->session->userdata('username') ?>" size="50"  readonly/>
-
-    <input type="hidden" class="form-control" name="user_id" value="<?= $this->session->userdata('user_id') ?>" size="50" readonly=""/>
-
     <label>Title</label>
-    <input type="text" name="article_name" value="" size="50" class="form-control">
+    <input type="text" name="article_name" class="form-control" value="<?php echo set_value('article_name'); ?>">
     <br />
     <label>Description</label>
-    <textarea value="" name="article" class="jqte-test"  >Enter detailed event description</textarea>
+    <textarea value="" name="article" class="jqte-test"  ><?php echo set_value('article'); ?></textarea>
     <br />
     <label>Short description</label>
-    <textarea  name="short_desc" class="jqte-test"> Example<br /><b>Date:</b> 28 - 01 - 2015 <br><b>Time:</b> 18:30 - 20:00<br/><b>Venue:</b> SOICT</textarea>
+    <textarea  name="short_desc" class="jqte-test"><?php echo set_value('short_desc'); ?></textarea>
     <br />
 
     <label>School</label>
@@ -63,12 +59,14 @@ date_default_timezone_set("Asia/Kolkata");
     <br /><br />
 
     <label>Type</label>
-    <select name="type" class="selectpicker" data-width="100%">
-        <option value="competition" >Competition</option>
-        <option value="workshop" >Workshop</option>
-        <option value="Conference" >Conference</option>
-        <option value="lecture" >Lecture</option>
-    </select>
+    <option value="%" >ALL</option>
+    <?php
+    $options = array("competition", "workshop", "conference", "lecture");
+    foreach ($options as $option) {
+        echo '<option value="' . $option . '" ';
+        echo '>' . ucfirst($option) . '</option>';
+    }
+    ?>
     <br /><br />
 
     <label>Event date  </label>
