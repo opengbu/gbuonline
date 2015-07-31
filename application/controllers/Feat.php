@@ -60,5 +60,18 @@ class Feat extends CI_Controller {
 		$this->load->view('pages/common/footer');
 	}
 	
+	public function ggroups()
+	{
+        $data['title'] = 'Google Groups &nbsp;|&nbsp;  GBU Online';
+		$data['heading'] = ' Google Groups ';
+		$data['message'] = 'All of your discussions in one place ';
+		$this->load->view('pages/common/link',$data);
+		$this->load->view('pages/common/header');
+		$this->load->view('pages/common/page-heading',$data);
+		$this->load->view('pages/ggroups');
+		$this->load->view('pages/common/extras');
+		$this->load->view('pages/common/footer');
+	}
+	
 	
 }	
