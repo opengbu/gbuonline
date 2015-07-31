@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.14
+-- version 4.0.4
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Jul 23, 2015 at 10:36 AM
--- Server version: 5.6.17
--- PHP Version: 5.5.12
+-- Host: localhost
+-- Generation Time: Jul 31, 2015 at 10:26 AM
+-- Server version: 5.6.12-log
+-- PHP Version: 5.4.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `gbuonline`
 --
+CREATE DATABASE IF NOT EXISTS `gbuonline` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `gbuonline`;
 
 -- --------------------------------------------------------
 
@@ -54,7 +56,7 @@ CREATE TABLE IF NOT EXISTS `blog_likes` (
   `blog_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 --
 -- Dumping data for table `blog_likes`
@@ -63,7 +65,8 @@ CREATE TABLE IF NOT EXISTS `blog_likes` (
 INSERT INTO `blog_likes` (`id`, `blog_id`, `user_id`) VALUES
 (8, 17, 5),
 (9, 18, 1),
-(10, 17, 1);
+(10, 17, 1),
+(11, 18, 5);
 
 -- --------------------------------------------------------
 
@@ -273,11 +276,11 @@ INSERT INTO `schools` (`id`, `sc_name`, `sc_full_name`, `about_us`, `course_stru
 (12, 'soict', 'School Of Information and Communication  Technology', '<ul>\r\n<li>Department of Computer Science & Engineering</li>\r\n<li>Department of Electronics & Communication Engineering</li>\r\n</ul>\r\n\r\n', '<ol><li>Integrated Dual Degree <br></li><ul type="disc"><li>(B.Tech + M.Tech/MBA) - Computer Science and Engineering</li><li>(B.Tech + M.Tech/MBA) - Electronics and Communication Engineering</li></ul><br><li>Post Graduate</li><ul type="disc"><li>M.Tech (ICT) - Intelligent Systems and Robotics</li><li>M.Tech (ICT) - Software Engineering</li><li>M.Tech (ICT) - VLSI Design</li><li>M.Tech (ICT) - Wireless Communication and Networks</li><li>M.Tech - Computer Science</li></ul><br><li>Doctrate Programs</li></ol>', '', 'Placement Session will begin from 3rd December and will continue till 28th June.', 'abcedf'),
 (13, 'sovsas', 'School Of Vocational Studies And Applied Sciences', '<ul><li>Department of Applied Mathematics</li><li>Department of Applied Chemistry</li><li>Department of Applied Physics</li><li>Department of Environmental Sciences</li><li>Department of Vocational Studies</li><li>Department of Food Processing & Technology</li></ul>', '<ol><li>Integrated Dual Degree <br></li><ul type="disc"><li>(B.Tech + M.Tech/MBA) - Food Processing and Technology<br></li></ul><br><li>Post Graduate</li><ul type="disc"><li>M.Tech  - Food Processing and Technology<br></li><li>M.Sc - Applied Mathematics<br></li><li>M.Sc - Applied Chemistry</li><li>M.Sc - Applied Physics</li><li>M.Sc - Environmental Science</li><li>M.Sc - Food Science<br></li></ul><br><li>Doctoral Programs<br></li><ul type="disc"><li>Ph.D - Applied Mathematics</li><li>Ph.D - Applied Chemistry<br></li><li>Ph.D - Applied Physics <br></li></ul></ol>', '', 'Placement Session will begin from 3rd December and will continue till 28th June.', ''),
 (15, 'sobt', 'School of Biotechnology', '<ul>\r\n<li>Department of Biotechnology</li>\r\n</ul>\r\n\r\n', '<ol><li>Integrated Dual Degree <br></li><ul type="disc"><li>(B.Tech + M.Tech/MBA) - Biotechnology<br></li></ul><br><li>Post Graduate</li><ul type="disc"><li>M.Tech  - Biotechnology</li></ul><br><li>Doctoral Programs<br></li><ul type="disc"><li>Ph.D - Various areas of Biotechnology</li></ul></ol>', '', 'Placement Session will begin from 3rd December and will continue till 28th June.', ''),
-(16, 'soe', ' School of Engineering', '<ul>\r\n<li>Department of Civil Engineering</li>\r\n<li>Department of Electrical Engineering</li>\r\n<li>Department of Mechanical Engineering</li>\r\n<li>Department of Architecture & Regional Planning</li>\r\n</ul>\r\n\r\n', '<ol><li>Integrated Dual Degree <br></li><ul type="disc"><li>(B.Tech + M.Tech/MBA) - Mechanical Engineering</li><li>(B.Tech + M.Tech/MBA) - Electrical Engineering</li><li>(B.Tech + M.Tech/MBA) - Civil Engineering</li></ul><br><li>Post Graduate</li><ul type="disc"><li>M.Plan - Urban and Regional Planning<br></li></ul><br><li>Doctoral Programs<br></li><ul type="disc"><li>Ph.D - Applied Mathematics</li><li>Ph.D - Applied Chemistry<br></li><li>Ph.D - Applied Physics <br></li></ul></ol>', '', 'Placement Session will begin from 3rd December and will continue till 28th June.', ''),
-(17, 'som', ' School of Management', '<ul>\r\n<li>Department of Bussiness Management</li>\r\n</ul>\r\n\r\n', '<ul><li>&nbsp;Integrated Dual Degree</li><li>&nbsp;Post Graduate</li><li>&nbsp;Doctrate</li></ul>', '<dl><dt>Dr. Ela Kumar                </dt><dd>Dean(I/C), School of ICT, Gautam Buddha University </dd><br><dt>Dr. Om Prakash Sangwan                </dt><dd>School of ICT, Gautam Buddha University </dd><br><dt>Dr. Anurag Singh Bhagel                </dt><dd>School of ICT, Gautam Buddha University </dd></dl>', 'Placement Session will begin from 3rd December and will continue till 28th June.', ''),
-(18, 'soljg', ' School of Law, Justice and Governance', '', '<ul><li>&nbsp;Integrated Dual Degree</li><li>&nbsp;Post Graduate</li><li>&nbsp;Doctrate</li></ul>', '<dl><dt>Dr. Ela Kumar                </dt><dd>Dean(I/C), School of ICT, Gautam Buddha University </dd><br><dt>Dr. Om Prakash Sangwan                </dt><dd>School of ICT, Gautam Buddha University </dd><br><dt>Dr. Anurag Singh Bhagel                </dt><dd>School of ICT, Gautam Buddha University </dd></dl>', 'Placement Session will begin from 3rd December and will continue till 28th June.', ''),
-(19, 'sobsc', ' School of Buddhist Studies And Civilization ', '', '<ul><li>&nbsp;Integrated Dual Degree</li><li>&nbsp;Post Graduate</li><li>&nbsp;Doctrate</li></ul>', '<dl><dt>Dr. Ela Kumar                </dt><dd>Dean(I/C), School of ICT, Gautam Buddha University </dd><br><dt>Dr. Om Prakash Sangwan                </dt><dd>School of ICT, Gautam Buddha University </dd><br><dt>Dr. Anurag Singh Bhagel                </dt><dd>School of ICT, Gautam Buddha University </dd></dl>', 'Placement Session will begin from 3rd December and will continue till 28th June.', ''),
-(20, 'sohss', ' School of Humanities and Social Sciences', '<ol>\n<li>Humanities</li>\n<ul type="disc">\n<li>Department of English and Modern European Languages</li>\n<li>Department of Indian Languages and Literature</li>\n<li>Department of Mass Communication and Media Studies</li>\n</ul><br>\n<li>Social Sciences</li>\n<ul type="disc">\n<li>Department of Economics, Planning and Development</li>\n<li>Department of Education and Training</li>\n<li>Department of History and Civilization</li>\n<li>Department of Political Science and International Relations</li>\n<li>Department of Psychology and Wellbeing</li>\n<li>Department of Public Administration, Governance and Policy Research</li>\n<li>Department of Social Work</li>\n<li>Department of Sociology</li>\n</ul>\n</ol>', '<ul><li>&nbsp;Integrated Dual Degree</li><li>&nbsp;Post Graduate</li><li>&nbsp;Doctrate</li></ul>', '<dl><dt>Dr. Ela Kumar                </dt><dd>Dean(I/C), School of ICT, Gautam Buddha University </dd><br><dt>Dr. Om Prakash Sangwan                </dt><dd>School of ICT, Gautam Buddha University </dd><br><dt>Dr. Anurag Singh Bhagel                </dt><dd>School of ICT, Gautam Buddha University </dd></dl>', 'Placement Session will begin from 3rd December and will continue till 28th June.', '');
+(16, 'soe', ' School of Engineering', '<ul>\r\n<li>Department of Civil Engineering</li>\r\n<li>Department of Electrical Engineering</li>\r\n<li>Department of Mechanical Engineering</li>\r\n<li>Department of Architecture & Regional Planning</li>\r\n</ul>\r\n\r\n', '<ol><li>Integrated Dual Degree <br></li><ul type="disc"><li>(B.Tech + M.Tech/MBA) - Mechanical Engineering</li><li>(B.Tech + M.Tech/MBA) - Electrical Engineering</li><li>(B.Tech + M.Tech/MBA) - Civil Engineering</li></ul><br><li>Post Graduate</li><ul type="disc"><li>M.Plan - Urban and Regional Planning</li><li>M.Tech - Environmental Engineering</li><li>M.Tech - Structural Engineering</li><li>M.Tech - Power System Engineering</li><li>M.Tech - Instrumentation and Control<br></li><li>M.Tech - Power Electronics and Drives<br></li><li>M.Tech - Manufacturing Engineering</li><li>M.Tech - Design Engineering</li><li>M.Tech - Thermal Engineering</li></ul><br><li>Doctoral Programs<br></li><ul type="disc"><li>Ph.D - Electrical Engineering</li><li>Ph.D - Civil Engineering <br></li></ul></ol>', '', 'Placement Session will begin from 3rd December and will continue till 28th June.', ''),
+(17, 'som', ' School of Management', '<ul>\r\n<li>Department of Bussiness Management</li>\r\n</ul>\r\n\r\n', '<ol><li>Integrated Dual Degree <br></li><ul type="disc"><li>BBA + MBA<br></li></ul><br><li>Post Graduate</li><ul type="disc"><li>MBA&nbsp; - Human Resource Management</li><li>MBA&nbsp; - Finance<br></li><li>MBA&nbsp; - Marketing<br></li><li>MBA&nbsp; - Strategy<br></li><li>MBA&nbsp; - Operations<br></li><li>MBA&nbsp; - Information Technology<br></li><li>MBA&nbsp; - Tourism and Travel<br></li></ul><br><li>Doctoral Programs<br></li><ul type="disc"><li>Ph.D - In various areas of Business Management<br></li></ul></ol>', '', 'Placement Session will begin from 3rd December and will continue till 28th June.', ''),
+(18, 'soljg', ' School of Law, Justice and Governance', '<ul><li>Department of Law, Justice and Governance<br></li></ul>', '<ol><li>Integrated Dual Degree <br></li><ul type="disc"><li>BA + LLB</li><li>BBA + LLB<br></li></ul></ol>', '', 'Placement Session will begin from 3rd December and will continue till 28th June.', ''),
+(19, 'sobsc', ' School of Buddhist Studies And Civilization ', '<ul><li>Department of Buddhist Studies And Civilization<br></li></ul>', '<ol><li>Integrated Dual Degree <br></li><ul type="disc"><li>(B.A. + M.A.) - Buddhist Studies and Civilization <br></li></ul><br><li>Post Graduate</li><ul type="disc"><li>M.A.  - Buddhist Studies and Civilization</li><li>M.Phil. - Buddhist Studies and Civilization</li></ul><br><li>Doctoral Programs<br></li><ul type="disc"><li>Ph.D - Buddhist Studies and Civilization</li></ul></ol>', '', 'Placement Session will begin from 3rd December and will continue till 28th June.', ''),
+(20, 'sohss', ' School of Humanities and Social Sciences', '<ol>\n<li>Humanities</li>\n<ul type="disc">\n<li>Department of English and Modern European Languages</li>\n<li>Department of Indian Languages and Literature</li>\n<li>Department of Mass Communication and Media Studies</li>\n</ul><br>\n<li>Social Sciences</li>\n<ul type="disc">\n<li>Department of Economics, Planning and Development</li>\n<li>Department of Education and Training</li>\n<li>Department of History and Civilization</li>\n<li>Department of Political Science and International Relations</li>\n<li>Department of Psychology and Wellbeing</li>\n<li>Department of Public Administration, Governance and Policy Research</li>\n<li>Department of Social Work</li>\n<li>Department of Sociology</li>\n</ul>\n</ol>', '<ol><li>Post Graduate</li></ol><ol><ul type="disc"><li>M.A. - History and Civilization<br></li><li>M.A. - Economics, Planning and Development <br></li><li>M.A. - English<br></li><li>M.A. - Hindi<br></li><li>M.A. - Urdu <br></li><li>MSW - Masters in Social Work</li><li>M.A. - Applied Psychology</li><li>M.Sc. - Applied Psychology</li><li>M.A. - Political Science and International Relations</li><li>M.A. - Education</li><li>M.Phil. - Clinical Psycholog </li></ul></ol>', '', 'Placement Session will begin from 3rd December and will continue till 28th June.', '');
 
 -- --------------------------------------------------------
 
