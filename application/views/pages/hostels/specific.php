@@ -7,19 +7,19 @@
           &nbsp; <h1>Hostel Page </h1>
             <h2><small>Select your desired hostel</small></h2>
 			<font face="Geneva,Tahoma,Verdana,sans-serif;"size="15px">
-             <div class="form-group">
-					  <select class="selectpicker" multiple data-max-options="1" data-width="30%">
-						<option>Birsa Munda Hostel</option>
-                    <option>Guru Ghasi Das Hostel</option>
-                    <option>Maha Maya Girls Hostel</option>
-                    <option>Ram Saran Das Hostel</option>
-                    <option>Rani Laxmi Bai Girls Hostel</option>
-                    <option>Sant Kabir Das Hostel</option>
-                    <option>Sant Ravidas Hostel</option>
-                    <option>Shri Chatarpati Sahu ji Maharaj Hostel</option>
-                    <option>Shri Narayan Guru Hostel</option>
-                    <option>Tulsidas Hostel</option>
-
+             <form action="#" method="post">
+                        <div class="form-group">
+					  <select name="hostel_name" class="selectpicker" multiple data-max-options="1" data-width="30%">
+						<?php
+                                                $r=$this->db->query("select * from warden");
+                                                $results=$r->result();
+                                                foreach ($results as $rows)
+                                                {?>
+                                              <option name="<php $rows->hostel_name; ?>"><?php echo $rows->hostel_name;  ?></option>
+                                                <?php
+                                                }?>
+                                              <input type="submit" name="submit" value="submit">
+                                              </form>
                     
   </select>	
 </div></font>
@@ -35,10 +35,21 @@
 --><div style="padding-left:10px">
 <a name="go1" style="text-decoration:none;"><div class="jumbotron">			
 			<h2>BASIC INFORMATION</h2>
-            <p>Warden Name : </p>
-            <p>Warden Office:</p>
-            <p>Hostel Contact Number: </p>			
+                        <?php
+                        
+                        $hostel_name = $_POST['hostel_name'];
+                        $x=$this->db->query("select * from warden where hostel_name='$hostel_name'");
+                        $result=$x->result();
+                        foreach ($result as $rows)
+                        {
+                         ?>
+            <p>Warden Name : <?php echo $rows->warden_name; ?></p>
+            <p>Warden Office: <?php echo $rows->warden_office; ?></p>
+            <p>Hostel Contact Number:<?php echo $rows->warden_name; ?> </p>			
             </div></a>
+    <?php
+                        }
+    ?>
 			
         <a name="go3" style="text-decoration:none;">
 			<div class="jumbotron">
