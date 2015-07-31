@@ -18,7 +18,10 @@
                                               <option name="<php $rows->hostel_name; ?>"><?php echo $rows->hostel_name;  ?></option>
                                                 <?php
                                                 }?>
-                                              <input type="submit" name="submit" value="submit">
+                                               <a href="#" class="btn btn-info" role="button">Link Button</a>
+                                                <button type="button" class="btn btn-info">Button</button>
+                                                <input type="submit" class="btn btn-info" value="Go!">
+                                              </select>&nbsp;&nbsp;
                                               </form>
                     
   </select>	
