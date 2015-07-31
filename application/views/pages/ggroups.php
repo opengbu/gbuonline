@@ -9,12 +9,12 @@
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingOne">
       <h4 class="panel-title">
-        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#som" aria-expanded="false" aria-controls="som">
           <strong>School of Management</strong>
         </a>
       </h4>
     </div>
-    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+    <div id="som" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
       <div class="panel-body">
        <li><a href="https://groups.google.com/forum/#!forum/ict_softb" ><font color="black">Computer Science 2011-16</font></a></li>
                                         &nbsp;  <li><a href="https://groups.google.com/forum/#!forum/gbucs2012" ><font color="black">Computer Science 2012-17</font></a></li>
@@ -31,12 +31,12 @@
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingTwo">
       <h4 class="panel-title">
-        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#sob" aria-expanded="false" aria-controls="collapseTwo">
           <strong>School of Biotechnology</strong>
         </a>
       </h4>
     </div>
-    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+    <div id="sob" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
       <div class="panel-body">
        
       </div>
@@ -45,12 +45,12 @@
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingThree">
       <h4 class="panel-title">
-        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#soict" aria-expanded="false" aria-controls="collapseThree">
           <strong>School of Information & Communication Technology</strong> 
         </a>
       </h4>
     </div>
-    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+    <div id="soict" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
       <div class="panel-body">
        
       </div>

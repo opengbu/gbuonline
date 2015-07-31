@@ -207,7 +207,7 @@
 <div class = "col-md-3">
 <a href = "http://math.gbuonline.in"><font color = "white"><b>Maths Site</b></font></a><br><br>
 <a href = "http://gbu.ac.in"><font color = "white"><b>Official Website</b></font></a><br><br>
-<a href = ""><font color = "white"><b>Google Groups</b></font></a><br><br>
+<a href = "<?php echo site_url('feat/ggroups')?>"><font color = "white"><b>Google Groups</b></font></a><br><br>
 <a href = "http://www.google.com/+GAUTAMBUDDHAUNIVERSITYGREATERNOIDA"><font color = "white"><b>Gbu.code</b></font></a>
 </div>
         
