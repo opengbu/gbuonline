@@ -1,17 +1,23 @@
 
-
 <div class = "row">
+        
    <div class="page-header">
    <center>
-      <h1><font size="7" style="font-family: Book Antiqua,Palatino,Palatino Linotype,Palatino LT STD,Georgia,serif;">Gautam Buddha University<br />Hostel Management<br />
+      <h1 style="position:absolute;padding:30px; left: 76px; top: 82px;"><font size="7" style="font-family: Book Antiqua,Palatino,Palatino Linotype,Palatino LT STD,Georgia,serif;">Gautam Buddha University<br />Hostel Management<br />
       <small>
       A place to grow and evolve one's personality!
       </font></small>
       </h1>
    </center>
    </div>
+      <div >
+    <img src="<?php echo base_url('resources/images/demo1.jpg')?>" alt="demo hostel" height="600" style="overflow:hidden;position:relative;position: relative; top: 0; left:            0;width:100%;"/>                      
+    </div>
    </div>
-   <?php require 'hslider.php'; ?><br/>
+
+
+    
+  <!-- <?php require 'hslider.php'; ?><br/>-->
    
    <font style="font-family:Comic Sans MS, cursive, sans-serif">
    <div style="padding-top:5px;padding-left:10px;">
@@ -38,7 +44,7 @@
 								</div>
                   
 							</div>
-							<hr><hr/>
+							<hr><hr>
 							<div class="row">
 								<div class="col-sm-6">
 									Birsa Munda Hostel
@@ -46,18 +52,20 @@
 								<div class="col-sm-6">
 									Maha Maya Girls Hostel
 								</div>
-							<hr>
+							
 							</div>
-							<div class="row">
+							<hr>
+                            <div class="row">
 								<div class="col-sm-6">
 									Guru Ghasi Das Hostel
 								</div>
 								<div class="col-sm-6">
 									Rani Laxmi Bai Girls Hostel
 								</div>
-							<hr>
 							</div>
-                                     <div class="row">
+							<hr>
+
+                                    <div class="row">
 								<div class="col-sm-6">
 									Ram Saran Das Hostel
 								</div>
