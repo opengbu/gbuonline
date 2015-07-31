@@ -1,4 +1,4 @@
-</div> <!--for container fluid opened in link.php-->
+	</div> <!--for container fluid opened in link.php-->
 
     <style>
 
@@ -8,8 +8,8 @@
             width : 100%;
 			position: absolute; 
 			z-index: 100; 
-			background-color: slategray;
-			height: 420px; <!--to solve footer issue--><!--if you edit this, then also edit 'padding-bottom' in body tag, with the same amount-->
+			background-color: black;
+			height: 200px; <!--to solve footer issue--><!--if you edit this, then also edit 'padding-bottom' in body tag, with the same amount-->
         }
     </style>
 
@@ -22,9 +22,9 @@
             <div class="row" >
 			
                 <div class="col-md-2 col-md-offset-1">
-						<h4><b><font color = "white">CONTACT</font></b></h4>
+						
 
-						<button type="button" class="btn btn-block" data-toggle="modal" data-target=".bs-example-modal-lg-1">Team</button>
+						<a type="button" class="btn btn-block" data-toggle="modal" data-target=".bs-example-modal-lg-1"><font color = "white"><b>Team</b></font></a>
 						
                     <div class="modal fade bs-example-modal-lg-1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-lg">
@@ -73,8 +73,8 @@
                     </div>
 
                     
-                    <br>
-                    <button type="button" class="btn btn-block" data-toggle="modal" data-target=".bs-example-modal-lg-2">Vision</button>
+                    
+                    <a type="button" class="btn btn-block" data-toggle="modal" data-target=".bs-example-modal-lg-2"><font color = "white"><b>Vision</b></font></a>
 
                     <div class="modal fade bs-example-modal-lg-2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-lg">
@@ -91,12 +91,7 @@
                             </div>
                         </div>
                     </div>
-					<br>
-                    
-                    
-                
-				
-				<button type="button" class="btn btn-block" data-toggle="modal" data-target=".bs-example-modal-lg-5">Connect With Us</button>
+				<a type="button" class="btn btn-block" data-toggle="modal" data-target=".bs-example-modal-lg-5"><font color = "white"><b>Connect With Us</b></font></a>
 
                     <div class="modal fade bs-example-modal-lg-5" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-lg">
@@ -191,14 +186,12 @@
                             </div>
                         </div>
                     </div>
-                    <br>
-                    
-                    <button type="button" class="btn btn-block" onclick="location.href='<?php echo site_url('feat/opportunities')?>'">Opportunities</button>
+             <a type="button" class="btn btn-block" onclick="location.href='<?php echo site_url('feat/opportunities')?>'"><font color = "white"><b>Opportunities</b></font></a>
                 
             </div>
 			<div class = "col-md-1">
 			</div>
-			<div class="col-md-3">
+			<!--<div class="col-md-3">
 			<h4><b><font color = "white">GOOGLE GROUPS</font></b></h4>
 			
 											<li><a href="https://groups.google.com/forum/#!forum/ict_softb" ><font color="black"><b>Computer Science 2011-16</b></font></a></li>
@@ -210,18 +203,27 @@
                                         &nbsp;  <li><a href="https://groups.google.com/forum/#!forum/civil-2014-gbu" ><font color="black"><b>Civil 2014-19</b></font></a></li>
                                         &nbsp;  <li><a href="https://groups.google.com/forum/#!forum/gbu-mba-2014" ><font color="black"><b>MBA 2014</b></font></a></li>
 </div>
-
+-->
 <div class = "col-md-3">
-<h4><b><font color = "white">QUICK LINKS</font></b></h4>
-
-<a href = "http://math.gbuonline.in"><font color = "black"><b><i>Maths Site</i></b></font></a><br><br>
-<a href = "http://gbu.ac.in"><font color = "black"><b><i>Official Website</i></b></font></a>
-
+<a href = "http://math.gbuonline.in"><font color = "white"><b>Maths Site</b></font></a><br><br>
+<a href = "http://gbu.ac.in"><font color = "white"><b>Official Website</b></font></a><br><br>
+<a href = ""><font color = "white"><b>Google Groups</b></font></a><br><br>
+<a href = "http://www.google.com/+GAUTAMBUDDHAUNIVERSITYGREATERNOIDA"><font color = "white"><b>Gbu.code</b></font></a>
 </div>
-        </div>
         
-        <br>
-		<div class="row">
+        
+        
+		<div class = "col-md-3">
+		<a href = "http://math.gbuonline.in"><font color = "white"><b>Terms of use</b></font></a><br><br>
+<a href = "http://gbu.ac.in"><font color = "white"><b>Development</b></font></a><br><br>
+<a href = "" ><font color = "white"><b>Feedback</b></font></a><br><br>
+<a href = ""><font color = "white"><b>Advertise</b></font></a>
+		
+		
+		
+		
+		
+		</div>
 		<div class = "col-md-10"></div>
 		<div class = "col-md-2">
 		<!-- AddToAny BEGIN -->
@@ -230,20 +232,19 @@
 <a class="a2a_button_twitter"></a>
 <a class="a2a_button_google_plus"></a>
 </div>
-
 <!-- AddToAny END -->
 		</div>
 		</div>
-
-        <div class="row">
+<div class="row" style = "padding-bottom:5px;">
             <div class="col-md-12 text-center">
-                <p>
-                    <b>&copy; kNight_Coders</b>
-                </p>
+                <br>
+                    <b>&copy; kNight_Coders, Inc.</b>
+                <br/>
 
             </div>
 
-        </div>
+       </div>
+        
 
     </footer>
 

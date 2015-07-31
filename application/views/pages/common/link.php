@@ -106,7 +106,7 @@
         </style>
 
     </head>
-    <body background="<?php echo base_url('resources/images/home1.jpg') ?>" style="padding-bottom: 420px; height:100%; background-attachment: fixed; background-repeat: repeat;">
+    <body background="<?php echo base_url('resources/images/home1.jpg') ?>" style="padding-bottom: 200px; height:100%; background-attachment: fixed; background-repeat: repeat;">
 	<div class="se-pre-con"></div>
         <div class="container-fluid footer-problem"><!--this div ends in footer.php-->
 
