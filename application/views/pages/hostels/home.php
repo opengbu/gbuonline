@@ -3,15 +3,18 @@
         
    <div class="page-header">
    <center>
-      <h1 style="position:absolute; z-index:50; padding:30px; left: 76px; top: 82px;"><font size="7" style="font-family: Book Antiqua,Palatino,Palatino Linotype,Palatino LT STD,Georgia,serif;">Gautam Buddha University<br />Hostel Management<br />
-      <small>
-      A place to grow and evolve one's personality!
-      </font></small>
-      </h1>
+       <h1 style="position:absolute; z-index:10; padding:10px; left: 56px; top: 82px;">
+           <font size="7" style="font-family: Book Antiqua,Palatino,Palatino Linotype,Palatino LT STD,Georgia,serif;"color="black">
+               Gautam Buddha University<br />Hostel Management<br />
+            </font>
+            <small><font color=black px>
+                A place to grow and evolve one's personality!
+            </small></font>
+       </h1>
    </center>
    </div>
       <div >
-    <img src="<?php echo base_url('resources/images/demo1.jpg')?>" alt="demo hostel" height="600" style="overflow:hidden;position:relative;position: relative; top: 0; left:            0;width:100%;"/>                      
+    <img src="<?php echo base_url('resources/images/demo1.jpg')?>" alt="demo hostel" height="600" style="overflow:hidden;position:relative;position: relative; top:0;left:0;width:100%;"/>                      
     </div>
    </div>
 
