@@ -3,7 +3,7 @@
         
    <div class="page-header">
    <center>
-      <h1 style="position:absolute;padding:30px; left: 76px; top: 82px;"><font size="7" style="font-family: Book Antiqua,Palatino,Palatino Linotype,Palatino LT STD,Georgia,serif;">Gautam Buddha University<br />Hostel Management<br />
+      <h1 style="position:absolute; z-index:50; padding:30px; left: 76px; top: 82px;"><font size="7" style="font-family: Book Antiqua,Palatino,Palatino Linotype,Palatino LT STD,Georgia,serif;">Gautam Buddha University<br />Hostel Management<br />
       <small>
       A place to grow and evolve one's personality!
       </font></small>
