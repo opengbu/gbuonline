@@ -1,9 +1,9 @@
 <style>
     #h {
-        background-color: pink;
+        background-color:#C1CBCB;
     }
     #t {
-        color: black;
+        color: #1E2626;
     }
     #getFixed
     {
@@ -45,11 +45,11 @@
 
 
 
-    <div class="divr"  style="  background-color:purple; padding-top:10px; padding-bottom:10px; border-radius: 7px;">
+    <div class="divr"  style="background-color:#839797;padding-top:10px; padding-bottom:10px; border-radius: 7px;">
 
 
 
-        <font size="5" color="white"><center>Extras</center></font>   
+        <b><font size="6" color="black" face="Times New Roman"><center>Extras</center></font>   </b>
     </div>
     <br>
 

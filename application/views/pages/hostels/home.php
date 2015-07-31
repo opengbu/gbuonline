@@ -4,7 +4,7 @@
    <div class="page-header">
    <center>
        <h1 style="position:absolute; z-index:10; padding:10px; left: 56px; top: 82px;">
-           <font size="7" style="font-family: Book Antiqua,Palatino,Palatino Linotype,Palatino LT STD,Georgia,serif;"color="black">
+           <font size="7" style="font-family: Book Antiqua,Palatino,Palatino Linotype,Palatino LT STD,Georgia,serif;"color="#2D2D2D">
                Gautam Buddha University<br />Hostel Management<br />
             </font>
             <small><font color=black px>
@@ -17,10 +17,7 @@
     <img src="<?php echo base_url('resources/images/demo1.jpg')?>" alt="demo hostel" height="600" style="overflow:hidden;position:relative;position: relative; top:0;left:0;width:100%;"/>                      
     </div>
    </div>
-
-
-    
-  <!-- <?php require 'hslider.php'; ?><br/>-->
+<br/>
    
    <font style="font-family:Comic Sans MS, cursive, sans-serif">
    <div style="padding-top:5px;padding-left:10px;">

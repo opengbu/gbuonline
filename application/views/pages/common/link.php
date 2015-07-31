@@ -85,11 +85,11 @@
                 animation: myfirst 5s;
             }
 
-
+/*
             @keyframes myfirst {
                 from {background: pink;}
                 to {background: purple;}
-            }
+            }*/
 			
 			.footer-problem {
 				min-height:100%; 
