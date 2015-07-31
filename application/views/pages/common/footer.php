@@ -8,7 +8,7 @@
             width : 100%;
 			position: absolute; 
 			z-index: 100; 
-			background-color: black;
+			background-color: #2D2D2D;
 			height: 200px; <!--to solve footer issue--><!--if you edit this, then also edit 'padding-bottom' in body tag, with the same amount-->
         }
     </style>
