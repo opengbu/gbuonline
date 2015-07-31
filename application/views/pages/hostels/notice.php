@@ -32,7 +32,7 @@
                     <div class="col-md-3"><b>Title</b></div>
                     <div class="col-md-3"><b>Issuing Authority</b></div>
                     <div class="col-md-2"><b>Concerned Hostels</b></div></font>
-            </div><hr/><hr/><hr/>
+            </div><hr/><hr/>
                     <?php
                         /*$this->db->where('id','1');*/
                         $q=$this->db->get('h_notice');
@@ -52,9 +52,7 @@
                         ?>
                         </div>
                         <div class="col-md-3">
-                        <?php
-                            echo $row->title;    
-                        ?>
+                            <a href="<?php echo base_url("resources/holidays-2015.pdf")?>"><?php echo $row->title; ?></a>
                         </div>
                          <div class="col-md-3">
                         <?php
