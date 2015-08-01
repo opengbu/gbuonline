@@ -1,7 +1,7 @@
 
 <div class = "row">
         
-   <div class="page-header">
+   <div>
    <center>
        <h1 style="position:absolute; z-index:10; padding:10px; left: 56px; top: 82px;">
            <font size="7" style="font-family: Book Antiqua,Palatino,Palatino Linotype,Palatino LT STD,Georgia,serif;"color="#2D2D2D">
