@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.4
+-- version 4.1.14
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Aug 01, 2015 at 06:21 AM
--- Server version: 5.6.12-log
--- PHP Version: 5.4.12
+-- Host: 127.0.0.1
+-- Generation Time: Aug 01, 2015 at 09:46 PM
+-- Server version: 5.6.17
+-- PHP Version: 5.5.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `gbuonline`
 --
-CREATE DATABASE IF NOT EXISTS `gbuonline` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `gbuonline`;
 
 -- --------------------------------------------------------
 
@@ -354,16 +352,18 @@ CREATE TABLE IF NOT EXISTS `vnb` (
   `date` date NOT NULL,
   `posted_by` varchar(30) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `vnb`
 --
 
 INSERT INTO `vnb` (`id`, `title`, `link`, `user_id`, `date`, `posted_by`) VALUES
-(1, 'Bar Council of India Approval Letter', 'asdasdasdasdasdasdasdasda', 0, '0000-00-00', ''),
-(2, 'Fellowship for Gate qualified students', 'wqeqweqweqweqw', 0, '0000-00-00', ''),
-(3, 'Change in grading system', 'resources/images/odd-sem.jpg', 0, '2015-05-25', 'Dr. vishal sharma');
+(1, 'Notice for the Scholarship and fee reimbursement of students for Academic Session 2015-16 ', 'resources\\images\\GBU_Academic_Scholarship_Notice_24July2015.jpg', 0, '2015-07-24', ''),
+(2, 'Information regarding Full Fee Submission during Registration for Academic Session 2015-16 ', 'resources\\images\\Notice_RegistrationFee_23July2015.jpg', 0, '2015-07-22', ''),
+(3, 'MoU between GBU and NSDC for introducing Skill Development Programmes  in University', 'resources\\MOU_NSDC_DOC_1July15.pdf', 0, '2015-06-30', ''),
+(5, 'Notification for Late Fee Submission for Odd Semester Registration 2015-16', 'resources\\Notification_Late Fee_Odd SemReg_21July15.pdf', 0, '2015-07-15', ''),
+(6, 'Cancellation of Purchase Order for printing of Letter Head and L- Folder awarded to Seven Star Associates-New Delhi', 'resources\\PO_Stores_Cancel_Seven Star_26June15.jpg', 0, '2015-06-26', '');
 
 -- --------------------------------------------------------
 
