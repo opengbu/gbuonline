@@ -63,12 +63,38 @@ class Feat extends CI_Controller {
 	public function ggroups()
 	{
         $data['title'] = 'Google Groups &nbsp;|&nbsp;  GBU Online';
-		$data['heading'] = ' Google Groups ';
+		$data['heading'] = 'Google Groups';
 		$data['message'] = 'All of your discussions in one place ';
 		$this->load->view('pages/common/link',$data);
 		$this->load->view('pages/common/header');
 		$this->load->view('pages/common/page-heading',$data);
 		$this->load->view('pages/ggroups');
+		$this->load->view('pages/common/extras');
+		$this->load->view('pages/common/footer');
+	}
+	
+	public function tou()
+	{
+        $data['title'] = 'TOU &nbsp;|&nbsp;  GBU Online';
+		$data['heading'] = 'Terms of Use ';
+		$data['message'] = 'Legal Information & Notices  ';
+		$this->load->view('pages/common/link',$data);
+		$this->load->view('pages/common/header');
+		$this->load->view('pages/common/page-heading',$data);
+		$this->load->view('pages/tou');
+		$this->load->view('pages/common/extras');
+		$this->load->view('pages/common/footer');
+	}
+	
+	public function development()
+	{
+        $data['title'] = 'Releases &nbsp;|&nbsp;  GBU Online';
+		$data['heading'] ='Releases';
+		$data['message'] = 'Updates and Development  ';
+		$this->load->view('pages/common/link',$data);
+		$this->load->view('pages/common/header');
+		$this->load->view('pages/common/page-heading',$data);
+		$this->load->view('pages/development');
 		$this->load->view('pages/common/extras');
 		$this->load->view('pages/common/footer');
 	}

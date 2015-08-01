@@ -214,8 +214,8 @@
         
         
 		<div class = "col-md-3">
-		<a href = "http://math.gbuonline.in"><font color = "white"><b>Terms of use</b></font></a><br><br>
-<a href = "http://gbu.ac.in"><font color = "white"><b>Development</b></font></a><br><br>
+		<a href = "<?php echo site_url('feat/tou')?>"><font color = "white"><b>Terms of use</b></font></a><br><br>
+<a href = "<?php echo site_url('feat/development')?>"><font color = "white"><b>Releases</b></font></a><br><br>
 <a href = "" ><font color = "white"><b>Feedback</b></font></a><br><br>
 <a href = ""><font color = "white"><b>Advertise</b></font></a>
 		
