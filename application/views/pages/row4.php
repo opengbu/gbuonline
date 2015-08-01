@@ -32,8 +32,10 @@
             <hr>
 
             <?php
-            $info = parse_url(base_url());
-            $host = $info['host']; //example extract gbuonline.in from http://www.gbuonline.in/sdsds
+            //$info = parse_url(base_url());
+            //$host = $info['host']; //example extract gbuonline.in from http://www.gbuonline.in/sdsds
+            $host = $_SERVER['HTTP_HOST'];
+            //echo $host;
             if ($host == "gbuonline.in") {
                 $xml = ("https://gbuonline.wordpress.com/feed");
                 $xmlDoc = new DOMDocument();

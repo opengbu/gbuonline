@@ -5,6 +5,7 @@
  *  Author     :Varun Garg <varun.10@live.com>
  */
 error_reporting(E_ERROR);
+
 class Register extends CI_Controller {
 
     function index() {
@@ -35,8 +36,9 @@ class Register extends CI_Controller {
 
             $this->db->query("insert into users (full_name,username,email,type,password,roll_number,phone_number,confirmation_link) values ('$full_name','$username','$email','$type','$hash','$roll_number','$phone_number','$confirmation_link')");
 
-            $info = parse_url(base_url());
-            $host = $info['host']; //example extract gbuonline.in from http://www.gbuonline.in/sdsds
+            //$info = parse_url(base_url());
+            //$host = $info['host']; //example extract gbuonline.in from http://www.gbuonline.in/sdsds
+            $host = $_SERVER['HTTP_HOST'];
             $from_email = 'accounts@' . $host; // Ex. accounts@gbuonline.in
 
             $message = '<html>
@@ -139,7 +141,7 @@ This is a system generated mail. Please do not reply to this email.<br>
                 $this->db->query("update users set active = 1 where username = '$username'");
                 $this->load->view('activation_success');
             } else {
-                 redirect('login');
+                redirect('login');
             }
         } else
             redirect('login');
