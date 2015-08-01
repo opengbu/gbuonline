@@ -39,6 +39,13 @@
 <a name="go1" style="text-decoration:none;"><div class="jumbotron">			
 			<h2>BASIC INFORMATION</h2>
                         <?php
+                        if(empty($_POST['hostel_name']))
+                        {
+                            echo "<b>NO HOSTEL SELECTED</b>";
+                            
+                        }
+                        else
+                        {
                         
                         $hostel_name = $_POST['hostel_name'];
                         $x=$this->db->query("select * from warden where hostel_name='$hostel_name'");
@@ -51,6 +58,7 @@
             <p>Hostel Contact Number:<?php echo $rows->warden_name; ?> </p>			
             </div></a>
     <?php
+                        }
                         }
     ?>
 			
