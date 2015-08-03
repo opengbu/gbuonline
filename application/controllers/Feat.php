@@ -98,6 +98,17 @@ class Feat extends CI_Controller {
 		$this->load->view('pages/common/extras');
 		$this->load->view('pages/common/footer');
 	}
-	
+	public function feedback()
+	{
+        $data['title'] = 'Feedback &nbsp;|&nbsp;  GBU Online';
+		$data['heading'] ='Feedback';
+		$data['message'] = '';
+		$this->load->view('pages/common/link',$data);
+		$this->load->view('pages/common/header');
+		$this->load->view('pages/common/page-heading',$data);
+		$this->load->view('pages/feedback');
+		$this->load->view('pages/common/extras');
+		$this->load->view('pages/common/footer');
+	}
 	
 }	
