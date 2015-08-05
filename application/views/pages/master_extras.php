@@ -11,20 +11,7 @@
                     </div>
                     <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                         <div class="panel-body">
-                             <?php
-                              /*
-                               * Fully Dynamic clubs
-                               * This can be implemented in schools, and ebooks section
-                               */
-                              $clubs = $this->db->query("select c_name, c_full_name from clubs order by c_full_name");
-                              $club_count = 0;
-                              foreach ($clubs->result() as $row)
-                              {
-                                  $club_count++;
-                                  echo '<a href="' . site_url() . 'clubs/view/' . $row->c_name. '">' . $club_count . '. ';
-                                  echo strtoupper($row->c_full_name) . '</a></br></br>';
-                              }
-                              ?>   
+                             <a href="<?php echo site_url('clubs/home');?>">Clubs</a>
                         </div>
                     </div>
                 </div>
