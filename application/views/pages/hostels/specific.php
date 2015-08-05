@@ -2,7 +2,7 @@
 <script type="text/javascript" src="<?php echo base_url() . 'users/application/views/common/' . 'dist/js/bootstrap-select.js' ?>"></script>
 
 <div class="row">
-	<div class="page-header" style = "background-color: darkred; padding-top: 10px; padding-left: 50px; margin-top: 15px;">
+	<div class="page-header" style = "background-color: black; padding-top: 10px; padding-left: 50px; margin-top: 15px;">
 		<font color="white"  face="Monotype Corsiva">
           &nbsp; <h1>Hostel Page </h1>
             <h2><small>Select your desired hostel</small></h2>
