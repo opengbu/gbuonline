@@ -11,7 +11,7 @@
     }
 </style>
 
-
+<!--
 <script>
     jQuery(function ($) {
         function fixDiv() {
@@ -39,7 +39,7 @@
         fixDiv();
     });
 </script>
-
+-->
 
 <div class="col-md-3 stic" id="getFixed" style="padding-left:30px; ">
 
@@ -49,7 +49,7 @@
 
 
 
-        <b><font size="6" color="black" face="Times New Roman"><center>Extras</center></font>   </b>
+        <b><font size="6" color="black" face="Calibri"><center>Extras</center></font>   </b>
     </div>
     <br>
 
