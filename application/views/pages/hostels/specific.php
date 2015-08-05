@@ -55,7 +55,7 @@
                          ?>
             <p>Warden Name : <?php echo $rows->warden_name; ?></p>
             <p>Warden Office: <?php echo $rows->warden_office; ?></p>
-            <p>Hostel Contact Number:<?php echo $rows->warden_name; ?> </p>			
+            <p>Office Assistant's Contact Number:<?php echo $rows->hostel_contact; ?> </p>			
             </div></a>
     <?php
                         }

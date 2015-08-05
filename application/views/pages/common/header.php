@@ -70,6 +70,7 @@
    		  <ul class="dropdown-menu" role="menu">
              <li><a href="<?php echo site_url('hostels/home')?>">Home</a></li>
              <li><a href="<?php echo site_url('hostels/info')?>">Hostel Details</a></li>
+               <li><a href="<?php echo site_url('hostels/studentinfo')?>">Student Info</a></li>
              <li><a href="<?php echo site_url('hostels/notice')?>">Hostel Notices</a></li>
              <li><a href="<?php echo site_url('hostels/wardens')?>">Wardens List</a></li>
 			 

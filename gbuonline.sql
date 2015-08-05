@@ -395,6 +395,34 @@ INSERT INTO `warden` (`id`, `hostel_name`, `warden_name`, `warden_office`, `host
 (9, 'RAHEEM BOYS HOSTEL', 'DR. RAJESH GUPTA', '4364', NULL),
 (10, 'MALIK MOHD. JAYSI BOYS HOSTEL', 'DR. GURMET DORJAY', '7058', NULL);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `stuinfo`
+--
+
+CREATE TABLE IF NOT EXISTS `stuinfo` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `stu_name` varchar(10) NOT NULL,
+  `stu_course` varchar(60) NOT NULL,
+  `stu_hname` varchar(50) NOT NULL,
+  `stu_review` varchar(6) NOT NULL,
+  `stu_father` varchar(60) NOT NULL,
+  `roll_number` varchar(60) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Student Info' AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `stuinfo`
+--
+
+INSERT INTO `stuinfo` (`id`, `stu_name`, `stu_course`, `stu_hname`, `stu_review`, `stu_father`, `roll_number`) VALUES
+(1, 'Ram Sharma', 'Btech', '8.1F', 'bad', 'ABC', ''),
+(2, 'Ram Kapoor', 'Mtech', '8.1K', 'good', 'PQR', ''),
+(3, 'Mr Manmoha', '232323322323', '23232323', '22', '2222', '13ics0XX'),
+(4, 'Ram Kapoor', 'asd', 'ads', 'asdasd', 'asd', 'asd');
+
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

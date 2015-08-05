@@ -11,6 +11,26 @@ class Hostels extends CI_Controller {
 		$this->load->view('pages/hostels/home');
 		$this->load->view('pages/common/footer');
 	}
+    public function studentinfo()
+    {
+        if($this->session->userdata('loggedin') != 1) //student/user/admin logged in
+        redirect ('users?redirect='.current_url());
+        
+        $data['title'] = 'Hostels &nbsp;|&nbsp;  GBU Online';
+		$this->load->view('pages/common/link',$data);
+		$this->load->view('pages/common/header');
+		$this->load->view('pages/hostels/studentinfo');
+		$this->load->view('pages/common/footer');
+    }
+     public function stuspecific()
+    {
+    
+        $data['title'] = 'Hostels &nbsp;|&nbsp;  GBU Online';
+		$this->load->view('pages/common/link',$data);
+		$this->load->view('pages/common/header');
+		$this->load->view('pages/hostels/stuspecific');
+		$this->load->view('pages/common/footer');
+    }
 	public function info()
 	{
             /*
@@ -144,10 +164,13 @@ class Hostels extends CI_Controller {
 	}   
     	public function rc()
 	{
+                    if($this->session->userdata('loggedin') != 1) //student/user/admin logged in
+                    redirect ('users?redirect='.current_url());
 		$data['title'] = 'Hostels &nbsp;|&nbsp;  GBU Online';
 		$this->load->view('pages/common/link',$data);
 		$this->load->view('pages/common/header');
 		$this->load->view('pages/hostels/rc');
 		$this->load->view('pages/common/footer');
+
 	}
 }
