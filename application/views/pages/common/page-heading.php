@@ -1,10 +1,10 @@
 <style>
 #pagehead {
-  background: -webkit-linear-gradient(90deg, #1e130c 10%, #9a8478 90%); /* Chrome 10+, Saf5.1+ */
-  background:    -moz-linear-gradient(90deg, #1e130c 10%, #9a8478 90%); /* FF3.6+ */
-  background:     -ms-linear-gradient(90deg, #1e130c 10%, #9a8478 90%); /* IE10 */
-  background:      -o-linear-gradient(90deg, #1e130c 10%, #9a8478 90%); /* Opera 11.10+ */
-  background:         linear-gradient(90deg, #1e130c 10%, #9a8478 90%); /* W3C */
+  background: -webkit-linear-gradient(90deg, #1e130c 10%, #1e130c 10%); /* Chrome 10+, Saf5.1+ */
+  background:    -moz-linear-gradient(90deg, #1e130c 10%, #1e130c 10%); /* FF3.6+ */
+  background:     -ms-linear-gradient(90deg, #1e130c 10%, #1e130c 10%); /* IE10 */
+  background:      -o-linear-gradient(90deg, #1e130c 10%, #1e130c 10%); /* Opera 11.10+ */
+  background:         linear-gradient(90deg, #1e130c 10%, #1e130c 10%); /* W3C */
   padding-top: 10px; 
   padding-left: 50px; 
   margin-top: 15px;

@@ -21,7 +21,7 @@
 
             <div class="row" >
 			
-                <div class="col-md-2 col-md-offset-1">
+                <div class="col-md-3 ">
 						
 
 						<a type="button" class="btn btn-block" data-toggle="modal" data-target=".bs-example-modal-lg-1"><font color = "white"><b>Team</b></font></a>
@@ -189,53 +189,32 @@
              <a type="button" class="btn btn-block" onclick="location.href='<?php echo site_url('feat/opportunities')?>'"><font color = "white"><b>Opportunities</b></font></a>
                 
             </div>
-			<div class = "col-md-1">
-			</div>
-			<!--<div class="col-md-3">
-			<h4><b><font color = "white">GOOGLE GROUPS</font></b></h4>
 			
-											<li><a href="https://groups.google.com/forum/#!forum/ict_softb" ><font color="black"><b>Computer Science 2011-16</b></font></a></li>
-                                        &nbsp;  <li><a href="https://groups.google.com/forum/#!forum/gbucs2012" ><font color="black"><b>Computer Science 2012-17</b></font></a></li>
-                                        &nbsp;  <li><a href="https://groups.google.com/forum/#!forum/gbu-cs-102-2013" ><font color="black"><b>Computer Science 2013-18</b></font></a></li>
-                                        &nbsp;  <li><a href="https://groups.google.com/forum/#!forum/gbuec2013" ><font color="black"><b>Electronics 2013-18</b></font></a></li>
-                                        &nbsp;  <li><a href="https://groups.google.com/forum/#!forum/gbu-cs-2014" ><font color="black"><b>Computer Science 2014-19</b></font></a></li>
-                                        &nbsp;  <li><a href="https://groups.google.com/forum/#!forum/gbu-ec-2014-19" ><font color="black"><b>Electronics 2014-19</b></font></a></li>
-                                        &nbsp;  <li><a href="https://groups.google.com/forum/#!forum/civil-2014-gbu" ><font color="black"><b>Civil 2014-19</b></font></a></li>
-                                        &nbsp;  <li><a href="https://groups.google.com/forum/#!forum/gbu-mba-2014" ><font color="black"><b>MBA 2014</b></font></a></li>
-</div>
--->
+			
 <div class = "col-md-3">
 <a href = "http://math.gbuonline.in"><font color = "white"><b>Maths Site</b></font></a><br><br>
 <a href = "http://gbu.ac.in"><font color = "white"><b>Official Website</b></font></a><br><br>
 <a href = "<?php echo site_url('feat/ggroups')?>"><font color = "white"><b>Google Groups</b></font></a><br><br>
-<a href = "<?php echo site_url('clubs/home')?>"><font color = "white"><b>Clubs</b></font></a>
+<a href = "https://plus.google.com/+GAUTAMBUDDHAUNIVERSITYGREATERNOIDA"><font color = "white"><b>Gbu.code</b></font></a>
 </div>
-        
-        
-        
-		<div class = "col-md-3">
+        <div class = "col-md-3">
 		<a href = "<?php echo site_url('feat/tou')?>"><font color = "white"><b>Terms of use</b></font></a><br><br>
 <a href = "<?php echo site_url('feat/development')?>"><font color = "white"><b>Releases</b></font></a><br><br>
 <a href = "<?php echo site_url('feat/feedback')?>" ><font color = "white"><b>Feedback</b></font></a><br><br>
 <a href = ""><font color = "white"><b>Advertise</b></font></a>
+		</div>
 		
+		<div class = "col-md-3">
 		
-		
-		
+<a href = "<?php echo site_url('clubs/home')?>"><font color = "white"><b>Clubs</b></font></a><br><br>
+<a href = "#"><font color = "white"><b>Downloads</b></font></a><br><br>
+<a href = "#"><font color = "white"><b>Placements</b></font></a><br><br>
+<a href = "#"><font color = "white"><b>Student Chapters</b></font></a>
 		
 		</div>
-		<div class = "col-md-10"></div>
-		<div class = "col-md-2">
-		<!-- AddToAny BEGIN -->
-<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
-<a class="a2a_button_facebook"></a>
-<a class="a2a_button_twitter"></a>
-<a class="a2a_button_google_plus"></a>
-</div>
-<!-- AddToAny END -->
-		</div>
-		</div>
-<div class="row" style = "padding-bottom:5px;">
+		
+		</div><br/><br/>
+			<div class="row" style = "padding-bottom:5px;">
             <div class="col-md-12 text-center">
                 <br>
                     <b>&copy; kNight_Coders, Inc.</b>
