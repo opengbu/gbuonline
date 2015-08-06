@@ -20,22 +20,9 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
       <ul class="nav navbar-nav">
+        
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><font size="2">
-              <span class="glyphicon glyphicon-education" aria-hidden="true"></span>&nbsp;Schools</font><span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-              <li><a href="<?php echo site_url('schools/soe')?>">SOE</a></li>
-              <li><a href="<?php echo site_url('schools/som')?>">SOM</a></li>
-              <li><a href="<?php echo site_url('schools/sobt')?>">SOBT</a></li>
-              <li><a href="<?php echo site_url('schools/soict')?>">SOICT</a></li>
-              <li><a href="<?php echo site_url('schools/soljg')?>">SOLJG</a></li>
-              <li><a href="<?php echo site_url('schools/sobsc')?>">SOBSC</a></li>
-              <li><a href="<?php echo site_url('schools/sohss')?>">SOHSS</a></li>
-              <li><a href="<?php echo site_url('schools/sovsas')?>">SOVSAS</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-         <a href="http://portal.gbuonline.in/timetables">
+         <a href="http://gbuonline.in/timetables">
              <font size="2"> <span class="glyphicon glyphicon-file" aria-hidden="true"></span> Time Tables</font>
          </a>
          <!--
@@ -57,6 +44,20 @@
             <li><a href="http://172.25.5.15/timetables/view/?s=SOHSS&y=2015&t=o">SOHSS</a></li>
             <li><a href="http://172.25.5.15/timetables/view/?s=SOVSAS&y=2015&t=o">SOVSAS</a></li>
          </ul>-->
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><font size="2">
+              <span class="glyphicon glyphicon-education" aria-hidden="true"></span>&nbsp;Schools</font><span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+              <li><a href="<?php echo site_url('schools/soe')?>">SOE</a></li>
+              <li><a href="<?php echo site_url('schools/som')?>">SOM</a></li>
+              <li><a href="<?php echo site_url('schools/sobt')?>">SOBT</a></li>
+              <li><a href="<?php echo site_url('schools/soict')?>">SOICT</a></li>
+              <li><a href="<?php echo site_url('schools/soljg')?>">SOLJG</a></li>
+              <li><a href="<?php echo site_url('schools/sobsc')?>">SOBSC</a></li>
+              <li><a href="<?php echo site_url('schools/sohss')?>">SOHSS</a></li>
+              <li><a href="<?php echo site_url('schools/sovsas')?>">SOVSAS</a></li>
+          </ul>
         </li>
         <!--
         <li>
