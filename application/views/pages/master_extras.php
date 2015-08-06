@@ -14,7 +14,7 @@ span {
 </style>
 					<div id = "cards">
 					
-						<a href="<?php echo base_url('resources/images/ac-15-16.jpg') ?>" class="thumbnail">
+						<a href="<?php echo base_url('resources/images/ac-15-16.jpg') ?>" class="thumbnail" target="_blank">
 							<div class="row">
 								<div class="col-md-4">
 									<img src="<?php echo base_url('resources/images/cards/calendar-100-100.jpg') ?>" alt="">			
@@ -27,7 +27,7 @@ span {
 					
 						
 					
-						<a href="<?php echo base_url('resources/holidays-2015.pdf') ?>" class="thumbnail">
+						<a href="<?php echo base_url('resources/holidays-2015.pdf') ?>" class="thumbnail" target="_blank">
 							<div class="row">
 								<div class="col-md-4">
 									<img src="<?php echo base_url('resources/images/cards/holid-100-100.jpg') ?>" alt="">			
@@ -38,7 +38,7 @@ span {
 							</div>
 						</a>
 						
-						<a href="http://play.google.com/store/apps/details?id=com.varun.timetable&hl=en" class="thumbnail">
+						<a href="http://play.google.com/store/apps/details?id=com.varun.timetable&hl=en" class="thumbnail" target="_blank">
 							<div class="row">
 								<div class="col-md-4">
 									<img src="<?php echo base_url('resources/images/cards/android-100-100.png') ?>" alt="">			

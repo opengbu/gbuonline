@@ -22,7 +22,7 @@
       <ul class="nav navbar-nav">
         
         <li class="dropdown">
-         <a href="http://gbuonline.in/timetables">
+         <a href="http://gbuonline.in/timetables"  target="_blank">
              <font size="2"> <span class="glyphicon glyphicon-file" aria-hidden="true"></span> Time Tables</font>
          </a>
          <!--
@@ -149,7 +149,7 @@
         */
         ?>
         <li>
-            <a href="https://gbuonline.wordpress.com"><font size="2"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Reviews</font></a>
+            <a href="https://gbuonline.wordpress.com" target="_blank"><font size="2"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Reviews</font></a>
       </ul>
         <ul class="nav navbar-nav  pull-right">
         <li>
