@@ -63,7 +63,7 @@
                                     <span class="badge"><a href="<?php echo site_url('blogs/read_blogs?blog_id=' . $row->id) ?>#disqus_thread" data-disqus-identifier="blog_<?= $row->id ?>"></a></span>
                                 </button>
                             </div>
-                            <div class="col-md-8" style="text-align: right;  ">
+                            <div class="col-md-8" style="text-align: right;">
                                 <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target=".blogs"><span><?= $row->full_name ?></span> &nbsp;
                                     <?php
                                     if ($row->roll_number != NULL) {
@@ -87,9 +87,7 @@
                                 <br>
                                 <b>Share on Social Media</b>
                                 <br><br>
-                                <span class='st_facebook_large' st_url="<?php echo site_url('blogs/read_blogs?blog_id=' . $row->id) ?>" displayText='Facebook'></span>&nbsp;
-                                <span class='st_googleplus_large' st_url="<?php echo site_url('blogs/read_blogs?blog_id=' . $row->id) ?>" displayText='Google +'></span>&nbsp;
-                                <span class='st_twitter_large' st_url="<?php echo site_url('blogs/read_blogs?blog_id=' . $row->id) ?>" displayText='Tweet'></span>
+                                Under Construction
                                 <br>
                                 <br>
                             </center>

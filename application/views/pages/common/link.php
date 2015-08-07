@@ -62,8 +62,7 @@
         </script>
 		
 		<!--script for sharing blogs begins-->
-			<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
-			<script type="text/javascript">stLight.options({publisher: "c5b778e7-60f1-481d-8204-0b1208bc3210", doNotHash: true, doNotCopy: true, hashAddressBar: true});</script>
+			
 		<!--script for sharing blogs ends-->
 		
 <style>
