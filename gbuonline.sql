@@ -422,6 +422,62 @@ INSERT INTO `stuinfo` (`id`, `stu_name`, `stu_course`, `stu_hname`, `stu_review`
 (3, 'Mr Manmoha', '232323322323', '23232323', '22', '2222', '13ics0XX'),
 (4, 'Ram Kapoor', 'asd', 'ads', 'asdasd', 'asd', 'asd');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `downloads`
+--
+
+CREATE TABLE IF NOT EXISTS `downloads` (
+  `Title` varchar(128) NOT NULL,
+  `Link` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `downloads`
+--
+
+INSERT INTO `downloads` (`Title`, `Link`) VALUES
+('C Cleaner', '#'),
+('C Cleaner', '#');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `placements`
+--
+
+CREATE TABLE IF NOT EXISTS `placements` (
+  `Title` varchar(60) NOT NULL,
+  `Link` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `placements`
+--
+
+INSERT INTO `placements` (`Title`, `Link`) VALUES
+('', ''),
+('Placement 2015', '#'),
+('', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `stu_chapters`
+--
+
+CREATE TABLE IF NOT EXISTS `stu_chapters` (
+  `Title` varchar(128) DEFAULT NULL,
+  `Description` text
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `stu_chapters`
+--
+
+INSERT INTO `stu_chapters` (`Title`, `Description`) VALUES
+('IEEE-GBU Student Branch', 'The world''s largest professional association for the advancement of technology.\r\nFor more information visit http://www.ieeegbu.weebly.com/');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

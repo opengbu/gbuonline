@@ -207,9 +207,9 @@
 		<div class = "col-md-3">
 		
 <a href = "<?php echo site_url('clubs/home')?>"><font color = "white"><b>Clubs</b></font></a><br><br>
-<a href = "#"><font color = "white"><b>Downloads</b></font></a><br><br>
-<a href = "#"><font color = "white"><b>Placements</b></font></a><br><br>
-<a href = "#"><font color = "white"><b>Student Chapters</b></font></a>
+<a href = "<?php echo site_url('feat/placements')?>"><font color = "white"><b>Placements</b></font></a><br><br>
+<a href = "<?php echo site_url('feat/downloads')?>"><font color = "white"><b>Downloads</b></font></a><br><br>
+<a href = "<?php echo site_url('feat/student_chapters')?>"><font color = "white"><b>Student Chapters</b></font></a>
 		
 		</div>
 		

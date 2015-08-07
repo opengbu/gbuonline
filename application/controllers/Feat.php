@@ -110,5 +110,41 @@ class Feat extends CI_Controller {
 		$this->load->view('pages/common/extras');
 		$this->load->view('pages/common/footer');
 	}
+	public function placements()
+	{
+        $data['title'] = 'Placements &nbsp;|&nbsp;  GBU Online';
+		$data['heading'] ='Placements';
+		$data['message'] = '';
+		$this->load->view('pages/common/link',$data);
+		$this->load->view('pages/common/header');
+		$this->load->view('pages/common/page-heading',$data);
+		$this->load->view('pages/placements');
+		$this->load->view('pages/common/extras');
+		$this->load->view('pages/common/footer');
+	}
+	public function downloads()
+	{
+        $data['title'] = 'Downloads &nbsp;|&nbsp;  GBU Online';
+		$data['heading'] ='Downloads';
+		$data['message'] = '';
+		$this->load->view('pages/common/link',$data);
+		$this->load->view('pages/common/header');
+		$this->load->view('pages/common/page-heading',$data);
+		$this->load->view('pages/downloads');
+		$this->load->view('pages/common/extras');
+		$this->load->view('pages/common/footer');
+	}
+	public function student_chapters()
+	{
+        $data['title'] = 'Student Chapters &nbsp;|&nbsp;  GBU Online';
+		$data['heading'] ='Student Chapters';
+		$data['message'] = '';
+		$this->load->view('pages/common/link',$data);
+		$this->load->view('pages/common/header');
+		$this->load->view('pages/common/page-heading',$data);
+		$this->load->view('pages/student_chapters');
+		$this->load->view('pages/common/extras');
+		$this->load->view('pages/common/footer');
+	}
 	
 }	
