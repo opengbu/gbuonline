@@ -109,6 +109,7 @@
     <body background="<?php echo base_url('resources/images/home1.jpg') ?>" style="background-attachment: fixed; background-repeat: repeat;">
 	<div class="se-pre-con"></div>
         <div class="container-fluid footer-problem"><!--this div ends in footer.php-->
+			
 
 
 
