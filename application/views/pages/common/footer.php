@@ -9,7 +9,7 @@
 			position: absolute; 
 			z-index: 100; 
 			background-color: #2D2D2D;
-			height: 200px; <!--to solve footer issue--><!--if you edit this, then also edit 'padding-bottom' in body tag, with the same amount-->
+			<!--height: 200px; --><!--to solve footer issue--><!--if you edit this, then also edit 'padding-bottom' in body tag, with the same amount-->
         }
     </style>
 
@@ -217,8 +217,8 @@
 			<div class="row" style = "padding-bottom:5px;">
             <div class="col-md-12 text-center">
                 <br>
-                    <b>&copy; kNight_Coders, Inc.</b>
-                <br/>
+                    <b><p style = "color:white;">&copy; kNight_Coders, Inc.</p></b>
+                
 
             </div>
 
