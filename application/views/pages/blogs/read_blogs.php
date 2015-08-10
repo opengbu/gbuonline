@@ -90,9 +90,7 @@ $like_count = $like_count_q->row();
                         <br>
                         <b>Share on Social Media</b>
                         <br><br>
-                        <span class='st_facebook_large' st_url="<?php echo site_url('blogs/read_blogs?blog_id=' . $result->id) ?>" displayText='Facebook'></span>&nbsp;
-                        <span class='st_googleplus_large' st_url="<?php echo site_url('blogs/read_blogs?blog_id=' . $result->id) ?>" displayText='Google +'></span>&nbsp;
-                        <span class='st_twitter_large' st_url="<?php echo site_url('blogs/read_blogs?blog_id=' . $result->id) ?>" displayText='Tweet'></span>
+                        Under Construction
                         <br>
                         <br>
                     </center>

@@ -43,7 +43,7 @@
                                 </a></b></h3>
                     </div>
                     <div class="panel-body" style="text-align: justify;">
-                        <?= $row->description ?> ... 
+                        <?= substr($row->description, 0, 463) ?> ... 
                         <a href="<?php echo site_url('blogs/read_blogs?blog_id=' . $row->id) ?>">Read More</a><br>
 
                     </div>
@@ -87,9 +87,7 @@
                                 <br>
                                 <b>Share on Social Media</b>
                                 <br><br>
-                                <span class='st_facebook_large' st_url="<?php echo site_url('blogs/read_blogs?blog_id=' . $row->id) ?>" displayText='Facebook'></span>&nbsp;
-                                <span class='st_googleplus_large' st_url="<?php echo site_url('blogs/read_blogs?blog_id=' . $row->id) ?>" displayText='Google +'></span>&nbsp;
-                                <span class='st_twitter_large' st_url="<?php echo site_url('blogs/read_blogs?blog_id=' . $row->id) ?>" displayText='Tweet'></span>
+                                Under Construction
                                 <br>
                                 <br>
                             </center>
