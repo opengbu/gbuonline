@@ -116,7 +116,7 @@
             <h4 style="color:#999999">(Any complaints related to your hostel in general or <br>the information displayed on this site about your hostel.)</h4>
             <ul class="list-group">
                 <font color="#141466">
-                    <form action="saveproduct.php" method="get">
+                    <form action="#" method="POST">
                     <div class="form-group">
                         <label>
                             Name
@@ -132,8 +132,29 @@
                         <label>
                             Complaint
                         </label>
+                           
                         <textarea class="form-control"  value="" name="description" rows="10"></textarea><br>
                         <input type="submit" class="btn btn-default" value="Save" />
+                            
+                            <?php
+                        if(empty($_POST['description']))
+                        {
+                            
+                            
+                        }
+                        else
+                        {
+                       
+                                $description=$_POST['description'];
+                                $roll=$this->session->userdata('roll_number');
+                                $q=$this->db->query("insert into h_complaint(roll_number,complaint) values('$roll','$description')");
+                                echo "Saved successfully!!";
+                                
+                            
+                           
+                        }
+                         ?>
+                            
                     </div>
                     </form></font>
             </ul>
