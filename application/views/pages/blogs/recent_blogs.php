@@ -43,7 +43,7 @@
                                 </a></b></h3>
                     </div>
                     <div class="panel-body" style="text-align: justify;">
-                        <?= $row->description ?> ... 
+                        <?= substr($row->description, 0, 463) ?> ... 
                         <a href="<?php echo site_url('blogs/read_blogs?blog_id=' . $row->id) ?>">Read More</a><br>
 
                     </div>

@@ -1,3 +1,6 @@
+<link type="text/css" rel="stylesheet" href="<?php echo base_url('resources/jQuery-TE_v.1.4.0/jquery-te-1.4.0.css');?>">
+<script type="text/javascript" src="<?php echo base_url('resources/jQuery-TE_v.1.4.0/jquery-te-1.4.0.min.js');?>" charset="utf-8"></script>
+
 <div class="container-fluid" style=" margin-right: 10px; margin-left: 10px;" >
 	<div class="row">
 		<div class="col-md-9" style="padding-right:30px; border-right: 2px solid #ccc;" id="myDiv">
@@ -33,7 +36,7 @@
 						</div>
 						<br>
 						<label>Blog Content :</label>
-						<textarea name="description" class="form-control" rows="15" id="comment"></textarea>
+						<textarea name="description" class="form-control jqte-blogs" rows="15" id="comment"></textarea>
 						<br>
                 
 						<center>
@@ -50,7 +53,9 @@
 <!--row ends in extras-->
 <!--container ends in extras-->
 
- 
+ <script>
+	$(".jqte-blogs").jqte();
+ </script>
              
 
 
