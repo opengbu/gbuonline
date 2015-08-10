@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 01, 2015 at 09:46 PM
+-- Generation Time: Aug 10, 2015 at 09:47 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `blog` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(50) NOT NULL,
+  `title` varchar(100) NOT NULL,
   `description` text NOT NULL,
   `status` int(11) NOT NULL DEFAULT '0',
   `user_id` int(11) NOT NULL,
@@ -97,6 +97,25 @@ INSERT INTO `clubs` (`id`, `about_us`, `faculty`, `students`, `c_name`, `c_full_
 (7, 'Adventure club at Gautam Buddha University is actively involved in all kinds of robotics activities. The club was tasted with the efforts of its faculty coordinator in 2012.            The club had its student coordinators. Today robotics is rapidly growing field as we continue to research, design and build new Intelligent robots. That serves various practical purposes, whether domestically, commercially or solitary. The Robotic club provides a platform to the students to share their views and opinion about the developments of robotic equipments. The endeavor is to develop the analytical and innovating skills among the students. The ultimate aim of robotic club is to develop the design, constitution operation and application of robots and computer systems for their control, sensory feedback and information processing.    ', '<b>Dr. Ela Kumar</b><br>Dean(I/C), School of ICT, Gautam Buddha University<br><br><b>Dr. Om Prakash Sangwan</b><br>School of ICT, Gautam Buddha Universit<br><br><b>Dr. Anurag Singh Bhagel</b><br><dl><dd>School of ICT, Gautam Buddha University</dd></dl>', '<dl><dt>Lokesh Kumar Sharma                </dt><dd>Position - General Secretary</dd><dd>Reg. No. - 11/PIT/027</dd><br><dt>Umang Kant                </dt><dd>Position - Secretary</dd><dd>Reg. No. - 10/IEC/015</dd><br><dt>Prateek Khurana                </dt><dd>Position - Associate Member</dd><dd>Reg. No. - 11/PIT/046</dd><br><dt>Lokesh Kumar Sharma                </dt><dd>Position - Associate Member</dd><dd>Reg. No. - 12/IEC/009</dd><br><dt>Vandit Rastogi                </dt><dd>Position - Associate Member</dd><dd>Reg. No. - 13/IEC/054</dd></dl>', 'adventure', 'Adventure Club', 'Discover Yourself...'),
 (8, '            Literary club at Gautam Buddha University is actively involved in all kinds of robotics activities. The club was tasted with the efforts of its faculty coordinator in 2012.            The club had its student coordinators. Today robotics is rapidly growing field as we continue to research, design and build new Intelligent robots. That serves various practical purposes, whether domestically, commercially or solitary. The Robotic club provides a platform to the students to share their views and opinion about the developments of robotic equipments. The endeavor is to develop the analytical and innovating skills among the students. The ultimate aim of robotic club is to develop the design, constitution operation and application of robots and computer systems for their control, sensory feedback and information processing.    ', '<b>Dr. Ela Kumar</b><br>Dean(I/C), School of ICT, Gautam Buddha University<br><br><b>Dr. Om Prakash Sangwan</b><br>School of ICT, Gautam Buddha Universit<br><br><b>Dr. Anurag Singh Bhagel</b><br><dl><dd>School of ICT, Gautam Buddha University</dd></dl>', '<dl><dt>Lokesh Kumar Sharma                </dt><dd>Position - General Secretary</dd><dd>Reg. No. - 11/PIT/027</dd><br><dt>Umang Kant                </dt><dd>Position - Secretary</dd><dd>Reg. No. - 10/IEC/015</dd><br><dt>Prateek Khurana                </dt><dd>Position - Associate Member</dd><dd>Reg. No. - 11/PIT/046</dd><br><dt>Lokesh Kumar Sharma                </dt><dd>Position - Associate Member</dd><dd>Reg. No. - 12/IEC/009</dd><br><dt>Vandit Rastogi                </dt><dd>Position - Associate Member</dd><dd>Reg. No. - 13/IEC/054</dd></dl>', 'literary', 'Literary Club ', 'Discover Yourself...'),
 (9, '            Protography club at Gautam Buddha University is actively involved in all kinds of robotics activities. The club was tasted with the efforts of its faculty coordinator in 2012.            The club had its student coordinators. Today robotics is rapidly growing field as we continue to research, design and build new Intelligent robots. That serves various practical purposes, whether domestically, commercially or solitary. The Robotic club provides a platform to the students to share their views and opinion about the developments of robotic equipments. The endeavor is to develop the analytical and innovating skills among the students. The ultimate aim of robotic club is to develop the design, constitution operation and application of robots and computer systems for their control, sensory feedback and information processing.    ', '<b>Dr. Ela Kumar</b><br>Dean(I/C), School of ICT, Gautam Buddha University<br><br><b>Dr. Om Prakash Sangwan</b><br>School of ICT, Gautam Buddha Universit<br><br><b>Dr. Anurag Singh Bhagel</b><br><dl><dd>School of ICT, Gautam Buddha University</dd></dl>', '<dl><dt>Lokesh Kumar Sharma                </dt><dd>Position - General Secretary</dd><dd>Reg. No. - 11/PIT/027</dd><br><dt>Umang Kant                </dt><dd>Position - Secretary</dd><dd>Reg. No. - 10/IEC/015</dd><br><dt>Prateek Khurana                </dt><dd>Position - Associate Member</dd><dd>Reg. No. - 11/PIT/046</dd><br><dt>Lokesh Kumar Sharma                </dt><dd>Position - Associate Member</dd><dd>Reg. No. - 12/IEC/009</dd><br><dt>Vandit Rastogi                </dt><dd>Position - Associate Member</dd><dd>Reg. No. - 13/IEC/054</dd></dl>', 'photography', 'Photography Club', 'Discover Yourself...');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `downloads`
+--
+
+CREATE TABLE IF NOT EXISTS `downloads` (
+  `Title` varchar(128) NOT NULL,
+  `Link` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `downloads`
+--
+
+INSERT INTO `downloads` (`Title`, `Link`) VALUES
+('C Cleaner', '#'),
+('C Cleaner', '#');
 
 -- --------------------------------------------------------
 
@@ -183,10 +202,17 @@ INSERT INTO `exams` (`id`, `sc_name`, `year`, `paper_name`) VALUES
 
 CREATE TABLE IF NOT EXISTS `h_complaint` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) NOT NULL,
+  `roll_number` varchar(65) NOT NULL,
   `complaint` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
+
+--
+-- Dumping data for table `h_complaint`
+--
+
+INSERT INTO `h_complaint` (`id`, `roll_number`, `complaint`) VALUES
+(11, '13ics015', 'final');
 
 -- --------------------------------------------------------
 
@@ -251,6 +277,26 @@ INSERT INTO `news` (`id`, `title`, `slug`, `text`, `user_id`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `placements`
+--
+
+CREATE TABLE IF NOT EXISTS `placements` (
+  `Title` varchar(60) NOT NULL,
+  `Link` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `placements`
+--
+
+INSERT INTO `placements` (`Title`, `Link`) VALUES
+('', ''),
+('Placement 2015', '#'),
+('', '');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `schools`
 --
 
@@ -279,6 +325,51 @@ INSERT INTO `schools` (`id`, `sc_name`, `sc_full_name`, `about_us`, `course_stru
 (18, 'soljg', ' School of Law, Justice and Governance', '<ul><li>Department of Law, Justice and Governance<br></li></ul>', '<ol><li>Integrated Dual Degree <br></li><ul type="disc"><li>BA + LLB</li><li>BBA + LLB<br></li></ul></ol>', '<br><table height="422" width="512"><tbody><tr><th><p align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Name</p></th><th>&nbsp;&nbsp; Designation</th></tr><tr><td>Dr. Indu Uprety</td><td>Associate Professor and Dean</td></tr><tr><td>Dr. Chandrabhanu Bharas</td><td>Assistant Professor</td></tr><tr><td>Dr. Pankaj Deep<br></td><td>Assistant Professor<br></td></tr><tr><td>Dr. Vivek Kumar Mishra<br></td><td>Assistant Professor<br></td></tr><tr><td>Dr. Braham Dev Pandey<br></td><td>Assistant Professor<br></td></tr><tr><td>Dr. Mamta Sharma<br></td><td>Assistant Professor<br></td></tr><tr><td>Dr. Akshay Kumar Singh<br></td><td>Assistant Professor<br></td></tr><tr><td>Dr. Sumitra Huidrom<br></td><td>Assistant Professor<br></td></tr><tr><td>Dr. Himanshu Saxena<br></td><td>Research / Faculty Associate<br></td></tr></tbody></table>', 'Placement Session will begin from 3rd December and will continue till 28th June.', ''),
 (19, 'sobsc', ' School of Buddhist Studies And Civilization ', '<ul><li>Department of Buddhist Studies And Civilization<br></li></ul>', '<ol><li>Integrated Dual Degree <br></li><ul type="disc"><li>(B.A. + M.A.) - Buddhist Studies and Civilization <br></li></ul><br><li>Post Graduate</li><ul type="disc"><li>M.A.  - Buddhist Studies and Civilization</li><li>M.Phil. - Buddhist Studies and Civilization</li></ul><br><li>Doctoral Programs<br></li><ul type="disc"><li>Ph.D - Buddhist Studies and Civilization</li></ul></ol>', '<br><table height="685" width="522"><tbody><tr><th><p align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Name<br></p><br></th><th>&nbsp;&nbsp; Designation<br><br></th></tr><tr><td>Dr. Neeti Rana<br><br></td><td>Associate Professor and Dean<br><br></td></tr><tr><td>Dr. Anand Singh<br><br></td><td>Associate Professor<br><br></td></tr><tr><td>Dr. Arvind Kumar Singh<br><br></td><td>Assistant Professor<br><br></td></tr><tr><td>Dr. Chandrashekhar Paswan<br><br></td><td>Assistant Professor<br><br></td></tr><tr><td>Dr. Chintala Venkata Siva Sai<br><br></td><td>Assistant Professor<br><br></td></tr><tr><td>Dr. Gurmet Dorjey<br><br></td><td>Assistant Professor<br><br></td></tr><tr><td>Dr. Gyanaditya Shakya<br><br></td><td>Assistant Professor<br><br></td></tr><tr><td>Dr. Indu Girish<br><br></td><td>Assistant Professor<br><br></td></tr><tr><td>Dr. Priyadarsini Mittra<br><br></td><td>Assistant Professor<br><br></td></tr><tr><td>Dr. Priya Sen Singh<br><br></td><td>Assistant Professor<br><br></td></tr><tr><td>Dr. Manish T. Meshram<br><br></td><td>Assistant Professor<br><br></td></tr><tr><td>Dr. Mukesh Kumar Verma<br><br></td><td>Research / Faculty Associate<br><br></td></tr><tr><td>Ms. Sangeeta Wadhwa<br><br></td><td>Research / Faculty Associate<br><br></td></tr></tbody></table>', 'Placement Session will begin from 3rd December and will continue till 28th June.', ''),
 (20, 'sohss', ' School of Humanities and Social Sciences', '<ol>\r\n<li>Humanities</li>\r\n<ul type="disc">\r\n<li>Department of English and Modern European Languages</li>\r\n<li>Department of Indian Languages and Literature</li>\r\n<li>Department of Mass Communication and Media Studies</li>\r\n</ul><br>\r\n<li>Social Sciences</li>\r\n<ul type="disc">\r\n<li>Department of Economics, Planning and Development</li>\r\n<li>Department of Education and Training</li>\r\n<li>Department of History and Civilization</li>\r\n<li>Department of Political Science and International Relations</li>\r\n<li>Department of Psychology and Wellbeing</li>\r\n<li>Department of Public Administration, Governance and Policy Research</li>\r\n<li>Department of Social Work</li>\r\n<li>Department of Sociology</li>\r\n</ul>\r\n</ol>', '<ol><li>Post Graduate</li></ol><ol><ul type="disc"><li>M.A. - History and Civilization<br></li><li>M.A. - Economics, Planning and Development <br></li><li>M.A. - English<br></li><li>M.A. - Hindi<br></li><li>M.A. - Urdu <br></li><li>MSW - Masters in Social Work</li><li>M.A. - Applied Psychology</li><li>M.Sc. - Applied Psychology</li><li>M.A. - Political Science and International Relations</li><li>M.A. - Education</li><li>M.Phil. - Clinical Psycholog </li></ul></ol>', '<br><table height="798" width="522"><tbody><tr><th><p align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Name<br></p><br></th><th>&nbsp;&nbsp; Designation<br><br></th></tr><tr><td>Prof. Mahavir Singh<br><br></td><td>Professor and Dean<br><br></td></tr><tr><td>Dr. Indu Uprety<br><br></td><td>Assistant Professor<br><br></td></tr><tr><td>Dr. Om Prakash<br><br></td><td>Assistant Professor<br><br></td></tr><tr><td>Dr. Vinod Kumar Shanwal<br><br></td><td>Assistant Professor<br><br></td></tr><tr><td>Dr. Anand Pratap Singh<br><br></td><td>Assistant Professor<br><br></td></tr><tr><td>Dr. Subhasis Bhadra<br><br></td><td>Assistant Professor<br><br></td></tr><tr><td>Dr. Syed Nadeem Fatmi<br><br></td><td>Assistant Professor<br><br></td></tr><tr><td>Dr. Navras Jat Aafreedi<br><br></td><td>Assistant Professor<br><br></td></tr><tr><td>Dr. Sumitra Huidrom<br><br></td><td>Assistant Professor<br><br></td></tr><tr><td>Dr. Babita Devi<br><br></td><td>Assistant Professor<br><br></td></tr><tr><td>Dr. Obaidul Ghaffar<br><br></td><td>Research / Faculty Associate<br><br></td></tr><tr><td>Dr. Vibhavari<br><br></td><td>Research / Faculty Associate<br><br></td></tr><tr><td>Dr. Rehana Sultana<br><br></td><td>Research / Faculty Associate<br><br></td></tr><tr><td>Dr. Diwakar Garwa<br><br></td><td>Research / Faculty Associate<br><br></td></tr><tr><td>Dr. Roopali Srivastava<br><br></td><td>Research / Faculty Associate<br><br></td></tr><tr><td>Dr. Bipasha Som<br><br></td><td>Research / Faculty Associate<br><br></td></tr><tr><td>Ms. Priyanka Singh<br><br></td><td>Research / Faculty Associate<br><br></td></tr><tr><td>Ms. Isha Paul<br><br></td><td>Research / Faculty Associate<br><br></td></tr><tr><td>Mr. Muhammad Asif<br><br></td><td>Research / Faculty Associate<br><br></td></tr><tr><td>Mr. Siddaramu B<br><br></td><td>Research / Faculty Associate<br><br></td></tr><tr><td>Ms. Manjri Suman<br><br></td><td>Research / Faculty Associate<br><br></td></tr><tr><td>Ms. Riya Raj<br><br></td><td>Research / Faculty Associate<br><br></td></tr><tr><td>Ms. Sibghat Usmani<br><br></td><td>Research / Faculty Associate<br><br></td></tr><tr><td>Dr. Prakash Chandra Dilare<br><br></td><td>Research / Faculty Associate<br><br></td></tr><tr><td>Ms. Renu Yadav<br><br></td><td>Research / Faculty Associate<br><br></td></tr></tbody></table>', 'Placement Session will begin from 3rd December and will continue till 28th June.', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `stuinfo`
+--
+
+CREATE TABLE IF NOT EXISTS `stuinfo` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `stu_name` varchar(10) NOT NULL,
+  `stu_course` varchar(60) NOT NULL,
+  `stu_hname` varchar(50) NOT NULL,
+  `stu_review` varchar(6) NOT NULL,
+  `stu_father` varchar(60) NOT NULL,
+  `roll_number` varchar(60) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Student Info' AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `stuinfo`
+--
+
+INSERT INTO `stuinfo` (`id`, `stu_name`, `stu_course`, `stu_hname`, `stu_review`, `stu_father`, `roll_number`) VALUES
+(1, 'Ram Sharma', 'Btech', '8.1F', 'bad', 'ABC', ''),
+(2, 'Ram Kapoor', 'Mtech', '8.1K', 'good', 'PQR', ''),
+(3, 'Mr Manmoha', '232323322323', '23232323', '22', '2222', '13ics0XX'),
+(4, 'Ram Kapoor', 'asd', 'ads', 'asdasd', 'asd', 'asd');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `stu_chapters`
+--
+
+CREATE TABLE IF NOT EXISTS `stu_chapters` (
+  `Title` varchar(128) DEFAULT NULL,
+  `Description` text
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `stu_chapters`
+--
+
+INSERT INTO `stu_chapters` (`Title`, `Description`) VALUES
+('IEEE-GBU Student Branch', 'The world''s largest professional association for the advancement of technology.\r\nFor more information visit http://www.ieeegbu.weebly.com/');
 
 -- --------------------------------------------------------
 
@@ -334,7 +425,7 @@ INSERT INTO `users` (`user_id`, `username`, `password`, `type`, `email`, `active
 (3, 'sarthak', '$2a$08$IvYcXuhBaZHTeHY4VG0iiuJmyCd1xO4N4v/6e24wbOUIeNmpvBevq', 'admin', 'gargsarthak30@gmail.com', 1, '', 'Sarthak Garg', '13 ics 047', '', ''),
 (5, 'rajat', '$2a$08$89gL0PX4Ewl0/9RbfqBuOO6Jbp.ETHXsk.rDNtzKUkDcFe3SwBKaC', 'admin', 'sunny0rajat@gmail.com', 1, '', 'Rajat Saxena', '13 ics 035', '', ''),
 (6, 'shobhit', '$2a$08$c4/t9EJ0rkX7jur.sbhtJ.JA0hEBVC4Md5qk0AH7MBaYZb3WYKQhS', 'admin', 'shobhit95sharma@gmail.com', 1, '', 'Shobhit Sharma', '13 ics 051', '', ''),
-(7, 'bhawesh', '$2a$08$QghHh95c4h3GLrBFYN/9xuUrjeY/7xGc88hNv0rldS9wNOQxIJX.C', 'admin', '13ics015@gbu.ac.in', 1, '', 'Bhawesh Chandola', '', '', ''),
+(7, 'bhawesh', '$2a$08$QghHh95c4h3GLrBFYN/9xuUrjeY/7xGc88hNv0rldS9wNOQxIJX.C', 'admin', '13ics015@gbu.ac.in', 1, '', 'Bhawesh Chandola', '13ics015', '', ''),
 (8, 'student1', '$2a$08$YjytProg8gi0nweS2f7cI.b8Dh2ZR4keLzSFXuFNCVAFWlQ3V1nca', 'student', 'sasa@xyz.com', 1, '', 'Student 1', '', '', ''),
 (9, 'amit', '$2a$08$UcvspCTXRKOIiZj2FAdGn.z0Grzpd9cWsjH.m0JjQc0cRYmbjtJCu', 'admin', 'amit@gbuonline.in', 1, '', 'Dr. Amit K awasthi', '', '', '');
 
@@ -352,7 +443,7 @@ CREATE TABLE IF NOT EXISTS `vnb` (
   `date` date NOT NULL,
   `posted_by` varchar(30) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `vnb`
@@ -394,90 +485,6 @@ INSERT INTO `warden` (`id`, `hostel_name`, `warden_name`, `warden_office`, `host
 (8, 'TULSIDAS BOYS HOSTEL', 'DR. RAKESH KUMAR SRIVASTAVA', '6159', NULL),
 (9, 'RAHEEM BOYS HOSTEL', 'DR. RAJESH GUPTA', '4364', NULL),
 (10, 'MALIK MOHD. JAYSI BOYS HOSTEL', 'DR. GURMET DORJAY', '7058', NULL);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `stuinfo`
---
-
-CREATE TABLE IF NOT EXISTS `stuinfo` (
-  `id` int(10) NOT NULL AUTO_INCREMENT,
-  `stu_name` varchar(10) NOT NULL,
-  `stu_course` varchar(60) NOT NULL,
-  `stu_hname` varchar(50) NOT NULL,
-  `stu_review` varchar(6) NOT NULL,
-  `stu_father` varchar(60) NOT NULL,
-  `roll_number` varchar(60) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Student Info' AUTO_INCREMENT=5 ;
-
---
--- Dumping data for table `stuinfo`
---
-
-INSERT INTO `stuinfo` (`id`, `stu_name`, `stu_course`, `stu_hname`, `stu_review`, `stu_father`, `roll_number`) VALUES
-(1, 'Ram Sharma', 'Btech', '8.1F', 'bad', 'ABC', ''),
-(2, 'Ram Kapoor', 'Mtech', '8.1K', 'good', 'PQR', ''),
-(3, 'Mr Manmoha', '232323322323', '23232323', '22', '2222', '13ics0XX'),
-(4, 'Ram Kapoor', 'asd', 'ads', 'asdasd', 'asd', 'asd');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `downloads`
---
-
-CREATE TABLE IF NOT EXISTS `downloads` (
-  `Title` varchar(128) NOT NULL,
-  `Link` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `downloads`
---
-
-INSERT INTO `downloads` (`Title`, `Link`) VALUES
-('C Cleaner', '#'),
-('C Cleaner', '#');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `placements`
---
-
-CREATE TABLE IF NOT EXISTS `placements` (
-  `Title` varchar(60) NOT NULL,
-  `Link` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `placements`
---
-
-INSERT INTO `placements` (`Title`, `Link`) VALUES
-('', ''),
-('Placement 2015', '#'),
-('', '');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `stu_chapters`
---
-
-CREATE TABLE IF NOT EXISTS `stu_chapters` (
-  `Title` varchar(128) DEFAULT NULL,
-  `Description` text
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `stu_chapters`
---
-
-INSERT INTO `stu_chapters` (`Title`, `Description`) VALUES
-('IEEE-GBU Student Branch', 'The world''s largest professional association for the advancement of technology.\r\nFor more information visit http://www.ieeegbu.weebly.com/');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
