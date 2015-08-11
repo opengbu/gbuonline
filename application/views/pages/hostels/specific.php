@@ -5,29 +5,32 @@
 	<div class="page-header" style = "background-color: black; padding-top: 10px; padding-left: 50px; margin-top: 15px;">
 		<font color="white"  face="Monotype Corsiva">
           &nbsp; <h1>Hostel Page </h1>
-            <h2><small>Select your desired hostel</small></h2>
-			<font face="Geneva,Tahoma,Verdana,sans-serif;"size="15px">
-             <form action="#" method="post">
-                        <div class="form-group">
+          <h2><small>Select your desired hostel</small></h2>
+		</font>
+            <p style="font-face:Geneva,Tahoma,Verdana,sans-serif;font-size=15px">
+    
+    <div class="form-group">     
+        <form action="#" method="post">
 					  <select name="hostel_name" class="selectpicker" multiple data-max-options="1" data-width="30%">
-						<?php
+						                  <?php
                                                 $r=$this->db->query("select * from warden");
                                                 $results=$r->result();
                                                 foreach ($results as $rows)
-                                                {?>
-                                              <option name="<php $rows->hostel_name; ?>"><?php echo $rows->hostel_name;  ?></option>
+                                                {
+                                            ?>
+                                              <option name="<php $rows->hostel_name; ?>">
+                                                  <?php echo $rows->hostel_name;  ?>
+                                              </option>
                                                 <?php
                                                 }?>
                                                <a href="#" class="btn btn-info" role="button">Link Button</a>
-                                                <button type="button" class="btn btn-info">Button</button>
-                                                <input type="submit" class="btn btn-info" value="Go!">
-                                              </select>&nbsp;&nbsp;
-                                              </form>
-                    
-  </select>	
-</div></font>
+                                               <button type="button" class="btn btn-info">Button</button>
+                                               <input type="submit" class="btn btn-info" value="Go!">
+                    </select>&nbsp;&nbsp;
+            </form>	
+    </div>
     </div><!-- /.row -->
-		</font>      
+		</p>      
 	</div> 
 </div>
 
