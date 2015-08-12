@@ -3,7 +3,7 @@
 
 <div class="row">
 	<div class="page-header" style = "background-color: black; padding-top: 10px; padding-left: 50px; margin-top: 15px;">
-		<font color="white"  face="Monotype Corsiva">
+		<font color="white" face="Georgia Bold">
           &nbsp; <h1>Hostel Page </h1>
           <h2><small>Select your desired hostel</small></h2>
 		</font>
@@ -38,8 +38,8 @@
 
  
 
---><div style="padding-left:10px">
-<a name="go1" style="text-decoration:none;"><div class="jumbotron">			
+--><div >
+<a name="go1" style="text-decoration:none;"><div class="jumbotron" style="padding-left:30px">			
 			<h2>BASIC INFORMATION</h2>
                         <?php
                         if(empty($_POST['hostel_name']))
@@ -66,7 +66,7 @@
     ?>
 			
         <a name="go3" style="text-decoration:none;">
-			<div class="jumbotron">
+			<div class="jumbotron"  >
 				<h2>Hostel Updates</h2><br>
 
 				<ul class="list-group">
@@ -114,7 +114,7 @@
             </div>
         </a>
         
-        <a name="go4" style="text-decoration:none;"><div class="jumbotron">
+        <a name="go4" style="text-decoration:none;"><div class="jumbotron" >
             <h2>COMPLAINT COUNTER</h2>
             <h4 style="color:#999999">(Any complaints related to your hostel in general or <br>the information displayed on this site about your hostel.)</h4>
             <ul class="list-group">
