@@ -26,7 +26,7 @@
                                                <a href="#" class="btn btn-info" role="button">Link Button</a>
                                                <button type="button" class="btn btn-info">Button</button>
                                                <input type="submit" class="btn btn-info" value="Go!">
-                    </select>&nbsp;&nbsp;
+                    </select>
             </form>	
     </div>
     </div><!-- /.row -->
@@ -38,7 +38,9 @@
 
  
 
---><div >
+--><div class = "container">
+
+
 <a name="go1" style="text-decoration:none;"><div class="jumbotron" style="padding-left:30px">			
 			<h2>BASIC INFORMATION</h2>
                         <?php
