@@ -192,10 +192,10 @@
 			
 			
 <div class = "col-md-3">
-<a href = "http://math.gbuonline.in"><font color = "white"><b>Maths Site</b></font></a><br><br>
-<a href = "http://gbu.ac.in"><font color = "white"><b>Official Website</b></font></a><br><br>
+<a href = "http://math.gbuonline.in"  target="_blank"><font color = "white"><b>Maths Site</b></font></a><br><br>
+<a href = "http://gbu.ac.in"  target="_blank"><font color = "white"><b>Official Website</b></font></a><br><br>
 <a href = "<?php echo site_url('feat/ggroups')?>"><font color = "white"><b>Google Groups</b></font></a><br><br>
-<a href = "https://plus.google.com/+GAUTAMBUDDHAUNIVERSITYGREATERNOIDA"><font color = "white"><b>Gbu.code</b></font></a>
+<a href = "https://plus.google.com/+GAUTAMBUDDHAUNIVERSITYGREATERNOIDA"  target="_blank"><font color = "white"><b>Gbu.code</b></font></a>
 </div>
         <div class = "col-md-3">
 		<a href = "<?php echo site_url('feat/tou')?>"><font color = "white"><b>Terms of use</b></font></a><br><br>
