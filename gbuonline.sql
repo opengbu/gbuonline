@@ -486,6 +486,27 @@ INSERT INTO `warden` (`id`, `hostel_name`, `warden_name`, `warden_office`, `host
 (9, 'RAHEEM BOYS HOSTEL', 'DR. RAJESH GUPTA', '4364', NULL),
 (10, 'MALIK MOHD. JAYSI BOYS HOSTEL', 'DR. GURMET DORJAY', '7058', NULL);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `analysis`
+--
+
+CREATE TABLE IF NOT EXISTS `analysis` (
+  `date` date NOT NULL,
+  `time` time NOT NULL,
+  `hits` int(128) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `analysis`
+--
+
+INSERT INTO `analysis` (`date`, `time`, `hits`) VALUES
+('2015-08-18', '00:15:44', 1),
+('2015-08-18', '00:16:05', 2),
+('2015-08-18', '00:57:11', 3);
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
