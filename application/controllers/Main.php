@@ -18,7 +18,8 @@ class Main extends CI_Controller {
 		$data['title'] = 'Welcome to Gbu Online ';
                 $data['news'] = $this->news_model->get_news();
 		$this->load->view('pages/homepage',$data);
-		
+            
+		    $this->load->helper('date');
     }
 	
 	   

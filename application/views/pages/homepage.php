@@ -31,10 +31,29 @@ require 'common/header.php';
 ?>
 <br>
 <!--row2 for heading-->
-   
+  
 <?php
 require 'slider.php';
 require 'row4.php';
 require 'common/footer.php';
 ?>
-            
+
+<!-- *********************** Website Traffic Analysis (for home page )************************* -->
+<?php
+
+$hit=$this->db->query("select max(hits) as maxhit from analysis");
+$results=$hit->result();
+$date = date('Y-m-d '); 
+$time = date('H:i:s');
+
+foreach($results as $rows)
+{
+    $updatehits = $rows->maxhit;
+    $updatehits+=1;
+    
+}
+
+$storehits=$this->db->query("insert into analysis values ('$date','$time','$updatehits')");
+
+
+?>            

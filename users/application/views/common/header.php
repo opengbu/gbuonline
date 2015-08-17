@@ -125,8 +125,30 @@
                                 <?php } ?>
                             </ul>
                         </li>
-                    </ul>            
-
+                    </ul>
+                    
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <?php
+                        /*
+                        *    Created on :Aug 18, 2015, 12:20:47 AM
+                        *    Edited By  :Rajat and Shobhit
+                        */
+      if ($this->session->userdata('type') == 'admin')
+      {
+        $hit=$this->db->query("select max(hits) as maxhit from analysis");
+        $results=$hit->result();
+      
+        foreach($results as $rows)
+        {
+            echo "<font color='white'>Hits : ".$rows->maxhit."</font>";
+        }
+      }
+?>                  </a>
+                    </li>
+                    </ul>
+                        
                     <ul class="nav navbar-nav navbar-right">
                         <li> 
                             <a href="<?= base_url() . 'edit_user/index/' . $this->session->userdata('user_id') ?>">Welcome <?= $this->session->userdata('full_name') ?>!</a>
