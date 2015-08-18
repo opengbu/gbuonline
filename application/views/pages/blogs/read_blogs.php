@@ -24,7 +24,7 @@ $like_count = $like_count_q->row();
 
                 <div class="row"> 
                     <div class="col-md-4">
-                        <a href="<?= site_url('blogs/like?blog_id=' . $result->id . '&redirect2=' . current_url()) ?>" class="btn btn-primary btn-md" >
+                        <a href="<?= site_url('blogs/like?blog_id=' . $result->id . '&redirect2=' . current_url()) . "?" . $_SERVER['QUERY_STRING'] ?>" class="btn btn-primary btn-md" >
                             <span class="glyphicon glyphicon-star" aria-hidden="true"></span> &nbsp;
                             <span class="badge"><?= $like_count->like_count ?></span>
                         </a>&nbsp;
