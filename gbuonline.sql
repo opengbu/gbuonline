@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.14
+-- version 4.0.4
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Aug 10, 2015 at 09:47 PM
--- Server version: 5.6.17
--- PHP Version: 5.5.12
+-- Host: localhost
+-- Generation Time: Aug 18, 2015 at 05:48 AM
+-- Server version: 5.6.12-log
+-- PHP Version: 5.4.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,6 +19,38 @@ SET time_zone = "+00:00";
 --
 -- Database: `gbuonline`
 --
+CREATE DATABASE IF NOT EXISTS `gbuonline` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `gbuonline`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `analysis`
+--
+
+CREATE TABLE IF NOT EXISTS `analysis` (
+  `hit_number` int(128) NOT NULL AUTO_INCREMENT,
+  `date` date NOT NULL,
+  `time` time NOT NULL,
+  PRIMARY KEY (`hit_number`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
+
+--
+-- Dumping data for table `analysis`
+--
+
+INSERT INTO `analysis` (`hit_number`, `date`, `time`) VALUES
+(1, '2015-08-18', '05:22:13'),
+(2, '2015-08-18', '05:22:21'),
+(3, '2015-08-18', '05:22:28'),
+(4, '2015-08-18', '05:31:29'),
+(5, '2015-08-18', '05:31:36'),
+(6, '2015-08-18', '05:32:18'),
+(7, '2015-08-18', '05:32:34'),
+(8, '2015-08-18', '05:39:00'),
+(9, '2015-08-18', '05:39:41'),
+(10, '2015-08-18', '05:39:52'),
+(11, '2015-08-18', '05:43:55');
 
 -- --------------------------------------------------------
 
@@ -485,27 +517,6 @@ INSERT INTO `warden` (`id`, `hostel_name`, `warden_name`, `warden_office`, `host
 (8, 'TULSIDAS BOYS HOSTEL', 'DR. RAKESH KUMAR SRIVASTAVA', '6159', NULL),
 (9, 'RAHEEM BOYS HOSTEL', 'DR. RAJESH GUPTA', '4364', NULL),
 (10, 'MALIK MOHD. JAYSI BOYS HOSTEL', 'DR. GURMET DORJAY', '7058', NULL);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `analysis`
---
-
-CREATE TABLE IF NOT EXISTS `analysis` (
-  `date` date NOT NULL,
-  `time` time NOT NULL,
-  `hits` int(128) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `analysis`
---
-
-INSERT INTO `analysis` (`date`, `time`, `hits`) VALUES
-('2015-08-18', '00:15:44', 1),
-('2015-08-18', '00:16:05', 2),
-('2015-08-18', '00:57:11', 3);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
