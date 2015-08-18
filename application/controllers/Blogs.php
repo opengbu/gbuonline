@@ -64,7 +64,7 @@ class Blogs extends CI_Controller {
     public function like() {
 
         if ($this->session->userdata('loggedin') != 1) //student/user/admin logged in
-            redirect('users?redirect=' . current_url());
+            redirect('users?redirect=' . current_url() . "?" . $_SERVER['QUERY_STRING']);
 
         $blog_id = $this->input->get("blog_id");
         $user_id = $this->session->userdata("user_id");
