@@ -1,3 +1,7 @@
+<script>
+	$(".jqte-blogs").jqte();
+</script>
+
 <link type="text/css" rel="stylesheet" href="<?php echo base_url('resources/jQuery-TE_v.1.4.0/jquery-te-1.4.0.css');?>">
 <script type="text/javascript" src="<?php echo base_url('resources/jQuery-TE_v.1.4.0/jquery-te-1.4.0.min.js');?>" charset="utf-8"></script>
 
@@ -53,9 +57,6 @@
 <!--row ends in extras-->
 <!--container ends in extras-->
 
- <script>
-	$(".jqte-blogs").jqte();
- </script>
              
 
 

@@ -70,7 +70,7 @@ $user_id = $this->session->userdata("user_id");
                     </div>
                     <div class="panel-footer">
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-5">
                                 <a href="<?=site_url('blogs/like?blog_id='.$row->id. '&redirect2='.  current_url() )?>" class="btn btn-<?=$clor?> btn-md" data-toggle="tooltip" data-placement="top" title="<?=$txt?>">
                                     <span class="glyphicon glyphicon-star" aria-hidden="true"></span> &nbsp;
                                     <span class="badge"><?=$like_count->like_count ?></span>
@@ -84,7 +84,7 @@ $user_id = $this->session->userdata("user_id");
                                     <span class="badge"><a href="<?php echo site_url('blogs/read_blogs?blog_id=' . $row->id) ?>#disqus_thread" data-disqus-identifier="blog_<?= $row->id ?>"></a></span>
                                 </button>
                             </div>
-                            <div class="col-md-8" style="text-align: right;">
+                            <div class="col-md-7" style="text-align: right;">
                                 <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target=".blogs"><span><?= $row->full_name ?></span> &nbsp;
                                     <?php
                                     if ($row->roll_number != NULL) {

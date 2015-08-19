@@ -18,7 +18,7 @@
 <div class="row">
 
 <div class="page-header" id="pagehead">
-            <font color="white" face="Monotype Corsiva">
+            <font color="white" face="Times New Roman">
             <h1><?php echo $heading; ?></br>
                 <small><?php echo $message; ?></small>
             </h1>
