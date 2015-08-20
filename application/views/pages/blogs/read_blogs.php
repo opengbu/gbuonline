@@ -36,12 +36,13 @@ $numb = $this->db->query("select * from blog_likes where blog_id = '$blog_id' an
                 <?= $result->title ?>
             </div>
             <br>
-
+			
             <div class="well" style="font-size: 16px;  text-align: justify; ">
-                <?= $result->description ?>
-
+                
+				<?= $result->description ?>
+				<div id="koment"></div>
                 <hr style="border-top: 1px solid rgba(0, 0, 0, 0.1); border-bottom: 1px solid rgba(255, 255, 255, 0.3);">
-
+				
                 <div class="row"> 
                     <div class="col-md-4">
                         <a href="<?= site_url('blogs/like?blog_id=' . $result->id . '&redirect2=' . current_url()) . "?" . $_SERVER['QUERY_STRING'] ?>" class="btn btn-<?=$clor?> btn-md" data-toggle="tooltip" data-placement="top" title="<?=$txt?>">
@@ -53,7 +54,7 @@ $numb = $this->db->query("select * from blog_likes where blog_id = '$blog_id' an
                             <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> &nbsp;
                             <span class="badge">Share</span>
                         </button>&nbsp;
-                        <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target=".blogs">
+                        <button type="button" class="btn btn-primary btn-md" onclick="location.href='#koment'">
                             <span class="glyphicon glyphicon-comment" aria-hidden="true"></span> &nbsp;
                             <span class="badge"><a href="<?php echo site_url('blogs/read_blogs?blog_id=' . $result->id) ?>#disqus_thread" data-disqus-identifier="blog_<?= $result->id ?>"></a></span>
                         </button>

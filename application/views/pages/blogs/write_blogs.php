@@ -8,7 +8,7 @@
 <div class="container-fluid" style=" margin-right: 10px; margin-left: 10px;" >
 	<div class="row">
 		<div class="col-md-9" style="padding-right:30px; border-right: 2px solid #ccc;" id="myDiv">
-			<form action="<?php echo base_url();?>Blogs/save" method="post">
+			
 				<div class="well well-sm">
 					<div class="btn-group btn-group-justified" role="group" aria-label="...">
 						<div class="btn-group" role="group">
@@ -25,13 +25,14 @@
     
 			<li class="list-group-item list-group-item-warning">
                 <span class="glyphicon glyphicon-info-sign" aria-hidden="true">  </span>
-                <b> &nbsp;&nbsp;Please Log-In to submit your Blog. &nbsp;It will be displayed on the website once it is approved by the admin.</b>
+                <b> &nbsp;&nbsp;The Blog will be published on the website once it is approved by the admin.</b>
 			</li>
 
 			<br>
             
 			<div class="row">
 				<div class="col-md-12">
+				<form action="<?php echo base_url();?>Blogs/save" method="post">
 					<div class="form-group">
 						<label for="Blog">Start Your Blog :&nbsp;&nbsp;</label><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
 						<div class="input-group">
@@ -40,17 +41,17 @@
 						</div>
 						<br>
 						<label>Blog Content :</label>
-						<textarea name="description" class="form-control jqte-blogs" rows="15" id="comment"></textarea>
+						<textarea name="description" class="form-control jqte-blogs" rows="15" id="comment" required="required"></textarea>
 						<br>
                 
 						<center>
-                                                    <button type="submit" class="btn btn-success" required="required" <!--onclick="window.alert('Your Blog has been submitted succesfully. It will be displayed on website once it is reviewed by the admin.' -->)">Submit</button>
+                                                    <button type="submit" class="btn btn-success" <!--onclick="window.alert('Your Blog has been submitted succesfully. It will be displayed on website once it is reviewed by the admin.' -->)">Submit</button>
 						</center>
 						<br>
-					</div>  
+					</div>
+				</form>
 				</div>
 			</div>
-</form>
     
 </div>
 

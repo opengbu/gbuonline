@@ -1,6 +1,16 @@
 <script>
     var count_comments = true;
+	
+	//activate the tooltips
+	$(function () {
+	$('[data-toggle="tooltip"]').tooltip()
+	})
+
 </script>
+
+<?php
+$user_id = $this->session->userdata("user_id");
+?>
 
 <!--This page is sorted according to the "Time" of a blog-->
 
@@ -34,6 +44,18 @@
                 
                 $like_count_q = $this->db->query("select count(*) as like_count from blog_likes where blog_id = '$row->id'");
                 $like_count = $like_count_q->row();
+				
+				$numb = $this->db->query("select * from blog_likes where blog_id = '$row->id' and user_id = '$user_id'");
+				if ($numb->num_rows() == 0)
+				{
+					$clor = "primary";
+					$txt = "Like this blog";
+				}
+				else
+				{
+					$clor = "warning";
+					$txt = "Un-Like this blog";
+				}
                 ?>
                 
                 <div class="panel panel-danger">
@@ -50,7 +72,7 @@
                     <div class="panel-footer">
                         <div class="row">
                             <div class="col-md-5">
-                                <a href="<?=site_url('blogs/like?blog_id='.$row->id. '&redirect2='.  current_url() )?>" class="btn btn-primary btn-md" >
+                                <a href="<?=site_url('blogs/like?blog_id='.$row->id. '&redirect2='.  current_url() )?>" class="btn btn-<?=$clor?> btn-md" data-toggle="tooltip" data-placement="top" title="<?=$txt?>" >
                                     <span class="glyphicon glyphicon-star" aria-hidden="true"></span> &nbsp;
                                     <span class="badge"><?=$like_count->like_count ?></span>
                                 </a>&nbsp;
@@ -58,7 +80,7 @@
                                     <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> &nbsp;
                                     <span class="badge">Share</span>
                                 </button>&nbsp;
-                                <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target=".blogs">
+                                <button type="button" class="btn btn-primary btn-md" onclick="location.href='<?php echo site_url('blogs/read_blogs?blog_id=' .$row->id.'#koment')?>'">
                                     <span class="glyphicon glyphicon-comment" aria-hidden="true"></span> &nbsp;
                                     <span class="badge"><a href="<?php echo site_url('blogs/read_blogs?blog_id=' . $row->id) ?>#disqus_thread" data-disqus-identifier="blog_<?= $row->id ?>"></a></span>
                                 </button>

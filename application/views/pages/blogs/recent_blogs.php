@@ -79,7 +79,7 @@ $user_id = $this->session->userdata("user_id");
                                     <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> &nbsp;
                                     <span class="badge">Share</span>
                                 </button>&nbsp;
-                                <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target=".blogs">
+                                <button type="button" class="btn btn-primary btn-md" onclick="location.href='<?php echo site_url('blogs/read_blogs?blog_id=' .$row->id.'#koment')?>'"> 
                                     <span class="glyphicon glyphicon-comment" aria-hidden="true"></span> &nbsp;
                                     <span class="badge"><a href="<?php echo site_url('blogs/read_blogs?blog_id=' . $row->id) ?>#disqus_thread" data-disqus-identifier="blog_<?= $row->id ?>"></a></span>
                                 </button>
