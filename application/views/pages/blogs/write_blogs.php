@@ -1,9 +1,5 @@
-<script>
-	$(".jqte-blogs").jqte();
-</script>
 
-<link type="text/css" rel="stylesheet" href="<?php echo base_url('resources/jQuery-TE_v.1.4.0/jquery-te-1.4.0.css');?>">
-<script type="text/javascript" src="<?php echo base_url('resources/jQuery-TE_v.1.4.0/jquery-te-1.4.0.min.js');?>" charset="utf-8"></script>
+<script src="<?php echo base_url('resources/texteditor/ckeditor/ckeditor.js')?>"></script>
 
 <div class="container-fluid" style=" margin-right: 10px; margin-left: 10px;" >
 	<div class="row">
@@ -41,7 +37,7 @@
 						</div>
 						<br>
 						<label>Blog Content :</label>
-						<textarea name="description" class="form-control jqte-blogs" rows="15" id="comment" required="required"></textarea>
+						<textarea name="description" class="form-control" id="editor1" rows="15" required="required"></textarea>
 						<br>
                 
 						<center>
@@ -58,10 +54,11 @@
 <!--row ends in extras-->
 <!--container ends in extras-->
 
-             
-
-
-
+<script>
+ CKEDITOR.replace( 'editor1', {
+    height: '500',
+}); 
+</script>
 
 
 
