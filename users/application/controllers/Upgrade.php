@@ -37,20 +37,27 @@ class Upgrade extends CI_Controller {
         array_push($update_list, $u);
         unset($u);
 
+		$u = new update;
 		$u->version = 1.4;
-        array_push($u->$update,"UPDATE `stu_chapters` SET Title='IEEE-GBU Student Branch',Description='After filing the petition for formation of the IEEE- GBU Student Branch on February 8, 2012 with the approval of at least 12 eligible student members and 2 IEEE Members above student grade, with the Student Branch Counselor Dr. Shabana Urooj and the Student Branch Chair Chirag Ahuja, got the approval for the Branch on April 6, 2012 from the headquarters with the Student Branch Code is 10301 and the School Code is 60048501. The Student Branch is located in Region 10 and the activities will be of interest to the volunteers of IEEE Delhi Section.' WHERE Title = 'IEEE-GBU Student Branch';");
-array_push($u->$update,"INSERT INTO `gbuonline`.`stu_chapters` (`Title`, `Description`) VALUES ('Codechef-GBU Campus Chapter ', 'A community to enhance coding among the students of GBU. For more info: https://www.codechef.com/campus_chapter/CodeChef-GBU');");
-array_push($u->$update,"INSERT INTO `gbuonline`.`stu_chapters` (`Title`, `Description`) VALUES ('HackerEarth - "CODE IN GBU"', 'Various coding competitions are organised on HackerEarth platform under the series "Code-In-GBU". Link:https://www.hackerearth.com/code-in-gbu/');");
-array_push($u->$update,"UPDATE `stu_chapters` SET Title= 'HackerEarth "CODE IN GBU"', Description = 'Various coding competitions are organised on HackerEarth platform under the series "Code-In-GBU". <a href = "https://www.hackerearth.com/code-in-gbu/">For more info click here</a>' WHERE Title = 'HackerEarth - "CODE IN GBU"';");
-array_push($u->$update,"UPDATE `stu_chapters` SET Title='Codechef-GBU Campus Chapter',Description='A community to enhance coding among the students of GBU.<a href ="https://www.codechef.com/campus_chapter/CodeChef-GBU"> Codechef-GBU</a>' WHERE Title = 'Codechef-GBU Campus Chapter';");
-array_push($u->$update,"UPDATE `placements` SET Title = 'Placement 2015',Link='resources/placements/p2015.PDF' WHERE Title = 'Placement 2015';");
-array_push($u->$update,"INSERT INTO `gbuonline`.`placements` (`Title`, `Link`) VALUES ('Placement 2014 ','resources/placements/p2014.PDF');");
-array_push($u->$update,"INSERT INTO `gbuonline`.`placements` (`Title`, `Link`) VALUES ('Placement 2013', 'resources/placements/p2013.PDF');");
-array_push($u->$update,"INSERT INTO `gbuonline`.`placements` (`Title`, `Link`) VALUES ('Placement 2012', 'resources/placements/p2012.PDF');");
-array_push($u->$update,"INSERT INTO `gbuonline`.`placements` (`Title`, `Link`) VALUES ('Placement 2011', 'resources/placements/p2011.PDF');");
-array_push($u->$update,"INSERT INTO `gbuonline`.`placements` (`Title`, `Link`) VALUES ('Placement 2010', 'resources/placements/p2010.PDF');");
-array_push($u->$update,"ALTER TABLE `placements` ADD `ID` INT NOT NULL AUTO_INCREMENT AFTER `Title`, ADD PRIMARY KEY (`ID`);");
-array_push($u->$update,"DELETE FROM `downloads` WHERE Title = 'C Cleaner';");
+        array_push($u->updates,"UPDATE `stu_chapters` SET Title='IEEE-GBU Student Branch',Description='After filing the petition for formation of the IEEE- GBU Student Branch on February 8, 2012 with the approval of at least 12 eligible student members and 2 IEEE Members above student grade, with the Student Branch Counselor Dr. Shabana Urooj and the Student Branch Chair Chirag Ahuja, got the approval for the Branch on April 6, 2012 from the headquarters with the Student Branch Code is 10301 and the School Code is 60048501. The Student Branch is located in Region 10 and the activities will be of interest to the volunteers of IEEE Delhi Section.' WHERE Title = 'IEEE-GBU Student Branch';");
+array_push($u->updates,"INSERT INTO `gbuonline`.`stu_chapters` (`Title`, `Description`) VALUES ('Codechef-GBU Campus Chapter ', 'A community to enhance coding among the students of GBU. For more info: https://www.codechef.com/campus_chapter/CodeChef-GBU');");
+array_push($u->updates,"INSERT INTO `gbuonline`.`stu_chapters` (`Title`, `Description`) VALUES ('HackerEarth - \"CODE IN GBU\"', 'Various coding competitions are organised on HackerEarth platform under the series \"Code-In-GBU\". Link:https://www.hackerearth.com/code-in-gbu/');");
+array_push($u->updates,"UPDATE `stu_chapters` SET Title= 'HackerEarth \"CODE IN GBU\"', Description = 'Various coding competitions are organised on HackerEarth platform under the series \"Code-In-GBU\". <a href = \"https://www.hackerearth.com/code-in-gbu/\">For more info click here</a>' WHERE Title = 'HackerEarth - \"CODE IN GBU\"';");
+array_push($u->updates,"UPDATE `stu_chapters` SET Title='Codechef-GBU Campus Chapter',Description='A community to enhance coding among the students of GBU.<a href =\"https://www.codechef.com/campus_chapter/CodeChef-GBU\"> Codechef-GBU</a>' WHERE Title = 'Codechef-GBU Campus Chapter';");
+array_push($u->updates,"UPDATE `placements` SET Title = 'Placement 2015',Link='resources/placements/p2015.PDF' WHERE Title = 'Placement 2015';");
+array_push($u->updates,"INSERT INTO `gbuonline`.`placements` (`Title`, `Link`) VALUES ('Placement 2014 ','resources/placements/p2014.PDF');");
+array_push($u->updates,"INSERT INTO `gbuonline`.`placements` (`Title`, `Link`) VALUES ('Placement 2013', 'resources/placements/p2013.PDF');");
+array_push($u->updates,"INSERT INTO `gbuonline`.`placements` (`Title`, `Link`) VALUES ('Placement 2012', 'resources/placements/p2012.PDF');");
+array_push($u->updates,"INSERT INTO `gbuonline`.`placements` (`Title`, `Link`) VALUES ('Placement 2011', 'resources/placements/p2011.PDF');");
+array_push($u->updates,"INSERT INTO `gbuonline`.`placements` (`Title`, `Link`) VALUES ('Placement 2010', 'resources/placements/p2010.PDF');");
+array_push($u->updates,"ALTER TABLE `placements` ADD `ID` INT NOT NULL AUTO_INCREMENT AFTER `Title`, ADD PRIMARY KEY (`ID`);");
+array_push($u->updates,"DELETE FROM `downloads` WHERE Title = 'C Cleaner';");
+array_push($update_list, $u);
+        unset($u);
+		
+		$u = new update;
+		$u->version = 1.5;
+array_push($u->updates,"DELETE FROM placements where id='1' or id='3' ");
 array_push($update_list, $u);
         unset($u);
 		
