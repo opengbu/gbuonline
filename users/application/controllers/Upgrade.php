@@ -71,6 +71,18 @@ array_push($u->updates,"UPDATE `gbuonline`.`vnb` SET `link` = 'resources\\notice
 array_push($update_list, $u);
         unset($u);
 		
+		$u = new update;
+	$u->version = 1.7;
+	array_push($u->updates,"UPDATE `gbuonline`.`vnb` SET `link` = 'resources/notices/GBU_Academic_Scholarship_Notice_24July2015.jpg' WHERE `vnb`.`id` = 1;");
+	array_push($u->updates,"UPDATE `gbuonline`.`vnb` SET `link` = 'resources/notices/Notice_RegistrationFee_23July2015.jpg' WHERE `vnb`.`id` = 2;");
+		array_push($u->updates,"UPDATE `gbuonline`.`vnb` SET `link` = 'resources/ notices/MOU_NSDC_DOC_1July15.pdf' WHERE `vnb`.`id` = 3;");
+		array_push($u->updates,"UPDATE `gbuonline`.`vnb` SET `link` = 'resources/notices/Notification_Late Fee_Odd SemReg_21July15.pdf' WHERE `vnb`.`id` = 5;");
+		array_push($u->updates,"UPDATE `gbuonline`.`vnb` SET `link` = 'resources/ notices/PO_Stores_Cancel_Seven Star_26June15.jpg' WHERE `vnb`.`id` = 6;");
+
+	
+	array_push($update_list, $u);
+	unset($u);
+		
         $this->run_upgrades($update_list);
         redirect("login" . "?" . $_SERVER['QUERY_STRING'] );
     }
