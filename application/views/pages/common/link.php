@@ -105,6 +105,34 @@
             label.radio-inline, label.checkbox-inline {   background-color: #dcdfd4;   cursor: pointer;   font-weight: 400;   margin-bottom: 10px !important;   margin-right: 2%;   margin-left:0;   padding: 10px 10px 10px 30px; } label.radio-inline.checked, label.checkbox-inline.checked {   background-color: #266c8e;   color: #fff !important;   text-shadow: 1px 1px 2px #000 !important; } .checkbox-inline + .checkbox-inline, .radio-inline + .radio-inline {   margin-left: 0; } .columns label.radio-inline, .columns label.checkbox-inline {   min-width: 190px;   vertical-align: top;   width: 30%; } .additional-info-wrap {   display: inline-block;   margin: 0 2% 0 0;   min-width: 190px;   position: relative;   vertical-align: top;   width: 30%; } .additional-info-wrap label.checkbox-inline, .additional-info-wrap label.radio-inline {   width: 100% !important; } .additional-info-wrap .additional-info {   background-color: #266c8e;   clear: both;   color: #fff !important;   margin-top: -10px;   padding: 0 10px 10px;   text-shadow: 1px 1px 2px #000 !important;   width: 100%; }
         </style>
 
+        <!-- Google Analytics 
+        /*
+        /*  Added by Shobhit : 23rd August
+        /*                       
+        -->
+
+        <script>
+            (function(i,s,o,g,r,a,m)
+             {
+                 i['GoogleAnalyticsObject']=r;
+                 i[r]=i[r]||
+                     function()
+                 {
+                     (i[r].q=i[r].q||[]).push(arguments)
+                 }
+                    ,i[r].l=1*new Date();
+                    a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];
+                    a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                 }
+            )
+            (window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-XXXX-Y', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
     </head>
     <body background="<?php echo base_url('resources/images/home1.jpg') ?>" style="background-attachment: fixed; background-repeat: repeat;">
 	<div class="se-pre-con"></div>

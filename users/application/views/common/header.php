@@ -126,28 +126,7 @@
                             </ul>
                         </li>
                     </ul>
-					
-                    <!-- Hits Begins-->
-                    <ul class="nav navbar-nav">
-                        <li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-							<?php
-							/*
-							 *    Created on :Aug 18, 2015, 12:20:47 AM
-							 *    Edited By  :Rajat and Shobhit
-							 */
-							if ($this->session->userdata('type') == 'admin')
-							{
-								$hits_q=$this->db->query("select count(*) as hits from analysis");
-								$hits = $hits_q->row();
-								echo "<font color='white'>Hits : ".$hits->hits."</font>"; 
-							}
-							?>      
-							</a>
-						</li>
-                    </ul>
-                <!--Hits Ends-->
-						
+
                     <ul class="nav navbar-nav navbar-right">
                         <li> 
                             <a href="<?= base_url() . 'edit_user/index/' . $this->session->userdata('user_id') ?>">Welcome <?= $this->session->userdata('full_name') ?>!</a>
@@ -196,6 +175,8 @@
                             <?php if ($this->session->userdata('type') == 'admin') { ?>
 
                                 <li ><a href="<?php echo base_url() . 'new_user' ?>">New user <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-user-plus fa-2x"></i></a></li>
+                            
+                            <li><a href="<?php echo base_url() . 'stats' ?>">Statistics<i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-line-chart fa-2x"></i></a></li>
                             <?php } ?>
                         </ul>
                     </div>
