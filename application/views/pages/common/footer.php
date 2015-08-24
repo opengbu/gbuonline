@@ -213,15 +213,14 @@
 		
 		</div>
 		
-		</div><br/><br/>
-			<div class="row" style = "padding-bottom:5px;">
+		</div>
+		<br/>
+		<hr style=" border: 0; height: 0; border-top: 1px solid rgba(0, 0, 0, 0.1); border-bottom: 1px solid rgba(255, 255, 255, 0.3);">
+			
             <div class="col-md-12 text-center">
-                <br>
-                    <b><p style = "color:white;">&copy; kNight_Coders, Inc.</p></b>
                 
-
-            </div>
-
+                    <b><p style = "color:white;">&copy; kNight_Coders, Inc.</p></b>
+              
        </div>
         
 

@@ -78,10 +78,15 @@ class Upgrade extends CI_Controller {
         array_push($u->updates, "UPDATE `vnb` SET `link` = 'resources/ notices/MOU_NSDC_DOC_1July15.pdf' WHERE `vnb`.`id` = 3;");
         array_push($u->updates, "UPDATE `vnb` SET `link` = 'resources/notices/Notification_Late Fee_Odd SemReg_21July15.pdf' WHERE `vnb`.`id` = 5;");
         array_push($u->updates, "UPDATE `vnb` SET `link` = 'resources/ notices/PO_Stores_Cancel_Seven Star_26June15.jpg' WHERE `vnb`.`id` = 6;");
-
-
         array_push($update_list, $u);
         unset($u);
+		
+		$u = new update;
+		$u->version = 1.8;
+		array_push($u->updates,"UPDATE `vnb` SET `link` = 'resources/notices/MOU_NSDC_DOC_1July15.pdf' WHERE `vnb`.`id` =3;");
+		array_push($u->updates,"UPDATE `vnb` SET `link` = 'resources/notices/PO_Stores_Cancel_Seven Star_26June15.jpg' WHERE `vnb`.`id` =6;");
+		array_push($update_list, $u);
+		unset($u);
 
         $this->run_upgrades($update_list);
         redirect("login" . "?" . $_SERVER['QUERY_STRING']);
