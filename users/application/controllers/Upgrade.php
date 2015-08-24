@@ -30,61 +30,61 @@ class Upgrade extends CI_Controller {
         array_push($u->updates, "CREATE TABLE `analysis` ( `hit_number` INT(128) NOT NULL AUTO_INCREMENT , `date` DATE NOT NULL , `time` TIME NOT NULL , PRIMARY KEY (`hit_number`))");
         array_push($update_list, $u);
         unset($u);
-        
+
         $u = new update;
         $u->version = 1.3;
         array_push($u->updates, "update blog set title='5 Things That Computer Science Students Should Be Focussing On.' where id = '20'");
         array_push($update_list, $u);
         unset($u);
 
-	$u = new update;
-	$u->version = 1.4;
-        array_push($u->updates,"UPDATE `stu_chapters` SET Title='IEEE-GBU Student Branch',Description='After filing the petition for formation of the IEEE- GBU Student Branch on February 8, 2012 with the approval of at least 12 eligible student members and 2 IEEE Members above student grade, with the Student Branch Counselor Dr. Shabana Urooj and the Student Branch Chair Chirag Ahuja, got the approval for the Branch on April 6, 2012 from the headquarters with the Student Branch Code is 10301 and the School Code is 60048501. The Student Branch is located in Region 10 and the activities will be of interest to the volunteers of IEEE Delhi Section.' WHERE Title = 'IEEE-GBU Student Branch';");
-	array_push($u->updates,"INSERT INTO `stu_chapters` (`Title`, `Description`) VALUES ('Codechef-GBU Campus Chapter ', 'A community to enhance coding among the students of GBU. For more info: https://www.codechef.com/campus_chapter/CodeChef-GBU');");
-	array_push($u->updates,"INSERT INTO `stu_chapters` (`Title`, `Description`) VALUES ('HackerEarth - \"CODE IN GBU\"', 'Various coding competitions are organised on HackerEarth platform under the series \"Code-In-GBU\". Link:https://www.hackerearth.com/code-in-gbu/');");
-	array_push($u->updates,"UPDATE `stu_chapters` SET Title= 'HackerEarth \"CODE IN GBU\"', Description = 'Various coding competitions are organised on HackerEarth platform under the series \"Code-In-GBU\". <a href = \"https://www.hackerearth.com/code-in-gbu/\">For more info click here</a>' WHERE Title = 'HackerEarth - \"CODE IN GBU\"';");
-	array_push($u->updates,"UPDATE `stu_chapters` SET Title='Codechef-GBU Campus Chapter',Description='A community to enhance coding among the students of GBU.<a href =\"https://www.codechef.com/campus_chapter/CodeChef-GBU\"> Codechef-GBU</a>' WHERE Title = 'Codechef-GBU Campus Chapter';");
-	array_push($u->updates,"UPDATE `placements` SET Title = 'Placement 2015',Link='resources/placements/p2015.PDF' WHERE Title = 'Placement 2015';");
-	array_push($u->updates,"INSERT INTO `placements` (`Title`, `Link`) VALUES ('Placement 2014 ','resources/placements/p2014.PDF');");
-	array_push($u->updates,"INSERT INTO `placements` (`Title`, `Link`) VALUES ('Placement 2013', 'resources/placements/p2013.PDF');");
-	array_push($u->updates,"INSERT INTO `placements` (`Title`, `Link`) VALUES ('Placement 2012', 'resources/placements/p2012.PDF');");
-	array_push($u->updates,"INSERT INTO `placements` (`Title`, `Link`) VALUES ('Placement 2011', 'resources/placements/p2011.PDF');");
-	array_push($u->updates,"INSERT INTO `placements` (`Title`, `Link`) VALUES ('Placement 2010', 'resources/placements/p2010.PDF');");
-	array_push($u->updates,"ALTER TABLE `placements` ADD `ID` INT NOT NULL AUTO_INCREMENT AFTER `Title`, ADD PRIMARY KEY (`ID`);");
-	array_push($u->updates,"DELETE FROM `downloads` WHERE Title = 'C Cleaner';");
-	array_push($update_list, $u);
-	unset($u);
-		
-	$u = new update;
-	$u->version = 1.5;
-	array_push($u->updates,"DELETE FROM placements where id='1' or id='3' ");
-	array_push($update_list, $u);
-	unset($u);
-		
-		$u = new update;
-		$u->version = 1.6;
-array_push($u->updates,"UPDATE `gbuonline`.`vnb` SET `link` = 'resources\\notices\\images\\GBU_Academic_Scholarship_Notice_24July2015.jpg' WHERE `vnb`.`id` = 1; ");
-array_push($u->updates,"UPDATE `gbuonline`.`vnb` SET `link` = 'resources\\notices\\images\\Notice_RegistrationFee_23July2015.jpg' WHERE `vnb`.`id` = 2;");
-array_push($u->updates,"UPDATE `gbuonline`.`vnb` SET `link` = 'resources\\notices\\MOU_NSDC_DOC_1July15.pdf' WHERE `vnb`.`id` = 3;");
-array_push($u->updates,"UPDATE `gbuonline`.`vnb` SET `link` = 'resources\\notices\\Notification_Late Fee_Odd SemReg_21July15.pdf' WHERE `vnb`.`id` = 5;");
-array_push($u->updates,"UPDATE `gbuonline`.`vnb` SET `link` = 'resources\\notices\\PO_Stores_Cancel_Seven Star_26June15.jpg' WHERE `vnb`.`id` = 6;");
-array_push($update_list, $u);
+        $u = new update;
+        $u->version = 1.4;
+        array_push($u->updates, "UPDATE `stu_chapters` SET Title='IEEE-GBU Student Branch',Description='After filing the petition for formation of the IEEE- GBU Student Branch on February 8, 2012 with the approval of at least 12 eligible student members and 2 IEEE Members above student grade, with the Student Branch Counselor Dr. Shabana Urooj and the Student Branch Chair Chirag Ahuja, got the approval for the Branch on April 6, 2012 from the headquarters with the Student Branch Code is 10301 and the School Code is 60048501. The Student Branch is located in Region 10 and the activities will be of interest to the volunteers of IEEE Delhi Section.' WHERE Title = 'IEEE-GBU Student Branch';");
+        array_push($u->updates, "INSERT INTO `stu_chapters` (`Title`, `Description`) VALUES ('Codechef-GBU Campus Chapter ', 'A community to enhance coding among the students of GBU. For more info: https://www.codechef.com/campus_chapter/CodeChef-GBU');");
+        array_push($u->updates, "INSERT INTO `stu_chapters` (`Title`, `Description`) VALUES ('HackerEarth - \"CODE IN GBU\"', 'Various coding competitions are organised on HackerEarth platform under the series \"Code-In-GBU\". Link:https://www.hackerearth.com/code-in-gbu/');");
+        array_push($u->updates, "UPDATE `stu_chapters` SET Title= 'HackerEarth \"CODE IN GBU\"', Description = 'Various coding competitions are organised on HackerEarth platform under the series \"Code-In-GBU\". <a href = \"https://www.hackerearth.com/code-in-gbu/\">For more info click here</a>' WHERE Title = 'HackerEarth - \"CODE IN GBU\"';");
+        array_push($u->updates, "UPDATE `stu_chapters` SET Title='Codechef-GBU Campus Chapter',Description='A community to enhance coding among the students of GBU.<a href =\"https://www.codechef.com/campus_chapter/CodeChef-GBU\"> Codechef-GBU</a>' WHERE Title = 'Codechef-GBU Campus Chapter';");
+        array_push($u->updates, "UPDATE `placements` SET Title = 'Placement 2015',Link='resources/placements/p2015.PDF' WHERE Title = 'Placement 2015';");
+        array_push($u->updates, "INSERT INTO `placements` (`Title`, `Link`) VALUES ('Placement 2014 ','resources/placements/p2014.PDF');");
+        array_push($u->updates, "INSERT INTO `placements` (`Title`, `Link`) VALUES ('Placement 2013', 'resources/placements/p2013.PDF');");
+        array_push($u->updates, "INSERT INTO `placements` (`Title`, `Link`) VALUES ('Placement 2012', 'resources/placements/p2012.PDF');");
+        array_push($u->updates, "INSERT INTO `placements` (`Title`, `Link`) VALUES ('Placement 2011', 'resources/placements/p2011.PDF');");
+        array_push($u->updates, "INSERT INTO `placements` (`Title`, `Link`) VALUES ('Placement 2010', 'resources/placements/p2010.PDF');");
+        array_push($u->updates, "ALTER TABLE `placements` ADD `ID` INT NOT NULL AUTO_INCREMENT AFTER `Title`, ADD PRIMARY KEY (`ID`);");
+        array_push($u->updates, "DELETE FROM `downloads` WHERE Title = 'C Cleaner';");
+        array_push($update_list, $u);
         unset($u);
-		
-		$u = new update;
-	$u->version = 1.7;
-	array_push($u->updates,"UPDATE `gbuonline`.`vnb` SET `link` = 'resources/notices/GBU_Academic_Scholarship_Notice_24July2015.jpg' WHERE `vnb`.`id` = 1;");
-	array_push($u->updates,"UPDATE `gbuonline`.`vnb` SET `link` = 'resources/notices/Notice_RegistrationFee_23July2015.jpg' WHERE `vnb`.`id` = 2;");
-		array_push($u->updates,"UPDATE `gbuonline`.`vnb` SET `link` = 'resources/ notices/MOU_NSDC_DOC_1July15.pdf' WHERE `vnb`.`id` = 3;");
-		array_push($u->updates,"UPDATE `gbuonline`.`vnb` SET `link` = 'resources/notices/Notification_Late Fee_Odd SemReg_21July15.pdf' WHERE `vnb`.`id` = 5;");
-		array_push($u->updates,"UPDATE `gbuonline`.`vnb` SET `link` = 'resources/ notices/PO_Stores_Cancel_Seven Star_26June15.jpg' WHERE `vnb`.`id` = 6;");
 
-	
-	array_push($update_list, $u);
-	unset($u);
-		
+        $u = new update;
+        $u->version = 1.5;
+        array_push($u->updates, "DELETE FROM placements where id='1' or id='3' ");
+        array_push($update_list, $u);
+        unset($u);
+
+        $u = new update;
+        $u->version = 1.6;
+        array_push($u->updates, "UPDATE `vnb` SET `link` = 'resources\\notices\\images\\GBU_Academic_Scholarship_Notice_24July2015.jpg' WHERE `vnb`.`id` = 1; ");
+        array_push($u->updates, "UPDATE `vnb` SET `link` = 'resources\\notices\\images\\Notice_RegistrationFee_23July2015.jpg' WHERE `vnb`.`id` = 2;");
+        array_push($u->updates, "UPDATE `vnb` SET `link` = 'resources\\notices\\MOU_NSDC_DOC_1July15.pdf' WHERE `vnb`.`id` = 3;");
+        array_push($u->updates, "UPDATE `vnb` SET `link` = 'resources\\notices\\Notification_Late Fee_Odd SemReg_21July15.pdf' WHERE `vnb`.`id` = 5;");
+        array_push($u->updates, "UPDATE `vnb` SET `link` = 'resources\\notices\\PO_Stores_Cancel_Seven Star_26June15.jpg' WHERE `vnb`.`id` = 6;");
+        array_push($update_list, $u);
+        unset($u);
+
+        $u = new update;
+        $u->version = 1.7;
+        array_push($u->updates, "UPDATE `vnb` SET `link` = 'resources/notices/GBU_Academic_Scholarship_Notice_24July2015.jpg' WHERE `vnb`.`id` = 1;");
+        array_push($u->updates, "UPDATE `vnb` SET `link` = 'resources/notices/Notice_RegistrationFee_23July2015.jpg' WHERE `vnb`.`id` = 2;");
+        array_push($u->updates, "UPDATE `vnb` SET `link` = 'resources/ notices/MOU_NSDC_DOC_1July15.pdf' WHERE `vnb`.`id` = 3;");
+        array_push($u->updates, "UPDATE `vnb` SET `link` = 'resources/notices/Notification_Late Fee_Odd SemReg_21July15.pdf' WHERE `vnb`.`id` = 5;");
+        array_push($u->updates, "UPDATE `vnb` SET `link` = 'resources/ notices/PO_Stores_Cancel_Seven Star_26June15.jpg' WHERE `vnb`.`id` = 6;");
+
+
+        array_push($update_list, $u);
+        unset($u);
+
         $this->run_upgrades($update_list);
-        redirect("login" . "?" . $_SERVER['QUERY_STRING'] );
+        redirect("login" . "?" . $_SERVER['QUERY_STRING']);
     }
 
     function run_upgrades($update_list) {
