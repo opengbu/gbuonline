@@ -23,7 +23,7 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Enter roll number..." name="sname">
+                    <input type="text" class="form-control" placeholder="Eg: yr/branch/roll_num" name="sname">
                     <span class="input-group-btn">
                     <button class="btn btn-default" type="submit">Search</button>
                     </span>

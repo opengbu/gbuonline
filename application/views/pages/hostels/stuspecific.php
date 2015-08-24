@@ -19,10 +19,10 @@
                 <label class="col-sm-4">Name : </label><?php  echo $rows->stu_name ?>
             </p>
             <p>
-                <label class="col-sm-4">Course : </label><?php  echo $rows->stu_course ?>
+                <label class="col-sm-4">Registration Number : </label><?php  echo $rows->roll_number ?>
             </p>
             <p>
-                <label class="col-sm-4">Hostel Name : </label><?php  echo $rows->stu_hname ?>
+                <label class="col-sm-4">Contact Details : </label><?php  echo $rows->stu_hname ?>
             </p>
         </div>
 <?php
