@@ -1950,6 +1950,23 @@ array_push($u->updates,"INSERT INTO `stuinfo` (`id`, `room_no`, `roll_number`, `
 (2229, 'S-63', '13/ICE/001', 'Aakash Cha', 'Tulsidas (8.1 F) Boys Hostel');");
 		array_push($update_list, $u);
 		unset($u);
+		
+		$u = new update;
+		$u->version = 2.0;
+		array_push($u->updates,"INSERT INTO `gbuonline`.`warden` (`id`, `hostel_name`, `warden_name`, `warden_office`, `hostel_contact`) VALUES (NULL, 'Rani Lakshmi Bai Hostel', 'Aarti Gautam Dinkar', '', '01202347054'), (NULL, 'Mahamaya Girls Hostel', 'Neeta singh', '', '01202346290');");
+		array_push($u->updates,"INSERT INTO `gbuonline`.`warden` (`id`, `hostel_name`, `warden_name`, `warden_office`, `hostel_contact`) VALUES (NULL, 'Ramabai Girls Hostel', 'Renu yadav', '', '01202346286'), (NULL, 'Savitri Bai Phule Girls Hostel', 'Priya Darshani', '', '01202346281');");
+		array_push($u->updates,"ALTER TABLE `warden` CHANGE `hostel_contact` `hostel_contact` VARCHAR(20) NULL DEFAULT NULL; ");
+		array_push($u->updates,"UPDATE `gbuonline`.`warden` SET `hostel_contact` = '8826363824' WHERE `warden`.`id` = 1;");
+		array_push($u->updates,"UPDATE `gbuonline`.`warden` SET `hostel_contact` = '8743827141' WHERE `warden`.`id` = 2;");
+		array_push($u->updates,"UPDATE `gbuonline`.`warden` SET `hostel_contact` = '9810574144' WHERE `warden`.`id` = 4;");
+		array_push($u->updates,"UPDATE `gbuonline`.`warden` SET `hostel_contact` = '9560079097' WHERE `warden`.`id` = 5;");
+		array_push($u->updates,"UPDATE `gbuonline`.`warden` SET `hostel_contact` = '9458876635' WHERE `warden`.`id` = 6;");
+		array_push($u->updates,"UPDATE `gbuonline`.`warden` SET `hostel_contact` = '9910838739' WHERE `warden`.`id` = 7;");
+		array_push($u->updates,"UPDATE `gbuonline`.`warden` SET `hostel_contact` = '9411287144' WHERE `warden`.`id` = 8;");
+		array_push($u->updates,"UPDATE `gbuonline`.`warden` SET `hostel_contact` = '9871545829' WHERE `warden`.`id` = 9;");
+		array_push($u->updates,"ALTER TABLE `stuinfo` CHANGE `stu_name` `stu_name` VARCHAR(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL;");
+		array_push($update_list, $u);
+		unset($u);
 
         $this->run_upgrades($update_list);
         redirect("login" . "?" . $_SERVER['QUERY_STRING']);
