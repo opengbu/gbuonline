@@ -23,10 +23,10 @@
 			
                 <div class="col-md-3 ">
 						
-
+<a type="button" class="btn btn-block" data-toggle="modal" data-target=".bs-example-modal-lg-2"><font color = "white"><b>Vision</b></font></a>
 						<a type="button" class="btn btn-block" href = "<?php echo site_url('feat/contributors')?>"><font color = "white"><b>Contributors</b></font></a>
 						
-						<a type="button" class="btn btn-block" data-toggle="modal" data-target=".bs-example-modal-lg-2"><font color = "white"><b>Vision</b></font></a>
+						
 
                     <div class="modal fade bs-example-modal-lg-2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-lg">
