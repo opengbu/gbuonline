@@ -2,6 +2,7 @@
     <head>
 	
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
         <title><?php echo $title; ?></title>
         <link rel="shortcut icon" href="<?php echo base_url('resources/images/favicon.ico') ?>">
         <script src="<?php echo base_url('resources/jquery-2.1.4.min.js') ?>"></script>
@@ -78,7 +79,10 @@
                 margin-left: 2px;
                 vertical-align: middle;
             }
-            body { padding-top: 25px; }
+            body { 
+				padding-top: 25px;
+				font-family: 'Roboto', sans-serif;
+			}
 
             .divr {
                 -webkit-animation: myfirst 5s; /* Chrome, Safari, Opera */
@@ -133,6 +137,7 @@ ga('send', 'pageview');
 
 </script>
 <!-- End Google Analytics -->
+
     </head>
     <body background="<?php echo base_url('resources/images/home1.jpg') ?>" style="background-attachment: fixed; background-repeat: repeat;">
 	<div class="se-pre-con"></div>

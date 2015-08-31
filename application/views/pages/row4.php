@@ -76,23 +76,49 @@
             }
             ?>
         </div>
-
+	
+	<!--Extras-->
+	
         <div class="col-md-3">
-            <h2 align="center"><font face="Times New Roman"><b>Extras</b></font></h2>
+            <h2 align="center"><font face="Times New Roman"><b>Quick Links</b></font></h2>
             <hr>
-
-                        <a href="<?php echo base_url('resources/images/ac-15-16.jpg') ?>" class="thumbnail" target="_blank" style="text-decoration:none;">								
-							<img src="<?php echo base_url('resources/images/cards/calendar-new-100-100f.png') ?>" alt="">			
+						
+					<div class="row">
+					<div class="col-md-6">
+                        <a href="<?php echo base_url('resources/images/ac-15-16.jpg') ?>" class="thumbnail" target="_blank" style="text-decoration:none;">
+							<img src="<?php echo base_url('resources/images/cards/front/calendar-100-100.png') ?>"  alt="">
 						</a>
+					</div>
+					<div class="col-md-6">
 						<a href="<?php echo base_url('resources/holidays-2015.pdf') ?>" class="thumbnail" target="_blank" style="text-decoration:none;">
-							<img src="<?php echo base_url('resources/images/cards/holiday-new-100-100f.png') ?>" alt="">
+							<img src="<?php echo base_url('resources/images/cards/front/holiday-100-100.png') ?>"  alt="">			
 						</a>
+					</div>
+					</div>
+					<div class="row">
+					<div class="col-md-6">
+						<a href="http://172.25.5.15/moodle" target="_blank" class="thumbnail" style="text-decoration:none;">	
+							<img src="<?php echo base_url('resources/images/cards/front/moodle-100-100.jpg') ?>"  alt="">			
+						</a>
+					</div>
+					<div class="col-md-6">
 						<a href="<?php echo site_url('exams/exams_home') ?>" class="thumbnail" style="text-decoration:none;">
-							<img src="<?php echo base_url('resources/images/cards/exams-new-100-100f.jpg') ?>" alt="">
+							<img src="<?php echo base_url('resources/images/cards/front/exams-100-100.jpg') ?>"  alt="">			
 						</a>
-						<a href="<?php echo site_url('ebooks/ebooks_home') ?>" class="thumbnail" style="text-decoration:none;">
-							<img src="<?php echo base_url('resources/images/cards/ebooks-new-100-100f.png') ?>" alt="">
+					</div>
+					</div>
+					<div class="row">
+					<div class="col-md-6">
+						<a href="<?php echo site_url('ebooks/ebooks_home') ?>" class="thumbnail" style="text-decoration:none;">	
+							<img src="<?php echo base_url('resources/images/cards/front/ebooks-100-100.png') ?>"  alt="">			
 						</a>
+					</div>
+					<div class="col-md-6">
+						<a href="http://172.25.5.15/refbase" target="_blank" class="thumbnail" style="text-decoration:none;">	
+							<img src="<?php echo base_url('resources/images/cards/front/publications-100-100.png') ?>"  alt="">			
+						</a>
+					</div>
+					</div>
 
         </div>
     </div>
