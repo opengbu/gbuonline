@@ -24,57 +24,9 @@
                 <div class="col-md-3 ">
 						
 
-						<a type="button" class="btn btn-block" data-toggle="modal" data-target=".bs-example-modal-lg-1"><font color = "white"><b>Team</b></font></a>
+						<a type="button" class="btn btn-block" href = "<?php echo site_url('feat/contributors')?>"><font color = "white"><b>Contributors</b></font></a>
 						
-                    <div class="modal fade bs-example-modal-lg-1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-lg">
-                            <div class="modal-content">
-                                <center> 
-                                    <hr>
-                                    We are a group of 6 students working under guidance of <br><b>Dr. Amit K. Awasthi.</b> <hr>
-                                </center>
-                                <center>     
-                                    <ul>
-                                        <i>
-                                            <div class="row">
-                                                <div class="col-sm-4">
-                                                    <img src="<?php echo base_url('resources/images/varun.jpg') ?>" height ="120" width="120"><br><b>VARUN GARG </b>(Admin/User Panel)
-                                                </div>
-                                                <div class="col-sm-4">
-                                                    <img src="<?php echo base_url('resources/images/shobhit.jpg') ?>" height ="120" width="120"><br><b>SHOBHIT SHARMA</b> (Hostel Management System)
-                                                </div>
-
-                                                <div class="col-sm-4">
-                                                    <img src="<?php echo base_url('resources/images/bhawesh.jpg') ?>" height ="120" width="120"><br><b>BHAWESH CHANDOLA</b> (Front End Database Connectivity)
-
-                                                </div>
-                                            </div>
-                                            <hr>
-                                            <div class="row">
-                                                <div class="col-sm-4">
-                                                    <img src="<?php echo base_url('resources/images/sarthak.jpg') ?>" height ="120" width="120"><br><b>SARTHAK GARG</b> (Front End Designer)<br>
-                                                </div>
-                                                <div class="col-sm-4">
-                                                    <img src="<?php echo base_url('resources/images/rajat.jpg') ?>" height ="120" width="120"><br><b>RAJAT SAXENA</b> (Front End Designer)<br>
-                                                </div>
-                                                <div class="col-sm-4">
-                                                    <img src="<?php echo base_url('resources/images/shrey.jpg') ?>" height ="120" width="120"><br><b>SHREY KAPOOR</b> (Site Ambassador/Marketting Head)<br>
-                                                </div>
-                                            </div>
-
-
-                                        </i>      
-
-                                    </ul>
-                                    <hr>
-                                </center>
-                            </div>
-                        </div>
-                    </div>
-
-                    
-                    
-                    <a type="button" class="btn btn-block" data-toggle="modal" data-target=".bs-example-modal-lg-2"><font color = "white"><b>Vision</b></font></a>
+						<a type="button" class="btn btn-block" data-toggle="modal" data-target=".bs-example-modal-lg-2"><font color = "white"><b>Vision</b></font></a>
 
                     <div class="modal fade bs-example-modal-lg-2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-lg">
@@ -200,7 +152,7 @@
         <div class = "col-md-3">
 		<a href = "<?php echo site_url('feat/tou')?>"><font color = "white"><b>Terms of use</b></font></a><br><br>
 <a href = "https://github.com/opengbu/gbuonline" target="_blank"><font color = "white"><b>GitHub</b></font></a><br><br>
-<a href = "<?php echo site_url('feat/feedback')?>" ><font color = "white"><b>Feedback</b></font></a><br><br>
+		<a href = "<?php echo site_url('feat/feedback')?>" ><font color = "white"><b>Feedback</b></font></a><br><br>
 <a href = ""><font color = "white"><b>Advertise</b></font></a>
 		</div>
 		
