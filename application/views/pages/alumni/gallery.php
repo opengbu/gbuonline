@@ -1,3 +1,8 @@
+<script>
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
 <div class="container-fluid" style=" margin-right: 10px; margin-left: 10px;" >
     <div class="row">
 	
@@ -16,65 +21,65 @@
 	
 	
 <div class="col-xs-6 col-md-3">
-    <a href="<?php echo base_url('resources/alumni_gallery/willsmith.jpeg')?>" class="thumbnail">
-      <img src="<?php echo base_url('resources/alumni_gallery/willsmith.jpeg')?>" alt="">
+    <a href="<?php echo base_url('resources/alumni_gallery/willsmith.jpeg')?>" class="thumbnail" >
+      <img src="<?php echo base_url('resources/alumni_gallery/willsmith.jpeg')?>" alt="" data-toggle="tooltip" data-placement="top" title="Tooltip on bottom">
     </a>
   </div>
 <div class="col-xs-6 col-md-3">
-    <a href="<?php echo base_url('resources/alumni_gallery/willsmith.jpeg')?>" class="thumbnail">
-      <img src="<?php echo base_url('resources/alumni_gallery/willsmith.jpeg')?>" alt="">
+    <a href="<?php echo base_url('resources/alumni_gallery/willsmith.jpeg')?>" class="thumbnail" >
+      <img src="<?php echo base_url('resources/alumni_gallery/willsmith.jpeg')?>" alt="" data-toggle="tooltip" data-placement="top" title="Tooltip on bottom">
     </a>
   </div>
 <div class="col-xs-6 col-md-3">
-    <a href="<?php echo base_url('resources/alumni_gallery/willsmith.jpeg')?>" class="thumbnail">
-      <img src="<?php echo base_url('resources/alumni_gallery/willsmith.jpeg')?>" alt="">
+    <a href="<?php echo base_url('resources/alumni_gallery/willsmith.jpeg')?>" class="thumbnail" >
+      <img src="<?php echo base_url('resources/alumni_gallery/willsmith.jpeg')?>" alt="" data-toggle="tooltip" data-placement="top" title="Tooltip on bottom">
     </a>
   </div>
 <div class="col-xs-6 col-md-3">
-    <a href="<?php echo base_url('resources/alumni_gallery/willsmith.jpeg')?>" class="thumbnail">
-      <img src="<?php echo base_url('resources/alumni_gallery/willsmith.jpeg')?>" alt="">
+    <a href="<?php echo base_url('resources/alumni_gallery/willsmith.jpeg')?>" class="thumbnail" >
+      <img src="<?php echo base_url('resources/alumni_gallery/willsmith.jpeg')?>" alt="" data-toggle="tooltip" data-placement="top" title="Tooltip on bottom">
     </a>
   </div>
 <br>
 <div class="col-xs-6 col-md-3">
-    <a href="<?php echo base_url('resources/alumni_gallery/willsmith.jpeg')?>" class="thumbnail">
-      <img src="<?php echo base_url('resources/alumni_gallery/willsmith.jpeg')?>" alt="">
+    <a href="<?php echo base_url('resources/alumni_gallery/willsmith.jpeg')?>" class="thumbnail" >
+      <img src="<?php echo base_url('resources/alumni_gallery/willsmith.jpeg')?>" alt="" data-toggle="tooltip" data-placement="top" title="Tooltip on bottom">
     </a>
   </div>
 <div class="col-xs-6 col-md-3">
-    <a href="<?php echo base_url('resources/alumni_gallery/willsmith.jpeg')?>" class="thumbnail">
-      <img src="<?php echo base_url('resources/alumni_gallery/willsmith.jpeg')?>" alt="">
+    <a href="<?php echo base_url('resources/alumni_gallery/willsmith.jpeg')?>" class="thumbnail" >
+      <img src="<?php echo base_url('resources/alumni_gallery/willsmith.jpeg')?>" alt="" data-toggle="tooltip" data-placement="top" title="Tooltip on bottom">
     </a>
   </div>
 <div class="col-xs-6 col-md-3">
-    <a href="<?php echo base_url('resources/alumni_gallery/willsmith.jpeg')?>" class="thumbnail">
-      <img src="<?php echo base_url('resources/alumni_gallery/willsmith.jpeg')?>" alt="">
+    <a href="<?php echo base_url('resources/alumni_gallery/willsmith.jpeg')?>" class="thumbnail" >
+      <img src="<?php echo base_url('resources/alumni_gallery/willsmith.jpeg')?>" alt="" data-toggle="tooltip" data-placement="top" title="Tooltip on bottom">
     </a>
   </div>
 <div class="col-xs-6 col-md-3">
-    <a href="<?php echo base_url('resources/alumni_gallery/willsmith.jpeg')?>" class="thumbnail">
-      <img src="<?php echo base_url('resources/alumni_gallery/willsmith.jpeg')?>" alt="">
+    <a href="<?php echo base_url('resources/alumni_gallery/willsmith.jpeg')?>" class="thumbnail" >
+      <img src="<?php echo base_url('resources/alumni_gallery/willsmith.jpeg')?>" alt="" data-toggle="tooltip" data-placement="top" title="Tooltip on bottom">
     </a>
   </div>
   <br>
   <div class="col-xs-6 col-md-3">
-    <a href="<?php echo base_url('resources/alumni_gallery/willsmith.jpeg')?>" class="thumbnail">
-      <img src="<?php echo base_url('resources/alumni_gallery/willsmith.jpeg')?>" alt="">
+    <a href="<?php echo base_url('resources/alumni_gallery/willsmith.jpeg')?>" class="thumbnail" >
+      <img src="<?php echo base_url('resources/alumni_gallery/willsmith.jpeg')?>" alt="" data-toggle="tooltip" data-placement="top" title="Tooltip on bottom">
     </a>
   </div>
 <div class="col-xs-6 col-md-3">
-    <a href="<?php echo base_url('resources/alumni_gallery/willsmith.jpeg')?>" class="thumbnail">
-      <img src="<?php echo base_url('resources/alumni_gallery/willsmith.jpeg')?>" alt="">
+    <a href="<?php echo base_url('resources/alumni_gallery/willsmith.jpeg')?>" class="thumbnail" >
+      <img src="<?php echo base_url('resources/alumni_gallery/willsmith.jpeg')?>" alt="" data-toggle="tooltip" data-placement="top" title="Tooltip on bottom">
     </a>
   </div>
 <div class="col-xs-6 col-md-3">
-    <a href="<?php echo base_url('resources/alumni_gallery/willsmith.jpeg')?>" class="thumbnail">
-      <img src="<?php echo base_url('resources/alumni_gallery/willsmith.jpeg')?>" alt="">
+    <a href="<?php echo base_url('resources/alumni_gallery/willsmith.jpeg')?>" class="thumbnail" >
+      <img src="<?php echo base_url('resources/alumni_gallery/willsmith.jpeg')?>" alt="" data-toggle="tooltip" data-placement="top" title="Tooltip on bottom">
     </a>
   </div>
 <div class="col-xs-6 col-md-3">
-    <a href="<?php echo base_url('resources/alumni_gallery/willsmith.jpeg')?>" class="thumbnail">
-      <img src="<?php echo base_url('resources/alumni_gallery/willsmith.jpeg')?>" alt="">
+    <a href="<?php echo base_url('resources/alumni_gallery/willsmith.jpeg')?>" class="thumbnail" >
+      <img src="<?php echo base_url('resources/alumni_gallery/willsmith.jpeg')?>" alt="" data-toggle="tooltip" data-placement="top" title="Tooltip on bottom">
     </a>
   </div>
 </div>
