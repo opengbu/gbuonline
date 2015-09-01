@@ -152,6 +152,19 @@
             <a href="https://gbuonline.wordpress.com" target="_blank"><font size="2"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Reviews</font></a>
       </ul>
         <ul class="nav navbar-nav  pull-right">
+		
+		<li>
+			<form action="<?=site_url('feat/search_results/')?>" method="get">
+			<div class="input-group input-group-sm" style="padding-top:10px; margin-bottom:-10px;">
+				<input type="text" class="form-control" name="q" placeholder="Search for..." style="width: 125px;">
+					<span class="input-group-btn">
+						<button type="submit" class="btn btn-primary" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+					</span>
+			</div>
+			</form>
+				 
+		</li>
+		
         <li>
             <?php 
              if($this->session->userdata('loggedin') != 1)
@@ -190,5 +203,4 @@
      </div>
     </nav>
     </div><!--row1 for header-->
-
 

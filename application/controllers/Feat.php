@@ -159,4 +159,17 @@ class Feat extends CI_Controller {
 		$this->load->view('pages/common/footer');
 	}
 	
+	public function search_results()
+	{
+        $data['title'] = 'Search Results &nbsp;|&nbsp;  GBU Online';
+		$data['heading'] ='Search Results';
+		$data['message'] = '';
+		$this->load->view('pages/common/link',$data);
+		$this->load->view('pages/common/header');
+		$this->load->view('pages/common/page-heading',$data);
+		$this->load->view('pages/googlecse');
+		$this->load->view('pages/common/extras');
+		$this->load->view('pages/common/footer');
+	}
+	
 }	
