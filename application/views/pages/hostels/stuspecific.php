@@ -22,7 +22,7 @@
                 <label class="col-sm-4">Registration Number : </label><?php  echo $rows->roll_number ?>
             </p>
             <p>
-                <label class="col-sm-4">Contact Details : </label><?php  echo $rows->stu_hname ?>
+                <label class="col-sm-4">Contact Details : </label><?php  echo $rows->room_no . "," .$rows->stu_hname ?>
             </p>
         </div>
 <?php

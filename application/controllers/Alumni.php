@@ -44,7 +44,7 @@ class Alumni extends CI_Controller {
         $this->load->view('pages/common/link', $data);
         $this->load->view('pages/common/header');
         $this->load->view('pages/common/page-heading', $data);
-        $this->load->view('pages/alumni/list');
+        $this->load->view('pages/alumni/alumniList');
         $this->load->view('pages/common/footer');
     }
 

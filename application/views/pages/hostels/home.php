@@ -19,7 +19,6 @@
    </div>
 <br/>
    
-   <font style="font-family:Comic Sans MS, cursive, sans-serif">
    <div style="padding-top:5px;padding-left:10px;">
 		<b>Here's a list of operational and soon to be operational hostels:</b>
 		<button type="button" class="btn btn-block" data-toggle="modal" data-target=".bs-example-modal-lg-51"><b>Hostels: Home Away From Home</b></button>
@@ -184,7 +183,7 @@
 							<div class="modal-content">
              
 								<center> 
-								<font style="font-family:Verdana, Geneva, sans-serif">
+					
 								
 								<hr>
 									Within Life On Campus</b> <hr><hr/>
@@ -278,31 +277,6 @@
         </div>
     </div>
 	
-	
-	
-		<!--<div class="jumbotron" style="background-color:#2D2D2D">
-		<h2 style="padding-left:10px;"><font color="#EAEAEA">FACILITIES</h2>
-		<p  style="padding-left:12px;">
-			<font color="#EAEAEA"><small>
-				Many Students consider quality of life as one of the important factors while choosing a
-				College/University. We at GBU provide you a decent stay and the best possible learning
-				environment.<br/> The stay at campus would certainly provide a wealth of experience by developing
-				qualities such as comradeship and social responsibility. Gautam Buddha University offers
-				separate hostel facility for boys and girls. Each hostel has spacious and well furnished
-				rooms offering a plush, modern lifestyle<br/>
-			</font></small>
-		</p>
-		<p><font color="#EAEAEA"><small>GALLERY</small></p>
-	</div>
-	<hr>
-	
-	<div class="jumbotron" style="background-color:#2D2D2D">
-		<h2 style="padding-left:10px;"><font color="#EAEAEA">INFO</font></h2>
-		<p  style="padding-left:12px;"><font color="#EAEAEA">.......................<br/>.......................</p>
-	</div>
-	
-	
-	-->
-	</font>
+
 	</div>
    
