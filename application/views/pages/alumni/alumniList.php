@@ -1,8 +1,22 @@
 <div class="container-fluid" style=" margin-right: 10px; margin-left: 10px;" >  
 <div class="row">
+
+
+	<div class="well well-sm">
+		<ul class="nav nav-pills nav-justified">
+  <li role="presentation"><a href="<?= site_url('alumni');?>">Home</a></li>
+  <li role="presentation"><a href="<?= site_url('alumni/distinguished');?>">Distinguished Alumni</a></li>
+  <li role="presentation" class="active"><a href="<?= site_url('alumni/alumniList');?>">Alumni List</a></li>
+  <li role="presentation"><a href="<?= site_url('alumni/events');?>">Events</a></li>
+  <li role="presentation"><a href="<?= site_url('alumni/gallery');?>">Gallery</a></li>
+  <li role="presentation"><a href="<?= site_url('alumni');?>">Manage Profile</a></li>
+		</ul>
+	</div>
+		<br> 
+
     <div class="dropdown" style="margin-left:970px;size:25px">
 					
-					<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="size:25px;margin-top:-80px;">
+					<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="size:25px;margin-top:-30px;">
 						Sort By :
 						<span class="caret"></span>
 					</button>
@@ -15,7 +29,7 @@
 					</ul>
 				    
 				</div>   
-    </div><br/>
+    <br/>
     <div class="jumbotron" >
         <div class="row"><font face="Georgia Bold">
             <div class="col-md-3"><b>Name</b></div>
@@ -56,8 +70,9 @@
         <?php
             }
         ?>
-            </div>
+    </div>
                    
         
     </div>
 </div>
+<br/>
