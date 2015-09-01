@@ -1961,6 +1961,38 @@ class Upgrade extends CI_Controller {
 (4070, 'S-63', '13/ICE/001', 'Aakash Chaudhary', 'Tulsidas (8.1 F) Boys Hostel');");
 		array_push($update_list, $u);
 		unset($u);
+		
+		 $u = new update;
+        $u->version = 2.3;
+        array_push($u->updates, "CREATE TABLE IF NOT EXISTS `alumni_basic` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `dob` varchar(100) NOT NULL,
+  `address` text NOT NULL,
+  `gender` varchar(100) NOT NULL,
+  `marital_status` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;");
+        array_push($u->updates, "CREATE TABLE IF NOT EXISTS `edu_info` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `start_year` varchar(100) NOT NULL,
+  `passout_year` varchar(100) NOT NULL,
+  `course_name` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;");
+        array_push($u->updates, "CREATE TABLE IF NOT EXISTS `work_details` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `start_year` varchar(100) NOT NULL,
+  `end_year` text NOT NULL,
+  `company_name` varchar(100) NOT NULL,
+  `location` varchar(100) NOT NULL,
+  `designation` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;");
+        array_push($update_list, $u);
+        unset($u);
 
         $this->run_upgrades($update_list);
         redirect("login" . "?" . $_SERVER['QUERY_STRING']);
