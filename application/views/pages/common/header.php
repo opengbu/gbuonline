@@ -158,7 +158,7 @@
 			<div class="input-group input-group-sm" style="padding-top:10px; margin-bottom:-10px;">
 				<input type="text" class="form-control" name="q" placeholder="Search for..." style="width: 125px;">
 					<span class="input-group-btn">
-						<button type="submit" class="btn btn-primary" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+						<button type="submit" class="btn btn-primary" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>				
 					</span>
 			</div>
 			</form>
@@ -170,7 +170,7 @@
              if($this->session->userdata('loggedin') != 1)
              {
             ?>
-                 <a href="<?php echo base_url('users')?>"><font size="2"><span class="glyphicon glyphicon-user " aria-hidden="true"></span>&nbsp;Login</font></a>
+                 <a href="<?php echo base_url('users')?>"><font size="2">&nbsp;&nbsp;<span class="glyphicon glyphicon-user " aria-hidden="true"></span>&nbsp;Login</font></a>
             <?php
              }
              else
