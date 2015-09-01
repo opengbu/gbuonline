@@ -98,5 +98,46 @@ class Alumni extends CI_Controller {
         $this->load->view('pages/alumni/distinguished');
         $this->load->view('pages/common/footer');
     }
+	public function d_name() {
+        $data['title'] = 'Alumni &nbsp;|&nbsp;  GBU Online';
+        $data['heading'] = ' Alumni List ';
+        $data['message'] = 'Let the world know you.....';
+        $this->load->view('pages/common/link', $data);
+        $this->load->view('pages/common/header');
+        $this->load->view('pages/common/page-heading', $data);
+        $this->load->view('pages/alumni/d_name');
+        $this->load->view('pages/common/footer');
+    }
+	 public function d_cname() {
+        $data['title'] = 'Alumni &nbsp;|&nbsp;  GBU Online';
+        $data['heading'] = ' Alumni List ';
+        $data['message'] = 'Let the world know you.....';
+        $this->load->view('pages/common/link', $data);
+        $this->load->view('pages/common/header');
+        $this->load->view('pages/common/page-heading', $data);
+        $this->load->view('pages/alumni/d_cname');
+        $this->load->view('pages/common/footer');
+    }
+    public function d_company() {
+        $data['title'] = 'Alumni &nbsp;|&nbsp;  GBU Online';
+        $data['heading'] = ' Alumni List ';
+        $data['message'] = 'Let the world know you.....';
+        $this->load->view('pages/common/link', $data);
+        $this->load->view('pages/common/header');
+        $this->load->view('pages/common/page-heading', $data);
+        $this->load->view('pages/alumni/d_company');
+        $this->load->view('pages/common/footer');
+    }
+
+    public function d_location() {
+        $data['title'] = 'Alumni &nbsp;|&nbsp;  GBU Online';
+        $data['heading'] = ' Alumni List';
+        $data['message'] = 'Let the world know you.....';
+        $this->load->view('pages/common/link', $data);
+        $this->load->view('pages/common/header');
+        $this->load->view('pages/common/page-heading', $data);
+        $this->load->view('pages/alumni/d_location');
+        $this->load->view('pages/common/footer');
+    }
 
 }

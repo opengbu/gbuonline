@@ -40,7 +40,7 @@
        </font></div><hr /><hr />
         
         <?php
-            $r=$this->db->query("select users.username,edu_info.course_name,work_details.location,work_details.company_name from users,edu_info,alumni_basic,work_details");
+            $r=$this->db->query("select users.username,edu_info.course_name,work_details.location,work_details.company_name from users,edu_info,alumni_basic,work_details order by company_name");
             $results=$r->result();
             
             foreach ($results as $rows)
