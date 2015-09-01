@@ -19,7 +19,7 @@
     <div class="jumbotron" >
         <div class="row"><font face="Georgia Bold">
             <div class="col-md-3"><b>Name</b></div>
-            <div class="col-md-3"><b>Alloted Course</b></div>
+            <div class="col-md-3"><b>Course Pursued</b></div>
             <div class="col-md-3"><b>Currently Working at</b></div>
             <div class="col-md-3"><b>Current Location</b></div>
        </font></div><hr /><hr />
