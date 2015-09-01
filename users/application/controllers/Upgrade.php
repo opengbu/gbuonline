@@ -1993,6 +1993,12 @@ class Upgrade extends CI_Controller {
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;");
         array_push($update_list, $u);
         unset($u);
+		
+		 $u = new update;
+        $u->version = 2.4;
+        array_push($u->updates, "ALTER TABLE `work_details` ADD `distinguished` INT NOT NULL DEFAULT '0' ;");       
+        array_push($update_list, $u);
+        unset($u);
 
         $this->run_upgrades($update_list);
         redirect("login" . "?" . $_SERVER['QUERY_STRING']);
