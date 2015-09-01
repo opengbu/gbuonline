@@ -37,9 +37,9 @@ class Alumni extends CI_Controller {
         $this->load->view('pages/common/footer');
     }
 
-    public function alumni_list() {
+    public function alumniList() {
         $data['title'] = 'Alumni &nbsp;|&nbsp;  GBU Online';
-        $data['heading'] = ' GBU Alumni ';
+        $data['heading'] = ' Alumni List ';
         $data['message'] = 'Let the world know you.....';
         $this->load->view('pages/common/link', $data);
         $this->load->view('pages/common/header');
