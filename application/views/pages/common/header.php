@@ -90,6 +90,9 @@
 			 </li>
           </ul>
         </li>
+		<li>
+	<a href="<?php echo base_url('')?>"style="text-decoration:none;"><font size="2"> <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>&nbsp;Alumni</font></a>	
+		</li>
 		<li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><font size="2">
               <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp;More</font><span class="caret"></span></a>
@@ -101,6 +104,7 @@
               
           </ul>
         </li>
+		 
         <!--
         <li>
             <a href="<?php echo site_url('feat/exams')?>"><font size="2"><span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span>&nbsp;Exams</font></a>
