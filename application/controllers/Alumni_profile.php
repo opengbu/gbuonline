@@ -29,6 +29,18 @@ class Alumni_profile extends CI_Controller {
         $this->form_validation->set_error_delimiters('<br /><span class="error">', '</span>');
     }
 
+    function basic_form_3() {
+
+        $this->load->helper('form');
+        $this->load->helper('url');
+        $this->load->library('form_validation');
+
+        $this->form_validation->set_rules('start_year', 'Start Year', 'required|max_length[15]');
+        $this->form_validation->set_rules('passout_year', 'passout Year', 'required|max_length[15]');
+        $this->form_validation->set_rules('course_name', 'Course Name', 'required|max_length[50]');
+        $this->form_validation->set_error_delimiters('<br /><span class="error">', '</span>');
+    }
+
     function create() {
         if ($this->session->userdata('loggedin') != 1)
             redirect('/users?redirect=' . current_url() . "?" . $_SERVER['QUERY_STRING']);
@@ -60,7 +72,8 @@ class Alumni_profile extends CI_Controller {
             );
 
 
-            $this->insert_basic($form_data);
+            $this->db->insert('alumni_basic', $form_data);
+
             redirect('Alumni_profile/success');
         }
     }
@@ -101,24 +114,9 @@ class Alumni_profile extends CI_Controller {
             );
 
 
-            $this->update_basic($form_data);
+            $this->db->update('alumni_basic', $form_data, "user_id = '" . $form_data['user_id'] . "'");
             redirect('Alumni_profile/update');
         }
-    }
-
-    function insert_basic($form_data) {
-        $this->db->insert('alumni_basic', $form_data);
-
-        if ($this->db->affected_rows() == '1') {
-            return TRUE;
-        }
-
-        return FALSE;
-    }
-
-    function update_basic($form_data) {
-
-        $this->db->update('alumni_basic', $form_data, "user_id = '" . $form_data['user_id'] . "'");
     }
 
     function view_work_info() {
@@ -177,7 +175,6 @@ class Alumni_profile extends CI_Controller {
             $this->load->view('pages/common/link', $data);
             $this->load->view('pages/common/header');
             $this->load->view('pages/common/page-heading', $data);
-            $u_info['user_id'] = $this->session->userdata('user_id');
 
             $query = $this->db->get_where('work_details', array('id' => $this->input->get('work_id')));
 
@@ -210,8 +207,90 @@ class Alumni_profile extends CI_Controller {
         redirect('Alumni_profile/view_work_info');
     }
 
-    function view() {
-        
+    function view_education_info() {
+        $data['title'] = 'Alumni &nbsp;|&nbsp;  GBU Online';
+        $data['heading'] = ' GBU Alumni ';
+        $data['message'] = 'Let the world know you.....';
+        $this->load->view('pages/common/link', $data);
+        $this->load->view('pages/common/header');
+        $this->load->view('pages/common/page-heading', $data);
+        $u_info['user_id'] = $this->session->userdata('user_id');
+        $this->load->view('pages/alumni/edu_info', $u_info);
+        $this->load->view('pages/common/footer');
+    }
+
+    function add_education_info() {
+        if ($this->session->userdata('loggedin') != 1)
+            redirect('/users?redirect=' . current_url() . "?" . $_SERVER['QUERY_STRING']);
+
+        $this->basic_form_3();
+
+
+        if ($this->form_validation->run() == FALSE) { // validation hasn't been passed
+            $data['title'] = 'Alumni &nbsp;|&nbsp;  GBU Online';
+            $data['heading'] = ' GBU Alumni ';
+            $data['message'] = 'Let the world know you.....';
+            $this->load->view('pages/common/link', $data);
+            $this->load->view('pages/common/header');
+            $this->load->view('pages/common/page-heading', $data);
+            $this->load->view('pages/alumni/edu_info_form');
+            $this->load->view('pages/common/footer');
+        } else {
+            $form_data = array(
+                'user_id' => $this->session->userdata('user_id'),
+                'start_year' => set_value('start_year'),
+                'passout_year' => set_value('passout_year'),
+                'course_name' => set_value('course_name'),
+            );
+
+
+            $this->db->insert('edu_info', $form_data);
+
+            redirect('Alumni_profile/view_education_info');
+        }
+    }
+
+    function edit_education_info() {
+        if ($this->session->userdata('loggedin') != 1)
+            redirect('/users?redirect=' . current_url() . "?" . $_SERVER['QUERY_STRING']);
+
+        $this->basic_form_3();
+
+
+        if ($this->form_validation->run() == FALSE) { // validation hasn't been passed
+            $data['title'] = 'Alumni &nbsp;|&nbsp;  GBU Online';
+            $data['heading'] = ' GBU Alumni ';
+            $data['message'] = 'Let the world know you.....';
+            $this->load->view('pages/common/link', $data);
+            $this->load->view('pages/common/header');
+            $this->load->view('pages/common/page-heading', $data);
+
+            $query = $this->db->get_where('edu_info', array('id' => $this->input->get('edu_id')));
+            $form_data = $query->row();
+
+            $this->load->view('pages/alumni/edu_info_form', $form_data);
+            $this->load->view('pages/common/footer');
+        } else {
+            $form_data = array(
+                'user_id' => $this->session->userdata('user_id'),
+                'start_year' => set_value('start_year'),
+                'passout_year' => set_value('passout_year'),
+                'course_name' => set_value('course_name'),
+            );
+
+            $this->db->update('edu_info', $form_data, "id = '" . $this->input->get('edu_id') . "'");
+            redirect('Alumni_profile/view_education_info');
+        }
+    }
+
+    function delete_edu() {
+
+        if ($this->session->userdata('loggedin') != 1)
+            redirect('/users?redirect=' . current_url() . "?" . $_SERVER['QUERY_STRING']);
+
+        $edu_id = $this->input->get('edu_id');
+        $this->db->query("delete from edu_info where id = '$edu_id'");
+        redirect('Alumni_profile/view_education_info');
     }
 
 }

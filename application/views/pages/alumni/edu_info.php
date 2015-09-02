@@ -24,21 +24,21 @@
             </ul>
         </div>
         <br>
-        <h3>Work Information</h3>
+        <h3>Education Information</h3>
         <br />
-        <a href="<?= base_url('alumni_profile/add_work_info') ?>" class="btn btn-primary btn-xs "> Add </a>
+        <a href="<?= base_url('alumni_profile/add_education_info') ?>" class="btn btn-primary btn-xs "> Add </a>
         <br /><br />
         <script>
             function del_ask(str, n)
             {
                 var x = confirm("Do you want to remove " + str + "?");
                 if (x === true)
-                    location.href = "<?= base_url('alumni_profile/delete_work?work_id=') ?>" + n;
+                    location.href = "<?= base_url('alumni_profile/delete_edu?edu_id=') ?>" + n;
             }
         </script>
 
         <?php
-        $select_rows = $this->db->query("select id,company_name,start_year,end_year,designation,location from work_details where work_details.user_id = '$user_id' ");
+        $select_rows = $this->db->query("select id,start_year,passout_year,course_name from edu_info where user_id = '$user_id' ");
         $sum = 0;
 
         if ($select_rows->num_rows() > 0) {
@@ -47,17 +47,14 @@
                 <b>
                     <li class="list-group-item">
                         <div class="row">
-                            <div class="col-sm-2">
-                                Company
-                            </div>
-                            <div class="col-sm-3">
-                                Location
+                            <div class="col-sm-6">
+                                Course
                             </div>
                             <div class="col-sm-2">
-                                Designation
+                                Start Year
                             </div>
-                            <div class="col-sm-3">
-                                Period
+                            <div class="col-sm-2">
+                                Passout Year
                             </div>
                             <div class="col-sm-2">
                                 Actions
@@ -70,21 +67,18 @@
                     ?>
                     <li class="list-group-item">
                         <div class="row">
-                            <div class="col-sm-2">
-                                <?= $row->company_name ?>
-                            </div>
-                            <div class="col-sm-3">
-                                <?= $row->location ?>
+                            <div class="col-sm-6">
+                                <?= $row->course_name ?>
                             </div>
                             <div class="col-sm-2">
-                                <?= $row->designation ?>
-                            </div>
-                            <div class="col-sm-3">
-                                <?= $row->start_year . ' - ' . $row->end_year ?>
+                                <?= $row->start_year ?>
                             </div>
                             <div class="col-sm-2">
-                                <a href="<?= base_url('alumni_profile/edit_work_info?work_id=' . $row->id) ?>" class="btn btn-xs btn-primary">Edit</a>
-                                <a onclick="del_ask('<?php echo$row->company_name ?>', '<?php echo$row->id ?>')" class=" btn btn-xs btn-danger"><i class="fa fa-trash-o fa-lg"></i> Delete</a>  
+                                <?= $row->passout_year ?>
+                            </div>
+                            <div class="col-sm-2">
+                                <a href="<?= base_url('alumni_profile/edit_education_info?edu_id=' . $row->id) ?>" class="btn btn-xs btn-primary">Edit</a>
+                                <a onclick="del_ask('<?php echo$row->course_name ?>', '<?php echo$row->id ?>')" class=" btn btn-xs btn-danger"><i class="fa fa-trash-o fa-lg"></i> Delete</a>  
                             </div>
                         </div>
                     </li>
@@ -94,7 +88,7 @@
                 ?>
                 <?php
             } else {
-                echo "<b>Nothing to Display, no work data found</b>";
+                echo "<b>Nothing to Display, no education information found</b>";
             }
             ?>
             <br>

@@ -57,68 +57,6 @@
 
 
     </div>
-
-    <script type="text/javascript">
-        function refresh_credits()
-        {
-            var credits_div = document.getElementById('total_credits');
-            credits_div.innerHTML = total_credits;
-        }
-        if (document.getElementById("total_credits") !== null)
-            refresh_credits();
-
-        var frm = $('#insert_record');
-        frm.submit(function (ev) {
-            $.ajax({
-                type: frm.attr('method'),
-                url: frm.attr('action'),
-                data: frm.serialize(),
-                success: function (msg) {
-                    if (document.getElementById("record_list") === null)
-                        window.location.reload();
-                    var obj = JSON.parse(msg);
-                    var error_list = document.getElementById('insert_errors');
-                    if (obj.result === "error")
-                    {
-                        error_list.innerHTML = obj.errors;
-                    }
-                    if (obj.result === "success")
-                    {
-                        var record_list = document.getElementById('record_list');
-                        var data = '<li class = "list-group-item" > \
-                                        <div class = "row" > \
-                                        <div class = "col-sm-2" > \
-                                        ' + obj.sub_code + ' \
-                                        </div> \
-                                        <div class = "col-sm-1" > \
-                                        ' + obj.nature_code + ' \
-                                        </div> \
-                                        <div class = "col-sm-7" > \
-                                        ' + obj.name + ' \
-                                        </div> \
-                                        <div class = "col-sm-1" > \
-                                        ' + obj.credit + ' \
-                                        </div> \
-                                        <div class = "col-sm-1" > \
-                                        <a onclick = \
-    "del_ask(\x27' + obj.record_id + '\x27, \x27' + obj.sub_code + '\x27, \x27' + obj.program + '\x27, \x27' + obj.semester + '\x27 )"\
-     class="pull-right btn btn-xs btn-danger"><i class="fa fa-trash-o fa-lg"></i> Delete </a>\
-                                        </div> \
-                                        </div> \
-                                        </li>';
-                        record_list.innerHTML = record_list.innerHTML + data;
-                        error_list.innerHTML = ""; //Remove old errors
-                        total_credits = total_credits + parseInt(obj.credit); // add new credits;
-                        refresh_credits();
-                    }
-                }
-            });
-
-
-            ev.preventDefault();
-        });
-    </script>
-
     <br>
 </div>
 </div>
