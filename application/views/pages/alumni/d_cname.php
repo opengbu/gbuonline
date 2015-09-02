@@ -8,7 +8,7 @@
   <li role="presentation"><a href="#">Alumni List</a></li>
   <li role="presentation"><a href="#">Events</a></li>
   <li role="presentation"><a href="#">Gallery</a></li>
-  <li role="presentation"><a href="#">Manage Profile</a></li>
+  <li role="presentation"><a href="<?= site_url('alumni_profile');?>">Alumni Profiles</a></li>
 		</ul>
 	</div>
 		<br> 

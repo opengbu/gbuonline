@@ -9,7 +9,7 @@
   <li role="presentation" class="active"><a href="<?= site_url('alumni/alumniList');?>">Alumni List</a></li>
   <li role="presentation"><a href="<?= site_url('alumni/events');?>">Events</a></li>
   <li role="presentation"><a href="<?= site_url('alumni/gallery');?>">Gallery</a></li>
-  <li role="presentation"><a href="<?= site_url('alumni');?>">Manage Profile</a></li>
+  <li role="presentation"><a href="<?= site_url('alumni_profile');?>">Alumni Profiles</a></li>
 		</ul>
 	</div>
 		<br> 

@@ -1,3 +1,10 @@
+<?php
+/*
+ *  Created on :Sep 02, 2015, 2:20:36 AM
+ *  Author     :Varun Garg <varun.10@live.com>
+ */
+?>
+
 <div class="container-fluid" style=" margin-right: 10px; margin-left: 10px;" >
     <div class="row">
 
@@ -8,7 +15,7 @@
                 <li role="presentation"><a href="<?= site_url('alumni/alumniList'); ?>">Alumni List</a></li>
                 <li role="presentation"><a href="<?= site_url('alumni/events'); ?>">Events</a></li>
                 <li role="presentation"><a href="<?= site_url('alumni/gallery'); ?>">Gallery</a></li>
-                <li role="presentation" class="active"><a href="<?= site_url('alumni'); ?>">Manage Profile</a></li>
+                <li role="presentation" class="active"><a href="<?= site_url('alumni_profile');?>">Alumni Profiles</a></li>
             </ul>
         </div>
         <br> 

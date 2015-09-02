@@ -1,3 +1,9 @@
+<?php
+/*
+ *  Created on :Sep 02, 2015, 2:20:36 AM
+ *  Author     :Varun Garg <varun.10@live.com>
+ */
+?>
 <div class="container-fluid" style=" margin-right: 10px; margin-left: 10px;" >
     <div class="row">
 
@@ -8,7 +14,7 @@
                 <li role="presentation"><a href="<?= site_url('alumni/alumniList'); ?>">Alumni List</a></li>
                 <li role="presentation"><a href="<?= site_url('alumni/events'); ?>">Events</a></li>
                 <li role="presentation"><a href="<?= site_url('alumni/gallery'); ?>">Gallery</a></li>
-                <li role="presentation" class="active"><a href="<?= site_url('alumni'); ?>">Manage Profile</a></li>
+                <li role="presentation" class="active"><a href="<?= site_url('alumni_profile'); ?>">Alumni Profiles</a></li>
             </ul>
         </div>
         <br> 
@@ -20,13 +26,13 @@
         <p>
             <label for="dob">Date Of birth <span class="required">*</span></label>
             <?php echo form_error('dob'); ?>
-            <br /><input class="form-control" id="dob" type="text" name="dob" maxlength="100" value="<?php echo set_value('dob',@$dob); ?>"  />
+            <br /><input class="form-control" id="dob" type="text" name="dob" maxlength="100" value="<?php echo set_value('dob', @$dob); ?>"  />
         </p>
 
         <p>
             <label for="address">Address <span class="required">*</span></label>
             <?php echo form_error('address'); ?>
-            <br /><input class="form-control" id="address" type="text" name="address"  value="<?php echo set_value('address',@$address); ?>"  />
+            <br /><input class="form-control" id="address" type="text" name="address"  value="<?php echo set_value('address', @$address); ?>"  />
         </p>
 
         <p>
@@ -42,7 +48,7 @@
             );
             ?>
 
-            <br /><?php echo form_dropdown('gender', $options, set_value('gender',@$gender), 'class="selectpicker"') ?>
+            <br /><?php echo form_dropdown('gender', $options, set_value('gender', @$gender), 'class="selectpicker"') ?>
         </p>                                             
 
         <p>
@@ -57,7 +63,7 @@
             );
             ?>
 
-            <br /><?php echo form_dropdown('marital_status', $options, set_value('marital_status',@$marital_status), 'class="selectpicker"') ?>
+            <br /><?php echo form_dropdown('marital_status', $options, set_value('marital_status', @$marital_status), 'class="selectpicker"') ?>
         </p>                                             
 
 
