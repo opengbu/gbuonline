@@ -40,31 +40,31 @@
        </font></div><hr /><hr />
         
         <?php
-            $r=$this->db->query("select users.username,edu_info.course_name,work_details.location,work_details.company_name from users,edu_info,alumni_basic,work_details order by company_name");
+            $r=$this->db->query("select users.username,edu_info.course_name,work_details.location,work_details.company_name from users,edu_info,alumni_basic,work_details where users.user_id=alumni_basic.user_id and work_details.distinguished=1 order by company_name");
             $results=$r->result();
             
             foreach ($results as $rows)
             {
         ?>
             <div class="row">    
-            <div class="col-md-2">
+            <div class="col-md-3">
             <?php
-                echo $row->username;
+                echo $rows->username;
             ?>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-3">
             <?php
-                echo $row->course_name;
+                echo $rows->course_name;
             ?>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-3">
             <?php
-                echo $row->company_name;
+                echo $rows->company_name;
             ?>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-3">
             <?php
-                echo $row->location;
+                echo $rows->location;
             ?>
             </div>
             </div><hr/>
