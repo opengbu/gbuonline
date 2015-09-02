@@ -53,7 +53,7 @@ class Alumni_profile extends CI_Controller {
         $check_q = $this->db->query("select count(*) as profiles from alumni_basic where user_id = '" . $this->session->userdata('user_id') . "'");
         $check = $check_q->row();
         if ($check->profiles >= 1)
-            redirect('alumni_profile');
+            redirect('alumni_profile/update');
 
         $this->basic_form_1();
 
@@ -296,6 +296,32 @@ class Alumni_profile extends CI_Controller {
         $edu_id = $this->input->get('edu_id');
         $this->db->query("delete from edu_info where id = '$edu_id'");
         redirect('Alumni_profile/view_education_info');
+    }
+
+    function index() {
+        $data['title'] = 'Alumni &nbsp;|&nbsp;  GBU Online';
+        $data['heading'] = ' GBU Alumni ';
+        $data['message'] = 'Let the world know you.....';
+        $this->load->view('pages/common/link', $data);
+        $this->load->view('pages/common/header');
+        $this->load->view('pages/common/page-heading', $data);
+
+        $this->load->view('pages/alumni/all_alumni');
+        $this->load->view('pages/common/footer');
+    }
+    
+    function load_profile()
+    {
+        $data['title'] = 'Alumni &nbsp;|&nbsp;  GBU Online';
+        $data['heading'] = ' GBU Alumni ';
+        $data['message'] = 'Let the world know you.....';
+        $this->load->view('pages/common/link', $data);
+        $this->load->view('pages/common/header');
+        $this->load->view('pages/common/page-heading', $data);
+
+        $this->load->view('pages/alumni/load_profile');
+        $this->load->view('pages/common/footer');
+        
     }
 
 }
