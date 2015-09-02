@@ -12,7 +12,7 @@
             </ul>
         </div>
         <br> 
-
+        <h3>Add/Update Work Information</h3>
         <?php
         echo form_open(current_url() . "?" . $_SERVER['QUERY_STRING']);
         ?>
