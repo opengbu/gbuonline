@@ -309,9 +309,11 @@ class Alumni_profile extends CI_Controller {
         $this->load->view('pages/alumni/all_alumni');
         $this->load->view('pages/common/footer');
     }
-    
-    function load_profile()
-    {
+
+    function load_profile() {
+        if ($this->session->userdata('loggedin') != 1)
+            redirect('/users?redirect=' . base_url('alumni_profile'));
+
         $data['title'] = 'Alumni &nbsp;|&nbsp;  GBU Online';
         $data['heading'] = ' GBU Alumni ';
         $data['message'] = 'Let the world know you.....';
@@ -321,7 +323,6 @@ class Alumni_profile extends CI_Controller {
 
         $this->load->view('pages/alumni/load_profile');
         $this->load->view('pages/common/footer');
-        
     }
 
 }

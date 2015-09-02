@@ -41,7 +41,15 @@ $basic_info = $basic_info_q->row();
             <li role="presentation" class="active"><a href="#">Display Profile</a></li>
         </ul>
     </div>
-
+    <?php
+    if ($basic_info_q->num_rows() == 0)
+    {
+        echo "<b>The requested profile does not exist</b>";
+        echo "</div>";
+        return;
+        
+    }
+    ?>
     <ul class="nav nav-list col-sm-12" style="padding-bottom: 30px;padding-top: 30px;">
         <li class="list-group-item">
             <div class="row">
@@ -182,10 +190,10 @@ $basic_info = $basic_info_q->row();
         </ul>
     </div>
     <div style="padding-bottom: 30px;padding-top: 30px;">
-        
+
     </div>
     <div style="padding-bottom: 30px;padding-top: 30px;">
-        
+
         <h3>Education Information</h3>
 
         <?php
