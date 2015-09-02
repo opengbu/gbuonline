@@ -15,6 +15,20 @@ class Alumni_profile extends CI_Controller {
         $this->form_validation->set_error_delimiters('<br /><span class="error">', '</span>');
     }
 
+    function basic_form_2() {
+
+        $this->load->helper('form');
+        $this->load->helper('url');
+        $this->load->library('form_validation');
+
+        $this->form_validation->set_rules('start_year', 'Start Year', 'required|max_length[15]');
+        $this->form_validation->set_rules('end_year', 'End Year (Enter CURRENT in case of ongoing)', 'required|max_length[15]');
+        $this->form_validation->set_rules('company_name', 'Company Name', 'required|max_length[50]');
+        $this->form_validation->set_rules('location', 'Location', 'max_length[100]');
+        $this->form_validation->set_rules('designation', 'Designation', 'required|max_length[100]');
+        $this->form_validation->set_error_delimiters('<br /><span class="error">', '</span>');
+    }
+
     function create() {
         if ($this->session->userdata('loggedin') != 1)
             redirect('/users?redirect=' . current_url());
@@ -105,6 +119,46 @@ class Alumni_profile extends CI_Controller {
     function update_basic($form_data) {
 
         $this->db->update('alumni_basic', $form_data, "user_id = '" . $form_data['user_id'] . "'");
+    }
+
+    function view_work_info() {
+        $data['title'] = 'Alumni &nbsp;|&nbsp;  GBU Online';
+        $data['heading'] = ' GBU Alumni ';
+        $data['message'] = 'Let the world know you.....';
+        $this->load->view('pages/common/link', $data);
+        $this->load->view('pages/common/header');
+        $this->load->view('pages/common/page-heading', $data);
+        $u_info['user_id'] = $this->session->userdata('user_id');
+        $this->load->view('pages/alumni/work_info', $u_info);
+        $this->load->view('pages/common/footer');
+    }
+
+    function add_work_info() {
+        $this->basic_form_2();
+
+        if ($this->form_validation->run() == FALSE) { // validation hasn't been passed
+            $data['title'] = 'Alumni &nbsp;|&nbsp;  GBU Online';
+            $data['heading'] = ' GBU Alumni ';
+            $data['message'] = 'Let the world know you.....';
+            $this->load->view('pages/common/link', $data);
+            $this->load->view('pages/common/header');
+            $this->load->view('pages/common/page-heading', $data);
+            $u_info['user_id'] = $this->session->userdata('user_id');
+            $this->load->view('pages/alumni/work_info_form', $u_info);
+            $this->load->view('pages/common/footer');
+        } else {
+            $form_data = array(
+                'user_id' => $this->session->userdata('user_id'),
+                'start_year' => set_value('start_year'),
+                'end_year' => set_value('end_year'),
+                'company_name' => set_value('company_name'),
+                'location' => set_value('location'),
+                'designation' => set_value('designation')
+            );
+
+            $this->db->insert('work_details', $form_data);
+            redirect('Alumni_profile/view_work_info');
+        }
     }
 
     function view() {
