@@ -29,6 +29,16 @@
                 <li role="presentation" class="active"><a href="<?= site_url('alumni_profile'); ?>">Alumni Profiles</a></li>
             </ul>
         </div>
+
+        <div class="well well-sm">
+            <ul class="nav nav-pills nav-justified">
+                <li role="presentation" class="active"><a href="<?= site_url('alumni_profile'); ?>">All Alumni Profiles</a></li>
+                <li role="presentation"><a href="<?= site_url('alumni_profile/load_profile?user_id=' . $this->session->userdata('user_id')); ?>">View My Alumni Profile</a></li>
+                <li role="presentation"><a href="<?= site_url('alumni_profile/create'); ?>">Create/Update Alumni profile</a></li>
+                <li role="presentation" ><a href="<?= site_url('alumni_profile/view_education_info'); ?>">Manage education details</a></li>
+                <li role="presentation"><a href="<?= site_url('alumni_profile/view_work_info'); ?>">Manage Work Information</a></li>
+            </ul>
+        </div>
         <br>
         <h3>All Alumni</h3>
 

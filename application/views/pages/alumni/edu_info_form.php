@@ -17,6 +17,15 @@
                 <li role="presentation" class="active"><a href="<?= site_url('alumni_profile'); ?>">Alumni Profiles</a></li>
             </ul>
         </div>
+        <div class="well well-sm">
+            <ul class="nav nav-pills nav-justified">
+                <li role="presentation"><a href="<?= site_url('alumni_profile'); ?>">All Alumni Profiles</a></li>
+                <li role="presentation"><a href="<?= site_url('alumni_profile/load_profile?user_id=' . $this->session->userdata('user_id')); ?>">View My Alumni Profile</a></li>
+                <li role="presentation"><a href="<?= site_url('alumni_profile/create'); ?>">Create/Update Alumni profile</a></li>
+                <li role="presentation" class="active"><a href="<?= site_url('alumni_profile/view_education_info'); ?>">Manage education details</a></li>
+                <li role="presentation"><a href="<?= site_url('alumni_profile/view_work_info'); ?>">Manage Work Information</a></li>
+            </ul>
+        </div>
         <br> 
         <h3>Add/Update Education Information</h3>
         <?php
@@ -24,7 +33,7 @@
         ?>
 
         <p>
-            <label for="course_name">Course Name <span class="required">*</span></label>
+            <label for="course_name">Course Name (completed at Gautam Buddha University)<span class="required">*</span></label>
             <?php echo form_error('course_name'); ?>
             <br /><input class="form-control"  id="company_name" type="text" name="course_name" maxlength="50" value="<?php echo set_value('course_name', @$course_name); ?>"  />
         </p>
