@@ -31,7 +31,7 @@ class Alumni_profile extends CI_Controller {
 
     function create() {
         if ($this->session->userdata('loggedin') != 1)
-            redirect('/users?redirect=' . current_url());
+            redirect('/users?redirect=' . current_url() . "?" . $_SERVER['QUERY_STRING']);
 
         $check_q = $this->db->query("select count(*) as profiles from alumni_basic where user_id = '" . $this->session->userdata('user_id') . "'");
         $check = $check_q->row();
@@ -67,7 +67,7 @@ class Alumni_profile extends CI_Controller {
 
     function update() {
         if ($this->session->userdata('loggedin') != 1)
-            redirect('/users?redirect=' . current_url());
+            redirect('/users?redirect=' . current_url() . "?" . $_SERVER['QUERY_STRING']);
 
         $check_q = $this->db->query("select count(*) as profiles from alumni_basic where user_id = '" . $this->session->userdata('user_id') . "'");
         $check = $check_q->row();
@@ -134,6 +134,9 @@ class Alumni_profile extends CI_Controller {
     }
 
     function add_work_info() {
+
+        if ($this->session->userdata('loggedin') != 1)
+            redirect('/users?redirect=' . current_url() . "?" . $_SERVER['QUERY_STRING']);
         $this->basic_form_2();
 
         if ($this->form_validation->run() == FALSE) { // validation hasn't been passed
@@ -143,8 +146,7 @@ class Alumni_profile extends CI_Controller {
             $this->load->view('pages/common/link', $data);
             $this->load->view('pages/common/header');
             $this->load->view('pages/common/page-heading', $data);
-            $u_info['user_id'] = $this->session->userdata('user_id');
-            $this->load->view('pages/alumni/work_info_form', $u_info);
+            $this->load->view('pages/alumni/work_info_form');
             $this->load->view('pages/common/footer');
         } else {
             $form_data = array(
@@ -159,6 +161,53 @@ class Alumni_profile extends CI_Controller {
             $this->db->insert('work_details', $form_data);
             redirect('Alumni_profile/view_work_info');
         }
+    }
+
+    function edit_work_info() {
+
+        if ($this->session->userdata('loggedin') != 1)
+            redirect('/users?redirect=' . current_url() . "?" . $_SERVER['QUERY_STRING']);
+
+        $this->basic_form_2();
+
+        if ($this->form_validation->run() == FALSE) { // validation hasn't been passed
+            $data['title'] = 'Alumni &nbsp;|&nbsp;  GBU Online';
+            $data['heading'] = ' GBU Alumni ';
+            $data['message'] = 'Let the world know you.....';
+            $this->load->view('pages/common/link', $data);
+            $this->load->view('pages/common/header');
+            $this->load->view('pages/common/page-heading', $data);
+            $u_info['user_id'] = $this->session->userdata('user_id');
+
+            $query = $this->db->get_where('work_details', array('id' => $this->input->get('work_id')));
+
+            $form_data = $query->row();
+
+            $this->load->view('pages/alumni/work_info_form', $form_data);
+            $this->load->view('pages/common/footer');
+        } else {
+            $form_data = array(
+                'user_id' => $this->session->userdata('user_id'),
+                'start_year' => set_value('start_year'),
+                'end_year' => set_value('end_year'),
+                'company_name' => set_value('company_name'),
+                'location' => set_value('location'),
+                'designation' => set_value('designation')
+            );
+
+            $this->db->update('work_details', $form_data, "id = '" . $this->input->get('work_id') . "'");
+            redirect('Alumni_profile/view_work_info');
+        }
+    }
+
+    function delete_work() {
+
+        if ($this->session->userdata('loggedin') != 1)
+            redirect('/users?redirect=' . current_url() . "?" . $_SERVER['QUERY_STRING']);
+
+        $work_id = $this->input->get('work_id');
+        $this->db->query("delete from work_details where id = '$work_id'");
+        redirect('Alumni_profile/view_work_info');
     }
 
     function view() {

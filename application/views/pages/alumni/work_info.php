@@ -18,7 +18,7 @@
             {
                 var x = confirm("Do you want to remove " + str + "?");
                 if (x === true)
-                    location.href = "alumni_profile/delete_work?work_id=" + n;
+                    location.href = "<?=base_url('alumni_profile/delete_work?work_id=')?>" + n;
             }
             var total_credits = 0;
         </script>
@@ -69,8 +69,9 @@
                             <div class="col-sm-3">
                                 <?= $row->start_year . ' - ' . $row->end_year ?>
                             </div>
-                            <div class="col-sm-1">
-                                <a onclick="del_ask('<?php echo$row->id ?>', '<?php echo$row->company_name ?>')" class="pull-right btn btn-xs btn-danger"><i class="fa fa-trash-o fa-lg"></i> Delete</a>  
+                            <div class="col-sm-2">
+                                <a href="<?=base_url('alumni_profile/edit_work_info?work_id=' . $row->id)?>" class="btn btn-xs btn-primary">Edit</a>
+                                <a onclick="del_ask( '<?php echo$row->company_name ?>','<?php echo$row->id ?>')" class=" btn btn-xs btn-danger"><i class="fa fa-trash-o fa-lg"></i> Delete</a>  
                             </div>
                         </div>
                     </li>
