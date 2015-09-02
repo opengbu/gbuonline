@@ -34,20 +34,28 @@ $basic_info = $basic_info_q->row();
     <div class="well well-sm">
         <ul class="nav nav-pills nav-justified">
             <li role="presentation"><a href="<?= site_url('alumni_profile'); ?>">All Alumni Profiles</a></li>
-            <li role="presentation"><a href="<?= site_url('alumni_profile/load_profile?user_id=' . $this->session->userdata('user_id')); ?>">View My Alumni Profile</a></li>
+            <li role="presentation" 
+            <?php
+            if ($user_id == $this->session->userdata('user_id'))
+                echo 'class="active"';
+            ?>
+                ><a href="<?= site_url('alumni_profile/load_profile?user_id=' . $this->session->userdata('user_id')); ?>">View My Alumni Profile</a></li>
             <li role="presentation"><a href="<?= site_url('alumni_profile/create'); ?>">Create/Update Alumni profile</a></li>
             <li role="presentation"><a href="<?= site_url('alumni_profile/view_education_info'); ?>">Manage education details</a></li>
             <li role="presentation"><a href="<?= site_url('alumni_profile/view_work_info'); ?>">Manage Work Information</a></li>
-            <li role="presentation" class="active"><a href="#">Display Profile</a></li>
+            <li role="presentation" 
+            <?php
+            if ($user_id != $this->session->userdata('user_id'))
+                echo 'class="active"';
+            ?>    
+                ><a href="#">Display Profile</a></li>
         </ul>
     </div>
     <?php
-    if ($basic_info_q->num_rows() == 0)
-    {
+    if ($basic_info_q->num_rows() == 0) {
         echo "<b>The requested profile does not exist</b>";
         echo "</div>";
         return;
-        
     }
     ?>
     <ul class="nav nav-list col-sm-12" style="padding-bottom: 30px;padding-top: 30px;">

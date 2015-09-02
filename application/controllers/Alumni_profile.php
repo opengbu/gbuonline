@@ -299,6 +299,9 @@ class Alumni_profile extends CI_Controller {
     }
 
     function index() {
+        if ($this->session->userdata('loggedin') != 1)
+            redirect('/users?redirect=' . current_url() . "?" . $_SERVER['QUERY_STRING']);
+
         $data['title'] = 'Alumni &nbsp;|&nbsp;  GBU Online';
         $data['heading'] = ' GBU Alumni ';
         $data['message'] = 'Let the world know you.....';
