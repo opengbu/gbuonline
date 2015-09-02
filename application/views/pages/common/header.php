@@ -155,11 +155,17 @@
 		
 		<li>
 			<form action="<?=site_url('feat/search_results/')?>" method="get">
-			<div class="input-group input-group-sm" style="padding-top:10px; margin-bottom:-10px;">
-				<input type="text" class="form-control" name="q" placeholder="Search for..." style="width: 125px;">
+			<!--
+			<div class="input-group input-group-sm search" style="padding-top:10px; margin-bottom:-10px;">
+				<input type="text" class="form-control" name="q" placeholder="Search" style="width: 125px;">
 					<span class="input-group-btn">
 						<button type="submit" class="btn btn-primary" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>				
 					</span>
+			</div>
+			-->
+			<div class="search" style="padding-top:10px; margin-bottom:-10px;">
+				<input type="text" class="form-control input-sm" name="q" maxlength="64" placeholder="Search" />
+				<button type="submit" class="bt btn btn-primary btn-sm"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>&nbsp;Search</button>
 			</div>
 			</form>
 				 
@@ -170,7 +176,7 @@
              if($this->session->userdata('loggedin') != 1)
              {
             ?>
-                 <a href="<?php echo base_url('users')?>"><font size="2">&nbsp;&nbsp;<span class="glyphicon glyphicon-user " aria-hidden="true"></span>&nbsp;Login</font></a>
+                 <a href="<?php echo base_url('users')?>"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-user " aria-hidden="true"></span>&nbsp;Login</font></a>
             <?php
              }
              else
@@ -204,3 +210,51 @@
     </nav>
     </div><!--row1 for header-->
 
+<style>
+#search {
+    float: right;
+    margin-top: 9px;
+    width: 250px;
+}
+
+.search {
+    padding: 5px 0;
+    width: 230px;
+    height: 30px;
+    position: relative;
+    left: 10px;
+    float: left;
+    line-height: 22px;
+}
+
+    .search input {
+        position: absolute;
+        width: 0px;
+        float: Left;
+        margin-left: 210px;
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+        height: 30px;
+        line-height: 18px;
+        padding: 0 2px 0 2px;
+        border-radius:1px;
+    }
+
+        .search:hover input, .search input:focus {
+            width: 200px;
+            margin-left: 0px;
+        }
+		
+		
+.bt {
+    height: 30px;
+    position: absolute;
+    right: 0;
+    top: 10px;
+	margin-bottom:-10px;
+    border-radius:1px;
+}
+
+</style>
