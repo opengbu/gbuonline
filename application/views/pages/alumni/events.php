@@ -1,3 +1,5 @@
+
+
 <style>
 
 hr {
@@ -177,7 +179,7 @@ hr {
 </style>
 
 
-<div class="container-fluid" style=" margin-right: 10px; margin-left: 10px;" >
+ <div class="container-fluid" style=" margin-right: 10px; margin-left: 10px;" >
     <div class="row">
 	
 	<div class="well well-sm">
@@ -187,7 +189,7 @@ hr {
   <li role="presentation"><a href="<?= site_url('alumni/alumniList');?>">Alumni List</a></li>
   <li role="presentation" class="active"><a href="<?= site_url('alumni/events');?>">Events</a></li>
   <li role="presentation"><a href="<?= site_url('alumni/gallery');?>">Gallery</a></li>
-  <li role="presentation"><a href="<?= site_url('alumni_profile');?>">Alumni Profiles</a></li>
+  <li role="presentation"><a href="<?= site_url('alumni');?>">Manage Profile</a></li>
 		</ul>
 	</div>
 		<br> 
@@ -195,7 +197,7 @@ hr {
 		<!--your content-->
 		<div style="margin-left:4px;" class="row">
 		
-		<img  src="<?php echo base_url('resources/images/12.jpg')?>" height="300px" width="1300px"/>
+		<img  src="<?php echo base_url('resources/images/image2.jpg')?>" height="300px" width="1300px"/>
 		<div class=" col-md-10">
 			
 			 <h1 style="font-family:'Oswald', sans-serif ;"> <b><u> EVENTS</u></b> </h1>
@@ -220,8 +222,8 @@ hr {
 
 		
 			
-			<u><a style="color: #0c0d49" href="">Educational Programs</a></u><br><br>
-			<u><a style="color: #0c0d49" href="">Global Days of Service</a> </u><br><br>
+			<u><a style="color: #0c0d49" href="">Placement</a></u><br><br>
+			<u><a style="color: #0c0d49" href="">Blogs</a> </u><br><br>
 			<u><a style="color: #0c0d49" href="">Alumni Weekend</a></u> 
 		
 			
@@ -229,36 +231,64 @@ hr {
 		
 		</div>
 		</div><!--for row-->
+		</div>
 		<br><br><br>
+		
+		
+		
 		<div  style="margin-left:12px;"   class="row">
 		<h3><span class="label label-primary">UPCOMING EVENTS</span></h3><hr />
 		<br>
 		
 		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 <link href='http://fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css'>
+		
+		<?php
+		
+		
+		
+	$q=$this->db->query("select *,extract(day from event_date) as day,extract(month from event_date) as month from alumni_events");
+	
+	
+	
+	
+	
+	
+	
+	$res=$q->result();
+	foreach($res as $row)
+	{
+	$monthNum  =  $row->month;
+$dateObj   = DateTime::createFromFormat('!m', $monthNum);
+$monthName = $dateObj->format('F'); // March
+?>
+
+		
 		<div class="panel panel-default event">
   <div class="panel-body">
     <div class="rsvp col-xs-2 col-sm-2">
-      <i>8</i>
-      <i>SEP</i>
+
+	
+	<i><?php echo $row->day; ?></i>
+	  <i><?php echo $monthName; ?></i>
       <div class="hidden-xs">
         <span class="fa fa-thumbs-up fa-2x"></span>
         <span class="fa fa-thumbs-down fa-2x"></span>
       </div>
     </div>
     <div class="info col-xs-8 col-sm-7">
-      <b style="color:white">Terriers @ Work: ESPN</b>
+      <b style="color:white"><?php echo $row->event_name;?></b>
       <div class="visible-xs">Lorem ipsum dolor sit amet, consectetur adipiscing elitero..</div>
       <div class="hidden-xs">
           <ul class="nav nav-tabs" role="tablist">
-            <li role="presentation" class="active"><a href="#location" aria-controls="location" role="tab" data-toggle="tab">Location</a></li>
-            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+            <li role="presentation" class="active"><a href="#location<?php echo $row->event_id;?>" aria-controls="location" role="tab" data-toggle="tab">Location</a></li>
+            <li role="presentation"><a href="#profile<?php echo $row->event_id;?>" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
           </ul>
           <!-- Tab panes -->
           <div class="tab-content">
-            <div role="tabpanel" class="tab-pane active" id="location">GAUTAM BUDDHA UNIVERSITY</div>
-            <div role="tabpanel" class="tab-pane" id="profile">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mattis feugiat sem, eu sagittis libero. Duis non odio ut nibh volutpat tempus eget interdum elit. 
+            <div role="tabpanel" class="tab-pane active" id="location<?php echo $row->event_id;?>"><?php echo $row->event_location;?></div>
+            <div role="tabpanel" class="tab-pane" id="profile<?php echo $row->event_id;?>">
+				<?php echo $row->event_profile;?>
             </div>
           </div>
         </div>
@@ -268,8 +298,8 @@ hr {
             <img src="http://api.randomuser.me/portraits/med/men/71.jpg"/>
         </div>
         <div class="profile hidden-xs">
-            <strong style="padding-left:20px">Robert White</strong>
-            <article style="padding-left:20px">Event leader and founder of this group</article>
+            <strong style="padding-left:20px"><?= $row->director_name;?></strong>
+            <article style="padding-left:20px"><?php echo $row->director_info;?></article>
             <div class="links hidden-sm">
               <i class="fa fa-github-square fa-2x col-xs-3"></i>
               <i class="fa fa-google-plus-square fa-2x col-xs-3"></i>
@@ -281,62 +311,21 @@ hr {
     </div>
   </div>
   </div>
+  <?php	
+	}
+	?>
   <br>
-		
-		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-<link href='http://fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css'>
-		<div class="panel panel-default event">
-  <div class="panel-body">
-    <div class="rsvp col-xs-2 col-sm-2">
-      <i>11</i>
-      <i>SEP</i>
-      <div class="hidden-xs">
-        <span class="fa fa-thumbs-up fa-2x"></span>
-        <span class="fa fa-thumbs-down fa-2x"></span>
-      </div>
-    </div>
-    <div class="info col-xs-8 col-sm-7">
-     <b style="color:white;">Kick off the Season: Steelers vs Patriots Watch Party</b>
-      <div class="visible-xs">Lorem ipsum dolor sit amet, consectetur adipiscing elitero..</div>
-      <div class="hidden-xs">
-          <ul class="nav nav-tabs" role="tablist">
-            <li role="presentation" class="active"><a href="#location1" aria-controls="location" role="tab" data-toggle="tab">Location</a></li>
-            <li role="presentation"><a href="#profile1" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
-          </ul>
-          <!-- Tab panes -->
-          <div class="tab-content">
-            <div role="tabpanel" class="tab-pane active" id="location1">GAUTAM BUDDHA UNIVERSITY</div>
-            <div role="tabpanel" class="tab-pane" id="profile1">
-    Lorem ipsum dolor sit amet, consectetur adipiscing1 elit. Nulla mattis feugiat sem, eu sagittis libero. Duis non odio ut nibh volutpat tempus eget interdum elit. 
-            </div>
-          </div>
-        </div>
-    </div>
-    <div class="author col-xs-2 col-sm-3">
-        <div class="profile-image">
-            <img src="http://api.randomuser.me/portraits/med/men/71.jpg"/>
-        </div>
-        <div  class="profile hidden-xs">
-            <strong style="padding-left:20px;">Robert White</strong>
-            <article style="padding-left:20px">Event leader and founder of this group</article>
-            <div class="links hidden-sm">
-              <i class="fa fa-github-square fa-2x col-xs-3"></i>
-              <i class="fa fa-google-plus-square fa-2x col-xs-3"></i>
-              <i class="fa fa-facebook-square fa-2x col-xs-3"></i>
-              <i class="fa fa-linkedin-square  fa-2x col-xs-3"></i>
-            </div>
-        </div>
-        
-    </div>
-  </div>
-  
-  
-  
-		
-		
-		
-		
-		
-		
 	
+	
+	
+		
+  
+		
+		
+		
+		
+		
+</div>	
+	
+</div>
 </div>

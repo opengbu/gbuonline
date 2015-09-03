@@ -1999,6 +1999,13 @@ class Upgrade extends CI_Controller {
         array_push($u->updates, "ALTER TABLE `work_details` ADD `distinguished` INT NOT NULL DEFAULT '0' ;");       
         array_push($update_list, $u);
         unset($u);
+		
+		 $u = new update;
+        array_push($u->updates, "CREATE TABLE `alumni_events` (`event_date` date NOT NULL,`event_name` varchar(100) NOT NULL,`event_profile` varchar(500) NOT NULL,`event_location` varchar(100) NOT NULL,`director_name` varchar(50) NOT NULL,`director_info` varchar(200) NOT NULL,`event_id` int(11) NOT NULL AUTO_INCREMENT,`director_image` varchar(200) NOT NULL,PRIMARY KEY (`event_id`)) ENGINE=InnoDB DEFAULT CHARSET=latin1");            $u->version = 2.5;
+		array_push($u->updates, "INSERT INTO `alumni_events` (`event_date`, `event_name`, `event_profile`, `event_location`, `director_name`, `director_info`, `event_id`, `director_image`) VALUES ('2015-12-18', 'ALUMNI MEET', 'Lets connect with our old mates and refresh our memories', 'GAUTAM BUDDHA UNIVERSITY', 'SHOBHIT SINGH', 'Event leader', NULL, 'http://api.randomuser.me/portraits/med/men/71.jpg');");
+		array_push($u->updates, "INSERT INTO `alumni_events` (`event_date`, `event_name`, `event_profile`, `event_location`, `director_name`, `director_info`, `event_id`, `director_image`) VALUES ('2016-03-23', 'DISTINGUISH ALUMNI AWARDS', 'ceremony to encourage the work done by GBU ALUMNI', 'GAUTAM BUDDHA UNIVERSITY', 'BHAWESH CHOPRA', 'Event Organizer', NULL, 'http://api.randomuser.me/portraits/med/men/71.jpg');");  
+        array_push($update_list, $u);
+        unset($u);
 
         $this->run_upgrades($update_list);
         redirect("login" . "?" . $_SERVER['QUERY_STRING']);
