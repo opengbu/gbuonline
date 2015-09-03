@@ -2,7 +2,10 @@
                                     <hr>
                                     We are a group of students working under guidance of <br><b>Dr. Amit K. Awasthi.</b> <hr>
                                 </center>
-                                <center>     
+                                <center>   
+
+<h3>Technical Team</h3>				
+<hr>				
                                     <ul>
                                         <i>
                                             <div class="row">
@@ -27,7 +30,7 @@
                                                     <img src="<?php echo base_url('resources/images/rajat.jpg') ?>" height ="120" width="120"><br><b>RAJAT SAXENA</b> <br/>(Front End Developer)<br>
                                                 </div>
                                                 <div class="col-sm-4">
-                                                    <img src="<?php echo base_url('resources/images/shrey.jpg') ?>" height ="120" width="120"><br><b>SHREY KAPOOR</b><br/> (Site Ambassador/Marketting Head)<br>
+                                                    <img src="<?php echo base_url('resources/images/rishabh.jpg') ?>" height ="120" width="120"><br><b>RISHABH AHUJA</b><br/>(Front End Developer)
                                                 </div>
                                             </div>
 
@@ -36,5 +39,23 @@
 
                                     </ul>
                                     <hr>
+									<h3>Marketing Team</h3>
+									<hr>
+									 <div class="row">
+                                                <center>
+                                                    <img src="<?php echo base_url('resources/images/shrey.jpg') ?>" height ="120" width="120"><br><b>SHREY KAPOOR </b><br/>(Marketing Head/Site Ambassador)
+                                               </center>
+                                                </div>
                                 </center>
+								<hr>
+								<center>
+									<h3>Content Writers</h3>
+									</center>
+									<hr>
+									<div class="row">
+                                                <center>
+                                                    <img src="<?php echo base_url('resources/images/vasudev.jpg') ?>" height ="120" width="120"><br><b>VASUDEV YADAV</b><br/>
+                                               </center>
+                                                </div>
+												<br>
 								</div>
