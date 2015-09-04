@@ -53,9 +53,17 @@
 									</center>
 									<hr>
 									<div class="row">
-                                                <center>
-                                                    <img src="<?php echo base_url('resources/images/vasudev.jpg') ?>" height ="120" width="120"><br><b>VASUDEV YADAV</b><br/>
-                                               </center>
-                                                </div>
+									<div class = "col-sm-6">
+													<center>
+													<img src="<?php echo base_url('resources/images/kshitij.jpg') ?>" height ="120" width="120"><br><b>KSHITIJ PURWAR</b><br/>(Content Manager)
+													</center>
+													</div>
+									      <div class="col-sm-6">
+                                                    <center>
+													<img src="<?php echo base_url('resources/images/vasudev.jpg') ?>" height ="120" width="120"><br><b>VASUDEV YADAV</b><br/>
+                                                    </center>
+													</div>
+													
+													
 												<br>
 								</div>
