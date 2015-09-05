@@ -57,7 +57,13 @@ function &DB($params = '', $query_builder_override = NULL)
 		if ( ! file_exists($file_path = APPPATH.'config/'.ENVIRONMENT.'/database.php')
 			&& ! file_exists($file_path = APPPATH.'config/database.php'))
 		{
+			if ( ! file_exists($file_path = 'database.php'))
+                        {
+			if ( ! file_exists($file_path = '../database.php'))
+                        {
 			show_error('The configuration file database.php does not exist.');
+                        }
+                        }
 		}
 
 		include($file_path);
