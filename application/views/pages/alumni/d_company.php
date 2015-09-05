@@ -3,11 +3,11 @@
 	
 	<div class="well well-sm">
 		<ul class="nav nav-pills nav-justified">
-  <li role="presentation"><a href="#">Home</a></li>
+  <li role="presentation"><a href="#">Alumni Home</a></li>
   <li role="presentation" class="active"><a href="#">Distinguished Alumni</a></li>
   <li role="presentation"><a href="#">Alumni List</a></li>
-  <li role="presentation"><a href="#">Events</a></li>
-  <li role="presentation"><a href="#">Gallery</a></li>
+  <li role="presentation"><a href="#">Alumni Events</a></li>
+  <li role="presentation"><a href="#">Alumni Gallery</a></li>
   <li role="presentation"><a href="<?= site_url('alumni_profile');?>">Alumni Profiles</a></li>
 		</ul>
 	</div>

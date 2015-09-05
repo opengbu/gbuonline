@@ -3,11 +3,11 @@
 	
 	<div class="well well-sm">
 		<ul class="nav nav-pills nav-justified">
-  <li role="presentation" class="active"><a href="<?= site_url('alumni');?>">Home</a></li>
+  <li role="presentation" class="active"><a href="<?= site_url('alumni');?>">Alumni Home</a></li>
   <li role="presentation"><a href="<?= site_url('alumni/distinguished');?>">Distinguished Alumni</a></li>
   <li role="presentation"><a href="<?= site_url('alumni/alumniList');?>">Alumni List</a></li>
-  <li role="presentation"><a href="<?= site_url('alumni/events');?>">Events</a></li>
-  <li role="presentation"><a href="<?= site_url('alumni/gallery');?>">Gallery</a></li>
+  <li role="presentation"><a href="<?= site_url('alumni/events');?>">Alumni Events</a></li>
+  <li role="presentation"><a href="<?= site_url('alumni/gallery');?>">Alumni Gallery</a></li>
   <li role="presentation"><a href="<?= site_url('alumni_profile');?>">Alumni Profiles</a></li>
 		</ul>
 	</div>
@@ -22,7 +22,10 @@
 		   The university aims to produce future leaders and entrepreneurs who can inspire the next generation.<br/>
 		   The objective of this Alumni Community is to provide a platform to connect and discover GBUites present across the globe. 
 		</p>
-		<br/><hr/><br/>
+		<br/>
+		<a type="button" class="btn btn-success" href="<?php echo site_url('users/register')?>" >Register Here</a>
+		<br/><br/>
+		<hr/><br/>
 		</center>
 	</div>
 	

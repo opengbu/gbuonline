@@ -15,49 +15,51 @@ $club = $club_q->row();
 $school_q = $this->db->query("select sc_full_name from schools where schools.sc_name = '$row->school'");
 $school = $school_q->row();
 ?>
-<div class="container" >
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2" style="padding-right:10px;" id="myDiv">
-
+       
+    <div class="container">
+		
+		<div class="row">
+			<center><h2><span class="label label-default"><?= $row->article_name ?></span></h2></center><br/><br/>
             <img src="<?php echo base_url($row->image_path) ?>" alt="code-in-gbu" width="100%">
             <hr>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-
-            <center><h2><span class="label label-default"><?= $row->article_name ?></span></h2></center>
+		</div>
+		
+		<div class="row">
+			<div class="col-md-6" align="center">
 
             <h3><span class="label label-primary">Organizing School </span></h3>
             <b><?php if($row->school == "%" || $row->school == NULL) echo 'ALL';
             else echo $school->sc_full_name ?>
             </b>
-            <br />
-            
-            <h3><span class="label label-primary">Organizing Club </span></h3>
-            <b><?php if($row->club == "%" || $row->club == NULL) echo 'ALL';
-            else echo $club->c_full_name ?>
-            </b>
-            <br />
-            
-            <h3><span class="label label-primary">Posted By </span></h3>
-            <b><?= $user->full_name ?></b>
-            <br>
+            <br/><br/><br/>
             
             <h3><span class="label label-primary">Date </span></h3>
             <b><?= $row->publishing_date ?></b>
-            <br /><br />
-            <hr> 
-
-            <h3><span class="label label-primary">Description </span></h3>
+            <br/><br/>
+			
+			</div>
+			<div class="col-md-6" align="center">
+			
+			<h3><span class="label label-primary">Organizing Club </span></h3>
+            <b><?php if($row->club == "%" || $row->club == NULL) echo 'ALL';
+            else echo $club->c_full_name ?>
+            </b>
+            <br/><br/><br/>
+            
+            <h3><span class="label label-primary">Posted By </span></h3>
+            <b><?= $user->full_name ?></b>
+            <br><br/>
+            
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+            <h3><span class="label label-default">Event Description</span></h3>
             <?= $row->article ?>
-            <br /><br /><br />
+            <br/>
         </div>
 
 
-    </div ><!--for colmd9-->
-    <!--row ends in extras.php-->
-    <!--container ends in extras.php-->
-
-</div>
-</div>
+    </div >
+	<br/><br/>
+		
