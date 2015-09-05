@@ -2,6 +2,7 @@
     <head>
 	
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="keywords" content="Gautam Buddha University,gbu,gbuonline,gbu online,abhivyanjana,ecokart,shouryotsav">
 		<link href='https://fonts.googleapis.com/css?family=Roboto|Oswald|Josefin+Sans' rel='stylesheet' type='text/css'>
         <title><?php echo $title; ?></title>
         <link rel="shortcut icon" href="<?php echo base_url('resources/images/favicon.ico') ?>">

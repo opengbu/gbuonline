@@ -49,7 +49,7 @@
                                 </center>
 								<hr>
 								<center>
-									<h3>Content Writers</h3>
+									<h3>Content Team</h3>
 									</center>
 									<hr>
 									<div class="row">
@@ -67,3 +67,4 @@
 													
 												<br>
 								</div>
+								<br/><br/><br/>

@@ -25,25 +25,7 @@
          <a href="http://gbuonline.in/timetables"  target="_blank">
              <font size="2"> <span class="glyphicon glyphicon-file" aria-hidden="true"></span> Time Tables</font>
          </a>
-         <!--
-         Note by Amit K Awasthi
-         I am removing the following links as these are not required. 
-         The user is going to timetable home page directly. There he has already links to all direction.
-         This is important because we can put announcements/messages regarding  timetable there.
-         Also links of application are not fixed. Linking page to page is not safe.
-         Link application to application.
-         -->
-         <!--
-            <ul class="dropdown-menu" role="menu">
-             <li><a href="http://172.25.5.15/timetables/view/?s=SOE&y=2015&t=o">SOE</a></li>
-            <li><a href="0http://172.25.5.15/timetables/view/?s=SOLJ&y=2015&t=o">SOM</a></li>
-            <li><a href="http://172.25.5.15/timetables/view/?s=SOBT&y=2015&t=o">SOBT</a></li>
-            <li><a href="http://172.25.5.15/timetables/view/?s=SOICT&y=2015&t=o">SOICT</a></li>
-            <li><a href="http://172.25.5.15/timetables/view/?s=SOLJ&y=2015&t=o">SOLJG</a></li>
-            <li><a href="http://172.25.5.15/timetables/view/?s=SOBSC&y=2015&t=o">SOBSC</a></li>
-            <li><a href="http://172.25.5.15/timetables/view/?s=SOHSS&y=2015&t=o">SOHSS</a></li>
-            <li><a href="http://172.25.5.15/timetables/view/?s=SOVSAS&y=2015&t=o">SOVSAS</a></li>
-         </ul>-->
+        
         </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><font size="2">
@@ -155,14 +137,6 @@
 		
 		<li>
 			<form action="<?=site_url('feat/search_results/')?>" method="get">
-			<!--
-			<div class="input-group input-group-sm search" style="padding-top:10px; margin-bottom:-10px;">
-				<input type="text" class="form-control" name="q" placeholder="Search" style="width: 125px;">
-					<span class="input-group-btn">
-						<button type="submit" class="btn btn-primary" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>				
-					</span>
-			</div>
-			-->
 			<div class="search" style="padding-top:10px; margin-bottom:-10px;">
 				<input type="text" class="form-control input-sm" name="q" maxlength="64" placeholder="Search" />
 				<button type="submit" class="bt btn btn-primary btn-sm"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>&nbsp;Search</button>
@@ -176,7 +150,7 @@
              if($this->session->userdata('loggedin') != 1)
              {
             ?>
-                 <a href="<?php echo base_url('users')?>"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-user " aria-hidden="true"></span>&nbsp;Login</font></a>
+                 <a href="<?php echo base_url('users')?>"><font size="2"><span class="glyphicon glyphicon-user " aria-hidden="true"></span>&nbsp;Login</font></a>
             <?php
              }
              else
@@ -219,6 +193,7 @@
 
 .search {
     padding: 5px 0;
+	margin-right: 10px;
     width: 230px;
     height: 30px;
     position: relative;
@@ -232,10 +207,10 @@
         width: 0px;
         float: Left;
         margin-left: 210px;
-        -webkit-transition: all 0.5s ease-in-out;
-        -moz-transition: all 0.5s ease-in-out;
-        -o-transition: all 0.5s ease-in-out;
-        transition: all 0.5s ease-in-out;
+        -webkit-transition: all 0.4s ease-in-out;
+        -moz-transition: all 0.4s ease-in-out;
+        -o-transition: all 0.4s ease-in-out;
+        transition: all 0.4s ease-in-out;
         height: 30px;
         line-height: 18px;
         padding: 0 2px 0 2px;

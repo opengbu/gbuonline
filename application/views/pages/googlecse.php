@@ -20,5 +20,5 @@
 <gcse:searchresults-only></gcse:searchresults-only>
 
 
-		
+		<br/>
 		</div>
