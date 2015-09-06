@@ -128,3 +128,6 @@ $user_id = $this->session->userdata("user_id");
 
         <!--row ends in extras-->
         <!--container ends in extras-->
+<?php
+echo $this->session->flashdata('submit_msg');
+?>

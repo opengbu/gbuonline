@@ -41,7 +41,7 @@
 						<br>
                 
 						<center>
-                                                    <button type="submit" class="btn btn-success" <!--onclick="window.alert('Your Blog has been submitted succesfully. It will be displayed on website once it is reviewed by the admin.' -->)">Submit</button>
+                                <button type="submit" class="btn btn-success">Submit Blog</button>
 						</center>
 						<br>
 					</div>

@@ -7,7 +7,7 @@
   background:      -o-linear-gradient(90deg, #232526 10%, #414345 90%); /* Opera 11.10+ */
   background:         linear-gradient(90deg, #232526 10%, #414345 90%); /* W3C */
         
-  padding-top: 10px; 
+  padding-top: 5px; 
   padding-left: 50px; 
   margin-top: 15px;
   }

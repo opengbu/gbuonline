@@ -58,6 +58,7 @@ class Blogs extends CI_Controller {
     public function save() {
         $this->load->model('blog_model');
         $this->blog_model->insert_into_db();
+		$this->session->set_flashdata('submit_msg', '<script> alert("Your blog has been submitted for approval !"); </script>');
         redirect('blogs/recent_blogs');
     }
 
