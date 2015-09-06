@@ -1994,17 +1994,30 @@ class Upgrade extends CI_Controller {
         array_push($update_list, $u);
         unset($u);
 		
-		 $u = new update;
+		$u = new update;
         $u->version = 2.4;
         array_push($u->updates, "ALTER TABLE `work_details` ADD `distinguished` INT NOT NULL DEFAULT '0' ;");       
         array_push($update_list, $u);
         unset($u);
 		
-		 $u = new update;
-        array_push($u->updates, "CREATE TABLE `alumni_events` (`event_date` date NOT NULL,`event_name` varchar(100) NOT NULL,`event_profile` varchar(500) NOT NULL,`event_location` varchar(100) NOT NULL,`director_name` varchar(50) NOT NULL,`director_info` varchar(200) NOT NULL,`event_id` int(11) NOT NULL AUTO_INCREMENT,`director_image` varchar(200) NOT NULL,PRIMARY KEY (`event_id`)) ENGINE=InnoDB DEFAULT CHARSET=latin1");            $u->version = 2.5;
+		$u = new update;
+		$u->version = 2.5;
+        array_push($u->updates, "CREATE TABLE `alumni_events` (`event_date` date NOT NULL,`event_name` varchar(100) NOT NULL,`event_profile` varchar(500) NOT NULL,`event_location` varchar(100) NOT NULL,`director_name` varchar(50) NOT NULL,`director_info` varchar(200) NOT NULL,`event_id` int(11) NOT NULL AUTO_INCREMENT,`director_image` varchar(200) NOT NULL,PRIMARY KEY (`event_id`)) ENGINE=InnoDB DEFAULT CHARSET=latin1");            
 		array_push($u->updates, "INSERT INTO `alumni_events` (`event_date`, `event_name`, `event_profile`, `event_location`, `director_name`, `director_info`, `event_id`, `director_image`) VALUES ('2015-12-18', 'ALUMNI MEET', 'Lets connect with our old mates and refresh our memories', 'GAUTAM BUDDHA UNIVERSITY', 'SHOBHIT SINGH', 'Event leader', NULL, 'http://api.randomuser.me/portraits/med/men/71.jpg');");
 		array_push($u->updates, "INSERT INTO `alumni_events` (`event_date`, `event_name`, `event_profile`, `event_location`, `director_name`, `director_info`, `event_id`, `director_image`) VALUES ('2016-03-23', 'DISTINGUISH ALUMNI AWARDS', 'ceremony to encourage the work done by GBU ALUMNI', 'GAUTAM BUDDHA UNIVERSITY', 'BHAWESH CHOPRA', 'Event Organizer', NULL, 'http://api.randomuser.me/portraits/med/men/71.jpg');");  
         array_push($update_list, $u);
+        unset($u);
+		
+		$u = new update;
+		$u->version = 2.6;
+         array_push($u->updates, "delete from vnb where 1=1;");            
+		array_push($u->updates, "INSERT INTO `vnb` (`title`, `link`, `user_id`, `date`, `posted_by`) VALUES
+								('Notice for the Scholarship and fee reimbursement of students for Academic Session 2015-16 ', 'resources\r\nnotices/GBU_Academic_Scholarship_Notice_24July2015.jpg', 0, '2015-07-24', ''),
+								('Information regarding Full Fee Submission during Registration for Academic Session 2015-16 ', 'resources/\r\nnotices/Notice_RegistrationFee_23July2015.jpg', 0, '2015-07-22', ''),
+								('MoU between GBU and NSDC for introducing Skill Development Programmes  in University', 'resources/\r\nnotices/MOU_NSDC_DOC_1July15.pdf', 0, '2015-06-30', ''),
+								('Notification for Late Fee Submission for Odd Semester Registration 2015-16', 'resources/notices/Notification_Late Fee_Odd SemReg_21July15.pdf', 0, '2015-07-15', ''),
+								('Cancellation of Purchase Order for printing of Letter Head and L- Folder awarded to Seven Star Associates-New Delhi', 'resources/\r\nnotices/PO_Stores_Cancel_Seven Star_26June15.jpg', 0, '2015-06-26', '');");            
+	    array_push($update_list, $u);
         unset($u);
 
         $this->run_upgrades($update_list);
