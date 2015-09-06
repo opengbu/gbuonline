@@ -29,7 +29,7 @@
 		<br> 
 
    
-    <div class="jumbotron" >
+    <div class="jumbotron">
         <div class="row"><font face="Georgia Bold">
             <div class="col-md-3"><b>Name</b></div>
             <div class="col-md-3"><b>Course Pursued</b></div>
@@ -38,7 +38,8 @@
        </font></div><hr /><hr />
         
         <?php
-            $r=$this->db->query("select users.username,edu_info.course_name,work_details.location,work_details.company_name from users,edu_info,alumni_basic,work_details where users.user_id=alumni_basic.user_id");
+            $r=$this->db->query("select users.username,max(edu_info.course_name) as course_name,work_details.location,work_details.company_name from users,edu_info,alumni_basic,work_details where users.user_id=alumni_basic.user_id and users.user_id=edu_info.user_id and users.user_id=work_details.user_id group by users.user_id order by edu_info.passout_year");
+           
             $results=$r->result();
             
             foreach ($results as $rows)

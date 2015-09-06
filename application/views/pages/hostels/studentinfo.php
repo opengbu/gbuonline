@@ -1,7 +1,7 @@
 <!--
 
 **** Student info depending upon user type
-**** Authentic information yet to be included
+**** Authentic information of "girls" yet to be included
 
 -->
 <div class="row">
@@ -47,7 +47,8 @@
         <b><?php echo $rows->roll_number ?></b>
         &nbsp;&nbsp;&nbsp;&nbsp;
         <?php echo '<a href="'.site_url('hostels/stuspecific').'?roll=' . $rows->roll_number . '">view page</a>' ?>
-    </p>    
+    </p>
+    </div>
 <?php
     }
 	}
@@ -57,25 +58,47 @@ else
     {                                  //**** Student Info Section
         $rollnum = $this->session->userdata('roll_number');
         $query=$this->db->query("select stuinfo.* from stuinfo where UPPER('$rollnum') = UPPER(stuinfo.roll_number)");
+        if($query->num_rows()>0)
+        {
         $results=$query->result();
         foreach($results as $rows)
         {
 ?>
-        </div>
+        
         <div class="jumbotron">
             <p>
                 <label class="col-sm-4">Name : </label><?php  echo $rows->stu_name ?>
             </p>
             <p>
-                <label class="col-sm-4">Course : </label><?php  echo $rows->stu_course ?>
+                <label class="col-sm-4">Course : </label><?php  echo $rows->roll_number ?>
             </p>
             <p>
-                <label class="col-sm-4">Hostel Name : </label><?php  echo $rows->stu_hname ?>
+                <label class="col-sm-4">Contact Details : </label><?php  echo $rows->room_no . "," .$rows->stu_hname ?>
             </p>
+        </div>
+        <hr/>
+        <div class="container-fluid">
+            <form action="#" method="POST">
+                <h3>Complaint regarding incorrect info.</h3>
+                <label>Correction in</label>
+                <input type="text" class="form-control"  value="" name="title" placeholder="Field name" ><br>
+                <label>Corrected Value</label>
+                <input type="text" class="form-control"  value="" name="title" placeholder="Correct Info"><br>
+                <center>
+                    <input type="submit" value="Save" class="btn btn-primary" style="text-align:center;width:150px;">
+                </center>
+                <br/><hr/>
+            </form>
         </div>
 <?php 
         }
+}
+    else{
+?>      <p>
+            <center><b>Update your profile with a valid "rollnumber" or Contact us for more info. !! </b></center><br/>
+        </p>
+<?php
+    }
    }
 ?>
-
 </div>

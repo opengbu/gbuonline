@@ -1,5 +1,5 @@
 <?php
-    class stats extends CI_Controller
+    class Stats extends CI_Controller
     {
         function index()
         {

@@ -13,7 +13,6 @@
     foreach($results as $rows)
     {
 ?>
-  <!--      </div>-->
         <div class="jumbotron">
             <p>
                 <label class="col-sm-4">Name : </label><?php  echo $rows->stu_name ?>
