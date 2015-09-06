@@ -62,9 +62,11 @@ class Alumni_profile extends CI_Controller {
             $data['title'] = 'Alumni &nbsp;|&nbsp;  GBU Online';
             $data['heading'] = ' GBU Alumni ';
             $data['message'] = 'Let the world know you.....';
+			$data['x'] = '6';
             $this->load->view('pages/common/link', $data);
             $this->load->view('pages/common/header');
             $this->load->view('pages/common/page-heading', $data);
+			$this->load->view('pages/alumni/nav', $data);
             $this->load->view('pages/alumni/create_profile');
             $this->load->view('pages/common/footer');
         } else {
@@ -99,9 +101,11 @@ class Alumni_profile extends CI_Controller {
             $data['title'] = 'Alumni &nbsp;|&nbsp;  GBU Online';
             $data['heading'] = ' GBU Alumni ';
             $data['message'] = 'Let the world know you.....';
+			$data['x'] = '6';
             $this->load->view('pages/common/link', $data);
             $this->load->view('pages/common/header');
             $this->load->view('pages/common/page-heading', $data);
+			$this->load->view('pages/alumni/nav', $data);
 
             $query = $this->db->get_where('alumni_basic', array('user_id' => $this->session->userdata('user_id')));
 
@@ -128,9 +132,11 @@ class Alumni_profile extends CI_Controller {
         $data['title'] = 'Alumni &nbsp;|&nbsp;  GBU Online';
         $data['heading'] = ' GBU Alumni ';
         $data['message'] = 'Let the world know you.....';
+		$data['x'] = '6';
         $this->load->view('pages/common/link', $data);
         $this->load->view('pages/common/header');
         $this->load->view('pages/common/page-heading', $data);
+		$this->load->view('pages/alumni/nav', $data);
         $u_info['user_id'] = $this->session->userdata('user_id');
         $this->load->view('pages/alumni/work_info', $u_info);
         $this->load->view('pages/common/footer');
@@ -146,9 +152,11 @@ class Alumni_profile extends CI_Controller {
             $data['title'] = 'Alumni &nbsp;|&nbsp;  GBU Online';
             $data['heading'] = ' GBU Alumni ';
             $data['message'] = 'Let the world know you.....';
+			$data['x'] = '6';
             $this->load->view('pages/common/link', $data);
             $this->load->view('pages/common/header');
             $this->load->view('pages/common/page-heading', $data);
+			$this->load->view('pages/alumni/nav', $data);
             $this->load->view('pages/alumni/work_info_form');
             $this->load->view('pages/common/footer');
         } else {
@@ -177,9 +185,11 @@ class Alumni_profile extends CI_Controller {
             $data['title'] = 'Alumni &nbsp;|&nbsp;  GBU Online';
             $data['heading'] = ' GBU Alumni ';
             $data['message'] = 'Let the world know you.....';
+			$data['x'] = '6';
             $this->load->view('pages/common/link', $data);
             $this->load->view('pages/common/header');
             $this->load->view('pages/common/page-heading', $data);
+			$this->load->view('pages/alumni/nav', $data);
 
             $query = $this->db->get_where('work_details', array('id' => $this->input->get('work_id')));
 
@@ -216,9 +226,11 @@ class Alumni_profile extends CI_Controller {
         $data['title'] = 'Alumni &nbsp;|&nbsp;  GBU Online';
         $data['heading'] = ' GBU Alumni ';
         $data['message'] = 'Let the world know you.....';
+		$data['x'] = '6';
         $this->load->view('pages/common/link', $data);
         $this->load->view('pages/common/header');
         $this->load->view('pages/common/page-heading', $data);
+		$this->load->view('pages/alumni/nav', $data);
         $u_info['user_id'] = $this->session->userdata('user_id');
         $this->load->view('pages/alumni/edu_info', $u_info);
         $this->load->view('pages/common/footer');
@@ -235,9 +247,11 @@ class Alumni_profile extends CI_Controller {
             $data['title'] = 'Alumni &nbsp;|&nbsp;  GBU Online';
             $data['heading'] = ' GBU Alumni ';
             $data['message'] = 'Let the world know you.....';
+			$data['x'] = '6';
             $this->load->view('pages/common/link', $data);
             $this->load->view('pages/common/header');
             $this->load->view('pages/common/page-heading', $data);
+			$this->load->view('pages/alumni/nav', $data);
             $this->load->view('pages/alumni/edu_info_form');
             $this->load->view('pages/common/footer');
         } else {
@@ -266,9 +280,11 @@ class Alumni_profile extends CI_Controller {
             $data['title'] = 'Alumni &nbsp;|&nbsp;  GBU Online';
             $data['heading'] = ' GBU Alumni ';
             $data['message'] = 'Let the world know you.....';
+			$data['x'] = '6';
             $this->load->view('pages/common/link', $data);
             $this->load->view('pages/common/header');
             $this->load->view('pages/common/page-heading', $data);
+			$this->load->view('pages/alumni/nav', $data);
 
             $query = $this->db->get_where('edu_info', array('id' => $this->input->get('edu_id')));
             $form_data = $query->row();
@@ -305,10 +321,11 @@ class Alumni_profile extends CI_Controller {
         $data['title'] = 'Alumni &nbsp;|&nbsp;  GBU Online';
         $data['heading'] = ' GBU Alumni ';
         $data['message'] = 'Let the world know you.....';
+		$data['x'] = '6';
         $this->load->view('pages/common/link', $data);
         $this->load->view('pages/common/header');
         $this->load->view('pages/common/page-heading', $data);
-
+		$this->load->view('pages/alumni/nav', $data);
         $this->load->view('pages/alumni/all_alumni');
         $this->load->view('pages/common/footer');
     }
@@ -320,10 +337,11 @@ class Alumni_profile extends CI_Controller {
         $data['title'] = 'Alumni &nbsp;|&nbsp;  GBU Online';
         $data['heading'] = ' GBU Alumni ';
         $data['message'] = 'Let the world know you.....';
+		$data['x'] = '6';
         $this->load->view('pages/common/link', $data);
         $this->load->view('pages/common/header');
         $this->load->view('pages/common/page-heading', $data);
-
+		$this->load->view('pages/alumni/nav', $data);
         $this->load->view('pages/alumni/load_profile');
         $this->load->view('pages/common/footer');
     }
