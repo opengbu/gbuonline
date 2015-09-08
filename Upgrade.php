@@ -80,36 +80,36 @@ class Upgrade extends CI_Controller {
         array_push($u->updates, "UPDATE `vnb` SET `link` = 'resources/ notices/PO_Stores_Cancel_Seven Star_26June15.jpg' WHERE `vnb`.`id` = 6;");
         array_push($update_list, $u);
         unset($u);
+		
+		$u = new update;
+		$u->version = 1.8;
+		array_push($u->updates,"UPDATE `vnb` SET `link` = 'resources/notices/MOU_NSDC_DOC_1July15.pdf' WHERE `vnb`.`id` =3;");
+		array_push($u->updates,"UPDATE `vnb` SET `link` = 'resources/notices/PO_Stores_Cancel_Seven Star_26June15.jpg' WHERE `vnb`.`id` =6;");
+		array_push($update_list, $u);
+		unset($u);
+		
 
-        $u = new update;
-        $u->version = 1.8;
-        array_push($u->updates, "UPDATE `vnb` SET `link` = 'resources/notices/MOU_NSDC_DOC_1July15.pdf' WHERE `vnb`.`id` =3;");
-        array_push($u->updates, "UPDATE `vnb` SET `link` = 'resources/notices/PO_Stores_Cancel_Seven Star_26June15.jpg' WHERE `vnb`.`id` =6;");
-        array_push($update_list, $u);
-        unset($u);
-
-
-        $u = new update;
-        $u->version = 2.0;
-        array_push($u->updates, "INSERT INTO `warden` (`id`, `hostel_name`, `warden_name`, `warden_office`, `hostel_contact`) VALUES (NULL, 'Rani Lakshmi Bai Hostel', 'Aarti Gautam Dinkar', '', '01202347054'), (NULL, 'Mahamaya Girls Hostel', 'Neeta singh', '', '01202346290');");
-        array_push($u->updates, "INSERT INTO `warden` (`id`, `hostel_name`, `warden_name`, `warden_office`, `hostel_contact`) VALUES (NULL, 'Ramabai Girls Hostel', 'Renu yadav', '', '01202346286'), (NULL, 'Savitri Bai Phule Girls Hostel', 'Priya Darshani', '', '01202346281');");
-        array_push($u->updates, "ALTER TABLE `warden` CHANGE `hostel_contact` `hostel_contact` VARCHAR(20) NULL DEFAULT NULL; ");
-        array_push($u->updates, "UPDATE `warden` SET `hostel_contact` = '8826363824' WHERE `warden`.`id` = 1;");
-        array_push($u->updates, "UPDATE `warden` SET `hostel_contact` = '8743827141' WHERE `warden`.`id` = 2;");
-        array_push($u->updates, "UPDATE `warden` SET `hostel_contact` = '9810574144' WHERE `warden`.`id` = 4;");
-        array_push($u->updates, "UPDATE `warden` SET `hostel_contact` = '9560079097' WHERE `warden`.`id` = 5;");
-        array_push($u->updates, "UPDATE `warden` SET `hostel_contact` = '9458876635' WHERE `warden`.`id` = 6;");
-        array_push($u->updates, "UPDATE `warden` SET `hostel_contact` = '9910838739' WHERE `warden`.`id` = 7;");
-        array_push($u->updates, "UPDATE `warden` SET `hostel_contact` = '9411287144' WHERE `warden`.`id` = 8;");
-        array_push($u->updates, "UPDATE `warden` SET `hostel_contact` = '9871545829' WHERE `warden`.`id` = 9;");
-        array_push($u->updates, "ALTER TABLE `stuinfo` CHANGE `stu_name` `stu_name` VARCHAR(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL;");
-        array_push($update_list, $u);
-        unset($u);
-
-        $u = new update;
-        $u->version = 2.1;
-        array_push($u->updates, "drop table IF EXISTS  stuinfo;");
-        array_push($u->updates, "CREATE TABLE IF NOT EXISTS `stuinfo` (
+		$u = new update;
+		$u->version = 2.0;
+		array_push($u->updates,"INSERT INTO `warden` (`id`, `hostel_name`, `warden_name`, `warden_office`, `hostel_contact`) VALUES (NULL, 'Rani Lakshmi Bai Hostel', 'Aarti Gautam Dinkar', '', '01202347054'), (NULL, 'Mahamaya Girls Hostel', 'Neeta singh', '', '01202346290');");
+		array_push($u->updates,"INSERT INTO `warden` (`id`, `hostel_name`, `warden_name`, `warden_office`, `hostel_contact`) VALUES (NULL, 'Ramabai Girls Hostel', 'Renu yadav', '', '01202346286'), (NULL, 'Savitri Bai Phule Girls Hostel', 'Priya Darshani', '', '01202346281');");
+		array_push($u->updates,"ALTER TABLE `warden` CHANGE `hostel_contact` `hostel_contact` VARCHAR(20) NULL DEFAULT NULL; ");
+		array_push($u->updates,"UPDATE `warden` SET `hostel_contact` = '8826363824' WHERE `warden`.`id` = 1;");
+		array_push($u->updates,"UPDATE `warden` SET `hostel_contact` = '8743827141' WHERE `warden`.`id` = 2;");
+		array_push($u->updates,"UPDATE `warden` SET `hostel_contact` = '9810574144' WHERE `warden`.`id` = 4;");
+		array_push($u->updates,"UPDATE `warden` SET `hostel_contact` = '9560079097' WHERE `warden`.`id` = 5;");
+		array_push($u->updates,"UPDATE `warden` SET `hostel_contact` = '9458876635' WHERE `warden`.`id` = 6;");
+		array_push($u->updates,"UPDATE `warden` SET `hostel_contact` = '9910838739' WHERE `warden`.`id` = 7;");
+		array_push($u->updates,"UPDATE `warden` SET `hostel_contact` = '9411287144' WHERE `warden`.`id` = 8;");
+		array_push($u->updates,"UPDATE `warden` SET `hostel_contact` = '9871545829' WHERE `warden`.`id` = 9;");
+		array_push($u->updates,"ALTER TABLE `stuinfo` CHANGE `stu_name` `stu_name` VARCHAR(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL;");
+		array_push($update_list, $u);
+		unset($u);
+		
+		$u = new update;
+		$u->version = 2.1;
+		array_push($u->updates,"drop table IF EXISTS  stuinfo;");
+		array_push($u->updates,"CREATE TABLE IF NOT EXISTS `stuinfo` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `room_no` varchar(50) NOT NULL,
   `roll_number` varchar(60) NOT NULL,
@@ -117,7 +117,7 @@ class Upgrade extends CI_Controller {
   `stu_hname` varchar(60) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Student Info' AUTO_INCREMENT=2230 ;");
-        array_push($u->updates, "INSERT INTO `stuinfo` (`id`, `room_no`, `roll_number`, `stu_name`, `stu_hname`) VALUES
+		array_push($u->updates,"INSERT INTO `stuinfo` (`id`, `room_no`, `roll_number`, `stu_name`, `stu_hname`) VALUES
 (2230, 'G-01', '11/IEE/026', 'Yatendra Bhadana', 'Birsa Munda Hostel                     '),
 (2231, 'G-02', '11/IMB/051', 'Vivek Kumar Bhati', 'Birsa Munda Hostel                     '),
 (2232, 'G-03', '11/IEE/121', 'Vishesh Kumar', 'Birsa Munda Hostel                     '),
@@ -1959,10 +1959,10 @@ class Upgrade extends CI_Controller {
 (4068, 'S-61', '13/ICE/002', 'Abhilash Kumar', 'Tulsidas (8.1 F) Boys Hostel'),
 (4069, 'S-62', '13/IME/001', 'Abdullah', 'Tulsidas (8.1 F) Boys Hostel'),
 (4070, 'S-63', '13/ICE/001', 'Aakash Chaudhary', 'Tulsidas (8.1 F) Boys Hostel');");
-        array_push($update_list, $u);
-        unset($u);
-
-        $u = new update;
+		array_push($update_list, $u);
+		unset($u);
+		
+		 $u = new update;
         $u->version = 2.3;
         array_push($u->updates, "CREATE TABLE IF NOT EXISTS `alumni_basic` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -1993,31 +1993,31 @@ class Upgrade extends CI_Controller {
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;");
         array_push($update_list, $u);
         unset($u);
-
-        $u = new update;
+		
+		$u = new update;
         $u->version = 2.4;
-        array_push($u->updates, "ALTER TABLE `work_details` ADD `distinguished` INT NOT NULL DEFAULT '0' ;");
+        array_push($u->updates, "ALTER TABLE `work_details` ADD `distinguished` INT NOT NULL DEFAULT '0' ;");       
         array_push($update_list, $u);
         unset($u);
-
-        $u = new update;
-        $u->version = 2.5;
-        array_push($u->updates, "CREATE TABLE `alumni_events` (`event_date` date NOT NULL,`event_name` varchar(100) NOT NULL,`event_profile` varchar(500) NOT NULL,`event_location` varchar(100) NOT NULL,`director_name` varchar(50) NOT NULL,`director_info` varchar(200) NOT NULL,`event_id` int(11) NOT NULL AUTO_INCREMENT,`director_image` varchar(200) NOT NULL,PRIMARY KEY (`event_id`)) ENGINE=InnoDB DEFAULT CHARSET=latin1");
-        array_push($u->updates, "INSERT INTO `alumni_events` (`event_date`, `event_name`, `event_profile`, `event_location`, `director_name`, `director_info`, `event_id`, `director_image`) VALUES ('2015-12-18', 'ALUMNI MEET', 'Lets connect with our old mates and refresh our memories', 'GAUTAM BUDDHA UNIVERSITY', 'SHOBHIT SINGH', 'Event leader', NULL, 'http://api.randomuser.me/portraits/med/men/71.jpg');");
-        array_push($u->updates, "INSERT INTO `alumni_events` (`event_date`, `event_name`, `event_profile`, `event_location`, `director_name`, `director_info`, `event_id`, `director_image`) VALUES ('2016-03-23', 'DISTINGUISH ALUMNI AWARDS', 'ceremony to encourage the work done by GBU ALUMNI', 'GAUTAM BUDDHA UNIVERSITY', 'BHAWESH CHOPRA', 'Event Organizer', NULL, 'http://api.randomuser.me/portraits/med/men/71.jpg');");
+		
+		$u = new update;
+		$u->version = 2.5;
+        array_push($u->updates, "CREATE TABLE `alumni_events` (`event_date` date NOT NULL,`event_name` varchar(100) NOT NULL,`event_profile` varchar(500) NOT NULL,`event_location` varchar(100) NOT NULL,`director_name` varchar(50) NOT NULL,`director_info` varchar(200) NOT NULL,`event_id` int(11) NOT NULL AUTO_INCREMENT,`director_image` varchar(200) NOT NULL,PRIMARY KEY (`event_id`)) ENGINE=InnoDB DEFAULT CHARSET=latin1");            
+		array_push($u->updates, "INSERT INTO `alumni_events` (`event_date`, `event_name`, `event_profile`, `event_location`, `director_name`, `director_info`, `event_id`, `director_image`) VALUES ('2015-12-18', 'ALUMNI MEET', 'Lets connect with our old mates and refresh our memories', 'GAUTAM BUDDHA UNIVERSITY', 'SHOBHIT SINGH', 'Event leader', NULL, 'http://api.randomuser.me/portraits/med/men/71.jpg');");
+		array_push($u->updates, "INSERT INTO `alumni_events` (`event_date`, `event_name`, `event_profile`, `event_location`, `director_name`, `director_info`, `event_id`, `director_image`) VALUES ('2016-03-23', 'DISTINGUISH ALUMNI AWARDS', 'ceremony to encourage the work done by GBU ALUMNI', 'GAUTAM BUDDHA UNIVERSITY', 'BHAWESH CHOPRA', 'Event Organizer', NULL, 'http://api.randomuser.me/portraits/med/men/71.jpg');");  
         array_push($update_list, $u);
         unset($u);
-
-        $u = new update;
-        $u->version = 2.6;
-        array_push($u->updates, "delete from vnb where 1=1;");
-        array_push($u->updates, "INSERT INTO `vnb` (`title`, `link`, `user_id`, `date`, `posted_by`) VALUES
+		
+		$u = new update;
+		$u->version = 2.6;
+         array_push($u->updates, "delete from vnb where 1=1;");            
+		array_push($u->updates, "INSERT INTO `vnb` (`title`, `link`, `user_id`, `date`, `posted_by`) VALUES
 								('Notice for the Scholarship and fee reimbursement of students for Academic Session 2015-16 ', 'resources\r\nnotices/GBU_Academic_Scholarship_Notice_24July2015.jpg', 0, '2015-07-24', ''),
 								('Information regarding Full Fee Submission during Registration for Academic Session 2015-16 ', 'resources/\r\nnotices/Notice_RegistrationFee_23July2015.jpg', 0, '2015-07-22', ''),
 								('MoU between GBU and NSDC for introducing Skill Development Programmes  in University', 'resources/\r\nnotices/MOU_NSDC_DOC_1July15.pdf', 0, '2015-06-30', ''),
 								('Notification for Late Fee Submission for Odd Semester Registration 2015-16', 'resources/notices/Notification_Late Fee_Odd SemReg_21July15.pdf', 0, '2015-07-15', ''),
-								('Cancellation of Purchase Order for printing of Letter Head and L- Folder awarded to Seven Star Associates-New Delhi', 'resources/\r\nnotices/PO_Stores_Cancel_Seven Star_26June15.jpg', 0, '2015-06-26', '');");
-        array_push($update_list, $u);
+								('Cancellation of Purchase Order for printing of Letter Head and L- Folder awarded to Seven Star Associates-New Delhi', 'resources/\r\nnotices/PO_Stores_Cancel_Seven Star_26June15.jpg', 0, '2015-06-26', '');");            
+	    array_push($update_list, $u);
         unset($u);
 
         $this->run_upgrades($update_list);

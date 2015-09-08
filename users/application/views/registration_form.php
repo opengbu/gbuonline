@@ -43,28 +43,28 @@
                             echo form_open('Register/index/');
                             ?>
                             <div class="form-group">
-                                <input type="text" name="username" class="form-control input-sm" placeholder="username" required="true">
+                                <input type="text" name="username" value="<?= set_value('username') ?>"class="form-control input-sm"  placeholder="username" required="true">
                             </div>
 
                             <div class="form-group">
-                                <input type="text" name="full_name" class="form-control input-sm" placeholder="Full Name" required="true">
+                                <input type="text" name="full_name" value="<?= set_value('full_name') ?>" class="form-control input-sm" placeholder="Full Name" required="true">
                             </div>
 
                             <div class="form-group">
-                                <input type="email" name="email"class="form-control input-sm" placeholder="Email Address" required="true">
+                                <input type="email" name="email" value="<?= set_value('email') ?>" class="form-control input-sm" placeholder="Email Address" required="true">
                             </div>
                             <div class="form-group">
-                                <input type="text" name="roll_number"class="form-control input-sm" placeholder="Roll Number (Not Necessary)">
+                                <input type="text" name="roll_number" value="<?= set_value('roll_number') ?>" class="form-control input-sm" placeholder="Roll Number (Not Necessary)">
                             </div>
                             <div class="form-group">
-                                <input type="text" name="phone_number"class="form-control input-sm" placeholder="Phone Number (Not Necessary)">
+                                <input type="text" name="phone_number" value="<?= set_value('phone_number') ?>" class="form-control input-sm" placeholder="Phone Number (Not Necessary)">
                             </div>
 
 
                             <div class="row">
                                 <div class="col-xs-6 col-sm-6 col-md-6">
                                     <div class="form-group">
-                                        <input type="password" name="password"  class="form-control input-sm" placeholder="Password" required="required">
+                                        <input type="password" name="password"   class="form-control input-sm" placeholder="Password" required="required">
                                     </div>
                                 </div>
                                 <div class="col-xs-6 col-sm-6 col-md-6">
