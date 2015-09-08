@@ -22,7 +22,9 @@ class Register extends CI_Controller {
         $this->form_validation->set_rules('full_name', 'Full Name', 'required');
         $this->form_validation->set_rules('username', 'Username', 'required|callback_check_details');
         $this->form_validation->set_rules('email', 'email', 'required|callback_check_email');
+        $this->form_validation->set_rules('roll_number', 'roll_number', 'required|callback_check_roll_no');
 
+        
         if ($this->form_validation->run() == FALSE) {
 
             $this->load->view('registration_form');
@@ -58,7 +60,15 @@ class Register extends CI_Controller {
     }
 
     public function check_roll_no() {
-        
+        $roll_no = $this->input->post('roll_number');
+        if ($roll_no == NULL || $roll_no == "")
+            return TRUE;
+
+        if (preg_match("@^([^/]*/){2}@", $roll_no))
+            return TRUE;
+
+        $this->form_validation->set_message('check_roll_no', 'Roll Number ' . $roll_no . ' must be in XX/XX/XXX format ');
+        return FALSE;
     }
 
     function confirm() {
