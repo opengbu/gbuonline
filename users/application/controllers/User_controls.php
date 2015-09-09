@@ -17,18 +17,26 @@ class User_controls extends CI_Controller {
         }
 
 
-        if ($this->input->get("user_id") != NULL && $this->permissions->get_level() < 4) {
+        if ($this->input->get("user_id") == NULL && $this->permissions->get_level() < 4) {
             //new user
+            $this->load->view('common/header');
+            echo "<br><br><br>You must be a Administrator to create a user";
+            $this->load->view('common/footer');
+            return 0;
+        }
+
+        if ($this->input->get("user_id") != $this->session->userdata('user_id') && $this->permissions->get_level() < 4) {
+            //not current user
             $this->load->view('common/header');
             echo "<br><br><br>You must be a Administrator to view this page";
             $this->load->view('common/footer');
             return 0;
         }
 
-        if ($this->input->get("user_id") != $this->session->userdata('user_id') && $this->permissions->get_level() < 4) {
-            //current user
+        if ($this->permissions->check_if_greater(NULL, $this->input->get("user_id")) != 1) {
+            //Cant modify boss
             $this->load->view('common/header');
-            echo "<br><br><br>You must be a Administrator to view this page";
+            echo "<br><br><br>You Cannot change your boss.";
             $this->load->view('common/footer');
             return 0;
         }
@@ -76,11 +84,14 @@ class User_controls extends CI_Controller {
                 'confirmation_link' => $confirmation_link,
             );
 
-            if ($this->input->get('user_id') != "") // update
+            if ($this->input->get('user_id') != "") { // update
+                if (strlen($password) == 0)
+                    unset($form_data['password']);
+                unset($form_data['confirmation_link']);
                 $this->db->update('users', $form_data, " user_id = '" . $this->input->get('user_id') . "'");
-            else
+            } else {
                 $this->db->insert('users', $form_data);
-
+            }
             redirect(base_url() . 'user_controls/view_all');
         }
     }

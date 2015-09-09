@@ -9,7 +9,7 @@
     {
         var x = confirm("Do you want to delete " + n + "?");
         if (x == true)
-            location.href = "<?=base_url() ?>" + "User_controls/delete?user_id=" + str;
+            location.href = "<?= base_url() ?>" + "User_controls/delete?user_id=" + str;
     }
 </script>
 <div class="col-sm-10">
@@ -17,7 +17,7 @@
     $current_user_id = $this->session->userdata('user_id');
     $current_user_type = $this->session->userdata('type');
 
-    $query = $this->db->query('select * from users');
+    $query = $this->db->query('select * from users order by user_id');
     echo '<ul class="nav nav-list">';
     foreach ($query->result() as $row) {
         ?>
@@ -29,7 +29,7 @@
                     ?>
                 </div>
                 <div class="col-sm-2">
-                    <font color ="<?=$this->permissions->get_color_code($row->type)?>">
+                    <font color ="<?= $this->permissions->get_color_code($row->type) ?>">
                     <?php
                     echo $this->permissions->get_full_type($row->type);
                     ?>

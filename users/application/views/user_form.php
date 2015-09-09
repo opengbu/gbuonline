@@ -29,13 +29,12 @@
     <br /><?php
     if ($this->permissions->get_level() >= 4) {
         $options = $this->permissions->all_permisiions();
-        if ($this->permissions->get_level() != 5)
-            unset($options['superadmin']);
 
         echo '<label>Type</label><br />';
         echo form_dropdown('type', $options, set_value('type', @$type), 'class="selectpicker"');
         echo '<br /><br />';
     }
+    else echo '<input type = "hidden" name="type" value = "' . @$type .'" />';
     ?>   
 
     <label>Password</label>
@@ -50,7 +49,7 @@
     <?php
     echo '<label><font color="red">' . validation_errors() . '</font></label>';
     ?>
-    <div><input type="submit" value="Add User" class="btn btn-default"/></div>
+    <div><input type="submit" value="Add/Update User" class="btn btn-primary"/></div>
         <?php
         echo form_close();
         ?>

@@ -29,7 +29,6 @@ class Permissions_model extends CI_Model {
         'admin' => 4,
         'superadmin' => 5
     );
-    
     var $colors = array(
         '' => 'Please Select',
         'student' => 'blue',
@@ -43,7 +42,19 @@ class Permissions_model extends CI_Model {
     );
 
     public function all_permisiions($type = NULL) {
-        return $this->options;
+        if($type == NULL)
+            $type = $this->session->userdata('type');
+        if ($type == 'superadmin')
+            return $this->options;
+        //else
+        $options = $this->options;
+        $clevel = $this->get_level($type);
+        foreach ($options as $key => $value)
+        {
+            if($clevel <= $this->get_level($key))
+                unset($options[$key]);
+        }
+        return $options;
     }
 
     public function get_full_type($type = NULL) {
@@ -52,8 +63,7 @@ class Permissions_model extends CI_Model {
 
         return $this->options[$type];
     }
-    
-    
+
     public function get_color_code($type = NULL) {
         if ($type == NULL)
             $type = $this->session->userdata('type');
