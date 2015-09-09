@@ -27,14 +27,11 @@
     <input type="text" class="form-control" name="roll_number" value="<?php echo set_value('roll_number', @$roll_number); ?>"/>
 
     <br /><?php
-    if ($this->permissions->get_level() >= 4) {
         $options = $this->permissions->all_permisiions();
 
         echo '<label>Type</label><br />';
         echo form_dropdown('type', $options, set_value('type', @$type), 'class="selectpicker"');
         echo '<br /><br />';
-    }
-    else echo '<input type = "hidden" name="type" value = "' . @$type .'" />';
     ?>   
 
     <label>Password</label>

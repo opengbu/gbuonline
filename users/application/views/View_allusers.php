@@ -12,10 +12,25 @@
             location.href = "<?= base_url() ?>" + "User_controls/delete?user_id=" + str;
     }
 </script>
+<style>
+    input.form-fixer {
+        padding: 1px;
+        font-size: 19px;
+    }
+
+    .form-horizontal .form-group input, 
+    .form-horizontal .form-group select,
+    .form-horizontal .form-group label
+    { 
+        height: 14px;
+        line-height: 14px;
+    }
+</style>
 <div class="col-sm-10">
     <?php
     $current_user_id = $this->session->userdata('user_id');
     $current_user_type = $this->session->userdata('type');
+    $options = $this->permissions->all_permisiions();
 
     $query = $this->db->query('select * from users order by user_id');
     echo '<ul class="nav nav-list">';
@@ -35,27 +50,38 @@
                     ?>
                     </font>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-2">
                     <?php
                     echo $row->roll_number;
                     ?>
                 </div>
-                <div class="col-sm-2">
+                <div class="col-sm-4 ">
                     <?php
+                    echo form_open(base_url() . '/User_controls/set_type?user_id=' . $row->user_id, 'style="margin: 0 !important; padding: 0 !important;"');
+
                     if ($row->user_id == $current_user_id ||
-                            ($this->permissions->get_level() >= 2 &&
+                            ($this->permissions->get_level() >= 4 &&
                             $this->permissions->check_if_greater($current_user_id, $row->user_id) == 1 )) {
-                        echo '<a class="btn btn-xs btn-default" href="' . base_url() . "User_controls/CreateOrUpdate?user_id=$row->user_id" . '">'
-                        . '<i class="fa fa-pencil fa-fw"></i>  Edit  </a>';
+                        echo '<a class="btn btn-xs btn-success" href="' . base_url() . "User_controls/CreateOrUpdate?user_id=$row->user_id" . '">'
+                        . '<i class="fa fa-pencil fa-fw"></i> Edit</a> ';
                     } else {
-                        echo '<a class="btn btn-default btn-xs disabled"><i class="fa fa-pencil fa-fw"></i> Edit</a>';
+                        echo '<a class="btn btn-success btn-xs disabled"><i class="fa fa-pencil fa-fw"></i> Edit</a> ';
                     }
+                    if ($row->user_id != $current_user_id && $this->permissions->get_level() >= 2 &&
+                            $this->permissions->check_if_greater($current_user_id, $row->user_id) == 1) {
+
+                        echo form_dropdown('type', $options, $row->type, 'class="selectpicker" data-style="btn-warning btn-xs" data-width="50%" onchange="this.form.submit()"');
+                    } else {
+                        echo '<a class="btn btn-xs btn-warning disabled" >'
+                        . '<i class="fa fa-gear fa-fw"></i> Assign</a>';
+                    }
+                    echo form_close();
                     ?>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-2">
                     <?php
                     if ($row->user_id == $current_user_id)
-                        echo "<font color='gray'>You cant delete yourself</font>";
+                        echo "<p class='text-right' ><font color='gray'>Seriously?</font></p>";
                     else if ($this->permissions->get_level() >= 4 &&
                             $this->permissions->check_if_greater($current_user_id, $row->user_id) == 1) {
                         ?>

@@ -11,26 +11,28 @@ class User_controls extends CI_Controller {
         redirect(base_url() . 'user_controls/view_all');
     }
 
-    function CreateOrUpdate() {
+    function secure_soft() {
         if ($this->session->userdata('loggedin') != 1) {//Checking for authentication
             redirect('/login');
         }
+    }
 
-
+    function secure_hard($level = 4) {
+        $this->secure_soft();
         if ($this->input->get("user_id") == NULL && $this->permissions->get_level() < 4) {
             //new user
             $this->load->view('common/header');
             echo "<br><br><br>You must be a Administrator to create a user";
             $this->load->view('common/footer');
-            return 0;
+            die();
         }
 
-        if ($this->input->get("user_id") != $this->session->userdata('user_id') && $this->permissions->get_level() < 4) {
+        if ($this->input->get("user_id") != $this->session->userdata('user_id') && $this->permissions->get_level() < $level) {
             //not current user
             $this->load->view('common/header');
             echo "<br><br><br>You must be a Administrator to view this page";
             $this->load->view('common/footer');
-            return 0;
+            die();
         }
 
         if ($this->permissions->check_if_greater(NULL, $this->input->get("user_id")) != 1) {
@@ -38,9 +40,13 @@ class User_controls extends CI_Controller {
             $this->load->view('common/header');
             echo "<br><br><br>You Cannot change your boss.";
             $this->load->view('common/footer');
-            return 0;
+            die();
         }
+        return 1;
+    }
 
+    function CreateOrUpdate() {
+        $this->secure_hard();
         $this->load->helper(array('form', 'url'));
         $this->form_validation->set_rules('username', 'Username', 'required');
         $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
@@ -89,6 +95,10 @@ class User_controls extends CI_Controller {
                     unset($form_data['password']);
                 unset($form_data['confirmation_link']);
                 $this->db->update('users', $form_data, " user_id = '" . $this->input->get('user_id') . "'");
+
+                if ($this->input->get('user_id') == $this->session->userdata('user_id')) {
+                    redirect(base_url() . '/logout');
+                }
             } else {
                 $this->db->insert('users', $form_data);
             }
@@ -97,9 +107,7 @@ class User_controls extends CI_Controller {
     }
 
     function view_all() {
-        if ($this->session->userdata('loggedin') != 1) {//Checking for authentication
-            redirect('/login');
-        }
+        $this->secure_soft();
 
         $this->load->view('common/header');
         $this->load->view('View_allusers');
@@ -147,20 +155,16 @@ class User_controls extends CI_Controller {
     }
 
     function delete() {
-        $userid = $this->input->get('user_id');
-        if ($this->session->userdata('loggedin') != 1) {//Checking for authentication
-            redirect('/login');
-        }
-        $current_user_id = $this->session->userdata('user_id');
-        if ($this->session->userdata('type') != 'admin' and $userid != $current_user_id) {
-            $this->load->view('common/header');
-            echo "<br><br><br>You must be admin to view this page";
-            $this->load->view('common/footer');
-            return 0;
-        }
-        if ($userid == -1)
-            redirect('/all_users');
-        $this->db->query("delete from users where user_id = '$userid'");
+        $this->secure_hard();
+
+        $this->db->query("delete from users where user_id = '" . $this->input->get('user_id') . "'");
+        redirect(base_url() . 'user_controls/view_all');
+    }
+
+    function set_type() {
+        $this->secure_hard(2);
+        $form_data['type'] = $this->input->post('type');
+        $this->db->update('users', $form_data, " user_id = '" . $this->input->get('user_id') . "'");
         redirect(base_url() . 'user_controls/view_all');
     }
 
