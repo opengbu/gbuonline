@@ -2028,6 +2028,13 @@ class Upgrade extends CI_Controller {
         array_push($update_list, $u);
         unset($u);
 
+        $u = new update;
+        $u->version = 3.1;
+        array_push($u->updates, "update users set type = 'student' where type != 'admin' && type != 'superadmin' ");
+        array_push($update_list, $u);
+        unset($u);
+
+
         $this->run_upgrades($update_list);
         redirect("login" . "?" . $_SERVER['QUERY_STRING']);
     }
