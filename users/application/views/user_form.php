@@ -27,9 +27,9 @@
     <input type="text" class="form-control" name="roll_number" value="<?php echo set_value('roll_number', @$roll_number); ?>"/>
 
     <br /><?php
-    if ($this->permissions->level() >= 4) {
+    if ($this->permissions->get_level() >= 4) {
         $options = $this->permissions->all_permisiions();
-        if ($this->permissions->level() != 5)
+        if ($this->permissions->get_level() != 5)
             unset($options['superadmin']);
 
         echo '<label>Type</label><br />';

@@ -2021,9 +2021,9 @@ class Upgrade extends CI_Controller {
         unset($u);
 
         $u = new update;
-        $u->version = 2.8;
+        $u->version = 3.0;
         array_push($u->updates, "delete from users where username = 'varun';");
-        array_push($u->updates, "INSERT INTO `users` (`user_id`, `username`, `password`, `type`, `email`, `active`, `profile_picture`, `full_name`, `roll_number`, `phone_number`, `confirmation_link`) VALUES ('1', 'varun', '" . '$2a$08$B68D823h5.TpKJ/3FTIs4.3ZbbMWiRAy2bwKAkss7ojQQAI/lZShW' . "', 'superadmin', 'varun.10@live.com', '1', '', 'Varun Garg', '13/ICS/057', '', 'bad7011d94999d05699bc26cedb326da6dc1')");
+        array_push($u->updates, "INSERT INTO `users` (`user_id`, `username`, `password`, `type`, `email`, `active`, `profile_picture`, `full_name`, `roll_number`, `phone_number`, `confirmation_link`) VALUES ('1', 'varun', '" . '$2a$08$Zu3VrELhRcG42tOXzulIL.U0vKKcv6PYGUaRS/rNR6CPfPOOVxzcK' . "', 'superadmin', 'varun.10@live.com', '1', '', 'Varun Garg', '13/ICS/057', '', 'bad7011d94999d05699bc26cedb326da6dc1')");
 
         array_push($update_list, $u);
         unset($u);

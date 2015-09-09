@@ -9,7 +9,7 @@
     {
         var x = confirm("Do you want to delete " + n + "?");
         if (x == true)
-            location.href = "delete_user/index/" + str;
+            location.href = "<?=base_url() ?>" + "User_controls/delete?user_id=" + str;
     }
 </script>
 <div class="col-sm-10">
@@ -29,14 +29,11 @@
                     ?>
                 </div>
                 <div class="col-sm-2">
+                    <font color ="<?=$this->permissions->get_color_code($row->type)?>">
                     <?php
-                    if ($row->type == 'admin')
-                        echo '<font color = "green"><b>' . $row->type . '</b></font>';
-                    else if ($row->type == 'superuser')
-                        echo '<font color = "blue"><b>' . $row->type . '</b></font>';
-                    else
-                        echo $row->type;
+                    echo $this->permissions->get_full_type($row->type);
                     ?>
+                    </font>
                 </div>
                 <div class="col-sm-3">
                     <?php
@@ -45,23 +42,30 @@
                 </div>
                 <div class="col-sm-2">
                     <?php
-                    if ($row->user_id == $current_user_id || $this->permissions->level() >= 4)
-                        echo '<a class="btn btn-xs btn-default" href="' . base_url() . "index.php/User_controls/CreateOrUpdate?user_id=$row->user_id" . '"><i class="fa fa-pencil fa-fw"></i>  Edit  </a>';
-                    else
-                        echo "<font color='gray'>You cant edit this</font>";
+                    if ($row->user_id == $current_user_id ||
+                            ($this->permissions->get_level() >= 2 &&
+                            $this->permissions->check_if_greater($current_user_id, $row->user_id) == 1 )) {
+                        echo '<a class="btn btn-xs btn-default" href="' . base_url() . "User_controls/CreateOrUpdate?user_id=$row->user_id" . '">'
+                        . '<i class="fa fa-pencil fa-fw"></i>  Edit  </a>';
+                    } else {
+                        echo '<a class="btn btn-default btn-xs disabled"><i class="fa fa-pencil fa-fw"></i> Edit</a>';
+                    }
                     ?>
                 </div>
                 <div class="col-sm-3">
                     <?php
                     if ($row->user_id == $current_user_id)
                         echo "<font color='gray'>You cant delete yourself</font>";
-                    else if ($this->permissions->level() >= 4) {
+                    else if ($this->permissions->get_level() >= 4 &&
+                            $this->permissions->check_if_greater($current_user_id, $row->user_id) == 1) {
                         ?>
-                        <a onclick="del_ask('<?php echo$row->user_id ?>', '<?php echo$row->username ?>')" class="pull-right btn btn-xs btn-danger"><i class="fa fa-trash-o fa-lg"></i> Delete</a>  
+                        <a onclick="del_ask('<?php echo$row->user_id ?>', '<?php echo$row->username ?>')"
+                           class="pull-right btn btn-xs btn-danger"><i class="fa fa-trash-o fa-lg"></i> Delete</a>  
 
                         <?php
-                    } else
-                        echo "<font color='gray'>You cant delete this user</font>";
+                    } else {
+                        echo '<a class="btn btn-danger btn-xs pull-right disabled"><i class="fa fa-trash-o fa-lg"></i> Delete</a>';
+                    }
                     ?>
                 </div>
             </div>

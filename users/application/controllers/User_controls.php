@@ -17,7 +17,7 @@ class User_controls extends CI_Controller {
         }
 
 
-        if ($this->input->get("user_id") != NULL && $this->permissions->level() < 4) {
+        if ($this->input->get("user_id") != NULL && $this->permissions->get_level() < 4) {
             //new user
             $this->load->view('common/header');
             echo "<br><br><br>You must be a Administrator to view this page";
@@ -25,7 +25,7 @@ class User_controls extends CI_Controller {
             return 0;
         }
 
-        if ($this->input->get("user_id") != $this->session->userdata('user_id') && $this->permissions->level() < 4) {
+        if ($this->input->get("user_id") != $this->session->userdata('user_id') && $this->permissions->get_level() < 4) {
             //current user
             $this->load->view('common/header');
             echo "<br><br><br>You must be a Administrator to view this page";
@@ -133,6 +133,24 @@ class User_controls extends CI_Controller {
             return TRUE;
         $this->form_validation->set_message('check_pass', 'Passwords do not match ');
         return FALSE;
+    }
+
+    function delete() {
+        $userid = $this->input->get('user_id');
+        if ($this->session->userdata('loggedin') != 1) {//Checking for authentication
+            redirect('/login');
+        }
+        $current_user_id = $this->session->userdata('user_id');
+        if ($this->session->userdata('type') != 'admin' and $userid != $current_user_id) {
+            $this->load->view('common/header');
+            echo "<br><br><br>You must be admin to view this page";
+            $this->load->view('common/footer');
+            return 0;
+        }
+        if ($userid == -1)
+            redirect('/all_users');
+        $this->db->query("delete from users where user_id = '$userid'");
+        redirect(base_url() . 'user_controls/view_all');
     }
 
 }

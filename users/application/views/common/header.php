@@ -172,7 +172,7 @@
                             <li ><a href="<?= base_url() . 'all_blogs' ?>">Manage Blogs <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-tags fa-2x"></i></a></li>
                             <li ><a href="<?php echo base_url() . 'User_controls/view_all' ?>">Users <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-users fa-2x"></i></a></li>
 
-                            <?php if ($this->permissions->level() >= 4) { ?>
+                            <?php if ($this->permissions->get_level() >= 4) { ?>
 
                                 <li ><a href="<?php echo base_url() . 'User_controls/CreateOrUpdate' ?>">New user <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-user-plus fa-2x"></i></a></li>
                             
