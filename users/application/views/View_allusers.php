@@ -37,7 +37,7 @@
                 </div>
                 <div class="col-sm-3">
                     <?php
-                    echo $row->email;
+                    echo $row->roll_number;
                     ?>
                 </div>
                 <div class="col-sm-2">
