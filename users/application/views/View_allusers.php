@@ -45,10 +45,8 @@
                 </div>
                 <div class="col-sm-2">
                     <?php
-                    if ($row->user_id == $current_user_id)
-                        echo '<a class="btn btn-xs btn-default " width=100%" href="' . base_url() . "index.php/edit_user/index/$row->user_id" . '"><i class="fa fa-pencil fa-fw"></i>  Edit  </a>';
-                    else if ($current_user_type == "admin")
-                        echo '<a class="btn btn-xs btn-default" href="' . base_url() . "index.php/edit_user/index/$row->user_id" . '"><i class="fa fa-pencil fa-fw"></i>  Edit  </a>';
+                    if ($row->user_id == $current_user_id || $this->permissions->level() >= 4)
+                        echo '<a class="btn btn-xs btn-default" href="' . base_url() . "index.php/User_controls/CreateOrUpdate?user_id=$row->user_id" . '"><i class="fa fa-pencil fa-fw"></i>  Edit  </a>';
                     else
                         echo "<font color='gray'>You cant edit this</font>";
                     ?>
@@ -57,8 +55,7 @@
                     <?php
                     if ($row->user_id == $current_user_id)
                         echo "<font color='gray'>You cant delete yourself</font>";
-                    else if ($current_user_type == "admin") {
-                        //echo '<a href="'. base_url()."index.php/delete_user/index/$row->user_id".'">Delete as Admin</a>';
+                    else if ($this->permissions->level() >= 4) {
                         ?>
                         <a onclick="del_ask('<?php echo$row->user_id ?>', '<?php echo$row->username ?>')" class="pull-right btn btn-xs btn-danger"><i class="fa fa-trash-o fa-lg"></i> Delete</a>  
 
@@ -71,5 +68,8 @@
         </li>
         <?php
     }
+    echo '</ul>'
     ?>
+    <br /><br />
+
 </div>

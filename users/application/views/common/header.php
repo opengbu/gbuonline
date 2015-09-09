@@ -120,7 +120,7 @@
                                 <li><a href="<?= base_url() . 'new_club' ?>">Club</a></li>
                                 <li><a href="<?= base_url() . 'new_news' ?>">News</a></li>
                                 <?php if ($this->session->userdata('type') == 'admin') { ?>
-                                    <li><a href="<?= base_url() . 'new_user' ?>">User</a></li>
+                                    <li><a href="<?= base_url() . 'User_controls/CreateOrUpdate' ?>">User</a></li>
                                     <li><a href="<?= base_url() . 'new_school' ?>">School</a></li>
                                 <?php } ?>
                             </ul>
@@ -129,7 +129,7 @@
 
                     <ul class="nav navbar-nav navbar-right">
                         <li> 
-                            <a href="<?= base_url() . 'edit_user/index/' . $this->session->userdata('user_id') ?>">Welcome <?= $this->session->userdata('full_name') ?>!</a>
+                            <a href="<?= base_url() . 'User_controls/CreateOrUpdate?user_id=' . $this->session->userdata('user_id') ?>">Welcome <?= $this->session->userdata('full_name') ?>!</a>
                         </li>
                         <li>
                             <a href="<?= base_url() . 'logout' ?>">Log out</a>
@@ -170,11 +170,11 @@
                             <li ><a href="<?php echo base_url() . 'manage_uploads' ?>">Manage Gallary <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-picture-o fa-2x"></i></a></li>
 
                             <li ><a href="<?= base_url() . 'all_blogs' ?>">Manage Blogs <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-tags fa-2x"></i></a></li>
-                            <li ><a href="<?php echo base_url() . 'all_users' ?>">Users <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-users fa-2x"></i></a></li>
+                            <li ><a href="<?php echo base_url() . 'User_controls/view_all' ?>">Users <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-users fa-2x"></i></a></li>
 
-                            <?php if ($this->session->userdata('type') == 'admin') { ?>
+                            <?php if ($this->permissions->level() >= 4) { ?>
 
-                                <li ><a href="<?php echo base_url() . 'new_user' ?>">New user <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-user-plus fa-2x"></i></a></li>
+                                <li ><a href="<?php echo base_url() . 'User_controls/CreateOrUpdate' ?>">New user <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-user-plus fa-2x"></i></a></li>
                             
                             <li><a href="<?php echo base_url() . 'stats' ?>">Statistics<i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-line-chart fa-2x"></i></a></li>
                             <?php } ?>
