@@ -2037,6 +2037,8 @@ class Upgrade extends CI_Controller {
         $u = new update;
         $u->version = 3.6;
         array_push($u->updates, "ALTER TABLE `exams` ADD `image_path` TEXT NOT NULL AFTER `paper_name`; ");
+        array_push($u->updates, "ALTER TABLE `exams` ADD `semester` VARCHAR(10) NOT NULL AFTER `image_path`; ");
+        array_push($u->updates, "ALTER TABLE `exams` CHANGE `year` `year` VARCHAR(11) NOT NULL; ");
         array_push($update_list, $u);
         unset($u);
 
