@@ -13,7 +13,7 @@ class Permissions_model extends CI_Model {
         'teacher' => 'Teacher', // 0
         'warden' => 'Warden', // 0
         'cw' => 'Content Writer', //1
-        'cm' => 'Content Manager', //2
+        'cm' => 'Content Head', //2
         'superuser' => 'Super User', //3
         'admin' => 'Administrator', //4  
         'superadmin' => 'Super Administrator'//5

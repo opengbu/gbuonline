@@ -12,12 +12,12 @@ class Blog_geass extends CI_Controller {
         {
             redirect('/login');
         }
-        if($this->session->userdata('type')!='admin')
+        if($this->permissions->get_level() != 2 && $this->permissions->get_level() < 4)
         {
             $this->load->view('common/header');
-            echo "<br><br><br>You must be admin to view this page";
+            echo "<br><br><br>You must be a Content Manager to view this page";
             $this->load->view('common/footer');
-            return 0;
+            die();
         }
         
          if($bid==-1 ) redirect('/all_blogs');//wrong url?

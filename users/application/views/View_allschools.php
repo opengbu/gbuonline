@@ -36,7 +36,7 @@
                 <div class="col-sm-2">
 
                     <?php
-                    if ($current_user_type == "admin")
+                    if ($this->permissions->get_level() > 0)
                         echo '<a class="btn btn-xs btn-default " href="' . base_url() . "index.php/Edit_table/index/$row->sc_name" . '"><i class="fa fa-pencil fa-fw"></i>Edit</a>';
                     else
                         echo "<font color='gray'>You cant edit this</font>";
@@ -45,7 +45,7 @@
                 </div>
                 <div class="col-sm-3">
                     <?php
-                    if ($current_user_type == "admin") {
+                    if ($this->permissions->get_level() == 2 || $this->permissions->get_level() >= 4) {
                         ?>
                         <a onclick="del_ask('<?php echo $row->sc_name ?>')" class="pull-right btn btn-xs btn-danger"><i class="fa fa-trash-o fa-lg"></i> Delete</a>  
                         <?php

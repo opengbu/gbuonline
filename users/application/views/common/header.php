@@ -151,11 +151,11 @@
                     <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
                         <ul class="nav navbar-nav">
                             <li ><a href="<?php echo base_url() . 'all_schools' ?>">Schools <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-th-list fa-2x"></i></a></li>
-                            <?php if ($this->session->userdata('type') == 'admin') { ?>
+                            <?php if ($this->permissions->get_level() >0) { ?>
                                 <li ><a href="<?php echo base_url() . 'new_school' ?>" >New School<i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-plus-square fa-2x"></i></a></li><?php } ?>
 
                             <li ><a href="<?php echo base_url() . 'all_clubs' ?>">Clubs <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-th-list fa-2x"></i></a></li>
-                            <?php if ($this->session->userdata('type') == 'admin') { ?>
+                            <?php if ($this->permissions->get_level() >0) { ?>
                                 <li ><a href="<?php echo base_url() . 'new_club' ?>" >New Club<i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-plus-square fa-2x"></i></a></li><?php } ?>
 
 

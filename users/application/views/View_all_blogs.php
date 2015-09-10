@@ -36,10 +36,10 @@
                 </div>
                 <div class="col-sm-2">
                     <?php
-                    if ($this->session->userdata('type') == "admin")
+                    if ($this->permissions->get_level() == 2 || $this->permissions->get_level() >= 4)
                         echo '<a class="btn btn-xs btn-primary pull-right" href="' . base_url() . 'index.php/blog_geass/index/' . $row->id . '">Review</a>';
                     else
-                        echo "You cant take Actions";
+                        echo "Content Head Only";
                     ?>
                 </div>
             </div>
