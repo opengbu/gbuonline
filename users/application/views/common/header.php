@@ -150,9 +150,9 @@
                     </div>
                     <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
                         <ul class="nav navbar-nav">
-                            <li ><a href="<?php echo base_url() . 'all_schools' ?>">Schools <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-th-list fa-2x"></i></a></li>
+                            <li ><a href="<?php echo base_url() . 'Schools' ?>">Schools <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-th-list fa-2x"></i></a></li>
                             <?php if ($this->permissions->get_level() >0) { ?>
-                                <li ><a href="<?php echo base_url() . 'new_school' ?>" >New School<i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-plus-square fa-2x"></i></a></li><?php } ?>
+                                <li ><a href="<?php echo base_url() . 'Schools/CreateOrUpdate' ?>" >New School<i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-plus-square fa-2x"></i></a></li><?php } ?>
 
                             <li ><a href="<?php echo base_url() . 'all_clubs' ?>">Clubs <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-th-list fa-2x"></i></a></li>
                             <?php if ($this->permissions->get_level() >0) { ?>
@@ -170,7 +170,7 @@
                             <li ><a href="<?php echo base_url() . 'manage_uploads' ?>">Manage Gallary <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-picture-o fa-2x"></i></a></li>
 
                             <li ><a href="<?= base_url() . 'all_blogs' ?>">Manage Blogs <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-tags fa-2x"></i></a></li>
-                            <li ><a href="<?php echo base_url() . 'User_controls/view_all' ?>">Users <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-users fa-2x"></i></a></li>
+                            <li ><a href="<?php echo base_url() . 'User_controls' ?>">Users <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-users fa-2x"></i></a></li>
 
                             <?php if ($this->permissions->get_level() >= 4) { ?>
 

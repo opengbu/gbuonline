@@ -14,6 +14,7 @@ class User_controls extends CI_Controller {
     function secure_soft() {
         if ($this->session->userdata('loggedin') != 1) {//Checking for authentication
             redirect('/login');
+            die();
         }
     }
 
@@ -38,11 +39,19 @@ class User_controls extends CI_Controller {
         if ($this->permissions->check_if_greater(NULL, $this->input->get("user_id")) != 1) {
             //Cant modify boss
             $this->load->view('common/header');
-            echo "<br><br><br>You Cannot change your boss.";
+            echo "<br><br><br>You Cannot modify your boss.";
             $this->load->view('common/footer');
             die();
         }
         return 1;
+    }
+
+    function secure_post() {
+        if ($this->permissions->check_if_greater(NULL, $this->input->post('user_id')) != 1) {
+            echo 'Serious attempt to breach security, failed. Your action will be reported';
+            echo 'You can help me in improving security, email - varun.10@live.com ';
+            die();
+        }
     }
 
     function CreateOrUpdate() {
@@ -66,7 +75,6 @@ class User_controls extends CI_Controller {
                 $query = $this->db->get_where('users', array('user_id' => $this->input->get('user_id')));
                 if ($query->num_rows() == 0) {
                     echo "<br /><br /><br /><br />No such user exists";
-                    echo $this->input->get('user_id');
                     return;
                 }
                 $form_data = $query->row();
@@ -75,6 +83,7 @@ class User_controls extends CI_Controller {
                 $this->load->view('user_form');
             $this->load->view('common/footer');
         } else {
+            
             $password = $this->input->post('password');
             $hash = $this->bcrypt->hash_password($password);
             $confirmation_link = bin2hex(openssl_random_pseudo_bytes(18)); // 36 character lin
@@ -91,9 +100,10 @@ class User_controls extends CI_Controller {
             );
 
             if ($this->input->get('user_id') != "") { // update
-                if (strlen($password) == 0)
+                $this->secure_post();
+                if (strlen($password) == 0) // no change
                     unset($form_data['password']);
-                unset($form_data['confirmation_link']);
+                unset($form_data['confirmation_link']); //not needed
                 $this->db->update('users', $form_data, " user_id = '" . $this->input->get('user_id') . "'");
 
                 if ($this->input->get('user_id') == $this->session->userdata('user_id')) {
@@ -156,13 +166,14 @@ class User_controls extends CI_Controller {
 
     function delete() {
         $this->secure_hard();
-
+        $this->secure_post();
         $this->db->query("delete from users where user_id = '" . $this->input->get('user_id') . "'");
         redirect(base_url() . 'user_controls/view_all');
     }
 
     function set_type() {
         $this->secure_hard(2);
+        $this->secure_post();
         $form_data['type'] = $this->input->post('type');
         $this->db->update('users', $form_data, " user_id = '" . $this->input->get('user_id') . "'");
         redirect(base_url() . 'user_controls/view_all');

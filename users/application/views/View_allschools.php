@@ -5,11 +5,11 @@
  */
 ?>
 <script>
-    function del_ask(str)
+    function del_ask(str,id)
     {
         var x = confirm("Do you want to delete " + str + "?\nAll events regarding this school will also be deleted");
-        if (x == true)
-            location.href = "delete_school/index/" + str;
+        if (x === true)
+            location.href = "<?php echo base_url() ?>" + "Schools/delete?school_id=" + id;
     }
 </script>
 <div class ="col-sm-10">
@@ -37,7 +37,7 @@
 
                     <?php
                     if ($this->permissions->get_level() > 0)
-                        echo '<a class="btn btn-xs btn-default " href="' . base_url() . "index.php/Edit_table/index/$row->sc_name" . '"><i class="fa fa-pencil fa-fw"></i>Edit</a>';
+                        echo '<a class="btn btn-xs btn-default " href="' . base_url() . "Schools/CreateOrUpdate?school_id=$row->id" . '"><i class="fa fa-pencil fa-fw"></i>Edit</a>';
                     else
                         echo "<font color='gray'>You cant edit this</font>";
                     ?>
@@ -47,7 +47,7 @@
                     <?php
                     if ($this->permissions->get_level() == 2 || $this->permissions->get_level() >= 4) {
                         ?>
-                        <a onclick="del_ask('<?php echo $row->sc_name ?>')" class="pull-right btn btn-xs btn-danger"><i class="fa fa-trash-o fa-lg"></i> Delete</a>  
+                        <a onclick="del_ask('<?php echo $row->sc_name ?>','<?php echo $row->id ?>')" class="pull-right btn btn-xs btn-danger"><i class="fa fa-trash-o fa-lg"></i> Delete</a>  
                         <?php
                     } else
                         echo "<font color='gray'>You cant delete this</font>";
