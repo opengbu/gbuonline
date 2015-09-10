@@ -100,9 +100,10 @@ class Feat extends CI_Controller {
 	}
 	public function feedback()
 	{
-        $data['title'] = 'Feedback &nbsp;|&nbsp;  GBU Online';
-		$data['heading'] ='Feedback';
+        $data['title'] = 'Feedback  &nbsp;|&nbsp;  GBU Online';
+		$data['heading'] ='Feedback Form';
 		$data['message'] = '';
+		
 		$this->load->view('pages/common/link',$data);
 		$this->load->view('pages/common/header');
 		$this->load->view('pages/common/page-heading',$data);
@@ -110,6 +111,13 @@ class Feat extends CI_Controller {
 		$this->load->view('pages/common/extras');
 		$this->load->view('pages/common/footer');
 	}
+	
+	public function save_feedback() {
+        $this->load->model('feedback_model');
+		$this->feedback_model->fb();
+		$this->session->set_flashdata('fb_msg', '<script> alert("Thanks for your feedback !"); </script>');
+        redirect('feat/feedback');
+    }
 	public function placements()
 	{
         $data['title'] = 'Placements &nbsp;|&nbsp;  GBU Online';
