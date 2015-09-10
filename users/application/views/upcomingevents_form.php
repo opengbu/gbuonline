@@ -1,11 +1,11 @@
 <?php
-/* 
+/*
  *  Created on :Jul 10, 2015, 12:18:54 PM
  *  Author     :Varun Garg <varun.10@live.com>
  */
 ?>
 <?php
-echo form_open('Manage_upcoming/save/');
+echo form_open(current_url() . "?" . $_SERVER['QUERY_STRING']);
 ?>
 <div class="col-sm-4">
 

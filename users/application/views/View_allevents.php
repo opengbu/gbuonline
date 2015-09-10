@@ -9,7 +9,7 @@
     {
         var x = confirm("Do you want to delete this event?");
         if (x == true)
-            location.href = "<?= base_url() ?>" + "index.php/delete_post/index?id=" + id;
+            location.href = "<?= base_url() ?>" + "/Events/delete?event_id=" + id;
     }
 </script>
 <div class="col-sm-10">    
@@ -40,8 +40,8 @@
                 </div>
                 <div class="col-sm-2">
                     <?php
-                    if ($current_user_type == "admin" || $row2->user_id == $current_user_id)
-                        echo '<a class="btn btn-xs btn-default" href="' . base_url() . "index.php/edit_post/index?id=$row2->id" . '"><i class="fa fa-pencil fa-fw"></i> Edit</a>';
+                    if ($this->permissions->get_level() >= 2 || $row2->user_id == $current_user_id)
+                        echo '<a class="btn btn-xs btn-default" href="' . base_url() . "Events/CreateOrUpdate?event_id=$row2->id" . '"><i class="fa fa-pencil fa-fw"></i> Edit</a>';
                     else
                         echo "<font color='gray'>You cant edit this</font>";
                     ?>

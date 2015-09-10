@@ -14,7 +14,7 @@ class Permissions_model extends CI_Model {
         'warden' => 'Warden', // 0
         'cw' => 'Content Writer', //1
         'cm' => 'Content Head', //2
-        'superuser' => 'Super User', //3
+        'superuser' => 'Moderator', //3
         'admin' => 'Administrator', //4  
         'superadmin' => 'Super Administrator'//5
     );
@@ -37,7 +37,7 @@ class Permissions_model extends CI_Model {
         'cw' => 'purple',
         'cm' => 'orange',
         'superuser' => 'green',
-        'admin' => 'green',
+        'admin' => 'red',
         'superadmin' => 'red'
     );
 

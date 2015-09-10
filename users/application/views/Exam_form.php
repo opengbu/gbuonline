@@ -20,7 +20,7 @@
 
     <label>School</label><br />
     <?php
-    echo form_dropdown('sc_name', $schools, set_value('sc_name', @sc_name), 'class="selectpicker"');
+    echo form_dropdown('sc_name', $schools, set_value('sc_name', @$sc_name), 'class="selectpicker"');
     ?>
     <br /><br />
 
