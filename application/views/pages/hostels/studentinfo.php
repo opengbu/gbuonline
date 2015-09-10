@@ -16,7 +16,7 @@
 
 <div>
 <?php                                                                                  //**** Admin Search Section Starts
-    if ($this->session->userdata('type') == 'admin') {
+    if ($this->session->level >= 3) {
 ?>
     <form action="#" method="POST">
         <label class="col-sm-2" style="font-size:20px;">Student Roll No :</label>

@@ -116,12 +116,15 @@
                                 <b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="<?= base_url() . 'new_event' ?>">Event</a></li>
-                                <li><a href="<?= base_url() . 'new_club' ?>">Club</a></li>
-                                <li><a href="<?= base_url() . 'new_news' ?>">News</a></li>
-                                <?php if ($this->session->userdata('type') == 'admin') { ?>
+                                <li><a href="<?= base_url() . 'events/CreateOrUpdate' ?>">Event</a></li>
+                                <li><a href="<?= base_url() . 'schools/CreateOrUpdate' ?>">School</a></li>
+                                <li><a href="<?= base_url() . 'clubs/CreateOrUpdate' ?>">Club</a></li>
+                                <li><a href="<?= base_url() . 'notices/CreateOrUpdate' ?>">Notice</a></li>
+                                <li><a href="<?= base_url() . 'ebooks/CreateOrUpdate' ?>">Ebook</a></li>
+                                <li><a href="<?= base_url() . 'exams/CreateOrUpdate' ?>">Exam</a></li>
+
+                                <?php if ($this->permissions->get_level() >= 4) { ?>
                                     <li><a href="<?= base_url() . 'User_controls/CreateOrUpdate' ?>">User</a></li>
-                                    <li><a href="<?= base_url() . 'new_school' ?>">School</a></li>
                                 <?php } ?>
                             </ul>
                         </li>

@@ -1,5 +1,5 @@
-<link rel="stylesheet" href="<?php echo base_url() . 'users/application/views/common/' . 'dist/css/bootstrap-select.css' ?>">
-<script type="text/javascript" src="<?php echo base_url() . 'users/application/views/common/' . 'dist/js/bootstrap-select.js' ?>"></script>
+<link rel="stylesheet" href="<?php echo base_url() . 'users/application/views/common/' . 'css/bootstrap-select.min.css' ?>">
+<script type="text/javascript" src="<?php echo base_url() . 'users/application/views/common/' . 'js/bootstrap-select.min.js' ?>"></script>
 
 <div class="row">
 	<div class="page-header" style = "background-color: black; padding-top: 10px; padding-left: 50px; margin-top: 15px;">

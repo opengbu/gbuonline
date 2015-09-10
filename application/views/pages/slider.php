@@ -14,8 +14,8 @@
 <div class = "row quotes" style="background-color:orange; padding-top:5px; padding-bottom:8px;">
   <h4>
   <center>
-    "A good teacher is like a candle - it consumes itself to lighten up others" <br/><br/>
-	Happy Teachers Day
+    "The educated differ from the uneducated as much as the living from the dead" <br/><br/>
+	-Aristotle
   </center>
   </h4>
 </div>

@@ -3,7 +3,7 @@
     {
         function index()
         {
-            if($this->session->userdata('type') != 'admin'){
+            if($this->session->userdata('level') < '3'){
              
                 redirect('/login');
             }

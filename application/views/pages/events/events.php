@@ -1,5 +1,5 @@
-<link rel="stylesheet" href="<?php echo base_url() . 'users/application/views/common/' . 'dist/css/bootstrap-select.css' ?>">
-<script type="text/javascript" src="<?php echo base_url() . 'users/application/views/common/' . 'dist/js/bootstrap-select.js' ?>"></script>
+<link rel="stylesheet" href="<?php echo base_url() . 'users/application/views/common/' . 'css/bootstrap-select.min.css' ?>">
+<script type="text/javascript" src="<?php echo base_url() . 'users/application/views/common/' . 'js/bootstrap-select.min.js' ?>"></script>
 
 <!--script to display the selected option-->
 <script>
