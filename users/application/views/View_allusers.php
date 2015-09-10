@@ -58,7 +58,6 @@
                 <div class="col-sm-4 ">
                     <?php
                     echo form_open(base_url() . '/User_controls/set_type?user_id=' . $row->user_id, 'style="margin: 0 !important; padding: 0 !important;"');
-
                     if ($row->user_id == $current_user_id ||
                             ($this->permissions->get_level() >= 4 &&
                             $this->permissions->check_if_greater($current_user_id, $row->user_id) == 1 )) {

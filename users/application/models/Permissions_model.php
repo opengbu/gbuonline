@@ -42,17 +42,20 @@ class Permissions_model extends CI_Model {
     );
 
     public function all_permisiions($type = NULL) {
-        if($type == NULL)
+        if ($type == NULL)
             $type = $this->session->userdata('type');
         if ($type == 'superadmin')
             return $this->options;
         //else
         $options = $this->options;
         $clevel = $this->get_level($type);
-        foreach ($options as $key => $value)
-        {
-            if($clevel <= $this->get_level($key))
+        foreach ($options as $key => $value) {
+            if ($clevel <= $this->get_level($key))
                 unset($options[$key]);
+        }
+        if ($clevel == 3) { // superuser cannot interfere with content head
+            unset($options['cw']);
+            unset($options['cm']);
         }
         return $options;
     }
@@ -100,7 +103,10 @@ class Permissions_model extends CI_Model {
     public function check_if_greater($u1 = NULL, $u2) {
         if ($u1 == NULL)
             $u1 = $this->session->userdata('user_id');
-        if ($u1 == $u2)
+        if ($this->get_level_by_id($u1) == 5) {
+            return 1;
+        }
+        if ($u1 == $u2) //same user
             return 1;
         if ($this->get_level_by_id($u1) <= $this->get_level_by_id($u2))
             return -1;

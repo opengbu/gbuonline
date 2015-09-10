@@ -26,12 +26,15 @@
     <label>Roll Number (Optional)</label>
     <input type="text" class="form-control" name="roll_number" value="<?php echo set_value('roll_number', @$roll_number); ?>"/>
 
-    <br /><?php
+    <br /><?php 
+    if( !isset($user_id) || $user_id != $this->session->userdata('user_id'))
+    {   // new user, or not current user
         $options = $this->permissions->all_permisiions();
 
         echo '<label>Type</label><br />';
         echo form_dropdown('type', $options, set_value('type', @$type), 'class="selectpicker"');
         echo '<br /><br />';
+    }
     ?>   
 
     <label>Password</label>

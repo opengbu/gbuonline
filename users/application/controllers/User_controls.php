@@ -47,8 +47,8 @@ class User_controls extends CI_Controller {
     }
 
     function secure_post() {
-        if ($this->permissions->check_if_greater(NULL, $this->input->post('user_id')) != 1) {
-            echo 'Serious attempt to breach security, failed. Your action will be reported';
+        if ($this->permissions->get_level() < $this->permissions->get_level($this->input->post('type'))) {
+            echo 'Serious attempt to breach security, failed. Your action will be reported<br />';
             echo 'You can help me in improving security, email - varun.10@live.com ';
             die();
         }
