@@ -5,30 +5,44 @@
  */
 ?>
 <div class="col-sm-5">
-    <?php echo form_open(current_url() . "?" . $_SERVER['QUERY_STRING']); ?>
+    <?php echo form_open_multipart(current_url() . "?" . $_SERVER['QUERY_STRING']); ?>
+
+    <?php
+    if (isset($profile_picture) && strlen($profile_picture) >0) {
+        ?>
+        <label>Active Picture</label><br />
+
+        <img src = "<?= dirname(base_url()) . '/' . $profile_picture ?>" width="200px"/>
+        <br /><br />
+        <?php
+    }
+    ?>
+    <label>Add/Change Profile Picture</label>
+    <input type = "file" name = "profile_picure" size = "20" />
+    <br />
+
 
     <label>Username (unique)</label>
-    <input type="text" class="form-control" name="username" value="<?php echo set_value('username', @$username); ?>"/>
+    <input type = "text" class = "form-control" name = "username" value = "<?php echo set_value('username', @$username); ?>"/>
     <br />
 
     <label>Full Name</label>
-    <input type="text" class="form-control" name="full_name" value="<?php echo set_value('full_name', @$full_name); ?>"/>
+    <input type = "text" class = "form-control" name = "full_name" value = "<?php echo set_value('full_name', @$full_name); ?>"/>
     <br />
 
     <label>Email Address (unique)</label>
-    <input type="text" class="form-control" name="email" value="<?php echo set_value('email', @$email); ?>"/>
+    <input type = "text" class = "form-control" name = "email" value = "<?php echo set_value('email', @$email); ?>"/>
     <br />
 
     <label>Phone Number (Optional)</label>
-    <input type="text" class="form-control" name="phone_number" value="<?php echo set_value('phone_number', @$phone_number); ?>"/>
+    <input type = "text" class = "form-control" name = "phone_number" value = "<?php echo set_value('phone_number', @$phone_number); ?>"/>
     <br />
 
     <label>Roll Number (Optional)</label>
-    <input type="text" class="form-control" name="roll_number" value="<?php echo set_value('roll_number', @$roll_number); ?>"/>
+    <input type = "text" class = "form-control" name = "roll_number" value = "<?php echo set_value('roll_number', @$roll_number); ?>"/>
 
-    <br /><?php 
-    if( !isset($user_id) || $user_id != $this->session->userdata('user_id'))
-    {   // new user, or not current user
+    <br /><?php
+    if (!isset($user_id) || $user_id != $this->session->userdata('user_id')) {   // new user, or not current user
         $options = $this->permissions->all_permisiions();
 
         echo '<label>Type</label><br />';
@@ -43,9 +57,8 @@
     <br />
     <label>Confirm Password</label>
     <input type="password" name="passconf" class="form-control">
+    <br />
 
-
-    <br>
     <?php
     echo '<label><font color="red">' . validation_errors() . '</font></label>';
     ?>

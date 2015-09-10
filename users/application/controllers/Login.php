@@ -61,7 +61,8 @@ class Login extends CI_Controller {
                 $this->session->set_userdata('full_name', $row->full_name);
                 $this->session->set_userdata('roll_number', $row->roll_number);
                 $this->session->set_userdata('phone_number', $row->phone_number);
-                $this->session->set_userdata('level',  $this->permissions->get_level());
+                $this->session->set_userdata('profile_picture', $row->profile_picture);
+                $this->session->set_userdata('level', $this->permissions->get_level());
                 return TRUE;
             }
         }

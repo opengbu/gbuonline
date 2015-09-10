@@ -49,6 +49,7 @@
             #getFixed {
                 width: 231px;
             }
+
         </style>
         <script>
             $(function () {
@@ -134,6 +135,19 @@
                         <li> 
                             <a href="<?= base_url() . 'User_controls/CreateOrUpdate?user_id=' . $this->session->userdata('user_id') ?>">Welcome <?= $this->session->userdata('full_name') ?>!</a>
                         </li>
+
+
+                        <?php if (strlen($this->session->userdata('profile_picture')) > 0) {
+                            ?>
+                            <li>
+                                <a class="navbar-brand ">
+                                    <img style="max-width:65px; margin-top: -8px;"
+                                         src="<?= dirname(base_url()) . '/' . $this->session->userdata('profile_picture') ?>">
+                                </a>
+                            </li>
+                            <?php
+                        }
+                        ?>
                         <li>
                             <a href="<?= base_url() . 'logout' ?>">Log out</a>
                         </li>
