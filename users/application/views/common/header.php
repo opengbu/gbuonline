@@ -69,8 +69,8 @@
                     var $cache = $('#getFixed');
                     var $height = $(window).scrollTop();
                     var $p_width = $(window).width();
-                    
-                    if ($(this).scrollTop() >= 0 && $p_width >978)
+
+                    if ($(this).scrollTop() >= 0 && $p_width > 978)
                         $cache.css({
                             'top': $height
                         });
@@ -151,16 +151,19 @@
                     <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
                         <ul class="nav navbar-nav">
                             <li ><a href="<?php echo base_url() . 'Schools' ?>">Schools <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-th-list fa-2x"></i></a></li>
-                            <?php if ($this->permissions->get_level() >0) { ?>
+                            <?php if ($this->permissions->get_level() > 0) { ?>
                                 <li ><a href="<?php echo base_url() . 'Schools/CreateOrUpdate' ?>" >New School<i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-plus-square fa-2x"></i></a></li><?php } ?>
 
                             <li ><a href="<?php echo base_url() . 'all_clubs' ?>">Clubs <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-th-list fa-2x"></i></a></li>
-                            <?php if ($this->permissions->get_level() >0) { ?>
+                            <?php if ($this->permissions->get_level() > 0) { ?>
                                 <li ><a href="<?php echo base_url() . 'new_club' ?>" >New Club<i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-plus-square fa-2x"></i></a></li><?php } ?>
 
 
                             <li ><a href="<?= base_url() . 'all_events' ?>">All Events <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-tasks fa-2x"></i></a></li>
                             <li ><a href="<?= base_url() . 'new_event' ?>">New Event <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-plus-square fa-2x"></i></a></li>
+
+                            <li ><a href="<?php echo base_url() . 'Ebooks' ?>">Ebooks <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-th-list fa-2x"></i></a></li>
+                            <li ><a href="<?php echo base_url() . 'Ebooks/CreateOrUpdate' ?>" >New Ebook<i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-plus-square fa-2x"></i></a></li>
 
                             <li ><a href="<?= base_url() . 'all_news' ?>">All News <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-tasks fa-2x"></i></a></li>
                             <li ><a href="<?= base_url() . 'new_news' ?>">Add News <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-plus-square fa-2x"></i></a></li>
@@ -175,8 +178,8 @@
                             <?php if ($this->permissions->get_level() >= 4) { ?>
 
                                 <li ><a href="<?php echo base_url() . 'User_controls/CreateOrUpdate' ?>">New user <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-user-plus fa-2x"></i></a></li>
-                            
-                            <li><a href="<?php echo base_url() . 'stats' ?>">Statistics<i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-line-chart fa-2x"></i></a></li>
+
+                                <li><a href="<?php echo base_url() . 'stats' ?>">Statistics<i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-line-chart fa-2x"></i></a></li>
                             <?php } ?>
                         </ul>
                     </div>
