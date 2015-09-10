@@ -24,7 +24,7 @@ class Login extends CI_Controller {
         $this->load->library('form_validation');
 
         if ($this->session->userdata('loggedin') == 1) {//already done
-            redirect('/all_events');
+            redirect('/events');
         } else if ($this->form_validation->run() == FALSE) {
             $this->load->view('Login_form');
         } else {
@@ -32,7 +32,7 @@ class Login extends CI_Controller {
             if (isset($_REQUEST['redirect']) && $_REQUEST['redirect'] != "") {//anyone wants to get back            
                 redirect($_REQUEST['redirect']);
             } else {
-                redirect('/all_events'); //otherwise
+                redirect('/events'); //otherwise
             }
         }
     }

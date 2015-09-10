@@ -49,7 +49,7 @@
 
                 <div class="col-sm-2">
                     <?php
-                    if ($row2->user_id == $current_user_id || $current_user_type == "admin") {
+                    if ($this->permissions->get_level() >= 2 || $row2->user_id == $current_user_id) {
                         ?>
                         <button onclick="del_ask('<?= $row2->id ?>')" class="pull-right btn btn-xs btn-danger"><i class="fa fa-trash-o fa-lg"></i> Delete</button>  
                         <?php

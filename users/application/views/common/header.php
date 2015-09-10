@@ -12,13 +12,13 @@
         <title>
             GBU Online
         </title>
-        <link rel="stylesheet" href="<?php echo base_url() . 'application/views/common/' . 'dist/css/bootstrap-select.css' ?>">
+        <link rel="stylesheet" href="<?php echo base_url() . 'application/views/common/' . 'css/bootstrap-select.min.css' ?>">
         <link rel="stylesheet" href="<?php echo base_url() . 'application/views/common/' . 'css/bootstrap.min.css' ?>">
         <link rel="stylesheet" href="<?php echo base_url() . 'application/views/common/' . 'css/font-awesome.min.css' ?>">
         <link rel="stylesheet" href="<?php echo base_url() . 'application/views/common/' . 'css/varun.css' ?>">
 
         <script type="text/javascript" src="<?php echo base_url() . 'application/views/common/' . 'js/jquery-2.1.3.min.js' ?>"></script>
-        <script type="text/javascript" src="<?php echo base_url() . 'application/views/common/' . 'dist/js/bootstrap-select.js' ?>"></script>
+        <script type="text/javascript" src="<?php echo base_url() . 'application/views/common/' . 'js/bootstrap-select.min.js' ?>"></script>
         <script type="text/javascript" src="<?php echo base_url() . 'application/views/common/' . 'js/bootstrap.min.js' ?>"></script>
         <style>
             .navbar-nav.navbar-right:last-child {
@@ -157,8 +157,8 @@
                             <li ><a href="<?php echo base_url() . 'Clubs/CreateOrUpdate' ?>" >New Club<i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-plus-square fa-2x"></i></a></li>
 
 
-                            <li ><a href="<?= base_url() . 'all_events' ?>">All Events <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-tasks fa-2x"></i></a></li>
-                            <li ><a href="<?= base_url() . 'new_event' ?>">New Event <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-plus-square fa-2x"></i></a></li>
+                            <li ><a href="<?= base_url() . 'Events' ?>">All Events <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-tasks fa-2x"></i></a></li>
+                            <li ><a href="<?= base_url() . 'Events/CreateOrUpdate' ?>">New Event <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-plus-square fa-2x"></i></a></li>
                             <li ><a href="<?php echo base_url() . 'manage_upcoming' ?>">Manage Upcoming Events <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-road fa-2x"></i></a></li>
 
                             <li ><a href="<?php echo base_url() . 'Ebooks' ?>">Ebooks <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-th-list fa-2x"></i></a></li>
