@@ -36,7 +36,7 @@ class User_controls extends CI_Controller {
             die();
         }
 
-        if ($this->permissions->check_if_greater(NULL, $this->input->get("user_id")) != 1) {
+        if ($this->input->get("user_id") != NULL && $this->permissions->check_if_greater(NULL, $this->input->get("user_id")) != 1) {
             //Cant modify boss
             $this->load->view('common/header');
             echo "<br><br><br>You Cannot modify your boss.";

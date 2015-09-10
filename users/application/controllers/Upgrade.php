@@ -2042,7 +2042,6 @@ class Upgrade extends CI_Controller {
         array_push($u->updates, "ALTER TABLE `vnb` DROP `posted_by`;");
         array_push($update_list, $u);
         unset($u);
-        
 
         $this->run_upgrades($update_list);
         redirect("login" . "?" . $_SERVER['QUERY_STRING']);
