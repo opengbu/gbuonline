@@ -1,5 +1,5 @@
 <?php
-/* 
+/*
  *  Created on :Jul 10, 2015, 12:18:54 PM
  *  Author     :Varun Garg <varun.10@live.com>
  */
@@ -24,11 +24,19 @@
             cursor: inherit;
             display: block;
         }</style>
-        <?php echo form_open_multipart('Image_upload/do_upload'); ?>
+        <?php echo form_open_multipart(current_url() . "?" . $_SERVER['QUERY_STRING']); ?>
     <span class="btn btn-default btn-file">
         Browse<input name="userfile" type="file"/>
     </span>
     <br /><br />
+    <label>Directory</label><br />
+    <?php
+    $options['user_uploads'] = 'Events';
+    $options['notices'] = 'Notices';
+    $options['exams'] = 'Exams';
+    echo form_dropdown('directory', $options, NULL, 'class="selectpicker"');
+    ?>
+    <br /><br /><br />
     <?php echo "<input type='submit' name='submit' value='upload' class='btn btn-primary' /> "; ?>
     <?php echo $error; ?>
 

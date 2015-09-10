@@ -1,44 +1,44 @@
 <?php
+
 /*
  *  Created on :Jul 10, 2015, 12:18:54 PM
  *  Author     :Varun Garg <varun.10@live.com>
  */
+
 class Manage_uploads extends CI_Controller {
 
-
-    function index() 
-    {
-        if ($this->session->userdata('loggedin') != 1) 
-        {
+    function secure_soft() {
+        if ($this->session->userdata('loggedin') != 1) {//Checking for authentication
             redirect('/login');
+            die();
         }
-        if($this->session->userdata('type')=='student')
-        {
+    }
+
+    function secure_hard() {
+        $this->secure_soft();
+        if ($this->permissions->get_level() == 0) {
             $this->load->view('common/header');
-            echo "<br><br><br>You cannot view this page";
+            echo "<br><br><br>Insufficient Privelleges. Please Contact Our Content Head";
             $this->load->view('common/footer');
-            return 0;
+            die();
         }
+        return 1;
+    }
+
+    function index() {
+
+        $this->secure_hard();
         $this->load->helper('file');
         $this->load->view('common/header');
-        $this->load->view('View_all_images');
+        $this->load->view('View_all_media');
         $this->load->view('common/footer');
     }
-    function delete()
-    {
-        if ($this->session->userdata('loggedin') != 1) 
-        {
-            redirect('/login');
-        }
-        if($this->session->userdata('type')!='admin')
-        {
-            $this->load->view('common/header');
-            echo "<br><br><br>You must be admin to view this page";
-            $this->load->view('common/footer');
-            return 0;
-        }
+
+    function delete() {
+        $this->secure_hard();
         $image = $this->input->get("image");
-        unlink("../resources/user_uploads/".$image);
+        unlink("../resources/" . $image);
         redirect('/manage_uploads');
     }
+
 }
