@@ -9,30 +9,30 @@
 
 <div class="col-sm-8" >
 
-    <?php echo form_open('new_club'); ?>
+    <?php echo form_open(current_url() . "?" . $_SERVER['QUERY_STRING']); ?>
 
     <label>Club Name (example: programming)</label>
-    <input type="text" class="form-control" name="c_name" value="<?php echo set_value('c_name'); ?>"/>
+    <input type="text" class="form-control" name="c_name" value="<?php echo set_value('c_name',@$cname); ?>"/>
     <br />
     <label>Clubs's Full Name(example: Programming club)</label>
-    <input type="text" class="form-control" name="c_full_name" value="<?php echo set_value('c_full_name'); ?>"/>
+    <input type="text" class="form-control" name="c_full_name" value="<?php echo set_value('c_full_name',@$c_full_name); ?>"/>
     <br>
     <label>Tagline(example: Discover Yourself...)</label>
-    <input type="text" class="form-control" name="tagline" value="<?php echo set_value('tagline'); ?>"/>
+    <input type="text" class="form-control" name="tagline" value="<?php echo set_value('tagline',@$tagline); ?>"/>
     <br>
     <label>About Club</label>
-    <textarea value="" name="about_us" class=""  ><?php echo set_value('about_us'); ?></textarea>
+    <textarea value="" name="about_us" class=""  ><?php echo set_value('about_us',@$about_us); ?></textarea>
     <br>
     <label>Faculty In charge</label>
-    <textarea value="" name="faculty" class=""  ><?php echo set_value('faculty'); ?></textarea>
+    <textarea value="" name="faculty" class=""  ><?php echo set_value('faculty',@$faculty); ?></textarea>
     <br>
     <label>Student in Charge</label>
-    <textarea value="" name="students" class=""  ><?php echo set_value('students'); ?></textarea>
+    <textarea value="" name="students" class=""  ><?php echo set_value('students',@$students); ?></textarea>
     <br><br>
     <?php
     echo '<label><font color="red">' . validation_errors() . '</font></label>';
     ?>
-    <div><input type="submit" value="Publish" class="btn btn-default"/></div>
+    <div><input type="submit" value="Save" class="btn btn-default"/></div>
 </form>
 </div>
 <script>

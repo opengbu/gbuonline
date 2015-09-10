@@ -153,8 +153,8 @@
                             <li ><a href="<?php echo base_url() . 'Schools' ?>">Schools <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-th-list fa-2x"></i></a></li>
                             <li ><a href="<?php echo base_url() . 'Schools/CreateOrUpdate' ?>" >New School<i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-plus-square fa-2x"></i></a></li>
 
-                            <li ><a href="<?php echo base_url() . 'all_clubs' ?>">Clubs <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-th-list fa-2x"></i></a></li>
-                            <li ><a href="<?php echo base_url() . 'new_club' ?>" >New Club<i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-plus-square fa-2x"></i></a></li>
+                            <li ><a href="<?php echo base_url() . 'Clubs' ?>">Clubs <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-th-list fa-2x"></i></a></li>
+                            <li ><a href="<?php echo base_url() . 'Clubs/CreateOrUpdate' ?>" >New Club<i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-plus-square fa-2x"></i></a></li>
 
 
                             <li ><a href="<?= base_url() . 'all_events' ?>">All Events <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-tasks fa-2x"></i></a></li>
