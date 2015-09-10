@@ -59,7 +59,7 @@
                     <?php
                     if ($this->permissions->get_level() == 2 || $this->permissions->get_level() >= 4) {
                         ?>
-                        <a onclick="del_ask('<?php echo $row->sc_name ?>', '<?php echo $row->id ?>')" class="pull-right btn btn-xs btn-danger"><i class="fa fa-trash-o fa-lg"></i> Delete</a>  
+                        <a onclick="del_ask('<?php echo $row->paper_name ?>', '<?php echo $row->id ?>')" class="pull-right btn btn-xs btn-danger"><i class="fa fa-trash-o fa-lg"></i> Delete</a>  
                         <?php
                     } else
                         echo "<font color='gray'>You cant delete this</font>";

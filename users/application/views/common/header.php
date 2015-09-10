@@ -167,6 +167,8 @@
                             <li ><a href="<?php echo base_url() . 'Exams' ?>">Exams <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-th-list fa-2x"></i></a></li>
                             <li ><a href="<?php echo base_url() . 'Exams/CreateOrUpdate' ?>" >Add Exam Paper<i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-plus-square fa-2x"></i></a></li>
 
+                            <li ><a href="<?php echo base_url() . 'Notices' ?>">Notices <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-th-list fa-2x"></i></a></li>
+                            <li ><a href="<?php echo base_url() . 'Notices/CreateOrUpdate' ?>" >Add Notice<i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-plus-square fa-2x"></i></a></li>
 
                             <li ><a href="<?= base_url() . 'all_news' ?>">All News <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-tasks fa-2x"></i></a></li>
                             <li ><a href="<?= base_url() . 'new_news' ?>">Add News <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-plus-square fa-2x"></i></a></li>
