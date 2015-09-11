@@ -27,12 +27,18 @@ class Media_upload extends CI_Controller {
     }
 
     public function do_upload() {
+        $directory = "../resources/" . $this->input->post('directory');
         $config = array(
-            'upload_path' => "../resources/" . $this->input->post('directory'),
+            'upload_path' => $directory,
             'allowed_types' => "gif|jpg|png|jpeg|pdf|doc|docx|ppt|pptx",
             'overwrite' => FALSE,
             'max_size' => "2048000"
         );
+
+        if (!file_exists($directory)) {
+            mkdir($directory, 0777, true);
+        }
+
         $this->load->library('upload', $config);
         $this->load->helper(array('form', 'url'));
 
