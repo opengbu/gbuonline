@@ -24,13 +24,19 @@ class Events extends CI_Controller {
             return 1;
         $query = $this->db->get_where('events', array('id' => $this->input->get('event_id')));
         if ($query->num_rows() == 0) {
-            echo "<br /><br /><br /><br />No such Event exists";
+            echo $this->load->view('common/header', '', TRUE);
+            $message['errors'] = "No such Event exists";
+            echo $this->load->view('Error_message', $message, TRUE);
+            echo $this->load->view('common/footer', '', TRUE);
             die();
         }
         $form_data = $query->row();
-        if ($form_data['user_id'] == $this->session->userdata('user_id'))
+        if ($form_data->user_id == $this->session->userdata('user_id'))
             return 1;
-        echo 'this is not your post';
+            echo $this->load->view('common/header', '', TRUE);
+            $message['errors'] = "This is not your post";
+            echo $this->load->view('Error_message', $message, TRUE);
+            echo $this->load->view('common/footer', '', TRUE);
         die();
     }
 
@@ -58,7 +64,7 @@ class Events extends CI_Controller {
         } else {
 
             $form_data = array(
-                'user_id' =>  $this->session->userdata('user_id'),
+                'user_id' => $this->session->userdata('user_id'),
                 'article_name' => set_value('article_name'),
                 'article' => set_value('article'),
                 'publishing_date' => set_value('publishing_date'),

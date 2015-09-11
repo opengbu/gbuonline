@@ -12,9 +12,11 @@ class Manage_upcoming extends CI_Controller {
             redirect('/login');
         }
         if ($this->permissions->get_level() < 2) {
-            $this->load->view('common/header');
-            echo "<br><br><br>You must contact Content Head to manage upcoming events";
-            $this->load->view('common/footer');
+            echo $this->load->view('common/header', '', TRUE);
+            $message['errors'] = "Insufficient Privelleges. Please Contact Our Content Head";
+            echo $this->load->view('Error_message', $message, TRUE);
+            echo $this->load->view('common/footer', '', TRUE);
+
             return 0;
         }
 

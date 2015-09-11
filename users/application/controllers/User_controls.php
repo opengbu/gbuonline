@@ -22,27 +22,36 @@ class User_controls extends CI_Controller {
 
     function secure_hard($level = 4) {
         $this->secure_soft();
+
         if ($this->input->get("user_id") == NULL && $this->permissions->get_level() < 4) {
             //new user
-            $this->load->view('common/header');
-            echo "<br><br><br>You must be a Administrator to create a user";
-            $this->load->view('common/footer');
+            echo $this->load->view('common/header', '', TRUE);
+            $message['errors'] = "Insufficient Privelleges. Please Contact an Administrator";
+            echo $this->load->view('Error_message', $message, TRUE);
+            echo $this->load->view('common/footer', '', TRUE);
             die();
         }
 
-        if ($this->input->get("user_id") != $this->session->userdata('user_id') && $this->permissions->get_level() < $level) {
+        if ($this->input->get("user_id") == $this->session->userdata('user_id'))
+            return 1; //current user
+
+
+        if ($this->permissions->get_level() < $level) { //minimnum level to edit/create a user
             //not current user
-            $this->load->view('common/header');
-            echo "<br><br><br>You must be a Administrator to view this page";
+            echo $this->load->view('common/header', '', TRUE);
+            $message['errors'] = "Insufficient Privelleges. Please Contact an Administrator";
+            echo $this->load->view('Error_message', $message, TRUE);
+            echo $this->load->view('common/footer', '', TRUE);
             $this->load->view('common/footer');
             die();
         }
-
+        //however
         if ($this->input->get("user_id") != NULL && $this->permissions->check_if_greater(NULL, $this->input->get("user_id")) != 1) {
             //Cant modify boss
-            $this->load->view('common/header');
-            echo "<br><br><br>You Cannot modify your boss.";
-            $this->load->view('common/footer');
+            echo $this->load->view('common/header', '', TRUE);
+            $message['errors'] = "Insufficient Privelleges. You cannot modify a user with equal or greater access";
+            echo $this->load->view('Error_message', $message, TRUE);
+            echo $this->load->view('common/footer', '', TRUE);
             die();
         }
         return 1;
@@ -50,8 +59,12 @@ class User_controls extends CI_Controller {
 
     function secure_post() {
         if ($this->permissions->get_level() < $this->permissions->get_level($this->input->post('type'))) {
-            echo 'Serious attempt to breach security, failed. Your action will be reported<br />';
-            echo 'You can help me in improving security, email - varun.10@live.com ';
+            echo $this->load->view('common/header', '', TRUE);
+            $message['errors'] = "Serious attempt to breach security has been detected. Your action will be reported<br />" .
+                    'You can help us in improving security, contact - varun.10@live.com ';
+            echo $this->load->view('Error_message', $message, TRUE);
+            echo $this->load->view('common/footer', '', TRUE);
+
             die();
         }
     }
@@ -104,13 +117,21 @@ class User_controls extends CI_Controller {
                 'active' => 1, // auto activate
             );
 
-            if ($this->input->get('user_id') != "") { // update
+            if ($this->input->get('user_id') != "") {
+
                 $this->secure_post();
                 if (strlen($password) == 0) // no change
                     unset($form_data['password']);
-                if (strlen($type) == 0) // no change
+
+                if (strlen($type) == 0)
                     unset($form_data['type']);
+
+
+                if (strlen($this->image_path) == 0)
+                    unset($form_data['profile_picture']);
+
                 unset($form_data['confirmation_link']); //not needed
+
                 $this->db->update('users', $form_data, " user_id = '" . $this->input->get('user_id') . "'");
 
                 if ($this->input->get('user_id') == $this->session->userdata('user_id')) {
@@ -173,16 +194,22 @@ class User_controls extends CI_Controller {
 
     function check_image_and_upload() {
 
-        if (isset($_FILES['profile_picure']['tmp_name'])) {
+        if (isset($_FILES['profile_picure']['tmp_name']) && strlen($_FILES['profile_picure']['tmp_name']) > 0) {
+
+            if (!file_exists('../resources/user_uploads/profile_images')) {
+                mkdir('../resources/user_uploads/profile_images', 0777, true);
+            }
+
             $info = new SplFileInfo($_FILES['profile_picure']['name']);
 
             $config['upload_path'] = '../resources/user_uploads/profile_images';
             $config['allowed_types'] = 'gif|jpg|png';
             $config['max_size'] = '2048';
-            //  $config['max_width'] = '800';
-            //  $config['max_height'] = '800';
+            //$config['max_width'] = '800';
+            //$config['max_height'] = '800';
             $config['overwrite'] = TRUE;
-            $config['file_name'] =   $this->input->get('user_id') . '.' . $info->getExtension();
+            $config['file_name'] = $this->input->get('user_id') . '.' . $info->getExtension();
+
             $this->image_path = 'resources/user_uploads/profile_images/' . $config['file_name']; //to be used by main f'n
 
             $this->load->library('upload', $config);
@@ -190,12 +217,9 @@ class User_controls extends CI_Controller {
                 return TRUE;
             } else {
                 $this->form_validation->set_message('check_image_and_upload', $this->upload->display_errors());
-
                 return FALSE;
             }
         } else {
-            echo 'hard';
-            die();
             return TRUE;
         }
     }

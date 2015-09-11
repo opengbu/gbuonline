@@ -18,12 +18,13 @@ class News extends CI_Controller {
         }
     }
 
-    function secure_hard($level = 4) {
+    function secure_hard() {
         $this->secure_soft();
         if ($this->permissions->get_level() == 0) {
-            $this->load->view('common/header');
-            echo "<br><br><br>Insufficient Privelleges. Please Contact Our Content Head";
-            $this->load->view('common/footer');
+            echo $this->load->view('common/header', '', TRUE);
+            $message['errors'] = "Insufficient Privelleges. Please Contact Our Content Head";
+            echo $this->load->view('Error_message', $message, TRUE);
+            echo $this->load->view('common/footer', '', TRUE);
             die();
         }
         return 1;

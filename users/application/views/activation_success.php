@@ -39,7 +39,7 @@
                     <hr class="message-inner-separator">
                     <p>
                         Your account has been successfully activated. <br />
-                        <a href="<?=base_url()?>" > Login </a>
+                        <a href="<?= base_url() ?>" > Login </a>
                     </p>
                 </div>
             </div>
