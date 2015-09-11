@@ -60,7 +60,7 @@ $numb = $this->db->query("select * from blog_likes where blog_id = '$blog_id' an
                         </button>
                     </div>
                     <div class="col-md-8" style="text-align: right;  ">
-                        <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target=".blogs"><span><?= $result->full_name ?></span> &nbsp;
+                        <button type="button" class="btn btn-primary btn-md"><span><?= $result->full_name ?></span> &nbsp;
                             <?php
                             if ($result->roll_number != NULL) {
                                 ?>

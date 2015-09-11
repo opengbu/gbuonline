@@ -33,15 +33,15 @@
 						<div class="panel-body">
 							<div class="row">
 								<div class="col-md-5">
-									<img id="tn" src="<?php echo base_url('resources/images/rajat.jpg')?>" height="170" width="130"/>
+									<img id="tn" src="<?php echo base_url('resources/images/')?>" height="170" width="130"/>
 								</div>
 								<div class="col-md-7" id="spn">
-									Name : Rajat Saxena <br/>
-									Passout : 2018<br/>
-									School : SoICT<br/><br/>
-									Status : Joined Microsoft <br/>
-									Position : Data Scientist <br/>
-									Location : San Francisco
+									Name :  <br/>
+									Passout : <br/>
+									School : <br/><br/>
+									Joined : <br/>
+									Position : <br/>
+									Location : 
 								</div>
 							</div>
 						</div>
@@ -52,15 +52,15 @@
 						<div class="panel-body">
 							<div class="row">
 								<div class="col-md-5">
-									<img id="tn" src="<?php echo base_url('resources/images/shobhit.jpg')?>" height="170" width="130"/>
+									<img id="tn" src="<?php echo base_url('resources/images/')?>" height="170" width="130"/>
 								</div>
 								<div class="col-md-7" id="spn">
-									Name : Shobhit Sharma <br/>
-									Passout : 2016<br/>
-									School : SoHSS<br/><br/>
-									Status : Joined Google <br/>
-									Position : S/W Engineer <br/>
-									Location : New York
+									Name :  <br/>
+									Passout : <br/>
+									School : <br/><br/>
+									Joined : <br/>
+									Position :  <br/>
+									Location : 
 								</div>
 							</div>
 						</div>
@@ -78,15 +78,15 @@
 						<div class="panel-body">
 							<div class="row">
 								<div class="col-md-5">
-									<img id="tn" src="<?php echo base_url('resources/images/varun.jpg')?>" height="170" width="130"/>
+									<img id="tn" src="<?php echo base_url('resources/images/')?>" height="170" width="130"/>
 								</div>
 								<div class="col-md-7" id="spn">
-									Name : Varun Garg <br/>
-									Passout : 2020<br/>
-									School : SoVSAS<br/><br/>
-									Status : Joined Facebook <br/>
-									Position : Backend Engineer <br/>
-									Location : California
+									Name :  <br/>
+									Passout : <br/>
+									School : <br/><br/>
+									Joined : <br/>
+									Position : <br/>
+									Location : 
 								</div>
 							</div>
 						</div>
@@ -97,15 +97,15 @@
 						<div class="panel-body">
 							<div class="row">
 								<div class="col-md-5">
-									<img id="tn" src="<?php echo base_url('resources/images/bhawesh.jpg')?>" height="170" width="130"/>
+									<img id="tn" src="<?php echo base_url('resources/images/')?>" height="170" width="130"/>
 								</div>
 								<div class="col-md-7" id="spn">
-									Name : Bhawesh Chandola <br/>
-									Passout : 2029<br/>
-									School : SoICT<br/><br/>
-									Status : Joined Oracle <br/>
-									Position : Data Scientist <br/>
-									Location : Hyderabad
+									Name :  <br/>
+									Passout : <br/>
+									School : <br/><br/>
+									Joined : <br/>
+									Position : <br/>
+									Location : 
 								</div>
 							</div>
 						</div>

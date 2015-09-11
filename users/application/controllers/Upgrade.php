@@ -2042,6 +2042,19 @@ class Upgrade extends CI_Controller {
         array_push($u->updates, "ALTER TABLE `vnb` DROP `posted_by`;");
         array_push($update_list, $u);
         unset($u);
+		
+		$u = new update;
+        $u->version = 3.7;
+        array_push($u->updates, "UPDATE `schools` SET `tagline` = 'Where Technology Meets Innovation !!!' WHERE `sc_name` = 'soict'; ");
+		array_push($u->updates, "UPDATE `schools` SET `tagline` = 'Where Research Meets Nature !!!' WHERE `sc_name` = 'sovsas'; ");
+		array_push($u->updates, "UPDATE `schools` SET `tagline` = 'Where Hybrids Are Produced !!!' WHERE `sc_name` = 'sobt'; ");
+		array_push($u->updates, "UPDATE `schools` SET `tagline` = 'Where Necessity Is The Mother Of Invention !!!' WHERE `sc_name` = 'soe'; ");
+		array_push($u->updates, "UPDATE `schools` SET `tagline` = 'Where Ideas Are Moulded Into Businesses !!!' WHERE `sc_name` = 'som'; ");
+		array_push($u->updates, "UPDATE `schools` SET `tagline` = 'Where Constitution Is Redefined !!!' WHERE `sc_name` = 'soljg'; ");
+		array_push($u->updates, "UPDATE `schools` SET `tagline` = 'Where Buddhist Ethics Are Applied In Real Life !!!' WHERE `sc_name` = 'sobsc'; ");
+		array_push($u->updates, "UPDATE `schools` SET `tagline` = 'Where HomoSapiens Are Transformed Into Human Beings !!!' WHERE `sc_name` = 'sohss'; ");
+        array_push($update_list, $u);
+        unset($u);
 
         $this->run_upgrades($update_list);
         redirect("login" . "?" . $_SERVER['QUERY_STRING']);

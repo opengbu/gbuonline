@@ -31,14 +31,15 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><font size="2">
                         <span class="glyphicon glyphicon-education" aria-hidden="true"></span>&nbsp;Schools</font><span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="<?php echo site_url('schools/soe') ?>">SOE</a></li>
-                        <li><a href="<?php echo site_url('schools/som') ?>">SOM</a></li>
-                        <li><a href="<?php echo site_url('schools/sobt') ?>">SOBT</a></li>
-                        <li><a href="<?php echo site_url('schools/soict') ?>">SOICT</a></li>
-                        <li><a href="<?php echo site_url('schools/soljg') ?>">SOLJG</a></li>
-                        <li><a href="<?php echo site_url('schools/sobsc') ?>">SOBSC</a></li>
-                        <li><a href="<?php echo site_url('schools/sohss') ?>">SOHSS</a></li>
-                        <li><a href="<?php echo site_url('schools/sovsas') ?>">SOVSAS</a></li>
+						<?php
+						$schools = $this->db->query("select sc_name from schools order by CHAR_LENGTH(sc_name)");
+						foreach ($schools->result() as $row)
+						{
+						?>
+							<li><a href="<?php echo site_url().'schools/view/'.$row->sc_name ?>"><?=strtoupper($row->sc_name)?></a></li>
+						<?php
+						}
+						?>
                     </ul>
                 </li>
                 <!--

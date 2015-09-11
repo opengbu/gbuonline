@@ -85,7 +85,7 @@ $user_id = $this->session->userdata("user_id");
                                 </button>
                             </div>
                             <div class="col-md-7" style="text-align: right;">
-                                <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target=".blogs"><span><?= $row->full_name ?></span> &nbsp;
+                                <button type="button" class="btn btn-primary btn-md"><span><?= $row->full_name ?></span> &nbsp;
                                     <?php
                                     if ($row->roll_number != NULL) {
                                         ?>
