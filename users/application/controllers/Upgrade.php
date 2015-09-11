@@ -2056,6 +2056,12 @@ class Upgrade extends CI_Controller {
         array_push($update_list, $u);
         unset($u);
 
+		$u = new update;
+        $u->version = 3.8;
+        array_push($u->updates, "Alter table exams add dept_name varchar (30); ");
+		array_push($update_list, $u);
+        unset($u);
+
         $this->run_upgrades($update_list);
         redirect("login" . "?" . $_SERVER['QUERY_STRING']);
     }
