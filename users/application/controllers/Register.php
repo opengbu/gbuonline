@@ -22,9 +22,9 @@ class Register extends CI_Controller {
         $this->form_validation->set_rules('full_name', 'Full Name', 'required');
         $this->form_validation->set_rules('username', 'Username', 'required|callback_check_details');
         $this->form_validation->set_rules('email', 'email', 'required|callback_check_email');
-        $this->form_validation->set_rules('roll_number', 'roll_number', 'required|callback_check_roll_no');
+        $this->form_validation->set_rules('roll_number', 'roll_number', 'callback_check_roll_no');
 
-        
+
         if ($this->form_validation->run() == FALSE) {
 
             $this->load->view('registration_form');
@@ -44,7 +44,7 @@ class Register extends CI_Controller {
                 'confirmation_link' => $confirmation_link,
             );
             $this->db->insert('users', $form_data);
-            $this->send_mail($form_data['username'], $form_data['confirmation_link'], $form_data['full_name']);
+            $this->send_mail($form_data['username'], $form_data['confirmation_link'], $form_data['full_name'], $form_data['email']);
             $this->load->view('create_success');
         }
     }
@@ -67,7 +67,7 @@ class Register extends CI_Controller {
         if (preg_match("@^([^/]*/){2}@", $roll_no))
             return TRUE;
 
-        $this->form_validation->set_message('check_roll_no', 'Roll Number ' . $roll_no . ' must be in XX/XX/XXX format ');
+        $this->form_validation->set_message('check_roll_no', 'Roll Number ' . $roll_no . ' must be in XX/XXX/XXX format ');
         return FALSE;
     }
 
@@ -87,7 +87,7 @@ class Register extends CI_Controller {
             redirect('login');
     }
 
-    function send_mail($username, $confirmation_link, $full_name) {
+    function send_mail($username, $confirmation_link, $full_name, $email) {
         $host = $_SERVER['HTTP_HOST'];
         $from_email = 'accounts@' . $host; // Ex. accounts@gbuonline.in
         $message = '<html>

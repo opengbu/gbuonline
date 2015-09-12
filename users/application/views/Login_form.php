@@ -35,7 +35,7 @@
                     <div class="panel panel-default">
 
                         <div class="panel-heading">
-                            <h3 class="panel-title"><div class="text-center"> Sign in to Online</div></h3>
+                            <h3 class="panel-title"><div class="text-center"> Sign in to GBU Online</div></h3>
                         </div>
                         <div class="panel-body">
                             <center>

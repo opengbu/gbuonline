@@ -40,7 +40,10 @@
             <div class="row">
                 <div class="col-sm-2">
                     <?php
-                    echo $row->username;
+                    if ($row->active != 1)
+                        echo '<font color = "grey">' . $row->username . '</font>';
+                    else
+                        echo $row->username;
                     ?>
                 </div>
                 <div class="col-sm-2">
