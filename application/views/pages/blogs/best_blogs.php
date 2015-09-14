@@ -109,7 +109,8 @@ $user_id = $this->session->userdata("user_id");
                                 <br>
                                 <b>Share on Social Media</b>
                                 <br><br>
-                                Under Construction
+                                <!-- Place this tag where you want the share button to render. -->
+								<div class="g-plus" data-action="share" data-annotation="bubble" data-height="50" data-width="100" data-href="http://www.gbuonline.in/blogs/read_blogs?blog_id=<?= $row->id ?>"></div>
                                 <br>
                                 <br>
                             </center>
@@ -129,3 +130,6 @@ $user_id = $this->session->userdata("user_id");
 
         <!--row ends in extras-->
         <!--container ends in extras-->
+
+	<!-- Place this tag in your head or just before your close body tag. -->
+	<script src="https://apis.google.com/js/platform.js" async defer></script>	

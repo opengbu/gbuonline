@@ -60,10 +60,10 @@
    <br>
     <p>
         <em>The information contained in this web site is subject to change without notice.<br />
-        Copyright &copy; 1997-2009 gbuonline Inc. All rights reserved.
+        Copyright &copy; 2014-2015 Gbuonline Inc. All rights reserved.
        </em></p>
     <p>
-        Updated by The gbuonline Legal Team on 1st Aug, 2015</p><br>
+        Updated by The Gbuonline Legal Team on 1st Aug, 2015</p><br>
 
 
         </div> 
