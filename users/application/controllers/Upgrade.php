@@ -2061,6 +2061,13 @@ class Upgrade extends CI_Controller {
         array_push($u->updates, "Alter table exams add dept_name varchar (30); ");
 		array_push($update_list, $u);
         unset($u);
+		
+		$u = new update;
+        $u->version = 3.9;
+        array_push($u->updates, "UPDATE `gbuonline`.`vnb` SET `user_id` = '5' LIMIT 2; ");
+		array_push($u->updates, "UPDATE `gbuonline`.`vnb` SET `user_id` = '3' ORDER BY id DESC LIMIT 3; ");
+		array_push($update_list, $u);
+        unset($u);
 
         $this->run_upgrades($update_list);
         redirect("login" . "?" . $_SERVER['QUERY_STRING']);

@@ -110,7 +110,7 @@ $(function(){
 				<!--Loop Starts-->
 				
 				<?php
-                                        $q=$this->db->query("select * from vnb");
+                                        $q=$this->db->query("SELECT link,title,full_name,date FROM vnb,users WHERE vnb.user_id=users.user_id");
                                         $results=$q->result();
 					foreach($results as $rows)
 					{
@@ -121,7 +121,7 @@ $(function(){
 								<div class="row">
 									<div class="col-md-8">
 										<h4 class="list-group-item-heading"><?php echo $rows->title;?></h4>
-										<p class="list-group-item-text"><b>Posted By:</b> <?php echo $rows->posted_by; ?></p>
+										<p class="list-group-item-text"><b>Posted By:</b> <?php echo $rows->full_name; ?></p>
 									</div>
 									<div class="col-md-4" style="padding-top: 10px;">
 										<center>
