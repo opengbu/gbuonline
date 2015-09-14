@@ -14,7 +14,7 @@
     }
     ?>
     
-    <label>Exam Name (Example Maths 4)</label>
+    <label>Paper Name (Example Maths 4)</label>
     <input type="text" class="form-control" name="paper_name" value="<?php echo set_value('paper_name', @$paper_name); ?>"/>
     <br>
 
@@ -24,9 +24,9 @@
     ?>
     <br /><br />
 
-    <label>Select File</label>
+    <!--<label>Select File</label>
     <select name="image_path" class="selectpicker" data-width="100%">
-        <?php
+        <?php /*
         $this->load->helper('file');
         $files = get_filenames("../resources/exams");
         foreach ($files as $name) {
@@ -34,10 +34,13 @@
             echo 'resources/exams/' . $name;
             echo '</option>';
         }
-        ?>
-    </select>
-    <br /><br />
-
+        */?>
+    </select>-->
+	<label>Paper Link</label>
+    <input type="text" class="form-control" name="image_path" value="<?php echo set_value('image_path', @$image_path); ?>"/>
+	
+    <br />
+	
     <label>Year (Example 2015)</label>
     <input type="text" class="form-control" name="year" value="<?php echo set_value('year', @$year); ?>"/>
     <br>

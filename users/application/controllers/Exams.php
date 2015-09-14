@@ -37,8 +37,8 @@ class Exams extends CI_Controller {
         $this->form_validation->set_rules('sc_name', 'School\'s name', 'required');
         $this->form_validation->set_rules('year', 'Year (Ex:2015)', 'required');
         $this->form_validation->set_rules('semester', 'Semester', 'required');
-        $this->form_validation->set_rules('image_path', 'Document Location', 'required');
-        $this->form_validation->set_rules('paper_name', 'Exam\'s name', 'required');
+        $this->form_validation->set_rules('image_path', 'Paper\'s link', 'required');
+        $this->form_validation->set_rules('paper_name', 'Paper\'s name', 'required');
 
 
         $this->load->view('common/header');

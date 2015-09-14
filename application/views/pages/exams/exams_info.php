@@ -25,12 +25,14 @@
 						{
 						?>
 				   <div class="col-md-3" >
-                        <div class="thumbnail" style="height:150px;">
-                            <a href="<?php echo $exam->image_path?>"><?php echo $exam->paper_name ?></a>
+                        <a href="<?php echo $exam->image_path?>">
+						<div class="thumbnail" style="height:150px;">
+                            
                             <div class="caption">
                                 <h3><center><b><?php echo $exam->paper_name; ?></b></center></h3>
                             </div>
                         </div>
+						</a>
                     </div>
 					<?php
                     }
