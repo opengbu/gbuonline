@@ -5,12 +5,13 @@
  */
 ?>
 <script>
-    function del_ask(str,id)
+    function del_ask(str, id)
     {
         var x = confirm("Do you want to delete " + str + "?\nAll events regarding this school will also be deleted");
         if (x === true)
             location.href = "<?php echo base_url() ?>" + "Schools/delete?school_id=" + id;
     }
+    var count = 1;
 </script>
 <div class ="col-sm-10">
     <?php
@@ -23,6 +24,10 @@
         <li class="list-group-item">
             <div class="row">
                 <div class="col-sm-5">
+                    <script>
+                        document.write(count + ". ");
+                        count++;
+                    </script>
                     <?php
                     echo $row->sc_full_name;
                     ?>
@@ -47,7 +52,7 @@
                     <?php
                     if ($this->permissions->get_level() == 2 || $this->permissions->get_level() >= 4) {
                         ?>
-                        <a onclick="del_ask('<?php echo $row->sc_name ?>','<?php echo $row->id ?>')" class="pull-right btn btn-xs btn-danger"><i class="fa fa-trash-o fa-lg"></i> Delete</a>  
+                        <a onclick="del_ask('<?php echo $row->sc_name ?>', '<?php echo $row->id ?>')" class="pull-right btn btn-xs btn-danger"><i class="fa fa-trash-o fa-lg"></i> Delete</a>  
                         <?php
                     } else
                         echo "<font color='gray'>You cant delete this</font>";

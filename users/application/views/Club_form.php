@@ -12,7 +12,7 @@
     <?php echo form_open(current_url() . "?" . $_SERVER['QUERY_STRING']); ?>
 
     <label>Club Name (example: programming)</label>
-    <input type="text" class="form-control" name="c_name" value="<?php echo set_value('c_name',@$cname); ?>"/>
+    <input type="text" class="form-control" name="c_name" value="<?php echo set_value('c_name',@$c_name); ?>"/>
     <br />
     <label>Clubs's Full Name(example: Programming club)</label>
     <input type="text" class="form-control" name="c_full_name" value="<?php echo set_value('c_full_name',@$c_full_name); ?>"/>

@@ -86,9 +86,9 @@ class User_controls extends CI_Controller {
                     return;
                 }
                 $form_data = $query->row();
-                $this->load->view('user_form', $form_data);
+                $this->load->view('User_form', $form_data);
             } else
-                $this->load->view('user_form');
+                $this->load->view('User_form');
             $this->load->view('common/footer');
         } else {
 
@@ -109,6 +109,9 @@ class User_controls extends CI_Controller {
                 'active' => 1, // auto activate
             );
 
+            if (strlen($this->image_path) == 0)
+                unset($form_data['profile_picture']);
+
             if ($this->input->get('user_id') != "") {
 
                 $this->secure_post();
@@ -117,10 +120,6 @@ class User_controls extends CI_Controller {
 
                 if (strlen($type) == 0)
                     unset($form_data['type']);
-
-
-                if (strlen($this->image_path) == 0)
-                    unset($form_data['profile_picture']);
 
                 unset($form_data['confirmation_link']); //not needed
 

@@ -17,7 +17,7 @@ class Permissions_model extends CI_Model {
                 'upgrade'
             );
             if (!in_array($this->router->fetch_class(), $allowed)) {
-                redirect('login' . "?redirect=" . base_url() . $_SERVER['QUERY_STRING']);
+                redirect('login' . "?redirect=" . current_url() . $_SERVER['QUERY_STRING']);
 
                 die();
             }

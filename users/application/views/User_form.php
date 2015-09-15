@@ -8,7 +8,7 @@
     <?php echo form_open_multipart(current_url() . "?" . $_SERVER['QUERY_STRING']); ?>
 
     <?php
-    if (isset($profile_picture) && strlen($profile_picture) >0) {
+    if (isset($profile_picture) && strlen($profile_picture) > 0) {
         ?>
         <label>Active Picture</label><br />
 
@@ -17,9 +17,17 @@
         <?php
     }
     ?>
-    <label>Add/Change Profile Picture</label>
-    <input type = "file" name = "profile_picure" size = "20" />
-    <br />
+    <label>Add/Change Profile Picture</label><br />
+    <?php
+    if ($this->input->get('user_id') != NULL) {
+        ?>
+        <input type = "file" name = "profile_picure" size = "20" />
+        <br />
+        <?php
+    } else {
+        echo 'Please create account first. Then go to profile picture and update it from there<br /><br />';
+    }
+    ?>
 
 
     <label>Username (unique)</label>

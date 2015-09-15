@@ -11,6 +11,7 @@
         if (x == true)
             location.href = "<?= base_url() ?>" + "User_controls/delete?user_id=" + str;
     }
+    var count = 1;
 </script>
 <style>
     input.form-fixer {
@@ -39,6 +40,10 @@
         <li class="list-group-item">
             <div class="row">
                 <div class="col-sm-2">
+                    <script>
+                        document.write(count + ". ");
+                        count++;
+                    </script>
                     <?php
                     if ($row->active != 1)
                         echo '<font color = "grey">' . $row->username . '</font>';

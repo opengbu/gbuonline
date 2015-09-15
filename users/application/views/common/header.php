@@ -10,8 +10,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <title>
-            GBU Online
+            <?php
+            echo ucfirst($this->router->fetch_class());
+            ?>
+            | GBU Online
         </title>
+        <link rel="shortcut icon" href="<?php echo dirname(base_url()) . '/resources/images/favicon.ico' ?>">
+
         <link rel="stylesheet" href="<?php echo base_url() . 'application/views/common/' . 'css/bootstrap-select.min.css' ?>">
         <link rel="stylesheet" href="<?php echo base_url() . 'application/views/common/' . 'css/bootstrap.min.css' ?>">
         <link rel="stylesheet" href="<?php echo base_url() . 'application/views/common/' . 'css/font-awesome.min.css' ?>">
@@ -124,7 +129,7 @@
                                 <li><a href="<?= base_url() . 'ebooks/CreateOrUpdate' ?>">Ebook</a></li>
                                 <li><a href="<?= base_url() . 'exams/CreateOrUpdate' ?>">Exam</a></li>
 
-                                <?php if ($this->permissions->get_level() >= 4) { ?>
+<?php if ($this->permissions->get_level() >= 4) { ?>
                                     <li><a href="<?= base_url() . 'User_controls/CreateOrUpdate' ?>">User</a></li>
                                 <?php } ?>
                             </ul>
@@ -137,18 +142,17 @@
                         </li>
 
 
-                        <?php /* if (strlen($this->session->userdata('profile_picture')) > 0) {
-                                  ?>
-                                  <li>
-                                  <a class="navbar-brand ">
-                                  <img style="max-width:65px; margin-top: -8px;"
-                                  src="<?= dirname(base_url()) . '/' . $this->session->userdata('profile_picture') ?>">
-                                  </a>
-                                  </li>
-                                  <?php
-                                  } */
-                                
-                        ?>
+<?php /* if (strlen($this->session->userdata('profile_picture')) > 0) {
+  ?>
+  <li>
+  <a class="navbar-brand ">
+  <img style="max-width:65px; margin-top: -8px;"
+  src="<?= dirname(base_url()) . '/' . $this->session->userdata('profile_picture') ?>">
+  </a>
+  </li>
+  <?php
+  } */
+?>
                         <li>
                             <a href="<?= base_url() . 'logout' ?>">Log out</a>
                         </li>
