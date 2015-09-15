@@ -11,15 +11,7 @@ class Events extends CI_Controller {
         redirect(base_url() . 'Events/view_all');
     }
 
-    function secure_soft() {
-        if ($this->session->userdata('loggedin') != 1) {//Checking for authentication
-            redirect('/login');
-            die();
-        }
-    }
-
     function secure_hard() {
-        $this->secure_soft();
         if ($this->permissions->get_level() >= 2)
             return 1;
         $query = $this->db->get_where('events', array('id' => $this->input->get('event_id')));
@@ -33,15 +25,14 @@ class Events extends CI_Controller {
         $form_data = $query->row();
         if ($form_data->user_id == $this->session->userdata('user_id'))
             return 1;
-            echo $this->load->view('common/header', '', TRUE);
-            $message['errors'] = "This is not your post";
-            echo $this->load->view('Error_message', $message, TRUE);
-            echo $this->load->view('common/footer', '', TRUE);
+        echo $this->load->view('common/header', '', TRUE);
+        $message['errors'] = "This is not your post";
+        echo $this->load->view('Error_message', $message, TRUE);
+        echo $this->load->view('common/footer', '', TRUE);
         die();
     }
 
     function CreateOrUpdate() {
-        $this->secure_soft();
 
         $this->load->helper(array('form', 'url'));
         $this->form_validation->set_rules('article_name', 'Event name', 'required');
@@ -88,7 +79,6 @@ class Events extends CI_Controller {
     }
 
     function view_all() {
-        $this->secure_soft();
 
         $this->load->view('common/header');
         $this->load->view('View_allevents');

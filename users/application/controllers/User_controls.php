@@ -11,17 +11,9 @@ class User_controls extends CI_Controller {
         redirect(base_url() . 'user_controls/view_all');
     }
 
-    function secure_soft() {
-        if ($this->session->userdata('loggedin') != 1) {//Checking for authentication
-            redirect('/login');
-            die();
-        }
-    }
-
     var $image_path = NULL;
 
     function secure_hard($level = 4) {
-        $this->secure_soft();
 
         if ($this->input->get("user_id") == NULL && $this->permissions->get_level() < 4) {
             //new user
@@ -145,7 +137,6 @@ class User_controls extends CI_Controller {
     }
 
     function view_all() {
-        $this->secure_soft();
 
         $this->load->view('common/header');
         $this->load->view('View_allusers');

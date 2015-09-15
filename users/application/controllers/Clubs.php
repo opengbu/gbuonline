@@ -11,24 +11,17 @@ class Clubs extends CI_Controller {
         redirect(base_url() . 'Clubs/view_all');
     }
 
-    function secure_soft() {
-        if ($this->session->userdata('loggedin') != 1) {//Checking for authentication
-            redirect('/login');
-            die();
-        }
-    }
-
     function secure_hard() {
-        $this->secure_soft();
         if ($this->permissions->get_level() == 0) {
-            echo $this->load->view('common/header','',TRUE);
+            echo $this->load->view('common/header', '', TRUE);
             $message['errors'] = "Insufficient Privelleges. Please Contact Our Content Head";
-            echo $this->load->view('Error_message', $message,TRUE);
-            echo $this->load->view('common/footer','',TRUE);
-           die();
+            echo $this->load->view('Error_message', $message, TRUE);
+            echo $this->load->view('common/footer', '', TRUE);
+            die();
         }
         return 1;
     }
+
     function CreateOrUpdate() {
         $this->secure_hard();
 
@@ -73,7 +66,6 @@ class Clubs extends CI_Controller {
     }
 
     function view_all() {
-        $this->secure_soft();
 
         $this->load->view('common/header');
         $this->load->view('View_allclubs');
@@ -81,7 +73,6 @@ class Clubs extends CI_Controller {
     }
 
     function delete() {
-        $this->secure_hard();
         $this->db->query("delete from clubs where id = '" . $this->input->get('club_id') . "'");
         redirect(base_url() . 'Clubs/view_all');
     }

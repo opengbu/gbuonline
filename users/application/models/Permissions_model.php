@@ -7,6 +7,22 @@
 
 class Permissions_model extends CI_Model {
 
+    function __construct() {
+        parent::__construct();
+        if ($this->session->userdata('loggedin') != 1) {//Checking for authentication
+            $allowed = array(
+                'login',
+                'register',
+                'logout'
+            );
+            if (!in_array($this->router->fetch_class(), $allowed)) {
+                redirect('login' . "?redirect=" . base_url() . $_SERVER['QUERY_STRING']);
+
+                die();
+            }
+        }
+    }
+
     var $options = array(
         '' => 'Please Select',
         'student' => 'Student', // 0
@@ -46,7 +62,7 @@ class Permissions_model extends CI_Model {
             $type = $this->session->userdata('type');
         if ($type == 'superadmin')
             return $this->options;
-        //else
+//else
         $options = $this->options;
         $clevel = $this->get_level($type);
         foreach ($options as $key => $value) {

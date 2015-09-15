@@ -7,15 +7,7 @@
 
 class Manage_uploads extends CI_Controller {
 
-    function secure_soft() {
-        if ($this->session->userdata('loggedin') != 1) {//Checking for authentication
-            redirect('/login');
-            die();
-        }
-    }
-
     function secure_hard() {
-        $this->secure_soft();
         if ($this->permissions->get_level() == 0) {
             echo $this->load->view('common/header', '', TRUE);
             $message['errors'] = "Insufficient Privelleges. Please Contact Our Content Head";

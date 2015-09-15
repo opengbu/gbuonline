@@ -8,9 +8,7 @@
 class Manage_upcoming extends CI_Controller {
 
     function index() {
-        if ($this->session->userdata('loggedin') != 1) {
-            redirect('/login');
-        }
+
         if ($this->permissions->get_level() < 2) {
             echo $this->load->view('common/header', '', TRUE);
             $message['errors'] = "Insufficient Privelleges. Please Contact Our Content Head";
