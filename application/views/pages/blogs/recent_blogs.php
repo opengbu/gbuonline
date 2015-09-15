@@ -24,6 +24,9 @@ $user_id = $this->session->userdata("user_id");
                     <div class="btn-group" role="group">
                         <button type="button" class="btn btn-default" onclick="location.href = '<?php echo site_url('blogs/write_blogs') ?>'">Write Blogs</button>
                     </div>
+					<div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default" onclick="location.href = '<?php echo site_url('blogs/your_blogs') ?>'">Edit Blogs</button>
+                    </div>
                     <div class="btn-group" role="group">
                         <button type="button" class="btn btn-default" onclick="location.href = '<?php echo site_url('blogs/best_blogs') ?>'">Best Blogs</button>
                     </div>

@@ -4,55 +4,52 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Blogs extends CI_Controller {
 
-    public function recent_blogs() {
-        $data['title'] = 'Blog Space &nbsp;|&nbsp;  GBU Online';
+	public function head() {
+		$data['title'] = 'Blog Space &nbsp;|&nbsp;  GBU Online';
         $data['heading'] = ' Blog Space ';
         $data['message'] = 'Keep Calm and Write.....';
         $this->load->view('pages/common/link', $data);
         $this->load->view('pages/common/header');
         $this->load->view('pages/common/page-heading', $data);
-        $this->load->view('pages/blogs/recent_blogs');
-        $this->load->view('pages/common/extras');
+   }
+   
+   public function foot() {
+		$this->load->view('pages/common/extras');
         $this->load->view('pages/common/footer');
+   }
+
+    public function recent_blogs() {
+		$this->head();
+        $this->load->view('pages/blogs/recent_blogs');
+        $this->foot();
     }
 
     public function write_blogs() {
         if ($this->session->userdata('loggedin') != 1) //student/user/admin logged in
             redirect('users?redirect=' . current_url());
-
-        $data['title'] = 'Blog Space &nbsp;|&nbsp;  GBU Online';
-        $data['heading'] = ' Blog Space ';
-        $data['message'] = 'Keep Calm and Write.....';
-        $this->load->view('pages/common/link', $data);
-        $this->load->view('pages/common/header');
-        $this->load->view('pages/common/page-heading', $data);
+		$this->head();
         $this->load->view('pages/blogs/write_blogs');
-        $this->load->view('pages/common/extras');
-        $this->load->view('pages/common/footer');
+        $this->foot();
+    }
+	
+	public function your_blogs() {
+        if ($this->session->userdata('loggedin') != 1) //student/user/admin logged in
+            redirect('users?redirect=' . current_url());
+		$this->head();
+        $this->load->view('pages/blogs/your_blogs');
+        $this->foot();
     }
 
     public function best_blogs() {
-        $data['title'] = 'Blog Space &nbsp;|&nbsp;  GBU Online';
-        $data['heading'] = ' Blog Space ';
-        $data['message'] = 'Keep Calm and Write.....';
-        $this->load->view('pages/common/link', $data);
-        $this->load->view('pages/common/header');
-        $this->load->view('pages/common/page-heading', $data);
+        $this->head();
         $this->load->view('pages/blogs/best_blogs');
-        $this->load->view('pages/common/extras');
-        $this->load->view('pages/common/footer');
+		$this->foot();
     }
 
     public function read_blogs() {
-        $data['title'] = 'Blog Space &nbsp;|&nbsp;  GBU Online';
-        $data['heading'] = ' Blog Space ';
-        $data['message'] = 'Keep Calm and Write.....';
-        $this->load->view('pages/common/link', $data);
-        $this->load->view('pages/common/header');
-        $this->load->view('pages/common/page-heading', $data);
+        $this->head();
         $this->load->view('pages/blogs/read_blogs');
-        $this->load->view('pages/common/extras');
-        $this->load->view('pages/common/footer');
+        $this->foot();
     }
 
     public function save() {
@@ -60,6 +57,22 @@ class Blogs extends CI_Controller {
         $this->blog_model->insert_into_db();
 		$this->session->set_flashdata('submit_msg', '<script> alert("Your blog has been submitted for approval !"); </script>');
         redirect('blogs/recent_blogs');
+    }
+	
+	public function edit_blogs($id) {
+		if ($this->session->userdata('loggedin') != 1) //student/user/admin logged in
+            redirect('users?redirect=' . current_url());
+        $this->head();
+		$blog_id['id']=$id;
+		$this->load->view('pages/blogs/edit_blogs',$blog_id);
+		$this->foot();
+    }
+	
+	public function edit() {
+        $this->load->model('blog_model');
+        $this->blog_model->edit_into_db();
+		$this->session->set_flashdata('edit_msg', '<script> alert("Your UPDATED blog has been submitted for approval !"); </script>');
+        redirect('blogs/your_blogs');
     }
 
     public function like() {
