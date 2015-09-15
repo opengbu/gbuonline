@@ -2042,44 +2042,44 @@ class Upgrade extends CI_Controller {
         array_push($u->updates, "ALTER TABLE `vnb` DROP `posted_by`;");
         array_push($update_list, $u);
         unset($u);
-		
-		$u = new update;
+
+        $u = new update;
         $u->version = 3.7;
         array_push($u->updates, "UPDATE `schools` SET `tagline` = 'Where Technology Meets Innovation !!!' WHERE `sc_name` = 'soict'; ");
-		array_push($u->updates, "UPDATE `schools` SET `tagline` = 'Where Research Meets Nature !!!' WHERE `sc_name` = 'sovsas'; ");
-		array_push($u->updates, "UPDATE `schools` SET `tagline` = 'Where Hybrids Are Produced !!!' WHERE `sc_name` = 'sobt'; ");
-		array_push($u->updates, "UPDATE `schools` SET `tagline` = 'Where Necessity Is The Mother Of Invention !!!' WHERE `sc_name` = 'soe'; ");
-		array_push($u->updates, "UPDATE `schools` SET `tagline` = 'Where Ideas Are Moulded Into Businesses !!!' WHERE `sc_name` = 'som'; ");
-		array_push($u->updates, "UPDATE `schools` SET `tagline` = 'Where Constitution Is Redefined !!!' WHERE `sc_name` = 'soljg'; ");
-		array_push($u->updates, "UPDATE `schools` SET `tagline` = 'Where Buddhist Ethics Are Applied In Real Life !!!' WHERE `sc_name` = 'sobsc'; ");
-		array_push($u->updates, "UPDATE `schools` SET `tagline` = 'Where HomoSapiens Are Transformed Into Human Beings !!!' WHERE `sc_name` = 'sohss'; ");
+        array_push($u->updates, "UPDATE `schools` SET `tagline` = 'Where Research Meets Nature !!!' WHERE `sc_name` = 'sovsas'; ");
+        array_push($u->updates, "UPDATE `schools` SET `tagline` = 'Where Hybrids Are Produced !!!' WHERE `sc_name` = 'sobt'; ");
+        array_push($u->updates, "UPDATE `schools` SET `tagline` = 'Where Necessity Is The Mother Of Invention !!!' WHERE `sc_name` = 'soe'; ");
+        array_push($u->updates, "UPDATE `schools` SET `tagline` = 'Where Ideas Are Moulded Into Businesses !!!' WHERE `sc_name` = 'som'; ");
+        array_push($u->updates, "UPDATE `schools` SET `tagline` = 'Where Constitution Is Redefined !!!' WHERE `sc_name` = 'soljg'; ");
+        array_push($u->updates, "UPDATE `schools` SET `tagline` = 'Where Buddhist Ethics Are Applied In Real Life !!!' WHERE `sc_name` = 'sobsc'; ");
+        array_push($u->updates, "UPDATE `schools` SET `tagline` = 'Where HomoSapiens Are Transformed Into Human Beings !!!' WHERE `sc_name` = 'sohss'; ");
         array_push($update_list, $u);
         unset($u);
 
-		$u = new update;
+        $u = new update;
         $u->version = 3.8;
         array_push($u->updates, "Alter table exams add dept_name varchar (30); ");
-		array_push($update_list, $u);
+        array_push($update_list, $u);
         unset($u);
-		
-		$u = new update;
+
+        $u = new update;
         $u->version = 3.9;
-        array_push($u->updates, "UPDATE `gbuonline`.`vnb` SET `user_id` = '5' LIMIT 2; ");
-		array_push($u->updates, "UPDATE `gbuonline`.`vnb` SET `user_id` = '3' ORDER BY id DESC LIMIT 3; ");
-		array_push($update_list, $u);
+        array_push($u->updates, "UPDATE `vnb` SET `user_id` = '5' LIMIT 2; ");
+        array_push($u->updates, "UPDATE `vnb` SET `user_id` = '3' ORDER BY id DESC LIMIT 3; ");
+        array_push($update_list, $u);
         unset($u);
-		
-		$u = new update;
+
+        $u = new update;
         $u->version = 4.0;
         array_push($u->updates, "delete from blog where id between 21 AND 26; ");
-		array_push($update_list, $u);
+        array_push($update_list, $u);
         unset($u);
-		
-		$u = new update;
+
+        $u = new update;
         $u->version = 4.1;
-       array_push($u->updates, "delete from exams where 1=1;");
-		array_push($u->updates, "ALTER TABLE `exams` CHANGE `dept_name` `dept_name` VARCHAR(30) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT 'ALL';");
-		array_push($update_list, $u);
+        array_push($u->updates, "delete from exams where 1=1;");
+        array_push($u->updates, "ALTER TABLE `exams` CHANGE `dept_name` `dept_name` VARCHAR(30) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT 'ALL';");
+        array_push($update_list, $u);
         unset($u);
 
         $this->run_upgrades($update_list);
