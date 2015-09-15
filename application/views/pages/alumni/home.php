@@ -20,100 +20,57 @@
 		</center>
 	</div>
 	
+		
 	
 	<div>
 		<h2 align="center"><span class="label label-danger">Recent Appointments</span></h2>
 		<br><br>
 			<div class="container">
-				<div class="row">
-				<div class="col-md-1">
-				</div>
-				<div class="col-md-5">
-					<div class="panel panel-default">
-						<div class="panel-body">
-							<div class="row">
-								<div class="col-md-5">
-									<img id="tn" src="<?php echo base_url('resources/images/')?>" height="170" width="130"/>
-								</div>
-								<div class="col-md-7" id="spn">
-									Name :  <br/>
-									Passout : <br/>
-									School : <br/><br/>
-									Joined : <br/>
-									Position : <br/>
-									Location : 
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-5">
-					<div class="panel panel-default">
-						<div class="panel-body">
-							<div class="row">
-								<div class="col-md-5">
-									<img id="tn" src="<?php echo base_url('resources/images/')?>" height="170" width="130"/>
-								</div>
-								<div class="col-md-7" id="spn">
-									Name :  <br/>
-									Passout : <br/>
-									School : <br/><br/>
-									Joined : <br/>
-									Position :  <br/>
-									Location : 
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-1">
-				</div>
-				</div>	
+			
+			<?php
+			$recent = $this->db->query("SELECT user_id, max( start_year ) as st_yr
+									FROM work_details
+									GROUP BY user_id
+									ORDER BY start_year DESC
+									LIMIT 0 , 4");
+									
+			foreach($recent->result() as $row)
+				{
 				
-				<div class="row">
-				<div class="col-md-1">
-				</div>
-				<div class="col-md-5">
+					$work = $this->db->query("SELECT company_name , location , designation FROM work_details WHERE user_id = '$row->user_id' AND start_year = '$row->st_yr' ");
+					$work_data = $work->row();
+					
+					$user = $this->db->query("SELECT full_name , profile_picture FROM users WHERE user_id = '$row->user_id' ");
+					$user_data = $user->row();
+					
+					$edu = $this->db->query("SELECT max(passout_year) as ps_yr FROM edu_info WHERE user_id = '$row->user_id' ");
+					$edu_data = $edu->row();
+				
+				?>
+				
+				<div class="col-md-6">
 					<div class="panel panel-default">
 						<div class="panel-body">
 							<div class="row">
 								<div class="col-md-5">
-									<img id="tn" src="<?php echo base_url('resources/images/')?>" height="170" width="130"/>
+									<img id="tn" src="<?php echo base_url().'resources/images/'.$user_data->profile_picture ?>" height="170" width="130"/>
 								</div>
 								<div class="col-md-7" id="spn">
-									Name :  <br/>
-									Passout : <br/>
-									School : <br/><br/>
-									Joined : <br/>
-									Position : <br/>
-									Location : 
+									Name :  <?=$user_data->full_name?><br/>
+									School : <br/>
+									Passout : <?=$edu_data->ps_yr?><br/><br/>
+									Joined : <?=$work_data->company_name?><br/>
+									Position : <?=$work_data->designation?><br/>
+									Location : <?=$work_data->location?>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-5">
-					<div class="panel panel-default">
-						<div class="panel-body">
-							<div class="row">
-								<div class="col-md-5">
-									<img id="tn" src="<?php echo base_url('resources/images/')?>" height="170" width="130"/>
-								</div>
-								<div class="col-md-7" id="spn">
-									Name :  <br/>
-									Passout : <br/>
-									School : <br/><br/>
-									Joined : <br/>
-									Position : <br/>
-									Location : 
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-1">
-				</div>
-				</div>		
+				
+				<?php
+				}
+				?>		
 				
 			</div><br/>
 			<hr/>

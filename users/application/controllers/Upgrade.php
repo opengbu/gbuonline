@@ -2081,6 +2081,12 @@ class Upgrade extends CI_Controller {
         array_push($u->updates, "ALTER TABLE `exams` CHANGE `dept_name` `dept_name` VARCHAR(30) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT 'ALL';");
         array_push($update_list, $u);
         unset($u);
+		
+		$u = new update;
+        $u->version = 4.2;
+        array_push($u->updates, "UPDATE clubs SET about_us = '', faculty = '', students = '' WHERE id != 2 ;");
+        array_push($update_list, $u);
+        unset($u);
 
         $this->run_upgrades($update_list);
         redirect("login" . "?" . $_SERVER['QUERY_STRING']);
