@@ -10,7 +10,7 @@
         <i>
             <div class="row">
                 <div class="col-sm-4">
-                    <img src="<?php echo base_url('resources/images/varun.jpg') ?>" height ="120" width="120"><br><b>VARUN GARG </b><br/>(Admin/User Panel)<br />(Back End Database connectivity)
+                    <img src="<?php echo base_url('resources/images/varun.jpg') ?>" height ="120" width="120"><br><b>VARUN GARG </b><br/>(Admin/User Panel)<br />(+Database connectivity)<br />(Technical Head)
                 </div>
                 <div class="col-sm-4">
                     <img src="<?php echo base_url('resources/images/rajat.jpg') ?>" height ="120" width="120"><br><b>RAJAT SAXENA</b> <br/>(Front End Developer)<br>
