@@ -11,7 +11,7 @@
 
         <title>
             <?php
-            echo ucfirst($this->router->fetch_class());
+            echo ucfirst(str_replace('_', ' ', $this->router->fetch_class()));
             ?>
             | GBU Online
         </title>

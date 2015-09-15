@@ -27,11 +27,11 @@
                 <div class ="col-sm-2">
                     <?php
                     if ($row->status == 0)
-                        echo "<span class='label label-warning'>Pending</label>";
+                        echo "<span class='label label-warning'>Pending</span>";
                     else if ($row->status == 2)
-                        echo "<span class='label label-danger'>Rejected</label>";
+                        echo "<span class='label label-danger'>Rejected</span>";
                     else
-                        echo "<span class='label label-success'>Accepted</sapn>";
+                        echo "<span class='label label-success'>Accepted</span>";
                     ?>
                 </div>
                 <div class="col-sm-2">
