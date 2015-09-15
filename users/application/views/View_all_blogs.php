@@ -30,7 +30,9 @@
                         echo "<span class='label label-warning'>Pending</span>";
                     else if ($row->status == 2)
                         echo "<span class='label label-danger'>Rejected</span>";
-                    else
+                    else if ($row->status == 3)
+                        echo "<span class='label label-info'>Pending (Edited)</span>";
+					else
                         echo "<span class='label label-success'>Accepted</span>";
                     ?>
                 </div>

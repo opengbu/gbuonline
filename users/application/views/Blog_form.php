@@ -46,6 +46,7 @@ $q = $this->db->query("select blog.*,full_name from blog,users where id = '$id' 
             <?php
                 if($row->status == 0 ) echo "<font color='red'>pending</font>";
                 else if ($row->status == 2) echo "<font color='gray'>rejected</font>";
+                else if ($row->status == 3) echo "<font color='blue'>Pending (Edited)</font>";
                 else echo "<font color='green'>accepted</font>";
             ?>
         </div>

@@ -59,11 +59,11 @@ $user_id = $this->session->userdata("user_id");
 				<?php 
 				if ($row->status == 0)
                         echo "<span class='label label-info'>Pending</span>";
-                    else if ($row->status == 2)
-                        echo "<span class='label label-info'>Rejected</span>";
-                    else if ($row->status == 1)
-                        echo "<span class='label label-info'>Accepted</span>";
-					else if ($row->status == 3)
+                else if ($row->status == 1)
+                        echo "<span class='label label-info'>Accepted</span>";    
+				else if ($row->status == 2)
+                        echo "<span class='label label-info'>Rejected</span>";   
+				else if ($row->status == 3)
                         echo "<span class='label label-info'>Pending (E)</span>";
 				?>
 				</td>
