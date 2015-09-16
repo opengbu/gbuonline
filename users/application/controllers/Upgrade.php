@@ -2093,7 +2093,21 @@ class Upgrade extends CI_Controller {
         array_push($u->updates, "UPDATE `vnb` SET `user_id` = '3' WHERE id = '6'; ");
         array_push($update_list, $u);
         unset($u);
-
+		
+		$u = new update;
+        $u->version = 4.4;
+        array_push($u->updates, "CREATE TABLE `feedback` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `name` varchar(100) NOT NULL,
+ `email` varchar(50) NOT NULL,
+ `subject` varchar(50) NOT NULL,
+ `category` varchar(50) NOT NULL,
+ `message` varchar(500) NOT NULL,
+ PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1");
+        array_push($update_list, $u);
+        unset($u);
+		
         $this->run_upgrades($update_list);
         redirect("login" . "?" . $_SERVER['QUERY_STRING']);
     }
