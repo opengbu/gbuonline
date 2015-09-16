@@ -7,6 +7,7 @@
      <img src="<?php echo base_url('resources/images/collage.jpeg')?>" height="515"/>
 	 <img src="<?php echo base_url('resources/images/poster_cm.jpg')?>" height="515"/>
 	 
+	 
 </div>
 
 </div><!--row3 for slider-->
@@ -14,8 +15,8 @@
 <div class = "row quotes" style="background-color:orange; padding-top:5px; padding-bottom:8px;">
   <h4>
   <center>
-    "The educated differ from the uneducated as much as the living from the dead" <br/><br/>
-	-Aristotle
+    "Start by doing what's necessary; then do what's possible; and suddenly you are doing the impossible." <br/><br/>
+	- Francis of Assisi
   </center>
   </h4>
 </div>
