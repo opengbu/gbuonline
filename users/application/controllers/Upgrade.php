@@ -2087,6 +2087,12 @@ class Upgrade extends CI_Controller {
         array_push($u->updates, "UPDATE clubs SET about_us = '', faculty = '', students = '' WHERE id != 2 ;");
         array_push($update_list, $u);
         unset($u);
+		
+		$u = new update;
+        $u->version = 4.3;
+        array_push($u->updates, "UPDATE `vnb` SET `user_id` = '3' WHERE id = '6'; ");
+        array_push($update_list, $u);
+        unset($u);
 
         $this->run_upgrades($update_list);
         redirect("login" . "?" . $_SERVER['QUERY_STRING']);

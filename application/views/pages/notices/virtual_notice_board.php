@@ -110,7 +110,7 @@ $(function(){
 				<!--Loop Starts-->
 				
 				<?php
-                                        $q=$this->db->query("SELECT link,title,full_name,date FROM vnb,users WHERE vnb.user_id=users.user_id");
+                                        $q=$this->db->query("SELECT link,title,full_name,date FROM vnb,users WHERE vnb.user_id=users.user_id ORDER BY id DESC");
                                         $results=$q->result();
 					foreach($results as $rows)
 					{
