@@ -27,6 +27,7 @@ class Blogs extends CI_Controller {
     public function write_blogs() {
         if ($this->session->userdata('loggedin') != 1) //student/user/admin logged in
             redirect('users?redirect=' . current_url());
+		$this->load->library('form_validation');
 		$this->head();
         $this->load->view('pages/blogs/write_blogs');
         $this->foot();
@@ -53,10 +54,21 @@ class Blogs extends CI_Controller {
     }
 
     public function save() {
-        $this->load->model('blog_model');
-        $this->blog_model->insert_into_db();
-		$this->session->set_flashdata('submit_msg', '<script> alert("Your blog has been submitted for approval !"); </script>');
-        redirect('blogs/recent_blogs');
+		$this->load->library('form_validation');
+		$this->form_validation->set_rules('title', 'Blog Title', 'required|max_length[100]');
+		$this->form_validation->set_rules('description', 'Blog Content', 'required');
+		if ($this->form_validation->run() == FALSE)
+		{
+			$this->write_blogs();
+		}
+		else
+		{
+			$this->load->model('blog_model');
+			$this->blog_model->insert_into_db();
+			$this->session->set_flashdata('submit_msg', '<script> alert("Your blog has been submitted for approval !"); </script>');
+			redirect('blogs/recent_blogs');
+		}
+     
     }
 	
 	public function edit_blogs($id) {

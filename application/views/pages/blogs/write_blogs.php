@@ -31,16 +31,17 @@
             
 			<div class="row">
 				<div class="col-md-12">
+				<?php echo '<i>'.validation_errors().'</i>'; ?>
 				<form action="<?php echo base_url();?>Blogs/save" method="post">
 					<div class="form-group">
 						<label for="Blog">Start Your Blog :&nbsp;&nbsp;</label><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
 						<div class="input-group">
 							<span class="input-group-addon" id="basic-addon1">Title</span>
-                                                        <input name="title" type="text" class="form-control" placeholder="Title of your Blog : Maximum 100 characters " aria-describedby="basic-addon3" required="required">
+                            <input name="title" type="text" class="form-control" placeholder="Title of your Blog : Maximum 100 characters " value="<?php echo set_value('title'); ?>" aria-describedby="basic-addon3" required="required">
 						</div>
 						<br>
 						<label>Blog Content :</label>
-						<textarea name="description" class="form-control" id="editor1" rows="15" required="required"></textarea>
+						<textarea name="description" class="form-control" required id="editor1" rows="15"><?php echo set_value('description');?></textarea>
 						<br>
                 
 						<center>

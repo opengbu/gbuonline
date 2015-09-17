@@ -8,13 +8,14 @@
 							<img src="<?php echo base_url('resources/images/cards/holiday-new-100-100f.png') ?>" alt="">			
 						</a>
 						
+						<a href="http://play.google.com/store/apps/details?id=com.varun.gbu_timetables" class="thumbnail" target="_blank" style="text-decoration:none;">
+							<img src="<?php echo base_url('resources/images/cards/android-new-100-100f.png') ?>" alt="">			
+						</a>
+						
 						<a href="http://172.25.5.15/moodle" target="_blank" class="thumbnail" style="text-decoration:none;">	
 							<img src="<?php echo base_url('resources/images/cards/moodle_new.jpg') ?>" alt="">			
 						</a>
 						
-						<a href="http://play.google.com/store/apps/details?id=com.varun.gbu_timetables" class="thumbnail" target="_blank" style="text-decoration:none;">
-							<img src="<?php echo base_url('resources/images/cards/android-new-100-100f.png') ?>" alt="">			
-						</a>
 						
 						<a href="<?php echo site_url('exams/exams_home') ?>" class="thumbnail" style="text-decoration:none;">
 							<img src="<?php echo base_url('resources/images/cards/exams-new-100-100f.jpg') ?>" alt="">			
