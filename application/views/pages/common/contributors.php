@@ -72,16 +72,31 @@
                     <img src="<?php echo base_url('resources/images/apurva.jpg') ?>" width="120">
                     <?php
                 }
-                ?><br><b>APURVA JHA</b><br/>(Content Writer)
+                ?><br><b>APURVA JHA</b>
             </center>
         </div>
         <div class="col-sm-4">
             <center>
-                <img src="<?php echo base_url('resources/images/vasudev.jpg') ?>"  width="120" style="max-height: 170px;"><br><b>VASUDEV YADAV</b><br/>(Content Writer)
+                <img src="<?php echo base_url('resources/images/vasudev.jpg') ?>"  width="120" style="max-height: 170px;"><br><b>VASUDEV YADAV</b>
             </center>
         </div>
         <br>
 
     </ul>
+	
 </div>
-<br/><br/><br/>
+<hr>
+<div class="row">
+<ul>
+<div class = "col-sm-4">
+</div>
+<div class = "col-sm-4">
+<center>
+                <img src="<?php echo base_url('resources/user_uploads/profile_images/27.jpg') ?>" width="120"><br><b>SHALKI MISHRA</b>
+            </center>
+<br>
+			</div>
+<div class="col-sm-4">
+</div>
+
+</div>
