@@ -3,6 +3,10 @@
  *  Created on :Sep 10, 2015, 7:24:49 AM
  *  Author     :Varun Garg <varun.10@live.com>
  */
+
+function add_prefix(&$item1, $key, $prefix) {
+    $item1 = $prefix . $item1;
+}
 ?>
 <div class="col-sm-8" >
     <?php
@@ -13,7 +17,7 @@
         $schools[$row->sc_name] = $row->sc_full_name;
     }
     ?>
-    
+
     <label>Paper Name (Example Maths 4)</label>
     <input type="text" class="form-control" name="paper_name" value="<?php echo set_value('paper_name', @$paper_name); ?>"/>
     <br>
@@ -24,23 +28,17 @@
     ?>
     <br /><br />
 
-    <!--<label>Select File</label>
-    <select name="image_path" class="selectpicker" data-width="100%">
-        <?php /*
-        $this->load->helper('file');
-        $files = get_filenames("../resources/exams");
-        foreach ($files as $name) {
-            echo '<option value = "resources/exams/' . $name . '">';
-            echo 'resources/exams/' . $name;
-            echo '</option>';
-        }
-        */?>
-    </select>-->
-	<label>Paper Link</label>
-    <input type="text" class="form-control" name="image_path" value="<?php echo set_value('image_path', @$image_path); ?>"/>
-	
-    <br />
-	
+    <label>Select File</label><br />
+    <?php
+    $this->load->helper('file');
+    $files = get_filenames("../resources/exams");
+    array_walk($files, "add_prefix", 'resources/exams/');
+    $files = array_combine($files, $files);
+    echo form_dropdown('image_path', $files, set_value('image_path', @$image_path), 'class="selectpicker"');
+    ?>
+
+    <br /><br />
+
     <label>Year (Example 2015)</label>
     <input type="text" class="form-control" name="year" value="<?php echo set_value('year', @$year); ?>"/>
     <br>

@@ -22,9 +22,9 @@ class Media_upload extends CI_Controller {
         $directory = "../resources/" . $this->input->post('directory');
         $config = array(
             'upload_path' => $directory,
-            'allowed_types' => "gif|jpg|png|jpeg|pdf|doc|docx|ppt|pptx",
+            'allowed_types' => "gif|jpg|png|jpeg|pdf|doc|docx|ppt|pptx|bmp",
             'overwrite' => FALSE,
-            'max_size' => "2048000"
+            'max_size' => "20480000"
         );
 
         if (!file_exists($directory)) {

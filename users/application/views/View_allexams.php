@@ -22,18 +22,12 @@
         ?>
         <li class="list-group-item">
             <div class="row">
-                <div class="col-sm-2">
+                <div class="col-sm-3">
                     <?php
-                    echo $row->paper_name;
+                    echo '<a href = "' . dirname(base_url()) . '/' . $row->image_path . '">' . $row->paper_name . '</a>';
                     ?>
                 </div>
 
-                <div class="col-sm-1">
-                    <?php
-                    echo '<a href = "' . dirname(base_url()) . '/'  .$row->image_path .'">Link</a>';
-                    ?>
-                </div>
-                
                 <div class="col-sm-2">
                     <?php
                     echo $row->semester . ' (' . $row->year . ') ';

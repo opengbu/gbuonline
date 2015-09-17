@@ -48,6 +48,7 @@ function add_prefix(&$item1, $key, $prefix) {
     $this->load->helper('file');
     $files = get_filenames("../resources/user_uploads");
     array_walk($files, "add_prefix", 'resources/user_uploads/');
+    $files = array_combine($files, $files);
     echo form_dropdown('image_path', $files, set_value('image_path', @$image_path), 'class="selectpicker"');
     ?>
 

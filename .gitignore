@@ -19,3 +19,4 @@ applications/config/database.php
 /users/applications/config/database.php
 
 resources/user_uploads/profile_images/*
+resources/exams/*
