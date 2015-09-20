@@ -15,8 +15,8 @@
 <div class = "row quotes" style="background-color:orange; padding-top:5px; padding-bottom:8px;">
   <h4>
   <center>
-    "Start by doing what's necessary; then do what's possible; and suddenly you are doing the impossible." <br/><br/>
-	- Francis of Assisi
+    It is impossible for a man to learn what he thinks he already knows." <br/><br/>
+	- Epictetus
   </center>
   </h4>
 </div>
