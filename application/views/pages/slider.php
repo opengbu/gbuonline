@@ -5,9 +5,6 @@
       
 <div class="slider">
      <img src="<?php echo base_url('resources/images/collage.jpeg')?>" height="515"/>
-	 <img src="<?php echo base_url('resources/images/poster_cm.jpg')?>" height="515"/>
-	 
-	 
 </div>
 
 </div><!--row3 for slider-->
@@ -15,8 +12,11 @@
 <div class = "row quotes" style="background-color:orange; padding-top:5px; padding-bottom:8px;">
   <h4>
   <center>
-    It is impossible for a man to learn what he thinks he already knows." <br/><br/>
-	- Epictetus
+   <blockquote id="qod-quote">
+   ... loading ...
+</blockquote>
+<script src="http://quotesondesign.com/api/3.0/api-3.0.js" 
+type="text/javascript" charset="utf-8"></script>
   </center>
   </h4>
 </div>
