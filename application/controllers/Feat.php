@@ -180,4 +180,23 @@ class Feat extends CI_Controller {
 		$this->load->view('pages/common/footer');
 	}
 	
+	public function contr()
+	{
+        $data['title'] = 'Contributers &nbsp;|&nbsp;  GBU Online';
+		$data['heading'] ='Select Contributers';
+		$data['message'] ='';
+		$this->load->view('pages/common/link',$data);
+		$this->load->view('pages/common/header');
+		$this->load->view('pages/common/page-heading',$data);
+		$this->load->view('pages/contr');
+		$this->load->view('pages/common/footer');
+	}
+	public function contr_update($userid)
+	{
+		 $flag = $_POST['flag'];
+		$q=$this->db->query("update users Set flag='$flag' where user_id='$userid'");
+		redirect('feat/contr');
+	}
+	
+	
 }	

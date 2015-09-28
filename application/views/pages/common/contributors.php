@@ -53,50 +53,22 @@
     <h3>Content Team</h3>
 </center>
 <hr>
-<div class="row">
-    <ul>
-        <div class = "col-sm-4">
-            <center>
-                <img src="<?php echo base_url('resources/images/kshitij.jpg') ?>"  width="120" style="max-height: 170px;"><br><b>KSHITIJ PURWAR</b><br/>(Content Head)
-            </center>
-        </div>
-        <div class="col-sm-4">
-            <center>
-                <?php
-                if (file_exists('resources/user_uploads/profile_images/38.jpg')) {
-                    ?>
-                    <img src="<?php echo base_url('resources/user_uploads/profile_images/38.jpg') ?>" width="120"><br>
-                    <?php
-                } else {
-                    ?>
-                    <img src="<?php echo base_url('resources/images/apurva.jpg') ?>" width="120">
-                    <?php
-                }
-                ?><br><b>APURVA JHA</b>
-            </center>
-        </div>
-        <div class="col-sm-4">
-            <center>
-                <img src="<?php echo base_url('resources/images/vasudev.jpg') ?>"  width="120" style="max-height: 170px;"><br><b>VASUDEV YADAV</b>
-            </center>
-        </div>
-        <br>
-
-    </ul>
-	
-</div>
+        <?php 
+			$content = $this->db->query("SELECT * FROM users WHERE type='cw' AND flag='1'");
+			foreach($content->result() as $row)
+			{
+		?>
+				<div class="col-sm-4">
+					<center>
+						<img src="<?php echo base_url ($row->profile_picture) ?>"  width="120" style="height: 150px;"/><br><b><?=$row->full_name ?></b>
+						<br/><br/><br/>
+					</center>
+				</div>
+				
+		<?php
+		}
+		?>
+    <br/><br/>
 <hr>
-<div class="row">
-<ul>
-<div class = "col-sm-4">
-</div>
-<div class = "col-sm-4">
-<center>
-                <img src="<?php echo base_url('resources/user_uploads/profile_images/27.jpg') ?>" width="120"><br><b>SHALKI MISHRA</b>
-            </center>
-<br>
-			</div>
-<div class="col-sm-4">
-</div>
 
-</div>
+
