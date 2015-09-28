@@ -26,9 +26,9 @@
             </div>
         </li>
         <?php
-        $storage = ['user_uploads', 'notices', 'exams'];
+        $storage = ['events', 'notices', 'exams'];
         foreach ($storage as $sub_path) {
-            $names = get_filenames("../resources/" . $sub_path);
+            $names = get_filenames("../user_uploads/" . $sub_path);
             if (is_array($names) || is_object($names)) {
                 foreach ($names as $name) {
                     ?>
@@ -36,9 +36,9 @@
                         <div class="row">
                             <div class="col-sm-8">
                                 <?php
-                                echo '<a href = "' . dirname(base_url()) . '/resources/' . $sub_path .
+                                echo '<a href = "' . dirname(base_url()) . '/user_uploads/' . $sub_path .
                                 '/' . $name .
-                                '">  resources/' . $sub_path . '/'
+                                '">  ' . $sub_path . '/'
                                 . $name . '</a><br />';
                                 ?>
                             </div>

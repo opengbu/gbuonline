@@ -31,7 +31,7 @@ class Manage_uploads extends CI_Controller {
     function delete() {
         $this->secure_hard();
         $image = $this->input->get("image");
-        unlink("../resources/" . $image);
+        unlink("../user_uploads/" . $image);
         redirect('/manage_uploads');
     }
 

@@ -2081,20 +2081,20 @@ class Upgrade extends CI_Controller {
         array_push($u->updates, "ALTER TABLE `exams` CHANGE `dept_name` `dept_name` VARCHAR(30) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT 'ALL';");
         array_push($update_list, $u);
         unset($u);
-		
-		$u = new update;
+
+        $u = new update;
         $u->version = 4.2;
         array_push($u->updates, "UPDATE clubs SET about_us = '', faculty = '', students = '' WHERE id != 2 ;");
         array_push($update_list, $u);
         unset($u);
-		
-		$u = new update;
+
+        $u = new update;
         $u->version = 4.3;
         array_push($u->updates, "UPDATE `vnb` SET `user_id` = '3' WHERE id = '6'; ");
         array_push($update_list, $u);
         unset($u);
-		
-		$u = new update;
+
+        $u = new update;
         $u->version = 4.4;
         array_push($u->updates, "CREATE TABLE `feedback` (
  `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -2107,7 +2107,7 @@ class Upgrade extends CI_Controller {
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1");
         array_push($update_list, $u);
         unset($u);
-		
+
         $this->run_upgrades($update_list);
         redirect("login" . "?" . $_SERVER['QUERY_STRING']);
     }
@@ -2127,6 +2127,13 @@ class Upgrade extends CI_Controller {
                     $this->db->query($row);
                 }
                 $this->db->query("update update_info set version = '$value->version' ");
+            }
+
+            if ($version == 4.4) {
+                //IMPORTANT PATCH
+                $this->load->model('New_user_uploads');
+                $this->New_user_uploads->patch();
+                $this->db->query("update update_info set version = '4.45' ");
             }
         }
     }

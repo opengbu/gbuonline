@@ -186,21 +186,19 @@ class User_controls extends CI_Controller {
 
         if (isset($_FILES['profile_picure']['tmp_name']) && strlen($_FILES['profile_picure']['tmp_name']) > 0) {
 
-            if (!file_exists('../resources/user_uploads/profile_images')) {
-                mkdir('../resources/user_uploads/profile_images', 0777, true);
+            if (!file_exists('../user_uploads/profile_images')) {
+                mkdir('../user_uploads/profile_images', 0777, true);
             }
 
             $info = new SplFileInfo($_FILES['profile_picure']['name']);
 
-            $config['upload_path'] = '../resources/user_uploads/profile_images';
+            $config['upload_path'] = '../user_uploads/profile_images';
             $config['allowed_types'] = 'gif|jpg|png';
             $config['max_size'] = '2048';
-            //$config['max_width'] = '800';
-            //$config['max_height'] = '800';
             $config['overwrite'] = TRUE;
             $config['file_name'] = $this->input->get('user_id') . '.' . $info->getExtension();
 
-            $this->image_path = 'resources/user_uploads/profile_images/' . $config['file_name']; //to be used by main f'n
+            $this->image_path = 'user_uploads/profile_images/' . $config['file_name']; //to be used by main f'n
 
             $this->load->library('upload', $config);
             if ($this->upload->do_upload("profile_picure")) {

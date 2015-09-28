@@ -18,9 +18,9 @@
     <select name="link" class="selectpicker" data-width="100%">
         <?php
         $this->load->helper('file');
-        $files = get_filenames("../resources/notices");
+        $files = get_filenames("../user_uploads/notices");
         foreach ($files as $name) {
-            echo '<option value = "resources/notices/' . $name . '">';
+            echo '<option value = "user_uploads/notices/' . $name . '">';
             echo 'resources/notices/' . $name;
             echo '</option>';
         }
