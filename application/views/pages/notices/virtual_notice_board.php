@@ -110,7 +110,7 @@ $(function(){
 				<!--Loop Starts-->
 				
 				<?php
-                                        $q=$this->db->query("SELECT link,title,full_name,date FROM vnb,users WHERE vnb.user_id=users.user_id ORDER BY id DESC");
+                                        $q=$this->db->query("SELECT link,title,full_name,date FROM vnb,users WHERE vnb.user_id=users.user_id ORDER BY date DESC");
                                         $results=$q->result();
 					foreach($results as $rows)
 					{
@@ -125,7 +125,7 @@ $(function(){
 									</div>
 									<div class="col-md-4" style="padding-top: 10px;">
 										<center>
-											<span class="badge" > <?php echo $rows->date;?> </span>    
+											<span class="badge" > <?php echo date("d-m-Y", strtotime($rows->date));?> </span>    
 										</center>
 									</div>
 								</div>

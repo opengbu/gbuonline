@@ -1,9 +1,74 @@
- 
-<div class="row">
-    <div class = "container-fluid">
-        <div class="col-md-4" >
-            <h2 align="center"><font face="Times New Roman"><b>News and Updates</b></font></h2>
-            <hr>
+<style>
+.ahr
+{
+	margin:auto; 
+	text-decoration:none; 
+	width:30%;
+}
+</style> 
+<br/>
+<div>
+
+            <h2 align="center"><b><span class="label label-default">Quick Links</span></b></h2>
+            <br/><br/>
+						
+					<div class="row">
+					<div class="col-md-4">
+                        <a href="<?php echo base_url('resources/images/ac-15-16.jpg') ?>" class="thumbnail ahr" target="_blank">
+							<img src="<?php echo base_url('resources/images/cards/front/calendar-100-100.png') ?>"  alt="" 
+								onmouseover="this.src='<?php echo base_url('resources/images/cards/front/calendar_text-100-100.png') ?>'"  
+								onmouseout="this.src='<?php echo base_url('resources/images/cards/front/calendar-100-100.png') ?>'" >
+						</a>
+					</div>
+					<div class="col-md-4">
+						<a href="<?php echo base_url('resources/holidays-2015.pdf') ?>" class="thumbnail ahr" target="_blank">
+							<img src="<?php echo base_url('resources/images/cards/front/holiday-100-100.png') ?>" alt=""
+								onmouseover="this.src='<?php echo base_url('resources/images/cards/front/holiday_text-100-100.png') ?>'"  
+								onmouseout="this.src='<?php echo base_url('resources/images/cards/front/holiday-100-100.png') ?>'" >
+						</a>
+					</div>
+					<div class="col-md-4">
+						<a href="http://172.25.5.15/moodle" target="_blank" class="thumbnail ahr">	
+							<img src="<?php echo base_url('resources/images/cards/front/moodle-100-100.jpg') ?>"  alt=""
+								onmouseover="this.src='<?php echo base_url('resources/images/cards/front/moodle_text-100-100.jpg') ?>'"  
+								onmouseout="this.src='<?php echo base_url('resources/images/cards/front/moodle-100-100.jpg') ?>'" >
+						</a>
+					</div>
+					</div>
+					<br/><br/>
+					<div class="row">
+					<div class="col-md-4">
+						<a href="<?php echo site_url('exams/exams_home') ?>" class="thumbnail ahr">
+							<img src="<?php echo base_url('resources/images/cards/front/exams-100-100.jpg') ?>"  alt=""
+								onmouseover="this.src='<?php echo base_url('resources/images/cards/front/exams_text-100-100.jpg') ?>'"  
+								onmouseout="this.src='<?php echo base_url('resources/images/cards/front/exams-100-100.jpg') ?>'" >
+						</a>
+					</div>
+		
+					<div class="col-md-4">
+						<a href="<?php echo site_url('ebooks/ebooks_home') ?>" class="thumbnail ahr">	
+							<img src="<?php echo base_url('resources/images/cards/front/ebooks-100-100.png') ?>"  alt=""		
+								onmouseover="this.src='<?php echo base_url('resources/images/cards/front/ebooks_text-100-100.png') ?>'"  
+								onmouseout="this.src='<?php echo base_url('resources/images/cards/front/ebooks-100-100.png') ?>'" >
+						</a>
+					</div>
+					<div class="col-md-4">
+						<a href="http://172.25.5.15/refbase" target="_blank" class="thumbnail ahr">	
+							<img src="<?php echo base_url('resources/images/cards/front/publications-100-100.png') ?>"  alt=""		
+								onmouseover="this.src='<?php echo base_url('resources/images/cards/front/publications_text-100-100.png') ?>'"  
+								onmouseout="this.src='<?php echo base_url('resources/images/cards/front/publications-100-100.png') ?>'" >
+						</a>
+					</div>
+					</div>
+
+        </div>
+		<br/><br/><br/>
+		
+		<div class="row">
+		<div class = "container">
+        <div class="col-md-5">
+            <h2 align="center"><b><span class="label label-default">News and Updates</span></b></h2>
+            <br/><br/>
             <?php
             $news_q = $this->db->query("select id,title,slug from news order by id desc");
             $count = 0;
@@ -27,9 +92,9 @@
 
             </ul>
         </div>
-        <div class="col-md-5" >
-            <h2 align="center"><font face="Times New Roman"><b>Technological Updates</b></font></h2>
-            <hr>
+        <div class="col-md-5 col-md-offset-2">
+            <h2 align="center"><b><span class="label label-default">Technological Updates</span></b></h2>
+            <br/><br/>
 
             <?php
             //$info = parse_url(base_url());
@@ -77,61 +142,5 @@
             ?>
         </div>
 	
-	<!--Extras-->
-	
-        <div class="col-md-3">
-            <h2 align="center"><font face="Times New Roman"><b>Quick Links</b></font></h2>
-            <hr>
-						
-					<div class="row">
-					<div class="col-md-6">
-                        <a href="<?php echo base_url('resources/images/ac-15-16.jpg') ?>" class="thumbnail" target="_blank" style="text-decoration:none;">
-							<img src="<?php echo base_url('resources/images/cards/front/calendar-100-100.png') ?>"  alt="" 
-								onmouseover="this.src='<?php echo base_url('resources/images/cards/front/calendar_text-100-100.png') ?>'"  
-								onmouseout="this.src='<?php echo base_url('resources/images/cards/front/calendar-100-100.png') ?>'" >
-						</a>
-					</div>
-					<div class="col-md-6">
-						<a href="<?php echo base_url('resources/holidays-2015.pdf') ?>" class="thumbnail" target="_blank" style="text-decoration:none;">
-							<img src="<?php echo base_url('resources/images/cards/front/holiday-100-100.png') ?>" alt=""
-								onmouseover="this.src='<?php echo base_url('resources/images/cards/front/holiday_text-100-100.png') ?>'"  
-								onmouseout="this.src='<?php echo base_url('resources/images/cards/front/holiday-100-100.png') ?>'" >
-						</a>
-					</div>
-					</div>
-					<div class="row">
-					<div class="col-md-6">
-						<a href="http://172.25.5.15/moodle" target="_blank" class="thumbnail" style="text-decoration:none;">	
-							<img src="<?php echo base_url('resources/images/cards/front/moodle-100-100.jpg') ?>"  alt=""
-								onmouseover="this.src='<?php echo base_url('resources/images/cards/front/moodle_text-100-100.jpg') ?>'"  
-								onmouseout="this.src='<?php echo base_url('resources/images/cards/front/moodle-100-100.jpg') ?>'" >
-						</a>
-					</div>
-					<div class="col-md-6">
-						<a href="<?php echo site_url('exams/exams_home') ?>" class="thumbnail" style="text-decoration:none;">
-							<img src="<?php echo base_url('resources/images/cards/front/exams-100-100.jpg') ?>"  alt=""
-								onmouseover="this.src='<?php echo base_url('resources/images/cards/front/exams_text-100-100.jpg') ?>'"  
-								onmouseout="this.src='<?php echo base_url('resources/images/cards/front/exams-100-100.jpg') ?>'" >
-						</a>
-					</div>
-					</div>
-					<div class="row">
-					<div class="col-md-6">
-						<a href="<?php echo site_url('ebooks/ebooks_home') ?>" class="thumbnail" style="text-decoration:none;">	
-							<img src="<?php echo base_url('resources/images/cards/front/ebooks-100-100.png') ?>"  alt=""		
-								onmouseover="this.src='<?php echo base_url('resources/images/cards/front/ebooks_text-100-100.png') ?>'"  
-								onmouseout="this.src='<?php echo base_url('resources/images/cards/front/ebooks-100-100.png') ?>'" >
-						</a>
-					</div>
-					<div class="col-md-6">
-						<a href="http://172.25.5.15/refbase" target="_blank" class="thumbnail" style="text-decoration:none;">	
-							<img src="<?php echo base_url('resources/images/cards/front/publications-100-100.png') ?>"  alt=""		
-								onmouseover="this.src='<?php echo base_url('resources/images/cards/front/publications_text-100-100.png') ?>'"  
-								onmouseout="this.src='<?php echo base_url('resources/images/cards/front/publications-100-100.png') ?>'" >
-						</a>
-					</div>
-					</div>
-
-        </div>
     </div>
-	</div>
+    </div>
