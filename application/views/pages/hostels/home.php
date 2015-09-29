@@ -3,11 +3,11 @@
         
    <div>
    <center>
-       <h1 style="position:absolute; z-index:10; padding:10px; left: 56px; top: 82px;">
+       <h1 style="position:absolute; z-index:10; padding:10px; left: 5px; top: 30px;">
            <font size="7" style="font-family: Book Antiqua,Palatino,Palatino Linotype,Palatino LT STD,Georgia,serif;"color="#2D2D2D">
                Gautam Buddha University<br />Hostel Management<br />
             </font>
-            <small><font color=black px>
+            <small><font color=black>
                 A place to grow and evolve one's personality!
             </small></font>
        </h1>
@@ -36,7 +36,7 @@
 
 						<div class="row" >
 								<div class="col-sm-6">
-									<b>BOYS HSOTEL
+									<b>BOYS HOSTEL
 								</div>
 								<div class="col-sm-6">
 									<b>GIRLS HOSTEL
@@ -120,61 +120,68 @@
 			</div>
 		</div>
    </div>
-   
-	<div id="basicInfo" style="padding-left:10px;">
-	<div class="jumbotron" style="background-color:#2D2D2D">
+          
+    <style type="text/css">
+        #containerImg {
+            text-align:center;
+            position: relative
+            overflow-x:scroll;
+            overflow-y:hidden;
+            
+        }
+
+        #containerImg img {
+            display: inline-block;
+            width: 250px;
+            height: 150px;
+            margin: 5px 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #containerImg:after {
+            content: '';
+            display: inline-block;
+            width: 100%;
+        }
+        #containerImg :hover{
+            box-shadow: 1px 1px 5px #363024;
+            -webkit-box-shadow: 1px 1px 5px #363024;
+            -moz-box-shadow: 1px 1px 5px #363024;
+            position:relative;
+            top:3px;
+            margin:0px;
+}
+    </style>
+    <div id="containerImg">
+        <a href="#" target="_self"><img src="<?php echo base_url('resources/h_images/h2.jpg')?>" alt="..." ></a>
+        <a href="#" target="_self"><img src="<?php echo base_url('resources/h_images/h3.jpg')?>" alt="..." ></a>
+        <a href="#" target="_self"><img src="<?php echo base_url('resources/h_images/h4.jpg')?>" alt="..." ></a>
+        <a href="#" target="_self"><img src="<?php echo base_url('resources/h_images/h1.jpg')?>" alt="..." ></a>
+    </div>
+    <br/>
+    <br/>
+	<div id="basicInfo" style="padding-left:10px;">   
+	<div class="jumbotron">
 		<h2 style="padding-left:10px;">
-			<font color="#EAEAEA">CAMPUS LIFE</font>
+			<font color=""><b>CAMPUS LIFE</b></font>
 		</h2>
 		<p style="padding-left:12px;">
-			<font color="#EAEAEA"><small>
-				"Only a good body houses a perfect mind and a pure soul." Gautam Buddha University
+			<small>
+				<font color="">
+                "Only a good body houses a perfect mind and a pure soul." Gautam Buddha University
                 has planned and is developing one of the finest campuses that can rival the best
-                in the world.<br/>Life at GBU is about much more than study - it's about developing
-				the whole person, inside and outside the classroom. The student life is vibrant, active
-				and dynamic. There is something for everyone to get involved  in.
-			</font></small>
-		</p>
-	</div>
-	
-	
-	<hr>	
-	
-	
-	
-	
-	<div class="jumbotron" style="background-color:#2D2D2D">
-		<div class="container" style="margin-left:5px;"><br />
-			<div class="row">
-				<div class="col-md-8">
-					<div class="caption">
-						<h2 style="padding-left:10px;">
-								<font color="#EAEAEA">FACILITIES</font>
-						</h2>
-						<p style="padding-left:12px;">
-							<font color="#EAEAEA"><small>
-								Many Students consider quality of life as one of the important factors while choosing a
-								College/University. We at GBU provide you a decent stay and the best possible learning
-								environment.<br/> The stay at campus would certainly provide a wealth of experience by developing
-								qualities such as comradeship and social responsibility. Gautam Buddha University offers
-								separate hostel facility for boys and girls. Each hostel has spacious and well furnished
-								rooms offering a plush, modern lifestyle<br/>
-							</font></small>
-						</p>
-					</div>
-                </div>
-				
-				<div class="col-md-4">
-					<div class="caption">
-						<img src="<?php echo base_url('resources/h_images/img.jpg')?>" alt="1"/>
-					</div>
-				</div>
-			</div>
-			
+                in the world.<br/>The stay at campus would certainly provide a wealth of experience by developing
+				qualities such as comradeship and social responsibility. Gautam Buddha University offers
+				separate hostel facility for boys and girls. Each hostel has spacious and well furnished
+				rooms offering a plush, modern lifestyle.
+                </font>
+			</small>
+		</p>			
 			<div class="row">
 				<div class="col-sm-3 col-md-2">
 				
-					<button type="button" class="btn btn-block" data-toggle="modal" data-target=".bs-example-modal-lg-52">more..</button>
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg-52">more..</button>
 					
 					
 					<div class="modal fade bs-example-modal-lg-52" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -250,7 +257,7 @@
 								<hr>
 								<hr>
 								
-								</font>
+								
 								</center>
 								
 								</i>      
@@ -259,24 +266,22 @@
 						</div>
 					</div>
 					
-					&npsp;<button type="button" class="btn btn-block" data-toggle="modal" data-target=".bs-example-modal-lg-53">Gallery</button>
+<!--					&nbsp;<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg-53">Gallery</button>
 					
 					<div class="modal fade bs-example-modal-lg-53" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 
 						<div class="modal-dialog modal-lg">
 							<div class="modal-content">		
 							
-								<?php require 'facslider.php'; ?><br/>
+								<?php //require 'facslider.php'; ?><br/>
          
 							</div>
 						</div>
-					</div>
+					</div>-->
 					
 				</div>
 			</div>
-        </div>
-    </div>
-	
+            </div>
 
 	</div>
    
