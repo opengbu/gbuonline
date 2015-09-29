@@ -53,24 +53,24 @@
                 <ul class="hide-bullets">
                     <li class="col-sm-3">
                         <a class="thumbnail" id="carousel-selector-0">
-                            <img src="<?php echo base_url("resources/images/sarthak.jpg") ?>">
+                            <img src="<?php echo $this->cdn->res_url("resources/images/sarthak.jpg") ?>">
                         </a>
                     </li>
 
                     <li class="col-sm-3">
-                        <a class="thumbnail" id="carousel-selector-1"><img src="<?php echo base_url("resources/images/rajat.jpg") ?>"></a>
+                        <a class="thumbnail" id="carousel-selector-1"><img src="<?php echo $this->cdn->res_url("resources/images/rajat.jpg") ?>"></a>
                     </li>
 
                     <li class="col-sm-3">
-                        <a class="thumbnail" id="carousel-selector-2"><img src="<?php echo base_url("resources/images/varun.jpg") ?>"></a>
+                        <a class="thumbnail" id="carousel-selector-2"><img src="<?php echo $this->cdn->res_url("resources/images/varun.jpg") ?>"></a>
                     </li>
 
                     <li class="col-sm-3">
-                        <a class="thumbnail" id="carousel-selector-3"><img src="<?php echo base_url("resources/images/bhawesh.jpg") ?>"></a>
+                        <a class="thumbnail" id="carousel-selector-3"><img src="<?php echo $this->cdn->res_url("resources/images/bhawesh.jpg") ?>"></a>
                     </li>
 
                     <li class="col-sm-3">
-                        <a class="thumbnail" id="carousel-selector-4"><img src="<?php echo base_url("resources/images/shobhit.jpg") ?>"></a>
+                        <a class="thumbnail" id="carousel-selector-4"><img src="<?php echo $this->cdn->res_url("resources/images/shobhit.jpg") ?>"></a>
                     </li>
 
                     <li class="col-sm-3">
@@ -124,16 +124,16 @@
                                 <!-- Carousel items -->
                                 <div class="carousel-inner">
                                     <div class="active item" data-slide-number="0">
-                                        <img src="<?php echo base_url("resources/images/sarthak.jpg") ?>"></div>
+                                        <img src="<?php echo $this->cdn->res_url("resources/images/sarthak.jpg") ?>"></div>
 
                                     <div class="item" data-slide-number="1">
-                                        <img src="<?php echo base_url("resources/images/rajat.jpg") ?>"></div>
+                                        <img src="<?php echo $this->cdn->res_url("resources/images/rajat.jpg") ?>"></div>
 
                                     <div class="item" data-slide-number="2">
-                                        <img src="<?php echo base_url("resources/images/varun.jpg") ?>"></div>
+                                        <img src="<?php echo $this->cdn->res_url("resources/images/varun.jpg") ?>"></div>
 
                                     <div class="item" data-slide-number="3">
-                                        <img src="<?php echo base_url("resources/images/bhawesh.jpg") ?>"></div>
+                                        <img src="<?php echo $this->cdn->res_url("resources/images/bhawesh.jpg") ?>"></div>
 
                                     <div class="item" data-slide-number="4">
                                         <img src="<?php echo base_url("resources/images/shobhit.jpg") ?>"></div>

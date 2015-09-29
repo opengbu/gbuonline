@@ -9,7 +9,6 @@
 			position: absolute; 
 			z-index: 100; 
 			background-color: #2D2D2D;
-			<!--height: 200px; --><!--to solve footer issue--><!--if you edit this, then also edit 'padding-bottom' in body tag, with the same amount-->
         }
     </style>
 
@@ -55,7 +54,7 @@
 								<div class="media">
                                     <div class="media-left">
 
-                                        <img class="media-object" src="<?php echo base_url('resources/images/amitsir.jpg') ?>" height="90" width="90">
+                                        <img class="media-object" src="<?php echo $this->cdn->res_url('resources/images/amitsir.jpg') ?>" height="90" width="90">
 
                                     </div>
 											<div class="media-body">
@@ -69,7 +68,7 @@
                                 <div class="media">
                                     <div class="media-left">
 
-                                        <img class="media-object" src="<?php echo base_url('resources/images/varun.jpg') ?>" height="90" width="90">
+                                        <img class="media-object" src="<?php echo $this->cdn->res_url('resources/images/varun.jpg') ?>" height="90" width="90">
 
                                     </div>
                                     <div class="media-body">
@@ -84,7 +83,7 @@
                                 <div class="media">
                                     <div class="media-left media-middle">
 
-                                        <img class="media-object" src="<?php echo base_url('resources/images/rajat.jpg') ?>" height="90" width="90">
+                                        <img class="media-object" src="<?php echo $this->cdn->res_url('resources/images/rajat.jpg') ?>" height="90" width="90">
 
                                     </div>
                                     <div class="media-body">
@@ -97,7 +96,7 @@
                                 <div class="media">
                                     <div class="media-left media-middle">
 
-                                        <img class="media-object" src="<?php echo base_url('resources/images/sarthak.jpg') ?>" height="90" width="90">
+                                        <img class="media-object" src="<?php echo $this->cdn->res_url('resources/images/sarthak.jpg') ?>" height="90" width="90">
 
                                     </div>
                                     <div class="media-body">
@@ -110,7 +109,7 @@
                                 <div class="media">
                                     <div class="media-left media-middle">
 
-                                        <img class="media-object" src="<?php echo base_url('resources/images/shobhit.jpg') ?>" height="90" width="90">
+                                        <img class="media-object" src="<?php echo $this->cdn->res_url('resources/images/shobhit.jpg') ?>" height="90" width="90">
 
                                     </div>
                                     <div class="media-body">
@@ -123,7 +122,7 @@
                                 <div class="media">
                                     <div class="media-left media-middle">
 
-                                        <img class="media-object" src="<?php echo base_url('resources/images/bhawesh.jpg') ?>" height="90" width="90">
+                                        <img class="media-object" src="<?php echo $this->cdn->res_url('resources/images/bhawesh.jpg') ?>" height="90" width="90">
 
                                     </div>
                                     <div class="media-body">

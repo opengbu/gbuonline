@@ -14,7 +14,7 @@
    </center>
    </div>
       <div >
-    <img src="<?php echo base_url('resources/images/demo1.jpg')?>" alt="demo hostel" height="600" style="overflow:hidden;position:relative;position: relative; top:0;left:0;width:100%;"/>                      
+    <img src="<?php echo $this->cdn->res_url('resources/images/demo1.jpg')?>" alt="demo hostel" height="600" style="overflow:hidden;position:relative;position: relative; top:0;left:0;width:100%;"/>                      
     </div>
    </div>
 <br/>
@@ -154,10 +154,10 @@
 }
     </style>
     <div id="containerImg">
-        <a href="#" target="_self"><img src="<?php echo base_url('resources/h_images/h2.jpg')?>" alt="..." ></a>
-        <a href="#" target="_self"><img src="<?php echo base_url('resources/h_images/h3.jpg')?>" alt="..." ></a>
-        <a href="#" target="_self"><img src="<?php echo base_url('resources/h_images/h4.jpg')?>" alt="..." ></a>
-        <a href="#" target="_self"><img src="<?php echo base_url('resources/h_images/h1.jpg')?>" alt="..." ></a>
+        <a href="#" target="_self"><img src="<?php echo $this->cdn->res_url('resources/h_images/h2.jpg')?>" alt="..." ></a>
+        <a href="#" target="_self"><img src="<?php echo $this->cdn->res_url('resources/h_images/h3.jpg')?>" alt="..." ></a>
+        <a href="#" target="_self"><img src="<?php echo $this->cdn->res_url('resources/h_images/h4.jpg')?>" alt="..." ></a>
+        <a href="#" target="_self"><img src="<?php echo $this->cdn->res_url('resources/h_images/h1.jpg')?>" alt="..." ></a>
     </div>
     <br/>
     <br/>

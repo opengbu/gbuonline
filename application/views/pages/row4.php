@@ -14,24 +14,24 @@
 						
 					<div class="row">
 					<div class="col-md-4">
-                        <a href="<?php echo base_url('resources/images/ac-15-16.jpg') ?>" class="thumbnail ahr" target="_blank">
-							<img src="<?php echo base_url('resources/images/cards/front/calendar-100-100.png') ?>"  alt="" 
-								onmouseover="this.src='<?php echo base_url('resources/images/cards/front/calendar_text-100-100.png') ?>'"  
-								onmouseout="this.src='<?php echo base_url('resources/images/cards/front/calendar-100-100.png') ?>'" >
+                        <a href="<?php echo $this->cdn->res_url('resources/images/ac-15-16.jpg') ?>" class="thumbnail ahr" target="_blank">
+							<img src="<?php echo $this->cdn->res_url('resources/images/cards/front/calendar-100-100.png') ?>"  alt="" 
+								onmouseover="this.src='<?php echo $this->cdn->res_url('resources/images/cards/front/calendar_text-100-100.png') ?>'"  
+								onmouseout="this.src='<?php echo $this->cdn->res_url('resources/images/cards/front/calendar-100-100.png') ?>'" >
 						</a>
 					</div>
 					<div class="col-md-4">
-						<a href="<?php echo base_url('resources/holidays-2015.pdf') ?>" class="thumbnail ahr" target="_blank">
-							<img src="<?php echo base_url('resources/images/cards/front/holiday-100-100.png') ?>" alt=""
-								onmouseover="this.src='<?php echo base_url('resources/images/cards/front/holiday_text-100-100.png') ?>'"  
-								onmouseout="this.src='<?php echo base_url('resources/images/cards/front/holiday-100-100.png') ?>'" >
+						<a href="<?php echo $this->cdn->res_url('resources/holidays-2015.pdf') ?>" class="thumbnail ahr" target="_blank">
+							<img src="<?php echo $this->cdn->res_url('resources/images/cards/front/holiday-100-100.png') ?>" alt=""
+								onmouseover="this.src='<?php echo $this->cdn->res_url('resources/images/cards/front/holiday_text-100-100.png') ?>'"  
+								onmouseout="this.src='<?php echo $this->cdn->res_url('resources/images/cards/front/holiday-100-100.png') ?>'" >
 						</a>
 					</div>
 					<div class="col-md-4">
 						<a href="http://172.25.5.15/moodle" target="_blank" class="thumbnail ahr">	
-							<img src="<?php echo base_url('resources/images/cards/front/moodle-100-100.jpg') ?>"  alt=""
-								onmouseover="this.src='<?php echo base_url('resources/images/cards/front/moodle_text-100-100.jpg') ?>'"  
-								onmouseout="this.src='<?php echo base_url('resources/images/cards/front/moodle-100-100.jpg') ?>'" >
+							<img src="<?php echo $this->cdn->res_url('resources/images/cards/front/moodle-100-100.jpg') ?>"  alt=""
+								onmouseover="this.src='<?php echo $this->cdn->res_url('resources/images/cards/front/moodle_text-100-100.jpg') ?>'"  
+								onmouseout="this.src='<?php echo $this->cdn->res_url('resources/images/cards/front/moodle-100-100.jpg') ?>'" >
 						</a>
 					</div>
 					</div>
@@ -40,23 +40,23 @@
 					<div class="col-md-4">
 						<a href="<?php echo site_url('exams/exams_home') ?>" class="thumbnail ahr">
 							<img src="<?php echo base_url('resources/images/cards/front/exams-100-100.jpg') ?>"  alt=""
-								onmouseover="this.src='<?php echo base_url('resources/images/cards/front/exams_text-100-100.jpg') ?>'"  
-								onmouseout="this.src='<?php echo base_url('resources/images/cards/front/exams-100-100.jpg') ?>'" >
+								onmouseover="this.src='<?php echo $this->cdn->res_url('resources/images/cards/front/exams_text-100-100.jpg') ?>'"  
+								onmouseout="this.src='<?php echo $this->cdn->res_url('resources/images/cards/front/exams-100-100.jpg') ?>'" >
 						</a>
 					</div>
 		
 					<div class="col-md-4">
 						<a href="<?php echo site_url('ebooks/ebooks_home') ?>" class="thumbnail ahr">	
 							<img src="<?php echo base_url('resources/images/cards/front/ebooks-100-100.png') ?>"  alt=""		
-								onmouseover="this.src='<?php echo base_url('resources/images/cards/front/ebooks_text-100-100.png') ?>'"  
-								onmouseout="this.src='<?php echo base_url('resources/images/cards/front/ebooks-100-100.png') ?>'" >
+								onmouseover="this.src='<?php echo $this->cdn->res_url('resources/images/cards/front/ebooks_text-100-100.png') ?>'"  
+								onmouseout="this.src='<?php echo $this->cdn->res_url('resources/images/cards/front/ebooks-100-100.png') ?>'" >
 						</a>
 					</div>
 					<div class="col-md-4">
 						<a href="http://172.25.5.15/refbase" target="_blank" class="thumbnail ahr">	
-							<img src="<?php echo base_url('resources/images/cards/front/publications-100-100.png') ?>"  alt=""		
-								onmouseover="this.src='<?php echo base_url('resources/images/cards/front/publications_text-100-100.png') ?>'"  
-								onmouseout="this.src='<?php echo base_url('resources/images/cards/front/publications-100-100.png') ?>'" >
+							<img src="<?php echo $this->cdn->res_url('resources/images/cards/front/publications-100-100.png') ?>"  alt=""		
+								onmouseover="this.src='<?php echo $this->cdn->res_url('resources/images/cards/front/publications_text-100-100.png') ?>'"  
+								onmouseout="this.src='<?php echo $this->cdn->res_url('resources/images/cards/front/publications-100-100.png') ?>'" >
 						</a>
 					</div>
 					</div>

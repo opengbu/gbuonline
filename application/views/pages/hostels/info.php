@@ -1,6 +1,6 @@
   
   <div id="img" style="overflow:hidden;">
-	<img id="bg" src="<?php echo base_url('resources/h_images/back3.jpg')?>" style="height:100%;width:100%;" alt="blurred_vission" />
+	<img id="bg" src="<?php echo $this->cdn->res_url('resources/h_images/back3.jpg')?>" style="height:100%;width:100%;" alt="blurred_vission" />
 		
 		<div id="info" style="position:absolute;top:260px;padding:30px;width:100%;text-align:center;background:transparent !important" class="jumbotron">
 		

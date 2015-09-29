@@ -189,7 +189,7 @@ hr {
 		<!--your content-->
 		<div style="margin-left:4px;" class="row">
 		
-		<img  src="<?php echo base_url('resources/images/image2.jpg')?>" height="300px" width="1300px"/>
+		<img  src="<?php echo $this->cdn->res_url('resources/images/image2.jpg')?>" height="300px" width="1300px"/>
 		<div class=" col-md-10">
 			
 			 <h1 style="font-family:'Oswald', sans-serif ;"> <b><u> EVENTS</u></b> </h1>

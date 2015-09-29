@@ -10,19 +10,8 @@
         <i>
             <div class="row">
                 <div class="col-sm-4">
-                    <?php
-                    if (file_exists('resources/user_uploads/profile_images/1.jpg')) {
-                        ?>
-                        <img src="<?php echo base_url('resources/user_uploads/profile_images/1.jpg') ?>" width="120"><br>
 
-                        <?php
-                    } else {
-                        ?>
-                        <img src="<?php echo base_url('resources/images/varun.jpg') ?>" width="120">
-
-                        <?php
-                    }
-                    ?>
+                    <img src="<?php echo $this->cdn->res_url('resources/images/varun.jpg') ?>" width="120">
                     <br><b>VARUN GARG </b><br/>(Admin/User Panel)<br />(with database connectivity)<br />(Technical Head)
                 </div>
                 <div class="col-sm-4">
@@ -53,22 +42,21 @@
     <h3>Content Team</h3>
 </center>
 <hr>
-        <?php 
-			$content = $this->db->query("SELECT * FROM users WHERE type='cw' AND flag='1'");
-			foreach($content->result() as $row)
-			{
-		?>
-				<div class="col-sm-4">
-					<center>
-						<img src="<?php echo base_url ($row->profile_picture) ?>"  width="120" style="height: 150px;"/><br><b><?=$row->full_name ?></b>
-						<br/><br/><br/>
-					</center>
-				</div>
-				
-		<?php
-		}
-		?>
-    <br/><br/>
+<?php
+$content = $this->db->query("SELECT * FROM users WHERE type='cw'");
+foreach ($content->result() as $row) {
+    ?>
+    <div class="col-sm-4">
+        <center>
+            <img src="<?php echo base_url($row->profile_picture) ?>"  width="120" style="height: 150px;"/><br><b><?= $row->full_name ?></b>
+            <br/><br/><br/>
+        </center>
+    </div>
+
+    <?php
+}
+?>
+<br/><br/>
 <hr>
 
 

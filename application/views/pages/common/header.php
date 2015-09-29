@@ -44,7 +44,7 @@
                 </li>
                 <!--
                 <li>
-                    <a href="<?php echo base_url('resources/images/ac-15-16.jpg') ?>"><font size="2"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>&nbsp;Academic Calendar</font></a>
+                    <a href="<?php echo $this->cdn->res_url('resources/images/ac-15-16.jpg') ?>"><font size="2"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>&nbsp;Academic Calendar</font></a>
                   
                 </li>-->
 
@@ -69,7 +69,7 @@
 
                         <li role="separator" class="divider"></li>
                         <li>
-                            <a href="<?php echo base_url('resources/hostel_allocation/mess.jpg') ?>"style="text-decoration:none;">Mess Menu</a>	
+                            <a href="<?php echo $this->cdn->res_url('resources/hostel_allocation/mess.jpg') ?>" style="text-decoration:none;">Mess Menu</a>	
                         </li>
                     </ul>
                 </li>

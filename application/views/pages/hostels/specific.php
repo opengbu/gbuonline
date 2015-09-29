@@ -89,16 +89,16 @@
 						
 							<ul class="dropdown-menu" role="menu">
 							
-								<li><a href="<?php echo base_url('resources/hostel_allocation/Birsa Munda Hostel_15July15.pdf')?>">Birsa Munda Hostel</a></li>
-								<li><a href="<?php echo base_url('resources/hostel_allocation/Guru Ghasi Das Hostel_15July15.pdf')?>">Guru Ghasi Das Hostel</a></li>
-							    <li><a href="<?php echo base_url('resources/hostel_allocation/Maha Maya Girls Hostel_15July15.pdf')?>">Maha Maya Girls Hostel</a></li>
-                                <li><a href="<?php echo base_url('resources/hostel_allocation/Ram Saran Das Hostel_15July15.pdf')?>">Ram Saran Das Hostel</a></li>
-                                <li><a href="<?php echo base_url('resources/hostel_allocation/Rani Laxmi Bai Girls Hostel_15July15.pdf')?>">Rani Laxmi Bai Girls Hostel</a></li>
-                                <li><a href="<?php echo base_url('resources/hostel_allocation/Sant Kabir Das Hostel_15July2015.pdf')?>">Sant Kabir Das Hostel</a></li>
-                                <li><a href="<?php echo base_url('resources/hostel_allocation/Sant Ravidas Hostel_15July2015.pdf')?>">Sant Ravidas Hostel</a></li>
-                                <li><a href="<?php echo base_url('resources/hostel_allocation/Shri Chatarpati Sahu ji Maharaj Hostel_15July15.pdf')?>">Shri Chatarpati Sahu ji Maharaj Hostel</a></li>
-                                <li><a href="<?php echo base_url('resources/hostel_allocation/Shri Narayan Guru Hostel-15July15.pdf')?>">Shri Narayan Guru Hostel</a></li>
-                                <li><a href="<?php echo base_url('resources/hostel_allocation/Tulsidas Hostel_15July15.pdf')?>">Tulsidas Hostel</a></li>
+								<li><a href="<?php echo $this->cdn->res_url('resources/hostel_allocation/Birsa Munda Hostel_15July15.pdf')?>">Birsa Munda Hostel</a></li>
+								<li><a href="<?php echo $this->cdn->res_url('resources/hostel_allocation/Guru Ghasi Das Hostel_15July15.pdf')?>">Guru Ghasi Das Hostel</a></li>
+							    <li><a href="<?php echo $this->cdn->res_url('resources/hostel_allocation/Maha Maya Girls Hostel_15July15.pdf')?>">Maha Maya Girls Hostel</a></li>
+                                <li><a href="<?php echo $this->cdn->res_url('resources/hostel_allocation/Ram Saran Das Hostel_15July15.pdf')?>">Ram Saran Das Hostel</a></li>
+                                <li><a href="<?php echo $this->cdn->res_url('resources/hostel_allocation/Rani Laxmi Bai Girls Hostel_15July15.pdf')?>">Rani Laxmi Bai Girls Hostel</a></li>
+                                <li><a href="<?php echo $this->cdn->res_url('resources/hostel_allocation/Sant Kabir Das Hostel_15July2015.pdf')?>">Sant Kabir Das Hostel</a></li>
+                                <li><a href="<?php echo $this->cdn->res_url('resources/hostel_allocation/Sant Ravidas Hostel_15July2015.pdf')?>">Sant Ravidas Hostel</a></li>
+                                <li><a href="<?php echo $this->cdn->res_url('resources/hostel_allocation/Shri Chatarpati Sahu ji Maharaj Hostel_15July15.pdf')?>">Shri Chatarpati Sahu ji Maharaj Hostel</a></li>
+                                <li><a href="<?php echo $this->cdn->res_url('resources/hostel_allocation/Shri Narayan Guru Hostel-15July15.pdf')?>">Shri Narayan Guru Hostel</a></li>
+                                <li><a href="<?php echo $this->cdn->res_url('resources/hostel_allocation/Tulsidas Hostel_15July15.pdf')?>">Tulsidas Hostel</a></li>
 							</ul>
 						</li>
 					</p>
@@ -107,7 +107,7 @@
 				<ul class="list-group">
 					<p>
 						<li  class="list-group-item"class="dropdown" style="list-style-type:none;text-decoration:none;">
-							<a href="<?php echo base_url('resources/hostel_allocation/mess.jpg')?>"style="text-decoration:none;">
+							<a href="<?php echo $this->cdn->res_url('resources/hostel_allocation/mess.jpg')?>"style="text-decoration:none;">
                                 <font size="4">&nbsp;Mess Menu</font></a>	
 						</li>
 						

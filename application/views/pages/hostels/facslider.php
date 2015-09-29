@@ -18,19 +18,19 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img src="<?php echo base_url('resources/h_images/h2.jpg')?>" alt="..." style="width:1200px;height:500px;">
+      <img src="<?php echo $this->cdn->res_url('resources/h_images/h2.jpg')?>" alt="..." style="width:1200px;height:500px;">
 
     </div>
     <div class="item">
-      <img src="<?php echo base_url('resources/h_images/h3.jpg')?>" alt="..." style="width:1200px;height:500px;">
+      <img src="<?php echo $this->cdn->res_url('resources/h_images/h3.jpg')?>" alt="..." style="width:1200px;height:500px;">
 
     </div>
        <div class="item">
-      <img src="<?php echo base_url('resources/h_images/h4.jpg')?>" alt="..." style="width:1200px;height:500px;">
+      <img src="<?php echo $this->cdn->res_url('resources/h_images/h4.jpg')?>" alt="..." style="width:1200px;height:500px;">
 
     </div>
      <div class="item">
-      <img src="<?php echo base_url('resources/h_images/h1.jpg')?>" alt="..." style="width:1200px;height:500px;">
+      <img src="<?php echo $this->cdn->res_url('resources/h_images/h1.jpg')?>" alt="..." style="width:1200px;height:500px;">
 
     </div>
     

@@ -1,7 +1,7 @@
 <div class="row">
 <div class="slider">
-     <img src="<?php echo base_url('resources/images/image1.jpg')?>" height="500"/>
-     <img src="<?php echo base_url('resources/images/image2.jpg')?>" height="500"/>
+     <img src="<?php echo $this->cdn->res_url('resources/images/image1.jpg')?>" height="500"/>
+     <img src="<?php echo $this->cdn->res_url('resources/images/image2.jpg')?>" height="500"/>
      <!--<img src="<?php echo base_url('resources/images/image3.jpg')?>" height="500"/>
      <img src="<?php echo base_url('resources/images/image4.jpg')?>" height="500"/>
     

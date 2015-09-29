@@ -52,7 +52,7 @@
                         ?>
                         </div>
                         <div class="col-md-3">
-                            <a href="<?php echo base_url("resources/holidays-2015.pdf")?>"><?php echo $row->title; ?></a>
+                            <a href="<?php echo $this->cdn->res_url("resources/holidays-2015.pdf")?>"><?php echo $row->title; ?></a>
                         </div>
                          <div class="col-md-3">
                         <?php
