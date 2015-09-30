@@ -57,8 +57,10 @@ class Ebooks extends CI_Controller {
             if ($this->input->get('ebook_id') != "") { // update
                 unset($form_data['user_id']); //keep original user
                 $this->db->update('ebooks', $form_data, " id = '" . $this->input->get('ebook_id') . "'");
+                $this->logger->insert('Updated ebook ' . set_value('book_name') . ' (' . $this->input->get('ebook_id') . ')');
             } else {
                 $this->db->insert('ebooks', $form_data);
+                $this->logger->insert('Created ebook ' . set_value('book_name'));
             }
             redirect(base_url() . 'Ebooks/view_all');
         }
@@ -75,7 +77,15 @@ class Ebooks extends CI_Controller {
 
     function delete() {
         $this->secure_hard();
+
+        $title_q = $this->db->query("select book_name from ebooks where id = '" . $this->input->get('ebook_id') . "' ");
+        $title_r = $title_q->row();
+        $title = $title_r->book_name;
+
         $this->db->query("delete from ebooks where id = '" . $this->input->get('ebook_id') . "'");
+
+        $this->logger->insert('deleted ebook ' . $title . ' (' . $this->input->get('ebook_id') . ')');
+
         redirect(base_url() . 'Ebooks/view_all');
     }
 

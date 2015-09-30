@@ -40,7 +40,7 @@ class Exams extends CI_Controller {
 
                 $query = $this->db->get_where('exams', array('id' => $this->input->get('exam_id')));
                 if ($query->num_rows() == 0) {
-                    echo "<br /><br /><br /><br />No such Ebook exists";
+                    echo "<br /><br /><br /><br />No such Exam exists";
                     die();
                 }
                 $form_data = $query->row();
@@ -58,8 +58,10 @@ class Exams extends CI_Controller {
             );
             if ($this->input->get('exam_id') != "") { // update
                 $this->db->update('exams', $form_data, " id = '" . $this->input->get('exam_id') . "'");
+                $this->logger->insert('Updated exam paper -' . set_value('paper_name') . ' (' . $this->input->get('exam_id') . ')');
             } else {
                 $this->db->insert('exams', $form_data);
+                $this->logger->insert('Created exam paper - ' . set_value('paper_name'));
             }
             redirect(base_url() . 'Exams/view_all');
         }
@@ -76,7 +78,15 @@ class Exams extends CI_Controller {
 
     function delete() {
         $this->secure_hard();
+
+        $title_q = $this->db->query("select paper_name from exams where id = '" . $this->input->get('exam_id') . "' ");
+        $title_r = $title_q->row();
+        $title = $title_r->paper_name;
+
         $this->db->query("delete from exams where id = '" . $this->input->get('exam_id') . "'");
+
+        $this->logger->insert('deleted exam ' . $title . ' (' . $this->input->get('exam_id') . ')');
+
         redirect(base_url() . 'Exams/view_all');
     }
 

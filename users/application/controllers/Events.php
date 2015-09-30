@@ -69,8 +69,10 @@ class Events extends CI_Controller {
                 $this->secure_hard();
                 unset($form_data['user_id']); // remains original
                 $this->db->update('events', $form_data, " id = '" . $this->input->get('event_id') . "'");
+                $this->logger->insert('Updated event ' . set_value('article_name') . ' (' . $this->input->get('event_id') . ')');
             } else {
                 $this->db->insert('events', $form_data);
+                $this->logger->insert('Created event ' . set_value('article_name'));
             }
             redirect(base_url() . 'Events/view_all');
         }
@@ -87,7 +89,15 @@ class Events extends CI_Controller {
 
     function delete() {
         $this->secure_hard();
+
+        $title_q = $this->db->query("select article_name from events where id = '" . $this->input->get('event_id') . "' ");
+        $title_r = $title_q->row();
+        $title = $title_r->article_name;
+
         $this->db->query("delete from events where id = '" . $this->input->get('event_id') . "'");
+
+        $this->logger->insert('deleted event ' . $title . ' (' . $this->input->get('event_id') . ')');
+
         redirect(base_url() . 'Events/view_all');
     }
 
