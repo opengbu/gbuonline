@@ -13,18 +13,18 @@ class Logs_model extends CI_Model {
 
     function insert($action, $user_agent = FALSE, $ip_address = FALSE) {
         $data = array(
-            'user_id' => $this->session->user_id('user_id'),
+            'user_id' => $this->session->userdata('user_id'),
             'time' => date('H:i:s'),
             'date' => date('Y-m-d'),
             'action' => $action
         );
 
         if ($user_agent == TRUE) {
-            $data['action'] = $this->input->user_agent() . $data['action'];
+            $data['action'] = $data['action'] . ' (' . $this->input->user_agent()  . ' ) ';
         }
 
         if ($ip_address == TRUE) {
-            $data['action'] = $this->input->ip_address() . $data['action'];
+            $data['action'] =  $this->input->ip_address() . ' - '. $data['action'];
         }
 
         $this->db->insert('logs', $data);
