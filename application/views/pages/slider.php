@@ -12,7 +12,7 @@
 <div class = "row quotes" style="background-color:orange; padding-top:5px; padding-bottom:8px;">
   <h4>
   <center>
-   <script language="javascript" src="resources/quotes.js">
+   <script language="javascript" src="<?php echo $this->cdn->res_url('resources/quotes.js')?>">
 </script>
   </center>
   </h4>
