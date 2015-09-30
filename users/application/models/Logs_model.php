@@ -11,20 +11,23 @@ class Logs_model extends CI_Model {
         parent::__construct();
     }
 
-    function insert($action, $user_agent = FALSE, $ip_address = FALSE) {
+    function insert($action, $ip_address = FALSE, $user_agent = FALSE, $user_id = NULL) {
         $data = array(
-            'user_id' => $this->session->userdata('user_id'),
             'time' => date('H:i:s'),
             'date' => date('Y-m-d'),
             'action' => $action
         );
+        if ($user_id == NULL)
+            $data['user_id'] = $this->session->userdata('user_id');
+        else
+            $data['user_id'] = $user_id;
 
         if ($user_agent == TRUE) {
-            $data['action'] = $data['action'] . ' (' . $this->input->user_agent()  . ' ) ';
+            $data['action'] = $data['action'] . ' (' . $this->input->user_agent() . ' ) ';
         }
 
         if ($ip_address == TRUE) {
-            $data['action'] =  $this->input->ip_address() . ' - '. $data['action'];
+            $data['action'] = $this->input->ip_address() . ' - ' . $data['action'];
         }
 
         $this->db->insert('logs', $data);

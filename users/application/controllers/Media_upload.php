@@ -34,9 +34,10 @@ class Media_upload extends CI_Controller {
         $this->load->library('upload', $config);
         $this->load->helper(array('form', 'url'));
 
-
         if ($this->upload->do_upload()) {
-            $data = array('upload_data' => $this->upload->data());
+            $data = $this->upload->data();
+            $file_name = $data['file_name'];
+            $this->logger->insert("Uploaded file /user_uploads/" . $this->input->post('directory') . '/' . $file_name);
             redirect('manage_uploads');
         } else {
             $error = array('error' => $this->upload->display_errors());

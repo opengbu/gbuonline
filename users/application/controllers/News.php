@@ -54,8 +54,10 @@ class News extends CI_Controller {
             );
             if ($this->input->get('news_id') != "") { // update
                 $this->db->update('news', $form_data, " id = '" . $this->input->get('news_id') . "'");
+                $this->logger->insert('Updated news article - ' . set_value('title') . ' (' . $this->input->get('news_id') . ')');
             } else {
                 $this->db->insert('news', $form_data);
+                $this->logger->insert('Created news article - ' . set_value('title'));
             }
             redirect(base_url() . 'News/view_all');
         }
@@ -72,7 +74,15 @@ class News extends CI_Controller {
 
     function delete() {
         $this->secure_hard();
+
+        $title_q = $this->db->query("select title from news where id = '" . $this->input->get('news_id') . "' ");
+        $title_r = $title_q->row();
+        $title = $title_r->title;
+
         $this->db->query("delete from news where id = '" . $this->input->get('news_id') . "'");
+
+        $this->logger->insert('Deleted news article ' . $title . ' (' . $this->input->get('news_id') . ')', TRUE);
+
         redirect(base_url() . 'News/view_all');
     }
 

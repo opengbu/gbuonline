@@ -81,7 +81,7 @@ class Clubs extends CI_Controller {
 
         $this->db->query("delete from clubs where id = '" . $this->input->get('club_id') . "'");
 
-        $this->logger->insert('deleted club ' . $title . ' (' . $this->input->get('club_id') . ')');
+        $this->logger->insert('Deleted club ' . $title . ' (' . $this->input->get('club_id') . ')',TRUE);
 
         redirect(base_url() . 'Clubs/view_all');
     }

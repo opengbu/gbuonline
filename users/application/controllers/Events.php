@@ -96,7 +96,7 @@ class Events extends CI_Controller {
 
         $this->db->query("delete from events where id = '" . $this->input->get('event_id') . "'");
 
-        $this->logger->insert('deleted event ' . $title . ' (' . $this->input->get('event_id') . ')');
+        $this->logger->insert('Deleted event ' . $title . ' (' . $this->input->get('event_id') . ')',TRUE);
 
         redirect(base_url() . 'Events/view_all');
     }

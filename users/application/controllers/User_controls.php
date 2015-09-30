@@ -95,6 +95,7 @@ class User_controls extends CI_Controller {
             $password = $this->input->post('password');
             $hash = $this->bcrypt->hash_password($password);
             $confirmation_link = bin2hex(openssl_random_pseudo_bytes(18)); // 36 character lin
+            $extra_log_message = NULL;
 
             $form_data = array(
                 'username' => set_value('username'),
@@ -114,22 +115,31 @@ class User_controls extends CI_Controller {
 
             if ($this->input->get('user_id') != "") {
 
-                $this->secure_post();
-                if (strlen($password) == 0) // no change
-                    unset($form_data['password']);
+                $query = $this->db->get_where('users', array('user_id' => $this->input->get('user_id')));
+                $old_form_data = $query->row();
 
-                if (strlen($type) == 0)
-                    unset($form_data['type']);
+                $this->secure_post();
+                if (strlen($password) == 0) { // no change
+                    unset($form_data['password']);
+                } else {
+                    $extra_log_message = $extra_log_message . ' + updated password ';
+                }
+
+                if ($form_data['type'] != $old_form_data->type) {
+                    $extra_log_message = $extra_log_message . ' + Changed role to ' .
+                            $this->permissions->get_full_type($form_data['type']);
+                }
 
                 unset($form_data['confirmation_link']); //not needed
 
                 $this->db->update('users', $form_data, " user_id = '" . $this->input->get('user_id') . "'");
+                $this->logger->insert('Updated user - ' . set_value('username') . ' (' . $this->input->get('user_id') . ')' . $extra_log_message, TRUE, TRUE);
 
                 if ($this->input->get('user_id') == $this->session->userdata('user_id')) {
                     redirect(base_url() . '/logout');
                 }
             } else {
-                $this->db->insert('users', $form_data);
+                $this->db->insert('users', $form_data, TRUE, TRUE);
             }
             redirect(base_url() . 'user_controls/view_all');
         }
@@ -215,7 +225,15 @@ class User_controls extends CI_Controller {
     function delete() {
         $this->secure_hard();
         $this->secure_post();
+
+        $title_q = $this->db->query("select username from users where user_id = '" . $this->input->get('user_id') . "' ");
+        $title_r = $title_q->row();
+        $title = $title_r->username;
+
         $this->db->query("delete from users where user_id = '" . $this->input->get('user_id') . "'");
+
+        $this->logger->insert('deleted user ' . $title . ' (' . $this->input->get('user_id') . ')', TRUE, TRUE);
+
         redirect(base_url() . 'user_controls/view_all');
     }
 
@@ -223,6 +241,16 @@ class User_controls extends CI_Controller {
         $this->secure_hard(2);
         $this->secure_post();
         $form_data['type'] = $this->input->post('type');
+
+        $query = $this->db->get_where('users', array('user_id' => $this->input->get('user_id')));
+        $old_form_data = $query->row();
+        if ($form_data['type'] != $old_form_data->type) {
+            $log_message = ' Changed ' . $old_form_data->username . ' (' . $old_form_data->user_id . ')\'s role to ' .
+                    $this->permissions->get_full_type($form_data['type']);
+            $this->logger->insert($log_message, TRUE, TRUE);
+        }
+
+
         $this->db->update('users', $form_data, " user_id = '" . $this->input->get('user_id') . "'");
         redirect(base_url() . 'user_controls/view_all');
     }

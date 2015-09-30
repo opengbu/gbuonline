@@ -13,11 +13,11 @@ class Schools extends CI_Controller {
 
     function secure_hard() {
         if ($this->permissions->get_level() == 0) {
-            echo $this->load->view('common/header','',TRUE);
+            echo $this->load->view('common/header', '', TRUE);
             $message['errors'] = "Insufficient Privelleges. Please Contact Our Content Head";
-            echo $this->load->view('Error_message', $message,TRUE);
-            echo $this->load->view('common/footer','',TRUE);
-           die();
+            echo $this->load->view('Error_message', $message, TRUE);
+            echo $this->load->view('common/footer', '', TRUE);
+            die();
         }
         return 1;
     }
@@ -57,8 +57,10 @@ class Schools extends CI_Controller {
             );
             if ($this->input->get('school_id') != "") { // update
                 $this->db->update('schools', $form_data, " id = '" . $this->input->get('school_id') . "'");
+                $this->logger->insert('Updated School - ' . set_value('sc_name') . ' (' . $this->input->get('school_id') . ')');
             } else {
                 $this->db->insert('schools', $form_data);
+                $this->logger->insert('Created School - ' . set_value('sc_name'));
             }
             redirect(base_url() . 'Schools/view_all');
         }
@@ -75,7 +77,15 @@ class Schools extends CI_Controller {
 
     function delete() {
         $this->secure_hard();
+
+        $title_q = $this->db->query("select sc_name from schools where id = '" . $this->input->get('school_id') . "' ");
+        $title_r = $title_q->row();
+        $title = $title_r->sc_name;
+
         $this->db->query("delete from schools where id = '" . $this->input->get('school_id') . "'");
+
+        $this->logger->insert('Deleted school ' . $title . ' (' . $this->input->get('school_id') . ')', TRUE);
+
         redirect(base_url() . 'Schools/view_all');
     }
 

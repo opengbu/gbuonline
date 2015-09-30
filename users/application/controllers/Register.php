@@ -44,6 +44,8 @@ class Register extends CI_Controller {
                 'confirmation_link' => $confirmation_link,
             );
             $this->db->insert('users', $form_data);
+            $user_id = $this->db->insert_id();
+            $this->logger->insert("Registered", TRUE, TRUE, $user_id);
             $this->send_mail($form_data['username'], $form_data['confirmation_link'], $form_data['full_name'], $form_data['email']);
             $this->load->view('create_success');
         }
@@ -79,6 +81,10 @@ class Register extends CI_Controller {
             $query = $this->db->query("select * from  users where username = '$username' and confirmation_link = '$conf'");
             if ($query->num_rows() > 0) {
                 $this->db->query("update users set active = 1 where username = '$username'");
+                $user_id_r = $query->row();
+                $user_id = $user_id_r->user_id;
+                $this->logger->insert("Activated via mail", TRUE, TRUE, $user_id);
+
                 $this->load->view('activation_success');
             } else {
                 redirect('login');

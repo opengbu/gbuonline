@@ -56,8 +56,10 @@ class Notices extends CI_Controller {
                 unset($form_data['user_id']);
                 unset($form_data['date']);
                 $this->db->update('vnb', $form_data, " id = '" . $this->input->get('notice_id') . "'");
+                $this->logger->insert('Updated notice - ' . set_value('title') . ' (' . $this->input->get('notice_id') . ')');
             } else {
                 $this->db->insert('vnb', $form_data);
+                $this->logger->insert('Created notice - ' . set_value('title'));
             }
             redirect(base_url() . 'Notices/view_all');
         }
@@ -74,7 +76,15 @@ class Notices extends CI_Controller {
 
     function delete() {
         $this->secure_hard();
+
+        $title_q = $this->db->query("select title from vnb where id = '" . $this->input->get('notice_id') . "' ");
+        $title_r = $title_q->row();
+        $title = $title_r->title;
+
         $this->db->query("delete from vnb where id = '" . $this->input->get('notice_id') . "'");
+
+        $this->logger->insert('Deleted notice ' . $title . ' (' . $this->input->get('notice_id') . ')', TRUE);
+
         redirect(base_url() . 'Notices/view_all');
     }
 

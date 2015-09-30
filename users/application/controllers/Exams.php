@@ -58,7 +58,7 @@ class Exams extends CI_Controller {
             );
             if ($this->input->get('exam_id') != "") { // update
                 $this->db->update('exams', $form_data, " id = '" . $this->input->get('exam_id') . "'");
-                $this->logger->insert('Updated exam paper -' . set_value('paper_name') . ' (' . $this->input->get('exam_id') . ')');
+                $this->logger->insert('Updated exam paper - ' . set_value('paper_name') . ' (' . $this->input->get('exam_id') . ')');
             } else {
                 $this->db->insert('exams', $form_data);
                 $this->logger->insert('Created exam paper - ' . set_value('paper_name'));
@@ -85,7 +85,7 @@ class Exams extends CI_Controller {
 
         $this->db->query("delete from exams where id = '" . $this->input->get('exam_id') . "'");
 
-        $this->logger->insert('deleted exam ' . $title . ' (' . $this->input->get('exam_id') . ')');
+        $this->logger->insert('Deleted exam ' . $title . ' (' . $this->input->get('exam_id') . ')',TRUE);
 
         redirect(base_url() . 'Exams/view_all');
     }

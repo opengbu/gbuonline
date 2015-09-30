@@ -84,7 +84,7 @@ class Ebooks extends CI_Controller {
 
         $this->db->query("delete from ebooks where id = '" . $this->input->get('ebook_id') . "'");
 
-        $this->logger->insert('deleted ebook ' . $title . ' (' . $this->input->get('ebook_id') . ')');
+        $this->logger->insert('Deleted ebook ' . $title . ' (' . $this->input->get('ebook_id') . ')',TRUE);
 
         redirect(base_url() . 'Ebooks/view_all');
     }

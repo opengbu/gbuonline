@@ -15,8 +15,5 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 /vendor/
 /nbproject/
 
-applications/config/database.php
-/users/applications/config/database.php
-
 user_uploads/profile_images/*
-exams/*
+user_uploads/exams/*
