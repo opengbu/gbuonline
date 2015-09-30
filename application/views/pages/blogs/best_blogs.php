@@ -39,11 +39,11 @@ $user_id = $this->session->userdata("user_id");
 
             <?php
             $get_blogs_q = $this->db->query("select blog.*, full_name,roll_number, count(blog_likes.user_id) as likes from blog,users,blog_likes  where status = 1 and blog.user_id = users.user_id and blog_likes.blog_id = blog.id group by blog.id order by likes desc;");
-            $count = 0;
+            //$count = 0;
             foreach ($get_blogs_q->result() as $row) {
-                $count ++;
-                if ($count > 4)
-                    break;
+              //  $count ++;
+               // if ($count > 4)
+                  //  break;
                 
                 $like_count_q = $this->db->query("select count(*) as like_count from blog_likes where blog_id = '$row->id'");
                 $like_count = $like_count_q->row();
