@@ -12,7 +12,7 @@
                 <div class="col-sm-4">
 
                     <img src="<?php echo $this->cdn->res_url('resources/images/varun.jpg') ?>" width="120">
-                    <br><b>VARUN GARG </b><br/>(Admin/User Panel)<br />(with database connectivity)<br />(Technical Head)
+                    <br><b>VARUN GARG </b><br/>(Admin/User Panel)<br />(Technical Head)
                 </div>
                 <div class="col-sm-4">
                     <img src="<?php echo base_url('resources/images/rajat.jpg') ?>" style="max-height: 170px;" width="120"><br><b>RAJAT SAXENA</b> <br/>(Front End Developer)<br>
