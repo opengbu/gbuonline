@@ -2107,10 +2107,26 @@ class Upgrade extends CI_Controller {
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1");
         array_push($update_list, $u);
         unset($u);
-		
-		$u = new update;
+
+        $u = new update;
         $u->version = 4.5;
         array_push($u->updates, "ALTER TABLE `users` ADD `flag` BOOLEAN NOT NULL DEFAULT FALSE ;");
+        array_push($update_list, $u);
+        unset($u);
+
+        $u = new update;
+        $u->version = 4.6;
+        array_push($u->updates, "ALTER TABLE `users` drop `flag`");
+        array_push($u->updates, "CREATE TABLE IF NOT EXISTS `logs` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `time` time NOT NULL,
+  `action` text NOT NULL
+)");
+        array_push($u->updates, "ALTER TABLE `logs`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;");
+
         array_push($update_list, $u);
         unset($u);
 
