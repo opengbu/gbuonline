@@ -12,11 +12,8 @@
 <div class = "row quotes" style="background-color:orange; padding-top:5px; padding-bottom:8px;">
   <h4>
   <center>
-   <blockquote id="qod-quote">
-   ... loading ...
-</blockquote>
-<script src="http://quotesondesign.com/api/3.0/api-3.0.js" 
-type="text/javascript" charset="utf-8"></script>
+   <script language="javascript" src="resources/quotes.js">
+</script>
   </center>
   </h4>
 </div>
