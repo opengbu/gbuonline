@@ -4,6 +4,7 @@
  *  Created on :Sep 10, 2015, 10:48:43 AM
  *  Author     :Varun Garg <varun.10@live.com>
  */
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Events extends CI_Controller {
 

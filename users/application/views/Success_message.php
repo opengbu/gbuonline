@@ -3,6 +3,7 @@
  *  Created on :Jul 15, 2015, 10:44:48 PM
  *  Author        :Varun Garg <varun.10@live.com>
  */
+defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <html>
     <head>

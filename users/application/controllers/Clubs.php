@@ -4,6 +4,7 @@
  *  Created on :Sep 10, 2015, 8:53:45 AM
  *  Author     :Varun Garg <varun.10@live.com>
  */
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Clubs extends CI_Controller {
 

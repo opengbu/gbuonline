@@ -4,6 +4,7 @@
  *  Created on :Sep 10, 2015, 7:18:31 AM
  *  Author     :Varun Garg <varun.10@live.com>
  */
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Exams extends CI_Controller {
 

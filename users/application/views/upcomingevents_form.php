@@ -3,6 +3,7 @@
  *  Created on :Jul 10, 2015, 12:18:54 PM
  *  Author     :Varun Garg <varun.10@live.com>
  */
+defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <?php
 echo form_open(current_url() . "?" . $_SERVER['QUERY_STRING']);

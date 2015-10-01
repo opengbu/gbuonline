@@ -3,11 +3,11 @@
  *  Created on :Sep 10, 2015, 8:15:29 AM
  *  Author     :Varun Garg <varun.10@live.com>
  */
+defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <div class="col-sm-8" >
     <?php
     echo form_open(current_url() . "?" . $_SERVER['QUERY_STRING']);
-
     ?>
 
     <label>Title</label>

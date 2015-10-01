@@ -4,6 +4,7 @@
  *  Created on :Sep 10, 2015, 9:19:25 AM
  *  Author     :Varun Garg <varun.10@live.com>
  */
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 class News extends CI_Controller {
 

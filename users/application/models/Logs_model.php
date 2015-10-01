@@ -7,8 +7,11 @@
 
 class Logs_model extends CI_Model {
 
+    var $user_id;
+
     function __construct() {
         parent::__construct();
+        $user_id = $this->session->user_id;
     }
 
     function insert($action, $ip_address = FALSE, $user_agent = FALSE, $user_id = NULL) {
@@ -21,6 +24,9 @@ class Logs_model extends CI_Model {
             $data['user_id'] = $this->session->userdata('user_id');
         else
             $data['user_id'] = $user_id;
+
+        if ($user_id == NULL)
+            $user_id = $this->user_id;
 
         if ($user_agent == TRUE) {
             $data['action'] = $data['action'] . ' (' . $this->input->user_agent() . ' ) ';

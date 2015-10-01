@@ -3,6 +3,8 @@
  *  Created on :Jul 10, 2015, 12:18:54 PM
  *  Author     :Varun Garg <varun.10@live.com>
  */
+defined('BASEPATH') OR exit('No direct script access allowed');
+
 date_default_timezone_set("Asia/Kolkata");
 $schools_q = $this->db->query("select sc_name, sc_full_name from schools");
 $schools_r = $schools_q->result();
@@ -20,8 +22,8 @@ function add_prefix(&$item1, $key, $prefix) {
     $item1 = $prefix . $item1;
 }
 ?>
-<link type="text/css" rel="stylesheet" href="<?= base_url() . 'application/views/common/' . 'input/jquery-te-1.4.0.css' ?>">
-<script type="text/javascript" src="<?= base_url() . 'application/views/common/' . 'input/jquery-te-1.4.0.min.js' ?>" charset="utf-8"></script>
+<link type="text/css" rel="stylesheet" href="<?= $this->cdn->users() . 'application/views/common/' . 'input/jquery-te-1.4.0.css' ?>">
+<script type="text/javascript" src="<?= $this->cdn->users() . 'application/views/common/' . 'input/jquery-te-1.4.0.min.js' ?>" charset="utf-8"></script>
 
 <div class="col-sm-10">
     <?php echo form_open(current_url() . "?" . $_SERVER['QUERY_STRING']);

@@ -3,6 +3,7 @@
  *  Created on :Jul 20, 2015, 4:13:32 PM
  *  Author        :Varun Garg <varun.10@live.com>
  */
+defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <script>
     function del_ask(str, id)

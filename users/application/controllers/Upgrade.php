@@ -4,6 +4,7 @@
  *  Created on :Aug 18, 2015, 6:45:17 PM
  *  Author     :Varun Garg <varun.10@live.com>
  */
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 class update {
 

@@ -5,6 +5,7 @@
  *  Author     :Varun Garg <varun.10@live.com>
  */
 error_reporting(E_ERROR);
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Register extends CI_Controller {
 
@@ -96,7 +97,7 @@ class Register extends CI_Controller {
     }
 
     function send_mail($username, $confirmation_link, $full_name, $email) {
-        $host = $_SERVER['HTTP_HOST'];
+        $host = str_replace("www.", "", $_SERVER['HTTP_HOST']);
         $from_email = 'accounts@' . $host; // Ex. accounts@gbuonline.in
         $message = '<html>
 

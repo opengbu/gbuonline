@@ -4,6 +4,8 @@
  *  Created on :Oct 1, 2015, 4:21:59 AM
  *  Author     :Varun Garg <varun.10@live.com>
  */
+error_reporting(E_ERROR);
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Reset_password extends CI_Controller {
 
@@ -66,7 +68,7 @@ class Reset_password extends CI_Controller {
     }
 
     function send_mail($username, $confirmation_link, $full_name, $email) {
-        $host = $_SERVER['HTTP_HOST'];
+        $host = str_replace("www.", "", $_SERVER['HTTP_HOST']);
         $from_email = 'accounts@' . $host; // Ex. accounts@gbuonline.in
         $message = '<html>
 
@@ -123,7 +125,7 @@ Gbu Online <br><br />
 
                 if ($result->active < 2) {
                     $data['errors'] = "It looks like you have already used this link once, please go to reovery again and get a new link!";
-                    $this->load->view('Error_message',$data);
+                    $this->load->view('Error_message', $data);
                     return;
                 }
 

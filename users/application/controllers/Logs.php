@@ -4,6 +4,7 @@
  *  Created on :Sep 30, 2015, 3:13:48 AM
  *  Author     :Varun Garg <varun.10@live.com>
  */
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Logs extends CI_Controller {
 

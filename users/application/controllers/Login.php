@@ -6,6 +6,7 @@
  *  By calling this php file users can be made to log in on this site
  *  After making the users login, it stores their details in session
  */
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Login extends CI_Controller {
 
@@ -38,9 +39,9 @@ class Login extends CI_Controller {
     }
 
     function check_details() {
-        $username = $this->input->post('username');
+        $username = htmlspecialchars($this->input->post('username'));
         $this->username = $username;
-        $password = $this->input->post('password');
+        $password = htmlspecialchars($this->input->post('password'));
         $query = $this->db->query("select *  from users where username='$username' or email='$username'");
 //            echo $hash;
         if ($query->num_rows() > 0) {
@@ -63,8 +64,8 @@ class Login extends CI_Controller {
                 $this->session->set_userdata('phone_number', $row->phone_number);
                 $this->session->set_userdata('profile_picture', $row->profile_picture);
                 $this->session->set_userdata('level', $this->permissions->get_level());
-                
-                $this->logger->insert('Logged in.',TRUE,TRUE);
+
+                $this->logger->insert('Logged in.', TRUE, TRUE);
                 return TRUE;
             }
         }

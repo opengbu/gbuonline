@@ -3,6 +3,8 @@
  *  Created on :Sep 11, 2015, 6:20:16 AM
  *  Author     :Varun Garg <varun.10@live.com>
  */
+defined('BASEPATH') OR exit('No direct script access allowed');
+
 ?>
 <?php
 if ($this->session->userdata('loggedin') != 1) {

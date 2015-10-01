@@ -3,7 +3,9 @@
  *  Created on :Jul 10, 2015, 12:18:54 PM
  *  Author     :Varun Garg <varun.10@live.com>
  */
+defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
+
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -15,16 +17,16 @@
             ?>
             | GBU Online
         </title>
-        <link rel="shortcut icon" href="<?php echo dirname(base_url()) . '/resources/images/favicon.ico' ?>">
+        <link rel="shortcut icon" href="<?php echo $this->cdn->base() . '/resources/images/favicon.ico' ?>">
 
-        <link rel="stylesheet" href="<?php echo base_url() . 'application/views/common/' . 'css/bootstrap-select.min.css' ?>">
-        <link rel="stylesheet" href="<?php echo base_url() . 'application/views/common/' . 'css/bootstrap.min.css' ?>">
-        <link rel="stylesheet" href="<?php echo base_url() . 'application/views/common/' . 'css/font-awesome.min.css' ?>">
-        <link rel="stylesheet" href="<?php echo base_url() . 'application/views/common/' . 'css/varun.css' ?>">
+        <link rel="stylesheet" href="<?php echo $this->cdn->users() . 'application/views/common/' . 'css/bootstrap-select.min.css' ?>">
+        <link rel="stylesheet" href="<?php echo $this->cdn->users() . 'application/views/common/' . 'css/bootstrap.min.css' ?>">
+        <link rel="stylesheet" href="<?php echo $this->cdn->users() . 'application/views/common/' . 'css/font-awesome.min.css' ?>">
+        <link rel="stylesheet" href="<?php echo $this->cdn->users() . 'application/views/common/' . 'css/varun.css' ?>">
 
-        <script type="text/javascript" src="<?php echo base_url() . 'application/views/common/' . 'js/jquery-2.1.3.min.js' ?>"></script>
-        <script type="text/javascript" src="<?php echo base_url() . 'application/views/common/' . 'js/bootstrap-select.min.js' ?>"></script>
-        <script type="text/javascript" src="<?php echo base_url() . 'application/views/common/' . 'js/bootstrap.min.js' ?>"></script>
+        <script type="text/javascript" src="<?php echo $this->cdn->users() . 'application/views/common/' . 'js/jquery-2.1.3.min.js' ?>"></script>
+        <script type="text/javascript" src="<?php echo $this->cdn->users() . 'application/views/common/' . 'js/bootstrap-select.min.js' ?>"></script>
+        <script type="text/javascript" src="<?php echo $this->cdn->users() . 'application/views/common/' . 'js/bootstrap.min.js' ?>"></script>
         <style>
             .navbar-nav.navbar-right:last-child {
                 margin-right: 0;
@@ -91,7 +93,7 @@
             });
         </script>
     </head>
-    <body style="background-image: url(<?php echo base_url('application/views/common/background.jpg') ?>); background-attachment: fixed; background-repeat: repeat;">
+    <body style="background-image: url(<?php echo $this->cdn->users('application/views/common/background.jpg') ?>); background-attachment: fixed; background-repeat: repeat;">
         <div  id="wrapper"  class="toggled">     
 
             <nav class="navbar navbar-fixed-top navbar-inverse navbar-default navbar-custom" role="navigation">
@@ -129,7 +131,7 @@
                                 <li><a href="<?= base_url() . 'ebooks/CreateOrUpdate' ?>">Ebook</a></li>
                                 <li><a href="<?= base_url() . 'exams/CreateOrUpdate' ?>">Exam</a></li>
 
-<?php if ($this->permissions->get_level() >= 4) { ?>
+                                <?php if ($this->permissions->get_level() >= 4) { ?>
                                     <li><a href="<?= base_url() . 'User_controls/CreateOrUpdate' ?>">User</a></li>
                                 <?php } ?>
                             </ul>
@@ -142,17 +144,17 @@
                         </li>
 
 
-<?php /* if (strlen($this->session->userdata('profile_picture')) > 0) {
-  ?>
-  <li>
-  <a class="navbar-brand ">
-  <img style="max-width:65px; margin-top: -8px;"
-  src="<?= dirname(base_url()) . '/' . $this->session->userdata('profile_picture') ?>">
-  </a>
-  </li>
-  <?php
-  } */
-?>
+                        <?php /* if (strlen($this->session->userdata('profile_picture')) > 0) {
+                          ?>
+                          <li>
+                          <a class="navbar-brand ">
+                          <img style="max-width:65px; margin-top: -8px;"
+                          src="<?= dirname(base_url()) . '/' . $this->session->userdata('profile_picture') ?>">
+                          </a>
+                          </li>
+                          <?php
+                          } */
+                        ?>
                         <li>
                             <a href="<?= base_url() . 'logout' ?>">Log out</a>
                         </li>
@@ -213,4 +215,4 @@
                 </div>
             </nav>
             <div id="page-content-wrapper" class="container-fluid" >
-                <div >
+       

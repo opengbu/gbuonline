@@ -4,6 +4,7 @@
  *  Created on :Sep 10, 2015, 3:49:00 AM
  *  Author     :Varun Garg <varun.10@live.com>
  */
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Ebooks extends CI_Controller {
 

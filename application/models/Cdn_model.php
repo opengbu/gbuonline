@@ -18,7 +18,7 @@ class Cdn_model extends CI_Model {
             $this->res_url = base_url();
     }
 
-    function res_url($url) {
+    function res_url($url = NULL) {
         return $this->res_url . $url;
     }
 
