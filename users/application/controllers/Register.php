@@ -17,7 +17,7 @@ class Register extends CI_Controller {
 
         $this->form_validation->set_rules('username', 'Username', 'required');
         $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
-        $this->form_validation->set_rules('password', 'Password', 'required|matches[passconf]');
+        $this->form_validation->set_rules('password', 'Password', 'required|matches[passconf]|min_length[6]');
         $this->form_validation->set_rules('passconf', 'Password confirmation', 'required');
         $this->form_validation->set_rules('full_name', 'Full Name', 'required');
         $this->form_validation->set_rules('username', 'Username', 'required|callback_check_details');
@@ -37,7 +37,6 @@ class Register extends CI_Controller {
                 'username' => set_value('username'),
                 'email' => set_value('email'),
                 'type' => 'student',
-                'password' => set_value('password'),
                 'full_name' => set_value('full_name'),
                 'roll_number' => set_value('roll_number'),
                 'password' => $hash,
@@ -47,7 +46,9 @@ class Register extends CI_Controller {
             $user_id = $this->db->insert_id();
             $this->logger->insert("Registered", TRUE, TRUE, $user_id);
             $this->send_mail($form_data['username'], $form_data['confirmation_link'], $form_data['full_name'], $form_data['email']);
-            $this->load->view('create_success');
+            $data['message'] = 'Your account has been successfully created. <br />'
+                    . ' A confirmation link has been sent to your email address to activate your account';
+            $this->load->view('Success_message', $data);
         }
     }
 
@@ -85,7 +86,8 @@ class Register extends CI_Controller {
                 $user_id = $user_id_r->user_id;
                 $this->logger->insert("Activated via mail", TRUE, TRUE, $user_id);
 
-                $this->load->view('activation_success');
+                $data['message'] = 'Your account has been successfully Activated.';
+                $this->load->view('Success_message', $data);
             } else {
                 redirect('login');
             }
@@ -100,7 +102,6 @@ class Register extends CI_Controller {
 
 <head>
 <meta http-equiv=Content-Type content="text/html; charset=windows-1252">
-<meta name=Generator content="Microsoft Word 15 (filtered)">
 </head>
 
 <body lang=EN-US >

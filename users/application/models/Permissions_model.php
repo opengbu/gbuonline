@@ -14,7 +14,8 @@ class Permissions_model extends CI_Model {
                 'login',
                 'register',
                 'logout',
-                'upgrade'
+                'upgrade',
+                'Reset_password'
             );
             if (!in_array($this->router->fetch_class(), $allowed)) {
                 redirect('login' . "?redirect=" . current_url() . $_SERVER['QUERY_STRING']);

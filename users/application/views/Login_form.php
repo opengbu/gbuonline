@@ -66,6 +66,8 @@
 
                             </form>
                             <a class="btn btn-success btn-lg btn-block" href="<?= base_url('register') ?>" > Sign Up </a>
+                            <br />
+                            <a class="btn btn-warning btn-lg btn-block" href="<?= base_url('Reset_password') ?>" >Password Recovery</a>
                         </div>
                     </div>
                 </div>

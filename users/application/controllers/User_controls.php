@@ -128,6 +128,8 @@ class User_controls extends CI_Controller {
                 if ($form_data['type'] != $old_form_data->type) {
                     $extra_log_message = $extra_log_message . ' + Changed role to ' .
                             $this->permissions->get_full_type($form_data['type']);
+                } else {
+                    unset($form_data['type']);
                 }
 
                 unset($form_data['confirmation_link']); //not needed

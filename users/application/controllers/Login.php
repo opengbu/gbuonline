@@ -45,7 +45,7 @@ class Login extends CI_Controller {
 //            echo $hash;
         if ($query->num_rows() > 0) {
             $row = $query->row();
-            if ($row->active == 0) {
+            if ($row->active == 0 || $row->active == 2) {
                 $this->form_validation->set_message('check_details', 'Your account has not activated yet. Please Check your email');
                 return FALSE;
             }

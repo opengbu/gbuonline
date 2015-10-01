@@ -12,8 +12,6 @@
         </title>
         <link rel="stylesheet" href="<?php echo base_url() . 'application/views/common/' . 'css/bootstrap.min.css' ?>">
 
-        <script type="text/javascript" src="<?php echo base_url() . 'application/views/common/' . 'js/jquery-2.1.3.min.js' ?>"></script>
-        <script type="text/javascript" src="<?php echo base_url() . 'application/views/common/' . 'js/bootstrap.min.js' ?>"></script>
         <style>
             body{
                 background-color: #525252;
@@ -33,13 +31,15 @@
         <div class="container">
             <div class="col-sm-6 col-md-6">
                 <div class="alert alert-success centered-form">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
-                        ×</button>
+
                     <span class="glyphicon glyphicon-ok"></span> <strong>Success</strong>
                     <hr class="message-inner-separator">
                     <p>
-                        Your account has been successfully activated. <br />
-                        <a href="<?= base_url() ?>" > Login </a>
+                        <?= $message ?> <br />
+                        <a href = "<?= base_url() ?>" > Login </a>
                     </p>
                 </div>
             </div>
+        </div>
+    </body>
+</html>

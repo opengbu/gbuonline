@@ -39,7 +39,7 @@
                     ?>
                 </div>
                 
-                <div class="col-sm-5">
+                <div class="col-sm-7">
                     <?php
                     echo $row->action;
                     ?>
