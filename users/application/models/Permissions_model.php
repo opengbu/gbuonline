@@ -11,15 +11,14 @@ class Permissions_model extends CI_Model {
         parent::__construct();
         if ($this->session->userdata('loggedin') != 1) {//Checking for authentication
             $allowed = array(
-                'login',
-                'register',
-                'logout',
-                'upgrade',
+                'Login',
+                'Register',
+                'Logout',
+                'Upgrade',
                 'Reset_password'
             );
-            if (!in_array($this->router->fetch_class(), $allowed)) {
+            if (!in_array(ucfirst($this->router->fetch_class()), $allowed)) {
                 redirect('login' . "?redirect=" . current_url() . $_SERVER['QUERY_STRING']);
-
                 die();
             }
         }

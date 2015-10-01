@@ -23,7 +23,7 @@ class Reset_password extends CI_Controller {
         $this->load->helper(array('form', 'url'));
         $this->load->library('form_validation');
 
-        $this->form_validation->set_rules('username_or_enmail', 'Username or email', 'required|callback_check_details');
+        $this->form_validation->set_rules('username_or_email', 'Username or email', 'required|callback_check_details');
 
         if ($this->form_validation->run() == FALSE) {
 
@@ -50,11 +50,12 @@ class Reset_password extends CI_Controller {
     }
 
     public function check_details() { // Check if user already exists
-        $username = $this->input->post('username_or_enmail');
+        $username = $this->input->post('username_or_email');
         $q = $this->db->query("select * from users where username = '$username' or email = '$username' ");
 
         if ($q->num_rows() == 0) {
-            $this->form_validation->set_message('check_details', 'The user or email' . $username . ' does not exist.');
+            $this->form_validation->set_message('check_details', 'The user or email ' . $username . ' does not exist.');
+            return FALSE;
         }
         $result = $q->row();
         $this->email = $result->email;
@@ -119,6 +120,13 @@ Gbu Online <br><br />
                 redirect('login');
             else {
                 $result = $query->row();
+
+                if ($result->active < 2) {
+                    $data['errors'] = "It looks like you have already used this link once, please go to reovery again and get a new link!";
+                    $this->load->view('Error_message',$data);
+                    return;
+                }
+
                 $this->session->set_userdata('loggedin', 2);
                 $this->session->set_userdata('username', $result->username);
                 redirect('Reset_password/reset');
