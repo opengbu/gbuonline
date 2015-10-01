@@ -15,22 +15,22 @@
                     <br><b>VARUN GARG </b><br/>(Admin/User Panel)<br />(Technical Head)
                 </div>
                 <div class="col-sm-4">
-                    <img src="<?php echo base_url('resources/images/rajat.jpg') ?>" style="max-height: 170px;" width="120"><br><b>RAJAT SAXENA</b> <br/>(Front End Developer)<br>
+                    <img src="<?php echo $this->cdn->res_url('resources/images/rajat.jpg') ?>" style="max-height: 170px;" width="120"><br><b>RAJAT SAXENA</b> <br/>(Front End Developer)<br>
                 </div>
                 <div class="col-sm-4">
-                    <img src="<?php echo base_url('resources/images/sarthak.jpg') ?>" style="max-height: 170px;" width="120"><br><b>SARTHAK GARG</b><br/> (Front End Developer)<br>
+                    <img src="<?php echo $this->cdn->res_url('resources/images/sarthak.jpg') ?>" style="max-height: 170px;" width="120"><br><b>SARTHAK GARG</b><br/> (Front End Developer)<br>
                 </div>
             </div>
             <hr>
             <div class="row">
                 <div class="col-sm-4">
-                    <img src="<?php echo base_url('resources/images/shobhit.jpg') ?>"  style="max-height: 170px;" width="120"><br><b>SHOBHIT SHARMA</b><br/> (Hostel Management System)
+                    <img src="<?php echo $this->cdn->res_url('resources/images/shobhit.jpg') ?>"  style="max-height: 170px;" width="120"><br><b>SHOBHIT SHARMA</b><br/> (Hostel Management System)
                 </div>
                 <div class="col-sm-4">
-                    <img src="<?php echo base_url('resources/images/bhawesh.jpg') ?>"  style="max-height: 170px;" width="120"><br><b>BHAWESH CHANDOLA</b><br/> (Front End Database Connectivity)
+                    <img src="<?php echo $this->cdn->res_url('resources/images/bhawesh.jpg') ?>"  style="max-height: 170px;" width="120"><br><b>BHAWESH CHANDOLA</b><br/> (Front End Database Connectivity)
                 </div>
                 <div class="col-sm-4">
-                    <img src="<?php echo base_url('resources/images/rishabh.jpg') ?>" style="max-height: 170px;" width="120"><br><b>RISHABH AHUJA</b><br/>(Front End Developer)
+                    <img src="<?php echo $this->cdn->res_url('resources/images/rishabh.jpg') ?>" style="max-height: 170px;" width="120"><br><b>RISHABH AHUJA</b><br/>(Front End Developer)
                 </div>
             </div>
         </i>      
