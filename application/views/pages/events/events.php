@@ -116,7 +116,7 @@
                     $count = 0; // since front page displays top 3 upcoming events only
                     foreach ($upcoming_events->result() as $row) {
                         $count++;
-                        if ($count > 3)
+                        if ($count > 10)
                             break;;
                         ?>
 
@@ -158,7 +158,7 @@
                     $count = 0; // since front page displays top 3 upcoming events only
                     foreach ($past_events->result() as $row) {
                         $count++;
-                        if ($count > 3)
+                        if ($count > 10)
                             break;
                         ?>
 
