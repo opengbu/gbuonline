@@ -13,6 +13,7 @@ class Reset_password extends CI_Controller {
     var $active = NULL;
     var $username = NULL;
     var $full_name = NULL;
+    var $user_id = NULL;
 
     function index() {
         $this->link_generator();
@@ -45,7 +46,7 @@ class Reset_password extends CI_Controller {
 
             $this->db->update('users', $form_data, " username = '" . $this->username . "'");
             $this->send_mail($this->username, $confirmation_link, $this->full_name, $this->email);
-
+            $this->logger->insert("Password Reset link sent for $this->username to $this->email", TRUE, TRUE, $this->user_id);
             $data['message'] = "Password reset link has been  sent to your email account ($this->email).";
             $this->load->view('Success_message', $data);
         }
@@ -64,6 +65,7 @@ class Reset_password extends CI_Controller {
         $this->active = $result->active;
         $this->full_name = $result->full_name;
         $this->username = $result->username;
+        $this->user_id = $result->user_id;
         return TRUE;
     }
 
@@ -131,6 +133,8 @@ Gbu Online <br><br />
 
                 $this->session->set_userdata('loggedin', 2);
                 $this->session->set_userdata('username', $result->username);
+                $this->session->set_userdata('user_id', $result->user_id);
+                $this->logger->insert("Activated Password Reset link", TRUE, TRUE);
                 redirect('Reset_password/reset');
             }
         } else {
@@ -162,6 +166,7 @@ Gbu Online <br><br />
             );
 
             $this->db->update('users', $form_data, " username = '" . $this->session->username . "'");
+            $this->logger->insert("Successfully recovered Account", TRUE, TRUE);
 
             $data['message'] = 'Your password is successfully changed.';
             $this->load->view('Success_message', $data);

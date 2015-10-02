@@ -4,6 +4,10 @@
  *  Author     :Varun Garg <varun.10@live.com>
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
+
+function add_prefix(&$item1, $key, $prefix) {
+    $item1 = $prefix . $item1;
+}
 ?>
 <div class="col-sm-8" >
     <?php
@@ -14,18 +18,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <input type="text" class="form-control" name="title" value="<?php echo set_value('title', @$title); ?>"/>
     <br>
 
-    <label>Select File</label>
-    <select name="link" class="selectpicker" data-width="100%">
-        <?php
-        $this->load->helper('file');
-        $files = get_filenames("../user_uploads/notices");
-        foreach ($files as $name) {
-            echo '<option value = "user_uploads/notices/' . $name . '">';
-            echo 'resources/notices/' . $name;
-            echo '</option>';
-        }
-        ?>
-    </select>
+    <label>Select File</label><br />
+    <?php
+    $this->load->helper('file');
+    $files = get_filenames("../user_uploads/notices");
+    array_walk($files, "add_prefix", 'user_uploads/notices/');
+    $files = array_combine($files, $files);
+    echo form_dropdown('link', $files, set_value('link', @$link), 'class="selectpicker" data-width="60%"');
+    ?>
     <br /><br />
 
     <?php

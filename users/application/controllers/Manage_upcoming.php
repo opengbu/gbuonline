@@ -8,9 +8,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Manage_upcoming extends CI_Controller {
 
+    function get_title($id) {
+        $query = $this->db->query("select article_name from events where id = '$id'");
+        if ($query->num_rows() == 0)
+            return "Blank";
+        $result = $query->row();
+        return $result->article_name;
+    }
+
     function index() {
 
-        if ($this->permissions->get_level() < 2) {
+        if ($this->permissions->get_level() < 1) {
             echo $this->load->view('common/header', '', TRUE);
             $message['errors'] = "Insufficient Privelleges. Please Contact Our Content Head";
             echo $this->load->view('Error_message', $message, TRUE);
@@ -35,9 +43,17 @@ class Manage_upcoming extends CI_Controller {
             $this->load->view('common/footer');
             return 0;
         }
-        for ($i = 1; $i < 5; $i++) {
+        $list = NULL;
+        $current_q = $this->db->query('select * from upcoming_events');
+        foreach ($current_q->result() as $row) {
+            $list[$row->id] = $row->event_id;
+        }
+        for ($i = 1; $i <= 5; $i++) {
             $event_id = $this->input->post("id" . $i);
-            $this->db->query("update upcoming_events set event_id = '$event_id' where id = '$i'");
+            if ($event_id != $list[$i]) {
+                $this->logger->insert("Changed upcoming event number $i from " . $this->get_title($list[$i]) . ' to ' . $this->get_title($event_id));
+                $this->db->query("update upcoming_events set event_id = '$event_id' where id = '$i'");
+            }
         }
         redirect('/manage_upcoming');
     }

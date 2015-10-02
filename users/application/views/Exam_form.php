@@ -8,6 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 function add_prefix(&$item1, $key, $prefix) {
     $item1 = $prefix . $item1;
 }
+
 ?>
 <div class="col-sm-8" >
     <?php
@@ -35,7 +36,7 @@ function add_prefix(&$item1, $key, $prefix) {
     $files = get_filenames("../user_uploads/exams");
     array_walk($files, "add_prefix", 'user_uploads/exams/');
     $files = array_combine($files, $files);
-    echo form_dropdown('image_path', $files, set_value('image_path', @$image_path), 'class="selectpicker"');
+    echo form_dropdown('image_path', $files, set_value('image_path', @$image_path), 'class="selectpicker" data-width="60%"');
     ?>
 
     <br /><br />

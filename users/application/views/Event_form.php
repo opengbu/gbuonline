@@ -45,25 +45,25 @@ function add_prefix(&$item1, $key, $prefix) {
     ?>
     <br /><br />
 
-    <label>Featured Image</label>
+    <label>Featured Image</label><br />
     <?php
     $this->load->helper('file');
     $files = get_filenames("../user_uploads/events");
-    array_walk($files, "add_prefix", 'user_uploads/events');
+    array_walk($files, "add_prefix", 'user_uploads/events/');
     $files = array_combine($files, $files);
-    echo form_dropdown('image_path', $files, set_value('image_path', @$image_path), 'class="selectpicker"');
+    echo form_dropdown('image_path', $files, set_value('image_path', @$image_path), 'class="selectpicker" data-width="60%"');
     ?>
 
     <br /><br />
 
-    <label>Club</label>
+    <label>Club</label><br />
     <?php
     echo form_dropdown('club', $clubs, set_value('club', @$club), 'class="selectpicker"');
     ?>
     <br /><br />
 
 
-    <label>Type</label>
+    <label>Type</label><br />
     <?php
     $options = array("%" => "ALL", "competition" => "Competition", "workshop" => "Workshop", "conference" => "Conference", "lecture" => "Lecture");
     echo form_dropdown('type', $options, set_value('type', @$type), 'class="selectpicker"');

@@ -6,7 +6,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <?php
-echo form_open(current_url() . "?" . $_SERVER['QUERY_STRING']);
+echo form_open('/Manage_upcoming/save');
 ?>
 <div class="col-sm-4">
 
