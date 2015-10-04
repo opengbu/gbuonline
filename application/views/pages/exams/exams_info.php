@@ -6,18 +6,18 @@
 
         <div class="col-md-9" style="padding-right:30px; border-right: 2px solid #ccc;">   
             <?php
-            $results = $this->db->query("select distinct dept_name from exams where sc_name='$sc_name'");
+            $results = $this->db->query("select distinct year from exams where sc_name='$sc_name'");
             $r = $results->result();
             foreach ($r as $rows) {
                 ?>
                 <div class="panel panel-primary">
                     <div class="panel-heading">
-                        <h3 class="panel-title"><?= $rows->dept_name ?></h3>
+                        <h3 class="panel-title"><?= $rows->year ?></h3>
                     </div>
                     <div class="panel-body">
 
                         <?php
-                        $result_dept = $this->db->query("select * from exams where sc_name='$sc_name' && dept_name = '$rows->dept_name'");
+                        $result_dept = $this->db->query("select * from exams where sc_name='$sc_name' && year = '$rows->year'");
                         $b = $result_dept->result();
                         foreach ($b as $exam) {
                             ?>
