@@ -2130,6 +2130,12 @@ class Upgrade extends CI_Controller {
 
         array_push($update_list, $u);
         unset($u);
+		
+		$u = new update;
+        $u->version = 4.7;
+        array_push($u->updates, "delete from blog where id=17 OR id=27;");
+        array_push($update_list, $u);
+        unset($u);
 
         $this->run_upgrades($update_list);
         redirect("login" . "?" . $_SERVER['QUERY_STRING']);

@@ -93,17 +93,19 @@
 
             <!--page content starts-->
 
-            <div class="panel panel-primary">
+
+		
+			 <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Upcoming Events</h3>
+                    <h3 class="panel-title">All Past Events</h3>
                 </div>
                 <div class="panel-body">
-
-
-
                     <?php
-                    $condition_q = "";
-                    $original_q = "select events.id, article_name, short_desc, image_path from events, upcoming_events where events.id = event_id ";
+                    date_default_timezone_set("Asia/Kolkata");
+					
+                    $original_q = "select id, article_name, short_desc, image_path, publishing_date from events where publishing_date < '" . date('Y-m-d') . "' ";
+					$condition_q = "";
+                    
                     if (isset($_REQUEST['school']) && $_REQUEST['school'] != "")
                         $condition_q .= " and school like '" . $_REQUEST['school'] . "' ";
                     if (isset($_REQUEST['club']) && $_REQUEST['club'] != "")
@@ -111,55 +113,10 @@
                     if (isset($_REQUEST['type']) && $_REQUEST['type'] != "")
                         $condition_q .= " and type like '" . $_REQUEST['type'] . "' ";
 
-
-                    $upcoming_events = $this->db->query($original_q . $condition_q . "order by upcoming_events.id ");
-                    //$count = 0; // removing this because all "upcoming events" are important. And thus all should be displayed.  
-                    foreach ($upcoming_events->result() as $row) {
-                      //  $count++;
-                       // if ($count > 10)
-                        //    break;
-                        ?>
-
-                        <div class = "col-md-4">
-                            <div class = "thumbnail" style="height:350px;">
-                                <a href = "<?php echo site_url('feat/read_events?id=' . $row->id) ?>">
-                                    <img src = "<?php echo base_url($row->image_path) ?>" alt = "code-in-gbu">
-                                </a>
-                                <div class = "caption">
-                                    <h3><center><b><?= $row->article_name ?></b></center></h3>
-                                    <?= $row->short_desc ?>
-                                    <!--<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>-->
-                                </div>
-                            </div>
-                        </div>
-
-                        <?php
-                    }
-                    ?>
-
-
-
-                </div>
-            </div>
-
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Past Events</h3>
-                </div>
-                <div class="panel-body">
-
-
-
-                    <?php
-                    date_default_timezone_set("Asia/Kolkata");
-                    $original_q = "select id, article_name, short_desc, image_path, publishing_date from events where publishing_date < '" . date('Y-m-d') . "' ";
-
                     $past_events = $this->db->query($original_q . $condition_q . " order by publishing_date desc");
-                    $count = 0; // since front page displays 6 past events only
+                  
                     foreach ($past_events->result() as $row) {
-                        $count++;
-                        if ($count > 6)
-                            break;
+                        
                         ?>
 
                         <div class = "col-md-4" >
@@ -180,10 +137,5 @@
                     ?>
 					
                 </div>
-				<center><a type="button" class="btn btn-xs btn-default" href="<?=site_url('feat/all_past_events')?>">VIEW ALL</a></center><br/>
             </div>
-
-        </div><!--for colmd9-->
-
-        <!--row ends in extras file-->
-        <!--container ends in extras file-->
+		</div>
