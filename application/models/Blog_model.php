@@ -16,5 +16,9 @@ class Blog_model extends CI_Model {
 		$bid = $_POST['bid'];
         $this->db->query("UPDATE blog SET title = '".$this->db->escape_str($title)."', description = '".$this->db->escape_str($description)."' ,user_id = '$user_id', status = '3' WHERE id = '$bid'; ");
     }
+	
+	function del_from_db($id) {
+        $this->db->query("DELETE from blog WHERE id = '$id';");
+    }
 
 }

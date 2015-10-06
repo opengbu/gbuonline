@@ -67,7 +67,13 @@ $user_id = $this->session->userdata("user_id");
                         echo "<span class='label label-info'>Pending (E)</span>";
 				?>
 				</td>
-				<td align="center"><a type="button" class="btn btn-sm btn-success" href="<?=site_url().'blogs/edit_blogs/'.$row->id?>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> &nbsp;Edit</a></td>
+				<td align="center">
+					<a type="button" class="btn btn-xs btn-success" href="<?=site_url().'blogs/edit_blogs/'.$row->id?>">
+					<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> &nbsp;Edit</a>
+					
+					<a type="button" class="btn btn-xs btn-danger" style="margin-left: 15px;" onclick="del(<?=$row->id?>)">
+					<span class="glyphicon glyphicon-remove" aria-hidden="true"></span> &nbsp;Delete</a>
+				</td>
 				</tr>
 			
 
@@ -86,4 +92,16 @@ $user_id = $this->session->userdata("user_id");
         <!--container ends in extras-->
 <?php
 echo $this->session->flashdata('edit_msg');
+echo $this->session->flashdata('del_msg');
 ?>
+<script>
+function del(blid)
+{
+	var verify = confirm("Do you really want to DELETE this blog ??");
+	if(verify == true)
+	{
+		location.href="<?=site_url('blogs/delete/')?>"+'/'+blid;
+	}
+	
+}
+</script>

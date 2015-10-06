@@ -86,6 +86,24 @@ class Blogs extends CI_Controller {
 		$this->session->set_flashdata('edit_msg', '<script> alert("Your UPDATED blog has been submitted for approval !"); </script>');
         redirect('blogs/your_blogs');
     }
+	
+	public function delete($id) {
+		if ($this->session->userdata('loggedin') != 1) //student/user/admin logged in
+            redirect('users?redirect=' . current_url());
+		$check_del = $this->db->query("select user_id from blog where id = '$id';");
+		if($this->session->userdata("user_id") ==  $check_del->row()->user_id)
+		{
+			$this->load->model('blog_model');
+			$this->blog_model->del_from_db($id);
+			$this->session->set_flashdata('del_msg', '<script> alert("Your blog has been permanently deleted !!"); </script>');
+			redirect('blogs/your_blogs');
+		}
+		else
+		{
+			redirect('', 'location');
+			exit();
+		}
+	}
 
     public function like() {
 
