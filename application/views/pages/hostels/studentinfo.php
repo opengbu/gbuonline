@@ -38,8 +38,9 @@
     if(empty($_POST['sname'])){echo 'Nothing Selected';}
         else{
     $sname=$_POST['sname'];
-    $query=$this->db->query("select * from stuinfo where roll_number='$sname'");
+    $query=$this->db->query("select * from stuinfo where roll_number= ?",array($sname));
     $results=$query->result();
+            
     foreach($results as $rows)
     {
 ?>
