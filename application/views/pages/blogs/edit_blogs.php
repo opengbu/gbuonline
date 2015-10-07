@@ -12,7 +12,7 @@ else
 	$blog_details = $this->db->query("select title,description from blog where id = '$id' AND user_id = '$user_id' ;");
 ?>
 
-<script src="<?php echo base_url('resources/texteditor/ckeditor/ckeditor.js')?>"></script>
+<script src="<?php echo $this->cdn->res_url('resources/texteditor/ckeditor/ckeditor.js')?>"></script>
 
 <div class="container-fluid" style=" margin-right: 10px; margin-left: 10px;" >
 	<div class="row">
