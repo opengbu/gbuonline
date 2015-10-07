@@ -39,11 +39,11 @@ class Login extends CI_Controller {
     }
 
     function check_details() {
-        $username = htmlspecialchars($this->input->post('username'));
+        $username = htmlspecialchars($this->input->post('username'), ENT_QUOTES);
         $this->username = $username;
-        $password = htmlspecialchars($this->input->post('password'));
+        $password = htmlspecialchars($this->input->post('password'), ENT_QUOTES);
+
         $query = $this->db->query("select *  from users where username='$username' or email='$username'");
-//            echo $hash;
         if ($query->num_rows() > 0) {
             $row = $query->row();
             if ($row->active == 0 || $row->active == 2) {
