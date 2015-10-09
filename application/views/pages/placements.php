@@ -13,7 +13,7 @@
         ?>                      
 					<li class="list-group-item">
                    
-                        <a href = "<?php echo base_url($rows->Link) ?>">
+                        <a href = "<?php echo base_url($rows->Link) ?>" target = "_blank">
 							<?php echo $rows->Title; ?>
 						</a> 
 								

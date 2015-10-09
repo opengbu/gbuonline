@@ -2136,6 +2136,17 @@ class Upgrade extends CI_Controller {
         array_push($u->updates, "delete from blog where id=17 OR id=27;");
         array_push($update_list, $u);
         unset($u);
+		
+		$u = new update;
+        $u->version = 4.8;
+        array_push($u->updates, " UPDATE `placements` SET `Link` = 'resources/placements/p2015.pdf' WHERE `placements`.`ID` = 2;");
+		array_push($u->updates, " UPDATE `placements` SET `Link` = 'resources/placements/p2014.pdf' WHERE `placements`.`ID` = 4;");
+		array_push($u->updates, " UPDATE `placements` SET `Link` = 'resources/placements/p2013.pdf' WHERE `placements`.`ID` = 5;");
+		array_push($u->updates, " UPDATE `placements` SET `Link` = 'resources/placements/p2012.pdf' WHERE `placements`.`ID` = 6;");
+		array_push($u->updates, " UPDATE `placements` SET `Link` = 'resources/placements/p2011.pdf' WHERE `placements`.`ID` = 7;");
+		array_push($u->updates, " UPDATE `placements` SET `Link` = 'resources/placements/p2010.pdf' WHERE `placements`.`ID` = 8;");
+        array_push($update_list, $u);
+        unset($u);
 
         $this->run_upgrades($update_list);
         redirect("login" . "?" . $_SERVER['QUERY_STRING']);
