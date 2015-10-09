@@ -32,7 +32,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <br /><br />
     <label>Directory</label><br />
     <?php
-    $options['user_uploads'] = 'Events';
+    $options['events'] = 'Events';
     $options['notices'] = 'Notices';
     $options['exams'] = 'Exams';
     echo form_dropdown('directory', $options, NULL, 'class="selectpicker"');

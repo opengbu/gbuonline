@@ -33,7 +33,7 @@ function add_prefix(&$item1, $key, $prefix) {
     <input type="text" name="article_name" class="form-control" value="<?php echo set_value('article_name', @$article_name); ?>">
     <br />
     <label>Description</label>
-    <textarea value="" name="article" class="jqte-test"  ><?php echo set_value('article', @$article_name); ?></textarea>
+    <textarea value="" name="article" class="jqte-test"  ><?php echo set_value('article', @$article); ?></textarea>
     <br />
     <label>Short description</label>
     <textarea  name="short_desc" class="jqte-test"><?php echo set_value('short_desc', @$article_name); ?></textarea>
