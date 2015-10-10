@@ -47,21 +47,21 @@ class Ebooks extends CI_Controller {
             } else
                 $this->load->view('Ebook_form');
         } else {
-
+            $this->load->helper('htmlpurifier');
             $form_data = array(
-                'sc_name' => set_value('sc_name'),
-                'dept_name' => set_value('dept_name'),
-                'book_name' => set_value('book_name'),
-                'book_info' => set_value('book_info'),
+                'sc_name' => html_purify($this->input->post('sc_name')),
+                'dept_name' => html_purify($this->input->post('dept_name')),
+                'book_name' => html_purify($this->input->post('book_name')),
+                'book_info' => html_purify($this->input->post('book_info')),
                 'user_id' => $this->session->userdata('user_id'),
             );
             if ($this->input->get('ebook_id') != "") { // update
                 unset($form_data['user_id']); //keep original user
                 $this->db->update('ebooks', $form_data, " id = '" . $this->input->get('ebook_id') . "'");
-                $this->logger->insert('Updated ebook ' . set_value('book_name') . ' (' . $this->input->get('ebook_id') . ')');
+                $this->logger->insert('Updated ebook ' . html_purify($this->input->post('book_name')) . ' (' . $this->input->get('ebook_id') . ')');
             } else {
                 $this->db->insert('ebooks', $form_data);
-                $this->logger->insert('Created ebook ' . set_value('book_name'));
+                $this->logger->insert('Created ebook ' . html_purify($this->input->post('book_name')));
             }
             redirect(base_url() . 'Ebooks/view_all');
         }

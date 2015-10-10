@@ -54,26 +54,26 @@ class Events extends CI_Controller {
             } else
                 $this->load->view('Event_form');
         } else {
-
+            $this->load->helper('htmlpurifier');
             $form_data = array(
                 'user_id' => $this->session->userdata('user_id'),
-                'article_name' => set_value('article_name'),
-                'article' => set_value('article'),
-                'publishing_date' => set_value('publishing_date'),
-                'school' => set_value('school'),
-                'short_desc' => set_value('short_desc'),
-                'image_path' => set_value('image_path'),
-                'club' => set_value('club'),
-                'type' => set_value('type'),
+                'article_name' => html_purify($this->input->post('article_name')),
+                'article' => html_purify($this->input->post('article')),
+                'publishing_date' => html_purify($this->input->post('publishing_date')),
+                'school' => html_purify($this->input->post('school')),
+                'short_desc' => html_purify($this->input->post('short_desc')),
+                'image_path' => html_purify($this->input->post('image_path')),
+                'club' => html_purify($this->input->post('club')),
+                'type' => html_purify($this->input->post('type')),
             );
             if ($this->input->get('event_id') != "") { // update
                 $this->secure_hard();
                 unset($form_data['user_id']); // remains original
                 $this->db->update('events', $form_data, " id = '" . $this->input->get('event_id') . "'");
-                $this->logger->insert('Updated event ' . set_value('article_name') . ' (' . $this->input->get('event_id') . ')');
+                $this->logger->insert('Updated event ' . html_purify($this->input->post('article_name')) . ' (' . $this->input->get('event_id') . ')');
             } else {
                 $this->db->insert('events', $form_data);
-                $this->logger->insert('Created event ' . set_value('article_name'));
+                $this->logger->insert('Created event ' . html_purify($this->input->post('article_name')));
             }
             redirect(base_url() . 'Events/view_all');
         }
@@ -97,7 +97,7 @@ class Events extends CI_Controller {
 
         $this->db->query("delete from events where id = '" . $this->input->get('event_id') . "'");
 
-        $this->logger->insert('Deleted event ' . $title . ' (' . $this->input->get('event_id') . ')',TRUE);
+        $this->logger->insert('Deleted event ' . $title . ' (' . $this->input->get('event_id') . ')', TRUE);
 
         redirect(base_url() . 'Events/view_all');
     }

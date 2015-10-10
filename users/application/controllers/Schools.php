@@ -46,22 +46,22 @@ class Schools extends CI_Controller {
             } else
                 $this->load->view('School_form');
         } else {
-
+            $this->load->helper('htmlpurifier');
             $form_data = array(
-                'sc_name' => set_value('sc_name'),
-                'sc_full_name' => set_value('sc_full_name'),
-                'about_us' => set_value('about_us'),
-                'course_structure' => set_value('course_structure'),
-                'faculty' => set_value('faculty'),
-                'placements' => set_value('placements'),
-                'tagline' => set_value('tagline'),
+                'sc_name' => html_purify($this->input->post('sc_name')),
+                'sc_full_name' => html_purify($this->input->post('sc_full_name')),
+                'about_us' => html_purify($this->input->post('about_us')),
+                'course_structure' => html_purify($this->input->post('course_structure')),
+                'faculty' => html_purify($this->input->post('faculty')),
+                'placements' => html_purify($this->input->post('placements')),
+                'tagline' => html_purify($this->input->post('tagline')),
             );
             if ($this->input->get('school_id') != "") { // update
                 $this->db->update('schools', $form_data, " id = '" . $this->input->get('school_id') . "'");
-                $this->logger->insert('Updated School - ' . set_value('sc_name') . ' (' . $this->input->get('school_id') . ')');
+                $this->logger->insert('Updated School - ' . html_purify($this->input->post('sc_name')) . ' (' . $this->input->get('school_id') . ')');
             } else {
                 $this->db->insert('schools', $form_data);
-                $this->logger->insert('Created School - ' . set_value('sc_name'));
+                $this->logger->insert('Created School - ' . html_purify($this->input->post('sc_name')));
             }
             redirect(base_url() . 'Schools/view_all');
         }

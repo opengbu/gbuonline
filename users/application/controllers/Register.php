@@ -30,16 +30,18 @@ class Register extends CI_Controller {
 
             $this->load->view('registration_form');
         } else {
+            $this->load->helper('htmlpurifier');
+            
             $password = $this->input->post('password');
             $hash = $this->bcrypt->hash_password($password);
             $confirmation_link = bin2hex(openssl_random_pseudo_bytes(18)); // 36 character lin
 
             $form_data = array(
-                'username' => set_value('username'),
-                'email' => set_value('email'),
+                'username' => html_purify($this->input->post('username')),
+                'email' => html_purify($this->input->post('email')),
                 'type' => 'student',
-                'full_name' => set_value('full_name'),
-                'roll_number' => set_value('roll_number'),
+                'full_name' => html_purify($this->input->post('full_name')),
+                'roll_number' => html_purify($this->input->post('roll_number')),
                 'password' => $hash,
                 'confirmation_link' => $confirmation_link,
             );

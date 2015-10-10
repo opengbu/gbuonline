@@ -47,18 +47,18 @@ class News extends CI_Controller {
             } else
                 $this->load->view('News_form');
         } else {
-
+            $this->load->helper('htmlpurifier');
             $form_data = array(
-                'title' => set_value('title'),
-                'slug' => set_value('slug'),
-                'text' => set_value('text'),
+                'title' => html_purify($this->input->post('title')),
+                'slug' => html_purify($this->input->post('slug')),
+                'text' => html_purify($this->input->post('text')),
             );
             if ($this->input->get('news_id') != "") { // update
                 $this->db->update('news', $form_data, " id = '" . $this->input->get('news_id') . "'");
-                $this->logger->insert('Updated news article - ' . set_value('title') . ' (' . $this->input->get('news_id') . ')');
+                $this->logger->insert('Updated news article - ' . html_purify($this->input->post('title')) . ' (' . $this->input->get('news_id') . ')');
             } else {
                 $this->db->insert('news', $form_data);
-                $this->logger->insert('Created news article - ' . set_value('title'));
+                $this->logger->insert('Created news article - ' . html_purify($this->input->post('title')));
             }
             redirect(base_url() . 'News/view_all');
         }

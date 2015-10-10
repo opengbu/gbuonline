@@ -46,21 +46,21 @@ class Notices extends CI_Controller {
             } else
                 $this->load->view('Notice_form');
         } else {
-
+            $this->load->helper('htmlpurifier');
             $form_data = array(
-                'title' => set_value('title'),
+                'title' => html_purify($this->input->post('title')),
                 'date' => Date('Y-m-d'),
-                'link' => set_value('link'),
+                'link' => html_purify($this->input->post('link')),
                 'user_id' => $this->session->userdata('user_id'),
             );
             if ($this->input->get('notice_id') != "") { // update
                 unset($form_data['user_id']);
                 unset($form_data['date']);
                 $this->db->update('vnb', $form_data, " id = '" . $this->input->get('notice_id') . "'");
-                $this->logger->insert('Updated notice - ' . set_value('title') . ' (' . $this->input->get('notice_id') . ')');
+                $this->logger->insert('Updated notice - ' . html_purify($this->input->post('title')) . ' (' . $this->input->get('notice_id') . ')');
             } else {
                 $this->db->insert('vnb', $form_data);
-                $this->logger->insert('Created notice - ' . set_value('title'));
+                $this->logger->insert('Created notice - ' . html_purify($this->input->post('title')));
             }
             redirect(base_url() . 'Notices/view_all');
         }

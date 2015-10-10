@@ -46,21 +46,21 @@ class Clubs extends CI_Controller {
             } else
                 $this->load->view('Club_form');
         } else {
-
+            $this->load->helper('htmlpurifier');
             $form_data = array(
-                'c_name' => set_value('c_name'),
-                'c_full_name' => set_value('c_full_name'),
-                'about_us' => set_value('about_us'),
-                'faculty' => set_value('faculty'),
-                'students' => set_value('students'),
-                'tagline' => set_value('tagline'),
+                'c_name' => html_purify($this->input->post('c_name')),
+                'c_full_name' => html_purify($this->input->post('c_full_name')),
+                'about_us' => html_purify($this->input->post('about_us')),
+                'faculty' => html_purify($this->input->post('faculty')),
+                'students' => html_purify($this->input->post('students')),
+                'tagline' => html_purify($this->input->post('tagline')),
             );
             if ($this->input->get('club_id') != "") { // update
                 $this->db->update('clubs', $form_data, " id = '" . $this->input->get('club_id') . "'");
-                $this->logger->insert('Updated club ' . set_value('c_name') . ' (' . $this->input->get('club_id') . ')');
+                $this->logger->insert('Updated club ' . html_purify($this->input->post('c_name')) . ' (' . $this->input->get('club_id') . ')');
             } else {
                 $this->db->insert('clubs', $form_data);
-                $this->logger->insert('Created club ' . set_value('c_name'));
+                $this->logger->insert('Created club ' . html_purify($this->input->post('c_name')));
             }
             redirect(base_url() . 'Clubs/view_all');
         }
@@ -82,7 +82,7 @@ class Clubs extends CI_Controller {
 
         $this->db->query("delete from clubs where id = '" . $this->input->get('club_id') . "'");
 
-        $this->logger->insert('Deleted club ' . $title . ' (' . $this->input->get('club_id') . ')',TRUE);
+        $this->logger->insert('Deleted club ' . $title . ' (' . $this->input->get('club_id') . ')', TRUE);
 
         redirect(base_url() . 'Clubs/view_all');
     }

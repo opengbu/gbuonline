@@ -49,20 +49,20 @@ class Exams extends CI_Controller {
             } else
                 $this->load->view('Exam_form');
         } else {
-
+            $this->load->helper('htmlpurifier');
             $form_data = array(
-                'sc_name' => set_value('sc_name'),
-                'year' => set_value('year'),
-                'semester' => set_value('semester'),
-                'image_path' => set_value('image_path'),
-                'paper_name' => set_value('paper_name'),
+                'sc_name' => html_purify($this->input->post('sc_name')),
+                'year' => html_purify($this->input->post('year')),
+                'semester' => html_purify($this->input->post('semester')),
+                'image_path' => html_purify($this->input->post('image_path')),
+                'paper_name' => html_purify($this->input->post('paper_name')),
             );
             if ($this->input->get('exam_id') != "") { // update
                 $this->db->update('exams', $form_data, " id = '" . $this->input->get('exam_id') . "'");
-                $this->logger->insert('Updated exam paper - ' . set_value('paper_name') . ' (' . $this->input->get('exam_id') . ')');
+                $this->logger->insert('Updated exam paper - ' . html_purify($this->input->post('paper_name')) . ' (' . $this->input->get('exam_id') . ')');
             } else {
                 $this->db->insert('exams', $form_data);
-                $this->logger->insert('Created exam paper - ' . set_value('paper_name'));
+                $this->logger->insert('Created exam paper - ' . html_purify($this->input->post('paper_name')));
             }
             redirect(base_url() . 'Exams/view_all');
         }
@@ -86,7 +86,7 @@ class Exams extends CI_Controller {
 
         $this->db->query("delete from exams where id = '" . $this->input->get('exam_id') . "'");
 
-        $this->logger->insert('Deleted exam ' . $title . ' (' . $this->input->get('exam_id') . ')',TRUE);
+        $this->logger->insert('Deleted exam ' . $title . ' (' . $this->input->get('exam_id') . ')', TRUE);
 
         redirect(base_url() . 'Exams/view_all');
     }

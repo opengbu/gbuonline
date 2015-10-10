@@ -66,7 +66,6 @@ class User_controls extends CI_Controller {
         $this->secure_hard();
         $this->load->library('form_validation');
         $this->load->helper(array('form', 'url'));
-
         $this->form_validation->set_rules('username', 'Username', 'required');
         $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
         $this->form_validation->set_rules('full_name', 'Full Name', 'required');
@@ -92,19 +91,20 @@ class User_controls extends CI_Controller {
                 $this->load->view('User_form');
             $this->load->view('common/footer');
         } else {
-
+            $this->load->helper('htmlpurifier');
+            
             $password = $this->input->post('password');
             $hash = $this->bcrypt->hash_password($password);
             $confirmation_link = bin2hex(openssl_random_pseudo_bytes(18)); // 36 character lin
             $extra_log_message = NULL;
 
             $form_data = array(
-                'username' => set_value('username'),
-                'email' => set_value('email'),
-                'type' => set_value('type'),
-                'password' => set_value('password'),
-                'full_name' => set_value('full_name'),
-                'roll_number' => set_value('roll_number'),
+                'username' => html_purify($this->input->post('username')),
+                'email' => html_purify($this->input->post('email')),
+                'type' => html_purify($this->input->post('type')),
+                'password' => html_purify($this->input->post('password')),
+                'full_name' => html_purify($this->input->post('full_name')),
+                'roll_number' => html_purify($this->input->post('roll_number')),
                 'password' => $hash,
                 'confirmation_link' => $confirmation_link,
                 'profile_picture' => $this->image_path,
@@ -136,7 +136,7 @@ class User_controls extends CI_Controller {
                 unset($form_data['confirmation_link']); //not needed
 
                 $this->db->update('users', $form_data, " user_id = '" . $this->input->get('user_id') . "'");
-                $this->logger->insert('Updated user - ' . set_value('username') . ' (' . $this->input->get('user_id') . ')' . $extra_log_message, TRUE, TRUE);
+                $this->logger->insert('Updated user - ' . html_purify($this->input->post('username')) . ' (' . $this->input->get('user_id') . ')' . $extra_log_message, TRUE, TRUE);
 
                 if ($this->input->get('user_id') == $this->session->userdata('user_id')) {
                     redirect(base_url() . '/logout');
@@ -252,7 +252,6 @@ class User_controls extends CI_Controller {
                     $this->permissions->get_full_type($form_data['type']);
             $this->logger->insert($log_message, TRUE, TRUE);
         }
-
 
         $this->db->update('users', $form_data, " user_id = '" . $this->input->get('user_id') . "'");
         redirect(base_url() . 'user_controls/view_all');
