@@ -152,7 +152,7 @@
 		<a href = "<?php echo site_url('feat/tou')?>"><font color = "white"><b>Terms of use</b></font></a><br><br>
 <a href = "https://github.com/opengbu/gbuonline" target="_blank"><font color = "white"><b>GitHub</b></font></a><br><br>
 		<a href = "<?php echo site_url('feat/feedback')?>" ><font color = "white"><b>Feedback</b></font></a><br><br>
-<a href = ""><font color = "white"><b>Advertise</b></font></a>
+<a href = "<?php echo site_url('feat/advertise')?>"><font color = "white"><b>Advertise</b></font></a>
 		</div>
 		
 		<div class = "col-md-3">

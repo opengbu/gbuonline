@@ -69,7 +69,7 @@ class Feat extends CI_Controller {
 		$this->load->view('pages/common/link',$data);
 		$this->load->view('pages/common/header');
 		$this->load->view('pages/common/page-heading',$data);
-		$this->load->view('pages/opportunities');
+		$this->load->view('pages/footer_pages/opportunities');
 		$this->load->view('pages/common/extras');
 		$this->load->view('pages/common/footer');
 	}
@@ -82,7 +82,7 @@ class Feat extends CI_Controller {
 		$this->load->view('pages/common/link',$data);
 		$this->load->view('pages/common/header');
 		$this->load->view('pages/common/page-heading',$data);
-		$this->load->view('pages/ggroups');
+		$this->load->view('pages/footer_pages/ggroups');
 		$this->load->view('pages/common/extras');
 		$this->load->view('pages/common/footer');
 	}
@@ -95,7 +95,7 @@ class Feat extends CI_Controller {
 		$this->load->view('pages/common/link',$data);
 		$this->load->view('pages/common/header');
 		$this->load->view('pages/common/page-heading',$data);
-		$this->load->view('pages/tou');
+		$this->load->view('pages/footer_pages/tou');
 		$this->load->view('pages/common/extras');
 		$this->load->view('pages/common/footer');
 	}
@@ -121,7 +121,7 @@ class Feat extends CI_Controller {
 		$this->load->view('pages/common/link',$data);
 		$this->load->view('pages/common/header');
 		$this->load->view('pages/common/page-heading',$data);
-		$this->load->view('pages/feedback');
+		$this->load->view('pages/footer_pages/feedback');
 		$this->load->view('pages/common/extras');
 		$this->load->view('pages/common/footer');
 	}
@@ -140,7 +140,7 @@ class Feat extends CI_Controller {
 		$this->load->view('pages/common/link',$data);
 		$this->load->view('pages/common/header');
 		$this->load->view('pages/common/page-heading',$data);
-		$this->load->view('pages/placements');
+		$this->load->view('pages/footer_pages/placements');
 		$this->load->view('pages/common/extras');
 		$this->load->view('pages/common/footer');
 	}
@@ -152,7 +152,7 @@ class Feat extends CI_Controller {
 		$this->load->view('pages/common/link',$data);
 		$this->load->view('pages/common/header');
 		$this->load->view('pages/common/page-heading',$data);
-		$this->load->view('pages/downloads');
+		$this->load->view('pages/footer_pages/downloads');
 		$this->load->view('pages/common/extras');
 		$this->load->view('pages/common/footer');
 	}
@@ -164,20 +164,19 @@ class Feat extends CI_Controller {
 		$this->load->view('pages/common/link',$data);
 		$this->load->view('pages/common/header');
 		$this->load->view('pages/common/page-heading',$data);
-		$this->load->view('pages/student_chapters');
+		$this->load->view('pages/footer_pages/student_chapters');
 		$this->load->view('pages/common/extras');
 		$this->load->view('pages/common/footer');
 	}
 	public function contributors()
 	{
         $data['title'] = 'Contributors &nbsp;|&nbsp;  GBU Online';
-		$data['heading'] ='Contributors to GBU Online';
-		$data['message'] = '';
+		$data['heading'] ='Contributors';
+		$data['message'] = 'The team behind GBU Online !!';
 		$this->load->view('pages/common/link',$data);
 		$this->load->view('pages/common/header');
 		$this->load->view('pages/common/page-heading',$data);
-		$this->load->view('pages/common/contributors');
-
+		$this->load->view('pages/footer_pages/contributors');
 		$this->load->view('pages/common/footer');
 	}
 	
@@ -194,23 +193,17 @@ class Feat extends CI_Controller {
 		$this->load->view('pages/common/footer');
 	}
 	
-	public function contr()
+	public function advertise()
 	{
-        $data['title'] = 'Contributers &nbsp;|&nbsp;  GBU Online';
-		$data['heading'] ='Select Contributers';
-		$data['message'] ='';
+        $data['title'] = 'Advertise &nbsp;|&nbsp;  GBU Online';
+		$data['heading'] ='Advertise';
+		$data['message'] = 'A platform to promote your product !!';
 		$this->load->view('pages/common/link',$data);
 		$this->load->view('pages/common/header');
 		$this->load->view('pages/common/page-heading',$data);
-		$this->load->view('pages/contr');
+		$this->load->view('pages/footer_pages/advertise');
+		$this->load->view('pages/common/extras');
 		$this->load->view('pages/common/footer');
 	}
-	public function contr_update($userid)
-	{
-		 $flag = $_POST['flag'];
-		$q=$this->db->query("update users Set flag='$flag' where user_id='$userid'");
-		redirect('feat/contr');
-	}
-	
 	
 }	
