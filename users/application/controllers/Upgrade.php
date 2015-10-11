@@ -2147,6 +2147,15 @@ class Upgrade extends CI_Controller {
 		array_push($u->updates, " UPDATE `placements` SET `Link` = 'resources/placements/p2010.pdf' WHERE `placements`.`ID` = 8;");
         array_push($update_list, $u);
         unset($u);
+		
+		$u = new update;
+        $u->version = 4.9;
+		array_push($u->updates, "update users set profile_picture = 'resources/images/default-user.png' where profile_picture = ''");
+        array_push($u->updates, "ALTER TABLE `users` CHANGE `profile_picture` `profile_picture` VARCHAR(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL DEFAULT 'resources/images/default-user.png';");
+        array_push($update_list, $u);
+        unset($u);
+	
+		
 
         $this->run_upgrades($update_list);
         redirect("login" . "?" . $_SERVER['QUERY_STRING']);
