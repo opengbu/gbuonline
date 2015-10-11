@@ -8,7 +8,7 @@
 </div>
 <div> 
 <?php
-    $query=$this->db->query("select * from stuinfo where UPPER('" . $_GET['roll'] . "') = UPPER(roll_number)");
+    $query=$this->db->query("select * from stuinfo where UPPER('" . base64_decode($_GET['roll']) . "') = UPPER(roll_number)");
     $results=$query->result();
     foreach($results as $rows)
     {

@@ -6,19 +6,19 @@
        <h1 style="position:absolute; z-index:10; padding:10px; left: 355px; top: 270px;">
             <font size="8" style="font-family: Book Antiqua,Palatino,Palatino Linotype,Palatino LT   STD,Georgia,serif;word-spacing:13px;" color="white">
                GBU Hostel Management
+                <small>
+                    <br/>A place to grow and evolve one's personality!
+                </small>
         </font><br/>
         
-<!--           <p><font style="word-spacing:10px;"color="white" size="6">
-            A place to grow and evolve one's personality!
-        </font>
-           </p>-->
         <br/>
-        <a href="#start" class="ghost-button">Tell Me More</a>
+       
+         <a href="#start" class="ghost-button"><button type="button" class="btn btn-info btn-lg">Tell Me More </button></a>
        </h1>
    </center>
    </div>
     <div>
-    <img src="<?php echo base_url('resources/images/demo1.jpg')?>" alt="demo hostel" height="600" style="overflow:hidden;position:relative;position: relative; top:0;left:0;width:100%;"/>                      
+    <img src="<?php echo base_url('resources/images/demo1.jpg')?>" alt="demo hostel" height="660" style="overflow:hidden;position:relative;position: relative; top:0;left:0;width:100%;"/>                      
     </div>
 <a name="start"></a> 
 </div>
@@ -147,9 +147,9 @@
             width: 100%;
         }
         #containerImg :hover{
-            box-shadow: 4px 4px 5px #363024;
-            -webkit-box-shadow: 1px 1px 5px #363024;
-            -moz-box-shadow: 1px 1px 5px #363024;
+            /*box-shadow: 4px 4px 5px #363024;
+            -webkit-box-shadow: 5px 1px 5px #363024;
+            -moz-box-shadow: 1px 1px 5px #363024;*/
             position:relative;
             top:3px;
             margin:0px;
@@ -303,32 +303,4 @@
 });         
 /*$("#fullWidthDiv").width($(window).width());    */
 </script>
-<style type="text/css">
-    .ghost-button {
-    color: #fff;
-    border: 2px solid #fafafa;
-    border-radius: 4px;
-    font-size: 25px;
-    padding: 7px 12px;
-    font-weight: normal;
-    margin: 6px 0;
-    margin-right: 12px;
-    display: inline-block;
-    text-decoration: none;
-    min-width: 200px;
-    font-weight: 600px;
-    display: inline-block;
-    -webkit-transition: background-color .2s linear;
-    -moz-transition: background-color .2s linear;
-    -ms-transition: background-color .2s linear;
-    -o-transition: background-color .2s linear;
-    transition: background-color .2s linear;
-}
-
-.ghost-button:hover, .ghost-button:active{
-  color:#fff;
-  background-color:	#633131;
-  text-decoration:none;
-}
-</style>
    

@@ -47,7 +47,9 @@
     <p style="font-size:15px;"> 
         <b><?php echo $rows->roll_number ?></b>
         &nbsp;&nbsp;&nbsp;&nbsp;
-        <?php echo '<a href="'.site_url('hostels/stuspecific').'?roll=' . $rows->roll_number . '">view page</a>' ?>
+        <?php 
+        $roll=base64_encode($rows->roll_number);
+        echo '<a href="'.site_url('hostels/stuspecific').'?roll=' . $roll . '">view page</a>' ?>
     </p>
     </div>
 <?php
