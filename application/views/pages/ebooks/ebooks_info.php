@@ -26,11 +26,12 @@
 						?>
 				   <div class="col-md-3" >
                         <div class="thumbnail" style="height:150px;">
-                            <a href="<?php echo $book->book_info?>"><?php echo $book->book_name ?></a>
+                            <a href="<?php echo $book->book_info?>">
                             <div class="caption">
                                 <h3><center><b><?php echo $book->book_name; ?></b></center></h3>
                             </div>
                         </div>
+						</a>
                     </div>
 					<?php
                     }
