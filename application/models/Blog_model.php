@@ -19,6 +19,7 @@ class Blog_model extends CI_Model {
 	
 	function del_from_db($id) {
         $this->db->query("DELETE from blog WHERE id = '$id';");
+		$this->db->query("DELETE from blog_likes WHERE blog_id = '$id';");
     }
 
 }

@@ -87,53 +87,8 @@
 
                     </ul>
                 </li>
-
-                <!--
-                <li>
-                    <a href="<?php echo site_url('feat/exams') ?>"><font size="2"><span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span>&nbsp;Exams</font></a>
-                </li>-->
-
-                <?php
-                /*
-
-                  <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><font size="2">
-                  <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>&nbsp;Placements</font><span class="caret"></span></a>
-                  <ul class="dropdown-menu" role="menu">
-                  <li><a href="<?php echo base_url('resources/placements/p2015.pdf')?>">Placement 2015</a></li>
-                  <li><a href="<?php echo base_url('resources/placements/p2014.pdf')?>">Placement 2014</a></li>
-                  <li><a href="<?php echo base_url('resources/placements/p2013.pdf')?>">Placement 2013</a></li>
-                  <li><a href="<?php echo base_url('resources/placements/p2012.pdf')?>">Placement 2012</a></li>
-                  <li><a href="<?php echo base_url('resources/placements/p2011.pdf')?>">Placement 2011</a></li>
-                  <li><a href="<?php echo base_url('resources/placements/p2010.pdf')?>">Placement 2010</a></li>
-                  </ul>
-                  </li>-->
-                  <!--
-                  <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><font size="2">
-                  <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>&nbsp;Downloads</font><span class="caret"></span></a>
-                  <ul class="dropdown-menu" role="menu">
-                  <li align="center"><b><center>Mobile Apps</center></b></li>
-                  <li class="divider"></li>
-                  <li><a href="#">Time Table (Android)</a></li>
-                  <li><a href="#">Time Table (Windows)</a></li>
-                  <li><a href="#">Abhivyanjana</a></li>
-                  <li><a href="#">Attendance</a></li>
-                  <li class="divider"></li>
-                  <li align="center"><b><center>Utility Softwares</center></b></li>
-                  <li class="divider"></li>
-                  <li><a href="#">Proxifier</a></li>
-                  <li><a href="#">IDM</a></li>
-                  <li><a href="#">C-Cleaner</a></li>
-                  <li><a href="#">Ultra-surf</a></li>
-
-                  </ul>
-                  </li>
-                 */
-                ?>
-
-
             </ul>
+			
             <ul class="nav navbar-nav  pull-right">
 
                 <li>

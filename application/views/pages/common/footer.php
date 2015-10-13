@@ -18,13 +18,14 @@
 
         <div class="wrapper" id="getFooterLen">
 
-            <div class="row" >
+            <div class="row" style="margin-left:120px;">
 			
-                <div class="col-md-3 ">
+                <div class="col-md-3">
 						
-<a type="" href="" class="btn btn-block" data-toggle="modal" data-target=".bs-example-modal-lg-2"><font color = "white"><b>Vision</b></font></a>
-						<a type="button" class="btn btn-block" href = "<?php echo site_url('feat/contributors')?>"><font color = "white"><b>Contributors</b></font></a>
-						
+						<a style="cursor:pointer;" data-toggle="modal" data-target=".bs-example-modal-lg-2"><font color = "white"><b>Vision</b></font></a>
+						<br/><br/>
+						<a href = "<?php echo site_url('feat/contributors')?>" style="cursor:pointer;"><font color = "white"><b>Contributors</b></font></a>
+						<br/><br/>
 						
 
                     <div class="modal fade bs-example-modal-lg-2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -42,7 +43,7 @@
                             </div>
                         </div>
                     </div>
-				<a type="button" class="btn btn-block" data-toggle="modal" data-target=".bs-example-modal-lg-5"><font color = "white"><b>Connect With Us</b></font></a>
+				<a data-toggle="modal" data-target=".bs-example-modal-lg-5" style="cursor:pointer;"><font color = "white"><b>Connect With Us</b></font></a>
 
                     <div class="modal fade bs-example-modal-lg-5" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-lg">
@@ -137,7 +138,8 @@
                             </div>
                         </div>
                     </div>
-             <a type="button" class="btn btn-block" onclick="location.href='<?php echo site_url('feat/opportunities')?>'"><font color = "white"><b>Opportunities</b></font></a>
+					<br/><br/>
+             <a href="<?php echo site_url('feat/opportunities')?>" style="cursor:pointer;"><font color = "white"><b>Opportunities</b></font></a>
                 
             </div>
 			
