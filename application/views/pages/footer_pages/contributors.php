@@ -29,6 +29,7 @@
                 </div>
                <?php
                { /*
+               NOTE, I am removing my name form this list only. It doesnot mean I have left this project
                 <div class="col-sm-4">
                     <img src="<?php echo $this->cdn->res_url('resources/images/varun.jpg') ?>" width="120">
                     <br><b>VARUN GARG </b><br/>(Admin/User Panel)<br />(Technical Head)
