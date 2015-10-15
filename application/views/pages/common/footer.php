@@ -172,7 +172,7 @@
 			
             <div class="col-md-12 text-center">
                 
-                    <b><p style = "color:white;">&copy; kNight_Coders, Inc.</p></b>
+                    <b><p style = "color:white;">&copy; OpenGBU, Inc.</p></b>
               
        </div>
         

@@ -4,6 +4,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="keywords" content="Gautam Buddha University,gbu,gbuonline,gbu online,abhivyanjana,ecokart,shouryotsav">
         <link href='https://fonts.googleapis.com/css?family=Roboto|Oswald|Josefin+Sans' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Signika:700' rel='stylesheet' type='text/css'>
         <title><?php echo $title; ?></title>
         <link rel="shortcut icon" href="<?php echo $this->cdn->res_url('resources/images/favicon.ico') ?>">
         <script src="<?php echo $this->cdn->res_url('resources/jquery-2.1.4.min.js') ?>"></script>

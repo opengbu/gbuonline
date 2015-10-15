@@ -10,7 +10,7 @@
    background-image: url("<?= $this->cdn->res_url('resources/images/home1.jpg');?>");           
 }
 </style> 
-<br/>
+
 <div>
 
             <h2 align="center"><b><span class="label label-default">Quick Links</span></b></h2>
