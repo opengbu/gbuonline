@@ -68,9 +68,9 @@
                         </li>
 
                         <li role="separator" class="divider"></li>
-                        <li>
+                        <!--<li>
                             <a href="<?php echo $this->cdn->res_url('resources/hostel_allocation/mess.jpg') ?>" style="text-decoration:none;">Mess Menu</a>	
-                        </li>
+                        </li>-->
                     </ul>
                 </li>
                 <li>
