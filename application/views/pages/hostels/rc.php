@@ -7,62 +7,63 @@
 	</div>
 </div>
 
-<ul class="list-group" >
+<?php
+$this->load->library('form_validation');
+?>
+
+<div class="container-fluid" style=" margin-right: 10px; margin-left: 10px;" >   
+    
     <font color="#141466">
-        <form action="" method="get">
-        <div class="form-group" style="padding-left:20px;margin-left:10px;">
+        <form class="form-group" role="form" action="<?php echo site_url('Hostels/insert_request'); ?>" method="post">
         <label>
             Full Name :
         </label>
     
-        <input type="text" class="form-control"  value="" name="title"><br>
+        <input type="text" class="form-control" value="<?php echo set_value('name'); ?>" name="name" id="rcname"><br/>
             
             <label>
                 Branch :
             </label>
-            <input type="textarea" class="form-control"  value="" name="description"><br>
+            <input type="textarea" class="form-control" value="<?php echo set_value('branch'); ?>" name="branch" id="rcbranch"><br/>
             
              <label>
                 Current Alloted Room :
             </label>
-            <input type="textarea" class="form-control"  value="" name="description"><br>
+            <input type="textarea" class="form-control" value="<?php echo set_value('alloted_room'); ?>" name="alloted_room"id="rcalloted"><br/>
             
              <label>
                 Requestd Room :
             </label>
-            <input type="textarea" class="form-control"  value="" name="description"><br>
-            		
-            </div>
-            </form>
-
-<form class="form-horizontal" style="padding-left:10px;margin-left:5px;">         
+            <input type="textarea" class="form-control"  value="<?php echo set_value('requested_room'); ?>" name="requested_room" id="rcrequested"><br/>        
     
-    <div class="form-group"> 
-        <label class="col-md-2 control-label" for="Radios">Requested Room's Status</label>  
-        <div class="col-md-10 columns">    
+            <div class="form-group"> 
+                <label class="col-md-2 control-label" for="Radios">Requested Room's Status</label>  
+                    <div class="col-md-10 columns">    
              
-           <label class="radio-inline" for="Radios_Kumquats" style="background-color:#266c8e;color:white">    
-                <input type="radio" name="Radios" id="Radios_Kumquats" value="Kumquats">     
-                Free            
-            </label>       
-            <span class="additional-info-wrap"> 
-                <label class="radio-inline" for="Radios_Grape" style="background-color:#266c8e;color:white">     
-                    <input type="radio" name="Radios" id="Radios_Grape" value="Grape"> 
-                    Occupied                    
-                </label>                  
-                <div class="additional-info hide">  
-                    <input type="text" id="RadiosNameOfGrape" name="RadiosNameOfGrape" placeholder="Currently alloted to :" class="form-control" disabled="">
-                </div>              
-            </span>              
+                        <label class="radio-inline" name="radios"for="Radios_Kumquats" style="background-color:#266c8e;color:white">    
+                            <input type="radio" id="Radios_Kumquats" value="Kumquats"  <?php echo set_select('rd1', 'free'); ?>>     
+                                Free            
+                        </label> 
+                        
+                        <span class="additional-info-wrap"> 
+                            <label class="radio-inline" name="radios"for="Radios_Grape" style="background-color:#266c8e;color:white">     
+                                <input type="radio" id="Radios_Grape" value="Grape"  <?php echo set_select('rd2', 'occ'); ?>> 
+                                    Occupied                    
+                            </label>                  
+                            <div class="additional-info hide">  
+                                <input type="text" value="<?php echo set_value('owner'); ?>" name="owner" id="RadiosNameOfGrape" placeholder="Currently alloted to (Roll_num):" class="form-control" >
+                            </div>              
+                        </span>              
          
-        </div>           
-    </div>   
-</form>
-<div style="padding-left:40px;margin-left:25px;">
+                    </div>           
+            </div>   
+<br/><br/><br/><br/>
 <!--<input type="submit" class="btn btn-default" value="Save"/>-->
-    <button type="button" id="myButton" data-loading-text="Loading..." class="btn btn-primary" autocomplete="off">
-        Save
-    </button>
-</div>
+    <input style="width:100px;" type="submit" name="Save" id="submit" value="Submit" class="btn btn-primary">
     </font>
-</ul>
+</form>
+
+</div>
+<?php
+echo $this->session->flashdata('rcMsg');
+?>
