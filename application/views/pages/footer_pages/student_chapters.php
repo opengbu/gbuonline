@@ -4,30 +4,28 @@
         <div class="col-md-9" style="padding-right:30px; border-right: 2px solid #ccc;">
 
 		
-        <ul class="list-group">
+
 		<?php
                                         $q=$this->db->query("select * from stu_chapters");
                                         $results=$q->result();
 					foreach($results as $rows)
 					{
         ?>                      
-					<li class="list-group-item">                                         
-						<b><?php echo $rows->Title; ?></b>
-				    
-					<p><i><?php echo $rows->Description; ?></i></p>
-					
-			</li>
-		</br>
+					        <div class="thumbnail">
+								<img src=<?php echo base_url ($rows->Image) ?>>
+								<center>
+									<div class="caption">
+										<h3><?php echo $rows->Title; ?></h3>
+										<p><i><?php echo $rows->Description; ?></i></p>
+									</div>
+								</center>
+							</div>
 		
 		
 		
 		<?php 
 					} 
 		?>
-                
-		</ul>
-
-
         </div>
 	
 

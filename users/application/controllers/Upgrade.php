@@ -2154,7 +2154,15 @@ class Upgrade extends CI_Controller {
         array_push($u->updates, "ALTER TABLE `users` CHANGE `profile_picture` `profile_picture` VARCHAR(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL DEFAULT 'resources/images/default-user.png';");
         array_push($update_list, $u);
         unset($u);
-	
+		
+		$u = new update;
+        $u->version = 4.10;
+		array_push($u->updates, "ALTER TABLE `stu_chapters` ADD `Image` VARCHAR(80) NOT NULL ;");
+        array_push($u->updates, "UPDATE `stu_chapters` SET `Image`= 'resources/images/HackerEarth.jpg 'WHERE Title = 'HackerEarth \"CODE IN GBU\"';");
+        array_push($u->updates, "UPDATE `stu_chapters` SET `Image`= 'resources/images/Codechef.jpg 'WHERE Title = 'Codechef-GBU Campus Chapter';");
+		array_push($u->updates, "UPDATE `stu_chapters` SET `Image`= 'resources/images/IEEE.jpg 'WHERE Title = 'IEEE-GBU Student Branch';");
+		array_push($update_list, $u);
+        unset($u);
 		
 
         $this->run_upgrades($update_list);
