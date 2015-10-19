@@ -17,7 +17,6 @@
 						<li><a href="<?php echo site_url('hostels/wname')?>">Warden Name</a></li>
 						<li><a href="<?php echo site_url('hostels/woffice')?>">Warden Office</a></li>
 					</ul>
-				    
 				</div>   
  </div> 
 </div>
@@ -28,11 +27,11 @@
                     <div class="col-md-4"><b>Warden Name</b></div>
                     <div class="col-md-4"><b>Warden's Office</b></div></font>
             </div><hr /><hr />
-               
                        <?php
-                        /*$this->db->where('id','1');*/
-                        $q=$this->db->get('warden');
+                        
+                        $q=$this->db->query("select * from warden");
                         $results=$q->result();
+
                         foreach ($results as $row)
                         {
                         ?>

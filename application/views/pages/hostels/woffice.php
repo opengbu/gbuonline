@@ -30,7 +30,6 @@
             </div><hr /><hr />
                
                        <?php
-                        /*$this->db->where('id','1');*/
                         $q=$this->db->query("select * from warden order by warden_office");
                         $results=$q->result();
                         foreach ($results as $row)

@@ -34,7 +34,7 @@
                     <div class="col-md-2"><b>Concerned Hostels</b></div></font>
             </div><hr/><hr/>
                     <?php
-                        /*$this->db->where('id','1');*/
+                        
                         $q=$this->db->get('h_notice');
                         $results=$q->result();
                         foreach ($results as $row)
@@ -52,8 +52,13 @@
                         ?>
                         </div>
                         <div class="col-md-3">
-                            <a href="<?php echo $this->cdn->res_url("resources/holidays-2015.pdf")?>"><?php echo $row->title; ?></a>
+                        <?php
+                            echo $row->title ." ( " ?><a style="text-decoration:none;" href="<?php echo $this->cdn->res_url($row->link)?>">Open</a><?php echo " )"
+                        ?>
                         </div>
+                       <!--  <div class="col-md-3">
+                        <a style="text-decoration:none;"href="<?php echo $this->cdn->res_url($row->link)?>">Open</a>
+                        </div>-->
                          <div class="col-md-3">
                         <?php
                             echo $row->issuing_authority;    
@@ -69,4 +74,3 @@
                         }
                         ?>
         </div>
- 

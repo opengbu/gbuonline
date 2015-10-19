@@ -173,4 +173,14 @@ class Hostels extends CI_Controller {
 		$this->load->view('pages/common/footer');
 
 	}
-}
+    public function insert_request(){
+        $this->load->model('roomChangeModel');
+		$this->roomChangeModel->rc();
+        
+        //Taken By Feat
+        $this->session->set_flashdata('rcMsg', '<script> alert("Yor request has been sent!"); </script>');
+        redirect('Hostels/rc');
+        
+    }
+        
+    }
