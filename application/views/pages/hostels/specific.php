@@ -47,6 +47,7 @@
                         if(empty($_POST['hostel_name']))
                         {
                             echo "<b>NO HOSTEL SELECTED</b>";
+                            ?></div><?php
                             
                         }
                         else
@@ -71,14 +72,95 @@
 			<div class="jumbotron"  >
 				<h2>Hostel Updates</h2><br>
 
-				<ul class="list-group">
-					<p>
-						<li  class="list-group-item"class="dropdown" style="list-style-type:none;text-decoration:none;">
-							<a href="<?php echo site_url('hostels/notice')?>"style="text-decoration:none;"><font size="4">&nbsp;Hostel Notice</font></a>	
-						</li>
-						
-					</p>
-				</ul>
+                <!-- HOSTEL NOTICE AND ALLOCATION LIST MODEL  
+                    ** IN WORKING STATE
+                -->
+                <div>
+                    <ul class="list-group">
+                    <li class="list-group-item"class="dropdown" style="list-style-type:none;text-decoration:none;">
+ 
+		<button type="button" class="btn btn-block" style="text-align:left"data-toggle="modal" data-target=".bs-example-modal-lg-51">Hostel Notices</button>
+                    </li>
+                    </ul>
+                    
+                <?php
+                if(empty($_POST['hostel_name']))
+                {?>
+                    <div class="modal fade bs-example-modal-lg-51" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="move">
+			             <div class="modal-dialog modal-lg">
+				            <div class="modal-content" >  
+                                <p style="padding-left:15px;padding-top:10px;">No Hostel Selected</p>
+                                </div>
+                             </div>
+                        </div>
+                <?php
+                }
+                else
+                {
+                
+                $q=$this->db->query("select * from h_notice where concerned_hostel= ? or concerned_hostel= ? ",array("All",$hostel_name));    
+                ?>
+                    <div class="modal fade bs-example-modal-lg-51" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="move">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content" >
+               
+					<ul>
+						<i>
+						<center>
+						<div class="row"><font face="Georgia Bold">
+                    <div class="col-md-1"><b>#</b></div>
+                    <div class="col-md-2"><b>Posted On</b></div>
+                    <div class="col-md-3"><b>Title</b></div>
+                    <div class="col-md-3"><b>Issuing Authority</b></div>
+            </div><hr/><hr/>
+                <?php
+                
+                        $results=$q->result();
+                        foreach ($results as $row)
+                        {
+                ?>
+                        <div class="row">
+                        <div class="col-md-1">
+                        <?php
+                            echo $row->id;
+                        ?>
+                        </div>
+                        <div class="col-md-2">
+                        <?php
+                            echo $row->date;    
+                        ?>
+                        </div>
+                        <div class="col-md-3">
+                        <?php
+                            echo $row->title ." ( " ?><a style="text-decoration:none;" href="<?php echo $this->cdn->res_url($row->link)?>">Open</a><?php echo " )"
+                        ?>
+                        </div>
+                       
+                         <div class="col-md-3">
+                        <?php
+                            echo $row->issuing_authority;    
+                        ?>
+                        </div>
+                        </div><hr/>
+                       <?php
+                        }
+                       ?>
+                         </font>
+                        </center>
+                        </i>
+                    </ul>
+                </div>
+            </div>
+
+               </div>     
+                        <?php
+                        }
+                        ?>
+                                              
+                </div>
+            
+            
+            
 				<ul class="list-group">
 					<p>				
 						<li class="list-group-item" class="dropdown" style="list-style-type:none;">
@@ -88,22 +170,46 @@
 							</a>
 						
 							<ul class="dropdown-menu" role="menu">
-							
-								<li><a href="<?php echo $this->cdn->res_url('resources/hostel_allocation/Birsa Munda Hostel_15July15.pdf')?>">Birsa Munda Hostel</a></li>
-								<li><a href="<?php echo $this->cdn->res_url('resources/hostel_allocation/Guru Ghasi Das Hostel_15July15.pdf')?>">Guru Ghasi Das Hostel</a></li>
-							    <li><a href="<?php echo $this->cdn->res_url('resources/hostel_allocation/Maha Maya Girls Hostel_15July15.pdf')?>">Maha Maya Girls Hostel</a></li>
-                                <li><a href="<?php echo $this->cdn->res_url('resources/hostel_allocation/Ram Saran Das Hostel_15July15.pdf')?>">Ram Saran Das Hostel</a></li>
-                                <li><a href="<?php echo $this->cdn->res_url('resources/hostel_allocation/Rani Laxmi Bai Girls Hostel_15July15.pdf')?>">Rani Laxmi Bai Girls Hostel</a></li>
-                                <li><a href="<?php echo $this->cdn->res_url('resources/hostel_allocation/Sant Kabir Das Hostel_15July2015.pdf')?>">Sant Kabir Das Hostel</a></li>
-                                <li><a href="<?php echo $this->cdn->res_url('resources/hostel_allocation/Sant Ravidas Hostel_15July2015.pdf')?>">Sant Ravidas Hostel</a></li>
-                                <li><a href="<?php echo $this->cdn->res_url('resources/hostel_allocation/Shri Chatarpati Sahu ji Maharaj Hostel_15July15.pdf')?>">Shri Chatarpati Sahu ji Maharaj Hostel</a></li>
-                                <li><a href="<?php echo $this->cdn->res_url('resources/hostel_allocation/Shri Narayan Guru Hostel-15July15.pdf')?>">Shri Narayan Guru Hostel</a></li>
-                                <li><a href="<?php echo $this->cdn->res_url('resources/hostel_allocation/Tulsidas Hostel_15July15.pdf')?>">Tulsidas Hostel</a></li>
-							</ul>
+							<?php
+				
+                            if(empty($_POST['hostel_name']))
+                            {
+                            ?>
+                    
+                            <li><a href="#">Nothing Selected!</a></li>
+                    
+                            <?php 
+                            }
+                            else 
+                            {
+                                
+                            $q=$this->db->query("select * from hostel_allocation where UPPER(hostel_name)=UPPER(?)",array($hostel_name));
+                            
+                            if($q->num_rows()>0)    
+                            {
+                            $results=$q->result();
+                            foreach($results as $row)
+                            {
+                            ?>     
+                                <li><a href="<?php echo $this->cdn->res_url($row->link)?>"><?php echo $row->hostel_name . " : " . $row->year?></a></li>
+                            <?php
+                            }
+                            }
+                            else
+                            {
+                            ?>
+                            <li><a href="#">Sorry, Content not available!</a></li>
+                            <?php
+                            }
+                            }
+                            ?>
+                            </ul>
 						</li>
 					</p>
 				</ul>	
-
+            
+            <!-- ******************************  -->
+            
 				<ul class="list-group">
 					<p>
 						<li  class="list-group-item"class="dropdown" style="list-style-type:none;text-decoration:none;">
