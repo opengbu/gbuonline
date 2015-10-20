@@ -2164,6 +2164,13 @@ class Upgrade extends CI_Controller {
 		array_push($update_list, $u);
         unset($u);
 		
+		$u = new update;
+        $u->version = 4.11;
+		array_push($u->updates, "ALTER TABLE `ebooks` CHANGE `book_info` `book_link` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;");
+        array_push($u->updates, "ALTER TABLE `ebooks` ADD `Author` VARCHAR(60);");
+        array_push($update_list, $u);
+        unset($u);
+		
 
         $this->run_upgrades($update_list);
         redirect("login" . "?" . $_SERVER['QUERY_STRING']);
