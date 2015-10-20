@@ -12,6 +12,7 @@
 			{
 			
 ?>			
+			<div class="well well-sm">
 			<li class="list-group-item">
             <span class="badge">
             <?php
@@ -23,6 +24,7 @@
 
 	     
 		</li>
+		</div>
 		<?php	
         }
 		?>
