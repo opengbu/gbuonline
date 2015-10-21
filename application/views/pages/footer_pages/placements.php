@@ -37,7 +37,7 @@
 		<h2>Past Recruiters</h2>
 		 <div>
                 <marquee scrollamount='8' onmouseover='this.stop();' onmouseout='this.start();' top='0' left='0'>
-				<img src = "<?php echo base_url('resources/images/companies.jpg') ?>" style="height:120px;width:990px;border-width:0px;">
+				<img src = "<?php echo $this->cdn->res_url('resources/images/companies.jpg') ?>" style="height:120px;width:990px;border-width:0px;">
 				</marquee>
          </div>
 		</div>
