@@ -2156,7 +2156,7 @@ class Upgrade extends CI_Controller {
         unset($u);
 		
 		$u = new update;
-        $u->version = 4.10;
+        $u->version = 5.0;
 		array_push($u->updates, "ALTER TABLE `stu_chapters` ADD `Image` VARCHAR(80) NOT NULL ;");
         array_push($u->updates, "UPDATE `stu_chapters` SET `Image`= 'resources/images/HackerEarth.jpg 'WHERE Title = 'HackerEarth \"CODE IN GBU\"';");
         array_push($u->updates, "UPDATE `stu_chapters` SET `Image`= 'resources/images/Codechef.jpg 'WHERE Title = 'Codechef-GBU Campus Chapter';");
@@ -2165,7 +2165,7 @@ class Upgrade extends CI_Controller {
         unset($u);
 		
 		$u = new update;
-        $u->version = 4.11;
+        $u->version = 5.1;
 		array_push($u->updates, "ALTER TABLE `ebooks` CHANGE `book_info` `book_link` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;");
         array_push($u->updates, "ALTER TABLE `ebooks` ADD `Author` VARCHAR(60);");
         array_push($update_list, $u);

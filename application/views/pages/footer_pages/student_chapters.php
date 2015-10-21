@@ -12,7 +12,7 @@
 					{
         ?>                      
 					        <div class="thumbnail">
-								<img src=<?php echo base_url ($rows->Image) ?>>
+								<img src="<?php echo $this->cdn->res_url($rows->Image) ?>">
 								<center>
 									<div class="caption">
 										<h3><?php echo $rows->Title; ?></h3>
