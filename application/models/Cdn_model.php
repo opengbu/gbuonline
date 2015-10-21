@@ -4,7 +4,7 @@
  *  Created on :Sep 29, 2015, 3:18:06 PM
  *  Author     :Varun Garg <varun.10@live.com>
  */
-define('CDN_MODE', 'ONLINE');
+define('CDN_MODE', 'OFFLINE');
 
 class Cdn_model extends CI_Model {
 
