@@ -2125,7 +2125,7 @@ class Upgrade extends CI_Controller {
   `time` time NOT NULL,
   `action` text NOT NULL
 )");
- //       array_push($u->updates, "ALTER TABLE `logs`
+        array_push($u->updates, "ALTER TABLE `logs`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;");
 
         array_push($update_list, $u);
