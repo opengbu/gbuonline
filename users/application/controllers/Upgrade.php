@@ -2219,6 +2219,11 @@ class Upgrade extends CI_Controller {
         array_push($update_list,$u);
         unset($u);
 		
+        $u = new update;
+        $u->version = 5.5;
+        array_push($u->updates, "UPDATE `gbuonline`.`h_notice` SET `link` = 'resources/h_notices/holidays-2015.pdf' WHERE `h_notice`.`id` = 1;");
+        array_push($update_list,$u);
+        unset($u);
 
 		//Don't edit after this line
         $this->run_upgrades($update_list);
