@@ -1,15 +1,17 @@
 <script>
     var count_comments = true;
-	
-	//activate the tooltips
-	$(function () {
-	$('[data-toggle="tooltip"]').tooltip()
-	})
-
+    
+    //activate the tooltips
+    $(function () {
+    $('.r').tooltip({ selector: '.a' });
+    });
 </script>
 
 <?php
-$user_id = $this->session->userdata("user_id");
+    $user_id = $this->session->userdata("user_id");
+
+    if(empty($user_id)) $func = 'notlog';
+    else $func = 'log';
 ?>
 
 <!--This page is sorted according to the "Time" of a blog-->
@@ -25,7 +27,7 @@ $user_id = $this->session->userdata("user_id");
                     <div class="btn-group" role="group">
                         <button type="button" class="btn btn-default" onclick="location.href = '<?php echo site_url('blogs/write_blogs') ?>'">Write Blogs</button>
                     </div>
-					<div class="btn-group" role="group">
+                    <div class="btn-group" role="group">
                         <button type="button" class="btn btn-default" onclick="location.href = '<?php echo site_url('blogs/your_blogs') ?>'">Edit Blogs</button>
                     </div>
                     <div class="btn-group" role="group">
@@ -42,24 +44,24 @@ $user_id = $this->session->userdata("user_id");
             //$count = 0;
             foreach ($get_blogs_q->result() as $row) {
               //  $count ++;
-               // if ($count > 4)
+                //if ($count > 4)
                   //  break;
                 
                 $like_count_q = $this->db->query("select count(*) as like_count from blog_likes where blog_id = '$row->id'");
                 $like_count = $like_count_q->row();
-				
-				$numb = $this->db->query("select * from blog_likes where blog_id = '$row->id' and user_id = '$user_id'");
-				if ($numb->num_rows() == 0)
-				{
-					$clor = "primary";
-					$txt = "Like this blog";
-				}
-				else
-				{
-					$clor = "warning";
-					$txt = "Un-Like this blog";
-				}
-                ?>
+                
+                $numb = $this->db->query("select * from blog_likes where blog_id = '$row->id' and user_id = '$user_id'");
+                if ($numb->num_rows() == 0)
+                {
+                    $clor = "primary";
+                    $txt = "Like this blog";
+                }
+                else
+                {
+                    $clor = "warning";
+                    $txt = "Un-Like this blog";
+                }
+            ?>
                 
                 <div class="panel panel-danger">
                     <div class="panel-heading">
@@ -75,20 +77,22 @@ $user_id = $this->session->userdata("user_id");
                     <div class="panel-footer">
                         <div class="row">
                             <div class="col-md-5">
-                                <a href="<?=site_url('blogs/like?blog_id='.$row->id. '&redirect2='.  current_url() )?>" class="btn btn-<?=$clor?> btn-md" data-toggle="tooltip" data-placement="top" title="<?=$txt?>" >
+                                <span id="<?=$row->id?>" class="r">
+                                <button onclick="<?=$func?>(<?=$row->id?>)" class="btn btn-<?=$clor?> btn-md a" data-toggle="tooltip" data-placement="top" title="<?=$txt?>">
                                     <span class="glyphicon glyphicon-star" aria-hidden="true"></span> &nbsp;
                                     <span class="badge"><?=$like_count->like_count ?></span>
-                                </a>&nbsp;
+                                </button>&nbsp;
+                                </span>
                                 <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target=".share<?= $row->id ?>">
                                     <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> &nbsp;
                                     <span class="badge">Share</span>
                                 </button>&nbsp;
-                                <button type="button" class="btn btn-primary btn-md" onclick="location.href='<?php echo site_url('blogs/read_blogs?blog_id=' .$row->id.'#koment')?>'">
+                                <button type="button" class="btn btn-primary btn-md" onclick="location.href='<?php echo site_url('blogs/read_blogs?blog_id=' .$row->id.'#koment')?>'"> 
                                     <span class="glyphicon glyphicon-comment" aria-hidden="true"></span> &nbsp;
                                     <span class="badge"><a href="<?php echo site_url('blogs/read_blogs?blog_id=' . $row->id) ?>#disqus_thread" data-disqus-identifier="blog_<?= $row->id ?>"></a></span>
                                 </button>
                             </div>
-                            <div class="col-md-7" style="text-align: right;  ">
+                            <div class="col-md-7" style="text-align: right;">
                                 <button type="button" class="btn btn-primary btn-md"><span><?= $row->full_name ?></span> &nbsp;
                                     <?php
                                     if ($row->roll_number != NULL) {
@@ -102,7 +106,7 @@ $user_id = $this->session->userdata("user_id");
                             </div>
                         </div>
                     </div>
-                </div>		
+                </div>      
 
                 <!--Blog Share MODAL begins-->
                 <div class="modal fade share<?= $row->id ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
@@ -113,7 +117,7 @@ $user_id = $this->session->userdata("user_id");
                                 <b>Share on Social Media</b>
                                 <br><br>
                                 <!-- Place this tag where you want the share button to render. -->
-								<div class="g-plus" data-action="share" data-annotation="bubble" data-height="50" data-width="100" data-href="http://www.gbuonline.in/blogs/read_blogs?blog_id=<?= $row->id ?>"></div>
+                                <div class="g-plus" data-action="share" data-annotation="bubble" data-height="50" data-width="100" data-href="http://www.gbuonline.in/blogs/read_blogs?blog_id=<?= $row->id ?>"></div>
                                 <br>
                                 <br>
                             </center>
@@ -123,16 +127,45 @@ $user_id = $this->session->userdata("user_id");
                 <!--Blog Share MODAL ends-->
 
 
-                <?php
-            }
+            <?php
+                }
             ?>
 
             <!--Loop Ends-->
 
-        </div >	
+        </div > 
 
         <!--row ends in extras-->
         <!--container ends in extras-->
 
-	<!-- Place this tag in your head or just before your close body tag. -->
-	<script src="https://apis.google.com/js/platform.js" async defer></script>	
+<!-- Place this tag in your head or just before your close body tag. -->
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+<script>
+function log(blog_id)
+{
+    var xmlhttp;
+    if (window.XMLHttpRequest)
+    {// code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp=new XMLHttpRequest();
+    }
+    else
+    {// code for IE6, IE5
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange=function()
+    {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200)
+        {
+            document.getElementById(blog_id).innerHTML=xmlhttp.responseText;
+        }
+    }
+    xmlhttp.open("GET","<?=site_url('blogs/like')?>"+'?blog_id='+blog_id,true);
+    xmlhttp.send();
+}
+
+function notlog(blog_id)
+{
+    location.href="<?=site_url('blogs/like_notlog/best_blogs')?>"+"?blog_id="+blog_id;
+}
+</script>

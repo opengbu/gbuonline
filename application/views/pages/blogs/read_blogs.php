@@ -3,13 +3,16 @@
 	
 	//activate the tooltips
 	$(function () {
-	$('[data-toggle="tooltip"]').tooltip()
+	$('.r').tooltip({ selector: '.a' });
 	})
 	
 </script>
 <?php
 $blog_id = $this->input->get('blog_id');
 $user_id = $this->session->userdata("user_id");
+
+if(empty($user_id)) $func = 'notlog';
+else $func = 'log';
 
 $blog_q = $this->db->query("select blog.*, full_name, roll_number from blog,users where id = '$blog_id' and blog.user_id = users.user_id");
 $result = $blog_q->row();
@@ -45,10 +48,12 @@ $numb = $this->db->query("select * from blog_likes where blog_id = '$blog_id' an
 				
                 <div class="row"> 
                     <div class="col-md-4">
-                        <a href="<?= site_url('blogs/like?blog_id=' . $result->id . '&redirect2=' . current_url()) . "?" . $_SERVER['QUERY_STRING'] ?>" class="btn btn-<?=$clor?> btn-md" data-toggle="tooltip" data-placement="top" title="<?=$txt?>">
-                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span> &nbsp;
-                            <span class="badge"><?= $like_count->like_count ?></span>
-                        </a>&nbsp;
+                        <span id="<?=$result->id?>" class="r">
+                                <button onclick="<?=$func?>(<?=$result->id?>)" class="btn btn-<?=$clor?> btn-md a" data-toggle="tooltip" data-placement="top" title="<?=$txt?>">
+                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span> &nbsp;
+                                    <span class="badge"><?=$like_count->like_count ?></span>
+                                </button>&nbsp;
+                        </span>
 
                         <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target=".share">
                             <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> &nbsp;
@@ -123,3 +128,32 @@ $numb = $this->db->query("select * from blog_likes where blog_id = '$blog_id' an
 
 	<!-- Place this tag in your head or just before your close body tag. -->
 	<script src="https://apis.google.com/js/platform.js" async defer></script>	
+
+    <script>
+function log(blog_id)
+{
+    var xmlhttp;
+    if (window.XMLHttpRequest)
+    {// code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp=new XMLHttpRequest();
+    }
+    else
+    {// code for IE6, IE5
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange=function()
+    {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200)
+        {
+            document.getElementById(blog_id).innerHTML=xmlhttp.responseText;
+        }
+    }
+    xmlhttp.open("GET","<?=site_url('blogs/like')?>"+'?blog_id='+blog_id,true);
+    xmlhttp.send();
+}
+
+function notlog(blog_id)
+{
+    location.href="<?=site_url('blogs/like_notlog/read_blogs')?>"+"?blog_id="+blog_id;
+}
+</script>
