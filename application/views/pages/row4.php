@@ -99,13 +99,13 @@
 					</div>
 					</div>
 
-        </div>
+        
 		<br/><br/><br/>
 		
 		<div class="row gra">
 		<div class = "container">
 		<br/>
-		<div class="col-md-5">
+		<div class="col-md-4">
             <h2 align="center"><b><span class="label label-default">News and Updates</span></b></h2>
             <br/><br/>
             <?php
@@ -131,7 +131,7 @@
 
             </ul>
         </div>
-        <div class="col-md-5 col-md-offset-2">
+        <div class="col-md-4">
             <h2 align="center"><b><span class="label label-default">Technological Updates</span></b></h2>
             <br/><br/>
 
@@ -180,6 +180,14 @@
             }
             ?>
         </div>
+			<div class="col-md4">
+				<h2 align="center"><b><span class="label label-default">GBU Schedule</span></b></h2>
+				<br/><br/>
+
+				<iframe src="https://calendar.google.com/calendar/embed?showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=400&amp;wkst=1&amp;hl=en&amp;bgcolor=%23ff9966&amp;src=fpojdeb39ko4sr6qrf19n7cup0%40group.calendar.google.com&amp;color=%232952A3&amp;ctz=Asia%2FCalcutta" style=" border-width:0 " width="300" height="400" frameborder="0" scrolling="no"></iframe>
+			</div>
+
 	
     </div>
     </div>
+</div>
