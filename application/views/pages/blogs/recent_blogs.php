@@ -3,12 +3,15 @@
 	
 	//activate the tooltips
 	$(function () {
-	$('[data-toggle="tooltip"]').tooltip()
-	})
-
+	$('.r').tooltip({ selector: '.a' });
+	});
 </script>
+
 <?php
-$user_id = $this->session->userdata("user_id");
+    $user_id = $this->session->userdata("user_id");
+
+    if(empty($user_id)) $func = 'notlog';
+    else $func = 'log';
 ?>
 
 <!--This page is sorted according to the "Time" of a blog-->
@@ -74,10 +77,12 @@ $user_id = $this->session->userdata("user_id");
                     <div class="panel-footer">
                         <div class="row">
                             <div class="col-md-5">
-                                <a href="<?=site_url('blogs/like?blog_id='.$row->id. '&redirect2='.  current_url() )?>" class="btn btn-<?=$clor?> btn-md" data-toggle="tooltip" data-placement="top" title="<?=$txt?>">
+                                <span id="<?=$row->id?>" class="r">
+                                <button onclick="<?=$func?>(<?=$row->id?>)" class="btn btn-<?=$clor?> btn-md a" data-toggle="tooltip" data-placement="top" title="<?=$txt?>">
                                     <span class="glyphicon glyphicon-star" aria-hidden="true"></span> &nbsp;
                                     <span class="badge"><?=$like_count->like_count ?></span>
-                                </a>&nbsp;
+                                </button>&nbsp;
+                                </span>
                                 <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target=".share<?= $row->id ?>">
                                     <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> &nbsp;
                                     <span class="badge">Share</span>
@@ -122,8 +127,8 @@ $user_id = $this->session->userdata("user_id");
                 <!--Blog Share MODAL ends-->
 
 
-                <?php
-            }
+            <?php
+                }
             ?>
 
             <!--Loop Ends-->
@@ -139,3 +144,31 @@ echo $this->session->flashdata('submit_msg');
 <!-- Place this tag in your head or just before your close body tag. -->
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 
+<script>
+function log(blog_id)
+{
+    var xmlhttp;
+    if (window.XMLHttpRequest)
+    {// code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp=new XMLHttpRequest();
+    }
+    else
+    {// code for IE6, IE5
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange=function()
+    {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200)
+        {
+            document.getElementById(blog_id).innerHTML=xmlhttp.responseText;
+        }
+    }
+    xmlhttp.open("GET","<?=site_url('blogs/like')?>"+'?blog_id='+blog_id,true);
+    xmlhttp.send();
+}
+
+function notlog(blog_id)
+{
+    location.href="<?=site_url('blogs/like_notlog/recent_blogs')?>"+"?blog_id="+blog_id;
+}
+</script>

@@ -107,6 +107,22 @@ class Blogs extends CI_Controller {
 
     public function like() {
 
+        $blog_id = $this->input->get("blog_id");
+        $user_id = $this->session->userdata("user_id");
+
+        $num = $this->db->query("select * from blog_likes where blog_id = '$blog_id' and user_id = '$user_id'");
+        if ($num->num_rows() == 0)
+            $this->db->query("insert into blog_likes (blog_id,user_id) VALUES ('$blog_id', '$user_id')");
+        else
+            $this->db->query("delete from blog_likes where blog_id = '$blog_id' and user_id = '$user_id'");
+    
+        $likes['blogid'] = $blog_id;
+        $likes['userid'] = $user_id;
+        $this->load->view('pages/blogs/likes',$likes);
+    }
+
+    public function like_notlog($cu)
+    {
         if ($this->session->userdata('loggedin') != 1) //student/user/admin logged in
             redirect('users?redirect=' . current_url() . "?" . $_SERVER['QUERY_STRING']);
 
@@ -119,10 +135,13 @@ class Blogs extends CI_Controller {
         else
             $this->db->query("delete from blog_likes where blog_id = '$blog_id' and user_id = '$user_id'");
              
-        if (isset($_REQUEST['redirect2']) && $_REQUEST['redirect2'] != "") //anyone wants to get back            
-            redirect($_REQUEST['redirect2']);
+        if($cu=='read_blogs')
+            redirect('blogs'.'/'.$cu.'?blog_id='.$blog_id);
+        else            
+            redirect('blogs'.'/'.$cu);
+            /*
         else
-            redirect('blogs/recent_blogs');
+            redirect('blogs/recent_blogs');*/
     }
-
+    
 }

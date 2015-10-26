@@ -2170,8 +2170,62 @@ class Upgrade extends CI_Controller {
         array_push($u->updates, "ALTER TABLE `ebooks` ADD `Author` VARCHAR(60);");
         array_push($update_list, $u);
         unset($u);
-		
 
+		$u = new update;
+        $u->version = 5.2;
+        array_push($u->updates, "CREATE TABLE IF NOT EXISTS `hostel_allocation` (
+		`Id` int(11) NOT NULL AUTO_INCREMENT,
+		`hostel_name` text NOT NULL,
+		`link` text NOT NULL,
+		`year` text NOT NULL,
+		PRIMARY KEY (`Id`)
+		) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;");
+        array_push($u->updates, "INSERT INTO `hostel_allocation` (`Id`, `hostel_name`, `link`, `year`) VALUES
+		(1, 'Birsa Munda Boys Hostel', 'resources/hostel_allocation/BirsaMundaHostel.pdf', '2015'),
+		(2, 'Guru Ghasi Das Boys Hostel', 'resources/hostel_allocation/GuruGhasiDas.pdf', '2015'),
+		(3, 'Maha Maya Girls Hostel', 'resources/hostel_allocation/Maha Maya Girls Hostel_15July15.pdf', '2015'),
+		(4, 'Ram Saran Das Boys Hostel', 'resources/hostel/allocation/Ram Saran Das Hostel_15July15.pdf', '2015'),
+		(5, 'Rani Laxmi Bai Girls Hostel', 'resources/hostel_allocation/Rani Laxmi Bai Girls Hostel_15July15.pdf', '2015'),
+		(6, 'Sant Kabir Das Boys Hostel', 'resources/hostel_allocation/Sant Kabir Das Hostel_15July2015.pdf', '2015'),
+		(7, 'Sant Ravidas Boys Hostel', 'resources/hostel_allocation/Sant Ravidas Hostel_15July2015.pdf', '2015'),
+		(8, 'Shri Chatarpati Sahu ji Maharaj Boys Hostel', 'resources/hostel_allocation/Shri Chatarpati Sahu ji Maharaj Hostel_15July15.pdf', '2015'),
+		(9, 'Shri Narayan Guru Boys Hostel', 'resources/hostel_allocation/Shri Narayan Guru Hostel-15July15.pdf', '2015'),
+		(10, 'Tulsidas Boys Hostel', 'resources/hostel_allocation/Tulsidas Hostel_15July15.pdf', '2015');
+		");
+        array_push($update_list, $u);
+        unset($u);
+		
+		       
+        $u = new update;
+        $u->version = 5.3;
+        array_push($u->updates, "CREATE TABLE IF NOT EXISTS `romm_change` (
+		`id` int(60) NOT NULL AUTO_INCREMENT,
+		`UserName` varchar(60) NOT NULL,
+		`userid` varchar(60) NOT NULL,
+		`branch` varchar(60) NOT NULL,
+		`alloted_room` varchar(60) NOT NULL,
+		`requested_room` varchar(60) NOT NULL,
+		`status` int(11) NOT NULL,
+		`owner` varchar(60) NOT NULL,
+		PRIMARY KEY (`id`)
+		) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+		");
+        array_push($update_list,$u);
+        unset($u);
+		       
+        $u = new update;
+        $u->version = 5.4;
+        array_push($u->updates, " ALTER TABLE `h_notice`  ADD `link` TEXT NOT NULL  AFTER `title`;");
+        array_push($update_list,$u);
+        unset($u);
+		
+        $u = new update;
+        $u->version = 5.5;
+        array_push($u->updates, "UPDATE `gbuonline`.`h_notice` SET `link` = 'resources/h_notices/holidays-2015.pdf' WHERE `h_notice`.`id` = 1;");
+        array_push($update_list,$u);
+        unset($u);
+
+		//Don't edit after this line
         $this->run_upgrades($update_list);
         redirect("login" . "?" . $_SERVER['QUERY_STRING']);
     }
