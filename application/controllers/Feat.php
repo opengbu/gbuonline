@@ -125,6 +125,26 @@ class Feat extends CI_Controller {
 		$this->load->view('pages/common/extras');
 		$this->load->view('pages/common/footer');
 	}
+	public function validate_feedback() 
+	{    
+		$this->load->helper(array('form', 'url'));
+
+        $this->load->library('form_validation');
+
+        $this->form_validation->set_rules("name", "Name", "required|alpha");
+		$this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[users.email]');
+		$this->form_validation->set_rules('subject', 'Subject', 'required|min_length[5]');
+		$this->form_validation->set_rules('message', 'Message', 'required|max_length[150]');
+		
+	if ($this->form_validation->run() == FALSE)
+		{
+			$this->feedback();
+		}
+		else
+		{
+			$this->save_feedback();
+		}
+    } 
 	
 	public function save_feedback() {
         $this->load->model('feedback_model');

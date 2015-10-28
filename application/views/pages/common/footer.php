@@ -1,5 +1,7 @@
 	</div> <!--for container fluid opened in link.php-->
 
+	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Aguafina+Script" />
+		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz" />
     <style>
 
         footer {
@@ -10,6 +12,15 @@
 			z-index: 100; 
 			background-color: #2D2D2D;
         }
+	q {
+  quotes: "“" "”" "‘" "’";
+}
+q:before {
+    content: open-quote;
+}
+q:after {
+    content: close-quote;
+}
     </style>
 
 
@@ -31,13 +42,21 @@
                     <div class="modal fade bs-example-modal-lg-2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-lg">
                             <div class="modal-content">
-                                <center> 
+                                <center>
+								<h2 style="font-family: Yanone Kaffeesatz;margin-bottom:-20px"> OUR VISION</h2>
+					
                                     <hr/>
-                                    &nbsp;GBU Online is built with the vision
+                                    &nbsp;<blockquote><h3 style="font-family:Aguafina Script;margin-top:-35px">"GBU Online is built with the vision
                                     of helping students and teachers to get all information about the university on a 
                                     single platform. Now there's no need to rush over the whole  511 acre campus for any information. All you need is an internet connection
-                                    and everything is at your device's screen. Be it exam papers, information regarding any event or your hostel/mess related activities, GBU Online is Packed with everything.
-                                    <hr/>
+                                    and everything is at your device's screen. Be it exam papers, information regarding any event or your hostel/mess related activities, GBU Online is Packed with everything."
+                                    </h3></blockquote>
+								
+								<h2 style="font-family: Yanone Kaffeesatz;margin-bottom:-20px">OUR MISSION</h2>
+								<hr/>
+                                    &nbsp;<blockquote><h3 style="font-family:Aguafina Script;margin-top:-35px">"In pursuance of its vision and guiding principles, the Tata Institute of Social Sciences organises teaching programmes to facilitate the development of competent and committed professionals for practice, research and teaching; undertakes research; develops and disseminates knowledge; and reaches out to the larger community through extension, at the local, national, regional and international levels."
+                                    </h3></blockquote>
+								
                                 </center>
 
                             </div>
