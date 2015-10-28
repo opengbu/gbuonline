@@ -12,26 +12,35 @@ $this->load->library('form_validation');
           <div class="container">
 <div class="row">
   
-  <form role="form" action="<?php echo site_url('feat/save_feedback'); ?>" method="POST" >
+  <form role="form" action="<?php echo site_url('feat/validate_feedback'); ?>" method="POST" >
     <div class="col-lg-6">
       <div class="form-group">
+	 
         <label for="InputName">Your Name</label>
-        <div class="input-group">
-          <input type="text" value="<?php echo set_value('name'); ?>" class="form-control" name="name" id="InputName" placeholder="Enter Name" required>
+        
+		<div class="input-group">
+		
+          <input type="text" value="<?php echo set_value('name'); ?>" class="form-control" name="name" id="InputName" placeholder="Enter Name">
+		  
           <span class="input-group-addon"></span></div>
+		 
       </div>
+		 <?php echo form_error('name'); ?>
+		
       <div class="form-group">
         <label for="InputEmail">Your Email</label>
         <div class="input-group">
-          <input type="email" value="<?php echo set_value('email'); ?>" class="form-control" id="InputEmail" name="email" placeholder="Enter Email" required  >
+          <input type="email" value="<?php echo set_value('email'); ?>" class="form-control" id="InputEmail" name="email" placeholder="Enter Email"   >
           <span class="input-group-addon"></span></div>
       </div>
+	  <?php echo form_error('email'); ?>
 	  <div class="form-group">
         <label for="InputMessage">Subject</label>
         <div class="input-group">
-		<input type="text" value="<?php echo set_value('subject'); ?>" class="form-control" name="subject" id="InputName" placeholder="Enter Subject" required>
+		<input type="text" value="<?php echo set_value('subject'); ?>" class="form-control" name="subject" id="InputName" placeholder="Enter Subject" >
           <span class="input-group-addon"></span></div>
       </div>
+	  <?php echo form_error('subject'); ?>
 	  <div class="form-group">
         <label for="InputMessage">Category</label>
         <div class="input-group">
@@ -47,14 +56,16 @@ $this->load->library('form_validation');
       <div class="form-group">
         <label for="InputMessage">Message</label>
         <div class="input-group">
-		<textarea name="message" value="<?php echo set_value('message'); ?>"  id="InputMessage" class="form-control" rows="5" placeholder="Enter Message" required></textarea>
+		<textarea name="message" value="<?php echo set_value('message'); ?>"  id="InputMessage" class="form-control" rows="5" placeholder="Enter Message" ></textarea>
           <span class="input-group-addon"></span></div>
       </div>
+	  <?php echo form_error('message'); ?>
 	  <br>
       <div  style="margin-left:px;" >
      <input style="width:100px;" type="submit" name="submit" id="submit" value="Submit" class="btn btn-primary">
 	  </div>
     </div>
+	
   </form>
   <hr class="featurette-divider hidden-lg">
   <div class="col-lg-5 col-md-push-1">
