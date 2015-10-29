@@ -1,3 +1,12 @@
+<style>
+#img_centre
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
+    max-width:1100px;
+}
+</style>
 <?php
 /*
  * Note by Varun...
@@ -20,7 +29,7 @@ $school = $school_q->row();
 		
 		<div class="row">
 			<center><h2><span class="label label-default"><?= $row->article_name ?></span></h2></center><br/><br/>
-            <img src="<?php echo base_url($row->image_path) ?>" alt="code-in-gbu" width="100%">
+            <img src="<?php echo base_url($row->image_path) ?>" alt="Event Poster" id="img_centre">
             <hr>
 		</div>
 		
