@@ -139,9 +139,6 @@ class Blogs extends CI_Controller {
             redirect('blogs'.'/'.$cu.'?blog_id='.$blog_id);
         else            
             redirect('blogs'.'/'.$cu);
-            /*
-        else
-            redirect('blogs/recent_blogs');*/
     }
     
 }
