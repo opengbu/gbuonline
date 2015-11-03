@@ -73,7 +73,7 @@
                         <?php
                          $read = strip_tags($row->description);
                          $replace = str_replace("&nbsp;","",$read);
-                         echo substr($replace, 0, 458);
+                         echo substr($replace, 0, 500);
                          ?> ... 
                         <a href="<?php echo site_url('blogs/read_blogs?blog_id=' . $row->id) ?>">Read More</a><br>
 
