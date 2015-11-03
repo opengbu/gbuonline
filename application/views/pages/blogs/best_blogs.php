@@ -70,7 +70,11 @@
                                 </a></b></h3>
                     </div>
                     <div class="panel-body" style="text-align: justify;">
-                        <?= substr($row->description, 0, 463) ?> ... 
+                        <?php
+                         $read = strip_tags($row->description);
+                         $replace = str_replace("&nbsp;","",$read);
+                         echo substr($replace, 0, 458);
+                         ?> ... 
                         <a href="<?php echo site_url('blogs/read_blogs?blog_id=' . $row->id) ?>">Read More</a><br>
 
                     </div>
@@ -78,22 +82,22 @@
                         <div class="row">
                             <div class="col-md-5">
                                 <span id="<?=$row->id?>" class="r">
-                                <button onclick="<?=$func?>(<?=$row->id?>)" class="btn btn-<?=$clor?> btn-md a" data-toggle="tooltip" data-placement="top" title="<?=$txt?>">
+                                <button onclick="<?=$func?>(<?=$row->id?>)" class="btn btn-sm btn-<?=$clor?> btn-md a" data-toggle="tooltip" data-placement="top" title="<?=$txt?>">
                                     <span class="glyphicon glyphicon-star" aria-hidden="true"></span> &nbsp;
                                     <span class="badge"><?=$like_count->like_count ?></span>
                                 </button>&nbsp;
                                 </span>
-                                <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target=".share<?= $row->id ?>">
+                                <button type="button" class="btn btn-sm btn-primary btn-md" data-toggle="modal" data-target=".share<?= $row->id ?>">
                                     <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> &nbsp;
                                     <span class="badge">Share</span>
                                 </button>&nbsp;
-                                <button type="button" class="btn btn-primary btn-md" onclick="location.href='<?php echo site_url('blogs/read_blogs?blog_id=' .$row->id.'#koment')?>'"> 
+                                <button type="button" class="btn btn-sm btn-primary btn-md" onclick="location.href='<?php echo site_url('blogs/read_blogs?blog_id=' .$row->id.'#koment')?>'"> 
                                     <span class="glyphicon glyphicon-comment" aria-hidden="true"></span> &nbsp;
                                     <span class="badge"><a href="<?php echo site_url('blogs/read_blogs?blog_id=' . $row->id) ?>#disqus_thread" data-disqus-identifier="blog_<?= $row->id ?>"></a></span>
                                 </button>
                             </div>
                             <div class="col-md-7" style="text-align: right;">
-                                <button type="button" class="btn btn-primary btn-md"><span><?= $row->full_name ?></span> &nbsp;
+                                <button type="button" class="btn btn-sm btn-primary btn-md"><span style="font-size:13px;"><?= $row->full_name ?></span> &nbsp;
                                     <?php
                                     if ($row->roll_number != NULL) {
                                         ?>

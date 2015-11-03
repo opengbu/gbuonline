@@ -51,7 +51,7 @@ foreach ($content->result() as $row) {
     ?>
     <div class="col-sm-4">
         <center>
-            <img src="<?php echo base_url($row->profile_picture) ?>"  width="120" style="height: 150px;"/><br><b><?= $row->full_name ?></b>
+            <img src="<?php echo $this->cdn->res_url($row->profile_picture) ?>"  width="120" style="height: 150px;"/><br><b><?= $row->full_name ?></b>
 			<?php if($row->type=='cm')
 			{
 				echo "<br/>(Content Head)";
