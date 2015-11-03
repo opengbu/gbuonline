@@ -2110,68 +2110,58 @@ class Upgrade extends CI_Controller {
         unset($u);
 
         $u = new update;
-        $u->version = 4.5;
-        array_push($u->updates, "ALTER TABLE `users` ADD `flag` BOOLEAN NOT NULL DEFAULT FALSE ;");
+        $u->version = 4.6;
+        array_push($u->updates, "CREATE TABLE IF NOT EXISTS `logs` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `time` time NOT NULL,
+  `action` text NOT NULL,
+ PRIMARY KEY (`id`))");
         array_push($update_list, $u);
         unset($u);
 
         $u = new update;
-        $u->version = 4.6;
-        array_push($u->updates, "ALTER TABLE `users` drop `flag`");
-        array_push($u->updates, "CREATE TABLE IF NOT EXISTS `logs` (
-  `id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `date` date NOT NULL,
-  `time` time NOT NULL,
-  `action` text NOT NULL
-)");
-        array_push($u->updates, "ALTER TABLE `logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;");
-
-        array_push($update_list, $u);
-        unset($u);
-		
-		$u = new update;
         $u->version = 4.7;
         array_push($u->updates, "delete from blog where id=17 OR id=27;");
         array_push($update_list, $u);
         unset($u);
-		
-		$u = new update;
+
+        $u = new update;
         $u->version = 4.8;
         array_push($u->updates, " UPDATE `placements` SET `Link` = 'resources/placements/p2015.pdf' WHERE `placements`.`ID` = 2;");
-		array_push($u->updates, " UPDATE `placements` SET `Link` = 'resources/placements/p2014.pdf' WHERE `placements`.`ID` = 4;");
-		array_push($u->updates, " UPDATE `placements` SET `Link` = 'resources/placements/p2013.pdf' WHERE `placements`.`ID` = 5;");
-		array_push($u->updates, " UPDATE `placements` SET `Link` = 'resources/placements/p2012.pdf' WHERE `placements`.`ID` = 6;");
-		array_push($u->updates, " UPDATE `placements` SET `Link` = 'resources/placements/p2011.pdf' WHERE `placements`.`ID` = 7;");
-		array_push($u->updates, " UPDATE `placements` SET `Link` = 'resources/placements/p2010.pdf' WHERE `placements`.`ID` = 8;");
+        array_push($u->updates, " UPDATE `placements` SET `Link` = 'resources/placements/p2014.pdf' WHERE `placements`.`ID` = 4;");
+        array_push($u->updates, " UPDATE `placements` SET `Link` = 'resources/placements/p2013.pdf' WHERE `placements`.`ID` = 5;");
+        array_push($u->updates, " UPDATE `placements` SET `Link` = 'resources/placements/p2012.pdf' WHERE `placements`.`ID` = 6;");
+        array_push($u->updates, " UPDATE `placements` SET `Link` = 'resources/placements/p2011.pdf' WHERE `placements`.`ID` = 7;");
+        array_push($u->updates, " UPDATE `placements` SET `Link` = 'resources/placements/p2010.pdf' WHERE `placements`.`ID` = 8;");
         array_push($update_list, $u);
         unset($u);
-		
-		$u = new update;
+
+        $u = new update;
         $u->version = 4.9;
-		array_push($u->updates, "update users set profile_picture = 'resources/images/default-user.png' where profile_picture = ''");
+        array_push($u->updates, "update users set profile_picture = 'resources/images/default-user.png' where profile_picture = ''");
         array_push($u->updates, "ALTER TABLE `users` CHANGE `profile_picture` `profile_picture` VARCHAR(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL DEFAULT 'resources/images/default-user.png';");
         array_push($update_list, $u);
         unset($u);
-		
-		$u = new update;
+
+        $u = new update;
         $u->version = 5.0;
-		array_push($u->updates, "ALTER TABLE `stu_chapters` ADD `Image` VARCHAR(80) NOT NULL ;");
+        array_push($u->updates, "ALTER TABLE `stu_chapters` ADD `Image` VARCHAR(80) NOT NULL ;");
         array_push($u->updates, "UPDATE `stu_chapters` SET `Image`= 'resources/images/HackerEarth.jpg 'WHERE Title = 'HackerEarth \"CODE IN GBU\"';");
         array_push($u->updates, "UPDATE `stu_chapters` SET `Image`= 'resources/images/Codechef.jpg 'WHERE Title = 'Codechef-GBU Campus Chapter';");
-		array_push($u->updates, "UPDATE `stu_chapters` SET `Image`= 'resources/images/IEEE.jpg 'WHERE Title = 'IEEE-GBU Student Branch';");
-		array_push($update_list, $u);
+        array_push($u->updates, "UPDATE `stu_chapters` SET `Image`= 'resources/images/IEEE.jpg 'WHERE Title = 'IEEE-GBU Student Branch';");
+        array_push($update_list, $u);
         unset($u);
-		
-		$u = new update;
+
+        $u = new update;
         $u->version = 5.1;
-		array_push($u->updates, "ALTER TABLE `ebooks` CHANGE `book_info` `book_link` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;");
+        array_push($u->updates, "ALTER TABLE `ebooks` CHANGE `book_info` `book_link` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;");
         array_push($u->updates, "ALTER TABLE `ebooks` ADD `Author` VARCHAR(60);");
         array_push($update_list, $u);
         unset($u);
 
-		$u = new update;
+        $u = new update;
         $u->version = 5.2;
         array_push($u->updates, "CREATE TABLE IF NOT EXISTS `hostel_allocation` (
 		`Id` int(11) NOT NULL AUTO_INCREMENT,
@@ -2194,8 +2184,8 @@ class Upgrade extends CI_Controller {
 		");
         array_push($update_list, $u);
         unset($u);
-		
-		       
+
+
         $u = new update;
         $u->version = 5.3;
         array_push($u->updates, "CREATE TABLE IF NOT EXISTS `romm_change` (
@@ -2210,22 +2200,31 @@ class Upgrade extends CI_Controller {
 		PRIMARY KEY (`id`)
 		) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 		");
-        array_push($update_list,$u);
+        array_push($update_list, $u);
         unset($u);
-		       
+
         $u = new update;
         $u->version = 5.4;
         array_push($u->updates, " ALTER TABLE `h_notice`  ADD `link` TEXT NOT NULL  AFTER `title`;");
-        array_push($update_list,$u);
+        array_push($update_list, $u);
         unset($u);
-		
+
         $u = new update;
         $u->version = 5.5;
         array_push($u->updates, "UPDATE `gbuonline`.`h_notice` SET `link` = 'resources/h_notices/holidays-2015.pdf' WHERE `h_notice`.`id` = 1;");
-        array_push($update_list,$u);
+        array_push($update_list, $u);
         unset($u);
 
-		//Don't edit after this line
+        $u = new update;
+        $u->version = 5.6;
+        array_push($u->updates, "ALTER TABLE `events` CHANGE `article_name` `title` VARCHAR(150) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL; ");
+        array_push($u->updates, "ALTER TABLE `events` CHANGE `article` `description` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL; ");
+        array_push($u->updates, "ALTER TABLE `events` CHANGE `publishing_date` `event_date` DATE NOT NULL;");
+        array_push($u->updates, "ALTER TABLE upcoming_events RENAME TO featured_events;");
+        array_push($update_list, $u);
+        unset($u);
+
+        //Don't edit after this line
         $this->run_upgrades($update_list);
         redirect("login" . "?" . $_SERVER['QUERY_STRING']);
     }

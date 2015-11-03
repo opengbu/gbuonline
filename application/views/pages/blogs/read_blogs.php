@@ -49,23 +49,23 @@ $numb = $this->db->query("select * from blog_likes where blog_id = '$blog_id' an
                 <div class="row"> 
                     <div class="col-md-4">
                         <span id="<?=$result->id?>" class="r">
-                                <button onclick="<?=$func?>(<?=$result->id?>)" class="btn btn-<?=$clor?> btn-md a" data-toggle="tooltip" data-placement="top" title="<?=$txt?>">
+                                <button onclick="<?=$func?>(<?=$result->id?>)" class="btn btn-sm btn-<?=$clor?> btn-md a" data-toggle="tooltip" data-placement="top" title="<?=$txt?>">
                                     <span class="glyphicon glyphicon-star" aria-hidden="true"></span> &nbsp;
                                     <span class="badge"><?=$like_count->like_count ?></span>
                                 </button>&nbsp;
                         </span>
 
-                        <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target=".share">
+                        <button type="button" class="btn btn-sm btn-primary btn-md" data-toggle="modal" data-target=".share">
                             <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> &nbsp;
                             <span class="badge">Share</span>
                         </button>&nbsp;
-                        <button type="button" class="btn btn-primary btn-md" onclick="location.href='#koment'">
+                        <button type="button" class="btn btn-sm btn-primary btn-md" onclick="location.href='#koment'">
                             <span class="glyphicon glyphicon-comment" aria-hidden="true"></span> &nbsp;
                             <span class="badge"><a href="<?php echo site_url('blogs/read_blogs?blog_id=' . $result->id) ?>#disqus_thread" data-disqus-identifier="blog_<?= $result->id ?>"></a></span>
                         </button>
                     </div>
                     <div class="col-md-8" style="text-align: right;  ">
-                        <button type="button" class="btn btn-primary btn-md"><span><?= $result->full_name ?></span> &nbsp;
+                        <button type="button" class="btn btn-sm btn-primary btn-md"><span style="font-size:13px;"><?= $result->full_name ?></span> &nbsp;
                             <?php
                             if ($result->roll_number != NULL) {
                                 ?>

@@ -16,7 +16,7 @@
 	}
 ?>
 
-<button onclick="log(<?=$blogid?>)" class="btn btn-<?=$clor?> btn-md a" data-toggle="tooltip" data-placement="top" title="<?=$txt?>">
+<button onclick="log(<?=$blogid?>)" class="btn btn-sm btn-<?=$clor?> btn-md a" data-toggle="tooltip" data-placement="top" title="<?=$txt?>">
     <span class="glyphicon glyphicon-star" aria-hidden="true"></span> &nbsp;
     <span class="badge"><?=$like_count->like_count ?></span>
 </button>&nbsp;
