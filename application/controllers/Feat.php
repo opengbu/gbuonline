@@ -166,9 +166,13 @@ class Feat extends CI_Controller {
 	}
 	public function downloads()
 	{
-        $data['title'] = 'Downloads &nbsp;|&nbsp;  GBU Online';
+		$this->load->helper('text');
+	   $data['title'] = 'Downloads &nbsp;|&nbsp;  GBU Online';
 		$data['heading'] ='Downloads';
 		$data['message'] = '';
+		if(null != $this->input->get("query"))
+		$data['query'] = $this->input->get("query");
+		else $data['query'] = '';
 		$this->load->view('pages/common/link',$data);
 		$this->load->view('pages/common/header');
 		$this->load->view('pages/common/page-heading',$data);
@@ -176,6 +180,7 @@ class Feat extends CI_Controller {
 		$this->load->view('pages/common/extras');
 		$this->load->view('pages/common/footer');
 	}
+	
 	public function student_chapters()
 	{
         $data['title'] = 'Student Chapters &nbsp;|&nbsp;  GBU Online';
