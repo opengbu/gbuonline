@@ -1,8 +1,9 @@
 <div class = "row"><!--row1 for header-->
 
-
-    <nav class="navbar navbar-inverse navbar navbar-fixed-top" >
-
+<div class="navbar-sm">
+      <div class="navbar-primary">
+                <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+           
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -148,6 +149,8 @@
             </ul>
         </div>
     </nav>
+      </div>
+</div>
 </div><!--row1 for header-->
 
 <style>

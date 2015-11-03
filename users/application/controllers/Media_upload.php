@@ -39,7 +39,20 @@ class Media_upload extends CI_Controller {
             $data = $this->upload->data();
             $file_name = $data['file_name'];
             $this->logger->insert("Uploaded file /user_uploads/" . $this->input->post('directory') . '/' . $file_name);
-            redirect('manage_uploads');
+            echo $this->load->view('common/header', '', TRUE);
+            ?>
+            <div class="col-sm-6 col-md-6">
+			<div class="alert alert-success centered-form">
+
+                    <span class="glyphicon glyphicon-ok"></span> <strong>Success</strong>
+                    <hr class="message-inner-separator">
+					Image successfully Uploaded
+                    <p>
+                    </p>
+                </div>
+            </div>
+			<?php
+            echo $this->load->view('common/footer', '', TRUE);
         } else {
             $error = array('error' => $this->upload->display_errors());
             $this->load->view('common/header');
