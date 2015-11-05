@@ -1,6 +1,13 @@
 <link rel="stylesheet" href="<?php echo $this->cdn->res_url() . 'users/application/views/common/' . 'css/bootstrap-select.min.css' ?>">
 <script type="text/javascript" src="<?php echo $this->cdn->res_url() . 'users/application/views/common/' . 'js/bootstrap-select.min.js' ?>"></script>
 
+<style>
+.feat_event
+{
+    background-color: #F2F2F2;
+}
+</style>
+
 <!--script to display the selected option-->
 <script>
 
@@ -99,6 +106,7 @@
                 </div>
                 <div class="panel-body">
                     <?php
+                        date_default_timezone_set("Asia/Kolkata");
                         $feat_event_q = $this->db->query("SELECT * FROM events, featured_events WHERE events.id = featured_events.event_id AND event_date >= '" . date('Y-m-d') . "' ");
                     
                         foreach($feat_event_q->result() as $fe)
@@ -106,8 +114,8 @@
 
                     ?>
                         <div class = "col-md-4">
-                            <div class = "thumbnail" style="height:350px;">
-                                <a href = "<?php echo site_url('feat/read_events?id=' . $fe->id) ?>">
+                            <div class = "thumbnail feat_event" style="height:350px;">
+                                <a href = "<?php echo site_url('feat/read_events?id=' . $fe->event_id) ?>">
                                     <img src = "<?php echo base_url($fe->image_path) ?>" alt = "poster" style="max-height:200px; width:100%;">
                                 </a>
                                 <div class = "caption">
@@ -172,7 +180,6 @@
 
 
                     <?php
-                    date_default_timezone_set("Asia/Kolkata");
                     $original_q = "select id, title, short_desc, image_path, event_date from events where event_date < '" . date('Y-m-d') . "' ";
 
                     $past_events = $this->db->query($original_q . $condition_q . " order by event_date desc");

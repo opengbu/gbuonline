@@ -54,16 +54,18 @@ $school_details = $sc_query->row();
                 </div>
                 <div class="panel-body">
                     <?php
-						$event_query = $this->db->query("SELECT article_name, short_desc, image_path FROM events WHERE school = '$school_name'");
+						$event_query = $this->db->query("SELECT id, title, short_desc, image_path FROM events WHERE school = '$school_name' order by event_date desc");
 						foreach($event_query->result() as $row)
 						{
 					?>
 					
 					<div class="col-md-4" >
                         <div class="thumbnail" style="height:350px"> 
-                            <img src="<?php echo base_url($row->image_path) ?>" alt="">
+                            <a href = "<?php echo site_url('feat/read_events?id=' . $row->id) ?>">
+                                <img src="<?php echo base_url($row->image_path) ?>" alt="">
+                            </a>
                             <div class="caption">
-                                <h3><center><b><?= $row->article_name ?></b></center></h3>
+                                <h3><center><b><?= $row->title ?></b></center></h3>
                                 <?= $row->short_desc ?>
                                 <p></p>
                                 <!--<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>-->
