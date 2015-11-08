@@ -183,7 +183,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                             <li ><a href="<?= base_url() . 'Events' ?>">All Events <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-tasks fa-2x"></i></a></li>
                             <li ><a href="<?= base_url() . 'Events/CreateOrUpdate' ?>">New Event <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-plus-square fa-2x"></i></a></li>
-                            <li ><a href="<?php echo base_url() . 'manage_upcoming' ?>">Manage Upcoming Events <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-road fa-2x"></i></a></li>
+                            <li ><a href="<?php echo base_url() . 'featured_events' ?>">Featured Events <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-road fa-2x"></i></a></li>
 
                             <li ><a href="<?php echo base_url() . 'Ebooks' ?>">Ebooks <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-th-list fa-2x"></i></a></li>
                             <li ><a href="<?php echo base_url() . 'Ebooks/CreateOrUpdate' ?>" >New Ebook<i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-plus-square fa-2x"></i></a></li>

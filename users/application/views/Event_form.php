@@ -30,10 +30,10 @@ function add_prefix(&$item1, $key, $prefix) {
     ?>
 
     <label>Title</label>
-    <input type="text" name="article_name" class="form-control" value="<?php echo set_value('article_name', @$article_name); ?>">
+    <input type="text" name="title" class="form-control" value="<?php echo set_value('title', @$title); ?>">
     <br />
     <label>Description</label>
-    <textarea value="" name="article" class="jqte-test"  ><?php echo set_value('article', @$article); ?></textarea>
+    <textarea value="" name="description" class="jqte-test"  ><?php echo set_value('description', @$description); ?></textarea>
     <br />
     <label>Short description</label>
     <textarea  name="short_desc" class="jqte-test"><?php echo set_value('short_desc', @$short_desc); ?></textarea>
@@ -71,7 +71,11 @@ function add_prefix(&$item1, $key, $prefix) {
     <br /><br />
 
     <label>Event date  </label>
-    <input type="text" value="<?= date('Y-m-d'); ?>" name="publishing_date" class="form-control" />
+	<?php
+		if (isset($event_date)) $m_date = $event_date;
+		else 	$m_date = date('Y-m-d');
+	?>
+    <input type="text"  name="event_date" value="<?=set_value('event_date', @$event_date)?>" class="form-control" />
 
     <br />
     <?php

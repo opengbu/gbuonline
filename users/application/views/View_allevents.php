@@ -18,7 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     $current_user_id = $this->session->userdata('user_id');
     $current_user_type = $this->session->userdata('type');
 
-    $query2 = $this->db->query('select id,school,article_name,publishing_date,user_id from events');
+    $query2 = $this->db->query('select id,school,title,event_date,user_id from events');
     echo '<ul class="nav nav-list col-sm-12">';
     foreach ($query2->result() as $row2) {
         ?>
@@ -26,7 +26,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="row">
                 <div class="col-sm-4">
                     <?php
-                    echo $row2->article_name;
+                    echo $row2->title;
                     ?>
                 </div>
                 <div class="col-sm-2">
@@ -36,7 +36,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
                 <div class="col-sm-2">
                     <?php
-                    echo $row2->publishing_date;
+                    echo $row2->event_date;
                     ?>
                 </div>
                 <div class="col-sm-2">
