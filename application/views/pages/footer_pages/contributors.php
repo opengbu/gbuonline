@@ -48,10 +48,18 @@ function myFunction(arr) {
 <?php
 $content = $this->db->query("SELECT * FROM users WHERE type='cw' OR type = 'cm' ORDER BY type");
 foreach ($content->result() as $row) {
+    if(empty($row->profile_picture))
+    {
+        $pic = $this->cdn->res_url('resources/images/default-user.png');
+    }
+    else 
+    {
+        $pic = base_url($row->profile_picture);
+    }
     ?>
     <div class="col-sm-4">
         <center>
-            <img src="<?php echo $this->cdn->res_url($row->profile_picture) ?>"  width="120" style="height: 150px;"/><br><b><?= $row->full_name ?></b>
+            <img src="<?=$pic?>"  width="120" style="height: 150px;"/><br><b><?= $row->full_name ?></b>
 			<?php if($row->type=='cm')
 			{
 				echo "<br/>(Content Head)";

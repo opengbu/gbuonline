@@ -2260,6 +2260,13 @@ class Upgrade extends CI_Controller {
         array_push($update_list, $u);
         unset($u);
 
+        $u = new update;
+        $u->version = 5.9;
+        array_push($u->updates, "ALTER TABLE `users` CHANGE `profile_picture` `profile_picture` VARCHAR(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL;");
+        array_push($u->updates, "UPDATE users SET profile_picture = '' WHERE profile_picture = 'resources/images/default-user.png';");
+        array_push($update_list, $u);
+        unset($u);
+
         //Don't edit after this line
         $this->run_upgrades($update_list);
         redirect("login" . "?" . $_SERVER['QUERY_STRING']);
