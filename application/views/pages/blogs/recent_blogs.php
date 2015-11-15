@@ -51,12 +51,11 @@
                 $like_count = $like_count_q->row();
 				
 				$numb = $this->db->query("select * from blog_likes where blog_id = '$row->id' and user_id = '$user_id'");
-				if ($numb->num_rows() == 0)
-				{
-					$clor = "primary";
-					$txt = "Like this blog";
-				}
-				else
+				
+				$clor = "primary";
+				$txt = "Like this blog";
+					
+				if($this->session->userdata('loggedin') == 1 && $numb->num_rows() > 0)
 				{
 					$clor = "warning";
 					$txt = "Un-Like this blog";
