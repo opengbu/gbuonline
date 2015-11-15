@@ -20,16 +20,14 @@ $like_count_q = $this->db->query("select count(*) as like_count from blog_likes 
 $like_count = $like_count_q->row();
 
 $numb = $this->db->query("select * from blog_likes where blog_id = '$blog_id' and user_id = '$user_id'");
-        if ($numb->num_rows() == 0)
-		{
-			$clor = "primary";
-			$txt = "Like this blog";
-		}
-		else
-		{
-			$clor = "warning";
-			$txt = "Un-Like this blog";
-		}
+$clor = "primary";
+$txt = "Like this blog";
+                    
+if($this->session->userdata('loggedin') == 1 && $numb->num_rows() > 0)
+{
+    $clor = "warning";
+    $txt = "Un-Like this blog";
+}
 ?>
 <div class="container-fluid" style=" margin-right: 10px; margin-left: 10px;" >
     <div class="row">
