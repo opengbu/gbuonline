@@ -5,6 +5,14 @@
 	$(function () {
 	$('.r').tooltip({ selector: '.a' });
 	});
+
+    //activate the popovers
+    $(function () {
+    $('.r').popover({
+        selector: '.b',
+         html: true
+        });
+    });
 </script>
 
 <?php
@@ -60,6 +68,10 @@
 					$clor = "warning";
 					$txt = "Un-Like this blog";
 				}
+
+                $likers_q = $this->db->query("select users.full_name from users,blog_likes where users.user_id = blog_likes.user_id AND blog_id = '$row->id'");
+                $likers = $likers_q->result();
+                                
             ?>
                 
                 <div class="panel panel-danger">
@@ -79,23 +91,37 @@
                     </div>
                     <div class="panel-footer">
                         <div class="row">
-                            <div class="col-md-5">
+                            <div class="col-md-6">
                                 <span id="<?=$row->id?>" class="r">
                                 <button onclick="<?=$func?>(<?=$row->id?>)" class="btn btn-sm btn-<?=$clor?> btn-md a" data-toggle="tooltip" data-placement="top" title="<?=$txt?>">
                                     <span class="glyphicon glyphicon-star" aria-hidden="true"></span> &nbsp;
                                     <span class="badge"><?=$like_count->like_count ?></span>
                                 </button>&nbsp;
+                                
+                                <button type="button" class="btn btn-sm btn-primary btn-md b" data-toggle="popover"
+                                 data-placement="top" title="This blog is liked by :"
+                                 data-content="<?php
+                                                foreach($likers as $eachl)
+                                                {
+                                                    echo $eachl->full_name.'<br>';
+                                                }
+                                                ?>">
+                                    <span class="glyphicon glyphicon-signal" aria-hidden="true"></span> &nbsp;
+                                    <span class="badge">Likers</span>
+                                </button>&nbsp;
                                 </span>
+                                
                                 <button type="button" class="btn btn-sm btn-primary btn-md" data-toggle="modal" data-target=".share<?= $row->id ?>">
                                     <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> &nbsp;
                                     <span class="badge">Share</span>
                                 </button>&nbsp;
+                                
                                 <button type="button" class="btn btn-sm btn-primary btn-md" onclick="location.href='<?php echo site_url('blogs/read_blogs?blog_id=' .$row->id.'#koment')?>'"> 
                                     <span class="glyphicon glyphicon-comment" aria-hidden="true"></span> &nbsp;
                                     <span class="badge"><a href="<?php echo site_url('blogs/read_blogs?blog_id=' . $row->id) ?>#disqus_thread" data-disqus-identifier="blog_<?= $row->id ?>"></a></span>
                                 </button>
                             </div>
-                            <div class="col-md-7" style="text-align: right;">
+                            <div class="col-md-6" style="text-align: right;">
                                 <button type="button" class="btn btn-sm btn-primary btn-md"><span style="font-size:13px;"><?= $row->full_name ?></span> &nbsp;
                                     <?php
                                     if ($row->roll_number != NULL) {
