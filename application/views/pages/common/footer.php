@@ -1,3 +1,19 @@
+<!--last website update-->
+<script>
+var xmlhttp = new XMLHttpRequest();
+var url = "https://api.github.com/repos/opengbu/gbuonline";
+
+xmlhttp.onreadystatechange = function() {
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        var dt = JSON.parse(xmlhttp.responseText);
+        var date = dt.pushed_at.substring(0, 10);
+        document.getElementById("update_date").innerHTML = date;
+    }
+}
+xmlhttp.open("GET", url, true);
+xmlhttp.send();
+</script>
+
 	</div> <!--for container fluid opened in link.php-->
 
 	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Aguafina+Script" />
@@ -189,11 +205,13 @@ q:after {
 		<br/>
 		<hr style=" border: 0; height: 0; border-top: 1px solid rgba(0, 0, 0, 0.1); border-bottom: 1px solid rgba(255, 255, 255, 0.3);">
 			
-            <div class="col-md-12 text-center">
+        <div class="col-md-12 text-center" style = "color:white;">
                 
-                    <b><p style = "color:white;">&copy; OpenGBU, Inc.</p></b>
-              
+                    <span>Updated On : <span id ="update_date"></span></span>
+                    <b><p style="margin-top:15px;">&copy; OpenGBU, Inc.</p></b>
+                                 
        </div>
+            
         
 
     </footer>

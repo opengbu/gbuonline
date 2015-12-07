@@ -116,7 +116,7 @@
                         <div class = "col-md-4">
                             <div class = "thumbnail feat_event" style="height:350px;">
                                 <a href = "<?php echo site_url('feat/read_events?id=' . $fe->event_id) ?>">
-                                    <img src = "<?php echo base_url($fe->image_path) ?>" alt = "poster" style="max-height:200px; width:100%;">
+                                    <img src = "<?php echo base_url($fe->image_path) ?>" alt = "poster" style="height:155px; width:100%;">
                                 </a>
                                 <div class = "caption">
                                     <h3><center><b><?= $fe->title ?></b></center></h3>
@@ -152,7 +152,7 @@
                         <div class = "col-md-4">
                             <div class = "thumbnail" style="height:350px;">
                                 <a href = "<?php echo site_url('feat/read_events?id=' . $row->id) ?>">
-                                    <img src = "<?php echo base_url($row->image_path) ?>" alt = "poster" style="max-height:200px; width:100%;">
+                                    <img src = "<?php echo base_url($row->image_path) ?>" alt = "poster" style="height:155px; width:100%;">
                                 </a>
                                 <div class = "caption">
                                     <h3><center><b><?= $row->title ?></b></center></h3>
@@ -193,7 +193,7 @@
                         <div class = "col-md-4" >
                             <div class = "thumbnail" style="height:350px;">
                                 <a href = "<?php echo site_url('feat/read_events?id=' . $row->id) ?>">
-                                    <img src = "<?php echo base_url($row->image_path) ?>" alt = "poster" style="max-height:200px; width:100%;">
+                                    <img src = "<?php echo base_url($row->image_path) ?>" alt = "poster" style="height:155px; width:100%;">
                                 </a>
                                 <div class = "caption">
                                     <h3><center><b><?= $row->title ?></b></center></h3>

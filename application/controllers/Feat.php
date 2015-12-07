@@ -1,8 +1,8 @@
 
-<!--this controller contains functions that cannot be grouped with any category -->
-
 <?php   
 defined('BASEPATH') OR exit('No direct script access allowed');
+
+// this controller contains functions that cannot be grouped with any category
 
 class Feat extends CI_Controller {
 		

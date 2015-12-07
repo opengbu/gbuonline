@@ -24,9 +24,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
      <!--Per Day Average-->
     <br/><label style="font-size:20px;margin-left:30px;">Average:</label>   
     <?php
-    $x = $this->db->query("select count(distinct date) as avg from analysis");
-    $day_hits = $x->row();
-    echo "<font size='5'><b>" . $day_hits->avg . "</b></font>&nbsp;hits per day";
+    $x = $this->db->query("select count(distinct date) as days from analysis");
+    $num_days = $x->row();
+    $avg = round($hits->hits_count/$num_days->days, 2);
+    echo "<font size='5'><b>" . $avg . "</b></font>&nbsp;hits per day";
     ?>
 </div>
 <!--Hits Ends-->
