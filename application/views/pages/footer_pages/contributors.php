@@ -1,15 +1,15 @@
 <script>
-var xmlhttp = new XMLHttpRequest();
-var url = "https://api.github.com/repos/opengbu/gbuonline/contributors";
+var xmlhttp_contr = new XMLHttpRequest();
+var url_contr = "https://api.github.com/repos/opengbu/gbuonline/contributors";
 
-xmlhttp.onreadystatechange = function() {
-    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-        var myArr = JSON.parse(xmlhttp.responseText);
+xmlhttp_contr.onreadystatechange = function() {
+    if (xmlhttp_contr.readyState == 4 && xmlhttp_contr.status == 200) {
+        var myArr = JSON.parse(xmlhttp_contr.responseText);
         myFunction(myArr);
     }
 }
-xmlhttp.open("GET", url, true);
-xmlhttp.send();
+xmlhttp_contr.open("GET", url_contr, true);
+xmlhttp_contr.send();
 
 function myFunction(arr) {
     var out = "";

@@ -1,18 +1,3 @@
-<!--last website update-->
-<script>
-var xmlhttp = new XMLHttpRequest();
-var url = "https://api.github.com/repos/opengbu/gbuonline";
-
-xmlhttp.onreadystatechange = function() {
-    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-        var dt = JSON.parse(xmlhttp.responseText);
-        var date = dt.pushed_at.substring(0, 10);
-        document.getElementById("update_date").innerHTML = date;
-    }
-}
-xmlhttp.open("GET", url, true);
-xmlhttp.send();
-</script>
 
 	</div> <!--for container fluid opened in link.php-->
 
@@ -215,6 +200,22 @@ q:after {
         
 
     </footer>
+
+<!--last website update-->
+<script>
+var xmlhttp_date = new XMLHttpRequest();
+var url_date = "https://api.github.com/repos/opengbu/gbuonline";
+
+xmlhttp_date.onreadystatechange = function() {
+    if (xmlhttp_date.readyState == 4 && xmlhttp_date.status == 200) {
+        var dt = JSON.parse(xmlhttp_date.responseText);
+        var date = dt.pushed_at.substring(0, 10);
+        document.getElementById("update_date").innerHTML = date;
+    }
+}
+xmlhttp_date.open("GET", url_date, true);
+xmlhttp_date.send();
+</script>
 
 
 <!--disqus code for counting comments begins-->
