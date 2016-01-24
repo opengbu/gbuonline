@@ -75,7 +75,10 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="<?php echo base_url('alumni') ?>"style="text-decoration:none;"><font size="2"> <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>&nbsp;Alumni</font></a>	
+                    <a href="http://tech-league.me" target="_blank" style="text-decoration:none;"><font size="2"> <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>&nbsp;Alumni</font></a>	
+                </li>
+                <li>
+                    <a href="http://www.gbuonline.in/opengbu/result/webnew/student/details/homepage" target="_blank" style="text-decoration:none;"><font size="2"> <span class="glyphicon glyphicon-flash" aria-hidden="true"></span>&nbsp;Results</font></a>   
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><font size="2">
