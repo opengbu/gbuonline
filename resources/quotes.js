@@ -7,5 +7,10 @@ func([
 		{"quote":"The purpose of education is to replace an empty mind with an open one.", "author":"Malcolm Forbes"},
 		{"quote":"Our greatest weakness lies in giving up. The most certain way to succeed is always to try just one more time.", "author":"Thomas Edison"},
 		{"quote":"Give me six hours to chop down a tree and I will spend the first four sharpening the axe.", "author":"Abraham Lincoln"},
-		{"quote":"If you don’t build your dream, someone else will hire you to help them build theirs.", "author":"Dhirubhai Ambani"}
+		{"quote":"If you don’t build your dream, someone else will hire you to help them build theirs.", "author":"Dhirubhai Ambani"},
+		{"quote":"Life is what happens to you while you’re busy making other plans.", "author":"John Lennon"},
+		{"quote":"People will forget what you said, people will forget what you did, but people will never forget how you made them feel", "author":"Maya Angelou"},
+		{"quote":"The two most important days in your life are the day you are born and the day you find out why.", "author":"Mark Twain"},
+		{"quote":"Start where you are. Use what you have.  Do what you can.", "author":"Arthur Ashe"},
+		{"quote":"The meaning of life is to find your gift. The purpose of life is to give it away.", "author":"Pablo Picasso"}
 	])

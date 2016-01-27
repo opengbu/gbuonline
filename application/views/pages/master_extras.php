@@ -4,7 +4,7 @@
 							<img src="<?php echo $this->cdn->res_url('resources/images/cards/calendar-new-100-100f.png') ?>" alt="">
 						</a>
 					
-						<a href="<?php echo $this->cdn->res_url('resources/holidays-2015.pdf') ?>" class="thumbnail" target="_blank" style="text-decoration:none;">
+						<a href="<?php echo $this->cdn->res_url('resources/holidays.pdf') ?>" class="thumbnail" target="_blank" style="text-decoration:none;">
 							<img src="<?php echo $this->cdn->res_url('resources/images/cards/holiday-new-100-100f.png') ?>" alt="">			
 						</a>
 						

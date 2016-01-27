@@ -161,7 +161,7 @@ q:after {
 					<br/><br/>
              <a href="<?php echo site_url('feat/opportunities')?>" style="cursor:pointer;"><font color = "white"><b>Opportunities</b></font></a>
              <br/><br/>
-             <a href="<?php echo site_url('feat/open_source')?>" style="cursor:pointer;"><font color = "white"><b>Open-Source</b></font></a>             
+             <a href="<?php echo site_url('feat/open_source')?>" style="cursor:pointer;"><font color = "white"><b>Open-Source Cedits</b></font></a>             
                 
             </div>
 			

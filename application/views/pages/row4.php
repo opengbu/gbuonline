@@ -46,7 +46,7 @@
 					
 					<div class="row">
 					<div class="col-md-4">
-						<a href="<?php echo $this->cdn->res_url('resources/holidays-2015.pdf') ?>" class="thumbnail ahr" target="_blank">
+						<a href="<?php echo $this->cdn->res_url('resources/holidays.pdf') ?>" class="thumbnail ahr" target="_blank">
 							<img src="<?php echo $this->cdn->res_url('resources/images/cards/front/holiday-100-100.png') ?>" alt=""
 								onmouseover="this.src='<?php echo $this->cdn->res_url('resources/images/cards/front/holiday_text-100-100.png') ?>'"  
 								onmouseout="this.src='<?php echo $this->cdn->res_url('resources/images/cards/front/holiday-100-100.png') ?>'" >
