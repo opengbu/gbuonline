@@ -78,14 +78,14 @@
                     <a href="http://tech-league.me" target="_blank" style="text-decoration:none;"><font size="2"> <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>&nbsp;Alumni</font></a>	
                 </li>
                 <li>
-                    <a href="http://www.gbuonline.in/opengbu/result/webnew/student/details/homepage" target="_blank" style="text-decoration:none;"><font size="2"> <span class="glyphicon glyphicon-flash" aria-hidden="true"></span>&nbsp;Results</font></a>   
+                    <a href="<?php echo site_url('feat/events') ?>" style="text-decoration:none;"><font size="2"> <span class="glyphicon glyphicon-bell" aria-hidden="true"></span>&nbsp;Events</font></a>   
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><font size="2">
                         <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp;More</font><span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="<?php echo site_url('feat/vnb') ?>"><font size="2"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span>&nbsp;&nbsp;Notices</font></a></li>
-                        <li><a href="<?php echo site_url('feat/events') ?>"><font size="2"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span>&nbsp;&nbsp;Events</font></a></li>
+                        <li><a href="http://www.gbuonline.in/opengbu/result/webnew/student/details/homepage" target="_blank"><font size="2"><span class="glyphicon glyphicon-flash" aria-hidden="true"></span>&nbsp;&nbsp;Results</font></a></li>
                         <li><a href="https://gbuonline.wordpress.com" target="_blank"><font size="2"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp;&nbsp;Reviews</font></a></li>
                         <li><a href="<?php echo site_url('blogs/recent_blogs') ?>"><font size="2"><span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span>&nbsp;&nbsp;Blogs</font></a></li>
 
