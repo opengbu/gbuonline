@@ -177,8 +177,6 @@ class Hostels extends CI_Controller {
         $this->load->model('roomChangeModel');
 		$this->roomChangeModel->rc();
         
-        //Taken By Feat
-        $this->session->set_flashdata('rcMsg', '<script> alert("Yor request has been sent!"); </script>');
         redirect('Hostels/rc');
         
     }

@@ -59,6 +59,7 @@
                         foreach ($result as $rows)
                         {
                          ?>
+            <p>Hostel Name : <?php echo $hostel_name; ?></p>
             <p>Warden Name : <?php echo $rows->warden_name; ?></p>
             <p>Warden Office: <?php echo $rows->warden_office; ?></p>
             <p>Office Assistant's Contact Number:<?php echo $rows->hostel_contact; ?> </p>			
