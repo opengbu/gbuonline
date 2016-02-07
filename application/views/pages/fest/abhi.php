@@ -1,4 +1,3 @@
-</div>
 <center>
 	<div style = "position:absolute;">
 		<img src="<?php echo $this->cdn->res_url('resources/images/abhi_title.png')?>" style=" opacity:1; z-index:1;" height= "700" />
