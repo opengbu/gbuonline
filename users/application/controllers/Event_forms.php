@@ -140,10 +140,10 @@ class Event_forms extends CI_Controller {
             if ($check_q->num_rows() > 0) { // update
                 $prev_row = $check_q->row();
                 $prev_id = $prev_row->id;
-                $this->db->update('event_form_Data', $form_data, " id = '" . $prev_id . "'");
+                $this->db->update('event_form_data', $form_data, " id = '" . $prev_id . "'");
                 $this->logger->insert('Updated event registration (' . $prev_id . ')');
             } else {
-                $this->db->insert('event_form_Data', $form_data);
+                $this->db->insert('event_form_data', $form_data);
                 $this->logger->insert('Registered for event ' . $event_form_details_row->title);
             }
             redirect(base_url() . 'Event_forms/view_all');
