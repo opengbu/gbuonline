@@ -1,8 +1,8 @@
 
-<!--this controller contains functions that cannot be grouped with any category -->
-
 <?php   
 defined('BASEPATH') OR exit('No direct script access allowed');
+
+// this controller contains functions that cannot be grouped with any category
 
 class Feat extends CI_Controller {
 		
@@ -228,6 +228,17 @@ class Feat extends CI_Controller {
 		$this->load->view('pages/common/page-heading',$data);
 		$this->load->view('pages/footer_pages/advertise');
 		$this->load->view('pages/common/extras');
+		$this->load->view('pages/common/footer');
+	}
+	public function open_source()
+	{
+		$data['title'] = 'Open-Source &nbsp;|&nbsp;  GBU Online';
+		$data['heading'] ='Open-Source Credits';
+		$data['message'] = 'We thank every open-source developer for their contribution !!';
+		$this->load->view('pages/common/link',$data);
+		$this->load->view('pages/common/header');
+		$this->load->view('pages/common/page-heading',$data);
+		$this->load->view('pages/footer_pages/open_source');
 		$this->load->view('pages/common/footer');
 	}
 	

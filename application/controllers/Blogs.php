@@ -127,6 +127,8 @@ class Blogs extends CI_Controller {
             redirect('users?redirect=' . current_url() . "?" . $_SERVER['QUERY_STRING']);
 
         $blog_id = $this->input->get("blog_id");
+        
+        /*
         $user_id = $this->session->userdata("user_id");
 
         $num = $this->db->query("select * from blog_likes where blog_id = '$blog_id' and user_id = '$user_id'");
@@ -134,7 +136,8 @@ class Blogs extends CI_Controller {
             $this->db->query("insert into blog_likes (blog_id,user_id) VALUES ('$blog_id', '$user_id')");
         else
             $this->db->query("delete from blog_likes where blog_id = '$blog_id' and user_id = '$user_id'");
-             
+        */    
+
         if($cu=='read_blogs')
             redirect('blogs'.'/'.$cu.'?blog_id='.$blog_id);
         else            

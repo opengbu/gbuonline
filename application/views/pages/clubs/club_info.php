@@ -52,7 +52,7 @@ $club_details = $query->row();
                 </div>
                 <div class = "panel-body">
                     <?php
-                    $events_q = $this->db->query("select id, article_name, short_desc, image_path, publishing_date from events where club like '$c_name' or club = '%' order by publishing_date desc");
+                    $events_q = $this->db->query("select id, title, short_desc, image_path, event_date from events where club like '$c_name' or club = '%' order by event_date desc");
                     $count = 0; // since front page displays top 3 upcoming events only
                     foreach ($events_q->result() as $row) {
                         $count++;
@@ -66,7 +66,7 @@ $club_details = $query->row();
                                     <img src = "<?php echo base_url($row->image_path) ?>" alt = "code-in-gbu">
                                 </a>
                                 <div class = "caption">
-                                    <h3><center><b><?= $row->article_name ?></b></center></h3>
+                                    <h3><center><b><?= $row->title ?></b></center></h3>
                                     <?= $row->short_desc ?>
                                     <!--<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>-->
                                 </div>

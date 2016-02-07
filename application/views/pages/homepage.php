@@ -18,7 +18,7 @@
 <script>
 		$(window).load(function() {
 		// Animate loader off screen
-		$(".se-pre-con").fadeOut("slow");;
+		$(".se-pre-con").fadeOut("fast");
 	});
 </script>
 <style>
@@ -31,7 +31,7 @@
 	width: 100%;
 	height: 100%;
 	z-index: 9999;
-	background: url(images/loader-64x/Preloader_2.gif) center no-repeat #fff;
+	background: url("<?=$this->cdn->res_url('resources/images/Preloader_2.gif')?>") center no-repeat #fff;
 }
  </style>
 

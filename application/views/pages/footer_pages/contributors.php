@@ -1,15 +1,15 @@
 <script>
-var xmlhttp = new XMLHttpRequest();
-var url = "https://api.github.com/repos/opengbu/gbuonline/contributors";
+var xmlhttp_contr = new XMLHttpRequest();
+var url_contr = "https://api.github.com/repos/opengbu/gbuonline/contributors";
 
-xmlhttp.onreadystatechange = function() {
-    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-        var myArr = JSON.parse(xmlhttp.responseText);
+xmlhttp_contr.onreadystatechange = function() {
+    if (xmlhttp_contr.readyState == 4 && xmlhttp_contr.status == 200) {
+        var myArr = JSON.parse(xmlhttp_contr.responseText);
         myFunction(myArr);
     }
 }
-xmlhttp.open("GET", url, true);
-xmlhttp.send();
+xmlhttp_contr.open("GET", url_contr, true);
+xmlhttp_contr.send();
 
 function myFunction(arr) {
     var out = "";
@@ -48,10 +48,18 @@ function myFunction(arr) {
 <?php
 $content = $this->db->query("SELECT * FROM users WHERE type='cw' OR type = 'cm' ORDER BY type");
 foreach ($content->result() as $row) {
+    if(empty($row->profile_picture))
+    {
+        $pic = $this->cdn->res_url('resources/images/default-user.png');
+    }
+    else 
+    {
+        $pic = base_url($row->profile_picture);
+    }
     ?>
     <div class="col-sm-4">
         <center>
-            <img src="<?php echo $this->cdn->res_url($row->profile_picture) ?>"  width="120" style="height: 150px;"/><br><b><?= $row->full_name ?></b>
+            <img src="<?=$pic?>"  width="120" style="height: 150px;"/><br><b><?= $row->full_name ?></b>
 			<?php if($row->type=='cm')
 			{
 				echo "<br/>(Content Head)";

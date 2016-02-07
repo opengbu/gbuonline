@@ -18,7 +18,7 @@
    </center>
    </div>
     <div>
-    <img src="<?php echo base_url('resources/images/demo1.jpg')?>" alt="demo hostel" height="660" style="overflow:hidden;position:relative;position: relative; top:0;left:0;width:100%;"/>                      
+    <img src="<?php echo base_url('resources/images/demo1.jpg')?>" alt="demo hostel" height="660" style="overflow:hidden;position:relative;top:0;left:0;width:100%;"/>                      
     </div>
 <a name="start"></a> 
 </div>

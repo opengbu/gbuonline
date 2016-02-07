@@ -12,29 +12,32 @@ $this->load->library('form_validation');
 ?>
 
 <div class="container-fluid" style=" margin-right: 10px; margin-left: 10px;" >   
-    
     <font color="#141466">
-        <form class="form-group" role="form" action="<?php echo site_url('Hostels/insert_request'); ?>" method="post">
+        
+        
+        <form class="form-group" role="form" action="<?php echo site_url('Hostels/insert_request') ;?>" method="post">
+        
+            
         <label>
             Full Name :
         </label>
     
-        <input type="text" class="form-control" value="<?php echo set_value('name'); ?>" name="name" id="rcname"><br/>
+        <input type="text" class="form-control" value="<?php echo set_value('name'); ?>" name="name" id="rcname" required><br/>
             
             <label>
                 Branch :
             </label>
-            <input type="textarea" class="form-control" value="<?php echo set_value('branch'); ?>" name="branch" id="rcbranch"><br/>
+            <input type="textarea" class="form-control" value="<?php echo set_value('branch'); ?>" name="branch" id="rcbranch" required><br/>
             
              <label>
                 Current Alloted Room :
             </label>
-            <input type="textarea" class="form-control" value="<?php echo set_value('alloted_room'); ?>" name="alloted_room"id="rcalloted"><br/>
+            <input type="textarea" class="form-control" value="<?php echo set_value('alloted_room'); ?>" name="alloted_room"id="rcalloted" required><br/>
             
              <label>
                 Requestd Room :
             </label>
-            <input type="textarea" class="form-control"  value="<?php echo set_value('requested_room'); ?>" name="requested_room" id="rcrequested"><br/>        
+            <input type="textarea" class="form-control"  value="<?php echo set_value('requested_room'); ?>" name="requested_room" id="rcrequested" required><br/>        
     
             <div class="form-group"> 
                 <label class="col-md-2 control-label" for="Radios">Requested Room's Status</label>  
@@ -64,6 +67,3 @@ $this->load->library('form_validation');
 </form>
 
 </div>
-<?php
-echo $this->session->flashdata('rcMsg');
-?>

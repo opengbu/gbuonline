@@ -3,6 +3,20 @@
 /*
  *  Created on :Jul 10, 2015, 12:18:54 PM
  *  Author     :Varun Garg <varun.10@live.com>
+
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -72,6 +86,7 @@ class User_controls extends CI_Controller {
         $this->form_validation->set_rules('username', 'Username', 'required|callback_check_username');
         $this->form_validation->set_rules('email', 'email', 'required|callback_check_email');
         $this->form_validation->set_rules('password', 'Password', 'callback_check_pass');
+        $this->form_validation->set_rules('roll_number', 'roll_number', 'callback_check_roll_no');
         $this->form_validation->set_rules('profile_picure', 'profile_picure', 'callback_check_image_and_upload');
 
         if ($this->form_validation->run() == FALSE) {
@@ -92,7 +107,7 @@ class User_controls extends CI_Controller {
             $this->load->view('common/footer');
         } else {
             $this->load->helper('htmlpurifier');
-            
+
             $password = $this->input->post('password');
             $hash = $this->bcrypt->hash_password($password);
             $confirmation_link = bin2hex(openssl_random_pseudo_bytes(18)); // 36 character lin
@@ -105,6 +120,7 @@ class User_controls extends CI_Controller {
                 'password' => html_purify($this->input->post('password')),
                 'full_name' => html_purify($this->input->post('full_name')),
                 'roll_number' => html_purify($this->input->post('roll_number')),
+                'phone_number' => html_purify($this->input->post('phone_number')),
                 'password' => $hash,
                 'confirmation_link' => $confirmation_link,
                 'profile_picture' => $this->image_path,
@@ -153,6 +169,18 @@ class User_controls extends CI_Controller {
         $this->load->view('common/header');
         $this->load->view('View_allusers');
         $this->load->view('common/footer');
+    }
+
+    public function check_roll_no() {
+        $roll_no = $this->input->post('roll_number');
+        if ($roll_no == NULL || $roll_no == "")
+            return TRUE;
+
+        if (preg_match("@^([^/]*/){2}@", $roll_no))
+            return TRUE;
+
+        $this->form_validation->set_message('check_roll_no', 'Roll Number ' . $roll_no . ' must be in XX/XXX/XXX format ');
+        return FALSE;
     }
 
     function check_username() { // Check if user already exists

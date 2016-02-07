@@ -4,7 +4,15 @@
 	//activate the tooltips
 	$(function () {
 	$('.r').tooltip({ selector: '.a' });
-	})
+	});
+
+    //activate the popovers
+    $(function () {
+    $('.r').popover({
+        selector: '.b',
+         html: true
+        });
+    });
 	
 </script>
 <?php
@@ -20,16 +28,18 @@ $like_count_q = $this->db->query("select count(*) as like_count from blog_likes 
 $like_count = $like_count_q->row();
 
 $numb = $this->db->query("select * from blog_likes where blog_id = '$blog_id' and user_id = '$user_id'");
-        if ($numb->num_rows() == 0)
-		{
-			$clor = "primary";
-			$txt = "Like this blog";
-		}
-		else
-		{
-			$clor = "warning";
-			$txt = "Un-Like this blog";
-		}
+$clor = "primary";
+$txt = "Like this blog";
+                    
+if($this->session->userdata('loggedin') == 1 && $numb->num_rows() > 0)
+{
+    $clor = "warning";
+    $txt = "Un-Like this blog";
+}
+
+$likers_q = $this->db->query("select users.full_name from users,blog_likes where users.user_id = blog_likes.user_id AND blog_id = '$blog_id'");
+$likers = $likers_q->result();
+
 ?>
 <div class="container-fluid" style=" margin-right: 10px; margin-left: 10px;" >
     <div class="row">
@@ -47,11 +57,23 @@ $numb = $this->db->query("select * from blog_likes where blog_id = '$blog_id' an
                 <hr style="border-top: 1px solid rgba(0, 0, 0, 0.1); border-bottom: 1px solid rgba(255, 255, 255, 0.3);">
 				
                 <div class="row"> 
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <span id="<?=$result->id?>" class="r">
                                 <button onclick="<?=$func?>(<?=$result->id?>)" class="btn btn-sm btn-<?=$clor?> btn-md a" data-toggle="tooltip" data-placement="top" title="<?=$txt?>">
                                     <span class="glyphicon glyphicon-star" aria-hidden="true"></span> &nbsp;
                                     <span class="badge"><?=$like_count->like_count ?></span>
+                                </button>&nbsp;
+
+                                <button type="button" class="btn btn-sm btn-primary btn-md b" data-toggle="popover"
+                                 data-placement="top" title="This blog is liked by :"
+                                 data-content="<?php
+                                                foreach($likers as $eachl)
+                                                {
+                                                    echo $eachl->full_name.'<br>';
+                                                }
+                                                ?>">
+                                    <span class="glyphicon glyphicon-signal" aria-hidden="true"></span> &nbsp;
+                                    <span class="badge">Likers</span>
                                 </button>&nbsp;
                         </span>
 
@@ -59,12 +81,13 @@ $numb = $this->db->query("select * from blog_likes where blog_id = '$blog_id' an
                             <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> &nbsp;
                             <span class="badge">Share</span>
                         </button>&nbsp;
+
                         <button type="button" class="btn btn-sm btn-primary btn-md" onclick="location.href='#koment'">
                             <span class="glyphicon glyphicon-comment" aria-hidden="true"></span> &nbsp;
                             <span class="badge"><a href="<?php echo site_url('blogs/read_blogs?blog_id=' . $result->id) ?>#disqus_thread" data-disqus-identifier="blog_<?= $result->id ?>"></a></span>
                         </button>
                     </div>
-                    <div class="col-md-8" style="text-align: right;  ">
+                    <div class="col-md-6" style="text-align: right;  ">
                         <button type="button" class="btn btn-sm btn-primary btn-md"><span style="font-size:13px;"><?= $result->full_name ?></span> &nbsp;
                             <?php
                             if ($result->roll_number != NULL) {

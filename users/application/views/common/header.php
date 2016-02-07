@@ -2,6 +2,20 @@
 /*
  *  Created on :Jul 10, 2015, 12:18:54 PM
  *  Author     :Varun Garg <varun.10@live.com>
+ 
+	This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>. 
+
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
@@ -183,8 +197,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                             <li ><a href="<?= base_url() . 'Events' ?>">All Events <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-tasks fa-2x"></i></a></li>
                             <li ><a href="<?= base_url() . 'Events/CreateOrUpdate' ?>">New Event <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-plus-square fa-2x"></i></a></li>
-                            <li ><a href="<?php echo base_url() . 'manage_upcoming' ?>">Manage Upcoming Events <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-road fa-2x"></i></a></li>
+                            <li ><a href="<?php echo base_url() . 'featured_events' ?>">Featured Events <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-road fa-2x"></i></a></li>
 
+                            <li ><a href="<?= base_url() . 'Event_forms' ?>">All Events Forms<i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-tasks fa-2x"></i></a></li>
+                            <li ><a href="<?= base_url() . 'Event_forms/CreateOrUpdate' ?>">New Event Form<i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-plus-square fa-2x"></i></a></li>
+                      
+                            <li ><a href="<?= base_url() . 'Mega_events' ?>">All Mega Events<i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-tasks fa-2x"></i></a></li>
+                            <li ><a href="<?= base_url() . 'Mega_events/CreateOrUpdate' ?>">New Mega Event<i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-plus-square fa-2x"></i></a></li>
+                      
+                            
                             <li ><a href="<?php echo base_url() . 'Ebooks' ?>">Ebooks <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-th-list fa-2x"></i></a></li>
                             <li ><a href="<?php echo base_url() . 'Ebooks/CreateOrUpdate' ?>" >New Ebook<i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-plus-square fa-2x"></i></a></li>
 
@@ -208,6 +229,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                             <li><a href="<?php echo base_url() . 'stats' ?>">Statistics<i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-line-chart fa-2x"></i></a></li>
                             <li><a href="<?php echo base_url() . 'logs' ?>">Logs<i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-th-list fa-2x"></i></a></li>
+                            <li><a href="<?php echo base_url() . 'Backup' ?>">Backup<i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-th-list fa-2x"></i></a></li>
 
                         </ul>
                     </div>

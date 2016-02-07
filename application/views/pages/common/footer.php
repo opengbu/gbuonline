@@ -1,3 +1,4 @@
+
 	</div> <!--for container fluid opened in link.php-->
 
 	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Aguafina+Script" />
@@ -159,6 +160,8 @@ q:after {
                     </div>
 					<br/><br/>
              <a href="<?php echo site_url('feat/opportunities')?>" style="cursor:pointer;"><font color = "white"><b>Opportunities</b></font></a>
+             <br/><br/>
+             <a href="<?php echo site_url('feat/open_source')?>" style="cursor:pointer;"><font color = "white"><b>Open-Source Cedits</b></font></a>             
                 
             </div>
 			
@@ -189,14 +192,32 @@ q:after {
 		<br/>
 		<hr style=" border: 0; height: 0; border-top: 1px solid rgba(0, 0, 0, 0.1); border-bottom: 1px solid rgba(255, 255, 255, 0.3);">
 			
-            <div class="col-md-12 text-center">
+        <div class="col-md-12 text-center" style = "color:white;">
                 
-                    <b><p style = "color:white;">&copy; OpenGBU, Inc.</p></b>
-              
+                    <span>Updated On : <span id ="update_date"></span></span>
+                    <b><p style="margin-top:15px;">&copy; OpenGBU, Inc.</p></b>
+                                 
        </div>
+            
         
 
     </footer>
+
+<!--last website update-->
+<script>
+var xmlhttp_date = new XMLHttpRequest();
+var url_date = "https://api.github.com/repos/opengbu/gbuonline";
+
+xmlhttp_date.onreadystatechange = function() {
+    if (xmlhttp_date.readyState == 4 && xmlhttp_date.status == 200) {
+        var dt = JSON.parse(xmlhttp_date.responseText);
+        var date = dt.pushed_at.substring(0, 10);
+        document.getElementById("update_date").innerHTML = date;
+    }
+}
+xmlhttp_date.open("GET", url_date, true);
+xmlhttp_date.send();
+</script>
 
 
 <!--disqus code for counting comments begins-->
