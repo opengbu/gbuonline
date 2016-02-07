@@ -21,7 +21,12 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
             <ul class="nav navbar-nav">
+				 <li>
+                    <a href="<?php echo base_url('Abhivyanjana');?>" target="_blank">
+                        <font size="2"> <span class="glyphicon glyphicon-glass" aria-hidden="true"></span>&nbsp;Abhivyanjana</font>
+                    </a>
 
+                </li>
                 <li class="dropdown">
                     <a href="http://gbuonline.in/timetables"  target="_blank">
                         <font size="2"> <span class="glyphicon glyphicon-file" aria-hidden="true"></span> Time Tables</font>
