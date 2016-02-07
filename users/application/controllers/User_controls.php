@@ -119,6 +119,7 @@ class User_controls extends CI_Controller {
                 'password' => html_purify($this->input->post('password')),
                 'full_name' => html_purify($this->input->post('full_name')),
                 'roll_number' => html_purify($this->input->post('roll_number')),
+                'phone_number' => html_purify($this->input->post('phone_number')),
                 'password' => $hash,
                 'confirmation_link' => $confirmation_link,
                 'profile_picture' => $this->image_path,

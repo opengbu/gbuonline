@@ -3,19 +3,19 @@
 /*
  *  Created on :Aug 18, 2015, 6:45:17 PM
  *  Author     :Varun Garg <varun.10@live.com>
- 
-	This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
 
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
 
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>. 
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -2236,22 +2236,22 @@ class Upgrade extends CI_Controller {
         array_push($u->updates, "ALTER TABLE upcoming_events RENAME TO featured_events;");
         array_push($update_list, $u);
         unset($u);
-		
-		$u = new update;
+
+        $u = new update;
         $u->version = 5.7;
-		array_push($u->updates, "INSERT INTO `downloads` (`Title`, `Link`) VALUES ('Notepad++', 'https://notepad-plus-plus.org/download/v6.8.6.html');");
-		array_push($u->updates, "INSERT INTO `downloads` (`Title`, `Link`) VALUES ('NetBeans IDE', 'https://netbeans.org/downloads/');");
-		array_push($u->updates, "INSERT INTO `downloads` (`Title`, `Link`) VALUES ('Wamp Server', 'http://www.wampserver.com/en/');");
-		array_push($u->updates, "INSERT INTO `downloads` (`Title`, `Link`) VALUES ('Sublime Text', 'http://www.sublimetext.com/download');");
-		array_push($u->updates, "INSERT INTO `downloads` (`Title`, `Link`) VALUES ('Eclipse IDE', 'https://eclipse.org/downloads/');");
-		array_push($u->updates, "INSERT INTO `downloads` (`Title`, `Link`) VALUES ('CodeBlocks', 'http://www.codeblocks.org/downloads');");
-		array_push($u->updates, "INSERT INTO `downloads` (`Title`, `Link`) VALUES ('Android Studio', 'https://developer.android.com/sdk/index.html#top');");
-		array_push($u->updates, "INSERT INTO `downloads` (`Title`, `Link`) VALUES ('Adobe Reader', 'https://get.adobe.com/reader/');");
-		array_push($u->updates, "INSERT INTO `downloads` (`Title`, `Link`) VALUES ('Visual Studio', 'https://www.visualstudio.com/en-us/downloads/download-visual-studio-vs.aspx');");
-		array_push($u->updates, "INSERT INTO `downloads` (`Title`, `Link`) VALUES ('Unity', 'https://unity3d.com/get-unity');");
-		array_push($u->updates, "INSERT INTO `downloads` (`Title`, `Link`) VALUES ('CCleaner', 'https://www.piriform.com/ccleaner');");
-		array_push($u->updates, "INSERT INTO `downloads` (`Title`, `Link`) VALUES ('HTTrack Website Copier', 'http://www.httrack.com/page/2/');");
-		array_push($update_list, $u);
+        array_push($u->updates, "INSERT INTO `downloads` (`Title`, `Link`) VALUES ('Notepad++', 'https://notepad-plus-plus.org/download/v6.8.6.html');");
+        array_push($u->updates, "INSERT INTO `downloads` (`Title`, `Link`) VALUES ('NetBeans IDE', 'https://netbeans.org/downloads/');");
+        array_push($u->updates, "INSERT INTO `downloads` (`Title`, `Link`) VALUES ('Wamp Server', 'http://www.wampserver.com/en/');");
+        array_push($u->updates, "INSERT INTO `downloads` (`Title`, `Link`) VALUES ('Sublime Text', 'http://www.sublimetext.com/download');");
+        array_push($u->updates, "INSERT INTO `downloads` (`Title`, `Link`) VALUES ('Eclipse IDE', 'https://eclipse.org/downloads/');");
+        array_push($u->updates, "INSERT INTO `downloads` (`Title`, `Link`) VALUES ('CodeBlocks', 'http://www.codeblocks.org/downloads');");
+        array_push($u->updates, "INSERT INTO `downloads` (`Title`, `Link`) VALUES ('Android Studio', 'https://developer.android.com/sdk/index.html#top');");
+        array_push($u->updates, "INSERT INTO `downloads` (`Title`, `Link`) VALUES ('Adobe Reader', 'https://get.adobe.com/reader/');");
+        array_push($u->updates, "INSERT INTO `downloads` (`Title`, `Link`) VALUES ('Visual Studio', 'https://www.visualstudio.com/en-us/downloads/download-visual-studio-vs.aspx');");
+        array_push($u->updates, "INSERT INTO `downloads` (`Title`, `Link`) VALUES ('Unity', 'https://unity3d.com/get-unity');");
+        array_push($u->updates, "INSERT INTO `downloads` (`Title`, `Link`) VALUES ('CCleaner', 'https://www.piriform.com/ccleaner');");
+        array_push($u->updates, "INSERT INTO `downloads` (`Title`, `Link`) VALUES ('HTTrack Website Copier', 'http://www.httrack.com/page/2/');");
+        array_push($update_list, $u);
         unset($u);
 
         $u = new update;
@@ -2272,6 +2272,29 @@ class Upgrade extends CI_Controller {
         array_push($u->updates, "DELETE FROM blog_likes WHERE user_id = '0';");
         array_push($update_list, $u);
         unset($u);
+
+        $u = new update;
+        $u->version = 6.1;
+        array_push($u->updates, "CREATE TABLE IF NOT EXISTS `event_form_data` (
+        `id` int(11) NOT NULL AUTO_INCREMENT,
+        `event_id` int(11) NOT NULL,
+        `user_id_list` text NOT NULL,
+        `extra_info` text NOT NULL,
+        `registered_by_user_id` int(11) NOT NULL,
+        PRIMARY KEY (`id`)
+          ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;");
+        array_push($u->updates, "CREATE TABLE IF NOT EXISTS `event_form_list` (
+            `id` int(11) NOT NULL AUTO_INCREMENT,
+            `event_id` int(11) NOT NULL,
+            `max_participants` int(11) NOT NULL,
+            `extra_info_title` varchar(11) NOT NULL,
+            PRIMARY KEY (`id`)
+          ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;");
+
+        array_push($update_list, $u);
+        unset($u);
+
+
 
         //Don't edit after this line
         $this->run_upgrades($update_list);

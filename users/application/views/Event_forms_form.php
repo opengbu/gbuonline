@@ -38,7 +38,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     echo form_dropdown('event_id', $events, set_value('event_id', @$event_id), 'class="selectpicker"');
     ?>
     <br /><br />
-    <label>Max Participants</label>
+    <label>Max Participants Per Team</label>
     <input type="text" class="form-control" name="max_participants" value="<?php echo set_value('max_participants', @$max_participants); ?>"/>
     <br>
     <label>Additional Field Title (Example Team name etc, you can also leave this blank)</label>
