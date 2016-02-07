@@ -22,11 +22,16 @@
 
 </script>
 <?php
-/*
- * Note by Varun...
- * I am connecting (Front End) events with db on my own
- * because of too much delay
- */
+	$big_event_id = $this->input->get('big_event_id');
+	if ( strlen($big_event_id) < 1)
+	{	
+		$big_event_id = '%';
+		$big_event_filter = " and (mega_event_id like '$big_event_id' or mega_event_id is NULL)";	
+	}
+	else
+	{
+		$big_event_filter = " and mega_event_id like '$big_event_id' ";	
+	}
 ?>
 <div class="container-fluid" style="margin-right: 10px; margin-left: 10px;" >
     <div class="row">
@@ -107,8 +112,7 @@
                 <div class="panel-body">
                     <?php
                         date_default_timezone_set("Asia/Kolkata");
-                        $feat_event_q = $this->db->query("SELECT * FROM events, featured_events WHERE events.id = featured_events.event_id AND event_date >= '" . date('Y-m-d') . "' ");
-                    
+                        $feat_event_q = $this->db->query("SELECT * FROM events, featured_events WHERE events.id = featured_events.event_id AND event_date >= '" . date('Y-m-d') . "' " . $big_event_filter);
                         foreach($feat_event_q->result() as $fe)
                         {
 
@@ -132,8 +136,8 @@
 
                     <?php
                     $condition_q = "";
-                    $original_q = "SELECT * FROM events WHERE events.id NOT IN(select event_id from featured_events) AND event_date >= '" . date('Y-m-d') . "' ";
-                    if (isset($_REQUEST['school']) && $_REQUEST['school'] != "")
+                    $original_q = "SELECT * FROM events WHERE events.id NOT IN(select event_id from featured_events) AND event_date >= '" . date('Y-m-d')  . "' " . $big_event_filter;
+					if (isset($_REQUEST['school']) && $_REQUEST['school'] != "")
                         $condition_q .= " and school like '" . $_REQUEST['school'] . "' ";
                     if (isset($_REQUEST['club']) && $_REQUEST['club'] != "")
                         $condition_q .= " and club like '" . $_REQUEST['club'] . "' ";
@@ -180,8 +184,7 @@
 
 
                     <?php
-                    $original_q = "select id, title, short_desc, image_path, event_date from events where event_date < '" . date('Y-m-d') . "' ";
-
+                    $original_q = "select id, title, short_desc, image_path, event_date from events where event_date < '" . date('Y-m-d'). "' " . $big_event_filter;
                     $past_events = $this->db->query($original_q . $condition_q . " order by event_date desc");
                     $count = 0; // since front page displays 6 past events only
                     foreach ($past_events->result() as $row) {
