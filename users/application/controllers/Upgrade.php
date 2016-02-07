@@ -2236,6 +2236,23 @@ class Upgrade extends CI_Controller {
         array_push($u->updates, "ALTER TABLE upcoming_events RENAME TO featured_events;");
         array_push($update_list, $u);
         unset($u);
+		
+		$u = new update;
+        $u->version = 5.7;
+		array_push($u->updates, "INSERT INTO `gbuonline`.`downloads` (`Title`, `Link`) VALUES ('Notepad++', 'https://notepad-plus-plus.org/download/v6.8.6.html');");
+		array_push($u->updates, "INSERT INTO `gbuonline`.`downloads` (`Title`, `Link`) VALUES ('NetBeans IDE', 'https://netbeans.org/downloads/');");
+		array_push($u->updates, "INSERT INTO `gbuonline`.`downloads` (`Title`, `Link`) VALUES ('Wamp Server', 'http://www.wampserver.com/en/');");
+		array_push($u->updates, "INSERT INTO `gbuonline`.`downloads` (`Title`, `Link`) VALUES ('Sublime Text', 'http://www.sublimetext.com/download');");
+		array_push($u->updates, "INSERT INTO `gbuonline`.`downloads` (`Title`, `Link`) VALUES ('Eclipse IDE', 'https://eclipse.org/downloads/');");
+		array_push($u->updates, "INSERT INTO `gbuonline`.`downloads` (`Title`, `Link`) VALUES ('CodeBlocks', 'http://www.codeblocks.org/downloads');");
+		array_push($u->updates, "INSERT INTO `gbuonline`.`downloads` (`Title`, `Link`) VALUES ('Android Studio', 'https://developer.android.com/sdk/index.html#top');");
+		array_push($u->updates, "INSERT INTO `gbuonline`.`downloads` (`Title`, `Link`) VALUES ('Adobe Reader', 'https://get.adobe.com/reader/');");
+		array_push($u->updates, "INSERT INTO `gbuonline`.`downloads` (`Title`, `Link`) VALUES ('Visual Studio', 'https://www.visualstudio.com/en-us/downloads/download-visual-studio-vs.aspx');");
+		array_push($u->updates, "INSERT INTO `gbuonline`.`downloads` (`Title`, `Link`) VALUES ('Unity', 'https://unity3d.com/get-unity');");
+		array_push($u->updates, "INSERT INTO `gbuonline`.`downloads` (`Title`, `Link`) VALUES ('CCleaner', 'https://www.piriform.com/ccleaner');");
+		array_push($u->updates, "INSERT INTO `gbuonline`.`downloads` (`Title`, `Link`) VALUES ('HTTrack Website Copier', 'http://www.httrack.com/page/2/');");
+		array_push($update_list, $u);
+        unset($u);
 
         $u = new update;
         $u->version = 5.7;
