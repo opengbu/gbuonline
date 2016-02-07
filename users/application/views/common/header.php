@@ -202,6 +202,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <li ><a href="<?= base_url() . 'Event_forms' ?>">All Events Forms<i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-tasks fa-2x"></i></a></li>
                             <li ><a href="<?= base_url() . 'Event_forms/CreateOrUpdate' ?>">New Event Form<i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-plus-square fa-2x"></i></a></li>
                       
+                            <li ><a href="<?= base_url() . 'Mega_events' ?>">All Mega Events<i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-tasks fa-2x"></i></a></li>
+                            <li ><a href="<?= base_url() . 'Mega_events/CreateOrUpdate' ?>">New Mega Event<i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-plus-square fa-2x"></i></a></li>
+                      
                             
                             <li ><a href="<?php echo base_url() . 'Ebooks' ?>">Ebooks <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-th-list fa-2x"></i></a></li>
                             <li ><a href="<?php echo base_url() . 'Ebooks/CreateOrUpdate' ?>" >New Ebook<i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-plus-square fa-2x"></i></a></li>

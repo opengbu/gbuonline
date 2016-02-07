@@ -2293,7 +2293,24 @@ class Upgrade extends CI_Controller {
 
         array_push($update_list, $u);
         unset($u);
+        $u = new update;
+        $u->version = 6.2;
+        array_push($u->updates, "CREATE TABLE IF NOT EXISTS `mega_events` (
+            `id` int(11) NOT NULL AUTO_INCREMENT,
+            `name` varchar(100) NOT NULL,
+            `duration` varchar(50) NOT NULL,
+            `default_controller` varchar(50) NOT NULL,
+            PRIMARY KEY (`id`)
+          ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;");
+        array_push($update_list, $u);
+        unset($u);
 
+        
+        $u = new update;
+        $u->version = 6.3;
+        array_push($u->updates, "ALTER TABLE events ADD mega_event_id int");
+        array_push($update_list, $u);
+        unset($u);
 
 
         //Don't edit after this line

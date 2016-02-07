@@ -55,7 +55,7 @@ $check_q = $this->db->query("select *  from event_form_data where event_id = '$e
             ?>
             <label>Participant <?= $i ?></label>
             <?php
-            echo form_dropdown('user_id_' . $i, $users, set_value('user_id_' . $i, @$event_id), 'class="selectpicker"');
+            echo form_dropdown('user_id_' . $i, $users, set_value('user_id_' . $i, @$event_id), 'class="selectpicker" data-live-search = "true" ');
             echo '<br /><br />';
         }
         ?>

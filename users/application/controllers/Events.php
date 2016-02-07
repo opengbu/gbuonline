@@ -78,6 +78,7 @@ class Events extends CI_Controller {
                 'image_path' => html_purify($this->input->post('image_path')),
                 'club' => html_purify($this->input->post('club')),
                 'type' => html_purify($this->input->post('type')),
+                'mega_event_id' => html_purify($this->input->post('mega_event_id')),
             );
             if ($this->input->get('event_id') != "") { // update
                 $this->secure_hard();

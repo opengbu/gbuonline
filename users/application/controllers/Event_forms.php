@@ -26,27 +26,18 @@ class Event_forms extends CI_Controller {
     }
 
     function secure_hard() {
-        if ($this->permissions->get_level() >= 2)
-            return 1;
-        $query = $this->db->get_where('event_form_list', array('id' => $this->input->get('event_form_id')));
-        if ($query->num_rows() == 0) {
+        if ($this->permissions->get_level() == 0) {
             echo $this->load->view('common/header', '', TRUE);
-            $message['errors'] = "No such Event formexists";
+            $message['errors'] = "Insufficient Privelleges. Please Contact Our Content Head";
             echo $this->load->view('Error_message', $message, TRUE);
             echo $this->load->view('common/footer', '', TRUE);
             die();
         }
-        $form_data = $query->row();
-        if ($form_data->user_id == $this->session->userdata('user_id'))
-            return 1;
-        echo $this->load->view('common/header', '', TRUE);
-        $message['errors'] = "This is not your post";
-        echo $this->load->view('Error_message', $message, TRUE);
-        echo $this->load->view('common/footer', '', TRUE);
-        die();
+        return 1;
     }
 
     function CreateOrUpdate() {
+        $this->secure_hard();
 
         $this->load->helper(array('form', 'url'));
         $this->form_validation->set_rules('event_id', 'Event name', 'required');
@@ -107,9 +98,9 @@ class Event_forms extends CI_Controller {
 
         $this->load->helper(array('form', 'url'));
 
-        
-        $this->form_validation->set_rules('submitted', 'submitted', 'required'); 
-        
+
+        $this->form_validation->set_rules('submitted', 'submitted', 'required');
+
         if ($event_form_data['max_participants'] > 1)
             $this->form_validation->set_rules('user_id_1', 'Participant 1', 'required'); //at leasst 1 participant
 
@@ -172,7 +163,6 @@ class Event_forms extends CI_Controller {
 
     function delete() {
         $this->secure_hard();
-
 
         $this->db->query("delete from event_form_list where id = '" . $this->input->get('event_form_id') . "'");
 

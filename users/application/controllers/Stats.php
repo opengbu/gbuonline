@@ -1,13 +1,14 @@
-<?php
+/*
+ *  created by Rajat Saxena and Shobhit Sharma
+*/
 
+<?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-//created by Rajat and Shobhit
 class Stats extends CI_Controller {
 
     function index() {
         if ($this->session->userdata('level') < '2') {
-
             redirect('/login');
         }
 

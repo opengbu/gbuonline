@@ -3,7 +3,7 @@
  *  Created on :Jul 10, 2015, 12:18:54 PM
  *  Author     :Varun Garg <varun.10@live.com>
  
-	This program is free software: you can redistribute it and/or modify
+    This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
@@ -30,6 +30,13 @@ $clubs_r = $clubs_q->result();
 $clubs['%'] = "ALL";
 foreach ($clubs_r as $row) {
     $clubs[$row->c_name] = $row->c_full_name;
+}
+
+$mega_events[''] = 'NONE (BLANK)';
+$mega_events_q = $this->db->query("select name, id from mega_events");
+$mega_events_r = $mega_events_q->result();
+foreach ($mega_events_r as $row) {
+    $mega_events[$row->id] = $row->name;
 }
 
 function add_prefix(&$item1, $key, $prefix) {
@@ -67,7 +74,12 @@ function add_prefix(&$item1, $key, $prefix) {
     $files = array_combine($files, $files);
     echo form_dropdown('image_path', $files, set_value('image_path', @$image_path), 'class="selectpicker" data-width="60%"');
     ?>
+    <br /><br />
 
+    <label>Mega Event</label><br />
+    <?php
+    echo form_dropdown('mega_event_id', $mega_events, set_value('mega_event_id', @$mega_event_id), 'class="selectpicker"');
+    ?>
     <br /><br />
 
     <label>Club</label><br />
@@ -75,8 +87,7 @@ function add_prefix(&$item1, $key, $prefix) {
     echo form_dropdown('club', $clubs, set_value('club', @$club), 'class="selectpicker"');
     ?>
     <br /><br />
-
-
+    
     <label>Type</label><br />
     <?php
     $options = array("%" => "ALL", "competition" => "Competition", "workshop" => "Workshop", "conference" => "Conference", "lecture" => "Lecture");
@@ -96,7 +107,7 @@ function add_prefix(&$item1, $key, $prefix) {
     echo '<label><font color="red">' . validation_errors() . '</font></label>';
     ?>
     <div><input type="submit" value="Save" class="btn btn-default"/></div>
-</form>
+    <?php echo form_close(); ?>
 <script>
     $('.jqte-test').jqte();
 
