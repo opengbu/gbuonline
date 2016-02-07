@@ -21,7 +21,7 @@
  * because of too much delay
  */
 ?>
-<div class="container-fluid" style=" margin-right: 10px; margin-left: 10px;" >
+<div class="container-fluid" style="margin-right: 10px; margin-left: 10px;" >
     <div class="row">
         <div class="col-md-9" style="padding-right:30px; border-right: 2px solid #ccc;">   
 
@@ -98,12 +98,33 @@
                     <h3 class="panel-title">Upcoming Events</h3>
                 </div>
                 <div class="panel-body">
+                    <?php
+                        $feat_event_q = $this->db->query("SELECT * FROM events, featured_events WHERE events.id = featured_events.event_id AND event_date >= '" . date('Y-m-d') . "' ");
+                    
+                        foreach($feat_event_q->result() as $fe)
+                        {
 
+                    ?>
+                        <div class = "col-md-4">
+                            <div class = "thumbnail" style="height:350px;">
+                                <a href = "<?php echo site_url('feat/read_events?id=' . $fe->id) ?>">
+                                    <img src = "<?php echo base_url($fe->image_path) ?>" alt = "poster" style="max-height:200px; width:100%;">
+                                </a>
+                                <div class = "caption">
+                                    <h3><center><b><?= $fe->title ?></b></center></h3>
+                                    <?= $fe->short_desc ?>
+                                    <!--<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>-->
+                                </div>
+                            </div>
+                        </div>
 
+                    <?php
+                        }
+                    ?>
 
                     <?php
                     $condition_q = "";
-                    $original_q = "select events.id, article_name, short_desc, image_path from events, upcoming_events where events.id = event_id ";
+                    $original_q = "SELECT * FROM events WHERE events.id NOT IN(select event_id from featured_events) AND event_date >= '" . date('Y-m-d') . "' ";
                     if (isset($_REQUEST['school']) && $_REQUEST['school'] != "")
                         $condition_q .= " and school like '" . $_REQUEST['school'] . "' ";
                     if (isset($_REQUEST['club']) && $_REQUEST['club'] != "")
@@ -112,7 +133,7 @@
                         $condition_q .= " and type like '" . $_REQUEST['type'] . "' ";
 
 
-                    $upcoming_events = $this->db->query($original_q . $condition_q . "order by upcoming_events.id ");
+                    $upcoming_events = $this->db->query($original_q . $condition_q . "order by event_date ");
                     //$count = 0; // removing this because all "upcoming events" are important. And thus all should be displayed.  
                     foreach ($upcoming_events->result() as $row) {
                       //  $count++;
@@ -123,10 +144,10 @@
                         <div class = "col-md-4">
                             <div class = "thumbnail" style="height:350px;">
                                 <a href = "<?php echo site_url('feat/read_events?id=' . $row->id) ?>">
-                                    <img src = "<?php echo base_url($row->image_path) ?>" alt = "code-in-gbu" style="max-height:200px; width:100%;">
+                                    <img src = "<?php echo base_url($row->image_path) ?>" alt = "poster" style="max-height:200px; width:100%;">
                                 </a>
                                 <div class = "caption">
-                                    <h3><center><b><?= $row->article_name ?></b></center></h3>
+                                    <h3><center><b><?= $row->title ?></b></center></h3>
                                     <?= $row->short_desc ?>
                                     <!--<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>-->
                                 </div>
@@ -152,9 +173,9 @@
 
                     <?php
                     date_default_timezone_set("Asia/Kolkata");
-                    $original_q = "select id, article_name, short_desc, image_path, publishing_date from events where publishing_date < '" . date('Y-m-d') . "' ";
+                    $original_q = "select id, title, short_desc, image_path, event_date from events where event_date < '" . date('Y-m-d') . "' ";
 
-                    $past_events = $this->db->query($original_q . $condition_q . " order by publishing_date desc");
+                    $past_events = $this->db->query($original_q . $condition_q . " order by event_date desc");
                     $count = 0; // since front page displays 6 past events only
                     foreach ($past_events->result() as $row) {
                         $count++;
@@ -165,10 +186,10 @@
                         <div class = "col-md-4" >
                             <div class = "thumbnail" style="height:350px;">
                                 <a href = "<?php echo site_url('feat/read_events?id=' . $row->id) ?>">
-                                    <img src = "<?php echo base_url($row->image_path) ?>" alt = "code-in-gbu" style="max-height:200px; width:100%;">
+                                    <img src = "<?php echo base_url($row->image_path) ?>" alt = "poster" style="max-height:200px; width:100%;">
                                 </a>
                                 <div class = "caption">
-                                    <h3><center><b><?= $row->article_name ?></b></center></h3>
+                                    <h3><center><b><?= $row->title ?></b></center></h3>
                                     <?= $row->short_desc ?>
                                     <!--<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>-->
                                 </div>

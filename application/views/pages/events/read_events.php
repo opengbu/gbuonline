@@ -28,7 +28,7 @@ $school = $school_q->row();
     <div class="container">
 		
 		<div class="row">
-			<center><h2><span class="label label-default"><?= $row->article_name ?></span></h2></center><br/><br/>
+			<center><h2><span class="label label-default"><?= $row->title ?></span></h2></center><br/><br/>
             <img src="<?php echo base_url($row->image_path) ?>" alt="Event Poster" id="img_centre">
             <hr>
 		</div>
@@ -43,7 +43,7 @@ $school = $school_q->row();
             <br/><br/><br/>
             
             <h3><span class="label label-primary">Date </span></h3>
-            <b><?= $row->publishing_date ?></b>
+            <b><?= $row->event_date ?></b>
             <br/><br/>
 			
 			</div>
@@ -64,7 +64,7 @@ $school = $school_q->row();
 		<hr>
 		<div class="row">
             <h3><span class="label label-default">Event Description</span></h3>
-            <?= $row->article ?>
+            <?= $row->description ?>
             <br/>
         </div>
 
