@@ -21,12 +21,6 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
             <ul class="nav navbar-nav">
-				 <li>
-                    <a href="<?php echo base_url('Abhivyanjana');?>" target="_blank">
-                        <font size="2"> <span class="glyphicon glyphicon-glass" aria-hidden="true"></span>&nbsp;Abhivyanjana</font>
-                    </a>
-
-                </li>
                 <li class="dropdown">
                     <a href="http://gbuonline.in/timetables"  target="_blank">
                         <font size="2"> <span class="glyphicon glyphicon-file" aria-hidden="true"></span> Time Tables</font>
@@ -74,13 +68,15 @@
                         </li>
 
                         <li role="separator" class="divider"></li>
-                        <!--<li>
-                            <a href="<?php echo $this->cdn->res_url('resources/hostel_allocation/mess.jpg') ?>" style="text-decoration:none;">Mess Menu</a>	
-                        </li>-->
                     </ul>
                 </li>
                 <li>
-                    <a href="http://tech-league.me" target="_blank" style="text-decoration:none;"><font size="2"> <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>&nbsp;Alumni</font></a>	
+                    <a href="http://kemebrown.esy.es/assets/" target="_blank">
+                        <font size="2"> <span class="glyphicon glyphicon-print" aria-hidden="true"></span>&nbsp;Gbu Brochure '16</font>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://gbualumni.esy.es/" target="_blank" style="text-decoration:none;"><font size="2"> <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>&nbsp;Alumni</font></a>
                 </li>
                 <li>
                     <a href="<?php echo site_url('feat/events') ?>" style="text-decoration:none;"><font size="2"> <span class="glyphicon glyphicon-bell" aria-hidden="true"></span>&nbsp;Events</font></a>   

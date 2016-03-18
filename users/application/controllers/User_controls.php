@@ -80,8 +80,8 @@ class User_controls extends CI_Controller {
         $this->secure_hard();
         $this->load->library('form_validation');
         $this->load->helper(array('form', 'url'));
-        $this->form_validation->set_rules('username', 'Username', 'required');
-        $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
+        $this->form_validation->set_rules('username', 'Username', 'required|alpha_numeric|min_lenght[4]|max_lenght[25]');
+        $this->form_validation->set_rules('email', 'Email', 'required|valid_email|max_lenght[50]');
         $this->form_validation->set_rules('full_name', 'Full Name', 'required');
         $this->form_validation->set_rules('username', 'Username', 'required|callback_check_username');
         $this->form_validation->set_rules('email', 'email', 'required|callback_check_email');

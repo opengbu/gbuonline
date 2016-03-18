@@ -29,13 +29,11 @@ class Register extends CI_Controller {
         $this->load->helper(array('form', 'url'));
         $this->load->library('form_validation');
 
-        $this->form_validation->set_rules('username', 'Username', 'required');
-        $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
+        $this->form_validation->set_rules('username', 'Username', 'required|alpha_numeric|min_lenght[4]|max_lenght[25]||is_unique[users.username]');
+        $this->form_validation->set_rules('email', 'Email Address', 'required|valid_email|max_lenght[50]|is_unique[users.email]');
         $this->form_validation->set_rules('password', 'Password', 'required|matches[passconf]|min_length[6]');
         $this->form_validation->set_rules('passconf', 'Password confirmation', 'required');
         $this->form_validation->set_rules('full_name', 'Full Name', 'required');
-        $this->form_validation->set_rules('username', 'Username', 'required|callback_check_details');
-        $this->form_validation->set_rules('email', 'email', 'required|callback_check_email');
         $this->form_validation->set_rules('roll_number', 'roll_number', 'callback_check_roll_no');
 
 
@@ -66,16 +64,6 @@ class Register extends CI_Controller {
                     . ' A confirmation link has been sent to your email address to activate your account';
             $this->load->view('Success_message', $data);
         }
-    }
-
-    public function check_details() { // Check if user already exists
-        $username = $this->input->post('username');
-        $q = $this->db->query("select * from users where username = '$username'");
-        foreach ($q->result() as $row) {
-            $this->form_validation->set_message('check_details', 'The user ' . $username . ' already exists.');
-            return FALSE;
-        }
-        return TRUE;
     }
 
     public function check_roll_no() {
@@ -155,17 +143,6 @@ This is a system generated mail. Please do not reply to this email.<br>
                 'MIME-Version: 1.0' . "\r\n\r\n";
 
         mail($email, "Welcome To GBU Online", $message, $headers);
-    }
-
-    function check_email() { // Check if user already exists
-        $email = $this->input->post('email');
-
-        $q = $this->db->query("select * from users where email = '$email'");
-        if ($q->num_rows() > 0) {
-            $this->form_validation->set_message('check_email', 'The email account ' . $email . ' already exists.');
-            return FALSE;
-        }
-        return TRUE;
     }
 
 }
