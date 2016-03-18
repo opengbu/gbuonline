@@ -34,7 +34,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <style>
             body{
                 background-image: url('<?php echo $this->cdn->users() . 'application/views/common/' . 'color-splash.jpg' ?>');
-
+                background-size: cover;
             }
             .centered-form{
                 margin-top: 60px;
