@@ -121,7 +121,7 @@
 
                         <div class = "col-md-4" >
                             <div class = "thumbnail" style="height:350px;">
-                                <a href = "<?php echo site_url('feat/read_events?id=' . $row->id) ?>">
+                                <a href = "<?php echo site_url('events/read_events?id=' . $row->id) ?>">
                                     <img src = "<?php echo base_url($row->image_path) ?>" alt = "poster">
                                 </a>
                                 <div class = "caption">

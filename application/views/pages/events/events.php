@@ -119,7 +119,7 @@
                     ?>
                         <div class = "col-md-4">
                             <div class = "thumbnail feat_event" style="height:350px;">
-                                <a href = "<?php echo site_url('feat/read_events?id=' . $fe->event_id) ?>">
+                                <a href = "<?php echo site_url('events/read_events?id=' . $fe->event_id) ?>">
                                     <img src = "<?php echo base_url($fe->image_path) ?>" alt = "poster" style="height:155px; width:100%;">
                                 </a>
                                 <div class = "caption">
@@ -155,7 +155,7 @@
 
                         <div class = "col-md-4">
                             <div class = "thumbnail" style="height:350px;">
-                                <a href = "<?php echo site_url('feat/read_events?id=' . $row->id) ?>">
+                                <a href = "<?php echo site_url('events/read_events?id=' . $row->id) ?>">
                                     <img src = "<?php echo base_url($row->image_path) ?>" alt = "poster" style="height:155px; width:100%;">
                                 </a>
                                 <div class = "caption">
@@ -195,7 +195,7 @@
 
                         <div class = "col-md-4" >
                             <div class = "thumbnail" style="height:350px;">
-                                <a href = "<?php echo site_url('feat/read_events?id=' . $row->id) ?>">
+                                <a href = "<?php echo site_url('events/read_events?id=' . $row->id) ?>">
                                     <img src = "<?php echo base_url($row->image_path) ?>" alt = "poster" style="height:155px; width:100%;">
                                 </a>
                                 <div class = "caption">
@@ -211,7 +211,7 @@
                     ?>
 					
                 </div>
-				<center><a type="button" class="btn btn-xs btn-default" href="<?=site_url('feat/all_past_events')?>">VIEW ALL</a></center><br/>
+				<center><a type="button" class="btn btn-xs btn-default" href="<?=site_url('events/all_past_events')?>">VIEW ALL</a></center><br/>
             </div>
 
         </div><!--for colmd9-->
