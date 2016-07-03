@@ -85,7 +85,14 @@
                 margin-left: 2px;
                 vertical-align: middle;
             }
-            body { 
+            body {
+                 /* fallback for old browsers */
+                background: #ECE9E6;
+                /* Chrome 10-25, Safari 5.1-6 */
+                background: -webkit-linear-gradient(to left, #ECE9E6 , #FFFFFF);
+                /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
+                background: linear-gradient(to left, #ECE9E6 , #FFFFFF); 
+         
                 padding-top: 25px;
                 font-family: 'Roboto', sans-serif;
             }
@@ -147,12 +154,10 @@
         <!-- End Google Analytics -->
 
     </head>
-    <body background="<?php echo $this->cdn->res_url('resources/images/symphony.png') ?>" style="background-attachment: fixed; background-repeat: repeat;">
+    <body>
         <div class="se-pre-con"></div>
         <div class="container-fluid footer-problem"><!--this div ends in footer.php-->
-
-
-
+        
 
 
 

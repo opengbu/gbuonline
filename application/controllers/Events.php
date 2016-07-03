@@ -5,7 +5,7 @@ class Events extends CI_Controller {
 
 	public function index()
 	{
-        $data['title'] = 'Events &nbsp;|&nbsp;  GBU Online';
+    	$data['title'] = 'Events &nbsp;|&nbsp;  GBU Online';
 		$data['heading'] = ' University Events ';
 		$data['message'] = 'Involve, Innovate and Learn ...';
 		$this->load->view('pages/common/link',$data);
@@ -19,7 +19,7 @@ class Events extends CI_Controller {
 	
 	public function all_past_events()
 	{
-        $data['title'] = 'Events &nbsp;|&nbsp;  GBU Online';
+    	$data['title'] = 'Events &nbsp;|&nbsp;  GBU Online';
 		$data['heading'] = ' University Events ';
 		$data['message'] = 'Involve, Innovate and Learn ...';
 		$this->load->view('pages/common/link',$data);
@@ -33,7 +33,7 @@ class Events extends CI_Controller {
 
 	public function read_events()
 	{
-        $data['title'] = 'Events &nbsp;|&nbsp;  GBU Online';
+    	$data['title'] = 'Events &nbsp;|&nbsp;  GBU Online';
 		$data['heading'] = ' University Events ';
 		$data['message'] = 'Involve, Innovate and Learn ...';
 		$this->load->view('pages/common/link',$data);

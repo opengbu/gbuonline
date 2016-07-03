@@ -180,7 +180,7 @@
             }
             ?>
         </div>
-			<div class="col-md4">
+			<div class="col-md-4">
 				<h2 align="center"><b><span class="label label-default">GBU Schedule</span></b></h2>
 				<br/><br/>
 

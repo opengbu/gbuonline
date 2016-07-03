@@ -21,10 +21,16 @@ function myFunction(arr) {
 }
 </script>
 
-<center> 
-    <hr>
-    We are a group of students working under guidance of <br><b>Dr. Amit K. Awasthi.</b>
-</center>
+<div class="container-fluid">
+    <center>
+        <hr/>   
+        <h3>Chief Mentor</h3>               
+        <hr/>               
+            <img src="<?= $this->cdn->res_url('resources/images/amitsir.jpg');?>"  width="120" style="height: 150px;"/><br><br><b>Dr. Amit K. Awasthi</b>
+        <br/>
+        <hr/>
+    </center> 
+</div>
 
 <div class="container-fluid">
     <center>

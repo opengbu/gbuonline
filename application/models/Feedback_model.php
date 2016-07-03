@@ -1,6 +1,6 @@
 <?php
 
-class feedback_model extends CI_Model
+class Feedback_model extends CI_Model
 {
 public function fb() 
 	{    

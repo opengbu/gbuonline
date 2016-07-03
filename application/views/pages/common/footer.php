@@ -41,29 +41,24 @@ q:after {
 						
 
                     <div class="modal fade bs-example-modal-lg-2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-lg">
+                        <div style="margin-top:5%;" class="modal-dialog modal-lg">
                             <div class="modal-content">
                                 <center>
-								<h2 style="font-family: Yanone Kaffeesatz;margin-bottom:-20px"> OUR VISION</h2>
-					
+								<h3>Our Vision</h3>
                                     <hr/>
-                                    &nbsp;<blockquote><h3 style="font-family:Aguafina Script;margin-top:-35px">"GBU Online is built with the vision
-                                    of helping students and teachers to get all information about the university on a 
-                                    single platform. Now there's no need to rush over the whole  511 acre campus for any information. All you need is an internet connection
-                                    and everything is at your device's screen. Be it exam papers, information regarding any event or your hostel/mess related activities, GBU Online is Packed with everything."
-                                    </h3></blockquote>
-								
-								<h2 style="font-family: Yanone Kaffeesatz;margin-bottom:-20px">OUR MISSION</h2>
-								<hr/>
-                                    &nbsp;<blockquote><h3 style="font-family:Aguafina Script;margin-top:-35px">"In pursuance of its vision and guiding principles, the Tata Institute of Social Sciences organises teaching programmes to facilitate the development of competent and committed professionals for practice, research and teaching; undertakes research; develops and disseminates knowledge; and reaches out to the larger community through extension, at the local, national, regional and international levels."
-                                    </h3></blockquote>
-								
+                                    <blockquote>
+                                    <p align ="justify">GBU Online is built with the vision of helping students and teachers to get all information about the university on a single platform. Now there's no need to rush over the whole  511 acre campus for any information. All you need is an internet connection and everything is at your device's screen. Be it exam papers, information regarding any event or your hostel/mess related activities, GBU Online is Packed with everything.
+                                    </p>
+                                    </blockquote>
                                 </center>
 
                             </div>
                         </div>
                     </div>
-				<a data-toggle="modal" data-target=".bs-example-modal-lg-5" style="cursor:pointer;"><font color = "white"><b>Connect With Us</b></font></a>
+
+				
+                <!--
+                <a data-toggle="modal" data-target=".bs-example-modal-lg-5" style="cursor:pointer;"><font color = "white"><b>Connect With Us</b></font></a>
 
                     <div class="modal fade bs-example-modal-lg-5" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-lg">
@@ -158,10 +153,10 @@ q:after {
                             </div>
                         </div>
                     </div>
-					<br/><br/>
+                    -->
              <a href="<?php echo site_url('feat/opportunities')?>" style="cursor:pointer;"><font color = "white"><b>Opportunities</b></font></a>
              <br/><br/>
-             <a href="<?php echo site_url('feat/open_source')?>" style="cursor:pointer;"><font color = "white"><b>Open-Source Cedits</b></font></a>             
+             <a href="<?php echo site_url('feat/open_source')?>" style="cursor:pointer;"><font color = "white"><b>Open-Source Credits</b></font></a>             
                 
             </div>
 			
@@ -170,10 +165,10 @@ q:after {
 <a href = "http://math.gbuonline.in"  target="_blank"><font color = "white"><b>Maths Site</b></font></a><br><br>
 <a href = "http://gbu.ac.in"  target="_blank"><font color = "white"><b>Official Website</b></font></a><br><br>
 <a href = "<?php echo site_url('feat/ggroups')?>"><font color = "white"><b>Google Groups</b></font></a><br><br>
-<a href = "https://plus.google.com/+GAUTAMBUDDHAUNIVERSITYGREATERNOIDA"  target="_blank"><font color = "white"><b>Gbu.code</b></font></a>
+<a href = "https://plus.google.com/+GAUTAMBUDDHAUNIVERSITYGREATERNOIDA"  target="_blank"><font color = "white"><b>Gbu.Code</b></font></a>
 </div>
         <div class = "col-md-3">
-		<a href = "<?php echo site_url('feat/tou')?>"><font color = "white"><b>Terms of use</b></font></a><br><br>
+		<a href = "<?php echo site_url('feat/tou')?>"><font color = "white"><b>Terms of Use</b></font></a><br><br>
 <a href = "https://github.com/opengbu/gbuonline" target="_blank"><font color = "white"><b>GitHub</b></font></a><br><br>
 		<a href = "<?php echo site_url('feat/feedback')?>" ><font color = "white"><b>Feedback</b></font></a><br><br>
 <a href = "<?php echo site_url('feat/advertise')?>"><font color = "white"><b>Advertise</b></font></a>
