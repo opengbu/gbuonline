@@ -6,3 +6,5 @@ RewriteRule ^(.*)$ index.php?/$1 [QSA,L]
 <Files "index.php">
 AcceptPathInfo On
 </Files>
+
+RewriteRule ^(db) - [F]

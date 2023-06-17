@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  web:
+    container_name: gbuonline
+    restart: always
+    build: 
+      context: .
+      dockerfile: deploy/Dockerfile
+    volumes:
+      - .:/app
+      - ./db:/var/lib/mysql
+    ports:
+      - "8080:80"
+    ulimits:
+        nproc: 65535
+        nofile:
+            soft: 50000
+            hard: 100000

@@ -105,7 +105,7 @@
 		<div class="row gra">
 		<div class = "container">
 		<br/>
-		<div class="col-md-4">
+		<div class="col-md-12">
             <h2 align="center"><b><span class="label label-default">News and Updates</span></b></h2>
             <br/><br/>
             <?php
@@ -128,66 +128,8 @@
 			
             <ul class="pager">
                 <li><a href="<?php echo site_url('News/index') ?>"><font color="black">More</font></a></li>
-
             </ul>
-        </div>
-        <div class="col-md-4">
-            <h2 align="center"><b><span class="label label-default">Technological Updates</span></b></h2>
-            <br/><br/>
-
-            <?php
-            //$info = parse_url(base_url());
-            //$host = $info['host']; //example extract gbuonline.in from http://www.gbuonline.in/sdsds
-            $host = str_replace("www.", "", $_SERVER['HTTP_HOST']);
-            //echo $host;
-            if ($host == "gbuonline.in") {
-                $xml = ("https://gbuonline.wordpress.com/feed");
-                $xmlDoc = new DOMDocument();
-                $xmlDoc->load($xml);
-
-                $x = $xmlDoc->getElementsByTagName('item');
-                for ($i = 0; $i <= 2; $i++) {
-                    $item_title = $x->item($i)->getElementsByTagName('title')
-                                    ->item(0)->childNodes->item(0)->nodeValue;
-                    $item_link = $x->item($i)->getElementsByTagName('link')
-                                    ->item(0)->childNodes->item(0)->nodeValue;
-                    $item_desc = $x->item($i)->getElementsByTagName('description')
-                                    ->item(0)->childNodes->item(0)->nodeValue;
-                    //   echo ("<p><a href='" . $item_link
-                    //  . "'>" . $item_title . "</a>");
-                    //   echo ("<br>");
-                    //   echo ($item_desc . "</p>");
-                    ?>
-                    <div class="list-group">
-                        <a href="<?php echo $item_link ?>" class="list-group-item ">
-                            <h4 class="list-group-item-heading"><b><?= $item_title ?></b></h4>
-                            <p class="list-group-item-text"><?= $item_desc ?></p>
-                        </a>
-                    </div>
-                    <?php
-                }
-            } else {
-                ?>
-                <div class="list-group">
-                    <a href="<?php echo base_url() ?>" class="list-group-item ">
-                        <h4 class="list-group-item-heading"><b>Section Unavailable</b></h4>
-                        <p class="list-group-item-text">Due to connection issues for some users, 
-                            this section will only be available when domain = gbuonline.in</p>
-                    </a>
-                </div>
-
-                <?php
-            }
-            ?>
-        </div>
-			<div class="col-md-4">
-				<h2 align="center"><b><span class="label label-default">GBU Schedule</span></b></h2>
-				<br/><br/>
-
-				<iframe src="https://calendar.google.com/calendar/embed?showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=400&amp;wkst=1&amp;hl=en&amp;bgcolor=%23ff9966&amp;src=fpojdeb39ko4sr6qrf19n7cup0%40group.calendar.google.com&amp;color=%232952A3&amp;ctz=Asia%2FCalcutta" style=" border-width:0 " width="300" height="400" frameborder="0" scrolling="no"></iframe>
-			</div>
-
-	
+        </div>	
     </div>
     </div>
 </div>
